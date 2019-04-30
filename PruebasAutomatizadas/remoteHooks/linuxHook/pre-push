@@ -24,7 +24,7 @@ printYellow() {
 function checkSonar {
 	printGreen "Iniciando análisis con Sonar"
 	gradle sonarqube -x test --stacktrace
-	wget http://sonar.bancolombia.corp/sonarbc/api/qualitygates/project_status?projectKey=AW0290_Swift_Test -O sonar/report.json
+	wget http://sonar.bancolombia.corp/sonarbc/api/qualitygates/project_status?projectKey=AW1059001_NuevaAPPSucursalVirtualPersonas_Test -O sonar/report.json
     	RESULT_SONAR=$(cat sonar/report.json | grep "ERROR" | wc -l)
 	if [ "$RESULT_SONAR" -gt 0 ];
 	then
