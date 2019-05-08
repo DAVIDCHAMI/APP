@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTran
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.HOUR_FORMAT;
+import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.FORMATO_HORA;
 import static co.com.bancolombia.certificacion.app.utilities.constantes.CanalesSistemas.*;
 import static co.com.bancolombia.certificacion.app.utilities.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
@@ -36,7 +36,7 @@ public class ConfiguracionTransaccionActualEntity {
      */
     public static void setConfiguracionTransaccion(List<String> dataTransaccion) {
 
-        String horaTransaccion = DateManager.obtenerFechaSistema(HOUR_FORMAT);
+        String horaTransaccion = DateManager.obtenerFechaSistema(FORMATO_HORA);
         configuracionTransaccion.setIdentificadorCaso(dataTransaccion.get(0));
         configuracionTransaccion.setOrientacionCaso(dataTransaccion.get(1));
         configuracionTransaccion.setCodigoError(dataTransaccion.get(2));

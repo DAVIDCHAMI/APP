@@ -3,6 +3,9 @@ package co.com.bancolombia.certificacion.app.models.producto;
 
 import co.com.bancolombia.certificacion.app.utilities.administradores.AdministradorUtilidades;
 
+import static co.com.bancolombia.certificacion.app.utilities.constantes.TipoCuentas.AHORRO;
+import static co.com.bancolombia.certificacion.app.utilities.constantes.TipoCuentas.CORRIENTE;
+
 /**
  * The type Deposit account.
  */
@@ -41,7 +44,7 @@ public class CuentaDeposito extends Producto {
      * @param tipoCuentaEnLetras the type account in letter
      */
     public void setTipoCuentaEnLetras(String tipoCuentaEnLetras) {
-        if (tipoCuentaEnLetras.equalsIgnoreCase("S") || tipoCuentaEnLetras.equalsIgnoreCase("D")) {
+        if (tipoCuentaEnLetras.equalsIgnoreCase(AHORRO.getLetra()) || tipoCuentaEnLetras.equalsIgnoreCase(CORRIENTE.getLetra())) {
             this.tipoCuentaEnLetra = tipoCuentaEnLetras;
         } else {
             this.tipoCuentaEnLetra = AdministradorUtilidades.tipoCuentaLetra(tipoCuentaEnLetras);
@@ -64,7 +67,7 @@ public class CuentaDeposito extends Producto {
      * @param tipoCuentaEnNumeros the type account in number
      */
     public void setTipoCuentaEnNumeros(String tipoCuentaEnNumeros) {
-        if (tipoCuentaEnNumeros.equalsIgnoreCase("1") || tipoCuentaEnNumeros.equalsIgnoreCase("7")) {
+        if (tipoCuentaEnNumeros.equalsIgnoreCase(CORRIENTE.getNumero()) || tipoCuentaEnNumeros.equalsIgnoreCase(AHORRO.getNumero())) {
             this.tipoCuentaEnNumero = tipoCuentaEnNumeros;
         } else {
             this.tipoCuentaEnNumero = AdministradorUtilidades.formatoTipoCuentaNumero(tipoCuentaEnNumeros);

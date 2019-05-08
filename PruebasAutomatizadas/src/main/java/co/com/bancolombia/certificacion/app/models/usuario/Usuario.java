@@ -10,67 +10,67 @@ import java.util.List;
  */
 public class Usuario {
 
-    private String username;
-    private String password;
-    private String secondPassword;
-    private String documentNumber;
-    private String documenType;
-    private String firstQuestion;
-    private String keyStatus;
-    private List<Producto> products;
+    private String usuario;
+    private String clave;
+    private String segundaClave;
+    private String numeroDocumento;
+    private String tipoDocumento;
+    private String primeraPregunta;
+    private String estadoClave;
+    private List<Producto> productos;
 
     /**
-     * Gets username.
+     * Gets usuario.
      *
-     * @return the username
+     * @return the usuario
      */
-    public String getUsername() {
-        return username;
+    public String getUsuario() {
+        return usuario;
     }
 
     /**
-     * Sets username.
+     * Sets usuario.
      *
-     * @param username the username
+     * @param usuario the usuario
      */
-    public void setNombreUsuario(String username) {
-        this.username = username;
+    public void setNombreUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     /**
-     * Gets password.
+     * Gets clave.
      *
-     * @return the password
+     * @return the clave
      */
-    public String getPassword() {
-        return password;
+    public String getClave() {
+        return clave;
     }
 
     /**
-     * Sets password.
+     * Sets clave.
      *
-     * @param password the password
+     * @param clave the clave
      */
-    public void setClave(String password) {
-        this.password = password;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     /**
-     * Gets second password.
+     * Gets second clave.
      *
-     * @return the second password
+     * @return the second clave
      */
-    public String getSecondPassword() {
-        return secondPassword;
+    public String getSegundaClave() {
+        return segundaClave;
     }
 
     /**
-     * Sets second password.
+     * Sets second clave.
      *
-     * @param secondPassword the second password
+     * @param segundaClave the second clave
      */
-    public void setSegundaClave(String secondPassword) {
-        this.secondPassword = secondPassword;
+    public void setSegundaClave(String segundaClave) {
+        this.segundaClave = segundaClave;
     }
 
     /**
@@ -78,17 +78,17 @@ public class Usuario {
      *
      * @return the document number
      */
-    public String getDocumentNumber() {
-        return documentNumber;
+    public String getNumeroDocumento() {
+        return numeroDocumento;
     }
 
     /**
      * Sets document number.
      *
-     * @param documentNumber the document number
+     * @param numeroDocumento the document number
      */
-    public void setNumeroDocumento(String documentNumber) {
-        this.documentNumber = documentNumber;
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
     }
 
     /**
@@ -96,17 +96,17 @@ public class Usuario {
      *
      * @return the documen type
      */
-    public String getDocumenType() {
-        return documenType;
+    public String getTipoDocumento() {
+        return tipoDocumento;
     }
 
     /**
      * Sets documen type.
      *
-     * @param documenType the documen type
+     * @param tipoDocumento the documen type
      */
-    public void setTipoDocumento(String documenType) {
-        this.documenType = documenType;
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     /**
@@ -114,17 +114,17 @@ public class Usuario {
      *
      * @return the first question
      */
-    public String getFirstQuestion() {
-        return firstQuestion;
+    public String getPrimeraPregunta() {
+        return primeraPregunta;
     }
 
     /**
      * Sets first question.
      *
-     * @param firstQuestion the first question
+     * @param primeraPregunta the first question
      */
-    public void setPrimeraPregunta(String firstQuestion) {
-        this.firstQuestion = firstQuestion;
+    public void setPrimeraPregunta(String primeraPregunta) {
+        this.primeraPregunta = primeraPregunta;
     }
 
     /**
@@ -132,17 +132,17 @@ public class Usuario {
      *
      * @return the producto
      */
-    public List<Producto> getProducts() {
-        return products;
+    public List<Producto> getProductos() {
+        return productos;
     }
 
     /**
      * Sets producto.
      *
-     * @param products the producto
+     * @param productos the producto
      */
-    public void setProducts(List<Producto> products) {
-        this.products = products;
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 
     /**
@@ -150,16 +150,16 @@ public class Usuario {
      *
      * @return the key status
      */
-    public String getKeyStatus() {
-        return keyStatus;
+    public String getEstadoClave() {
+        return estadoClave;
     }
 
     /**
      * Sets key status.
      *
-     * @param keyStatus the key status
+     * @param estadoClave the key status
      */
-    public void setEstadoClave(String keyStatus) {
-        this.keyStatus = keyStatus;
+    public void setEstadoClave(String estadoClave) {
+        this.estadoClave = estadoClave;
     }
 }

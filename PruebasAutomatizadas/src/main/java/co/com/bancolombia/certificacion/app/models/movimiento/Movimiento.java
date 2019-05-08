@@ -5,31 +5,31 @@ package co.com.bancolombia.certificacion.app.models.movimiento;
  */
 public class Movimiento {
 
-    private String date;
-    private String movementValue;
-    private String nature;
-    private String code;
-    private String description;
-    private String valuePerUnit;
-    private String numberOfUnits;
+    private String fecha;
+    private String valorMovimiento;
+    private String naturaleza;
+    private String codigo;
+    private String descripcion;
+    private String valorPorUnidad;
+    private String numeroUnidades;
 
 
     /**
-     * Gets date.
+     * Gets fecha.
      *
-     * @return the date
+     * @return the fecha
      */
-    public String getDate() {
-        return date;
+    public String getFecha() {
+        return fecha;
     }
 
     /**
-     * Sets date.
+     * Sets fecha.
      *
-     * @param date the date
+     * @param fecha the fecha
      */
-    public void setDate(String date) {
-        this.date = date;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     /**
@@ -37,71 +37,71 @@ public class Movimiento {
      *
      * @return the movimiento value
      */
-    public String getMovementValue() {
-        return movementValue;
+    public String getValorMovimiento() {
+        return valorMovimiento;
     }
 
     /**
      * Sets movimiento value.
      *
-     * @param movementValue the movimiento value
+     * @param valorMovimiento the movimiento value
      */
-    public void setMovementValue(String movementValue) {
-        this.movementValue = movementValue;
+    public void setValorMovimiento(String valorMovimiento) {
+        this.valorMovimiento = valorMovimiento;
     }
 
     /**
-     * Gets nature.
+     * Gets naturaleza.
      *
-     * @return the nature
+     * @return the naturaleza
      */
-    public String getNature() {
-        return nature;
+    public String getNaturaleza() {
+        return naturaleza;
     }
 
     /**
-     * Sets nature.
+     * Sets naturaleza.
      *
-     * @param nature the nature
+     * @param naturaleza the naturaleza
      */
-    public void setNature(String nature) {
-        this.nature = nature;
+    public void setNaturaleza(String naturaleza) {
+        this.naturaleza = naturaleza;
     }
 
     /**
-     * Gets code.
+     * Gets codigo.
      *
-     * @return the code
+     * @return the codigo
      */
-    public String getCode() {
-        return code;
+    public String getCodigo() {
+        return codigo;
     }
 
     /**
-     * Sets code.
+     * Sets codigo.
      *
-     * @param code the code
+     * @param codigo the codigo
      */
-    public void setCode(String code) {
-        this.code = code;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     /**
-     * Gets description.
+     * Gets descripcion.
      *
-     * @return the description
+     * @return the descripcion
      */
-    public String getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     /**
-     * Sets description.
+     * Sets descripcion.
      *
-     * @param description the description
+     * @param descripcion the descripcion
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     /**
@@ -109,17 +109,17 @@ public class Movimiento {
      *
      * @return the value per unit
      */
-    public String getValuePerUnit() {
-        return valuePerUnit;
+    public String getValorPorUnidad() {
+        return valorPorUnidad;
     }
 
     /**
      * Sets value per unit.
      *
-     * @param valuePerUnit the value per unit
+     * @param valorPorUnidad the value per unit
      */
-    public void setValuePerUnit(String valuePerUnit) {
-        this.valuePerUnit = valuePerUnit;
+    public void setValorPorUnidad(String valorPorUnidad) {
+        this.valorPorUnidad = valorPorUnidad;
     }
 
     /**
@@ -127,17 +127,17 @@ public class Movimiento {
      *
      * @return the number of units
      */
-    public String getNumberOfUnits() {
-        return numberOfUnits;
+    public String getNumeroUnidades() {
+        return numeroUnidades;
     }
 
     /**
      * Sets number of units.
      *
-     * @param numberOfUnits the number of units
+     * @param numeroUnidades the number of units
      */
-    public void setNumberOfUnits(String numberOfUnits) {
-        this.numberOfUnits = numberOfUnits;
+    public void setNumeroUnidades(String numeroUnidades) {
+        this.numeroUnidades = numeroUnidades;
     }
 
 }

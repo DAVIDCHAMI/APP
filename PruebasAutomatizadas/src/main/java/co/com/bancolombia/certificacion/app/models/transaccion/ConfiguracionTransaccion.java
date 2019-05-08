@@ -10,20 +10,16 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public class ConfiguracionTransaccion {
 
     private String identificadorCaso;
-    private String logCanalPath;
-    private String logCanalName;
-    private String logStiPath;
-    private String logStiName;
-    private String orientationCase;
-    private String transactionCode;
-    private String errorCode;
-    private String expectedResult;
-    private String canalCode;
-    private String systemCode;
-    private String transactionType;
-    private String transactionHour;
-    private String typeLogCanal;
-    private String operationCode;
+    private String orientacionCaso;
+    private String codigoTransaccion;
+    private String codigoError;
+    private String resultadoEsperado;
+    private String codigoCanal;
+    private String codigoSistema;
+    private String tipoTransaccion;
+    private String horaTransaccion;
+    private String tipoLogCanal;
+    private String codigoOperacion;
 
 
     public String getIdentificadorCaso() {
@@ -34,145 +30,106 @@ public class ConfiguracionTransaccion {
         this.identificadorCaso = identificadorCaso;
     }
 
-    public String getLogCanalPath() {
-        return logCanalPath;
-    }
-
-    public void setRutaLogCanal(String logCanalPath) {
-        this.logCanalPath = logCanalPath;
-    }
-
-
-    public String getLogCanalName() {
-        return logCanalName;
-    }
-
-
-    public void setLogCanalName(String logCanalName) {
-        this.logCanalName = logCanalName;
-    }
-
-    public String getLogStiPath() {
-        return logStiPath;
-    }
-
-    public void setLogStiPath(String logStiPath) {
-        this.logStiPath = logStiPath;
-    }
-
-    public String getLogStiName() {
-        return logStiName;
-    }
-
-    public void setLogStiName(String logStiName) {
-        this.logStiName = logStiName;
-    }
-
-
-    public String getOrientationCase() {
-        return orientationCase;
+    public String getOrientacionCaso() {
+        return orientacionCaso;
     }
 
     public void setOrientacionCaso(String orientationCase) {
-        this.orientationCase = orientationCase;
+        this.orientacionCaso = orientationCase;
     }
 
     public String getCodigoTransaccion() {
-        return transactionCode;
+        return codigoTransaccion;
     }
 
     public void setCodigoTransaccion(String transactionCode) {
-        this.transactionCode = transactionCode;
+        this.codigoTransaccion = transactionCode;
     }
 
     public String getCodigoError() {
-        return errorCode;
+        return codigoError;
     }
 
     public void setCodigoError(String errorCode) {
-        this.errorCode = errorCode;
+        this.codigoError = errorCode;
     }
 
     public String getResultadoEsperado() {
-        return expectedResult;
+        return resultadoEsperado;
     }
 
     public void setResultadoEsperado(String expectedResult) {
-        this.expectedResult = expectedResult;
+        this.resultadoEsperado = expectedResult;
     }
 
-    public String getCanalCode() {
-        return canalCode;
+    public String getCodigoCanal() {
+        return codigoCanal;
     }
 
     public void setCodigoCanal(String canalCode) {
-        this.canalCode = canalCode;
+        this.codigoCanal = canalCode;
     }
 
-    public String getSystemCode() {
-        return systemCode;
+    public String getCodigoSistema() {
+        return codigoSistema;
     }
 
     public void setCodigoSistema(String systemCode) {
-        this.systemCode = systemCode;
+        this.codigoSistema = systemCode;
     }
 
     public String getTipoTransaccion() {
-        return transactionType;
+        return tipoTransaccion;
     }
 
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
+    public void setTipoTransaccion(String tipoTransaccion) {
+        this.tipoTransaccion = tipoTransaccion;
     }
 
-    public String getTransactionHour() {
-        return transactionHour;
+    public String getHoraTransaccion() {
+        return horaTransaccion;
     }
 
     public void setHoraTransaccion(String transactionHour) {
-        this.transactionHour = transactionHour;
+        this.horaTransaccion = transactionHour;
     }
 
-    public String getTypeLogCanal() {
-        return typeLogCanal;
+    public String getTipoLogCanal() {
+        return tipoLogCanal;
     }
 
     public void setTipoLogCanal(String typeLogCanal) {
-        this.typeLogCanal = typeLogCanal;
+        this.tipoLogCanal = typeLogCanal;
     }
 
-    public String getOperationCode() {
-        return operationCode;
+    public String getCodigoOperacion() {
+        return codigoOperacion;
     }
 
-    public void setOperationCode(String operationCode) {
-        this.operationCode = operationCode;
+    public void setCodigoOperacion(String codigoOperacion) {
+        this.codigoOperacion = codigoOperacion;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) { return true; }
 
-        if (!(o instanceof ConfiguracionTransaccion)) return false;
+        if (!(o instanceof ConfiguracionTransaccion)) { return false; }
 
         ConfiguracionTransaccion that = (ConfiguracionTransaccion) o;
 
         return new EqualsBuilder()
                 .append(getIdentificadorCaso(), that.getIdentificadorCaso())
-                .append(getLogCanalPath(), that.getLogCanalPath())
-                .append(getLogCanalName(), that.getLogCanalName())
-                .append(getLogStiPath(), that.getLogStiPath())
-                .append(getLogStiName(), that.getLogStiName())
-                .append(getOrientationCase(), that.getOrientationCase())
+                .append(getOrientacionCaso(), that.getOrientacionCaso())
                 .append(getCodigoTransaccion(), that.getCodigoTransaccion())
                 .append(getCodigoError(), that.getCodigoError())
                 .append(getResultadoEsperado(), that.getResultadoEsperado())
-                .append(getCanalCode(), that.getCanalCode())
-                .append(getSystemCode(), that.getSystemCode())
+                .append(getCodigoCanal(), that.getCodigoCanal())
+                .append(getCodigoSistema(), that.getCodigoSistema())
                 .append(getTipoTransaccion(), that.getTipoTransaccion())
-                .append(getTransactionHour(), that.getTransactionHour())
-                .append(getTypeLogCanal(), that.getTypeLogCanal())
-                .append(getOperationCode(), that.getOperationCode())
+                .append(getHoraTransaccion(), that.getHoraTransaccion())
+                .append(getTipoLogCanal(), that.getTipoLogCanal())
+                .append(getCodigoOperacion(), that.getCodigoOperacion())
                 .isEquals();
     }
 
@@ -180,20 +137,16 @@ public class ConfiguracionTransaccion {
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
                 .append(getIdentificadorCaso())
-                .append(getLogCanalPath())
-                .append(getLogCanalName())
-                .append(getLogStiPath())
-                .append(getLogStiName())
-                .append(getOrientationCase())
+                .append(getOrientacionCaso())
                 .append(getCodigoTransaccion())
                 .append(getCodigoError())
                 .append(getResultadoEsperado())
-                .append(getCanalCode())
-                .append(getSystemCode())
+                .append(getCodigoCanal())
+                .append(getCodigoSistema())
                 .append(getTipoTransaccion())
-                .append(getTransactionHour())
-                .append(getTypeLogCanal())
-                .append(getOperationCode())
+                .append(getHoraTransaccion())
+                .append(getTipoLogCanal())
+                .append(getCodigoOperacion())
                 .toHashCode();
     }
 
@@ -201,20 +154,16 @@ public class ConfiguracionTransaccion {
     public String toString() {
         return new ToStringBuilder(this)
                 .append("identificadorCaso", identificadorCaso)
-                .append("logCanalPath", logCanalPath)
-                .append("logCanalName", logCanalName)
-                .append("logStiPath", logStiPath)
-                .append("logStiName", logStiName)
-                .append("orientationCase", orientationCase)
-                .append("transactionCode", transactionCode)
-                .append("errorCode", errorCode)
-                .append("expectedResult", expectedResult)
-                .append("canalCode", canalCode)
-                .append("systemCode", systemCode)
-                .append("transactionType", transactionType)
-                .append("transactionHour", transactionHour)
-                .append("typeLogCanal", typeLogCanal)
-                .append("operationCode", operationCode)
+                .append("orientacionCaso", orientacionCaso)
+                .append("codigoTransaccion", codigoTransaccion)
+                .append("codigoError", codigoError)
+                .append("resultadoEsperado", resultadoEsperado)
+                .append("codigoCanal", codigoCanal)
+                .append("codigoSistema", codigoSistema)
+                .append("tipoTransaccion", tipoTransaccion)
+                .append("horaTransaccion", horaTransaccion)
+                .append("tipoLogCanal", tipoLogCanal)
+                .append("codigoOperacion", codigoOperacion)
                 .toString();
     }
 }

@@ -12,9 +12,9 @@ public class AdministradorConstante {
 
     public static final String AUTENTICACION_CODIGO_TRANSACCION = "0369";
     /**
-     * The constant HOUR_FORMAT.
+     * The constant FORMATO_HORA.
      */
-    public static final String HOUR_FORMAT = "HHmmss";
+    public static final String FORMATO_HORA = "HHmmss";
     /**
      * The constant EMPTY.
      */
@@ -24,21 +24,21 @@ public class AdministradorConstante {
      */
     public static final String NUMBER_FORMAT = "###,###.###";
     /**
-     * The constant TRANSACTION_TYPE_TRANSFER.
+     * The constant TRANSFERENCIA_TIPO_TRANSACCION.
      */
-    public static final String TRANSACTION_TYPE_TRANSFER = "Transfers";
+    public static final String TRANSFERENCIA_TIPO_TRANSACCION = "Transferencia";
     /**
-     * The constant SUCCESS.
+     * The constant ACIERTO.
      */
-    public static final String SUCCESS = "ACIERTO";
+    public static final String ACIERTO = "ACIERTO";
     /**
-     * The constant MONTHLY.
+     * The constant MENSUAL.
      */
-    public static final String MONTHLY = "Mensual";
+    public static final String MENSUAL = "Mensual";
     /**
-     * The constant EXPIRATION.
+     * The constant EXPIRACION.
      */
-    public static final String EXPIRATION = "Al vencimiento";
+    public static final String EXPIRACION = "Al vencimiento";
 
     public static final String CODIGO_TRANSACCION_ACH = "0638";
 

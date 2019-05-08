@@ -6,21 +6,21 @@ package co.com.bancolombia.certificacion.app.models.producto;
 public class InversionVirtual {
 
 
-    private String investmentValue;
-    private String daysTerm;
-    private String periodicityPaymentInterest;
-    private int periodicityPaymentInterestNumber;
-    private CuentaDeposito depositAccount;
-    private String termAndConditions;
-    private String investmentNumber;
+    private String valorInversion;
+    private String terminoDias;
+    private String periodicidadPagoInteres;
+    private int periodicidadPagoInteresNumero;
+    private CuentaDeposito cuentaDeposito;
+    private String terminosYCondiciones;
+    private String numeroInversion;
     private String stockTrade;
-    private String openingDate;
-    private String expirationDate;
-    private String annualEffectiveRate;
-    private String nominalRate;
-    private String interestPaid;
-    private String interestPeriod;
-    private String periodicityInterests;
+    private String fechaApertura;
+    private String fechaExpiracion;
+    private String tasaEfectivaAnual;
+    private String tasaNomina;
+    private String pagoInteres;
+    private String periodoInteres;
+    private String periodicidadInteres;
 
 
     /**
@@ -28,8 +28,8 @@ public class InversionVirtual {
      *
      * @return the investment value
      */
-    public String getInvestmentValue() {
-        return investmentValue;
+    public String getValorInversion() {
+        return valorInversion;
     }
 
     /**
@@ -37,8 +37,8 @@ public class InversionVirtual {
      *
      * @param investmentValue the investment value
      */
-    public void setInvestmentValue(String investmentValue) {
-        this.investmentValue = investmentValue;
+    public void setValorInversion(String investmentValue) {
+        this.valorInversion = investmentValue;
     }
 
     /**
@@ -46,8 +46,8 @@ public class InversionVirtual {
      *
      * @return the days term
      */
-    public String getDaysTerm() {
-        return daysTerm;
+    public String getTerminoDias() {
+        return terminoDias;
     }
 
     /**
@@ -55,8 +55,8 @@ public class InversionVirtual {
      *
      * @param daysTerm the days term
      */
-    public void setDaysTerm(String daysTerm) {
-        this.daysTerm = daysTerm;
+    public void setTerminoDias(String daysTerm) {
+        this.terminoDias = daysTerm;
     }
 
     /**
@@ -64,8 +64,8 @@ public class InversionVirtual {
      *
      * @return the periodicity payment interest
      */
-    public String getPeriodicityPaymentInterest() {
-        return periodicityPaymentInterest;
+    public String getPeriodicidadPagoInteres() {
+        return periodicidadPagoInteres;
     }
 
     /**
@@ -73,8 +73,8 @@ public class InversionVirtual {
      *
      * @param periodicityPaymentInterest the periodicity payment interest
      */
-    public void setPeriodicityPaymentInterest(String periodicityPaymentInterest) {
-        this.periodicityPaymentInterest = periodicityPaymentInterest;
+    public void setPeriodicidadPagoInteres(String periodicityPaymentInterest) {
+        this.periodicidadPagoInteres = periodicityPaymentInterest;
     }
 
     /**
@@ -82,17 +82,17 @@ public class InversionVirtual {
      *
      * @return the term and conditions
      */
-    public String getTermAndConditions() {
-        return termAndConditions;
+    public String getTerminosYCondiciones() {
+        return terminosYCondiciones;
     }
 
     /**
      * Sets term and conditions.
      *
-     * @param termAndConditions the term and conditions
+     * @param terminosYCondiciones the term and conditions
      */
-    public void setTermAndConditions(String termAndConditions) {
-        this.termAndConditions = termAndConditions;
+    public void setTerminosYCondiciones(String terminosYCondiciones) {
+        this.terminosYCondiciones = terminosYCondiciones;
     }
 
     /**
@@ -100,8 +100,8 @@ public class InversionVirtual {
      *
      * @return the periodicity payment interest number
      */
-    public int getPeriodicityPaymentInterestNumber() {
-        return periodicityPaymentInterestNumber;
+    public int getPeriodicidadPagoInteresNumero() {
+        return periodicidadPagoInteresNumero;
     }
 
     /**
@@ -109,8 +109,8 @@ public class InversionVirtual {
      *
      * @param periodicityPaymentInterestNumber the periodicity payment interest number
      */
-    public void setPeriodicityPaymentInterestNumber(int periodicityPaymentInterestNumber) {
-        this.periodicityPaymentInterestNumber = periodicityPaymentInterestNumber;
+    public void setPeriodicidadPagoInteresNumero(int periodicityPaymentInterestNumber) {
+        this.periodicidadPagoInteresNumero = periodicityPaymentInterestNumber;
     }
 
     /**
@@ -118,8 +118,8 @@ public class InversionVirtual {
      *
      * @return the deposit account
      */
-    public CuentaDeposito getDepositAccount() {
-        return depositAccount;
+    public CuentaDeposito getCuentaDeposito() {
+        return cuentaDeposito;
     }
 
     /**
@@ -127,8 +127,8 @@ public class InversionVirtual {
      *
      * @param depositAccount the deposit account
      */
-    public void setDepositAccount(CuentaDeposito depositAccount) {
-        this.depositAccount = depositAccount;
+    public void setCuentaDeposito(CuentaDeposito depositAccount) {
+        this.cuentaDeposito = depositAccount;
     }
 
     /**
@@ -136,17 +136,17 @@ public class InversionVirtual {
      *
      * @return the investment number
      */
-    public String getInvestmentNumber() {
-        return investmentNumber;
+    public String getNumeroInversion() {
+        return numeroInversion;
     }
 
     /**
      * Sets investment number.
      *
-     * @param investmentNumber the investment number
+     * @param numeroInversion the investment number
      */
-    public void setInvestmentNumber(String investmentNumber) {
-        this.investmentNumber = investmentNumber;
+    public void setNumeroInversion(String numeroInversion) {
+        this.numeroInversion = numeroInversion;
     }
 
     /**
@@ -172,17 +172,17 @@ public class InversionVirtual {
      *
      * @return the opening date
      */
-    public String getOpeningDate() {
-        return openingDate;
+    public String getFechaApertura() {
+        return fechaApertura;
     }
 
     /**
      * Sets opening date.
      *
-     * @param openingDate the opening date
+     * @param fechaApertura the opening date
      */
-    public void setOpeningDate(String openingDate) {
-        this.openingDate = openingDate;
+    public void setFechaApertura(String fechaApertura) {
+        this.fechaApertura = fechaApertura;
     }
 
     /**
@@ -190,17 +190,17 @@ public class InversionVirtual {
      *
      * @return the expiration date
      */
-    public String getExpirationDate() {
-        return expirationDate;
+    public String getFechaExpiracion() {
+        return fechaExpiracion;
     }
 
     /**
      * Sets expiration date.
      *
-     * @param expirationDate the expiration date
+     * @param fechaExpiracion the expiration date
      */
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setFechaExpiracion(String fechaExpiracion) {
+        this.fechaExpiracion = fechaExpiracion;
     }
 
     /**
@@ -208,17 +208,17 @@ public class InversionVirtual {
      *
      * @return the annual effective rate
      */
-    public String getAnnualEffectiveRate() {
-        return annualEffectiveRate;
+    public String getTasaEfectivaAnual() {
+        return tasaEfectivaAnual;
     }
 
     /**
      * Sets annual effective rate.
      *
-     * @param annualEffectiveRate the annual effective rate
+     * @param tasaEfectivaAnual the annual effective rate
      */
-    public void setAnnualEffectiveRate(String annualEffectiveRate) {
-        this.annualEffectiveRate = annualEffectiveRate;
+    public void setTasaEfectivaAnual(String tasaEfectivaAnual) {
+        this.tasaEfectivaAnual = tasaEfectivaAnual;
     }
 
     /**
@@ -226,17 +226,17 @@ public class InversionVirtual {
      *
      * @return the nominal rate
      */
-    public String getNominalRate() {
-        return nominalRate;
+    public String getTasaNomina() {
+        return tasaNomina;
     }
 
     /**
      * Sets nominal rate.
      *
-     * @param nominalRate the nominal rate
+     * @param tasaNomina the nominal rate
      */
-    public void setNominalRate(String nominalRate) {
-        this.nominalRate = nominalRate;
+    public void setTasaNomina(String tasaNomina) {
+        this.tasaNomina = tasaNomina;
     }
 
     /**
@@ -244,17 +244,17 @@ public class InversionVirtual {
      *
      * @return the interest paid
      */
-    public String getInterestPaid() {
-        return interestPaid;
+    public String getPagoInteres() {
+        return pagoInteres;
     }
 
     /**
      * Sets interest paid.
      *
-     * @param interestPaid the interest paid
+     * @param pagoInteres the interest paid
      */
-    public void setInterestPaid(String interestPaid) {
-        this.interestPaid = interestPaid;
+    public void setPagoInteres(String pagoInteres) {
+        this.pagoInteres = pagoInteres;
     }
 
     /**
@@ -262,17 +262,17 @@ public class InversionVirtual {
      *
      * @return the interest period
      */
-    public String getInterestPeriod() {
-        return interestPeriod;
+    public String getPeriodoInteres() {
+        return periodoInteres;
     }
 
     /**
      * Sets interest period.
      *
-     * @param interestPeriod the interest period
+     * @param periodoInteres the interest period
      */
-    public void setInterestPeriod(String interestPeriod) {
-        this.interestPeriod = interestPeriod;
+    public void setPeriodoInteres(String periodoInteres) {
+        this.periodoInteres = periodoInteres;
     }
 
     /**
@@ -280,17 +280,17 @@ public class InversionVirtual {
      *
      * @return the periodicity interests
      */
-    public String getPeriodicityInterests() {
-        return periodicityInterests;
+    public String getPeriodicidadInteres() {
+        return periodicidadInteres;
     }
 
     /**
      * Sets periodicity interests.
      *
-     * @param periodicityInterests the periodicity interests
+     * @param periodicidadInteres the periodicity interests
      */
-    public void setPeriodicityInterests(String periodicityInterests) {
-        this.periodicityInterests = periodicityInterests;
+    public void setPeriodicidadInteres(String periodicidadInteres) {
+        this.periodicidadInteres = periodicidadInteres;
     }
 }
 

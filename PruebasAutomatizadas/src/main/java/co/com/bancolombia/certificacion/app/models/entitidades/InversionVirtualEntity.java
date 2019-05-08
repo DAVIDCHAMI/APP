@@ -6,8 +6,8 @@ import co.com.bancolombia.certificacion.app.models.producto.InversionVirtual;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.EXPIRATION;
-import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.MONTHLY;
+import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.EXPIRACION;
+import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.MENSUAL;
 import static co.com.bancolombia.certificacion.app.utilities.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
 /**
@@ -37,23 +37,23 @@ public class InversionVirtualEntity {
      */
     public static void setInversionVirtual(List<String> data) {
         CuentaDeposito cuentaDeposito = new CuentaDeposito();
-        inversionVirtual.setInvestmentValue(data.get(0));
-        inversionVirtual.setDaysTerm(data.get(1));
-        inversionVirtual.setPeriodicityPaymentInterest(data.get(2));
-        inversionVirtual.setPeriodicityPaymentInterestNumber(castPeriodicity(data.get(2)));
+        inversionVirtual.setValorInversion(data.get(0));
+        inversionVirtual.setTerminoDias(data.get(1));
+        inversionVirtual.setPeriodicidadPagoInteres(data.get(2));
+        inversionVirtual.setPeriodicidadPagoInteresNumero(castearPeriodicidad(data.get(2)));
 
         cuentaDeposito.setNumeroCuentaFormateado(data.get(3));
         cuentaDeposito.setTipoProducto(data.get(4));
 
-        inversionVirtual.setDepositAccount(cuentaDeposito);
+        inversionVirtual.setCuentaDeposito(cuentaDeposito);
 
     }
 
-    private static int castPeriodicity(String periodicity) {
+    private static int castearPeriodicidad(String periodicity) {
         int result = 0;
-        if (periodicity.equalsIgnoreCase(MONTHLY)) {
+        if (periodicity.equalsIgnoreCase(MENSUAL)) {
             result = 1;
-        } else if (periodicity.equalsIgnoreCase(EXPIRATION)) {
+        } else if (periodicity.equalsIgnoreCase(EXPIRACION)) {
             result = 2;
         }
         return result;

@@ -10,7 +10,7 @@ import static co.com.bancolombia.certificacion.app.utilities.constantes.FondoCon
  */
 public class FondoInversion extends Producto {
 
-    private String fundCode;
+    private String codigo;
 
     public FondoInversion(){
         super ();
@@ -31,8 +31,8 @@ public class FondoInversion extends Producto {
      *
      * @return the fund code
      */
-    public String getFundCode() {
-        return fundCode;
+    public String getCodigo() {
+        return codigo;
     }
 
     /**
@@ -41,7 +41,7 @@ public class FondoInversion extends Producto {
      * @param fundCode the fund code
      */
     public void setCodigoFondo(String fundCode) {
-        this.fundCode = castTypeFundCode(fundCode);
+        this.codigo = castTypeFundCode(fundCode);
     }
 
     private String castTypeFundCode(String typeFund) {

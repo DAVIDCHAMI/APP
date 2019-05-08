@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 
 import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.AUTENTICACION_CODIGO_TRANSACCION;
-import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.HOUR_FORMAT;
+import static co.com.bancolombia.certificacion.app.utilities.constantes.AdministradorConstante.FORMATO_HORA;
 import static co.com.bancolombia.certificacion.app.utilities.constantes.CanalesSistemas.SVP;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -50,12 +50,12 @@ public class PrepararYEnviar implements Interaction {
 			request = request.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
 			request = request.replace("_TRNUID", DateManager.obtenerFechaSistema("yyyyMMddhhmmss"));
 			request = request.replace("_SESSCOOKIE", "MHSB-7432-AJHF-9482");
-			request = request.replace("_CLIENTID", usuario.getDocumentNumber());
-			request = request.replace("_CLAVE", usuario.getPassword());
+			request = request.replace("_CLIENTID", usuario.getNumeroDocumento());
+			request = request.replace("_CLAVE", usuario.getClave());
 
 			Serenity.setSessionVariable("Request").to(request);
 
-			transaccion.setHoraTransaccion(DateManager.obtenerFechaSistema(HOUR_FORMAT));
+			transaccion.setHoraTransaccion(DateManager.obtenerFechaSistema(FORMATO_HORA));
 			String strResponse = UtilidadesXml.enviar(urlXml, request);
 
 			Serenity.setSessionVariable("Response").to(strResponse);

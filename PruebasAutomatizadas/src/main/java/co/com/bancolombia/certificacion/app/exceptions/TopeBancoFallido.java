@@ -1,14 +1,14 @@
 package co.com.bancolombia.certificacion.app.exceptions;
 
-public class TopeBancoFallidoAssert extends AssertionError {
+public class TopeBancoFallido extends AssertionError {
 
     public static final String TOPE_BANCO_FALLIDO = "Los topes banco no pueden ser verificados";
 
-    public TopeBancoFallidoAssert(String mensaje) {
+    public TopeBancoFallido(String mensaje) {
         super(mensaje);
     }
 
-    public TopeBancoFallidoAssert(String mensaje, Throwable causa) {
+    public TopeBancoFallido(String mensaje, Throwable causa) {
         super(mensaje, causa);
     }
 

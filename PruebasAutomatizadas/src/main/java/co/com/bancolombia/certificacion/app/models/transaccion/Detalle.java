@@ -6,7 +6,7 @@ public class Detalle {
 
     private Producto producto;
 
-    public Producto getProduct() {
+    public Producto getProducto() {
         return producto;
     }
 

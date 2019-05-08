@@ -33,6 +33,6 @@ public class DetalleInversionVirtualEntity {
      * @param data the transaccionCon
      */
     public static void setDetalleInversionVirtual(List<String> data) {
-        detalleInversionVirtual.setInvestmentNumber(data.get(0));
+        detalleInversionVirtual.setNumeroInversion(data.get(0));
     }
 }
