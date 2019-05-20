@@ -22,28 +22,28 @@ public class PaginaMenuInferior {
      */
     public static final Target MIS_PRODUCTOS = Target
             .the("Opcion 'Mis productos'")
-            .located(By.id("b7-Link_MyProducts_BottomBar"));
+            .located(By.id("b13-Link_MyProducts_BottomBar"));
 
     /**
      * Constante BILLETERA
      */
     public static final Target BILLETERA = Target
             .the("Opcion 'Billetera'")
-            .located(By.id("b10-Link_Wallet_BottomBar2"));
+            .located(By.id("b13-Link_Wallet_BottomBar"));
 
     /**
      * Constante SOLICITA_PRODUCTOS
      */
     public static final Target SOLICITA_PRODUCTOS = Target
             .the("Opcion 'Solicita productos'")
-            .located(By.id("b10-Link_Requests_BottomBar2"));
+            .located(By.id("b13-Link_Requests_BottomBar"));
 
     /**
      * Constante PERFIL
      */
     public static final Target PERFIL = Target
             .the("Opcion 'Perfil'")
-            .located(By.id("b10-Link_Requests_BottomBar2"));
+            .located(By.id("b13-Link_Profile_BottomBar"));
 
     private PaginaMenuInferior() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
