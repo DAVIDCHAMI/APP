@@ -41,6 +41,7 @@ captures/
 # IntelliJ
 *.iml
 .DS_Store
+.idea/*.name
 .idea/*.xml
 .idea/*.iml
 ../.idea/*.xml
@@ -280,6 +281,7 @@ hs_err_pid*
 ### macOS ###
 # General
 .DS_Store
+.DS_Store?
 .AppleDouble
 .LSOverride
 
