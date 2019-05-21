@@ -7,12 +7,13 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 public class PaginaPrincipal {
 
-    public static final Target ENCABEZADO_HOME = Target
-            .the("encabezado")
-            .located(By.id("b2-header"));
+    public static final Target RECARGAR = Target
+            .the("recargar")
+            .located(By.xpath("//android.widget.Button[@content-desc=\"RELOAD\"]"));
 
-       public static final Target LOADING = Target
-            .the("carga")
+
+    public static final Target CARGA = Target
+            .the("Carga")
             .located(By.xpath("//android.view.View[@content-desc=\"LOADING\"]"));
 
 

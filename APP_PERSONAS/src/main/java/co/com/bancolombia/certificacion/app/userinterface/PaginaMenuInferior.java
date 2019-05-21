@@ -22,7 +22,8 @@ public class PaginaMenuInferior {
      */
     public static final Target MIS_PRODUCTOS = Target
             .the("Opcion 'Mis productos'")
-            .located(By.id("b13-Link_MyProducts_BottomBar"));
+            .located(By.xpath("//android.view.View[@content-desc=\"Mis productos\"]"));
+
 
     /**
      * Constante BILLETERA
