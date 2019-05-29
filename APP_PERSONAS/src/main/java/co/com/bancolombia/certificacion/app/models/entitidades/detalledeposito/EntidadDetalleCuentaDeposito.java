@@ -33,6 +33,7 @@ public class EntidadDetalleCuentaDeposito {
      * @param data the transaccionCon
      */
     public static void setCuentaDeposito(List<String> data) {
+
         cuentaDeposito.setNumeroCuentaFormateado(data.get(0));
         cuentaDeposito.setTipoProducto(data.get(1));
 

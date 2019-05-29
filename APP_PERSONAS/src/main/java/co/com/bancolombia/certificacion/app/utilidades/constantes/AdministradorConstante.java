@@ -11,6 +11,11 @@ public class AdministradorConstante {
     public static final String AUTENTICACION_TIPO_TRANSACCION = "autenticacion";
 
     public static final String AUTENTICACION_CODIGO_TRANSACCION = "0369";
+
+    public static final String APERTURA_INVERSION_VIRTUAL_CODIGO_TRANSACCION = "0326";
+
+    public static final String SIMULACION_INVERSION_VIRTUAL_CODIGO_TRANSACCION = "0325";
+
     /**
      * The constant FORMATO_HORA.
      */

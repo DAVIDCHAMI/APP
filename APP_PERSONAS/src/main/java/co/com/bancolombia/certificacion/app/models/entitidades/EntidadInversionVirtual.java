@@ -3,11 +3,11 @@ package co.com.bancolombia.certificacion.app.models.entitidades;
 
 import co.com.bancolombia.certificacion.app.models.producto.CuentaDeposito;
 import co.com.bancolombia.certificacion.app.models.producto.InversionVirtual;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.EXPIRACION;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.MENSUAL;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
 /**
@@ -36,14 +36,26 @@ public class EntidadInversionVirtual {
      * @param data the transaccionCon
      */
     public static void setInversionVirtual(List<String> data) {
-        CuentaDeposito cuentaDeposito = new CuentaDeposito();
-        inversionVirtual.setValorInversion(data.get(0));
-        inversionVirtual.setTerminoDias(data.get(1));
-        inversionVirtual.setPeriodicidadPagoInteres(data.get(2));
-        inversionVirtual.setPeriodicidadPagoInteresNumero(castearPeriodicidad(data.get(2)));
 
-        cuentaDeposito.setNumeroCuentaFormateado(data.get(3));
-        cuentaDeposito.setTipoProducto(data.get(4));
+        CuentaDeposito cuentaDeposito = new CuentaDeposito();
+        ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion();
+        inversionVirtual.setValorInversion(data.get(0));
+
+        if(APERTURA_INVERSION_VIRTUAL_CODIGO_TRANSACCION.equals(configuracionTransaccion.getCodigoTransaccion()) ||
+                        SIMULACION_INVERSION_VIRTUAL_CODIGO_TRANSACCION.equals(configuracionTransaccion.getCodigoTransaccion())){
+            inversionVirtual.setPeriodicidadPagoInteres(data.get(1));
+            inversionVirtual.setTerminoDias(data.get(2));
+            inversionVirtual.setTasaEfectivaAnual(data.get(3));
+
+        }else{
+            inversionVirtual.setTerminoDias(data.get(1));
+            inversionVirtual.setPeriodicidadPagoInteres(data.get(2));
+            inversionVirtual.setPeriodicidadPagoInteresNumero(castearPeriodicidad(data.get(2)));
+
+            cuentaDeposito.setNumeroCuentaFormateado(data.get(3));
+            cuentaDeposito.setTipoProducto(data.get(4));
+
+        }
 
         inversionVirtual.setCuentaDeposito(cuentaDeposito);
 

@@ -4,6 +4,7 @@ package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
 import co.com.bancolombia.certificacion.app.exceptions.BusquedaFallida;
 import co.com.bancolombia.certificacion.app.userinterface.PaginaMenuMisProductos;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.Arrays;
@@ -14,17 +15,17 @@ import static co.com.bancolombia.certificacion.app.userinterface.PaginaMenuMisPr
 public enum TipoTransaccion {
 
     CONSULTAR_PRODUCTO(MIS_PRODUCTOS, CONSULTAR_MIS_PRODUCTOS),
-    TRANSFERIR(MIS_PRODUCTOS, ENVIAR_DINERO),
+    TRANSFERIR_DINERO(MIS_PRODUCTOS, ENVIAR_DINERO),
     RECIBIR_DINERO(MIS_PRODUCTOS, PaginaMenuMisProductos.RECIBIR_DINERO),
     PAGAR_TARJETAS_DE_CREDITO_Y_CREDITOS(MIS_PRODUCTOS, PAGAR_TARJETAS_Y_CREDITOS),
     REALIZAR_AVANCES_Y_DESEMBOLSOS(MIS_PRODUCTOS, REALIZAR_AVANCES),
     INSCRIBIR_PRODUCTO(MIS_PRODUCTOS, INSCRIBIR_PRODUCTOS),
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, PaginaMenuMisProductos.CONSULTAR_PUNTOS_COLOMBIA);
 
-    private Target menu;
+    private WebElementFacade menu;
     private Target submenu;
 
-    TipoTransaccion(Target menu, Target submenu) {
+    TipoTransaccion(WebElementFacade menu, Target submenu) {
         this.menu = menu;
         this.submenu = submenu;
     }
@@ -38,7 +39,7 @@ public enum TipoTransaccion {
         return TipoTransaccion.valueOf(tipoTransaccion);
     }
 
-    public Target getMenu() {
+    public WebElementFacade getMenu() {
         return menu;
     }
 

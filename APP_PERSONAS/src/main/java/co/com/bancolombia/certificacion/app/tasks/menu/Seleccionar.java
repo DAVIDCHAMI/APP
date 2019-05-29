@@ -36,7 +36,7 @@ public class Seleccionar implements Task {
 
             TimeUnit.SECONDS.sleep(10);
             // RECARGAR.resolveFor(actor).click();
-            transaccion.getMenu().resolveFor(actor).click();
+            transaccion.getMenu().click();
             transaccion.getSubmenu().resolveFor(actor).click();
 
         } catch (InterruptedException e) {

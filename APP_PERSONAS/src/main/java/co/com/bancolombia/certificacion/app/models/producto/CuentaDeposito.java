@@ -14,6 +14,7 @@ public class CuentaDeposito extends Producto {
     private String tipoCuentaEnLetra;
     private String tipoCuentaEnNumero;
     private String numeroCuentaFormateado;
+    private String cuentaDepositoFormateado;
 
 
     public CuentaDeposito() {
@@ -22,11 +23,11 @@ public class CuentaDeposito extends Producto {
     /**
      * Instantiates a new Deposit account.
      *
-     * @param number      the number
-     * @param productType the producto type
+     * @param numero      the number
+     * @param tipoProducto the producto type
      */
-    public CuentaDeposito(String number, String productType) {
-        super(number, productType);
+    public CuentaDeposito(String numero, String tipoProducto) {
+        super(numero, tipoProducto);
     }
 
     /**
@@ -94,4 +95,22 @@ public class CuentaDeposito extends Producto {
     }
 
 
+    /**
+     * Gets cuenta deposito con formato
+     *
+     * @return la cuenta deposito con formato
+     */
+    public String getCuentaDepositoFormateado() {
+        return cuentaDepositoFormateado;
+    }
+
+
+    /**
+     * Sets account number format.
+     *
+     * @param cuentaDepositoFormateado the account number format
+     */
+    public void setCuentaDepositoFormateado(String cuentaDepositoFormateado) {
+        this.cuentaDepositoFormateado = cuentaDepositoFormateado;
+    }
 }

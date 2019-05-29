@@ -11,6 +11,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
 public class EntidadDetalleActual {
+
     private static Detalle detalle;
 
     private EntidadDetalleActual() {
@@ -26,6 +27,7 @@ public class EntidadDetalleActual {
 
         Producto producto = productoFactory.crarProducto(data.get(0), data.get(1));
         detalle.setProducto(producto);
+
 
         EntidadDetalleActual.detalle = detalle;
     }
