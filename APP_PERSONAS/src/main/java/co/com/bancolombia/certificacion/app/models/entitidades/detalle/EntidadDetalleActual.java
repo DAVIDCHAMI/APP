@@ -1,9 +1,9 @@
-package co.com.bancolombia.certificacion.app.models.entitidades.consulta.detalle;
+package co.com.bancolombia.certificacion.app.models.entitidades.detalle;
 
 
 import co.com.bancolombia.certificacion.app.models.factoria.producto.FactoriaProducto;
 import co.com.bancolombia.certificacion.app.models.factoria.producto.InterfazProducto;
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.Detalle;
 
 import java.util.List;

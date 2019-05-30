@@ -2,14 +2,16 @@ package co.com.bancolombia.certificacion.app.models.factoria.producto;
 
 
 import co.com.bancolombia.certificacion.app.exceptions.ProductoFallido;
-import co.com.bancolombia.certificacion.app.models.producto.CuentaDeposito;
-import co.com.bancolombia.certificacion.app.models.producto.FondoInversion;
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
-import co.com.bancolombia.certificacion.app.models.producto.TarjetaCredito;
+import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
+import co.com.bancolombia.certificacion.app.models.productos.FondoInversion;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante.BIBLIOTECA_POR_CODIGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.AHORRO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.CORRIENTE;
 
 /**
  * The type Producto factoria.
@@ -19,7 +21,7 @@ public class FactoriaProducto implements InterfazProducto {
     private static CuentaDeposito crearCuentaDeposito(String numero, String tipoCuenta) {
         CuentaDeposito cuentaActual = new CuentaDeposito();
         cuentaActual.setNumero(numero);
-        cuentaActual.setTipoProducto(tipoCuenta);
+        cuentaActual.setTipo(tipoCuenta);
         cuentaActual.setTipoCuentaEnLetras(tipoCuenta);
         cuentaActual.setTipoCuentaEnNumeros(tipoCuenta);
         cuentaActual.setNumeroCuentaFormateado(numero);
@@ -29,7 +31,7 @@ public class FactoriaProducto implements InterfazProducto {
     private static FondoInversion crearFondoInversion(String numero, String tipoCuenta) {
         FondoInversion fondoInversionActual = new FondoInversion();
         fondoInversionActual.setNumero(numero);
-        fondoInversionActual.setTipoProducto(tipoCuenta);
+        fondoInversionActual.setTipo(tipoCuenta);
         fondoInversionActual.setCodigoFondo(tipoCuenta);
         return fondoInversionActual;
     }
@@ -37,7 +39,7 @@ public class FactoriaProducto implements InterfazProducto {
     private static TarjetaCredito crearTarjetaCredito(String numero, String tipoCuenta) {
         TarjetaCredito tarjetaCreditoActual = new TarjetaCredito(numero, tipoCuenta);
         tarjetaCreditoActual.setNumero(numero);
-        tarjetaCreditoActual.setTipoProducto(tipoCuenta);
+        tarjetaCreditoActual.setTipo(tipoCuenta);
         tarjetaCreditoActual.setFormatoTarjetaCredito(numero, tipoCuenta);
         tarjetaCreditoActual.setTipoTarjetaCreditoEnNumero(tipoCuenta);
         return tarjetaCreditoActual;
@@ -47,7 +49,7 @@ public class FactoriaProducto implements InterfazProducto {
     public Producto crarProducto(String numero, String tipoProducto) {
         String tipo = tipoProducto.toUpperCase();
 
-        if (tipo.contains("AHORRO") || tipo.contains("CORRIENTE")) {
+        if (tipo.contains(AHORRO.toString()) || tipo.contains(CORRIENTE.toString())) {
 
             return crearCuentaDeposito(numero, tipoProducto);
 

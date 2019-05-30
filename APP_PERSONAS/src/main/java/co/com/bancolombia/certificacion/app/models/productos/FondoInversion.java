@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.models.producto;
+package co.com.bancolombia.certificacion.app.models.productos;
 
 
 import java.util.Map;
@@ -20,7 +20,7 @@ public class FondoInversion extends Producto {
      * Instantiates a new Producto.
      *
      * @param numero       the numero
-     * @param tipoProducto the producto type
+     * @param tipoProducto the productos type
      */
     public FondoInversion(String numero, String tipoProducto) {
         super(numero, tipoProducto);

@@ -1,7 +1,7 @@
-package co.com.bancolombia.certificacion.app.models.entitidades;
+package co.com.bancolombia.certificacion.app.models.entitidades.detalle;
 
 
-import co.com.bancolombia.certificacion.app.models.producto.InversionVirtual;
+import co.com.bancolombia.certificacion.app.models.productos.InversionVirtual;
 
 import java.util.List;
 

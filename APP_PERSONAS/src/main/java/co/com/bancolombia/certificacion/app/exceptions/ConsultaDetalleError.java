@@ -8,7 +8,7 @@ public class ConsultaDetalleError extends AssertionError {
     /**
      * The constant MENSAJE_CONSULTA_DETALLE_CUENTA_DEPOSITO_FALLIDO.
      */
-    public static final String MENSAJE_CONSULTA_DETALLE_CUENTA_DEPOSITO_FALLIDO = "La consulta del detalle de la cuenta deposito ha sido fallida";
+    public static final String MENSAJE_CONSULTA_DETALLE_CUENTA_DEPOSITO_FALLIDO = "La detalle del detalle de la cuenta deposito ha sido fallida";
 
     /**
      * The constant MENSAJE_CONSULTA_DETALLE_INVERSION_VIRTUAL_FALLIDO.

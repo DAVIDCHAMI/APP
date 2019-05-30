@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.usuario;
 
 
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 import java.util.List;
 
@@ -128,18 +128,18 @@ public class Usuario {
     }
 
     /**
-     * Gets producto.
+     * Gets productos.
      *
-     * @return the producto
+     * @return the productos
      */
     public List<Producto> getProductos() {
         return productos;
     }
 
     /**
-     * Sets producto.
+     * Sets productos.
      *
-     * @param productos the producto
+     * @param productos the productos
      */
     public void setProductos(List<Producto> productos) {
         this.productos = productos;

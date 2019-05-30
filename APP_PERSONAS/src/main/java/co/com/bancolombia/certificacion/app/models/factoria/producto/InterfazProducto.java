@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.factoria.producto;
 
 
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 /**
  * The interface Producto factoria method.
@@ -10,11 +10,11 @@ import co.com.bancolombia.certificacion.app.models.producto.Producto;
 public interface InterfazProducto {
 
     /**
-     * Create producto producto.
+     * Create productos productos.
      *
-     * @param  numeroProducto the number producto
-     * @param tipoProducto   the type producto
-     * @return the producto
+     * @param  numeroProducto the number productos
+     * @param tipoProducto   the type productos
+     * @return the productos
      */
      Producto crarProducto(String numeroProducto, String tipoProducto);
 }

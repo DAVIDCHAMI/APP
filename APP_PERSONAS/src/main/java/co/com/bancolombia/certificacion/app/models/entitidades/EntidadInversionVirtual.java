@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.models.entitidades;
 
 
-import co.com.bancolombia.certificacion.app.models.producto.CuentaDeposito;
-import co.com.bancolombia.certificacion.app.models.producto.InversionVirtual;
+import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
+import co.com.bancolombia.certificacion.app.models.productos.InversionVirtual;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 
 import java.util.List;
@@ -53,7 +53,7 @@ public class EntidadInversionVirtual {
             inversionVirtual.setPeriodicidadPagoInteresNumero(castearPeriodicidad(data.get(2)));
 
             cuentaDeposito.setNumeroCuentaFormateado(data.get(3));
-            cuentaDeposito.setTipoProducto(data.get(4));
+            cuentaDeposito.setTipo(data.get(4));
 
         }
 

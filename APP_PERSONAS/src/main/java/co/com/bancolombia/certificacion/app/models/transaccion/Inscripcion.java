@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.transaccion;
 
 
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 
 public class Inscripcion {

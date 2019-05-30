@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.models.producto;
+package co.com.bancolombia.certificacion.app.models.productos;
 
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
@@ -11,7 +11,7 @@ import java.util.List;
 public class Producto {
 
     private String numero;
-    private String tipoProducto;
+    private String tipo;
     private String codigoBanco;
     private String nombreBanco;
     private String nombreProducto;
@@ -23,11 +23,11 @@ public class Producto {
      * Instantiates a new Producto.
      *
      * @param numero      the numero
-     * @param tipoProducto the producto type
+     * @param tipoProducto the productos type
      */
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
-        this.tipoProducto = tipoProducto;
+        this.tipo = tipoProducto;
     }
 
     /**
@@ -67,21 +67,21 @@ public class Producto {
     }
 
     /**
-     * Gets producto type.
+     * Gets productos type.
      *
-     * @return the producto type
+     * @return the productos type
      */
-    public String getTipoProducto() {
-        return tipoProducto;
+    public String getTipo() {
+        return tipo;
     }
 
     /**
-     * Sets producto type.
+     * Sets productos type.
      *
-     * @param tipoProducto the tipo producto
+     * @param tipo the tipo productos
      */
-    public void setTipoProducto(String tipoProducto) {
-        this.tipoProducto = tipoProducto;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     /**
@@ -121,18 +121,18 @@ public class Producto {
     }
 
     /**
-     * Gets producto name.
+     * Gets productos name.
      *
-     * @return the producto name
+     * @return the productos name
      */
     public String getNombreProducto() {
         return nombreProducto;
     }
 
     /**
-     * Sets producto name.
+     * Sets productos name.
      *
-     * @param nombreProducto the producto name
+     * @param nombreProducto the productos name
      */
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;

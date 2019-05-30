@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.models.entitidades;
 
 import co.com.bancolombia.certificacion.app.models.factoria.producto.FactoriaProducto;
 import co.com.bancolombia.certificacion.app.models.factoria.producto.InterfazProducto;
-import co.com.bancolombia.certificacion.app.models.producto.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.Inscripcion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 

@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.models.producto;
+package co.com.bancolombia.certificacion.app.models.productos;
 
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaCreditoEnNumero;

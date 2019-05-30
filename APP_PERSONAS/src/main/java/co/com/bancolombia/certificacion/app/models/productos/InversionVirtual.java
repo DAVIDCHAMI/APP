@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.models.producto;
+package co.com.bancolombia.certificacion.app.models.productos;
 
 /**
  * The type Virtual investment.
