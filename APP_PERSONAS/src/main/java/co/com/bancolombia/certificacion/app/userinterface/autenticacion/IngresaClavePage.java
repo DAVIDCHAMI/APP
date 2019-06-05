@@ -7,25 +7,34 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 public class IngresaClavePage {
 
-    public static final Target DIGITO_UNO_CLAVE = Target.
-            the("primer digito clave").
-            located(By.xpath("(//android.view.View[@content-des=\"\"])[1]"));
+    public static final Target DIGITO_CLAVE = Target.
+            the("digito para clave").
+            locatedBy("#b12-Key{0}");
 
-    public static final Target DIGITO_DOS_CLAVE = Target.
-            the("segundo digito clave").
-            located(By.xpath("(//android.view.View[@content-des=\"\"])[2]"));
+    public static final Target DIGITO_CLAVE_UNO = Target.
+            the("digito para clave").
+            located(By.id("b12-KEY1"));
 
-    public static final Target DIGITO_TRES_CLAVE = Target.
-            the("tercero digito clave").
-            located(By.xpath("(//android.view.View[@content-des=\"\"])[3]"));
+    public static final Target CLAVE_DIGITO_UNO = Target.
+            the("digito para clave 1").
+            located(By.id("Input_TextVar"));
 
-    public static final Target DIGITO_CUATRO_CLAVE = Target.
-            the("cuarto digito clave").
-            located(By.xpath("(//android.view.View[@content-des=\"\"])[4]"));
+    public static final Target CLAVE_DIGITO_DOS = Target.
+            the("digito para clave 2").
+            located(By.id("Input_TextVar2"));
 
-    public static final Target BOTON_CONTINUAR = Target.
+    public static final Target CLAVE_DIGITO_TRES = Target.
+            the("digito para clave 3").
+            located(By.id("Input_TextVar3"));
+
+    public static final Target CLAVE_DIGITO_CUATRO = Target.
+            the("digito para clave 4").
+            located(By.id("Input_TextVar4"));
+
+
+    public static final Target BOTON_CONTINUAR_AUTENTICACION = Target.
             the("boton continuar").
-            located(By.xpath("Button_Continue_ATMImage"));
+            located(By.id("Button_Continue_ATMImage"));
 
 
 

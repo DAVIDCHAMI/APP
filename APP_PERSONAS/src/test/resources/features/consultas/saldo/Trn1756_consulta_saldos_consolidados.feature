@@ -11,13 +11,13 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> |
       | <tipoDocumento> |<numeroDocumento> | <segundaClave> |  <primeraPregunta> | <validarClave> |
     Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
-#    Cuando consulto el saldo de mis cuentas deposito
+    Cuando consulto el saldo de mis cuentas deposito
 #    Entonces Verifico el resultado de la consulta del saldo
 #    Y Verifico el resultado de los siguientes archivos de iSeries
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos
-   |1   |1037655531   |1   |jacinto25   |1223   |3221   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
+      |1   |1037655531   |1   |seguridad01   |1234   |4321   |bolp   |ACTIVO    |Acierto   |000   |0369   |NO ERROR|
 
 

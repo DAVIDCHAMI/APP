@@ -14,12 +14,14 @@ public class CargarDatos implements Task {
 
     private  List<String> datosTransaccion;
     private  List<String> datosUsuario;
+    private List<String> datoPago;
 
 
     public CargarDatos(CargarDatosBuilder datosTransaccionBuilder) {
 
         this.datosTransaccion= datosTransaccionBuilder.getDatosTransaccion();
         this.datosUsuario = datosTransaccionBuilder.getDatosUsuario();
+        this.datoPago = datosTransaccionBuilder.getDatoPago();
 
     }
 

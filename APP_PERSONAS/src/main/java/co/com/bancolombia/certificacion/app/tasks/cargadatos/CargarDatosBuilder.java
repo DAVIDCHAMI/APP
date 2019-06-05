@@ -8,6 +8,8 @@ public class CargarDatosBuilder {
 
     private List<String> datosTransaccion;
     private List<String> datosUsuario;
+    private List<String> datoPago;
+
 
 
     CargarDatosBuilder(List<String> datosTransaccion) {
@@ -15,8 +17,18 @@ public class CargarDatosBuilder {
     }
 
 
-    public CargarDatos datosDelUsuarioCon(List<String> datosUsuario) {
+    public  CargarDatosBuilder datosDelUsuarioCon(List<String> datosUsuario) {
         this.datosUsuario = datosUsuario;
+        return this;
+    }
+
+    public CargarDatosBuilder datosDelPago(List<String> strings) {
+        this.datoPago = strings;
+        return this;
+    }
+
+    public CargarDatos construir (){
+
         return instrumented(CargarDatos.class, this);
     }
 
@@ -34,5 +46,13 @@ public class CargarDatosBuilder {
 
     public void setDatosUsuario(List<String> datosUsuario) {
         this.datosUsuario = datosUsuario;
+    }
+
+    public List<String> getDatoPago() {
+        return datoPago;
+    }
+
+    public void setDatoPago(List<String> datoPago) {
+        this.datoPago = datoPago;
     }
 }

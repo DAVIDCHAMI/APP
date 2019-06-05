@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
 
-import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.AHORRO;
@@ -16,7 +15,6 @@ public class CuentaDeposito extends Producto {
     private String tipoCuentaEnNumero;
     private String numeroCuentaFormateado;
     private String cuentaDepositoFormateado;
-    private Saldo saldo;
 
 
     public CuentaDeposito() {
@@ -116,19 +114,4 @@ public class CuentaDeposito extends Producto {
         this.cuentaDepositoFormateado = cuentaDepositoFormateado;
     }
 
-    /**
-     * Gets saldo cuenta deposito
-     * @return saldo
-     */
-    public Saldo getSaldo() {
-        return saldo;
-    }
-
-    /**
-     * Sets saldo cuenta deposito
-     * @param saldo
-     */
-    public void setSaldo(Saldo saldo) {
-        this.saldo = saldo;
-    }
 }

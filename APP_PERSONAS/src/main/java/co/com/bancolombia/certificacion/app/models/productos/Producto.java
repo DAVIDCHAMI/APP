@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.models.productos;
 
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
+import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Producto {
     private String codigoBanco;
     private String nombreBanco;
     private String nombreProducto;
+    private Saldo saldo;
     private List<Movimiento> movimientos;
 
 
@@ -136,6 +138,22 @@ public class Producto {
      */
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
+    }
+
+    /**
+     * Gets saldo cuenta deposito
+     * @return saldo
+     */
+    public Saldo getSaldo() {
+        return saldo;
+    }
+
+    /**
+     * Sets saldo cuenta deposito
+     * @param saldo
+     */
+    public void setSaldo(Saldo saldo) {
+        this.saldo = saldo;
     }
 
 }

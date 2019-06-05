@@ -1,10 +1,8 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
 
-
 import co.com.bancolombia.certificacion.app.exceptions.BusquedaFallida;
 import co.com.bancolombia.certificacion.app.userinterface.PaginaMenuMisProductos;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.Arrays;
@@ -22,10 +20,10 @@ public enum TipoTransaccion {
     INSCRIBIR_PRODUCTO(MIS_PRODUCTOS, INSCRIBIR_PRODUCTOS),
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, PaginaMenuMisProductos.CONSULTAR_PUNTOS_COLOMBIA);
 
-    private WebElementFacade menu;
+    private Target menu;
     private Target submenu;
 
-    TipoTransaccion(WebElementFacade menu, Target submenu) {
+    TipoTransaccion(Target menu, Target submenu) {
         this.menu = menu;
         this.submenu = submenu;
     }
@@ -39,7 +37,7 @@ public enum TipoTransaccion {
         return TipoTransaccion.valueOf(tipoTransaccion);
     }
 
-    public WebElementFacade getMenu() {
+    public Target getMenu() {
         return menu;
     }
 

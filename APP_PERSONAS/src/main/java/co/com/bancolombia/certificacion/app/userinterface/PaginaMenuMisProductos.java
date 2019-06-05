@@ -10,8 +10,7 @@ public class PaginaMenuMisProductos {
 
     public static final Target CONSULTAR_MIS_PRODUCTOS = Target.
             the("Opcion 'Consultar mis productos'").
-            //located(By.id("ListItem1"));
-            located(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View/android.view.View[1]"));
+            located(By.id("ListItem1"));
 
     public static final Target ENVIAR_DINERO = Target.
             the("Opcion ' Enviar dinero'").

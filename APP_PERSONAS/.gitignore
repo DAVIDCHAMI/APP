@@ -371,3 +371,6 @@ $RECYCLE.BIN/
 **/build/
 
 # End of https://www.gitignore.io/api/java,sonar,linux,macos,maven,gradle,android,windows,eclipse,intellij,sonarqube
+build/
+out/
+.idea/

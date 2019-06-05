@@ -5,8 +5,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import java.util.concurrent.TimeUnit;
-
 import static co.com.bancolombia.certificacion.app.userinterface.PaginaPrincipal.CARGA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
@@ -25,26 +23,17 @@ public class Seleccionar implements Task {
         return instrumented(Seleccionar.class,tipoTransaccion);
     }
 
+
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        try {
-
             TipoTransaccion transaccion = TipoTransaccion.getTransaccion(this.tipoTransaccion);
 
-            actor.attemptsTo(WaitUntil.the(CARGA, isNotVisible()));
+            actor.attemptsTo(
+                    WaitUntil.the(CARGA, isNotVisible())
+            );
+         transaccion.getMenu().resolveFor(actor).click();
+         transaccion.getSubmenu().resolveFor(actor).click();
 
-            TimeUnit.SECONDS.sleep(10);
-            // RECARGAR.resolveFor(actor).click();
-            transaccion.getMenu().click();
-            transaccion.getSubmenu().resolveFor(actor).click();
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-    }
+       }
 }
