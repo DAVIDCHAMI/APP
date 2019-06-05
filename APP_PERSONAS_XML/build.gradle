@@ -24,6 +24,8 @@ group 'co.com.bancolombia'
 version '1.0'
 
 sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = "UTF-8"
 
 dependencies {
 	compile(group: 'co.com.bancolombia.certificacion', name: 'backend-iseries', version: '2.5.3')
