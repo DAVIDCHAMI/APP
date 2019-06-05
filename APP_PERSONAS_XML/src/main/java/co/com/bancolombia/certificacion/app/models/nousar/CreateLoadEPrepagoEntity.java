@@ -4,7 +4,7 @@ import co.com.bancolombia.certificacion.app.models.EPrepago;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilities.UtilityManager.depositAccountFormat;
+import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.depositAccountFormat;
 
 /**
  * The type Create load e prepago entity.

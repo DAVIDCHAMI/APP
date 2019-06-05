@@ -2,15 +2,15 @@ package co.com.bancolombia.certificacion.app.interactions.transfers;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTransferEntity;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentUserEntity;
-import co.com.bancolombia.certificacion.app.models.transaction.TransactionConfig;
-import co.com.bancolombia.certificacion.app.models.transaction.Transfer;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransferencias;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.transaction.Transferencias;
 import co.com.bancolombia.certificacion.app.models.user.User;
-import co.com.bancolombia.certificacion.app.utilities.UtilityManager;
-import co.com.bancolombia.certificacion.app.utilities.UtilityXml;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantsManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +26,7 @@ public class PrepareAndSubmitTransferBancolombiaXml implements Interaction{
 	private static final UtilityXml utilityXml = new UtilityXml();
 	
 	/**
-	 * Prepare Transfer Bancolombia Xml interaction.
+	 * Prepare Transferencias Bancolombia Xml interaction.
 	 *
 	 * @return the interaction
 	 */
@@ -36,18 +36,18 @@ public class PrepareAndSubmitTransferBancolombiaXml implements Interaction{
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		User user = CurrentUserEntity.getUser();
-		TransactionConfig transaction = CurrentTrasactionConfigEntity.getTransactionConfig();
-		Transfer transferencia = CurrentTransferEntity.getTransfer();
+		User user = CargarEntidadUsuario.getUser();
+		ConfiguracionTransaccion transaction = CargarEntidadTransaccion.getConfiguracionTransaccion();
+		Transferencias transferencia = CargarEntidadTransferencias.getTransferencias();
 
 		String strUrlXml = Serenity.sessionVariableCalled("UrlXml");
-		String strRequest = utilityXml.buscarXml(ConstantsManager.CHANNEL_SVP,
+		String strRequest = utilityXml.buscarXml(AdministradorConstante.CHANNEL_SVP,
 				transaction.getTransactionCode());
 		
 		if (strRequest != null  ) {
 			strRequest = strRequest.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
 			strRequest = strRequest.replace("_TRNUID", DateManager.obtenerFechaSistema("yyyyMMddhhmmss"));
-			strRequest = strRequest.replace("_SESSCOOKIE", ConstantsManager.SESSCOOKIE);
+			strRequest = strRequest.replace("_SESSCOOKIE", AdministradorConstante.SESSCOOKIE);
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
 			strRequest = strRequest.replace("CtaOrigen", UtilityManager.depositAccountFormat(String.valueOf(transferencia.getOriginProduct().getNumber())));
 			strRequest = strRequest.replace("TipOrigen", UtilityManager.castTypeAccountNumber(transferencia.getOriginProduct().getProductType()));

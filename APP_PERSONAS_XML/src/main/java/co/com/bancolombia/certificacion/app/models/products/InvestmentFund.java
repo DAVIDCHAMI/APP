@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.products;
 
 
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantFound;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante;
 
 import java.util.Map;
 
@@ -33,7 +33,7 @@ public class InvestmentFund extends Product {
 
     private String castTypeFundCode(String typeFund) {
         typeFund = typeFund.toUpperCase();
-        Map<String, String> map = ConstantFound.LIBRARY_BY_CODE;
+        Map<String, String> map = FondoConstante.LIBRARY_BY_CODE;
         String type = map.get(typeFund);
         if (type == null) {
             throw new NullPointerException("NO EXISTE ESTE FONDO");

@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.models.entities.detaildeposit;
 
 
 import co.com.bancolombia.certificacion.app.models.products.DepositAccount;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantTypeClass;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class DepositAccountEntityQueryDetail {
     private static DepositAccount depositAccount = new DepositAccount();
 
     private DepositAccountEntityQueryDetail() {
-        throw new IllegalStateException(ConstantTypeClass.ENTITY_CLASS);
+        throw new IllegalStateException(TipoClaseConstante.ENTITY_CLASS);
     }
 
     /**

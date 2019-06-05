@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.integration;
 
 import co.com.bancolombia.certificacion.app.models.EPrepago;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateLoadEPrepagoEntity;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantsManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.productos.TarjetaEPrepago;
 import co.com.bancolombia.backend.modelo.transversal.Movimiento;
@@ -32,7 +32,7 @@ public class BackendFacadeMovements {
         List<Movimiento> movimientosConsolidado = null;
         try {
             movimientosConsolidado = ePrepago.consultarMovimientosConsolidado(
-                    ConstantsManager.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFecha);
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFecha);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
@@ -49,7 +49,7 @@ public class BackendFacadeMovements {
         List<Movimiento> movimientosDescripcion = null;
         try {
             movimientosDescripcion = ePrepago.consultarMovimientosPorDescripcion(
-                    ConstantsManager.NUMERO_BASE_EPREPAGO + strNumtarjeta, strDescripcion);
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strDescripcion);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
@@ -71,7 +71,7 @@ public class BackendFacadeMovements {
         List<Movimiento> movimientosFechas = null;
         try {
             movimientosFechas = ePrepago.movimientosPorFechas(
-                    ConstantsManager.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFechaDesdeBack, strFechaHastaBack);
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFechaDesdeBack, strFechaHastaBack);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
@@ -93,7 +93,7 @@ public class BackendFacadeMovements {
         List<Movimiento> movimientosFechasyDescripcion = null;
         try {
             movimientosFechasyDescripcion = ePrepago.movimientosPorFechasyDescripcion(
-                    ConstantsManager.NUMERO_BASE_EPREPAGO + strNumtarjeta,
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta,
                     strFechaDesdeBack, strFechaHastaBack, strDescripcion);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
@@ -121,10 +121,10 @@ public class BackendFacadeMovements {
         TarjetaEPrepago numeroTarjeta = BackendFacadeEprepago.verifyEprepagoRegistry();
         Transaccion transaccion = new Transaccion();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        transaccion.setHoraTransaccion(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
         transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
 
-        boolean verificarRegistroMovimiento = registroMovimiento.consultarMovimientosRegistro(ConstantsManager.NUMERO_BASE_EPREPAGO + numeroTarjeta.getNumero(),
+        boolean verificarRegistroMovimiento = registroMovimiento.consultarMovimientosRegistro(AdministradorConstante.NUMERO_BASE_EPREPAGO + numeroTarjeta.getNumero(),
                 DateManager.obtenerFechaSistema("yyyyMMdd"),transaccion.getHoraTransaccion(),transaccion.getValorTransaccion());
         if (verificarRegistroMovimiento) {
             result = true;

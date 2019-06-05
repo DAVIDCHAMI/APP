@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.errors.exceptions.FieldProductAssert
 import co.com.bancolombia.certificacion.app.models.products.InvestmentFund;
 import co.com.bancolombia.certificacion.app.models.products.DepositAccount;
 import co.com.bancolombia.certificacion.app.models.products.Product;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantFound;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante;
 
 import java.util.Map;
 
@@ -37,7 +37,7 @@ public class ProductFactory implements ProductFactoryMethod {
         productType = productType.toUpperCase();
         if (productType.contains("AHORROS") || productType.contains("CORRIENTE")) {
             return createDepositAcount(numberProduct, productType);
-        } else if (isExist(ConstantFound.LIBRARY_BY_CODE, productType)) {
+        } else if (isExist(FondoConstante.LIBRARY_BY_CODE, productType)) {
             return createInvestmentFund(numberProduct, productType);
         } else {
             throw new FieldProductAssertion(productType);

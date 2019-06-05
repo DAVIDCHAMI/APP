@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.virtualinvestment;
 
 import co.com.bancolombia.certificacion.app.interactions.virtualinvestment.PrepareAndSubmitSimulationVirtualInvestmentXml;
-import co.com.bancolombia.certificacion.app.models.entities.VirtualInvestmentEntity;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -38,7 +38,7 @@ public class SimulationVirtualXmlTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        VirtualInvestmentEntity.setVirtualInvestment(data);
+        CargarEntidadInversionVirtual.setVirtualInvestment(data);
         actor.attemptsTo(
                 PrepareAndSubmitSimulationVirtualInvestmentXml.prepareAndSubmitXml());
     }

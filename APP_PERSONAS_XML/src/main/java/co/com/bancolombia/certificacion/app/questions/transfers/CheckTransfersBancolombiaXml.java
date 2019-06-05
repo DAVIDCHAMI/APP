@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.questions.transfers;
 
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
-import co.com.bancolombia.certificacion.app.models.transaction.TransactionConfig;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import co.com.bancolombia.certificacion.app.utilities.UtilityXml;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -19,7 +19,7 @@ public class CheckTransfersBancolombiaXml implements Question<Boolean> {
     	
 		boolean result = false;		
 		UtilityXml utilityXml = new UtilityXml();
-		TransactionConfig transaction = CurrentTrasactionConfigEntity.getTransactionConfig();
+		ConfiguracionTransaccion transaction = CargarEntidadTransaccion.getConfiguracionTransaccion();
 		String strXMLCodObtenido = null;
 		String strXMLMsgObtenido = null;
 		

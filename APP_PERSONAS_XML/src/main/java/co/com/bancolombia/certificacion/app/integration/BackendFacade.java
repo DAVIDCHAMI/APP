@@ -2,18 +2,18 @@ package co.com.bancolombia.certificacion.app.integration;
 
 import co.com.bancolombia.certificacion.app.models.Deposit;
 import co.com.bancolombia.certificacion.app.models.EPrepago;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentUserEntity;
-import co.com.bancolombia.certificacion.app.models.entities.VirtualInvestmentEntity;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateLoadEPrepagoEntity;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateTermsAndConditionsEntity;
 import co.com.bancolombia.certificacion.app.models.products.VirtualInvestment;
-import co.com.bancolombia.certificacion.app.models.transaction.TransactionConfig;
+import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.user.User;
-import co.com.bancolombia.certificacion.app.utilities.UtilityManager;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantsManager;
-import co.com.bancolombia.certificacion.app.utilities.managers.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.backend.iseries.personas.clavedinamica.BackClaveDinamica;
 import co.com.bancolombia.backend.iseries.transversal.control.terminoscondiciones.BackTerminosCondiciones;
 import co.com.bancolombia.backend.iseries.transversal.crediagil.BackCrediAgil;
@@ -56,7 +56,7 @@ import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.*;
  */
 public class BackendFacade {
     /**
-     * The constant deposit.
+     * The constantes deposit.
      */
     public static final Deposit deposit = new Deposit();
     private static final Logger LOGGER = LogManager.getLogger(BackendFacade.class.getName());
@@ -68,7 +68,7 @@ public class BackendFacade {
      * @throws SQLException the sql exception
      */
     public static CrediAgil verifyCrediAgilDetail() throws SQLException {
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         BackCrediAgil crediAgil = new BackCrediAgil();
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
@@ -104,24 +104,24 @@ public class BackendFacade {
      * @return the boolean
      */
     public boolean verifyChannelLog() {
-        User user = CurrentUserEntity.getUser();
-        TransactionConfig transactionConfig = CurrentTrasactionConfigEntity.getTransactionConfig();
+        User user = CargarEntidadUsuario.getUser();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         BackTrace backTrace = new BackTrace();
         String trace = "";
         String numDocu = user.getDocumentNumber();
-        String codTrans = transactionConfig.getTransactionCode();
+        String codTrans = configuracionTransaccion.getTransactionCode();
         String horaConsulta = "";
         LogCanal logCanal = new LogCanal();
-        String ruta = transactionConfig.getLogCanalPath();
+        String ruta = configuracionTransaccion.getLogCanalPath();
 
-        logCanal.setRutaEvidencia(transactionConfig.getEvidencePath());
+        logCanal.setRutaEvidencia(configuracionTransaccion.getEvidencePath());
         logCanal.setCodigoTransaccion(codTrans);
         logCanal.setDocumento(numDocu);
         logCanal.setTipoDocumento(user.getDocumenType());
-        logCanal.setCodigoError(transactionConfig.getErrorCode());
-        logCanal.setCasoId(transactionConfig.getIdCase());
+        logCanal.setCodigoError(configuracionTransaccion.getErrorCode());
+        logCanal.setCasoId(configuracionTransaccion.getIdCase());
         logCanal.setFecha(DateManager.obtenerFechaSistema("yyyyMMdd"));
-        logCanal.setTipoCanal(transactionConfig.getTypeLogCanal());
+        logCanal.setTipoCanal(configuracionTransaccion.getTypeLogCanal());
         boolean resultInput = false;
         boolean resultOutput = false;
         try {
@@ -129,11 +129,11 @@ public class BackendFacade {
             Usuario usuario = new Usuario();
             usuario.setDocumento(user.getDocumentNumber());
             Transaccion transaccion = new Transaccion();
-            transaccion.setCodigoTransaccion(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionCode());
+            transaccion.setCodigoTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode());
             transaccion.setHoraTransaccion(horaConsulta);
             trace = backTrace.consultarTrace(usuario, transaccion, WWW);
             logCanal.setTrace(trace);
-            BackLogCanal backLogCanal = new BackLogCanal(logCanal, ruta, transactionConfig.getEvidenceName());
+            BackLogCanal backLogCanal = new BackLogCanal(logCanal, ruta, configuracionTransaccion.getEvidenceName());
             resultInput = backLogCanal.verificarLogCanal("TramaInput");
             resultOutput = backLogCanal.verificarLogCanal("TramaOutput");
         } catch (SQLException e) {
@@ -148,13 +148,13 @@ public class BackendFacade {
      * @return the string
      */
     public String consultarClaveDinamica() {
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         String claveDinamica = "";
         BackClaveDinamica backClaveDinamica = new BackClaveDinamica();
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
         Transaccion transaccion = new Transaccion();
-        transaccion.setHoraTransaccion(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
         try {
             claveDinamica = backClaveDinamica.consultarClaveDinamica(usuario, transaccion, BLP);
         } catch (SQLException e) {
@@ -169,7 +169,7 @@ public class BackendFacade {
      * @return the string
      */
     public String consultarClaveDinamicaII() {
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         String claveDinamica = "";
         BackClaveDinamica backClaveDinamica = new BackClaveDinamica();
         Usuario usuario = new Usuario();
@@ -189,7 +189,7 @@ public class BackendFacade {
      */
     public boolean verifyTopesPersonalizadosPCCFFPPCLI() {
         boolean result = false;
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         BackTarjetaEPrepago ePrepago = new BackTarjetaEPrepago();
         try {
             boolean registroPCCFFPPCLI = ePrepago.verificarRegistroEprepagoTarj(user.getDocumentNumber());
@@ -210,7 +210,7 @@ public class BackendFacade {
      */
     public static Boolean verifyMovtfLogtf() throws SQLException {
         EPrepago ePrepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        TransactionConfig transactionConfig = CurrentTrasactionConfigEntity.getTransactionConfig();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         BackSistema backIdSistema = new BackSistema();
         BackTef backTef = new BackTef();
         boolean result = false;
@@ -222,7 +222,7 @@ public class BackendFacade {
         LogTef verifyTEF = new LogTef();
         Tef verifyMOVTEF = new Tef();
 
-        transaccion.setCodigoTransaccion(transactionConfig.getTransactionCode());
+        transaccion.setCodigoTransaccion(configuracionTransaccion.getTransactionCode());
 
         String registroMovtf = backIdSistema.consultarIdSistema(productoOrigen, productoDestino, transaccion);
         Transaccion transaccionTef = new Transaccion();
@@ -230,7 +230,7 @@ public class BackendFacade {
 
         if (registroMovtf != null){
             verifyMOVTEF = backTef.consultarMovTef(transaccionTef, EPP);
-            verifyTEF = backTef.consultarLogTf(registroMovtf, ConstantsManager.CHANNEL_EPP);
+            verifyTEF = backTef.consultarLogTf(registroMovtf, AdministradorConstante.CHANNEL_EPP);
         }
 
         if (verifyTEF != null && verifyMOVTEF != null) {
@@ -246,7 +246,7 @@ public class BackendFacade {
      */
     public Boolean validateTermsAndCondition() {
         boolean result = false;
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         EPrepago ePrepago = CreateTermsAndConditionsEntity.getTyCEPrepago();
         BackTerminosCondiciones backTerminosCondiciones = new BackTerminosCondiciones();
         Usuario usuario = new Usuario();
@@ -273,11 +273,11 @@ public class BackendFacade {
         boolean result = false;
         BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        TransactionConfig transactionConfig = CurrentTrasactionConfigEntity.getTransactionConfig();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         Transaccion transaccion = new Transaccion();
         DecimalFormat formatter = new DecimalFormat("##0");
         transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
-        transaccion.setOrientacionCaso(transactionConfig.getOrientationCase());
+        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
 
         Saldo saldosAntesDebito = new Saldo();
         saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
@@ -296,19 +296,19 @@ public class BackendFacade {
         boolean result = false;
         BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        TransactionConfig transactionConfig = CurrentTrasactionConfigEntity.getTransactionConfig();
-        VirtualInvestment investment = VirtualInvestmentEntity.getVirtualInvestment();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
+        VirtualInvestment investment = CargarEntidadInversionVirtual.getVirtualInvestment();
         Transaccion transaccion = new Transaccion();
         DecimalFormat formatter = new DecimalFormat("##0");
 
-        if (ConstantsManager.TRANSACTION_CODE_OPENING_VIRTUAL_INVESTMENT.equals(transactionConfig.getTransactionCode())||
-                ConstantsManager.TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT.equals(transactionConfig.getTransactionCode())) {
+        if (AdministradorConstante.TRANSACTION_CODE_OPENING_VIRTUAL_INVESTMENT.equals(configuracionTransaccion.getTransactionCode())||
+                AdministradorConstante.TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT.equals(configuracionTransaccion.getTransactionCode())) {
 
             transaccion.setValorTransaccion(investment.getInvestmentValue());
         }else{transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));}
 
 
-        transaccion.setOrientacionCaso(transactionConfig.getOrientationCase());
+        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
 
         Saldo saldosAntesDebito = new Saldo();
         saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
@@ -331,11 +331,11 @@ public class BackendFacade {
         boolean result = false;
         BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        TransactionConfig transactionConfig = CurrentTrasactionConfigEntity.getTransactionConfig();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         Transaccion transaccion = new Transaccion();
         DecimalFormat formatter = new DecimalFormat("##0");
         transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
-        transaccion.setOrientacionCaso(transactionConfig.getOrientationCase());
+        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
         Saldo saldosAntesDebito = new Saldo();
         saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
         Saldo saldosDespuesDebito = new Saldo();
@@ -358,26 +358,26 @@ public class BackendFacade {
 
         BackMovimientos verifyMovimientos = new BackMovimientos();
         Transaccion transaccion = new Transaccion();
-        transaccion.setHoraTransaccion(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
         CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
         String naturaleza="";
         ValorEquivalenciaMovimiento datosMovimientos= null;
 
-        if (ConstantsManager.CODE_TRANSATION_LOAD.equals(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionCode())){
-             datosMovimientos = new ValorEquivalenciaMovimiento(ConstantsManager.LOAD_MOVEMENTS_CODE
-                    ,ConstantsManager.DESCRIPTION_CARGA_APP);
-            datosMovimientos.setStrMovCodTrn(ConstantsManager.LOAD_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(ConstantsManager.DESCRIPTION_CARGA_APP);
-            naturaleza = ConstantsManager.NATURE_DEBIT;
+        if (AdministradorConstante.CODE_TRANSATION_LOAD.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
+             datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
+                    , AdministradorConstante.DESCRIPTION_CARGA_APP);
+            datosMovimientos.setStrMovCodTrn(AdministradorConstante.LOAD_MOVEMENTS_CODE);
+            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_CARGA_APP);
+            naturaleza = AdministradorConstante.NATURE_DEBIT;
         }
 
-        if (ConstantsManager.CODE_TRANSATION_DISBURSEMENT.equals(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionCode())){
-             datosMovimientos = new ValorEquivalenciaMovimiento(ConstantsManager.LOAD_MOVEMENTS_CODE
-                    ,ConstantsManager.DESCRIPTION_DESCARGA_APP);
-            datosMovimientos.setStrMovCodTrn(ConstantsManager.DISBURSEMENT_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(ConstantsManager.DESCRIPTION_DESCARGA_APP);
-            naturaleza = ConstantsManager.NATURE_CREDIT;
+        if (AdministradorConstante.CODE_TRANSATION_DISBURSEMENT.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
+             datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
+                    , AdministradorConstante.DESCRIPTION_DESCARGA_APP);
+            datosMovimientos.setStrMovCodTrn(AdministradorConstante.DISBURSEMENT_MOVEMENTS_CODE);
+            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_DESCARGA_APP);
+            naturaleza = AdministradorConstante.NATURE_CREDIT;
         }
 
         Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getNumero(),cuentaDeposito.getTipoNum(),
@@ -395,7 +395,7 @@ public class BackendFacade {
      */
     public static void consultChannelLogPlot220230() {
         Map<String, Object> dataForQuery = new HashMap<>();
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         BackTrace backTrace = new BackTrace();
         String trace = "";
         String horaConsulta = "";
@@ -406,7 +406,7 @@ public class BackendFacade {
             Usuario usuario = new Usuario();
             usuario.setDocumento(user.getDocumentNumber());
             Transaccion transaccion = new Transaccion();
-            transaccion.setCodigoTransaccion(CurrentTrasactionConfigEntity.getTransactionConfig().getTransactionCode());
+            transaccion.setCodigoTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode());
             transaccion.setHoraTransaccion(horaConsulta);
             trace = backTrace.consultarTrace(usuario, transaccion, WWW);
             Serenity.setSessionVariable("trace").to(trace);

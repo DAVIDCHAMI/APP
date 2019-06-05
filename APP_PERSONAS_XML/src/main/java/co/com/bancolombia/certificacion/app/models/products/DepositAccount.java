@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.models.products;
 
 
-import co.com.bancolombia.certificacion.app.utilities.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
 
-import static co.com.bancolombia.certificacion.app.utilities.constant.ConstantsManager.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.*;
 
 /**
  * The type Deposit account.

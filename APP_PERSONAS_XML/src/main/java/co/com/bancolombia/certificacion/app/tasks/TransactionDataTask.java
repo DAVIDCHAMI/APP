@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks;
 
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -42,6 +42,6 @@ public class TransactionDataTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        CurrentTrasactionConfigEntity.setTransactionConfig(transactionData);
+        CargarEntidadTransaccion.conEstos(transactionData);
     }
 }

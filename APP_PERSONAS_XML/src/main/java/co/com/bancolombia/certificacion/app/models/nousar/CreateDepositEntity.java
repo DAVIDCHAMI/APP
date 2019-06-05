@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.nousar;
 
 import co.com.bancolombia.backend.modelo.productos.CuentaDeposito;
-import co.com.bancolombia.certificacion.app.utilities.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
 
 import java.util.List;
 

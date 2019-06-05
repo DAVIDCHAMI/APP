@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.interactions.virtualinvestment;
 
-import co.com.bancolombia.certificacion.app.models.entities.CurrentTrasactionConfigEntity;
-import co.com.bancolombia.certificacion.app.models.entities.CurrentUserEntity;
-import co.com.bancolombia.certificacion.app.models.transaction.TransactionConfig;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.user.User;
-import co.com.bancolombia.certificacion.app.utilities.UtilityXml;
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantsManager;
+import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
@@ -22,7 +22,7 @@ public class PrepareAndSubmitConsultTheRatesVirtualInvestmentXml implements Inte
 	private static final UtilityXml utilityXml = new UtilityXml();
 	
 	/**
-	 * Prepare Transfer Bancolombia Xml interaction.
+	 * Prepare Transferencias Bancolombia Xml interaction.
 	 *
 	 * @return the interaction
 	 */
@@ -32,17 +32,17 @@ public class PrepareAndSubmitConsultTheRatesVirtualInvestmentXml implements Inte
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		User user = CurrentUserEntity.getUser();
-		TransactionConfig transaction = CurrentTrasactionConfigEntity.getTransactionConfig();
+		User user = CargarEntidadUsuario.getUser();
+		ConfiguracionTransaccion transaction = CargarEntidadTransaccion.getConfiguracionTransaccion();
 
 		String strUrlXml = Serenity.sessionVariableCalled("UrlXml");
-		String strRequest = utilityXml.buscarXml(ConstantsManager.CHANNEL_APP,
+		String strRequest = utilityXml.buscarXml(AdministradorConstante.CHANNEL_APP,
 				transaction.getTransactionCode());
 		
 		if (strRequest != null  ) {
 			strRequest = strRequest.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
 			strRequest = strRequest.replace("_TRNUID", DateManager.obtenerFechaSistema("yyyyMMddhhmmss"));
-			strRequest = strRequest.replace("_SESSCOOKIE", ConstantsManager.SESSCOOKIE);
+			strRequest = strRequest.replace("_SESSCOOKIE", AdministradorConstante.SESSCOOKIE);
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
 			Serenity.setSessionVariable("Request").to(strRequest);
 

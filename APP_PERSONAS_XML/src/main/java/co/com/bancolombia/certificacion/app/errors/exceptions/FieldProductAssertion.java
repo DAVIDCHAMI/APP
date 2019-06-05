@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.errors.exceptions;
 
 
-import co.com.bancolombia.certificacion.app.utilities.constant.ConstantExceptions;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.ExcepcionesConstante;
 
 import java.text.MessageFormat;
 
@@ -13,7 +13,7 @@ public class FieldProductAssertion extends AssertionError {
 
 
     /**
-     * The constant NOT_WORKS.
+     * The constantes NOT_WORKS.
      */
     public static final String NOT_WORKS = "No funciono el metodo";
 
@@ -23,7 +23,7 @@ public class FieldProductAssertion extends AssertionError {
      * @param itemID the item id
      */
     public FieldProductAssertion(String itemID) {
-        super(MessageFormat.format(ConstantExceptions.PRODUCT_NOEXIST, itemID));
+        super(MessageFormat.format(ExcepcionesConstante.PRODUCT_NOEXIST, itemID));
     }
 
     /**

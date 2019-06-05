@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.integration;
 
-import co.com.bancolombia.certificacion.app.models.entities.CurrentUserEntity;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
 import co.com.bancolombia.certificacion.app.models.user.User;
 import co.com.bancolombia.backend.iseries.personas.usuario.BackRegistroAPP;
 import co.com.bancolombia.backend.modelo.usuario.Usuario;
@@ -27,7 +27,7 @@ public class BackendFacadeRegistration {
 
 
     public static UsuarioRegistro verifyEmailRegister() {
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
         usuario.setTipoDocumento(user.getDocumenType());
@@ -52,7 +52,7 @@ public class BackendFacadeRegistration {
 
     public Boolean verifyUserVirtual() {
         boolean result = false;
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
         usuario.setTipoDocumento(user.getDocumenType());
@@ -71,7 +71,7 @@ public class BackendFacadeRegistration {
     }
 
     public Boolean verifyTermCond() {
-        User user = CurrentUserEntity.getUser();
+        User user = CargarEntidadUsuario.getUser();
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
         usuario.setTipoDocumento(user.getDocumenType());

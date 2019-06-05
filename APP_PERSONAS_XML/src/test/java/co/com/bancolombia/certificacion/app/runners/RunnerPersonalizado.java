@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.runners;
 
-import co.com.bancolombia.certificacion.app.utilities.exceldata.BeforeSuite;
+import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
