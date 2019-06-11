@@ -2,11 +2,9 @@ package co.com.bancolombia.certificacion.app.interactions.virtualinvestment;
 
 import co.com.bancolombia.backend.modelo.productos.CuentaDeposito;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
+import co.com.bancolombia.certificacion.app.models.Deposit;
 import co.com.bancolombia.certificacion.app.models.TermsAndConditions;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTerminos;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
+import co.com.bancolombia.certificacion.app.models.entities.*;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
 import co.com.bancolombia.certificacion.app.models.products.VirtualInvestment;
 import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
@@ -23,9 +21,9 @@ import org.apache.logging.log4j.Logger;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
-public class PrepareAndSubmitOpeningVirtualInvestmentXml implements Interaction{
+public class PrepararYenviarAperturaInversionVirtualXml implements Interaction{
 	
-	private static final Logger LOGGER = LogManager.getLogger(PrepareAndSubmitOpeningVirtualInvestmentXml.class.getName());
+	private static final Logger LOGGER = LogManager.getLogger(PrepararYenviarAperturaInversionVirtualXml.class.getName());
 	private static final UtilityXml utilityXml = new UtilityXml();
 	
 	/**
@@ -33,14 +31,15 @@ public class PrepareAndSubmitOpeningVirtualInvestmentXml implements Interaction{
 	 *
 	 * @return the interaction
 	 */
-	public static Interaction prepareAndSubmitXml() {
-	    return instrumented(PrepareAndSubmitOpeningVirtualInvestmentXml.class);
+	public static Interaction prepararYenviarXml() {
+	    return instrumented(PrepararYenviarAperturaInversionVirtualXml.class);
 	}
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		User user = CargarEntidadUsuario.getUser();
 		ConfiguracionTransaccion transaction = CargarEntidadTransaccion.getConfiguracionTransaccion();
+		Deposit depositos = CargarEntidadDepositos.getDeposit();
 		CuentaDeposito depositValues = CreateDepositEntity.getDepositValues();
 		VirtualInvestment virtualInvestment = CargarEntidadInversionVirtual.getVirtualInvestment();
 		TermsAndConditions termsAndConditions = CargarEntidadTerminos.getTermsAndConditions();
@@ -55,8 +54,8 @@ public class PrepareAndSubmitOpeningVirtualInvestmentXml implements Interaction{
 			strRequest = strRequest.replace("_SESSCOOKIE", AdministradorConstante.SESSCOOKIE);
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
 
-			strRequest = strRequest.replace("_Cuenta", UtilityManager.depositAccountFormat(depositValues.getNumero()));
-			strRequest = strRequest.replace("_TipoCuenta", depositValues.getTipoNum());
+			strRequest = strRequest.replace("_Cuenta", UtilityManager.depositAccountFormat(depositos.getAccount()));
+			strRequest = strRequest.replace("_TipoCuenta", UtilityManager.castTypeAccountNumber(depositos.getTypeAccount()));
 
 			strRequest = strRequest.replace("_Valor", virtualInvestment.getInvestmentValue() + ".00");
 			strRequest = strRequest.replace("_Periodicidad", virtualInvestment.getPeriodicityPaymentInterest());
@@ -77,7 +76,7 @@ public class PrepareAndSubmitOpeningVirtualInvestmentXml implements Interaction{
 					" \n" + strResponse + "\n");
 			
 		}else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}
-		
+		Serenity.recordReportData().withTitle("Request Apertura Inversion Virtual").andContents(Serenity.sessionVariableCalled("Request"));
 	}
 
 }

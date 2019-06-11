@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.inversionvirtual;
 
 import co.com.bancolombia.certificacion.app.questions.factory.ChannelLogFactory;
 import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
-import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.ConsultTheRatesVirtualInvestmentXmlTask;
+import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.ConsultarTasasInversionVirtualPorXml;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import net.serenitybdd.core.Serenity;
@@ -17,7 +17,7 @@ public class ConsultaTasasInversionVirtualStepsDefinition {
     @And("I consult the rates of the Virtual Investment Bancolombia$")
     public void iTriesLoadHisCard() {
         theActorInTheSpotlight().attemptsTo(
-                ConsultTheRatesVirtualInvestmentXmlTask.inApp()
+                ConsultarTasasInversionVirtualPorXml.inApp()
         );
     }
 
@@ -25,7 +25,7 @@ public class ConsultaTasasInversionVirtualStepsDefinition {
     public void iCanSeeTheConfirmation() {
         Serenity.recordReportData().withTitle("Request consult the rates of the virtual investment").andContents(Serenity.sessionVariableCalled("Request"));
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(FabricaXml.verifyResultXmlConsultTheRatesVirtualInvestment(), is(true))
+                GivenWhenThen.seeThat(FabricaXml.verificaElResultadoDeLaConsultaDeTasasDeInversionVirtualPorXml(), is(true))
         );
     }
 

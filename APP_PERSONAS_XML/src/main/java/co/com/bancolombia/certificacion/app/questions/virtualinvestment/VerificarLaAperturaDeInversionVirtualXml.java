@@ -9,9 +9,9 @@ import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CheckOpeningVirtualInvestmentXml implements Question<Boolean> {
+public class VerificarLaAperturaDeInversionVirtualXml implements Question<Boolean> {
 
-	private static final Logger LOGGER = LogManager.getLogger(CheckOpeningVirtualInvestmentXml.class.getName());
+	private static final Logger LOGGER = LogManager.getLogger(VerificarLaAperturaDeInversionVirtualXml.class.getName());
 	private static String response="Response";
 	
     @Override
@@ -39,7 +39,7 @@ public class CheckOpeningVirtualInvestmentXml implements Question<Boolean> {
 				Serenity.setSessionVariable("NumeroInversion").to(strNumInversion);
 			}
 		}else {LOGGER.info("Ruta relativa Xpath a buscar no se presenta en el response");}
-		Serenity.recordReportData().withTitle("Response Opening the virtual investment").andContents(Serenity.sessionVariableCalled(response));
+		Serenity.recordReportData().withTitle("Response Apertura Inversion Virtual").andContents(Serenity.sessionVariableCalled(response));
 		return result;
 	}
     

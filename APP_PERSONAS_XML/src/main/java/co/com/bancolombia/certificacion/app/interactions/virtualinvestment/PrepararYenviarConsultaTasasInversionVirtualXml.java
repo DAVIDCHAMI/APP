@@ -16,9 +16,9 @@ import org.apache.logging.log4j.Logger;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
-public class PrepareAndSubmitConsultTheRatesVirtualInvestmentXml implements Interaction{
+public class PrepararYenviarConsultaTasasInversionVirtualXml implements Interaction{
 	
-	private static final Logger LOGGER = LogManager.getLogger(PrepareAndSubmitConsultTheRatesVirtualInvestmentXml.class.getName());
+	private static final Logger LOGGER = LogManager.getLogger(PrepararYenviarConsultaTasasInversionVirtualXml.class.getName());
 	private static final UtilityXml utilityXml = new UtilityXml();
 	
 	/**
@@ -26,8 +26,8 @@ public class PrepareAndSubmitConsultTheRatesVirtualInvestmentXml implements Inte
 	 *
 	 * @return the interaction
 	 */
-	public static Interaction prepareAndSubmitXml() {
-	    return instrumented(PrepareAndSubmitConsultTheRatesVirtualInvestmentXml.class);
+	public static Interaction prepararYenviarXml() {
+	    return instrumented(PrepararYenviarConsultaTasasInversionVirtualXml.class);
 	}
 
 	@Override

@@ -83,7 +83,7 @@ public class DataBaseFactory {
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultObjectSCIFFMRCMV() {return new ConsultObjectBooleanSCIFFMRCMV();}
+    public static Question<Boolean> verifyResultObjectSCIFFMRCMV() {return new ConsultObjectBooleanCreditSCIFFMRCMV();}
     /**
      * Verify result object CABFFPPAUT question.
      *

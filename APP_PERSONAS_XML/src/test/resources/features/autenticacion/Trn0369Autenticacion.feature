@@ -10,7 +10,7 @@ Característica: APP Personas Bancolombia
    | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> |
    | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> |
   Cuando Intento autenticarme utilizando mis credenciales
-  Entonces Verifico el resultado de autentificacion
+  Entonces Verifico el resultado de autenticacion
   Y Verifico los resultados en los archivos de iseries
    | LOG CANAL-COMFFLGWWW |
 

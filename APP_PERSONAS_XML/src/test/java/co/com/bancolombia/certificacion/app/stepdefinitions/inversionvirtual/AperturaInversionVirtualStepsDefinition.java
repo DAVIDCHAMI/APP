@@ -1,21 +1,18 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.inversionvirtual;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTerminos;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
-import co.com.bancolombia.certificacion.app.questions.factory.ChannelLogFactory;
-import co.com.bancolombia.certificacion.app.questions.factory.DataBaseFinacleFactory;
-import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
-import co.com.bancolombia.certificacion.app.tasks.builder.GetBalanceFactory;
-import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.OpeningVirtualInvestmentXmlTask;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.screenplay.GivenWhenThen;
+import co.com.bancolombia.certificacion.app.tasks.builder.ObtenerElSaldoDelDeposito;
+import co.com.bancolombia.certificacion.app.tasks.cargadatos.*;
+import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.AperturarInversionVirtualPorXml;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 import java.util.List;
 
+import static co.com.bancolombia.certificacion.app.questions.factory.DataBaseFinacleFactory.*;
+import static co.com.bancolombia.certificacion.app.questions.factory.FabricaXml.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -23,59 +20,34 @@ public class AperturaInversionVirtualStepsDefinition {
 
 
 
-    @And("I opening the Virtual Investment Bancolombia$")
-    public void iTriesLoadHisCard() {
+    @Dado("^que (.*) subo los datos para la prueba de apertura inversion virtual$")
+    public void queYoSuboLosDatosParaLaPrueba(String actor, List<List<String>> datos){
+        theActorCalled(actor).wasAbleTo(
+                CargarDatosTransaccion.enApp(datos.get(0)),
+                CargarDatosAutenticacion.enApp(datos.get(1)),
+                CargarDatosDepositos.enApp(datos.get(2)),
+                CargarDatosInversionVirtual.enApp(datos.get(3)),
+                CargarDatosTerminosYcondiciones.enApp(datos.get(4))
+        );
+
+    }
+
+    @Y("Realizo la apertura de la inversion virtual$")
+    public void intentoAperturarLaInversionVirtual() {
         theActorInTheSpotlight().attemptsTo(
-                OpeningVirtualInvestmentXmlTask.inApp()
+                ObtenerElSaldoDelDeposito.depositoAntes(),
+                AperturarInversionVirtualPorXml.inApp(),
+                ObtenerElSaldoDelDeposito.depositoDespues()
         );
     }
 
-    @Then("I verify opening the virtual investment result$")
-    public void iCanSeeTheConfirmation() {
-        Serenity.recordReportData().withTitle("Request opening virtual investment").andContents(Serenity.sessionVariableCalled("Request"));
+    @Entonces("Verifico la apertura de la inversion virtual$")
+    public void verificoLaAperturaDeLaInversionVirtual() {
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(FabricaXml.verifyResultXmlOpeningVirtualInvestment(), is(true)),
-                GivenWhenThen.seeThat(DataBaseFinacleFactory.verifyOpeningVirtualInvestmentInFinacle(), is(true))
+                seeThat(verificaElResultadoDeLaAperturaDeInversionVirtualPorXml(), is(true)),
+                seeThat(verificarLaAperturaDeInversionVirtualEnFinacle(), is(true))
         );
     }
 
-    @And("^he can see the verification in the LogCanal-COMFFLGWWW_TRN0326$")
-    public void heCanSeeTheVerificationInTheLogCanalCOMFFLGWWW() {
-        theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(ChannelLogFactory.theChannelLog0326(), is(true))
-        );
-    }
-
-    @And("^Previous consultations opening the virtual investment$")
-    public void previousConsultationsOpeningVirtualInvestment(List<String> data) {
-        CreateDepositEntity.setDepositValues(data);
-        theActorInTheSpotlight().attemptsTo(
-                GetBalanceFactory.depositBefore()
-        );
-    }
-
-    @And("^Subsequent consultations opening the virtual investment$")
-    public void subsequentConsultationsOpeningVirtualInvestment() {
-        theActorInTheSpotlight().attemptsTo(
-                GetBalanceFactory.depositAfter()
-        );
-    }
-
-    @And("^I accept terms and conditions virtual investment$")
-    public void iAcceptTermsAndConditions(List<String> versionTyC) {
-        CargarEntidadTerminos.setTermsAndConditions(versionTyC);
-    }
-
-    @And("^I know the range and the annual effective rate virtual investment$")
-    public void iKnowTheRangeAndTheAnnualEffectiveRate(List<String> periodicityAndRate) {
-        CargarEntidadInversionVirtual.setVirtualInvestment(periodicityAndRate);
-    }
-
-    @And("^I verify the results of the consultations to the back iseries TRN0326$")
-    public void iVerifyTheResultsOfTheConsultationsToTheBackIseries() {
-        theActorInTheSpotlight().should(
-                seeThat(ChannelLogFactory.theChannelLog0326(), is(true))
-        );
-    }
 
 }

@@ -32,7 +32,7 @@ public class CargarEntidadDepositos {
      *
      * @param data the data
      */
-    public static void setDeposit(List<String> data){
+    public static void conEstos(List<String> data){
         deposit.setAccount(data.get(0));
         deposit.setTypeAccount(data.get(1));
         deposit.setBalance(Double.parseDouble(data.get(2)));

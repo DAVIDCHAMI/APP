@@ -58,7 +58,14 @@ public class DataBaseIseriesFactory {
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFSALDO() {return new ConsultObjectBooleanDebitSCIFFSALDO();}
+    public static Question<Boolean> theIseriesFileSCIFFSALDOdebit() {return new ConsultObjectBooleanDebitSCIFFSALDO();}
+
+    /**
+     * Verify result debit SCIFFSALDO question.
+     *
+     * @return the question
+     */
+    public static Question<Boolean> theIseriesFileSCIFFSALDOcredit() {return new ConsultObjectBooleanCreditSCIFFSALDO();}
 
     /**
      * Verify result debit TCBFFMAE question.
@@ -71,7 +78,13 @@ public class DataBaseIseriesFactory {
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFMRCMV() {return new ConsultObjectBooleanSCIFFMRCMV();}
+    public static Question<Boolean> theIseriesFileSCIFFMRCMVdebit() {return new ConsultObjectBooleanDebitSCIFFMRCMV();}
+    /**
+     * Verify result object SCIFFMRCMV question.
+     *
+     * @return the question
+     */
+    public static Question<Boolean> theIseriesFileSCIFFMRCMVcredit() {return new ConsultObjectBooleanCreditSCIFFMRCMV();}
     /**
      * Verify result object CABFFPPAUT question.
      *

@@ -23,7 +23,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class PrepareAndSubmitSimulationVirtualInvestmentXml implements Interaction {
 
 
-    private static final Logger LOGGER = LogManager.getLogger(PrepareAndSubmitOpeningVirtualInvestmentXml.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(PrepararYenviarAperturaInversionVirtualXml.class.getName());
     private static final UtilityXml utilityXml = new UtilityXml();
 
 

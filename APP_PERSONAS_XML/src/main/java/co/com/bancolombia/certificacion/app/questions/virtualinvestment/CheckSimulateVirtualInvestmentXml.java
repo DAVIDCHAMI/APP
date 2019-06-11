@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 public class CheckSimulateVirtualInvestmentXml implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(CheckOpeningVirtualInvestmentXml.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(VerificarLaAperturaDeInversionVirtualXml.class.getName());
     private static String response="Response";
 
 

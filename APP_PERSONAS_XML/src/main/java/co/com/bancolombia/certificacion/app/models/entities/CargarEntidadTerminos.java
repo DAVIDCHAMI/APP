@@ -31,7 +31,7 @@ public class CargarEntidadTerminos {
      *
      * @param data the data
      */
-    public static void setTermsAndConditions(List<String> data) {
+    public static void conEstos(List<String> data) {
         termsAndConditions.setTyc(data.get(0));
     }
 }

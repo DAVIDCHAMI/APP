@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.virtualinvestment;
 
-import co.com.bancolombia.certificacion.app.interactions.virtualinvestment.PrepareAndSubmitConsultTheRatesVirtualInvestmentXml;
+import co.com.bancolombia.certificacion.app.interactions.virtualinvestment.PrepararYenviarConsultaTasasInversionVirtualXml;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.thucydides.core.annotations.Step;
@@ -26,7 +26,7 @@ public class SimulationVirtualInvestmentXmlTask implements Task {
     @Step("{0} Consult the rates")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                PrepareAndSubmitConsultTheRatesVirtualInvestmentXml.prepareAndSubmitXml()
+                PrepararYenviarConsultaTasasInversionVirtualXml.prepararYenviarXml()
         );
     }
 }

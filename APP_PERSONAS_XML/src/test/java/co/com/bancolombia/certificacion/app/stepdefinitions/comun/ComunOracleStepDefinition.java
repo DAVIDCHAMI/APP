@@ -30,7 +30,7 @@ public class ComunOracleStepDefinition {
     @And("^I verify the opening virtual investment in finacle$")
     public void iVverifyInFinacle() {
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(DataBaseFinacleFactory.verifyOpeningVirtualInvestmentInFinacle(), is(true))
+                GivenWhenThen.seeThat(DataBaseFinacleFactory.verificarLaAperturaDeInversionVirtualEnFinacle(), is(true))
         );
     }
     

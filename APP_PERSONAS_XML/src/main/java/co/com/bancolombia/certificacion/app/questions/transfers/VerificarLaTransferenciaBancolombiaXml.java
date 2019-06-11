@@ -1,18 +1,18 @@
-package co.com.bancolombia.certificacion.app.questions.virtualinvestment;
+package co.com.bancolombia.certificacion.app.questions.transfers;
 
 import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-public class CheckConsultTheRatesVirtualInvestmentXml implements Question<Boolean> {
+public class VerificarLaTransferenciaBancolombiaXml implements Question<Boolean> {
 
-	private static final Logger LOGGER = LogManager.getLogger(CheckConsultTheRatesVirtualInvestmentXml.class.getName());
-	private static String response="Response";
+	private static final Logger LOGGER = LogManager.getLogger(VerificarLaTransferenciaBancolombiaXml.class.getName());
 	
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -24,13 +24,13 @@ public class CheckConsultTheRatesVirtualInvestmentXml implements Question<Boolea
 		String strXMLMsgObtenido = null;
 		
 		try {
-			strXMLCodObtenido = utilityXml.leerXml(Serenity.sessionVariableCalled(response), "//STATUS/@CODE");
+			strXMLCodObtenido = utilityXml.leerXml(Serenity.sessionVariableCalled("Response"), "//STATUS/@CODE");
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 		}
 		
 		try {
-			strXMLMsgObtenido = utilityXml.leerXml(Serenity.sessionVariableCalled(response), "//STATUS/@DESC");
+			strXMLMsgObtenido = utilityXml.leerXml(Serenity.sessionVariableCalled("Response"), "//STATUS/@DESC");
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 		}
@@ -41,7 +41,7 @@ public class CheckConsultTheRatesVirtualInvestmentXml implements Question<Boolea
 				result = true;
 			}
 		}else {LOGGER.info("Ruta relativa Xpath a buscar no se presenta en el response");}
-		Serenity.recordReportData().withTitle("Response consult the rates of the virtual investment").andContents(Serenity.sessionVariableCalled(response));
+		
 		return result;
 	}
     

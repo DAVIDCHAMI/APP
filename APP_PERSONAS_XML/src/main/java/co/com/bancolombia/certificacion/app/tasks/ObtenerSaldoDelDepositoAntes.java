@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 /**
  * The type Get deposit balance before.
  */
-public class GetDepositBalanceBefore implements Task {
+public class ObtenerSaldoDelDepositoAntes implements Task {
 
-    private static final Logger LOGGER = LogManager.getLogger(GetDepositBalanceBefore.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(ObtenerSaldoDelDepositoAntes.class.getName());
 
     @Override
     public <T extends Actor> void performAs(T actor) {

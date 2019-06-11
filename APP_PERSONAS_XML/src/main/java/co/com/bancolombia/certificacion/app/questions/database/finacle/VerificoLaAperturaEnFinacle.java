@@ -11,9 +11,9 @@ import org.apache.logging.log4j.Logger;
 /**
  * The type Channel log in data base.
  */
-public class OpeningInvestmentVirtual implements Question<Boolean> {
+public class VerificoLaAperturaEnFinacle implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(OpeningInvestmentVirtual.class);
+    private static final Logger LOGGER = LogManager.getLogger(VerificoLaAperturaEnFinacle.class);
 
     @Override
     public Boolean answeredBy(Actor actor) {

@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 
-public class ConsultObjectBooleanSCIFFMRCMV implements Question<Boolean> {
+public class ConsultObjectBooleanDebitSCIFFMRCMV implements Question<Boolean> {
 
     private static final Logger LOGGER = LogManager.getLogger(BackendFacade.class.getName());
 
@@ -17,7 +17,7 @@ public class ConsultObjectBooleanSCIFFMRCMV implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         boolean result = false;
         try {
-            result = BackendFacade.verifyTheMovementsDeposit();
+            result = BackendFacade.verifyTheMovementsDebitDeposit();
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }

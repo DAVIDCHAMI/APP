@@ -38,7 +38,7 @@ public class SimulationVirtualXmlTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        CargarEntidadInversionVirtual.setVirtualInvestment(data);
+        CargarEntidadInversionVirtual.conEstos(data);
         actor.attemptsTo(
                 PrepareAndSubmitSimulationVirtualInvestmentXml.prepareAndSubmitXml());
     }

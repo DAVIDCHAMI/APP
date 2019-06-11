@@ -8,6 +8,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -44,9 +45,8 @@ public class AutenticacionStepsDefinition {
 
 
     /**
-     * I try to authenticate myself using my credentials.
+     * Se autentica utilizando las credenciales
      *
-     * @throws Exception the exception
      */
     @Cuando("Intento autenticarme utilizando mis credenciales$")
     public void intentoAutenticarmeUtilizandoMisCredenciales() {
@@ -54,17 +54,15 @@ public class AutenticacionStepsDefinition {
     }
 
     /**
-     * Can use the application.
+     * Verificacion de la autenticacion.
      *
-     * @throws Throwable the throwable
      */
-    @Entonces("^Verifico el resultado de autentificacion$")
+    @Entonces("^Verifico el resultado de autenticacion$")
     public void verificoElResultadoDeAutentificacion(){
         theActorInTheSpotlight().should(
                 seeThat(verificaElResultadoDeLaAuntenticacionPorXml(), is(true))
         );
     }
-
 
 
 }

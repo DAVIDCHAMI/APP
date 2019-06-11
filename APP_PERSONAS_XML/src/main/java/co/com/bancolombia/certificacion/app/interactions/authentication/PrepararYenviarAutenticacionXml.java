@@ -59,7 +59,7 @@ public class PrepararYenviarAutenticacionXml implements Interaction{
 					" \n" + strResponse + "\n");
 			
 		}else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}
-		Serenity.recordReportData().withTitle("Report Request Authentication").andContents(Serenity.sessionVariableCalled("Request"));
+		Serenity.recordReportData().withTitle("Request Autenticacion").andContents(Serenity.sessionVariableCalled("Request"));
 	}
 
 }

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.factory;
 
-import co.com.bancolombia.certificacion.app.questions.database.finacle.OpeningInvestmentVirtual;
+import co.com.bancolombia.certificacion.app.questions.database.finacle.VerificoLaAperturaEnFinacle;
 import net.serenitybdd.screenplay.Question;
 
 /**
@@ -16,8 +16,8 @@ public class DataBaseFinacleFactory {
      *
      * @return the question
      */
-    public static Question<Boolean> verifyOpeningVirtualInvestmentInFinacle() {
-        return new OpeningInvestmentVirtual();
+    public static Question<Boolean> verificarLaAperturaDeInversionVirtualEnFinacle() {
+        return new VerificoLaAperturaEnFinacle();
     }
 
 }

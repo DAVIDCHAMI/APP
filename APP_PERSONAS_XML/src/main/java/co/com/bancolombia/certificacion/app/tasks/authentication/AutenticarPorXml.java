@@ -23,7 +23,7 @@ public class AutenticarPorXml implements Task {
     }
 
     @Override
-    @Step("{0} Log In")
+    @Step("{0} Inicio Sesion")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
         		PrepararYenviarAutenticacionXml.prepararYenviarXml()

@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.questions.factory;
 
 import co.com.bancolombia.certificacion.app.questions.authentication.VerificarLaAutenticacionXml;
-import co.com.bancolombia.certificacion.app.questions.transfers.CheckTransfersBancolombiaXml;
-import co.com.bancolombia.certificacion.app.questions.virtualinvestment.CheckConsultTheRatesVirtualInvestmentXml;
-import co.com.bancolombia.certificacion.app.questions.virtualinvestment.CheckOpeningVirtualInvestmentXml;
+import co.com.bancolombia.certificacion.app.questions.transfers.VerificarLaTransferenciaBancolombiaXml;
+import co.com.bancolombia.certificacion.app.questions.virtualinvestment.VerificarLaConsultaDeTasasDeInversionVirtualXml;
+import co.com.bancolombia.certificacion.app.questions.virtualinvestment.VerificarLaAperturaDeInversionVirtualXml;
 import co.com.bancolombia.certificacion.app.questions.virtualinvestment.CheckSimulateVirtualInvestmentXml;
 import net.serenitybdd.screenplay.Question;
 
@@ -28,8 +28,8 @@ public class FabricaXml {
      * @return the question
      */
 
-    public static Question<Boolean> verifyResultXmlTransfersBancolombia() {
-        return new CheckTransfersBancolombiaXml();
+    public static Question<Boolean> verificaElResultadoDeLaTransferenciaBancolombiaPorXml() {
+        return new VerificarLaTransferenciaBancolombiaXml();
     }
 
     /**
@@ -38,8 +38,8 @@ public class FabricaXml {
      * @return the question
      */
 
-    public static Question<Boolean> verifyResultXmlConsultTheRatesVirtualInvestment() {
-        return new CheckConsultTheRatesVirtualInvestmentXml();
+    public static Question<Boolean> verificaElResultadoDeLaConsultaDeTasasDeInversionVirtualPorXml() {
+        return new VerificarLaConsultaDeTasasDeInversionVirtualXml();
     }
 
     /**
@@ -48,8 +48,8 @@ public class FabricaXml {
      * @return the question
      */
 
-    public static Question<Boolean> verifyResultXmlOpeningVirtualInvestment() {
-        return new CheckOpeningVirtualInvestmentXml();
+    public static Question<Boolean> verificaElResultadoDeLaAperturaDeInversionVirtualPorXml() {
+        return new VerificarLaAperturaDeInversionVirtualXml();
     }
 
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/inversionvirtual/Trn0326AperturaInversionVirtual.feature"},
-        tags = {"@TestCase1"},
+        tags = {"@CasoExitoso1"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE,
         monochrome = true

@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.integration;
 
 import co.com.bancolombia.certificacion.app.models.Deposit;
 import co.com.bancolombia.certificacion.app.models.EPrepago;
+import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadDepositos;
 import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
 import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
@@ -50,6 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.*;
+import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.*;
 
 /**
  * The type Backend integration.
@@ -81,10 +83,12 @@ public class BackendFacade {
      * @throws SQLException the sql exception
      */
     public static void balanceDepositBefore() throws SQLException {
-        CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
-        cuentaDeposito.setTipo(UtilityManager.castTypeAccountLetter(cuentaDeposito.getTipo()));
+        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
+        CuentaDeposito depositos = new CuentaDeposito();
+        depositos.setTipo(castTypeAccountLetter(cuentaDeposito.getTypeAccount()));
+        depositos.setNumero(cuentaDeposito.getAccount());
         BackSaldosDeposito saldosDeposito = new BackSaldosDeposito();
-        deposit.setBalanceBefore(Double.valueOf(saldosDeposito.consultarSaldo(cuentaDeposito).getSaldoTotal()));
+        deposit.setBalanceBefore(Double.valueOf(saldosDeposito.consultarSaldo(depositos).getSaldoTotal()));
     }
 
     /**
@@ -93,9 +97,12 @@ public class BackendFacade {
      * @throws SQLException the sql exception
      */
     public static void balanceDepositAfter() throws SQLException {
-        CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
+        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
+        CuentaDeposito depositos = new CuentaDeposito();
+        depositos.setTipo(castTypeAccountLetter(cuentaDeposito.getTypeAccount()));
+        depositos.setNumero(cuentaDeposito.getAccount());
         BackSaldosDeposito saldosDeposito = new BackSaldosDeposito();
-        deposit.setBalanceAfter(Double.valueOf(saldosDeposito.consultarSaldo(cuentaDeposito).getSaldoTotal()));
+        deposit.setBalanceAfter(Double.valueOf(saldosDeposito.consultarSaldo(depositos).getSaldoTotal()));
     }
 
     /**
@@ -272,30 +279,7 @@ public class BackendFacade {
     public static boolean verifyTheDebitOfTheBalance(){
         boolean result = false;
         BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        Transaccion transaccion = new Transaccion();
-        DecimalFormat formatter = new DecimalFormat("##0");
-        transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
-        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
-
-        Saldo saldosAntesDebito = new Saldo();
-        saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
-        Saldo saldosDespuesDebito = new Saldo();
-        saldosDespuesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceAfter()));
-
-        boolean verificarDEBITO = verifySaldosDeposito.validarDebitoDeposito(saldosAntesDebito, saldosDespuesDebito, transaccion);
-        if (verificarDEBITO) {
-            result = true;
-        }
-        return result;
-    }
-
-
-    public static boolean verifyTheDebitOfTheBalanceV(){
-        boolean result = false;
-        BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
+        Deposit deposito = CargarEntidadDepositos.getDeposit();
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         VirtualInvestment investment = CargarEntidadInversionVirtual.getVirtualInvestment();
         Transaccion transaccion = new Transaccion();
@@ -305,7 +289,7 @@ public class BackendFacade {
                 AdministradorConstante.TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT.equals(configuracionTransaccion.getTransactionCode())) {
 
             transaccion.setValorTransaccion(investment.getInvestmentValue());
-        }else{transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));}
+        }else{transaccion.setValorTransaccion(deposito.getBalance().toString());}
 
 
         transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
@@ -353,13 +337,15 @@ public class BackendFacade {
      *
      * @return the boolean
      */
-    public static boolean verifyTheMovementsDeposit() throws SQLException {
+    public static boolean verifyTheMovementsDebitDeposit() throws SQLException {
         boolean result = false;
 
+        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
         BackMovimientos verifyMovimientos = new BackMovimientos();
         Transaccion transaccion = new Transaccion();
         transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
-        CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
+
+        //CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
         String naturaleza="";
         ValorEquivalenciaMovimiento datosMovimientos= null;
@@ -380,7 +366,49 @@ public class BackendFacade {
             naturaleza = AdministradorConstante.NATURE_CREDIT;
         }
 
-        Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getNumero(),cuentaDeposito.getTipoNum(),
+        Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getAccount(),castTypeAccountNumber(cuentaDeposito.getTypeAccount()),
+                datosEprepago.getAmount(),naturaleza,transaccion.getHoraTransaccion(),datosMovimientos);
+        if (verificarMOVIMIENTO != null) {
+            result = true;
+        }
+        return result;
+    }
+
+    /**
+     * Verify the movement of the balance.
+     *
+     * @return the boolean
+     */
+    public static boolean verifyTheMovementsCreditDeposit() throws SQLException {
+        boolean result = false;
+
+        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
+        BackMovimientos verifyMovimientos = new BackMovimientos();
+        Transaccion transaccion = new Transaccion();
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
+
+        //CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
+        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
+        String naturaleza="";
+        ValorEquivalenciaMovimiento datosMovimientos= null;
+
+        if (AdministradorConstante.CODE_TRANSATION_LOAD.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
+            datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
+                    , AdministradorConstante.DESCRIPTION_CARGA_APP);
+            datosMovimientos.setStrMovCodTrn(AdministradorConstante.LOAD_MOVEMENTS_CODE);
+            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_CARGA_APP);
+            naturaleza = AdministradorConstante.NATURE_DEBIT;
+        }
+
+        if (AdministradorConstante.CODE_TRANSATION_DISBURSEMENT.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
+            datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
+                    , AdministradorConstante.DESCRIPTION_DESCARGA_APP);
+            datosMovimientos.setStrMovCodTrn(AdministradorConstante.DISBURSEMENT_MOVEMENTS_CODE);
+            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_DESCARGA_APP);
+            naturaleza = AdministradorConstante.NATURE_CREDIT;
+        }
+
+        Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getAccount(),castTypeAccountNumber(cuentaDeposito.getTypeAccount()),
                 datosEprepago.getAmount(),naturaleza,transaccion.getHoraTransaccion(),datosMovimientos);
         if (verificarMOVIMIENTO != null) {
             result = true;

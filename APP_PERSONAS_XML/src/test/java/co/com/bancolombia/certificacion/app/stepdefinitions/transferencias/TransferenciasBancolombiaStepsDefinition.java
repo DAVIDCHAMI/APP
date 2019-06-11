@@ -4,7 +4,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.transferencias;
 import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransferencias;
 import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
 import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
-import co.com.bancolombia.certificacion.app.tasks.builder.GetBalanceFactory;
+import co.com.bancolombia.certificacion.app.tasks.builder.ObtenerElSaldoDelDeposito;
 import co.com.bancolombia.certificacion.app.tasks.transfers.TransferBancolombiaXmlTask;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -31,14 +31,14 @@ public class TransferenciasBancolombiaStepsDefinition {
         CreateDepositEntity.setDepositValues(data);
         CargarEntidadTransferencias.setTransferencias(data);
         theActorInTheSpotlight().attemptsTo(
-                GetBalanceFactory.depositBefore()
+                ObtenerElSaldoDelDeposito.depositoAntes()
         );
     }
 
     @And("^Subsequent consultations transfer bancolombia$")
     public void subsequentConsultationsLoadEprepago() {
         theActorInTheSpotlight().attemptsTo(
-                GetBalanceFactory.depositAfter()
+                ObtenerElSaldoDelDeposito.depositoDespues()
         );
     }
 
@@ -46,7 +46,7 @@ public class TransferenciasBancolombiaStepsDefinition {
     public void iCanSeeTheConfirmation() {
         Serenity.recordReportData().withTitle("Request Transfers Bancolombia").andContents(Serenity.sessionVariableCalled("Request"));
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(FabricaXml.verifyResultXmlTransfersBancolombia(), is(true))
+                GivenWhenThen.seeThat(FabricaXml.verificaElResultadoDeLaTransferenciaBancolombiaPorXml(), is(true))
         );
         Serenity.recordReportData().withTitle("Response Transfers Bancolombia").andContents(Serenity.sessionVariableCalled("Response"));
     }

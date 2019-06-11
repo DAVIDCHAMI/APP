@@ -38,7 +38,7 @@ public class CargarEntidadInversionVirtual {
      *
      * @param data the data
      */
-    public static void setVirtualInvestment(List<String> data) {
+    public static void conEstos(List<String> data) {
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         DepositAccount depositAccount = new DepositAccount();
 

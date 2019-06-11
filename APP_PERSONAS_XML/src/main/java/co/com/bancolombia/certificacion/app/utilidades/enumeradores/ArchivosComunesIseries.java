@@ -10,7 +10,8 @@ import java.util.Arrays;
 
 public enum ArchivosComunesIseries {
 
-    SCIFFSALDO (DataBaseIseriesFactory.theIseriesFileSCIFFSALDO(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
+    SCIFFSALDO_DEBITO (DataBaseIseriesFactory.theIseriesFileSCIFFSALDOdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
+    SCIFFSALDO_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFSALDOcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     CABFFPPAUT (DataBaseIseriesFactory.theIseriesFileCABFFPPAUT(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     PCCFFPPCLI (DataBaseIseriesFactory.theIseriesFilePCCFFPPCLI(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     CABFFTARJ  (DataBaseIseriesFactory.theIseriesFileCABFFTARJ(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
@@ -18,7 +19,8 @@ public enum ArchivosComunesIseries {
     TERMCONDITION (DataBaseIseriesFactory.theIseriesFileTERMCONDITION(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     CABFFPPMAE (DataBaseIseriesFactory.theIseriesFileCABFFPPMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     TCBFFMAE (DataBaseIseriesFactory.theIseriesFileTCBFFMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    SCIFFMRCMV (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMV(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
+    SCIFFMRCMV_DEBITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
+    SCIFFMRCMV_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
 
 
     private static final Logger LOGGER = LogManager.getLogger();

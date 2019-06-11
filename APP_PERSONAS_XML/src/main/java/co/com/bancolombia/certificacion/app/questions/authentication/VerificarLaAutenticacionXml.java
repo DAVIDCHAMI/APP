@@ -42,7 +42,7 @@ public class VerificarLaAutenticacionXml implements Question<Boolean> {
 				result = true;
 			}
 		}else {LOGGER.info("Ruta relativa Xpath a buscar no se presenta en el response de la autenticacion");}
-		Serenity.recordReportData().withTitle("Response Authentication").andContents(Serenity.sessionVariableCalled(response));
+		Serenity.recordReportData().withTitle("Response Autenticacion").andContents(Serenity.sessionVariableCalled(response));
 		return result;
 	}
     
