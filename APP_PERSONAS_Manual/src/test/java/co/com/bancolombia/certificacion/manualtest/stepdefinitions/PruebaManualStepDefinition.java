@@ -3,11 +3,11 @@ package co.com.bancolombia.certificacion.manualtest.stepdefinitions;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
+import cucumber.api.java.es.Dado;
 
 import static co.com.bancolombia.certification.manualtestlib.ManualTest.validate;
 
-public class ManualTestDefinitions {
+public class PruebaManualStepDefinition {
     private Scenario scenario;
 
     @Before
@@ -15,7 +15,7 @@ public class ManualTestDefinitions {
         this.scenario = scenario;
     }
 
-    @Given("^(.*)$")
+    @Dado("^(.*)$")
     public void manualTestDefinitions(String step){
         validate(step, scenario.getName());
     }

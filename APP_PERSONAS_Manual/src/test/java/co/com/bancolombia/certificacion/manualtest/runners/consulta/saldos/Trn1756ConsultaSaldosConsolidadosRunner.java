@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.virtualInvestment;
+package co.com.bancolombia.certificacion.manualtest.runners.consulta.saldos;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/opening/trn0426_0526_opening_virtual_investment.feature",
+        features = "src/test/resources/features/consulta/saldos/trn1756_consulta_saldos_consolidados.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn0426_0526_OpeningVirtualInvestmentRunner{
+public class Trn1756ConsultaSaldosConsolidadosRunner {
 }
