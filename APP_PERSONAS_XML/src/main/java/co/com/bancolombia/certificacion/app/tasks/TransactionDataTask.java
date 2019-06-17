@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -17,7 +17,7 @@ public class TransactionDataTask implements Task {
     /**
      * Instantiates a new Transaction data task.
      *
-     * @param transactionData the transaction data
+     * @param transactionData the transaccion data
      */
     public TransactionDataTask(List<String> transactionData) {
         this.transactionData = transactionData;
@@ -31,10 +31,10 @@ public class TransactionDataTask implements Task {
     }
 
     /**
-     * Data transaction data task.
+     * Data transaccion data task.
      *
      * @param data the data
-     * @return the transaction data task
+     * @return the transaccion data task
      */
     public static TransactionDataTask data(List<String> data) {
         return instrumented(TransactionDataTask.class, data);

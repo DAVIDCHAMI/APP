@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.interactions.virtualinvestment;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
@@ -37,7 +37,7 @@ public class PrepararYenviarConsultaTasasInversionVirtualXml implements Interact
 
 		String strUrlXml = Serenity.sessionVariableCalled("UrlXml");
 		String strRequest = utilityXml.buscarXml(AdministradorConstante.CHANNEL_APP,
-				transaction.getTransactionCode());
+				transaction.getCodigoTransaccion());
 		
 		if (strRequest != null  ) {
 			strRequest = strRequest.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
@@ -46,13 +46,13 @@ public class PrepararYenviarConsultaTasasInversionVirtualXml implements Interact
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
 			Serenity.setSessionVariable("Request").to(strRequest);
 
-			transaction.setTransactionHour(DateManager.obtenerFechaSistema("HHmmss"));
+			transaction.setHoraTransaccion(DateManager.obtenerFechaSistema("HHmmss"));
 			String strResponse = UtilityXml.enviarXml(strUrlXml, strRequest);
 			Serenity.setSessionVariable("Response").to(strResponse);
 
-			LOGGER.info("REQUEST Inversion Virtual Trn" + transaction.getTransactionCode() +
+			LOGGER.info("REQUEST Inversion Virtual Trn" + transaction.getCodigoTransaccion() +
 					" \n" + strRequest + "\n");
-			LOGGER.info("RESPONSE Inversion Virtual Trn" + transaction.getTransactionCode() +
+			LOGGER.info("RESPONSE Inversion Virtual Trn" + transaction.getCodigoTransaccion() +
 					" \n" + strResponse + "\n");
 			
 		}else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}

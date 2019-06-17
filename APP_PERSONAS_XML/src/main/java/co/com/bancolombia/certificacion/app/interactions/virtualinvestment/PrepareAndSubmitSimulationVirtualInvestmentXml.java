@@ -1,12 +1,12 @@
 package co.com.bancolombia.certificacion.app.interactions.virtualinvestment;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
-import co.com.bancolombia.certificacion.app.models.products.VirtualInvestment;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadInversionVirtual;
+import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateDepositEntity;
+import co.com.bancolombia.certificacion.app.models.productos.InversionVirtual;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
@@ -36,12 +36,12 @@ public class PrepareAndSubmitSimulationVirtualInvestmentXml implements Interacti
     public <T extends Actor> void performAs(T actor) {
         User user = CargarEntidadUsuario.getUser();
         ConfiguracionTransaccion transaction = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        VirtualInvestment investment = CargarEntidadInversionVirtual.getVirtualInvestment();
+        InversionVirtual investment = CargarEntidadInversionVirtual.getVirtualInvestment();
         CuentaDeposito deposit = CreateDepositEntity.getDepositValues();
 
         String strUrlXml = Serenity.sessionVariableCalled("UrlXml");
         String strRequest = utilityXml.buscarXml(AdministradorConstante.CHANNEL_APP,
-                transaction.getTransactionCode());
+                transaction.getCodigoTransaccion());
 
         if (strRequest != null  ) {
             strRequest = strRequest.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
@@ -61,13 +61,13 @@ public class PrepareAndSubmitSimulationVirtualInvestmentXml implements Interacti
 
             Serenity.setSessionVariable("Request").to(strRequest);
 
-            transaction.setTransactionHour(DateManager.obtenerFechaSistema("HHmmss"));
+            transaction.setHoraTransaccion(DateManager.obtenerFechaSistema("HHmmss"));
             String strResponse = UtilityXml.enviarXml(strUrlXml, strRequest);
             Serenity.setSessionVariable("Response").to(strResponse);
 
-            LOGGER.info("REQUEST Opening Inversion Virtual Trn" + transaction.getTransactionCode() +
+            LOGGER.info("REQUEST Opening Inversion Virtual Trn" + transaction.getCodigoTransaccion() +
                     " \n" + strRequest + "\n");
-            LOGGER.info("RESPONSE Opening Inversion Virtual Trn" + transaction.getTransactionCode() +
+            LOGGER.info("RESPONSE Opening Inversion Virtual Trn" + transaction.getCodigoTransaccion() +
                     " \n" + strResponse + "\n");
 
         }else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}

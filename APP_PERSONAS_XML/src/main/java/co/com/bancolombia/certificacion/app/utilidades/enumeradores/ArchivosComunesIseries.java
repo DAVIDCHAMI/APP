@@ -20,7 +20,9 @@ public enum ArchivosComunesIseries {
     CABFFPPMAE (DataBaseIseriesFactory.theIseriesFileCABFFPPMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     TCBFFMAE (DataBaseIseriesFactory.theIseriesFileTCBFFMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
     SCIFFMRCMV_DEBITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    SCIFFMRCMV_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
+    SCIFFMRCMV_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
+    PCCFFMOVTFLOGTF_DEBITO (DataBaseIseriesFactory.theIseriesFilePCCMOVTFLOGTFdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
+    PCCFFMOVTFLOGTF_CREDITO (DataBaseIseriesFactory.theIseriesFilePCCMOVTFLOGTFcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
 
 
     private static final Logger LOGGER = LogManager.getLogger();

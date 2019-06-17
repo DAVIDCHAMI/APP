@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.integration;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.backend.iseries.personas.usuario.BackRegistroAPP;
 import co.com.bancolombia.backend.modelo.usuario.Usuario;
 import co.com.bancolombia.backend.modelo.usuario.UsuarioRegistro;

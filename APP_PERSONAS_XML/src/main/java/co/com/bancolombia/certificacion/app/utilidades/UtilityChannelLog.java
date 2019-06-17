@@ -23,7 +23,7 @@ public class UtilityChannelLog {
     }
 
     /**
-     * Format search product string.
+     * Format search factoria string.
      *
      * @param field the name campo
      * @param valueObtained   the value obtained

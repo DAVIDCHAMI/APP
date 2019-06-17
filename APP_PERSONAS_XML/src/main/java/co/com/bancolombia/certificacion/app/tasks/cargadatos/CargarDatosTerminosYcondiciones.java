@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.cargadatos;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTerminos;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTerminos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 

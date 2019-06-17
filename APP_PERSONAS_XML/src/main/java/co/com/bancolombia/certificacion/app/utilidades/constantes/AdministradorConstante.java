@@ -238,13 +238,13 @@ public class AdministradorConstante {
      */
     public static final String TRAMAOUTPUT = " TRAMA OUTPUT";
     /**
-     * The constantes TRANSACTION_CODE_OPENING_VIRTUAL_INVESTMENT.
+     * The constantes CODIGO_TRANSACCION_APERTURA_INVERSION_VIRTUAL.
      */
-    public static final String TRANSACTION_CODE_OPENING_VIRTUAL_INVESTMENT = "0326";
+    public static final String CODIGO_TRANSACCION_APERTURA_INVERSION_VIRTUAL = "0326";
     /**
-     * The constantes TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT.
+     * The constantes CODIGO_TRANSACCION_SIMULACION_INVERSION_VIRTUAL.
      */
-    public static final String TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT = "0325";
+    public static final String CODIGO_TRANSACCION_SIMULACION_INVERSION_VIRTUAL = "0325";
 
     private AdministradorConstante() {
     }

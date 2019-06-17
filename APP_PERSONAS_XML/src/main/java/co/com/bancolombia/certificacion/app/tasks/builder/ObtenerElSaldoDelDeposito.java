@@ -14,7 +14,7 @@ public class ObtenerElSaldoDelDeposito {
     }
 
     /**
-     * Deposit before get deposit balance before.
+     * Deposito before get deposit balance before.
      *
      * @return the get deposit balance before
      */
@@ -23,7 +23,7 @@ public class ObtenerElSaldoDelDeposito {
     }
 
     /**
-     * Deposit after get deposit balance after.
+     * Deposito after get deposit balance after.
      *
      * @return the get deposit balance after
      */

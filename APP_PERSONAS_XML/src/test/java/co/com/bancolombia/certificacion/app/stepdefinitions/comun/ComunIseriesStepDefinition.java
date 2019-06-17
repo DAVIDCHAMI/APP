@@ -43,17 +43,11 @@ public class ComunIseriesStepDefinition {
     @And("^he can see the verification in the PCCFFMOVTF and PCCFFLOGTF$")
     public void heCanSeeTheVerificationInThePCCFFMOVTFAndPCCFFLOGTF() {
         theActorInTheSpotlight().should(
-                seeThat(DataBaseFactory.verifyResultObjectPCCMOVTFLOGTF(), is(false))
+                seeThat(DataBaseFactory.theIseriesFilePCCMOVTFLOGTFdebit(), is(false))
         );
     }
     */
     
-    @And("^he can see the verification in the LogCanal-COMFFLGWWW$")
-    public void heCanSeeTheVerificationInTheLogCanalCOMFFLGWWW() {
-        theActorInTheSpotlight().should(
-                seeThat(DataBaseFactory.verifyChannelLog(), is(true))
-        );
-    }
 
     @And("^I verify the credit of the balance the eprepago card in the TCBFFMAE$")
     public void iVverifyTheCreditOfTheBalanceTheEprepagoCardInTheTCBFFMAE() {

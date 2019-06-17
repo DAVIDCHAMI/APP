@@ -1,8 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.cargadatos;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadDepositos;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadDepositos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 

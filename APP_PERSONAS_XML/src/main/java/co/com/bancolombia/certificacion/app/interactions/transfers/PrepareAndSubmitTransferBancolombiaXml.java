@@ -2,12 +2,12 @@ package co.com.bancolombia.certificacion.app.interactions.transfers;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransferencias;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.transaction.Transferencias;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransferencias;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.transaccion.Transferencias;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
@@ -42,28 +42,28 @@ public class PrepareAndSubmitTransferBancolombiaXml implements Interaction{
 
 		String strUrlXml = Serenity.sessionVariableCalled("UrlXml");
 		String strRequest = utilityXml.buscarXml(AdministradorConstante.CHANNEL_SVP,
-				transaction.getTransactionCode());
+				transaction.getCodigoTransaccion());
 		
 		if (strRequest != null  ) {
 			strRequest = strRequest.replace("_FECHA", DateManager.obtenerFechaSistema("YYYY/MM/dd"));
 			strRequest = strRequest.replace("_TRNUID", DateManager.obtenerFechaSistema("yyyyMMddhhmmss"));
 			strRequest = strRequest.replace("_SESSCOOKIE", AdministradorConstante.SESSCOOKIE);
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
-			strRequest = strRequest.replace("CtaOrigen", UtilityManager.depositAccountFormat(String.valueOf(transferencia.getOriginProduct().getNumber())));
-			strRequest = strRequest.replace("TipOrigen", UtilityManager.castTypeAccountNumber(transferencia.getOriginProduct().getProductType()));
-			strRequest = strRequest.replace("CtaDestino", UtilityManager.depositAccountFormat(String.valueOf(transferencia.getDestinationProduct().getNumber())));
-			strRequest = strRequest.replace("TipDestino", UtilityManager.castTypeAccountNumber(transferencia.getDestinationProduct().getProductType()));
+			strRequest = strRequest.replace("CtaOrigen", UtilityManager.depositAccountFormat(String.valueOf(transferencia.getOriginProduct().getNumero())));
+			strRequest = strRequest.replace("TipOrigen", UtilityManager.castTypeAccountNumber(transferencia.getOriginProduct().getTipo()));
+			strRequest = strRequest.replace("CtaDestino", UtilityManager.depositAccountFormat(String.valueOf(transferencia.getDestinationProduct().getNumero())));
+			strRequest = strRequest.replace("TipDestino", UtilityManager.castTypeAccountNumber(transferencia.getDestinationProduct().getTipo()));
 			strRequest = strRequest.replace("ValorTransferir", transferencia.getAmount() + ".00");
 			Serenity.setSessionVariable("Request").to(strRequest);
 			
 
-			transaction.setTransactionHour(DateManager.obtenerFechaSistema("HHmmss"));
+			transaction.setHoraTransaccion(DateManager.obtenerFechaSistema("HHmmss"));
 			String strResponse = UtilityXml.enviarXml(strUrlXml, strRequest);
 			Serenity.setSessionVariable("Response").to(strResponse);
 
-			LOGGER.info("REQUEST Tranferencias Bancolombia Trn" + transaction.getTransactionCode() + 
+			LOGGER.info("REQUEST Tranferencias Bancolombia Trn" + transaction.getCodigoTransaccion() +
 					" \n" + strRequest + "\n");
-			LOGGER.info("RESPONSE Tranferencias Bancolombia Trn" + transaction.getTransactionCode() + 
+			LOGGER.info("RESPONSE Tranferencias Bancolombia Trn" + transaction.getCodigoTransaccion() +
 					" \n" + strResponse + "\n");
 			
 		}else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}

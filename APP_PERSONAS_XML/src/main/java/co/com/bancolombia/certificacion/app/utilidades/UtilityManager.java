@@ -61,7 +61,7 @@ public class UtilityManager {
     }
 
     /**
-     * Format search product string.
+     * Format search factoria string.
      *
      * @param numberFormat the number format
      * @param typeFormat   the type format

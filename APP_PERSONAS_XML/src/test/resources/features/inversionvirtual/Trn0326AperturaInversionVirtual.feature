@@ -9,14 +9,14 @@ Característica: APP Personas Bancolombia
   Dado que yo subo los datos para la prueba de apertura inversion virtual
    | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado>|
    | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> |
-   | <CuentaOrigen> | <TipoCuentaOrigen> |           |         |                |
-   | <Monto> | <Periodicidad> | <Plazo> | <TasaEfectiva>|                        |
-   | <VersionTYC> |          |         |               |                        |
+   | <CuentaOrigen> | <TipoCuentaOrigen> | <Monto> | | |
+   | <Periodicidad> | <Plazo> | <TasaEfectiva> | | |
+   | <VersionTYC> | | | | |
   Cuando Intento autenticarme utilizando mis credenciales
   Y Realizo la apertura de la inversion virtual
   Entonces Verifico la apertura de la inversion virtual
   Y Verifico los resultados en los archivos de iseries
-   |SALDOS-SCIFFSALDO_DEBITO | MOVIMIENTO-SCIFFMRCMV_DEBITO | LOG TEF-PCCFFLOGTF | MOV TEF-PCCFFMOVTF |
+   |SALDOS-SCIFFSALDO_DEBITO | MOVIMIENTO-SCIFFMRCMV_DEBITO | TEF Y MOVTF-PCCFFMOVTFLOGTF_DEBITO |
 
   Ejemplos:
    | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | CuentaOrigen |  TipoCuentaOrigen | Monto | Periodicidad | Plazo |TasaEfectiva | VersionTYC |

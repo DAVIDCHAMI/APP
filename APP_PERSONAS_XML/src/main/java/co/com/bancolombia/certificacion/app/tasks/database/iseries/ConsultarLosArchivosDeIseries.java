@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.database.iseries;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosComunesIseries;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosLogCanalIseries;
 import net.serenitybdd.screenplay.Actor;
@@ -45,7 +45,7 @@ public class ConsultarLosArchivosDeIseries implements Task {
 
        for (String file : files){
            String dato = getFileName(file);
-           String codTrn = transaction.getTransactionCode();
+           String codTrn = transaction.getCodigoTransaccion();
 
            if (LOGCANAL.equals(dato)){
                ArchivosLogCanalIseries theVerification = ArchivosLogCanalIseries.getSearchFile(dato+codTrn);

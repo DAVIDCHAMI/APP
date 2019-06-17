@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.integration;
 
-import co.com.bancolombia.certificacion.app.models.EPrepago;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateLoadEPrepagoEntity;
+import co.com.bancolombia.certificacion.app.models.productos.EPrepago;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateLoadEPrepagoEntity;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.productos.TarjetaEPrepago;
@@ -121,7 +121,7 @@ public class BackendFacadeMovements {
         TarjetaEPrepago numeroTarjeta = BackendFacadeEprepago.verifyEprepagoRegistry();
         Transaccion transaccion = new Transaccion();
         EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
         transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
 
         boolean verificarRegistroMovimiento = registroMovimiento.consultarMovimientosRegistro(AdministradorConstante.NUMERO_BASE_EPREPAGO + numeroTarjeta.getNumero(),

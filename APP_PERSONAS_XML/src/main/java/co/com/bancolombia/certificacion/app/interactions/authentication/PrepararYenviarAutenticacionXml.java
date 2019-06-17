@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.interactions.authentication;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.certificacion.app.utilidades.UtilityXml;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import net.serenitybdd.core.Serenity;
@@ -48,7 +48,7 @@ public class PrepararYenviarAutenticacionXml implements Interaction{
 			strRequest = strRequest.replace("_CLIENTID", user.getDocumentNumber());
 			strRequest = strRequest.replace("_CLAVE", user.getPassword());
 			Serenity.setSessionVariable("Request").to(strRequest);
-			transaction.setTransactionHour(DateManager.obtenerFechaSistema("HHmmss"));
+			transaction.setHoraTransaccion(DateManager.obtenerFechaSistema("HHmmss"));
 			String strResponse = UtilityXml.enviarXml(strUrlXml, strRequest);
 			Serenity.setSessionVariable("Response").to(strResponse);
 

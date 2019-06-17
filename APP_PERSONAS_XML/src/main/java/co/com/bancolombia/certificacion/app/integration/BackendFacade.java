@@ -1,57 +1,42 @@
 package co.com.bancolombia.certificacion.app.integration;
 
-import co.com.bancolombia.certificacion.app.models.Deposit;
-import co.com.bancolombia.certificacion.app.models.EPrepago;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadDepositos;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadInversionVirtual;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateLoadEPrepagoEntity;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateTermsAndConditionsEntity;
-import co.com.bancolombia.certificacion.app.models.products.VirtualInvestment;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
-import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
-import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.backend.iseries.personas.clavedinamica.BackClaveDinamica;
 import co.com.bancolombia.backend.iseries.transversal.control.terminoscondiciones.BackTerminosCondiciones;
 import co.com.bancolombia.backend.iseries.transversal.crediagil.BackCrediAgil;
-import co.com.bancolombia.backend.iseries.transversal.log.canal.BackLogCanal;
 import co.com.bancolombia.backend.iseries.transversal.log.trace.BackTrace;
-import co.com.bancolombia.backend.iseries.transversal.movimientos.dao.BackMovimientos;
-import co.com.bancolombia.backend.iseries.transversal.movimientos.dto.Movimiento;
-import co.com.bancolombia.backend.iseries.transversal.movimientos.dto.ValorEquivalenciaMovimiento;
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackTarjetaEPrepago;
-import co.com.bancolombia.backend.iseries.transversal.saldos.BackSaldosDeposito;
-import co.com.bancolombia.backend.iseries.transversal.sistema.BackSistema;
-import co.com.bancolombia.backend.iseries.transversal.tef.BackTef;
-import co.com.bancolombia.backend.iseries.transversal.tef.dto.LogTef;
-import co.com.bancolombia.backend.modelo.control.canalsti.LogCanal;
 import co.com.bancolombia.backend.modelo.productos.CrediAgil;
-import co.com.bancolombia.backend.modelo.productos.CuentaDeposito;
-import co.com.bancolombia.backend.modelo.productos.Producto;
-import co.com.bancolombia.backend.modelo.transversal.Saldo;
-import co.com.bancolombia.backend.modelo.transversal.Tef;
 import co.com.bancolombia.backend.modelo.transversal.TerminosyCondiciones;
 import co.com.bancolombia.backend.modelo.transversal.Transaccion;
 import co.com.bancolombia.backend.modelo.usuario.Usuario;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadDepositos;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransferencias;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateTermsAndConditionsEntity;
+import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
+import co.com.bancolombia.certificacion.app.models.productos.EPrepago;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 import net.serenitybdd.core.Serenity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.*;
-import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.*;
+import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.BLP;
+import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.WWW;
+import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.castTypeAccountLetter;
+import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.castTypeAccountNumber;
 
 /**
  * The type Backend integration.
@@ -60,7 +45,6 @@ public class BackendFacade {
     /**
      * The constantes deposit.
      */
-    public static final Deposit deposit = new Deposit();
     private static final Logger LOGGER = LogManager.getLogger(BackendFacade.class.getName());
 
     /**
@@ -80,15 +64,23 @@ public class BackendFacade {
     /**
      * Balance deposit before.
      *
-     * @throws SQLException the sql exception
      */
-    public static void balanceDepositBefore() throws SQLException {
-        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
-        CuentaDeposito depositos = new CuentaDeposito();
-        depositos.setTipo(castTypeAccountLetter(cuentaDeposito.getTypeAccount()));
-        depositos.setNumero(cuentaDeposito.getAccount());
-        BackSaldosDeposito saldosDeposito = new BackSaldosDeposito();
-        deposit.setBalanceBefore(Double.valueOf(saldosDeposito.consultarSaldo(depositos).getSaldoTotal()));
+    public static void balanceDepositBefore(){
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
+        String saldoDisponible ="";
+        String saldoCanje ="";
+        String saldoTotal ="";
+
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put("CUENTA", depositos.getNumero());
+        dataForQuery.put("TIPOCUENTA", castTypeAccountLetter(depositos.getTipo()));
+
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
+        saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
+        saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
+        Serenity.setSessionVariable("saldoDepositoAntes").to(saldoTotal);
     }
 
     /**
@@ -96,57 +88,22 @@ public class BackendFacade {
      *
      * @throws SQLException the sql exception
      */
-    public static void balanceDepositAfter() throws SQLException {
-        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
-        CuentaDeposito depositos = new CuentaDeposito();
-        depositos.setTipo(castTypeAccountLetter(cuentaDeposito.getTypeAccount()));
-        depositos.setNumero(cuentaDeposito.getAccount());
-        BackSaldosDeposito saldosDeposito = new BackSaldosDeposito();
-        deposit.setBalanceAfter(Double.valueOf(saldosDeposito.consultarSaldo(depositos).getSaldoTotal()));
-    }
+    public static void balanceDepositAfter(){
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
+        String saldoDisponible ="";
+        String saldoCanje ="";
+        String saldoTotal ="";
 
-    /**
-     * Verify channel log boolean.
-     *
-     * @return the boolean
-     */
-    public boolean verifyChannelLog() {
-        User user = CargarEntidadUsuario.getUser();
-        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        BackTrace backTrace = new BackTrace();
-        String trace = "";
-        String numDocu = user.getDocumentNumber();
-        String codTrans = configuracionTransaccion.getTransactionCode();
-        String horaConsulta = "";
-        LogCanal logCanal = new LogCanal();
-        String ruta = configuracionTransaccion.getLogCanalPath();
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put("CUENTA", depositos.getNumero());
+        dataForQuery.put("TIPOCUENTA", castTypeAccountLetter(depositos.getTipo()));
 
-        logCanal.setRutaEvidencia(configuracionTransaccion.getEvidencePath());
-        logCanal.setCodigoTransaccion(codTrans);
-        logCanal.setDocumento(numDocu);
-        logCanal.setTipoDocumento(user.getDocumenType());
-        logCanal.setCodigoError(configuracionTransaccion.getErrorCode());
-        logCanal.setCasoId(configuracionTransaccion.getIdCase());
-        logCanal.setFecha(DateManager.obtenerFechaSistema("yyyyMMdd"));
-        logCanal.setTipoCanal(configuracionTransaccion.getTypeLogCanal());
-        boolean resultInput = false;
-        boolean resultOutput = false;
-        try {
-            horaConsulta = DateManager.obtenerFechaSistema("hhmmss");
-            Usuario usuario = new Usuario();
-            usuario.setDocumento(user.getDocumentNumber());
-            Transaccion transaccion = new Transaccion();
-            transaccion.setCodigoTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode());
-            transaccion.setHoraTransaccion(horaConsulta);
-            trace = backTrace.consultarTrace(usuario, transaccion, WWW);
-            logCanal.setTrace(trace);
-            BackLogCanal backLogCanal = new BackLogCanal(logCanal, ruta, configuracionTransaccion.getEvidenceName());
-            resultInput = backLogCanal.verificarLogCanal("TramaInput");
-            resultOutput = backLogCanal.verificarLogCanal("TramaOutput");
-        } catch (SQLException e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-        return resultInput && resultOutput;
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
+        saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
+        saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
+        Serenity.setSessionVariable("saldoDepositoDespues").to(saldoTotal);
     }
 
     /**
@@ -161,28 +118,9 @@ public class BackendFacade {
         Usuario usuario = new Usuario();
         usuario.setDocumento(user.getDocumentNumber());
         Transaccion transaccion = new Transaccion();
-        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
         try {
             claveDinamica = backClaveDinamica.consultarClaveDinamica(usuario, transaccion, BLP);
-        } catch (SQLException e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-        return claveDinamica;
-    }
-
-    /**
-     * Consultar clave dinamica ii string.
-     *
-     * @return the string
-     */
-    public String consultarClaveDinamicaII() {
-        User user = CargarEntidadUsuario.getUser();
-        String claveDinamica = "";
-        BackClaveDinamica backClaveDinamica = new BackClaveDinamica();
-        Usuario usuario = new Usuario();
-        usuario.setDocumento(user.getDocumentNumber());
-        try {
-            claveDinamica = backClaveDinamica.consultarClaveDinamicaAlterna(usuario);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
@@ -205,43 +143,6 @@ public class BackendFacade {
             }
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
-        }
-        return result;
-    }
-
-    /**
-     * Verify movtf logtf boolean.
-     *
-     * @return the boolean
-     * @throws SQLException the sql exception
-     */
-    public static Boolean verifyMovtfLogtf() throws SQLException {
-        EPrepago ePrepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        BackSistema backIdSistema = new BackSistema();
-        BackTef backTef = new BackTef();
-        boolean result = false;
-
-        Producto productoOrigen = new Producto();
-        productoOrigen.setNumero(ePrepago.getOriginAccount().replace("-",""));
-        Producto productoDestino = new Producto();
-        Transaccion transaccion = new Transaccion();
-        LogTef verifyTEF = new LogTef();
-        Tef verifyMOVTEF = new Tef();
-
-        transaccion.setCodigoTransaccion(configuracionTransaccion.getTransactionCode());
-
-        String registroMovtf = backIdSistema.consultarIdSistema(productoOrigen, productoDestino, transaccion);
-        Transaccion transaccionTef = new Transaccion();
-        transaccionTef.setCodigoSistema(registroMovtf);
-
-        if (registroMovtf != null){
-            verifyMOVTEF = backTef.consultarMovTef(transaccionTef, EPP);
-            verifyTEF = backTef.consultarLogTf(registroMovtf, AdministradorConstante.CHANNEL_EPP);
-        }
-
-        if (verifyTEF != null && verifyMOVTEF != null) {
-            result = true;
         }
         return result;
     }
@@ -276,34 +177,13 @@ public class BackendFacade {
      *
      * @return the boolean
      */
-    public static boolean verifyTheDebitOfTheBalance(){
-        boolean result = false;
-        BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
-        Deposit deposito = CargarEntidadDepositos.getDeposit();
+    public static boolean verificarElDebitoDeLaCuenta(){
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        VirtualInvestment investment = CargarEntidadInversionVirtual.getVirtualInvestment();
-        Transaccion transaccion = new Transaccion();
-        DecimalFormat formatter = new DecimalFormat("##0");
-
-        if (AdministradorConstante.TRANSACTION_CODE_OPENING_VIRTUAL_INVESTMENT.equals(configuracionTransaccion.getTransactionCode())||
-                AdministradorConstante.TRANSACTION_CODE_SIMULATION_VIRTUAL_INVESTMENT.equals(configuracionTransaccion.getTransactionCode())) {
-
-            transaccion.setValorTransaccion(investment.getInvestmentValue());
-        }else{transaccion.setValorTransaccion(deposito.getBalance().toString());}
-
-
-        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
-
-        Saldo saldosAntesDebito = new Saldo();
-        saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
-        Saldo saldosDespuesDebito = new Saldo();
-        saldosDespuesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceAfter()));
-
-        boolean verificarDEBITO = verifySaldosDeposito.validarDebitoDeposito(saldosAntesDebito, saldosDespuesDebito, transaccion);
-        if (verificarDEBITO) {
-            result = true;
-        }
-        return result;
+        String valor = CargarEntidadTransferencias.getTransferencias().getAmount();
+        String orientacon = configuracionTransaccion.getOrientacionCaso();
+        String saldoAntes = Serenity.sessionVariableCalled("saldoDepositoAntes");
+        String saldoDespues = Serenity.sessionVariableCalled("saldoDepositoDespues");
+        return validarDebitoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
     
     /**
@@ -311,25 +191,13 @@ public class BackendFacade {
      *
      * @return the boolean
      */
-    public static boolean verifyTheCreditOfTheBalance(){
-        boolean result = false;
-        BackSaldosDeposito verifySaldosDeposito = new BackSaldosDeposito();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
+    public static boolean verificarElCreditoDeLaCuenta(){
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
-        Transaccion transaccion = new Transaccion();
-        DecimalFormat formatter = new DecimalFormat("##0");
-        transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
-        transaccion.setOrientacionCaso(configuracionTransaccion.getOrientationCase());
-        Saldo saldosAntesDebito = new Saldo();
-        saldosAntesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceBefore()));
-        Saldo saldosDespuesDebito = new Saldo();
-        saldosDespuesDebito.setSaldoDisponible(formatter.format(deposit.getBalanceAfter()));
-
-        boolean verificarCREDIT = verifySaldosDeposito.validarCreditoDeposito(saldosAntesDebito, saldosDespuesDebito, transaccion);
-        if (verificarCREDIT) {
-            result = true;
-        }
-        return result;
+        String valor = CargarEntidadTransferencias.getTransferencias().getAmount();
+        String orientacon = configuracionTransaccion.getOrientacionCaso();
+        String saldoAntes = Serenity.sessionVariableCalled("saldoDepositoAntes");
+        String saldoDespues = Serenity.sessionVariableCalled("saldoDepositoDespues");
+        return validarCreditoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
     
     /**
@@ -337,41 +205,22 @@ public class BackendFacade {
      *
      * @return the boolean
      */
-    public static boolean verifyTheMovementsDebitDeposit() throws SQLException {
-        boolean result = false;
-
-        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
-        BackMovimientos verifyMovimientos = new BackMovimientos();
+    public static String verificarElMovimientoDebitoDeLaCuenta() {
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
         Transaccion transaccion = new Transaccion();
-        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
+        Map<String, Object> dataForQuery = new HashMap<>();
 
-        //CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        String naturaleza="";
-        ValorEquivalenciaMovimiento datosMovimientos= null;
+        dataForQuery.put("CUENTA", depositos.getNumero());
+        dataForQuery.put("TIPOCUENTA", castTypeAccountNumber(depositos.getTipo()));
+        dataForQuery.put("FECHA", DateManager.obtenerFechaSistema("yyyyMMdd"));
+        dataForQuery.put("MONTO", CargarEntidadTransferencias.getTransferencias().getAmount());
+        dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_DEBIT);
+        dataForQuery.put("HORA", transaccion.getHoraTransaccion());
 
-        if (AdministradorConstante.CODE_TRANSATION_LOAD.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
-             datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
-                    , AdministradorConstante.DESCRIPTION_CARGA_APP);
-            datosMovimientos.setStrMovCodTrn(AdministradorConstante.LOAD_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_CARGA_APP);
-            naturaleza = AdministradorConstante.NATURE_DEBIT;
-        }
-
-        if (AdministradorConstante.CODE_TRANSATION_DISBURSEMENT.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
-             datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
-                    , AdministradorConstante.DESCRIPTION_DESCARGA_APP);
-            datosMovimientos.setStrMovCodTrn(AdministradorConstante.DISBURSEMENT_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_DESCARGA_APP);
-            naturaleza = AdministradorConstante.NATURE_CREDIT;
-        }
-
-        Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getAccount(),castTypeAccountNumber(cuentaDeposito.getTypeAccount()),
-                datosEprepago.getAmount(),naturaleza,transaccion.getHoraTransaccion(),datosMovimientos);
-        if (verificarMOVIMIENTO != null) {
-            result = true;
-        }
-        return result;
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        return resultadoConsulta.get(0).toString();
     }
 
     /**
@@ -379,41 +228,64 @@ public class BackendFacade {
      *
      * @return the boolean
      */
-    public static boolean verifyTheMovementsCreditDeposit() throws SQLException {
-        boolean result = false;
-
-        Deposit cuentaDeposito = CargarEntidadDepositos.getDeposit();
-        BackMovimientos verifyMovimientos = new BackMovimientos();
+    public static String verificarElMovimientoCreditoDeLaCuenta() {
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
         Transaccion transaccion = new Transaccion();
-        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionHour());
+        transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
+        Map<String, Object> dataForQuery = new HashMap<>();
 
-        //CuentaDeposito cuentaDeposito = CreateDepositEntity.getDepositValues();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        String naturaleza="";
-        ValorEquivalenciaMovimiento datosMovimientos= null;
+        dataForQuery.put("CUENTA", depositos.getNumero());
+        dataForQuery.put("TIPOCUENTA", castTypeAccountNumber(depositos.getTipo()));
+        dataForQuery.put("FECHA", DateManager.obtenerFechaSistema("yyyyMMdd"));
+        dataForQuery.put("MONTO", CargarEntidadTransferencias.getTransferencias().getAmount());
+        dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_CREDIT);
+        dataForQuery.put("HORA", transaccion.getHoraTransaccion());
 
-        if (AdministradorConstante.CODE_TRANSATION_LOAD.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
-            datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
-                    , AdministradorConstante.DESCRIPTION_CARGA_APP);
-            datosMovimientos.setStrMovCodTrn(AdministradorConstante.LOAD_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_CARGA_APP);
-            naturaleza = AdministradorConstante.NATURE_DEBIT;
-        }
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        return resultadoConsulta.get(0).toString();
+    }
 
-        if (AdministradorConstante.CODE_TRANSATION_DISBURSEMENT.equals(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode())){
-            datosMovimientos = new ValorEquivalenciaMovimiento(AdministradorConstante.LOAD_MOVEMENTS_CODE
-                    , AdministradorConstante.DESCRIPTION_DESCARGA_APP);
-            datosMovimientos.setStrMovCodTrn(AdministradorConstante.DISBURSEMENT_MOVEMENTS_CODE);
-            datosMovimientos.setStrMovDescrip(AdministradorConstante.DESCRIPTION_DESCARGA_APP);
-            naturaleza = AdministradorConstante.NATURE_CREDIT;
-        }
+    /**
+     * Verifica movtf logtf debito.
+     *
+     * @return un string
+     */
+    public static String verificarElDebitoEnMOVTFLOGTF() {
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
+        Transaccion transaccion = new Transaccion();
+        transaccion.setCodigoTransaccion(configuracionTransaccion.getCodigoTransaccion());
+        Map<String, Object> dataForQuery = new HashMap<>();
 
-        Movimiento verificarMOVIMIENTO = verifyMovimientos.consultarMovimiento(cuentaDeposito.getAccount(),castTypeAccountNumber(cuentaDeposito.getTypeAccount()),
-                datosEprepago.getAmount(),naturaleza,transaccion.getHoraTransaccion(),datosMovimientos);
-        if (verificarMOVIMIENTO != null) {
-            result = true;
-        }
-        return result;
+        dataForQuery.put("DIA", DateManager.obtenerFechaSistema("dd"));
+        dataForQuery.put("CUENTADEBITO", depositos.getNumero().substring(3,11));
+        dataForQuery.put("TIPOCUENTADEBITO", castTypeAccountNumber(depositos.getTipo()));
+
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroDeb");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        return resultadoConsulta.get(0).toString();
+    }
+
+    /**
+     * Verifica movtf logtf debito.
+     *
+     * @return un string
+     */
+    public static String verificarElCreditoEnMOVTFLOGTF() {
+        CuentaDeposito depositos = CargarEntidadDepositos.getCuentaDeposito();
+        ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
+        Transaccion transaccion = new Transaccion();
+        transaccion.setCodigoTransaccion(configuracionTransaccion.getCodigoTransaccion());
+        Map<String, Object> dataForQuery = new HashMap<>();
+
+        dataForQuery.put("DIA", DateManager.obtenerFechaSistema("dd"));
+        dataForQuery.put("CUENTACREDITO", depositos.getNumero().substring(3,11));
+        dataForQuery.put("TIPOCUENTACREDITO", castTypeAccountNumber(depositos.getTipo()));
+
+        String sql = QueryManager.CONSULTAS_APP.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroCre");
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        return resultadoConsulta.get(0).toString();
     }
 
     /**
@@ -434,7 +306,7 @@ public class BackendFacade {
             Usuario usuario = new Usuario();
             usuario.setDocumento(user.getDocumentNumber());
             Transaccion transaccion = new Transaccion();
-            transaccion.setCodigoTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getTransactionCode());
+            transaccion.setCodigoTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getCodigoTransaccion());
             transaccion.setHoraTransaccion(horaConsulta);
             trace = backTrace.consultarTrace(usuario, transaccion, WWW);
             Serenity.setSessionVariable("trace").to(trace);
@@ -449,5 +321,19 @@ public class BackendFacade {
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
+    }
+
+    public static boolean validarDebitoDeposito(String saldoAntes, String saldoDespues, String orientacion, String valor) {
+        BigDecimal saldoAnterior = new BigDecimal(saldoAntes);
+        BigDecimal saldoPosterior = new BigDecimal(saldoDespues);
+        BigDecimal valorTransaccion = new BigDecimal(valor);
+        return "ACIERTO".equalsIgnoreCase(orientacion) ? saldoAnterior.subtract(valorTransaccion).equals(saldoPosterior) : saldoAnterior.equals(saldoPosterior);
+    }
+
+    public static boolean validarCreditoDeposito(String saldoAntes, String saldoDespues, String orientacion, String valor) {
+        BigDecimal saldoAnterior = new BigDecimal(saldoAntes);
+        BigDecimal saldoPosterior = new BigDecimal(saldoDespues);
+        BigDecimal valorTransaccion = new BigDecimal(valor);
+        return "ACIERTO".equalsIgnoreCase(orientacion) ? saldoAnterior.add(valorTransaccion).equals(saldoPosterior) : saldoAnterior.equals(saldoPosterior);
     }
 }

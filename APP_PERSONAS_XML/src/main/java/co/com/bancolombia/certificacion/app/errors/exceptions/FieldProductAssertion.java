@@ -7,7 +7,7 @@ import java.text.MessageFormat;
 
 
 /**
- * The type Field product assertion.
+ * The type Field factoria assertion.
  */
 public class FieldProductAssertion extends AssertionError {
 
@@ -18,7 +18,7 @@ public class FieldProductAssertion extends AssertionError {
     public static final String NOT_WORKS = "No funciono el metodo";
 
     /**
-     * Instantiates a new Field product assertion.
+     * Instantiates a new Field factoria assertion.
      *
      * @param itemID the item id
      */

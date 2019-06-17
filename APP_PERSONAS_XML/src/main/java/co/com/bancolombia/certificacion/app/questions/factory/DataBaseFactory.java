@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.factory;
 
 import co.com.bancolombia.certificacion.app.questions.database.*;
-import co.com.bancolombia.certificacion.app.questions.database.channellog.ChannelLogInDataBase;
 import net.serenitybdd.screenplay.Question;
 
 /**
@@ -13,21 +12,12 @@ public class DataBaseFactory {
     }
 
     /**
-     * Verify channel log question.
-     *
-     * @return the question
-     */
-    public static Question<Boolean> verifyChannelLog() {
-        return new ChannelLogInDataBase();
-    }
-
-    /**
      * Verify if the object returns records.
      *
      * @return the question
      */
     public static Question<Boolean> verifyResultObjectPCCFFPPCLI() {
-        return new ConsultObjectBooleanPCCFFPPCLI();
+        return new ConsultarRegistroEnPCCFFPPCLI();
     }
 
     /**
@@ -36,7 +26,7 @@ public class DataBaseFactory {
      * @return the question
      */
     public static Question<Boolean> verifyResultObjectCABFFTARJ() {
-        return new ConsultObjectBooleanCABFFTARJ();
+        return new ConsultarRegistroEnCABFFTARJ();
     }
 
     /**
@@ -45,7 +35,7 @@ public class DataBaseFactory {
      * @return the question
      */
     public static Question<Boolean> verifyResultObjectWWWFFUSRSV() {
-        return new ConsultawwwffusrsvInDataBase();
+        return new ConsultarRegistroEnWWWFFUSRSV();
     }
 
     /**
@@ -55,7 +45,7 @@ public class DataBaseFactory {
      */
 
     public static Question<Boolean> verifyResultTERMCONDITION() {
-        return new ConsultaTermCondInDataBase();
+        return new ConsultarRegistroEnWWWFFLGTYC();
     }
 
     /**
@@ -63,33 +53,34 @@ public class DataBaseFactory {
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultObjectCABFFPPMAE() {return new ConsultObjectBooleanCABFFPPMAE();}
+    public static Question<Boolean> verifyResultObjectCABFFPPMAE() {return new ConsultarRegistroEnCABFFPPMAE();}
 
     /**
      * Verify result debit SCIFFSALDO question.
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultDebitSCIFFSALDO() {return new ConsultObjectBooleanDebitSCIFFSALDO();}
+    public static Question<Boolean> verifyResultDebitSCIFFSALDO() {return new ConsultarDebitoEnSCIFFSALDO();}
 
     /**
      * Verify result debit TCBFFMAE question.
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultCreditTCBFFMAE() {return new ConsultObjectBooleanCreditTCBFFMAE();}
+    public static Question<Boolean> verifyResultCreditTCBFFMAE() {return new ConsultarRegistroEnTCBFFMAE();}
     /**
      * Verify result object SCIFFMRCMV question.
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultObjectSCIFFMRCMV() {return new ConsultObjectBooleanCreditSCIFFMRCMV();}
+    public static Question<Boolean> verifyResultObjectSCIFFMRCMV() {return new ConsultarCreditoEnSCIFFMRCMV();}
     /**
      * Verify result object CABFFPPAUT question.
      *
      * @return the question
      */
-    public static Question<Boolean> verifyResultObjectCABFFPPAUT() {return new ConsultObjectBooleanCABFFPPAUT();}
+    public static Question<Boolean> verifyResultObjectCABFFPPAUT() {return new ConsultarRegistroEnCABFFPPAUT();}
+
 
 
 }

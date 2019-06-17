@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.questions.transfers;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,8 +36,8 @@ public class VerificarLaTransferenciaBancolombiaXml implements Question<Boolean>
 		}
 
 		if (strXMLCodObtenido != null && strXMLMsgObtenido != null) {
-			if (strXMLCodObtenido.equals(transaction.getErrorCode()) && 
-					strXMLMsgObtenido.equals(transaction.getExpectedResult())) {
+			if (strXMLCodObtenido.equals(transaction.getCodigoError()) &&
+					strXMLMsgObtenido.equals(transaction.getResultadoEsperado())) {
 				result = true;
 			}
 		}else {LOGGER.info("Ruta relativa Xpath a buscar no se presenta en el response");}

@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.transferencias;
 
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransferencias;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateDepositEntity;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransferencias;
+import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateDepositEntity;
 import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
 import co.com.bancolombia.certificacion.app.tasks.builder.ObtenerElSaldoDelDeposito;
 import co.com.bancolombia.certificacion.app.tasks.transfers.TransferBancolombiaXmlTask;

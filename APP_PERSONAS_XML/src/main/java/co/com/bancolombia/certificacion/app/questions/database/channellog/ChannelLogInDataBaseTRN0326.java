@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.questions.database.channellog;
 
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
 import co.com.bancolombia.certificacion.app.integration.BackendFacade;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.LogCanalConstante;
@@ -43,7 +43,7 @@ public class ChannelLogInDataBaseTRN0326 implements Question<Boolean> {
              */
             resultInput = validateField(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5,20), StringManager.formatoDocumento(user.getDocumentNumber()),resultInput);
             resultInput = validateField(LogCanalConstante.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313),Serenity.sessionVariableCalled("trace"),resultInput);
-            resultInput = validateField(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getTransactionCode(),resultInput);
+            resultInput = validateField(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultInput);
             resultInput = validateField(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(user.getDocumentNumber()),resultInput);
             resultInput = validateField(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), user.getDocumenType(),resultInput);
             resultInput = validateField(LogCanalConstante.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultInput);
@@ -52,9 +52,9 @@ public class ChannelLogInDataBaseTRN0326 implements Question<Boolean> {
              * This is the Output plot.
              */
             resultOutput = validateField(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(5,20), StringManager.formatoDocumento(user.getDocumentNumber()),resultOutput);
-            resultOutput = validateField(LogCanalConstante.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(69,72), configuracionTransaccion.getErrorCode(),resultOutput);
+            resultOutput = validateField(LogCanalConstante.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(69,72), configuracionTransaccion.getCodigoError(),resultOutput);
             resultOutput = validateField(LogCanalConstante.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(301,313),Serenity.sessionVariableCalled("trace"),resultOutput);
-            resultOutput = validateField(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(313,317), configuracionTransaccion.getTransactionCode(),resultOutput);
+            resultOutput = validateField(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultOutput);
             resultOutput = validateField(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(317,332), StringManager.formatoDocumento(user.getDocumentNumber()),resultOutput);
             resultOutput = validateField(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(332,333), user.getDocumenType(),resultOutput);
             resultOutput = validateField(LogCanalConstante.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultOutput);

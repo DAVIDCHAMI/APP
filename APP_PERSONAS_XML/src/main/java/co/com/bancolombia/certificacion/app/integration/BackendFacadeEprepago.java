@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.integration;
 
-import co.com.bancolombia.certificacion.app.models.EPrepago;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadTransaccion;
-import co.com.bancolombia.certificacion.app.models.entities.CargarEntidadUsuario;
-import co.com.bancolombia.certificacion.app.models.nousar.CreateLoadEPrepagoEntity;
-import co.com.bancolombia.certificacion.app.models.transaction.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.user.User;
+import co.com.bancolombia.certificacion.app.models.productos.EPrepago;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
+import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
+import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateLoadEPrepagoEntity;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.models.usuario.User;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackTarjetaEPrepago;
 import co.com.bancolombia.backend.modelo.productos.TarjetaEPrepago;
@@ -150,8 +150,8 @@ public class BackendFacadeEprepago {
             usuario.setTipoDocumento(user.getDocumenType());
             existenceEprepago = ePrepago.consultarDetalleEprepago(usuario, AdministradorConstante.CODIGO_BANCO_EPREPAGO);
             if (existenceEprepago != null
-                    && AdministradorConstante.ALTERNATE.equalsIgnoreCase(configuracionTransaccion.getOrientationCase())
-                    && AdministradorConstante.LABEL_NOT_EXIST.equalsIgnoreCase(configuracionTransaccion.getExpectedResult())) {
+                    && AdministradorConstante.ALTERNATE.equalsIgnoreCase(configuracionTransaccion.getOrientacionCaso())
+                    && AdministradorConstante.LABEL_NOT_EXIST.equalsIgnoreCase(configuracionTransaccion.getResultadoEsperado())) {
                 result = true;
             }
         } catch (SQLException e) {
@@ -173,7 +173,7 @@ public class BackendFacadeEprepago {
 
         boolean verificarCreditoEprepago = validarCreditoEprepago(formatter.format(datosEprepago.getBalnceBefore()),
                 formatter.format(datosEprepago.getBalanceAfter()),
-                datosEprepago.getAmount().substring(1), configuracionTransaccion.getOrientationCase());
+                datosEprepago.getAmount().substring(1), configuracionTransaccion.getOrientacionCaso());
 
         if (verificarCreditoEprepago) {
             result = true;
