@@ -9,19 +9,19 @@ Característica: pagos de tarjeta de credito propia y no propia en app Bancolomb
   Esquema del escenario: pago de tarjeta de credito propia master desde una cuenta de ahorro o corriente
 
     Dado que <usuario> esta en la APP en el dispositivo <dispositivo>
-    Cuando selecciona la opcion de pagar tarjetas propias y realiza el pago con pago <tipoPago> de la tarjeta con cuenta <tipoCuenta>
+    Cuando selecciona la opcion de pagar tarjetas propias y realiza el pago con pago <tipoPago> en <tipoMoneda> de la tarjeta con cuenta <tipoCuenta>
     Entonces deberia ver un mensaje de pago exitoso
     Y se verifica el archivo COMMFFLGWWW
 
     Ejemplos:
 
-     | usuario  | dispositivo | tipoPago    | tipoCuenta |
-     | Juan     | Android     | minimo      | Ahorro     |
-     | Andres   | iOS         | total       | Ahorro     |
-     | Luis     | Huawei      | otro valor  | Ahorro     |
-     | Maria    | Android     | minimo      | Corriente  |
-     | Pedro    | iOS         | total       | Corriente  |
-     | Carlos   | Huawei      | otro valor  | Corriente  |
+     | usuario  | dispositivo |tipoMoneda| tipoPago    | tipoCuenta |
+     | Juan     | Android     |  pesos   | minimo      | Ahorro     |
+     | Andres   | iOS         |  dolares | total       | Ahorro     |
+     | Luis     | Huawei      |  pesos   | otro valor  | Ahorro     |
+     | Maria    | Android     |  dolares | minimo      | Corriente  |
+     | Pedro    | iOS         |  pesos   | total       | Corriente  |
+     | Carlos   | Huawei      |  dolares | otro valor  | Corriente  |
 
 
     @manual
