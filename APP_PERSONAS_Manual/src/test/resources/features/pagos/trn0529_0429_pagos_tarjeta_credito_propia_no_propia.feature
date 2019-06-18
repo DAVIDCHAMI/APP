@@ -1,6 +1,6 @@
 #language: es
 
-Característica: pagos de tarjeta de credito propia y no propia en app Bancolombia
+Característica: Trn-0529_0429 pagos de tarjeta de credito propia y no propia en app Bancolombia
   Como usuario de Bancolombia
   Quiero pagar una tarjeta de credito propia y no propia
   Para liberar espacio en el cupo de la tarjeta
