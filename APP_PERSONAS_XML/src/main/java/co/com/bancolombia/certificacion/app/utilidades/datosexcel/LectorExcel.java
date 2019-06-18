@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import co.com.bancolombia.certificacion.app.errors.exceptions.PropertiesDoesNotLoadException;
+import co.com.bancolombia.certificacion.app.exceptions.PropiedadesNoCargan;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -39,7 +39,7 @@ public class LectorExcel {
 		try {
 			sheet = getSheetByName(excelFilePath, sheetName);
 		} catch (InvalidFormatException | IOException e) {
-			throw new PropertiesDoesNotLoadException(e);
+			throw new PropiedadesNoCargan(e);
 		}
 		return readSheet(sheet);
 
@@ -62,7 +62,7 @@ public class LectorExcel {
 		try {
 			sheet = getSheetByIndex(excelFilePath, sheetNumber);
 		} catch (InvalidFormatException | IOException e) {
-			throw new PropertiesDoesNotLoadException(e);
+			throw new PropiedadesNoCargan(e);
 		}
 		return readSheet(sheet);
 	}

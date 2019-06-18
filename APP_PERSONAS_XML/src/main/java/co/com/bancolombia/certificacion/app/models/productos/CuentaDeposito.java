@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
 
-import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.*;
 
@@ -49,7 +49,7 @@ public class CuentaDeposito extends Producto {
         if (INI_CTA_AHORROS.equalsIgnoreCase(typeAccountInLetter) || INI_CTA_CORRIENTE.equalsIgnoreCase(typeAccountInLetter)) {
             this.typeAccountInLetter = typeAccountInLetter;
         } else {
-            this.typeAccountInLetter = UtilityManager.castTypeAccountLetter(typeAccountInLetter);
+            this.typeAccountInLetter = AdministradorUtilidades.tipoCuentaLetra(typeAccountInLetter);
         }
 
     }
@@ -72,7 +72,7 @@ public class CuentaDeposito extends Producto {
         if (NUM_CTA_AHORROS.equalsIgnoreCase(typeAccountInNumber) || NUM_CTA_CORRIENTE.equalsIgnoreCase(typeAccountInNumber)) {
             this.typeAccountInNumber = typeAccountInNumber;
         } else {
-            this.typeAccountInNumber = UtilityManager.castTypeAccountNumber(typeAccountInNumber);
+            this.typeAccountInNumber = AdministradorUtilidades.formatoTipoCuentaNumero(typeAccountInNumber);
         }
 
     }
@@ -92,7 +92,7 @@ public class CuentaDeposito extends Producto {
      * @param accountNumberFormat the account number format
      */
     public void setAccountNumberFormat(String accountNumberFormat) {
-        this.accountNumberFormat = UtilityManager.depositAccountFormat(accountNumberFormat);
+        this.accountNumberFormat = AdministradorUtilidades.formatoCuentaDeposito(accountNumberFormat);
     }
 
 

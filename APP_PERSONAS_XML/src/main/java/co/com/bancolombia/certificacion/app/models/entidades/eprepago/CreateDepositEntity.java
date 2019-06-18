@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.entidades.eprepago;
 
 import co.com.bancolombia.backend.modelo.productos.CuentaDeposito;
-import co.com.bancolombia.certificacion.app.utilidades.UtilityManager;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class CreateDepositEntity {
         CuentaDeposito depositValues = new CuentaDeposito();
         depositValues.setNumero(data.get(0));
         depositValues.setTipo(data.get(1));
-        depositValues.setTipoNum(UtilityManager.castTypeAccountNumber(data.get(1)));
+        depositValues.setTipoNum(AdministradorUtilidades.formatoTipoCuentaNumero(data.get(1)));
         CreateDepositEntity.depositValues = depositValues;
     }
 }

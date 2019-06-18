@@ -8,7 +8,7 @@ public class ExcepcionesConstante {
     /**
      * The constantes PRODUCT_NOEXIST.
      */
-    public static final String PRODUCT_NOEXIST = "Producto no existe";
+    public static final String PRODUCTO_NO_EXISTE = "Producto o archivo no existe";
 
 
     /**

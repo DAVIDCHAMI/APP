@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.administradores;
 
 
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,41 +9,57 @@ import org.apache.logging.log4j.Logger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.UTILITY_CLASS;
-
-
+/**
+ * The type Utility manager.
+ */
 public class AdministradorUtilidades {
 
     private static final Logger LOGGER = LogManager.getLogger(AdministradorUtilidades.class.getName());
 
     private AdministradorUtilidades() {
-        throw new IllegalStateException(UTILITY_CLASS);
+        throw new IllegalStateException(TipoClaseConstante.UTILITY_CLASS);
     }
 
-
-    public static String formatoCuentaDeposito(String cuentaDeposito) {
-        String cuentaDepositoCeros = String.format("%011d", Long.parseLong(cuentaDeposito));
-        return cuentaDepositoCeros.replaceFirst("(\\d{3})(\\d{6})(\\d{2})", "$1-$2-$3");
-
-    }
-
-    public static String tipoCuentaLetra(String tipoCuenta) {
-        String tipoCuentaMayuscula = tipoCuenta.toUpperCase();
-        String tipoCuentaCasteo = "";
-        if (tipoCuentaMayuscula.contains("AHORRO")) {
-            tipoCuentaCasteo = "S";
-        } else if (tipoCuentaMayuscula.contains("CORRIENTE")) {
-            tipoCuentaCasteo = "D";
-        }
-        return tipoCuentaCasteo;
+    /**
+     * Format deposit account string.
+     *
+     * @param depositAccount the deposit account
+     * @return the string
+     */
+    public static String formatoCuentaDeposito(String depositAccount) {
+        String depositAccountCeros = String.format("%011d", Long.parseLong(depositAccount));
+        return depositAccountCeros.replaceFirst("(\\d{3})(\\d{6})(\\d{2})", "$1-$2-$3");
 
     }
 
-
-    public static String formatoTipoCuentaNumero(String typeAccount) {
+    /**
+     * Cast type account letter string.
+     *
+     * @param typeAccount the type account
+     * @return the string
+     */
+    public static String tipoCuentaLetra(String typeAccount) {
         String typeAccountUpper = typeAccount.toUpperCase();
         String castTypeAccount = "";
         if (typeAccountUpper.contains("AHORRO")) {
+            castTypeAccount = "S";
+        } else if (typeAccountUpper.contains("CORRIENTE")) {
+            castTypeAccount = "D";
+        }
+        return castTypeAccount;
+
+    }
+
+    /**
+     * Cast type account number string.
+     *
+     * @param typeAccount the type account
+     * @return the string
+     */
+    public static String formatoTipoCuentaNumero(String typeAccount) {
+        String typeAccountUpper = typeAccount.toUpperCase();
+        String castTypeAccount = "";
+        if (typeAccountUpper.contains("AHORROS")) {
             castTypeAccount = "7";
         } else if (typeAccountUpper.contains("CORRIENTE")) {
             castTypeAccount = "1";
@@ -101,8 +118,9 @@ public class AdministradorUtilidades {
         try {
             dateFormat = formatter.format(parser.parse(date));
         } catch (ParseException e) {
-                LOGGER.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
         return dateFormat;
     }
+
 }

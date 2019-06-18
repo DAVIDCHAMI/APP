@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
-import co.com.bancolombia.certificacion.app.errors.exceptions.FieldProductAssertion;
-import co.com.bancolombia.certificacion.app.questions.factory.ChannelLogFactory;
+import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaLogCanal;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,10 +10,10 @@ import java.util.Arrays;
 
 public enum ArchivosLogCanalIseries {
 
-    COMFFLGWWW0369 (ChannelLogFactory.theChannelLog0369(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    COMFFLGWWW0322 (ChannelLogFactory.theChannelLog0322(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    //COMFFLGWWW0325 (ChannelLogFactory.theChannelLog0325(), FieldProductAssertion.class, NOT_WORKS),
-    COMFFLGWWW0326 (ChannelLogFactory.theChannelLog0326(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
+    COMFFLGWWW0369 (FabricaLogCanal.elLogCanal0369(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0322 (FabricaLogCanal.elLogCanal0322(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0325 (FabricaLogCanal.elLogCanal0325(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0326 (FabricaLogCanal.elLogCanal0326(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
 
     private static final Logger LOGGER = LogManager.getLogger();

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import co.com.bancolombia.certificacion.app.errors.exceptions.PropertiesDoesNotLoadException;
+import co.com.bancolombia.certificacion.app.exceptions.PropiedadesNoCargan;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -98,7 +98,7 @@ public class DataToFeature {
 					try {
 						excelData = new LectorExcel().getData(excelFilePath, sheetName);
 					} catch (Exception e) {
-						throw new PropertiesDoesNotLoadException(e);
+						throw new PropiedadesNoCargan(e);
 					}
 
 					for (int rowNumber = filaSeleccionada; rowNumber < excelData.size() - 1; rowNumber++) {

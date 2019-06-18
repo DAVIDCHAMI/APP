@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.models.entidades;
 
 
 import co.com.bancolombia.certificacion.app.models.transaccion.Inscripcion;
-import co.com.bancolombia.certificacion.app.models.usuario.User;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 
@@ -38,16 +38,16 @@ public class CargarEntidadInscripcion {
      */
     public static void setInsciption(List<String> data) {
         CuentaDeposito depositAccount = new CuentaDeposito();
-        User user = new User();
+        Usuario usuario = new Usuario();
 
         inscripcion.setBankName(data.get(0));
         depositAccount.setTipo(data.get(1));
         depositAccount.setAccountNumberFormat(data.get(2));
         inscripcion.setCustomName(data.get(3));
-        user.setDocumenType(data.get(4));
-        user.setDocumentNumber(data.get(5));
+        usuario.setTipoDocumento(data.get(4));
+        usuario.setNumeroDocumento(data.get(5));
 
-        inscripcion.setUser(user);
+        inscripcion.setUsuario(usuario);
         inscripcion.setDepositAccount(depositAccount);
     }
 }

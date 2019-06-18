@@ -4,7 +4,7 @@ import co.com.bancolombia.certificacion.app.models.productos.EPrepago;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilidades.UtilityManager.depositAccountFormat;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoCuentaDeposito;
 
 /**
  * The type Create load e prepago entity.
@@ -31,7 +31,7 @@ public class CreateLoadEPrepagoEntity {
      */
     public static void setLoadEPrepago(List<String> data) {
         EPrepago ePrepagoValues = new EPrepago();
-        ePrepagoValues.setOriginAccount(depositAccountFormat(data.get(0)));
+        ePrepagoValues.setOriginAccount(formatoCuentaDeposito(data.get(0)));
         ePrepagoValues.setAmount("0" + data.get(2));
         CreateLoadEPrepagoEntity.ePrepagoValues = ePrepagoValues;
     }

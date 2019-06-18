@@ -47,8 +47,6 @@ public class CargarEntidadInversionVirtual {
             virtualInvestment.setPeriodicityPaymentInterest(data.get(0));
             virtualInvestment.setDaysTerm(data.get(1));
             virtualInvestment.setAnnualEffectiveRate(data.get(2));
-
-
         }else{
             virtualInvestment.setInvestmentValue(data.get(0));
             virtualInvestment.setDaysTerm(data.get(1));

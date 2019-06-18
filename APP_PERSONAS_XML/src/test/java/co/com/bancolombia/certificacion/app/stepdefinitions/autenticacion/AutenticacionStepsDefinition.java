@@ -1,27 +1,26 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.autenticacion;
 
 
-import co.com.bancolombia.certificacion.app.tasks.authentication.AutenticarPorXml;
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.AutenticarPorXml;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatosAutenticacion;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatosTransaccion;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import cucumber.api.java.es.Y;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.questions.factory.FabricaXml.verificaElResultadoDeLaAuntenticacionPorXml;
+import static co.com.bancolombia.certificacion.app.questions.fabrica.FabricaXml.verificaElResultadoDeLaAuntenticacionPorXml;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.is;
 
 /**
- * The type User autenticacion stepdefinitions.
+ * The type Usuario autenticacion stepdefinitions.
  */
 public class AutenticacionStepsDefinition {
 

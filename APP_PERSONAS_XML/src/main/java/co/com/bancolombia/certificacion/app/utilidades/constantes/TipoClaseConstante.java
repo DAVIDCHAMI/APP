@@ -12,7 +12,7 @@ public class TipoClaseConstante {
     /**
      * The constantes UI_CLASS.
      */
-    public static final String UI_CLASS = "User interface Class";
+    public static final String UI_CLASS = "Usuario interface Class";
     /**
      * The constantes CONSTANT_CLASS.
      */

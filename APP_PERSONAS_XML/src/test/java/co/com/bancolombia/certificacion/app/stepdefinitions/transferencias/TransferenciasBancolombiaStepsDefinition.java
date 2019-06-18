@@ -3,9 +3,9 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.transferencias;
 
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransferencias;
 import co.com.bancolombia.certificacion.app.models.entidades.eprepago.CreateDepositEntity;
-import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
-import co.com.bancolombia.certificacion.app.tasks.builder.ObtenerElSaldoDelDeposito;
-import co.com.bancolombia.certificacion.app.tasks.transfers.TransferBancolombiaXmlTask;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaXml;
+import co.com.bancolombia.certificacion.app.tasks.constructor.ObtenerElSaldoDelDeposito;
+import co.com.bancolombia.certificacion.app.tasks.transferencias.TransferBancolombiaXmlTask;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import net.serenitybdd.core.Serenity;

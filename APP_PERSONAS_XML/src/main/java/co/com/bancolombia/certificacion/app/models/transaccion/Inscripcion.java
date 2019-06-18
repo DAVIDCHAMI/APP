@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.models.transaccion;
 
 
 import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
-import co.com.bancolombia.certificacion.app.models.usuario.User;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 
 /**
  * The type Inscripcion cuenta.
@@ -11,7 +11,7 @@ public class Inscripcion {
 
     private String bankName;
     private String customName;
-    private User user;
+    private Usuario usuario;
     private CuentaDeposito depositAccount;
 
     /**
@@ -76,16 +76,16 @@ public class Inscripcion {
      *
      * @return the usuario
      */
-    public User getUser() {
-        return user;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     /**
      * Sets usuario.
      *
-     * @param user the usuario
+     * @param usuario the usuario
      */
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

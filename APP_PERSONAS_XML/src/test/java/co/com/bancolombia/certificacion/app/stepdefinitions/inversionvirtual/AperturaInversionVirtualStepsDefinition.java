@@ -1,16 +1,16 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.inversionvirtual;
 
-import co.com.bancolombia.certificacion.app.tasks.builder.ObtenerElSaldoDelDeposito;
+import co.com.bancolombia.certificacion.app.tasks.constructor.ObtenerElSaldoDelDeposito;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.*;
-import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.AperturarInversionVirtualPorXml;
+import co.com.bancolombia.certificacion.app.tasks.inversionvirtual.AperturarInversionVirtualPorXml;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.questions.factory.DataBaseFinacleFactory.*;
-import static co.com.bancolombia.certificacion.app.questions.factory.FabricaXml.*;
+import static co.com.bancolombia.certificacion.app.questions.fabrica.FabricaBaseDeDatosFinacle.*;
+import static co.com.bancolombia.certificacion.app.questions.fabrica.FabricaXml.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

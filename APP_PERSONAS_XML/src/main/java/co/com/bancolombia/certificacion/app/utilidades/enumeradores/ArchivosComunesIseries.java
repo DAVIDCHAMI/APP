@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
-import co.com.bancolombia.certificacion.app.errors.exceptions.FieldProductAssertion;
-import co.com.bancolombia.certificacion.app.questions.factory.DataBaseIseriesFactory;
+import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaBaseDeDatosIseries;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,19 +10,19 @@ import java.util.Arrays;
 
 public enum ArchivosComunesIseries {
 
-    SCIFFSALDO_DEBITO (DataBaseIseriesFactory.theIseriesFileSCIFFSALDOdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    SCIFFSALDO_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFSALDOcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    CABFFPPAUT (DataBaseIseriesFactory.theIseriesFileCABFFPPAUT(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    PCCFFPPCLI (DataBaseIseriesFactory.theIseriesFilePCCFFPPCLI(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    CABFFTARJ  (DataBaseIseriesFactory.theIseriesFileCABFFTARJ(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    WWWFFUSRSV (DataBaseIseriesFactory.theIseriesFileWWWFFUSRSV(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    TERMCONDITION (DataBaseIseriesFactory.theIseriesFileTERMCONDITION(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    CABFFPPMAE (DataBaseIseriesFactory.theIseriesFileCABFFPPMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    TCBFFMAE (DataBaseIseriesFactory.theIseriesFileTCBFFMAE(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    SCIFFMRCMV_DEBITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    SCIFFMRCMV_CREDITO (DataBaseIseriesFactory.theIseriesFileSCIFFMRCMVcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    PCCFFMOVTFLOGTF_DEBITO (DataBaseIseriesFactory.theIseriesFilePCCMOVTFLOGTFdebit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS),
-    PCCFFMOVTFLOGTF_CREDITO (DataBaseIseriesFactory.theIseriesFilePCCMOVTFLOGTFcredit(), FieldProductAssertion.class, FieldProductAssertion.NOT_WORKS);
+    SCIFFSALDO_DEBITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_CREDITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPAUT (FabricaBaseDeDatosIseries.theIseriesFileCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFPPCLI (FabricaBaseDeDatosIseries.theIseriesFilePCCFFPPCLI(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFTARJ  (FabricaBaseDeDatosIseries.theIseriesFileCABFFTARJ(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    WWWFFUSRSV (FabricaBaseDeDatosIseries.theIseriesFileWWWFFUSRSV(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TERMCONDITION (FabricaBaseDeDatosIseries.theIseriesFileTERMCONDITION(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPMAE (FabricaBaseDeDatosIseries.theIseriesFileCABFFPPMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TCBFFMAE (FabricaBaseDeDatosIseries.theIseriesFileTCBFFMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_DEBITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFMRCMVdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_CREDITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_DEBITO (FabricaBaseDeDatosIseries.theIseriesFilePCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_CREDITO (FabricaBaseDeDatosIseries.theIseriesFilePCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
 
     private static final Logger LOGGER = LogManager.getLogger();

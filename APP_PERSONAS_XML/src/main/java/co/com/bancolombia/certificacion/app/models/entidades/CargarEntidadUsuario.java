@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.entidades;
 
 
-import co.com.bancolombia.certificacion.app.models.usuario.User;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class CargarEntidadUsuario {
 
-    private static User user = new User();
+    private static Usuario usuario = new Usuario();
 
     private CargarEntidadUsuario() {
         throw new IllegalStateException(TipoClaseConstante.ENTITY_CLASS);
@@ -22,8 +22,8 @@ public class CargarEntidadUsuario {
      *
      * @return the usuario
      */
-    public static User getUser() {
-        return user;
+    public static Usuario getUsuario() {
+        return usuario;
     }
 
     /**
@@ -32,14 +32,14 @@ public class CargarEntidadUsuario {
      * @param data the data
      */
     public static void conEstos(List<String> data) {
-        user.setDocumentNumber(data.get(0));
-        user.setDocumenType(data.get(1));
-        user.setUsername(data.get(2));
-        user.setPassword(data.get(3));
-        user.setSecondPassword(data.get(4));
+        usuario.setNumeroDocumento(data.get(0));
+        usuario.setTipoDocumento(data.get(1));
+        usuario.setNombreUsuario(data.get(2));
+        usuario.setClave(data.get(3));
+        usuario.setSegundaClave(data.get(4));
         if (data.size() > 5) {
-            user.setEmail(data.get(5));
-            user.setKeyStatus(data.get(6));
+            usuario.setCorreo(data.get(5));
+            usuario.setEstadoClave(data.get(6));
         }
     }
 }

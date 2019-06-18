@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.inversionvirtual;
 
-import co.com.bancolombia.certificacion.app.questions.factory.ChannelLogFactory;
-import co.com.bancolombia.certificacion.app.questions.factory.FabricaXml;
-import co.com.bancolombia.certificacion.app.tasks.virtualinvestment.ConsultarTasasInversionVirtualPorXml;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaLogCanal;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaXml;
+import co.com.bancolombia.certificacion.app.tasks.inversionvirtual.ConsultarTasasInversionVirtualPorXml;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import net.serenitybdd.core.Serenity;
@@ -32,7 +32,7 @@ public class ConsultaTasasInversionVirtualStepsDefinition {
     @And("^he can see the verification in the LogCanal-COMFFLGWWW_TRN0322$")
     public void heCanSeeTheVerificationInTheLogCanalCOMFFLGWWW() {
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(ChannelLogFactory.theChannelLog0322(), is(true))
+                GivenWhenThen.seeThat(FabricaLogCanal.elLogCanal0322(), is(true))
         );
     }
 }

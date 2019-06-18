@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.models.entidades;
 
 
-import co.com.bancolombia.certificacion.app.models.factoria.ProductFactory;
-import co.com.bancolombia.certificacion.app.models.factoria.ProductFactoryMethod;
+import co.com.bancolombia.certificacion.app.models.factoria.FactoriaProducto;
+import co.com.bancolombia.certificacion.app.models.factoria.FactoriaProductoMetodo;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencias;
 
@@ -37,7 +37,7 @@ public class CargarEntidadTransferencias {
      */
     public static void setTransferencias(List<String> data) {
         Transferencias transferencias = new Transferencias();
-        ProductFactoryMethod productFactory = new ProductFactory();
+        FactoriaProductoMetodo productFactory = new FactoriaProducto();
 
         Producto originProduct = productFactory.createProduct(data.get(0), data.get(1));
         Producto destinationProduct = productFactory.createProduct(data.get(2), data.get(3));

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comun;
 
-import co.com.bancolombia.certificacion.app.questions.factory.DataBaseFinacleFactory;
+import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaBaseDeDatosFinacle;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import net.serenitybdd.screenplay.GivenWhenThen;
@@ -30,7 +30,7 @@ public class ComunOracleStepDefinition {
     @And("^I verify the opening virtual investment in finacle$")
     public void iVverifyInFinacle() {
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(DataBaseFinacleFactory.verificarLaAperturaDeInversionVirtualEnFinacle(), is(true))
+                GivenWhenThen.seeThat(FabricaBaseDeDatosFinacle.verificarLaAperturaDeInversionVirtualEnFinacle(), is(true))
         );
     }
     
