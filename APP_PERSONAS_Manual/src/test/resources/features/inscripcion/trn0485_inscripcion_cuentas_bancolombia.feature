@@ -16,5 +16,5 @@ Característica: Inscripcion de cuentas Bancolombia en la APP
     Ejemplos:
       |usuario   |dispositivo|banco      |numeroProducto|tipoProducto|nombrePersonalizado|tipoDocumento|numeroDocumento|
       #|invictus01|android    |Bancolombia||Cuenta de Ahorros
-      #|invictus01|iOS        |Bancolombia|
-      #|invictus01|huawei     |Bancolombia|
+      #|invictus01|iOS        |Bancolombia||Cuenta de Ahorros
+      #|invictus01|huawei     |Bancolombia||Cuenta de Ahorros
