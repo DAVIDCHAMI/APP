@@ -12,8 +12,8 @@ import java.io.IOException;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/inversionvirtual/Trn0322ConsultaDeTasas.feature"},
-        tags = {"@TestCase1"},
+        features = {"src/test/resources/features/inversionvirtual/Trn0322ConsultaDeTasasInversionVirtual.feature"},
+        tags = {"@CasoExitoso1"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE,
         monochrome = true
@@ -25,6 +25,6 @@ public class ConsultaTasasInversionVirtualRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/inversionvirtual/Trn0322ConsultaDeTasas.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/inversionvirtual/Trn0322ConsultaDeTasasInversionVirtual.feature");
     }
 }

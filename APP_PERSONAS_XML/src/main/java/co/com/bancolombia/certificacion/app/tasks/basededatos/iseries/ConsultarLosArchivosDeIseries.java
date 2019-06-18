@@ -48,11 +48,11 @@ public class ConsultarLosArchivosDeIseries implements Task {
            String codTrn = transaction.getCodigoTransaccion();
 
            if (LOGCANAL.equals(dato)){
-               ArchivosLogCanalIseries theVerification = ArchivosLogCanalIseries.getSearchFile(dato+codTrn);
-               theActorInTheSpotlight().should(seeThat(theVerification.ofTheFile(),is(true)).orComplainWith( theVerification.getException(), theVerification.getMessage()));
+               ArchivosLogCanalIseries laVerificacion = ArchivosLogCanalIseries.getSearchFile(dato+codTrn);
+               theActorInTheSpotlight().should(seeThat(laVerificacion.delArchivo(),is(true)).orComplainWith( laVerificacion.getException(), laVerificacion.getMessage()));
            }else{
                ArchivosComunesIseries theVerification = ArchivosComunesIseries.getSearchFile(dato);
-               theActorInTheSpotlight().should(seeThat(theVerification.ofTheFile(),is(true)).orComplainWith( theVerification.getException(), theVerification.getMessage()));
+               theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(),is(true)).orComplainWith( theVerification.getException(), theVerification.getMessage()));
            }
        }
     }

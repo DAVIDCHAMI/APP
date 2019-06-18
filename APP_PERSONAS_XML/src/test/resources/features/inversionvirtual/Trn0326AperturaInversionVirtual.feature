@@ -5,7 +5,7 @@ Característica: APP Personas Bancolombia
  bancolombia si se autentica con un nombre de usuario y clave, para luego realizar la apertura inversion virtual.
 
  @CasoExitoso1
- Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia
+ Esquema del escenario: Aperturar la inversion virtual de manera exitosa en la aplicacion de APP Personas
   Dado que yo subo los datos para la prueba de apertura inversion virtual
    | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado>|
    | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> |

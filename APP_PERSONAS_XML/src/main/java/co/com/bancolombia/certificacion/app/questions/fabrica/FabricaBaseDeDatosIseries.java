@@ -16,14 +16,14 @@ public class FabricaBaseDeDatosIseries {
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFilePCCFFPPCLI() { return new ConsultarRegistroEnPCCFFPPCLI(); }
+    public static Question<Boolean> elArchivoEnIseriesPCCFFPPCLI() { return new ConsultarRegistroEnPCCFFPPCLI(); }
 
     /**
      * Verify if the object returns records.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileCABFFTARJ() {
+    public static Question<Boolean> elArchivoEnIseriesCABFFTARJ() {
         return new ConsultarRegistroEnCABFFTARJ();
     }
 
@@ -32,7 +32,7 @@ public class FabricaBaseDeDatosIseries {
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileWWWFFUSRSV() {
+    public static Question<Boolean> elArchivoEnIseriesWWWFFUSRSV() {
         return new ConsultarRegistroEnWWWFFUSRSV();
     }
 
@@ -42,7 +42,7 @@ public class FabricaBaseDeDatosIseries {
      * @return the question
      */
 
-    public static Question<Boolean> theIseriesFileTERMCONDITION() {
+    public static Question<Boolean> elArchivoEnIseriesTERMCONDITION() {
         return new ConsultarRegistroEnWWWFFLGTYC();
     }
 
@@ -51,58 +51,58 @@ public class FabricaBaseDeDatosIseries {
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileCABFFPPMAE() {return new ConsultarRegistroEnCABFFPPMAE();}
+    public static Question<Boolean> elArchivoEnIseriesCABFFPPMAE() {return new ConsultarRegistroEnCABFFPPMAE();}
 
     /**
      * Verify result debit SCIFFSALDO question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFSALDOdebit() {return new ConsultarDebitoEnSCIFFSALDO();}
+    public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOdebit() {return new ConsultarDebitoEnSCIFFSALDO();}
 
     /**
      * Verify result debit SCIFFSALDO question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFSALDOcredit() {return new ConsultarCreditoEnSCIFFSALDO();}
+    public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOcredit() {return new ConsultarCreditoEnSCIFFSALDO();}
 
     /**
      * Verify result debit TCBFFMAE question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileTCBFFMAE() {return new ConsultarRegistroEnTCBFFMAE();}
+    public static Question<Boolean> elArchivoEnIseriesTCBFFMAE() {return new ConsultarRegistroEnTCBFFMAE();}
     /**
      * Verify result object SCIFFMRCMV question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFMRCMVdebit() {return new ConsultarDebitoEnSCIFFMRCMV();}
+    public static Question<Boolean> elArchivoEnIseriesSCIFFMRCMVdebit() {return new ConsultarDebitoEnSCIFFMRCMV();}
     /**
      * Verify result object SCIFFMRCMV question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileSCIFFMRCMVcredit() {return new ConsultarCreditoEnSCIFFMRCMV();}
+    public static Question<Boolean> elArchivoEnIseriesSCIFFMRCMVcredit() {return new ConsultarCreditoEnSCIFFMRCMV();}
     /**
      * Verify result object CABFFPPAUT question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFileCABFFPPAUT() {return new ConsultarRegistroEnCABFFPPAUT();}
+    public static Question<Boolean> elArchivoEnIseriesCABFFPPAUT() {return new ConsultarRegistroEnCABFFPPAUT();}
     /**
      * Verify result object pccmovtflogtf question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFilePCCMOVTFLOGTFdebit() { return new ConsultarDebitoEnMOVTFLOGTF(); }
+    public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFdebit() { return new ConsultarDebitoEnMOVTFLOGTF(); }
     /**
      * Verify result object pccmovtflogtf question.
      *
      * @return the question
      */
-    public static Question<Boolean> theIseriesFilePCCMOVTFLOGTFcredit() { return new ConsultarCreditoEnMOVTFLOGTF(); }
+    public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFcredit() { return new ConsultarCreditoEnMOVTFLOGTF(); }
 
 
 }

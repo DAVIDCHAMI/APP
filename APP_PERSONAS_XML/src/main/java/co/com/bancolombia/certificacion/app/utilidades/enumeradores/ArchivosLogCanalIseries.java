@@ -27,7 +27,7 @@ public enum ArchivosLogCanalIseries {
         this.mensaje = mensaje;
     }
 
-    public Question<Boolean> ofTheFile() {
+    public Question<Boolean> delArchivo() {
         return question;
     }
     public Class<AssertionError> getException() {

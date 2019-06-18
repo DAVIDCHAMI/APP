@@ -10,19 +10,19 @@ import java.util.Arrays;
 
 public enum ArchivosComunesIseries {
 
-    SCIFFSALDO_DEBITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFSALDO_CREDITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFPPAUT (FabricaBaseDeDatosIseries.theIseriesFileCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFPPCLI (FabricaBaseDeDatosIseries.theIseriesFilePCCFFPPCLI(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFTARJ  (FabricaBaseDeDatosIseries.theIseriesFileCABFFTARJ(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    WWWFFUSRSV (FabricaBaseDeDatosIseries.theIseriesFileWWWFFUSRSV(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    TERMCONDITION (FabricaBaseDeDatosIseries.theIseriesFileTERMCONDITION(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFPPMAE (FabricaBaseDeDatosIseries.theIseriesFileCABFFPPMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    TCBFFMAE (FabricaBaseDeDatosIseries.theIseriesFileTCBFFMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFMRCMV_DEBITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFMRCMVdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFMRCMV_CREDITO (FabricaBaseDeDatosIseries.theIseriesFileSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFMOVTFLOGTF_DEBITO (FabricaBaseDeDatosIseries.theIseriesFilePCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFMOVTFLOGTF_CREDITO (FabricaBaseDeDatosIseries.theIseriesFilePCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
+    SCIFFSALDO_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPAUT (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFPPCLI (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCFFPPCLI(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFTARJ  (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFTARJ(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    WWWFFUSRSV (FabricaBaseDeDatosIseries.elArchivoEnIseriesWWWFFUSRSV(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TERMCONDITION (FabricaBaseDeDatosIseries.elArchivoEnIseriesTERMCONDITION(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPMAE (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TCBFFMAE (FabricaBaseDeDatosIseries.elArchivoEnIseriesTCBFFMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -37,7 +37,7 @@ public enum ArchivosComunesIseries {
         this.mensaje = mensaje;
     }
 
-    public Question<Boolean> ofTheFile() {
+    public Question<Boolean> delArchivo() {
         return question;
     }
     public Class<AssertionError> getException() {
