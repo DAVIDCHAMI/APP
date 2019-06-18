@@ -9,7 +9,7 @@ Característica: Trn-1232 activacion e-Prepago en app Bancolombia
   Esquema del escenario: activacion de e-Prepago con y sin saldo
 
     Dado que <usuario> esta en la APP en el dispositivo <dispositivo>
-    Cuando selecciona la e-Prepago <saldo> que quiera activar y da clic en "activar"
+    Cuando selecciona la e-Prepago <saldo> para activar y da clic en "activar"
     Entonces deberia ver el mensaje <mensaje>
     Y se verifica el archivo COMMFFLGWWW
 
@@ -26,7 +26,7 @@ Característica: Trn-1232 activacion e-Prepago en app Bancolombia
   Esquema del escenario: activacion de e-Prepago con maximo numero de activaciones diarias
 
     Dado que <usuario> esta en la APP en el dispositivo <dispositivo>
-    Cuando selecciona la e-Prepago que quiera activar y da clic en "activar"
+    Cuando selecciona la e-Prepago para activar y da clic en "activar"
     Entonces deberia ver que el mensaje de activacion fallo
     Y se verifica el archivo COMMFFLGWWW
 
@@ -42,7 +42,7 @@ Característica: Trn-1232 activacion e-Prepago en app Bancolombia
   Esquema del escenario: flujo transaccional de la activacion de e-Prepago
 
     Dado que el usuario esta en la APP
-    Cuando selecciona la e-Prepago que quiera activar y da clic en "activar"
+    Cuando selecciona la e-Prepago para activar y da clic en "activar"
     Entonces deberia ver un mensaje de generacion exitosa
     Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4> <Trn-5>
 
