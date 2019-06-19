@@ -1,19 +1,19 @@
 #language: es
 
-Característica: Registro o enrolamiento de usuario en la APP Bancolombia
-  Como usuario de Bancolombia
-  Quiero registrar autenticarme en la APP con mi usuario y clave
-  Para crear el usuario
+Característica: Registro de usuario en la APP Bancolombia
+  Como cliente de Bancolombia
+  Quiero realizar el registro de mi usuario virtual en la APP
+  Para poder transar por los canales virtuales
 
   @manual
-  Esquema del escenario: Autenticacion del usuario exitosa en la APP
-    Dado que <nombre> se encuentra enrolado en la APP
-    Cuando ingresa el usuario <usuario> y la clave <clave> en el dispositivo <dispositivo>
-    Entonces se verifica que el usuario pudo iniciar sesion
+  Esquema del escenario: Registro o enrolamiento del usuario en la APP
+    Dado que <nombre> ingreso con cedula <cedula> y clave <clave> en el dispositivo <dispositivo>
+    Cuando registra el usuario <usuario> e ingresa el correo <correo>
+    Entonces se verifica que el sistema presente mensaje de registro exitoso
     Y se verifica el registro en el Log del Canal COMFFLGWWW
 
     Ejemplos:
-      |caseID|nombre|usuario   |clave|dispositivo|
-      |1     |Luis  |invictus01|1234 |Android    |
-      |2     |Luis  |invictus01|1234 |iOS        |
-      |3     |Luis  |invictus01|1234 |Huawei     |
+      |caseID|nombre  |cedula   |clave  |dispositivo|usuario   |correo                   |
+      |1     |Alberto |58156995 |1234   |Android    |invictus02|dfrios@bancolombia.com.co|
+      |2     |Jorge   |58156996 |1234   |iOS        |invictus03|dfrios@bancolombia.com.co|
+      |3     |Bernardo|58156997 |1234   |Huawei     |invictus04|dfrios@bancolombia.com.co|
