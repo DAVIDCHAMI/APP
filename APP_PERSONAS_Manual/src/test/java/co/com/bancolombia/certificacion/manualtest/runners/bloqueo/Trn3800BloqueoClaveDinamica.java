@@ -7,10 +7,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/bloqueo/trn0453_bloqueo_tarjetas_clave.feature",
+        features = "src/test/resources/features/bloqueo/trn3800_bloqueo_clave_dinamica.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn0412BloqueoTarjetasClave {
+public class Trn3800BloqueoClaveDinamica {
 }
 
