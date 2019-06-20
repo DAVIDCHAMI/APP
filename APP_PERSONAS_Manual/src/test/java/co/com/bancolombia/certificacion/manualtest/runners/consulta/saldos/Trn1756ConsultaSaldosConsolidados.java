@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.inactivacion;
+package co.com.bancolombia.certificacion.manualtest.runners.consulta.saldos;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,10 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/inactivacion/trn1230_inactivacion_e_prepago.feature",
+        features = "src/test/resources/features/consulta/saldos/trn1756_consulta_saldos_consolidados.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn1232InactivacionEprepagoRunner {
+public class Trn1756ConsultaSaldosConsolidados {
 }
-

@@ -49,4 +49,4 @@ Característica: Trn-1232 activacion e-Prepago en app Bancolombia
     Ejemplos:
 
       | Trn-1 |  Trn-2 |  Trn-3 |  Trn-4 |  Trn-5 |
-      |   Autencicacion - 0369    |Saldos consolidados - 1756| Consulta simple e-Prepago- 1228| Consulta detallada e-Prepago - 0228| Activar E-prepago (1232) |
+      |   Autenticacion - 0369    |Saldos consolidados - 1756| Consulta simple e-Prepago- 1228| Consulta detallada e-Prepago - 0228| Activar E-prepago (1232) |

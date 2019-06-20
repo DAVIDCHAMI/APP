@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.pagos;
+package co.com.bancolombia.certificacion.manualtest.runners.bloqueo;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,9 +7,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/pagos/trn0529_0429_pagos_tarjeta_credito_propia_no_propia.feature",
+        features = "src/test/resources/features/bloqueo/trn0140_bloqueo_tarjeta.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn0529_0429PagosTarjetaCreditoPropiaNoPropiaRunner {
+public class Trn0140BloqueoTarjeta {
 }
+

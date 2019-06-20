@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.activacion;
+package co.com.bancolombia.certificacion.manualtest.runners.pagos;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,10 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/activacion/trn1232_activacion_e_prepago.feature",
+        features = "src/test/resources/features/pagos/trn0529_pagos_tarjeta_credito_propia_no_propia_desde_ahorro.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn1232ActivacionEprepagoRunner {
+public class Trn0529_0429PagosTarjetaCreditoPropiaNoPropia {
 }
-
