@@ -2,8 +2,8 @@
 
 Característica: Trn-1231 descarga e-Prepago en app Bancolombia
   Como usuario de Bancolombia
-  Quiero cargar mi tarjeta e-Prepago
-  Para deviolver mi dinero a una cuenta deposito
+  Quiero descargar mi tarjeta e-Prepago
+  Para devolver mi dinero a una cuenta deposito
 
   @manual
   Esquema del escenario: descarga de e-Prepago
