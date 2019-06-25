@@ -23,4 +23,4 @@
        | Ana      | Android     |  con saldo  | Corriente    | Master         |   Si   | otro valor   | dolares |generacion exitosa           |
        | Alba     | Huawei      |  sin saldo  | Corriente    | Master         |   Si   | minimo       | dolares |no tiene fondos sufiecientes |
        | Gloria   | iOS         |  con saldo  | Corriente    | Visa           |   Si   | minimo       | pesos   |generacion exitosa           |
-     
+
