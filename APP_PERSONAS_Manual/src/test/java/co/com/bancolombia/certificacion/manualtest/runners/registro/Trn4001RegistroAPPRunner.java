@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.autenticacion;
+package co.com.bancolombia.certificacion.manualtest.runners.registro;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/autenticacion/trn4001_registroAPP.feature",
+        features = "src/test/resources/features/registro/trn4001_registro_app.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
