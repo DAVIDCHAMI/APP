@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn1756ConsultaSaldosConsolidadosRunner {
+public class Trn1756ConsultaSaldosConsolidados {
 }
