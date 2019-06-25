@@ -8,7 +8,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
   @manual
   Esquema del escenario: Consultar saldo de cuenta deposito
 
-    Dado que el <usuario> esta en la APP
+    Dado que <usuario> esta en la APP
     Cuando selecciona la opcion de consulta de saldos de cuentas depositos
     Entonces deberia ser capaz de de consultar el saldo de todas mis cuentas
 
@@ -16,4 +16,3 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 
       | caseID | usuario |
       | 1  | Juan     |
-      | 2  | Rosa     |
