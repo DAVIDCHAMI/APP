@@ -15,7 +15,7 @@ import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static co.com.bancolombia.certificacion.app.utilidades.LogCanal.UtilidadLogCanal.validateField;
+import static co.com.bancolombia.certificacion.app.utilidades.logcanal.UtilidadLogCanal.validateField;
 
 /**
  * The type Channel log in data base.
@@ -62,7 +62,7 @@ public class LogCanalParaTRN0326 implements Question<Boolean> {
             if (resultInput && resultOutput){
                 resultFinal=true;
             }
-            Serenity.recordReportData().withTitle("ResultLogCanal").andContents(Serenity.sessionVariableCalled("LogCanal"));
+            Serenity.recordReportData().withTitle("ResultLogCanal").andContents(Serenity.sessionVariableCalled("logcanal"));
         }else{
             LOGGER.info("Valores de la trama input y output sin registros");
         }

@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.utilidades.LogCanal;
+package co.com.bancolombia.certificacion.app.utilidades.logcanal;
 
 
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
@@ -16,7 +16,7 @@ public class UtilidadLogCanal {
     private static String resultadoCampo = "Resultado ";
     private static String respuestaOK = "  : OK";
     private static String respuestaERR = "  : ERROR";
-    private static String logCanal = "LogCanal";
+    private static String logCanal = "logcanal";
 
     private UtilidadLogCanal() {
         throw new IllegalStateException(TipoClaseConstante.UTILITY_CLASS);

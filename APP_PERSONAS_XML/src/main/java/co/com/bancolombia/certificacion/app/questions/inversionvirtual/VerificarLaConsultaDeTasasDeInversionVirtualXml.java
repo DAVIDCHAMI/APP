@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.questions.inversionvirtual;
 
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.utilidades.XML.UtilidadXml;
+import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.utilidades.XML;
+package co.com.bancolombia.certificacion.app.utilidades.xml;
 
 import co.com.bancolombia.backend.utilidades.managers.ExcelManager;
 import com.codoid.products.exception.FilloException;
@@ -26,10 +26,10 @@ public class UtilidadXml {
 	
 	/**
 	 * <pre>
-	 * DESCRIPCION: Metodo para extraer el Request de la plantilla de transacciones XML, para luego 
+	 * DESCRIPCION: Metodo para extraer el Request de la plantilla de transacciones xml, para luego
 	 * sera utilizado para enviarse a una peticion REST.
 	 * 
-	 * PRECONDICION: Tener el archivo de la plantilla de transacciones XML en la ruta parametrizada que se valla
+	 * PRECONDICION: Tener el archivo de la plantilla de transacciones xml en la ruta parametrizada que se valla
 	 * a utilizar, para poder ser leido y extrar el XMl a buscar. 
 	 * 
 	 * PARAMETROS DE ENTRADA:
@@ -72,8 +72,8 @@ public class UtilidadXml {
 	}
 	
 	/**
-	 * DESCRIPCION: Metodo para recibir el Request del XML, para luego 
-	 * enviar la peticion REST y devuelve el response del XML.
+	 * DESCRIPCION: Metodo para recibir el Request del xml, para luego
+	 * enviar la peticion REST y devuelve el response del xml.
 	 * 
 	 * PRECONDICION: Enviarle la Url del backend a donde este apuntando la prueba. 
 	 * 
@@ -103,7 +103,7 @@ public class UtilidadXml {
 	}
 	
 	/**
-	 * DESCRIPCION: Metodo para leer el Response del XML, para verificar 
+	 * DESCRIPCION: Metodo para leer el Response del xml, para verificar
 	 * los TAG enviados y devuelve un true si es correcto la verificacion.
 	 * 
 	 * PRECONDICION: Enviarle el response y la ruta relativa(xpath) a verificar. 

@@ -23,7 +23,7 @@ public class ConsultarTasasInversionVirtualPorXml implements Task {
     }
 
     @Override
-    @Step("{0} Consult the rates")
+    @Step("{0} Consulto las tasas de inversion virtual")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 PrepararYenviarConsultaTasasInversionVirtualXml.prepararYenviarXml()
