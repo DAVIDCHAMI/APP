@@ -19,3 +19,16 @@ Característica: Trn-1756 Consulta de saldos cuenta depositos app Bancolombia
       |Luis  |invictus01|1234 |Android    |
       |Luis  |invictus01|1234 |iOS        |
       |Luis  |invictus01|1234 |Huawei     |
+
+  @manual
+  Esquema del escenario: Flujo transaccional Consulta de saldos de cuentas de deposito
+
+    Dado que el usuario esta en la APP
+    Cuando realiza la consulta de saldos
+    Entonces deberia ver los saldos consolidades para cuentas de deposito
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                     |
+      |Autenticacion - 0369|Saldos consolidados - 1756|
