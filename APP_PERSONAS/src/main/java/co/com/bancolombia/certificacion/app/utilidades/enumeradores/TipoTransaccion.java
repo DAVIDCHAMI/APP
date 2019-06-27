@@ -2,13 +2,13 @@ package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
 
 import co.com.bancolombia.certificacion.app.exceptions.BusquedaFallida;
-import co.com.bancolombia.certificacion.app.userinterface.PaginaMenuMisProductos;
+import co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuMisProductos;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.Arrays;
 
-import static co.com.bancolombia.certificacion.app.userinterface.PaginaMenuInferior.MIS_PRODUCTOS;
-import static co.com.bancolombia.certificacion.app.userinterface.PaginaMenuMisProductos.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuInferior.MIS_PRODUCTOS;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuMisProductos.*;
 
 public enum TipoTransaccion {
 

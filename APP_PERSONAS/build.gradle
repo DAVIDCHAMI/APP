@@ -31,8 +31,8 @@ allprojects {
 }
 
 ext{
-    serenityVersion = '2.0.33'
-    serenityCucumberVersion = '1.9.23'
+    serenityVersion = '2.0.52'
+    serenityCucumberVersion = '1.9.39'
 }
 
 dependencies {

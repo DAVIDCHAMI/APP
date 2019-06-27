@@ -7,8 +7,8 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.userinterface.categoriasacordeon.PaginaCategorias.CUENTAS_DEPOSITO;
-import static co.com.bancolombia.certificacion.app.userinterface.consulta.PaginaConsultarMisProductos.CUENTAS_DEPOSITO_CATEGORIA;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.categoriasacordeon.PaginaCategorias.CUENTAS_DEPOSITO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consulta.PaginaConsultarMisProductos.CUENTAS_DEPOSITO_CATEGORIA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarCategoria implements Task {

@@ -17,9 +17,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
  */
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/saldo/Trn1756_consulta_saldos_consolidados.feature"},
-        glue = {"co.com.bancolombia.certificacion.app.stepdefinitions.consultas",
-        "co.com.bancolombia.certificacion.app.stepdefinitions.comunes"},
+        features = {"src/test/resources/features/autenticacion/Trn0369_autenticacion.feature"},
+        glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
 public class ConsultaSaldosCuentaDepositoRunner {
@@ -30,6 +29,6 @@ public class ConsultaSaldosCuentaDepositoRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/saldo/Trn1756_consulta_saldos_consolidados.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/autenticacion/Trn0369_autenticacion.feature");
     }
 }

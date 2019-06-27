@@ -7,11 +7,10 @@
 
   Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia
 
-    Dado que subo los datos de la transaccion
+    Dado que yo subo los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> |
-    Cuando trato de autenticarme usando mis credenciales
-      | <numeroDocumento> | <usuario> | <clave> | <segundaClave> | <tipoDocumento> | <primeraPregunta> | <validarClave> |
-    Entonces verifico el resultado de la autenticacion
+      | <tipoDocumento> |<numeroDocumento> | <segundaClave> |  <primeraPregunta> | <validarClave> |
+    Cuando selecciono la opcion
 
  Ejemplos:
   | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |

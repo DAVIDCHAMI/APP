@@ -1,9 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.exceptions.InicioError;
 import co.com.bancolombia.certificacion.app.interactions.autenticacion.Inserta;
 import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
-import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeInicioSesion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -11,10 +9,9 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
-import static co.com.bancolombia.certificacion.app.exceptions.InicioError.MENSAJE_AUTENTICACION_FALLIDA;
-import static co.com.bancolombia.certificacion.app.userinterface.autenticacion.IngresaClavePage.BOTON_CONTINUAR_AUTENTICACION;
-import static co.com.bancolombia.certificacion.app.userinterface.autenticacion.IngresaUsuarioPage.BOTON_CONTINUAR;
-import static co.com.bancolombia.certificacion.app.userinterface.autenticacion.IngresaUsuarioPage.TEXTO_INGRESA_USUARIO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaClavePage.BOTON_CONTINUAR_AUTENTICACION;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaUsuarioPage.BOTON_CONTINUAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaUsuarioPage.TEXTO_INGRESA_USUARIO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 

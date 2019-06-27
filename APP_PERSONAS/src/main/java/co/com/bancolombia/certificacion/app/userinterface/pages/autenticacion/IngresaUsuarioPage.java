@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.userinterface.autenticacion;
+package co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;

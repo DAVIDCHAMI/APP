@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.bancolombia.certificacion.app.userinterface.autenticacion.IngresaClavePage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaClavePage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Inserta implements Interaction {
