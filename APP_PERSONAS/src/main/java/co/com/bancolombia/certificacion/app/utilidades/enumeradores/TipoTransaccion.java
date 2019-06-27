@@ -11,7 +11,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMen
 import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuMisProductos.*;
 
 public enum TipoTransaccion {
-
     CONSULTAR_PRODUCTO(MIS_PRODUCTOS, CONSULTAR_MIS_PRODUCTOS),
     TRANSFERIR_DINERO(MIS_PRODUCTOS, ENVIAR_DINERO),
     RECIBIR_DINERO(MIS_PRODUCTOS, PaginaMenuMisProductos.RECIBIR_DINERO),
