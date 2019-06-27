@@ -3,32 +3,28 @@ package co.com.bancolombia.certificacion.app.interactions;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.targets.Target;
+import net.serenitybdd.screenplay.actions.Click;
+
+import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.OPT_MENU_PRINCIPAL;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarOpcion implements Interaction {
 
+    private String opcionMenu;
 
-    private Target target;
-
-    public SeleccionarOpcion(Target target) {
-
-        this.target = target;
-
+    public SeleccionarOpcion(String opcionMenu) {
+        this.opcionMenu = opcionMenu;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        WebElementFacade we = target.resolveFor(actor);
-
-        we.waitUntilVisible();
-        we.click();
-
+        actor.attemptsTo(
+                //Click.on(OPT_MENU_PRINCIPAL.OF)
+        );
     }
 
-    public static SeleccionarOpcion en(Target target) {
-        return Tasks.instrumented(SeleccionarOpcion.class, target);
+    public static SeleccionarOpcion en(String opcionMenu) {
+        return instrumented(SeleccionarOpcion.class, opcionMenu);
     }
 
 }
