@@ -25,54 +25,41 @@ public class UtilidadLogCanal {
     /**
      * Format search factoria string.
      *
-     * @param field the name campo
-     * @param valueObtained   the value obtained
-     * @param valueExpected   the value expected
-     * @param result   the result boolean
+     * @param campo the name campo
+     * @param valorObtenido   the value obtained
+     * @param valorEsperado   the value expected
+     * @param resultadoAntes   the result boolean
      *
      * @return the boolean
      */
 
-    public static boolean validateField(String field, String valueObtained, String valueExpected , Boolean result) {
+    public static boolean validarCampo(String campo, String valorObtenido, String valorEsperado , Boolean resultadoAntes) {
 
-        LOGGER.info("Valor Obtenido Campo " + field + " : " + valueObtained);
-        LOGGER.info("Valor Esperado Campo " + field + " : " + valueExpected);
-        reporLogChannel += "Valor Obtenido Campo " + field + " : " + valueObtained + "\n" +
-                "Valor Esperado Campo " + field + " : " + valueExpected + "\n";
+        Boolean resultado = resultadoAntes;
+        LOGGER.info("Valor Obtenido Campo " + campo + " : " + valorObtenido);
+        LOGGER.info("Valor Esperado Campo " + campo + " : " + valorEsperado);
+        reporLogChannel += "Valor Obtenido Campo " + campo + " : " + valorObtenido + "\n" +
+                "Valor Esperado Campo " + campo + " : " + valorEsperado + "\n";
 
         try {
-            if(result){
-                if (valueObtained.equalsIgnoreCase(valueExpected)) {
-                    LOGGER.info(resultadoCampo + respuestaOK);
-                    reporLogChannel += resultadoCampo + respuestaOK + "\n\n";
-                    Serenity.setSessionVariable(logCanal).to(reporLogChannel);
-                    result = true;
-                }else{
-                    LOGGER.info(resultadoCampo + respuestaERR);
-                    reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
-                    Serenity.setSessionVariable(logCanal).to(reporLogChannel);
-                    result = false;
-                }
-            }else {
-                if (valueObtained.equalsIgnoreCase(valueExpected)) {
-                    LOGGER.info(resultadoCampo + respuestaOK);
-                    reporLogChannel += resultadoCampo + respuestaOK + "\n\n";
-                    Serenity.setSessionVariable(logCanal).to(reporLogChannel);
-                    result = false;
-                }else if (!valueObtained.equalsIgnoreCase(valueExpected)){
-                    LOGGER.info(resultadoCampo + respuestaERR);
-                    reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
-                    Serenity.setSessionVariable(logCanal).to(reporLogChannel);
-                    result = false;
-                }
+            if (valorObtenido.equalsIgnoreCase(valorEsperado)) {
+                LOGGER.info(resultadoCampo + respuestaOK);
+                reporLogChannel += resultadoCampo + respuestaOK + "\n\n";
+                Serenity.setSessionVariable(logCanal).to(reporLogChannel);
+                resultado = true;
+            }else{
+                LOGGER.info(resultadoCampo + respuestaERR);
+                reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
+                Serenity.setSessionVariable(logCanal).to(reporLogChannel);
+                resultado = false;
             }
         }catch (Exception e) {
-            LOGGER.info(resultadoCampo + field + respuestaERR);
+            LOGGER.info(resultadoCampo + campo + respuestaERR);
             reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
             Serenity.setSessionVariable(logCanal).to(reporLogChannel);
-            result = false;
+            resultado = false;
         }
-        return result;
+        return resultado;
     }
 
 }
