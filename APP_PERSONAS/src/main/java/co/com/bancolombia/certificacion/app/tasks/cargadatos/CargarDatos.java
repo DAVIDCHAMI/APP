@@ -27,9 +27,7 @@ public class CargarDatos implements Task {
 
 
     public static CargarDatosBuilder transaccionCon(List<String> data) {
-
         return new CargarDatosBuilder(data);
-
     }
 
     @Override

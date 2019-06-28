@@ -14,13 +14,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultaSaldosStepDefinitions {
 
-
-    @Before
-    public void configuracionInicial() {
-
-        OnStage.setTheStage(new OnlineCast());
-    }
-
     @Cuando("^consulto el saldo de mis cuentas deposito$")
     public void consultoElSaldoDeMisCuentasDeposito() {
         theActorInTheSpotlight().attemptsTo(

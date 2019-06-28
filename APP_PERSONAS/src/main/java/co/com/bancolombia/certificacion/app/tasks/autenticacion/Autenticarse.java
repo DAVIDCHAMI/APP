@@ -1,49 +1,40 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.autenticacion.Inserta;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
+import co.com.bancolombia.certificacion.app.interactions.autenticacion.Ingresar;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import org.openqa.selenium.Keys;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaClavePage.BOTON_CONTINUAR_AUTENTICACION;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaUsuarioPage.BOTON_CONTINUAR;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.IngresaUsuarioPage.TEXTO_INGRESA_USUARIO;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class Autenticarse implements Task {
 
-        private String usuario;
-        private String clave;
+    private String usuario;
+    private String clave;
 
-        public Autenticarse(AutenticarseBuilder datosAutenticacion) {
+    public Autenticarse(String usuario, String clave){
+        this.usuario = usuario;
+        this.clave = clave;
+    }
 
-            this.usuario = datosAutenticacion.getUsuario();
-            this.clave = datosAutenticacion.getClave();
-        }
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Click.on(TXT_USUARIO),
+                Type.theValue(usuario).into(TXT_USUARIO),
+                Click.on(LBL_HOLA_PROVISIONAL),
+                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
+                Click.on(BTN_CONTINUAR),
+                Ingresar.primeraClave(clave)
+        );
+    }
 
-        public static AutenticarseBuilder conUsuario(String usuario) {
-
-           return new AutenticarseBuilder(usuario);
-
-        }
-
-         @Override
-        public <T extends Actor> void performAs(T actor) {
-
-            EntidadUsuarioActual.setUsuarioYClave(usuario,clave);
-
-            actor.attemptsTo(
-                    Enter.theValue(usuario).into(TEXTO_INGRESA_USUARIO).thenHit(Keys.TAB),
-                    Click.on(BOTON_CONTINUAR),
-                    WaitUntil.the(BOTON_CONTINUAR, isNotVisible()),
-                    Inserta.primeraClave(clave),
-                    Click.on(BOTON_CONTINUAR_AUTENTICACION)
-            );
-        }
+    public static Performable conCredenciales(String usuario, String clave) {
+        return instrumented(Autenticarse.class, usuario, clave);
+    }
 }
-
