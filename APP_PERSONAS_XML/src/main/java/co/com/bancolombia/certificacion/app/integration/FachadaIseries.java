@@ -45,6 +45,11 @@ public class FachadaIseries {
      * The constantes deposit.
      */
     private static final Logger LOGGER = LogManager.getLogger(FachadaIseries.class.getName());
+    private static final String CUENTA = "CUENTA";
+    private static final String TIPOCUENTA = "TIPOCUENTA";
+    private static final String SALDOANTES = "saldoDepositoAntes";
+    private static final String SALDODESPUES = "saldoDepositoDespues";
+
 
     /**
      * Verify credi agil detail credi agil.
@@ -71,15 +76,15 @@ public class FachadaIseries {
         String saldoTotal ="";
 
         Map<String, Object> dataForQuery = new HashMap<>();
-        dataForQuery.put("CUENTA", depositos.getNumero());
-        dataForQuery.put("TIPOCUENTA", tipoCuentaLetra(depositos.getTipo()));
+        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
         String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
         saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
         saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
-        Serenity.setSessionVariable("saldoDepositoAntes").to(saldoTotal);
+        Serenity.setSessionVariable(SALDOANTES).to(saldoTotal);
     }
 
     /**
@@ -94,15 +99,15 @@ public class FachadaIseries {
         String saldoTotal ="";
 
         Map<String, Object> dataForQuery = new HashMap<>();
-        dataForQuery.put("CUENTA", depositos.getNumero());
-        dataForQuery.put("TIPOCUENTA", tipoCuentaLetra(depositos.getTipo()));
+        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
         String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
         saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
         saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
-        Serenity.setSessionVariable("saldoDepositoDespues").to(saldoTotal);
+        Serenity.setSessionVariable(SALDODESPUES).to(saldoTotal);
     }
 
     /**
@@ -180,8 +185,8 @@ public class FachadaIseries {
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         String valor = CargarEntidadTransferencias.getTransferencias().getAmount();
         String orientacon = configuracionTransaccion.getOrientacionCaso();
-        String saldoAntes = Serenity.sessionVariableCalled("saldoDepositoAntes");
-        String saldoDespues = Serenity.sessionVariableCalled("saldoDepositoDespues");
+        String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
+        String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
         return validarDebitoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
     
@@ -194,8 +199,8 @@ public class FachadaIseries {
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         String valor = CargarEntidadTransferencias.getTransferencias().getAmount();
         String orientacon = configuracionTransaccion.getOrientacionCaso();
-        String saldoAntes = Serenity.sessionVariableCalled("saldoDepositoAntes");
-        String saldoDespues = Serenity.sessionVariableCalled("saldoDepositoDespues");
+        String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
+        String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
         return validarCreditoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
     
@@ -210,8 +215,8 @@ public class FachadaIseries {
         transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
         Map<String, Object> dataForQuery = new HashMap<>();
 
-        dataForQuery.put("CUENTA", depositos.getNumero());
-        dataForQuery.put("TIPOCUENTA", formatoTipoCuentaNumero(depositos.getTipo()));
+        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(TIPOCUENTA, formatoTipoCuentaNumero(depositos.getTipo()));
         dataForQuery.put("FECHA", DateManager.obtenerFechaSistema("yyyyMMdd"));
         dataForQuery.put("MONTO", CargarEntidadTransferencias.getTransferencias().getAmount());
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_DEBIT);
@@ -233,8 +238,8 @@ public class FachadaIseries {
         transaccion.setHoraTransaccion(CargarEntidadTransaccion.getConfiguracionTransaccion().getHoraTransaccion());
         Map<String, Object> dataForQuery = new HashMap<>();
 
-        dataForQuery.put("CUENTA", depositos.getNumero());
-        dataForQuery.put("TIPOCUENTA", formatoTipoCuentaNumero(depositos.getTipo()));
+        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(TIPOCUENTA, formatoTipoCuentaNumero(depositos.getTipo()));
         dataForQuery.put("FECHA", DateManager.obtenerFechaSistema("yyyyMMdd"));
         dataForQuery.put("MONTO", CargarEntidadTransferencias.getTransferencias().getAmount());
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_CREDIT);

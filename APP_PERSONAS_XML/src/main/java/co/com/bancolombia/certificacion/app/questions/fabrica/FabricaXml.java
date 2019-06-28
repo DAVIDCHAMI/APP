@@ -1,10 +1,11 @@
 package co.com.bancolombia.certificacion.app.questions.fabrica;
 
 import co.com.bancolombia.certificacion.app.questions.autenticacion.VerificarLaAutenticacionXml;
-import co.com.bancolombia.certificacion.app.questions.transferencias.VerificarLaTransferenciaBancolombiaXml;
-import co.com.bancolombia.certificacion.app.questions.inversionvirtual.VerificarLaConsultaDeTasasDeInversionVirtualXml;
 import co.com.bancolombia.certificacion.app.questions.inversionvirtual.VerificarLaAperturaDeInversionVirtualXml;
+import co.com.bancolombia.certificacion.app.questions.inversionvirtual.VerificarLaConsultaDeTasasDeInversionVirtualXml;
 import co.com.bancolombia.certificacion.app.questions.inversionvirtual.VerificarLaSimulacionDeInversionVirtualXml;
+import co.com.bancolombia.certificacion.app.questions.tarjetadecredito.VerificarLaConsultaDeCostoDeAvanceDeTarjetaXml;
+import co.com.bancolombia.certificacion.app.questions.transferencias.VerificarLaTransferenciaBancolombiaXml;
 import net.serenitybdd.screenplay.Question;
 
 public class FabricaXml {
@@ -61,6 +62,16 @@ public class FabricaXml {
 
     public static Question<Boolean> verificaElResultadoDelaSimulacionDeInversionVirtualPorXML() {
         return new VerificarLaSimulacionDeInversionVirtualXml();
+    }
+
+    /**
+     * Verify result object Xml Consult the rates virtual investmen.
+     *
+     * @return the question
+     */
+
+    public static Question<Boolean> verificaElResultadoDeLaConsultaDeCostoDeAvanceDeTarjetaPorXml() {
+        return new VerificarLaConsultaDeCostoDeAvanceDeTarjetaXml();
     }
 
 }
