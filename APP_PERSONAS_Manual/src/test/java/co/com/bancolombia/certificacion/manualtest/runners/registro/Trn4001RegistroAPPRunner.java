@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.manualtest.runners.consulta.saldos;
+package co.com.bancolombia.certificacion.manualtest.runners.registro;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,9 +7,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/consulta/saldos/trn1756_consulta_saldos_consolidados.feature",
+        features = "src/test/resources/features/registro/trn4001_registro_app.feature",
         glue = "co.com.bancolombia.certificacion.manualtest.stepdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-public class Trn1756ConsultaSaldosConsolidadosRunner {
+
+public class Trn4001RegistroAPPRunner {
 }
