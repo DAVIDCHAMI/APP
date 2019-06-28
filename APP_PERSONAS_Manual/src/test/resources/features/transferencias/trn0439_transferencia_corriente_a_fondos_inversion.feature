@@ -20,3 +20,16 @@ Característica: Transferencia de cuenta de depósitos a fondos de inversión en
       | Andres   | iOS         | con saldo| Corriente       | Fondo de inversion |
       | Luis     | Huawei      | con saldo| Corriente       | Fondo de inversion |
 
+  @manual
+  Esquema del escenario: flujo transaccional transferencia de cuenta de depósito a fonde de inversion
+
+    Dado que el usuario esta en la APP
+    Cuando selecciona la opción de transferencia de una cuenta corriente a un fondo de inversion
+    Entonces deberia ver el mensaje exitoso
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4><Trn-5><Trn-6>
+
+    Ejemplos:
+
+      | Trn-1            |  Trn-2                   |  Trn-3                       |Trn-4                            |Trn-5               |Trn-6                             |
+      |Autenticacion-0369|Saldos consolidados - 1756|Listar Cuentas Deposito - 0360|Listar Fondos de inversión - 0410|Consulta costo -0888|Transferencia a fiducuentas - 0439|
+
