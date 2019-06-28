@@ -1,49 +1,31 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
-
-import co.com.bancolombia.certificacion.app.exceptions.BusquedaFallida;
-import co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuMisProductos;
-import net.serenitybdd.screenplay.targets.Target;
-
-import java.util.Arrays;
-
-import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuInferior.MIS_PRODUCTOS;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.PaginaMenuMisProductos.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.MenuConstantes.MIS_PRODUCTOS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.MenuConstantes.SOLICITAR_PRODUCTOS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.SubMenuConstantes.*;
 
 public enum TipoTransaccion {
     CONSULTAR_PRODUCTO(MIS_PRODUCTOS, CONSULTAR_MIS_PRODUCTOS),
-    TRANSFERIR_DINERO(MIS_PRODUCTOS, ENVIAR_DINERO),
-    RECIBIR_DINERO(MIS_PRODUCTOS, PaginaMenuMisProductos.RECIBIR_DINERO),
-    PAGAR_TARJETAS_DE_CREDITO_Y_CREDITOS(MIS_PRODUCTOS, PAGAR_TARJETAS_Y_CREDITOS),
-    REALIZAR_AVANCES_Y_DESEMBOLSOS(MIS_PRODUCTOS, REALIZAR_AVANCES),
-    INSCRIBIR_PRODUCTO(MIS_PRODUCTOS, INSCRIBIR_PRODUCTOS),
-    CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, PaginaMenuMisProductos.CONSULTAR_PUNTOS_COLOMBIA);
+    TRANSFERIR_DINERO(MIS_PRODUCTOS, SUB_TRANSFERIR_DINERO),
+    RECIBIR_DINERO(MIS_PRODUCTOS, SUB_INSCRIBIR_PRODUCTOS),
+    PAGAR_TARJETAS_DE_CREDITO_Y_CREDITOS(MIS_PRODUCTOS, SUB_RECIBIR_DINERO),
+    CONSULTAR_PUNTOS_COLOMBIA(SOLICITAR_PRODUCTOS, "Inversiones");
 
-    private Target menu;
-    private Target submenu;
+    private String menu;
+    private String submenu;
 
-    TipoTransaccion(Target menu, Target submenu) {
+    TipoTransaccion(String menu, String submenu) {
         this.menu = menu;
         this.submenu = submenu;
     }
 
-    public static TipoTransaccion getTransaccion(String tipoTransaccion){
-        TipoTransaccion[] lista = TipoTransaccion.values();
-        boolean existe = Arrays.stream(lista).anyMatch(x -> x.name().equalsIgnoreCase(tipoTransaccion));
-        if (!existe) {
-            throw new BusquedaFallida("no existe: ".concat(tipoTransaccion));
-        }
-        return TipoTransaccion.valueOf(tipoTransaccion);
-    }
-
-    public Target getMenu() {
+    public String getMenu() {
         return menu;
     }
 
-    public Target getSubmenu() {
+    public String getSubmenu() {
         return submenu;
     }
-
 }
 
 

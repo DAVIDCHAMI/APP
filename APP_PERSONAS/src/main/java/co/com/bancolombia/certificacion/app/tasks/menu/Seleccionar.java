@@ -27,13 +27,13 @@ public class Seleccionar implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-            TipoTransaccion transaccion = TipoTransaccion.getTransaccion(this.tipoTransaccion);
+      /*      TipoTransaccion transaccion = TipoTransaccion.getTransaccion(this.tipoTransaccion);
 
             actor.attemptsTo(
                     WaitUntil.the(CARGA, isNotVisible())
             );
          transaccion.getMenu().resolveFor(actor).click();
-         transaccion.getSubmenu().resolveFor(actor).click();
+         transaccion.getSubmenu().resolveFor(actor).click();*/
 
        }
 }

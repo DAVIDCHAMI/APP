@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
 import co.com.bancolombia.certificacion.app.interactions.ElegirBoton;
+import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcion;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -18,9 +19,10 @@ public class AbrirOspStepDefinition {
     }
 
 
-    @Dado("^que (.*) quiere probar en los 2 SO$")
-    public void queJuanQuiereProbarEnLosSO(String actor) {
+    @Dado("^que (.*) quiere probar en los 2 SO (.*)$")
+    public void queJuanQuiereProbarEnLosSO(String actor, String opcion) {
         theActorCalled(actor).attemptsTo(
+                SeleccionarOpcion.en(opcion),
                 ElegirBoton.deOsp()
         );
     }
