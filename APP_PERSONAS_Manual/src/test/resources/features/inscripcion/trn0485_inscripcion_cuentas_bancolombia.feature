@@ -21,3 +21,15 @@ Característica: Trn-0485 Inscripcion de cuentas Bancolombia en la APP
       |Luis  |invictus01|1234 |iOS        |La Cuenta ya esta inscrita         |
       |Luis  |invictus01|1234 |Huawei     |La Cuenta ya esta inscrita         |
 
+  @manual
+  Esquema del escenario: Flujo transaccional Inscripcion Cuentas Bancolombia
+
+    Dado que el usuario esta en la APP
+    Cuando realiza la inscripcion de una cuenta Bancolombia
+    Entonces deberia ver el mensaje de inscripcion de cuenta pendiente
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                                 |
+      |Autenticacion - 0369|Inscripcion Cuentas Bancolombia - 0485|
