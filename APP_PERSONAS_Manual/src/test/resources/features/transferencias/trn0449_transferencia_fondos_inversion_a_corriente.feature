@@ -19,3 +19,4 @@ Característica: Transferencia de ondos de inversión a cuenta de depósitos en 
       | Juan     | Android     | Fondo de inversion       | Corriente          |
       | Andres   | iOS         | Fondo de inversion       | Corriente          |
       | Luis     | Huawei      | Fondo de inversion       | Corriente          |
+
