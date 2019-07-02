@@ -26,10 +26,9 @@ Característica: Transferencia de cuenta de depósitos a fondos de inversión en
     Dado que el usuario esta en la APP
     Cuando selecciona la opción de transferencia de una cuenta corriente a un fondo de inversion
     Entonces deberia ver el mensaje exitoso
-    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4><Trn-5><Trn-6>
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4><Trn-5><Trn-6><Trn-7><Trn-8><Trn-9>
 
     Ejemplos:
 
-      | Trn-1            |  Trn-2                   |  Trn-3                       |Trn-4                            |Trn-5               |Trn-6                             |
-      |Autenticacion-0369|Saldos consolidados - 1756|Listar Cuentas Deposito - 0360|Listar Fondos de inversión - 0410|Consulta costo -0888|Transferencia a fiducuentas - 0439|
-
+      | Trn-1            |  Trn-2                   |  Trn-3                       |Trn-4                            |Trn-5               |Trn-6                             |  Trn-7                        | Trn-8                             | Trn-9                         |
+      |Autenticacion 0369|Saldos consolidados - 1756|Listar Cuentas Deposito - 0360|Listar Fondos de inversión - 0410|Listar Cuentas Deposito - 0360 |Listar Fondos de inversión - 0410|Consulta costo (0888)|Transferencia a fiducuentas - 0439 |Listar Cuentas Deposito - 0360 |
