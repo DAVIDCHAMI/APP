@@ -13,11 +13,11 @@ import org.openqa.selenium.WebDriver;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
-public class ScrollTarget implements Interaction {
+public class Scroll implements Interaction {
 
     private Target elemento;
 
-    public ScrollTarget(Target elemento){
+    public Scroll(Target elemento) {
         this.elemento = elemento;
     }
 
@@ -31,14 +31,14 @@ public class ScrollTarget implements Interaction {
         int posicionFinalY = dimension.height / 4;
 
         TouchAction action = new TouchAction((AppiumDriver) driver);
-        while(!elemento.resolveFor(actor).isVisible()){
+        while (!elemento.resolveFor(actor).isVisible()) {
             action.longPress(PointOption.point(posicionFijaX, posicionInicialY));
             action.moveTo(PointOption.point(posicionFijaX, posicionFinalY));
             action.release().perform();
         }
     }
 
-    public static Performable visible(Target elemento){
-        return instrumented(ScrollTarget.class, elemento);
+    public static Performable hastaTargetVisible(Target elemento) {
+        return instrumented(Scroll.class, elemento);
     }
 }

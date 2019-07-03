@@ -12,12 +12,12 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class Autenticarse implements Task {
+public class IniciarSesion implements Task {
 
     private String usuario;
     private String clave;
 
-    public Autenticarse(String usuario, String clave){
+    public IniciarSesion(String usuario, String clave){
         this.usuario = usuario;
         this.clave = clave;
     }
@@ -35,6 +35,6 @@ public class Autenticarse implements Task {
     }
 
     public static Performable conCredenciales(String usuario, String clave) {
-        return instrumented(Autenticarse.class, usuario, clave);
+        return instrumented(IniciarSesion.class, usuario, clave);
     }
 }

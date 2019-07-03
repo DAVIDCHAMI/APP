@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
-import co.com.bancolombia.certificacion.app.tasks.autenticacion.Autenticarse;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Dado;
@@ -34,7 +34,7 @@ public class PreparacionEscenarioStepDefinition {
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                Autenticarse.conCredenciales(usuario, clave)
+                IniciarSesion.conCredenciales(usuario, clave)
         );
     }
 }

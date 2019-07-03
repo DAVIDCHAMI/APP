@@ -14,11 +14,11 @@ public class ElementFinder {
         return driver.getCapabilities().getCapability(PLATFORM_NAME).toString();
     }
 
-    public static String dynamicElement(BaseLocatorBuilder baseLocator) {
+    public static String dynamicElement(Locator baseLocator) {
         return (getPlatformCapability().equals(ANDROID)) ?  baseLocator.build().getAndroidLocatedBy() : baseLocator.build().getIosLocatedBy();
     }
 
-    public static By theElementBy(BaseLocatorBuilder baseLocator) {
+    public static By theElementBy(Locator baseLocator) {
         return (getPlatformCapability().equals(ANDROID)) ?  baseLocator.build().getAndroid() : baseLocator.build().getIos();
     }
 }

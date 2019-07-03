@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollTarget;
+import co.com.bancolombia.certificacion.app.interactions.Scroll;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -22,10 +22,10 @@ public class SeleccionarOpcion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
-                ScrollTarget.visible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Check.whether(!tipoTransaccion.getTercerNivel().equals("")).andIfSo(
-                        ScrollTarget.visible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                        Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                 )
         );

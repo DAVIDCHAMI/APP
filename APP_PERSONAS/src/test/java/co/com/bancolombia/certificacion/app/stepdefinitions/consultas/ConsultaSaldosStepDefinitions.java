@@ -2,11 +2,8 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.consultas;
 
 import co.com.bancolombia.certificacion.app.tasks.categorias.SeleccionarCategoria;
 import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
@@ -23,7 +20,6 @@ public class ConsultaSaldosStepDefinitions {
 
     @Entonces("^Verifico el resultado de la consulta del saldo$")
     public void verificoElResultadoDeLaConsultaDelSaldo() {
-        // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
 

@@ -1,24 +1,24 @@
 package co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder;
 
-public class BaseLocatorBuilder implements Builder<BaseLocator> {
+public class Locator implements Builder<BaseLocator> {
     private String android;
     private String ios;
 
-    public BaseLocatorBuilder(){
+    public Locator(){
         this.android="";
         this.ios="";
     }
 
-    public static BaseLocatorBuilder locator (){
-        return  new BaseLocatorBuilder();
+    public static Locator locator (){
+        return  new Locator();
     }
 
-    public BaseLocatorBuilder withAndroid(String android){
+    public Locator withAndroid(String android){
       this.android=android;
         return this;
     }
 
-    public BaseLocatorBuilder withIos(String ios){
+    public Locator withIos(String ios){
         this.ios=ios;
         return this;
     }

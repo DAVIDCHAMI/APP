@@ -6,9 +6,9 @@ public class BaseLocator {
     private String android;
     private String ios;
 
-    public BaseLocator(BaseLocatorBuilder baseLocatorBuilder) {
-        this.android = baseLocatorBuilder.getAndroid();
-        this.ios = baseLocatorBuilder.getIos();
+    public BaseLocator(Locator locator) {
+        this.android = locator.getAndroid();
+        this.ios = locator.getIos();
     }
 
     public String getAndroidLocatedBy(){
