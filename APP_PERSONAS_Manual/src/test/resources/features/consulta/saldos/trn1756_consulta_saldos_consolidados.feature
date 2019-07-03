@@ -25,7 +25,7 @@ Característica: Trn-1756 Consulta de saldos cuenta depositos app Bancolombia
 
     Dado que el usuario esta en la APP
     Cuando realiza la consulta de saldos
-    Entonces deberia ver los saldos consolidades para cuentas de deposito
+    Entonces deberia ver los saldos consolidados para cuentas de deposito
     Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2>
 
     Ejemplos:
