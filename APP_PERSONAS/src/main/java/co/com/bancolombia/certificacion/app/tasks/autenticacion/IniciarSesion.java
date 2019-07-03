@@ -13,7 +13,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class IniciarSesion implements Task {
-
     private String usuario;
     private String clave;
 

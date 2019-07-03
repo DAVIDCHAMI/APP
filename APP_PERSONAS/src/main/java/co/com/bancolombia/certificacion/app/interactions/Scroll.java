@@ -14,7 +14,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Scroll implements Interaction {
-
     private Target elemento;
 
     public Scroll(Target elemento) {

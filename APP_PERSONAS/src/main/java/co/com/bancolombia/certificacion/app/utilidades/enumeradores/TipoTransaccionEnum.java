@@ -38,6 +38,3 @@ public enum TipoTransaccionEnum {
         return tercerNivel;
     }
 }
-
-
-

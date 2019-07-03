@@ -11,7 +11,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarOpcion implements Task {
-
     private TipoTransaccionEnum tipoTransaccion;
 
     public SeleccionarOpcion(String opcionMenu) {
