@@ -24,3 +24,16 @@
        | Alba     | Huawei      |  sin saldo  | Corriente    | Master         |   Si   | minimo       | dolares |no tiene fondos sufiecientes |
        | Gloria   | iOS         |  con saldo  | Corriente    | Visa           |   Si   | minimo       | pesos   |generacion exitosa           |
 
+   @manual
+   Esquema del escenario: flujo transaccional del pago de una cuenta corriente a una tarjeta de crédito
+
+     Dado que el usuario esta en la APP
+     Cuando selecciona la opción pagar Tarjeta de Crédito
+     Entonces deberia ver el mensaje exitoso
+     Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4><Trn-5><Trn-6><Trn-7>
+
+     Ejemplos:
+
+
+       | Trn-1            |  Trn-2                   |  Trn-3                           |Trn-4                             |Trn-5                           |Trn-6                |  Trn-7                           |
+       |Autenticacion 0369|Saldos consolidados - 1756|Listar Tarjetas de crédito - 0260 |Detalle tarjeta de crédito - 1260 |Listar Cuentas Deposito  - 0360 |Consulta Costo - 0888|Pago desde cuenta corriente - 0429|
