@@ -18,4 +18,3 @@ Característica: APP Personas Bancolombia
   Ejemplos:
    | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado |
     ##@externaldata@./src/test/resources/datadriven/inversionvirtual/Trn_0322ConsultarTasas.xlsx@Datos@1
-   |1   |1035655536   |1   |banana01   |1223   |1234   |Acierto   |000   |0322   |TRANSACCION EXITOSA|

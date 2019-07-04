@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.inversionvirtual;
+package co.com.bancolombia.certificacion.app.questions.tarjetadecredito;
 
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
@@ -9,9 +9,9 @@ import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class VerificarLaConsultaDeTasasDeInversionVirtualXml implements Question<Boolean> {
+public class VerificarLaConsultaDeCostoDeAvanceDeTarjetaXml implements Question<Boolean> {
 
-	private static final Logger LOGGER = LogManager.getLogger(VerificarLaConsultaDeTasasDeInversionVirtualXml.class.getName());
+	private static final Logger LOGGER = LogManager.getLogger(VerificarLaConsultaDeCostoDeAvanceDeTarjetaXml.class.getName());
 	private static String response="Response";
 	
     @Override
