@@ -20,3 +20,16 @@ Característica: Trn-1537 Inscripcion de cuentas Nequi en la APP
       |Luis  |invictus01|1234 |Android    |Cuenta pendiente de activacion                                     |
       |Luis  |invictus01|1234 |iOS        |Cuenta pendiente de activacion                                     |
       |Luis  |invictus01|1234 |Huawei     |Cuenta pendiente de activacion                                     |
+
+  @manual
+  Esquema del escenario: Flujo transaccional Inscripcion Cuentas Nequi
+
+    Dado que el usuario esta en la APP
+    Cuando realiza la inscripcion de una cuenta Nequi
+    Entonces deberia ver el mensaje de inscripcion de cuenta pendiente
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                           |
+      |Autenticacion - 0369|Inscripcion Cuentas Nequi - 1537|

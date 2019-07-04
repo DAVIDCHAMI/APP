@@ -17,3 +17,16 @@ Característica: Trn-4001 Registro de usuario en la APP Bancolombia
       |Alberto |58156995 |1234   |Android    |invictus02|dfrios@bancolombia.com.co|
       |Jorge   |58156996 |1234   |iOS        |invictus03|dfrios@bancolombia.com.co|
       |Bernardo|58156997 |1234   |Huawei     |invictus04|dfrios@bancolombia.com.co|
+
+  @manual
+  Esquema del escenario: Flujo transaccional Registro del usuario
+
+    Dado que el cliente ingreso la cedula y la clave
+    Cuando crea el usuario y registra el correo electronico
+    Entonces deberia ver mensaje de registro exitoso
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4> <Trn-5>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                        |Trn-3          |Trn-4                           |Trn-5                      |
+      |Autenticacion - 0369|Terminos y condiciones - 4002|Registro - 4001|Registro en Comunidad APP - 1700|Saldos consolidados - 1756|

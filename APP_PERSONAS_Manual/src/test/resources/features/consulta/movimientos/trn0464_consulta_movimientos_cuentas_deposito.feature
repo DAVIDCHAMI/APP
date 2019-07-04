@@ -17,3 +17,17 @@ Característica: Trn-0464 Consulta de movimientos Cuentas de Deposito en la APP
       |Luis  |invictus01|1234 |Android    |
       |Luis  |invictus01|1234 |iOS        |
       |Luis  |invictus01|1234 |Huawei     |
+
+  @manual
+  Esquema del escenario: Flujo transaccional Consulta movimientos cuentas deposito
+
+    Dado que el usuario esta en la APP
+    Cuando realiza la consulta de movimientos
+    Entonces deberia ver el listado de movimientos de la cuenta de deposito
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2> <Trn-3> <Trn-4>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                     |Trn-3                          |Trn-4                              |
+      |Autenticacion - 0369|Saldos consolidados - 1756|Detalle Cuentas Deposito - 0360|Movimientos Cuentas Deposito - 0464|
+

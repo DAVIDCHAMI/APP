@@ -23,3 +23,16 @@ Característica: Trn-0369 Autenticacion usuario en la APP Bancolombia
       |Luis  |invictus01|1234 |bloqueada|Android    |muestra el mensaje: Clave bloqueada         |
       |Luis  |invictus01|1234 |bloqueada|iOS        |muestra el mensaje: Clave bloqueada         |
       |Luis  |invictus01|1234 |bloqueada|Huawei     |muestra el mensaje: Clave bloqueada         |
+
+  @manual
+  Esquema del escenario: Flujo transaccional Autenticacion del usuario
+
+    Dado que el usuario esta en la APP
+    Cuando ingresa las credenciales de autenticacion
+    Entonces deberia iniciar sesion
+    Y se verifica  que se lancen las transacciones <Trn-1> <Trn-2>
+
+    Ejemplos:
+
+      |Trn-1               |Trn-2                     |
+      |Autenticacion - 0369|Saldos consolidados - 1756|
