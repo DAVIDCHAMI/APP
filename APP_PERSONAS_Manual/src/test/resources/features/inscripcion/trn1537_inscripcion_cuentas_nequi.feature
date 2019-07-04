@@ -31,5 +31,5 @@ Característica: Trn-1537 Inscripcion de cuentas Nequi en la APP
 
     Ejemplos:
 
-      |Trn-1               |Trn-2                                 |
+      |Trn-1               |Trn-2                           |
       |Autenticacion - 0369|Inscripcion Cuentas Nequi - 1537|
