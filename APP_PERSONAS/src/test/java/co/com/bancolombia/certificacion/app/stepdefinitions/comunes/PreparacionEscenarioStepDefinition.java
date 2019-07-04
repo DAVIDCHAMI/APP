@@ -1,15 +1,20 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
+import co.com.bancolombia.certificacion.app.exceptions.MensajeValidacionNoVisualizadoExcepcion;
+import co.com.bancolombia.certificacion.app.questions.autenticacion.ElMensajeDeClaveValida;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
+import static co.com.bancolombia.certificacion.app.exceptions.MensajeValidacionNoVisualizadoExcepcion.MENSAJE_VALIDACION_NO_ENCONTRADO;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -37,4 +42,15 @@ public class PreparacionEscenarioStepDefinition {
                 IniciarSesion.conCredenciales(usuario, clave)
         );
     }
+
+    @Entonces("^verifico el resultado de la autenticacion exitosa$")
+    public void verificoElResultadoDeLaAutenticacionExitosa() {
+        theActorInTheSpotlight().should(seeThat(ElMensajeDeClaveValida.enLaApp())
+                .orComplainWith(MensajeValidacionNoVisualizadoExcepcion.class,MENSAJE_VALIDACION_NO_ENCONTRADO));
+    }
+
+
+
+
+
 }

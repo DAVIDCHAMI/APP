@@ -29,7 +29,7 @@ public class Ingresar implements Interaction {
                 );
             }else{
                 actor.attemptsTo(
-                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(String.valueOf(i + 1)))
+                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(String.valueOf(i + 1))).thenHit()
                 );
             }
         }
