@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.consultas.saldo;
+package co.com.bancolombia.certificacion.app.runners.autenticacion;
 
 import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -12,24 +12,20 @@ import java.io.IOException;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
-/**
- * The type Runner.
- */
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/saldo/Trn1756_consulta_saldos_consolidados.feature"},
-        glue = {"co.com.bancolombia.certificacion.app.stepdefinitions.consultas",
-        "co.com.bancolombia.certificacion.app.stepdefinitions.comunes"},
+        features = {"src/test/resources/features/autenticacion/Trn0369_autenticacion.feature"},
+        glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class ConsultaSaldosCuentaDepositoRunner {
+public class AutenticacionRunner {
 
-    private ConsultaSaldosCuentaDepositoRunner(){
+    private AutenticacionRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/saldo/Trn1756_consulta_saldos_consolidados.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/autenticacion/Trn0369_autenticacion.feature");
     }
 }

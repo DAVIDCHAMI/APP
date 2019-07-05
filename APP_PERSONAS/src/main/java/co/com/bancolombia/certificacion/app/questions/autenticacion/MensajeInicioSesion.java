@@ -4,10 +4,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.com.bancolombia.certificacion.app.userinterface.consulta.PaginaConsultarMisProductos.TITULO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consulta.PaginaConsultarMisProductos.TITULO;
 
 public class MensajeInicioSesion implements Question<Boolean> {
-
 
     public static MensajeInicioSesion esIgualA() {
         return new MensajeInicioSesion();
