@@ -30,7 +30,7 @@ public class IniciarSesion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Enter.theValue(clave).into(CLAVE_DIGITOS2),
+                Enter.theValue(clave).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );
