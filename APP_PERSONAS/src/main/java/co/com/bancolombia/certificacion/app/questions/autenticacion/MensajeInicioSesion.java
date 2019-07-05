@@ -8,7 +8,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consulta.
 
 public class MensajeInicioSesion implements Question<Boolean> {
 
-
     public static MensajeInicioSesion esIgualA() {
         return new MensajeInicioSesion();
     }
