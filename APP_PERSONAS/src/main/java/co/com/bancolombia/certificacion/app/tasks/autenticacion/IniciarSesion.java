@@ -1,10 +1,10 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.autenticacion.Ingresar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -16,7 +16,7 @@ public class IniciarSesion implements Task {
     private String usuario;
     private String clave;
 
-    public IniciarSesion(String usuario, String clave){
+    public IniciarSesion(String usuario, String clave) {
         this.usuario = usuario;
         this.clave = clave;
     }
@@ -30,11 +30,9 @@ public class IniciarSesion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-               Enter.theValue(clave).into(CLAVE_DIGITOS2),
-               // Click.on(LBL_IMAGEN_PROVISIONAL),
+                Enter.theValue(clave).into(CLAVE_DIGITOS2),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
-               // Ingresar.primeraClave(clave)
         );
     }
 
