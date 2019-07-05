@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.consultas.saldo;
+package co.com.bancolombia.certificacion.app.runners.autenticacion;
 
 import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -15,7 +15,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/autenticacion/Trn0369_autenticacion.feature"},
-        tags = "@LoginExitoso",
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )

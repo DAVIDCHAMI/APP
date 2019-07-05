@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.exceptions;
+package co.com.bancolombia.certificacion.app.exceptions.autenticacion;
 
 public class MensajeValidacionNoVisualizadoExcepcion extends AssertionError{
 

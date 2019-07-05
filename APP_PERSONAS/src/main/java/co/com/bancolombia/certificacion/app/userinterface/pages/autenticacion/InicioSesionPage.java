@@ -15,6 +15,4 @@ public class InicioSesionPage {
     public static final Target CLAVE_DIGITOS2= Target.the("Digito para clave2").located(theElementBy(CLAVE_DIGITOS_LOCATOR2));
     public static final Target LBL_SALDOS = Target.the("validar logueo OK").located(theElementBy(LBL_SALDOS_LOCATOR));
     public static final Target LBL_CLAVE_INVALIDA = Target.the("clave invalida").located(theElementBy(LBL_CLAVE_INVALIDA_LOCATOR));
-
-
 }
