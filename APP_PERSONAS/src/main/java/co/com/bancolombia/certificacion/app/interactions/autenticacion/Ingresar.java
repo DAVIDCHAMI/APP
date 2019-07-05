@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -29,7 +28,7 @@ public class Ingresar implements Interaction {
                 );
             }else{
                 actor.attemptsTo(
-                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(String.valueOf(i + 1)))
+                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(String.valueOf(i + 1))).thenHit()
                 );
             }
         }

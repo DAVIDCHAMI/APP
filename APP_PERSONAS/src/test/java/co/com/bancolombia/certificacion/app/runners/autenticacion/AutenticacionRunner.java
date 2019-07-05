@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.consultas.saldo;
+package co.com.bancolombia.certificacion.app.runners.autenticacion;
 
 import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
