@@ -9,11 +9,15 @@ import co.com.bancolombia.certificacion.app.integration.FachadaIseries;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.LogCanalConstante;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
+
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.logcanal.UtilidadLogCanal.validarCampo;
 
@@ -26,45 +30,45 @@ public class LogCanalParaTRN0322 implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-
-        FachadaIseries.consultChannelLogPlot220230();
-        String trama0220 = Serenity.sessionVariableCalled("trama0220LogCanal");
-        String trama0230 = Serenity.sessionVariableCalled("trama0230LogCanal");
         Boolean resultFinal = false;
+        List<Map<String, Object>> trama;
         ConfiguracionTransaccion configuracionTransaccion = CargarEntidadTransaccion.getConfiguracionTransaccion();
         Usuario usuario = CargarEntidadUsuario.getUsuario();
+        trama = FachadaIseries.consultChannelLogPlot220230();
 
-        if (trama0220 != "" && trama0230 !=  ""){
-            Boolean resultInput = true;
-            Boolean resultOutput = true;
+        if (trama !=  null){
+            String trama0220 = trama.get(0).toString().replace("datos=","");
+            String trama0230 = trama.get(1).toString().replace("datos=","");
+            Boolean resultadoEntrada = true;
+            Boolean resultadoSalida = true;
 
             /**
              * This is the Input plot.
              */
-            resultInput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultInput);
-            resultInput = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313),Serenity.sessionVariableCalled("trace"),resultInput);
-            resultInput = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultInput);
-            resultInput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultInput);
-            resultInput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), usuario.getTipoDocumento(),resultInput);
-            resultInput = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultInput);
+            resultadoEntrada = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoEntrada);
+            resultadoEntrada = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313), configuracionTransaccion.getTrace(),resultadoEntrada);
+            resultadoEntrada = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultadoEntrada);
+            resultadoEntrada = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoEntrada);
+            resultadoEntrada = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), usuario.getTipoDocumento(),resultadoEntrada);
+            resultadoEntrada = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoEntrada);
 
             /**
              * This is the Output plot.
              */
-            resultOutput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(69,72), configuracionTransaccion.getCodigoError(),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(301,313),Serenity.sessionVariableCalled("trace"),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(332,333), usuario.getTipoDocumento(),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultOutput);
+            resultadoSalida = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(69,72), configuracionTransaccion.getCodigoError(),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(301,313), configuracionTransaccion.getTrace(),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(332,333), usuario.getTipoDocumento(),resultadoSalida);
+            resultadoSalida = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(349,357), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoSalida);
 
-            if (resultInput && resultOutput){
+            if (resultadoEntrada && resultadoSalida){
                 resultFinal=true;
             }
-            Serenity.recordReportData().withTitle("ResultLogCanal").andContents(Serenity.sessionVariableCalled("logcanal"));
+            Serenity.recordReportData().withTitle("ResultLogCanal").andContents(Serenity.sessionVariableCalled("log"));
         }else{
-            LOGGER.info("Valores de la trama input y output sin registros");
+            LOGGER.info("Trama sin registros");
         }
         return resultFinal;
     }

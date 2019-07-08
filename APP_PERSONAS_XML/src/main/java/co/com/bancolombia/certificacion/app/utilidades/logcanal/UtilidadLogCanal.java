@@ -12,11 +12,11 @@ import org.apache.logging.log4j.Logger;
 public class UtilidadLogCanal {
 
     private static final Logger LOGGER = LogManager.getLogger("LOG CANAL COMFFLGWWW");
-    private static String reporLogChannel = "";
+    private static String reporteTrama = "";
     private static String resultadoCampo = "Resultado ";
     private static String respuestaOK = "  : OK";
     private static String respuestaERR = "  : ERROR";
-    private static String logCanal = "logcanal";
+    private static String log = "logcanal";
 
     private UtilidadLogCanal() {
         throw new IllegalStateException(TipoClaseConstante.UTILITY_CLASS);
@@ -35,30 +35,33 @@ public class UtilidadLogCanal {
 
     public static boolean validarCampo(String campo, String valorObtenido, String valorEsperado , Boolean resultadoAntes) {
 
-        Boolean resultado = resultadoAntes;
+        Boolean resultado;
         LOGGER.info("Valor Obtenido Campo " + campo + " : " + valorObtenido);
         LOGGER.info("Valor Esperado Campo " + campo + " : " + valorEsperado);
-        reporLogChannel += "Valor Obtenido Campo " + campo + " : " + valorObtenido + "\n" +
+        reporteTrama += "Valor Obtenido Campo " + campo + " : " + valorObtenido + "\n" +
                 "Valor Esperado Campo " + campo + " : " + valorEsperado + "\n";
 
         try {
             if (valorObtenido.equalsIgnoreCase(valorEsperado)) {
                 LOGGER.info(resultadoCampo + respuestaOK);
-                reporLogChannel += resultadoCampo + respuestaOK + "\n\n";
-                Serenity.setSessionVariable(logCanal).to(reporLogChannel);
+                reporteTrama += resultadoCampo + respuestaOK + "\n\n";
+                Serenity.setSessionVariable(log).to(reporteTrama);
                 resultado = true;
             }else{
                 LOGGER.info(resultadoCampo + respuestaERR);
-                reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
-                Serenity.setSessionVariable(logCanal).to(reporLogChannel);
+                reporteTrama += resultadoCampo + respuestaERR + "\n\n";
+                Serenity.setSessionVariable(log).to(reporteTrama);
                 resultado = false;
             }
         }catch (Exception e) {
             LOGGER.info(resultadoCampo + campo + respuestaERR);
-            reporLogChannel += resultadoCampo + respuestaERR + "\n\n";
-            Serenity.setSessionVariable(logCanal).to(reporLogChannel);
+            reporteTrama += resultadoCampo + respuestaERR + "\n\n";
+            Serenity.setSessionVariable(log).to(reporteTrama);
             resultado = false;
         }
+
+        if (resultadoAntes==resultado) { resultado = true; }else{resultado = false;}
+
         return resultado;
     }
 

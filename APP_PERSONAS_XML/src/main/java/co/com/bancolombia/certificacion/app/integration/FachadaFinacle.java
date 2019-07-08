@@ -21,19 +21,17 @@ public class FachadaFinacle {
      *
      * @return the boolean
      */
-    public static void consultTitleClientFinacle() {
+    public static List<Map<String, Object>> consultTitleClientFinacle() {
         Map<String, Object> dataForQuery = new HashMap<>();
-        String dataOracle = "";
-
+        List<Map<String, Object>> listOfFounded = null;
         try {
             dataForQuery.put("NUMEROINVERSION", Serenity.sessionVariableCalled("NumeroInversion"));
             String sql = QueryManager.ORACLE_BATCH.getString("SQL.TITULO_CLIENTE");
-            List<Map<String, Object>> listOfFounded = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getOracleConnection());
-            dataOracle = listOfFounded.get(0).toString();
-            Serenity.setSessionVariable("dataOracle").to(dataOracle);
+            listOfFounded = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getOracleConnection());
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
+        return listOfFounded;
     }
 
 
