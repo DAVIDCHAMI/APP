@@ -1,14 +1,14 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.logcanal;
 
+import co.com.bancolombia.backend.utilidades.managers.DateManager;
+import co.com.bancolombia.certificacion.app.integration.FachadaIseries;
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import co.com.bancolombia.backend.utilidades.managers.DateManager;
-import co.com.bancolombia.certificacion.app.integration.FachadaIseries;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.LogCanalConstante;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.LogCanalConstante;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -20,9 +20,12 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.logcanal.UtilidadLogCanal.validarCampo;
 
-public class LogCanalParaTRN0369 implements Question<Boolean> {
+/**
+ * The type Channel log in data base.
+ */
+public class LogCanalParaTRN0533 implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(LogCanalParaTRN0369.class);
+    private static final Logger LOGGER = LogManager.getLogger(LogCanalParaTRN0533.class);
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -45,7 +48,7 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
             resultInput = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313), configuracionTransaccion.getTrace(),resultInput);
             resultInput = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultInput);
             resultInput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultInput);
-            resultInput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), "0",resultInput);
+            resultInput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), usuario.getTipoDocumento(),resultInput);
             resultInput = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultInput);
 
             /**
@@ -56,7 +59,7 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
             resultOutput = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(301,313), configuracionTransaccion.getTrace(),resultOutput);
             resultOutput = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultOutput);
             resultOutput = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(317,332), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultOutput);
-            resultOutput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(332,333), "0",resultOutput);
+            resultOutput = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(332,333), usuario.getTipoDocumento(),resultOutput);
             resultOutput = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(349,357), DateManager.obtenerFechaSistema("YYYYMMdd"),resultOutput);
 
             if (resultInput && resultOutput){
@@ -68,4 +71,5 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
         }
         return resultFinal;
     }
+
 }

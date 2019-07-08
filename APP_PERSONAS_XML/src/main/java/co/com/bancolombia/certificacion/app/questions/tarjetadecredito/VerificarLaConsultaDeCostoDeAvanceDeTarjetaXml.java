@@ -41,7 +41,7 @@ public class VerificarLaConsultaDeCostoDeAvanceDeTarjetaXml implements Question<
 				result = true;
 			}
 		}else {LOGGER.info("Ruta relativa Xpath a buscar no se presenta en el response");}
-		Serenity.recordReportData().withTitle("Response consult the rates of the virtual investment").andContents(Serenity.sessionVariableCalled(response));
+		Serenity.recordReportData().withTitle("Response Consulta costo de avance de tarjeta").andContents(Serenity.sessionVariableCalled(response));
 		return result;
 	}
     

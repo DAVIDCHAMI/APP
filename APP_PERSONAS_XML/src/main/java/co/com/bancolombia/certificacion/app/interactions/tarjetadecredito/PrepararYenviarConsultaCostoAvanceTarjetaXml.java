@@ -7,7 +7,6 @@ import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuari
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatosTarjetas;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import net.serenitybdd.core.Serenity;

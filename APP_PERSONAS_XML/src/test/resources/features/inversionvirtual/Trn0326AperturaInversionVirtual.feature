@@ -21,4 +21,4 @@ Característica: APP Personas Bancolombia
   Ejemplos:
    | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | CuentaOrigen |  TipoCuentaOrigen | Monto | Periodicidad | Plazo |TasaEfectiva | VersionTYC |
     ##@externaldata@./src/test/resources/datadriven/inversionvirtual/Trn_0326Apertura.xlsx@Datos@1
-   |1   |35806340   |1   |nose   |2443   |4321   |Acierto   |000   |0326   |TRANSACCION EXITOSA   |40676340007   |Ahorros   |550000   |ATEXPIRATION   |90   |2.89   |1.8|
+      |1|35806340|1|nose|2443|4321|Acierto|000|0326|TRANSACCION EXITOSA|40676340007|Ahorros|550000|ATEXPIRATION|90|2.89|1.8|

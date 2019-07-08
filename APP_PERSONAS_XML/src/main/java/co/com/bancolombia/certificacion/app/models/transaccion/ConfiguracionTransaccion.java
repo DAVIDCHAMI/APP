@@ -20,6 +20,25 @@ public class ConfiguracionTransaccion {
     private String horaTransaccion;
     private String tipoLogCanal;
     private String codigoOperacion;
+    private String trace;
+
+    /**
+     * Gets trace.
+     *
+     * @return the trace
+     */
+    public String getTrace() {
+        return trace;
+    }
+
+    /**
+     * Sets trace.
+     *
+     * @param trace
+     */
+    public void setTrace(String trace) {
+        this.trace = trace;
+    }
 
     /**
      * Gets id case.
