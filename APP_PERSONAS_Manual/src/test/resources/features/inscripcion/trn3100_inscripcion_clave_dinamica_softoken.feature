@@ -29,4 +29,4 @@ Característica: Trn-3100 Inscripcion a clave dinamica por softoken en la APP
     Ejemplos:
 
       |Trn-1               |Trn-2                     |Trn-3                               |Trn-4        |Trn-5                          |Trn-6                               |Trn-7                            |Trn-8                            |
-      |Autenticacion - 0369|Consultar Indfo OTP - 3700|Clave dinamica data seguridad - 3900|GetPin - 3200|Validar codigo seguridad - 3300|Clave dinamica data seguridad - 3900|Inscripcion clave dinamica - 3100|Notificar enrolamiento OTP - 3101|
+      |Autenticacion - 0369|Consulta Info OTP - 3700|Clave dinamica data seguridad - 3900|GetPin - 3200|Validar codigo seguridad - 3300|Clave dinamica data seguridad - 3900|Inscripcion clave dinamica - 3100|Notificar enrolamiento OTP - 3101|
