@@ -24,8 +24,7 @@ public class IniciarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(TXT_USUARIO),
-                WaitUntil.the(TXT_USUARIO, isEnabled()),
+             //   WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Type.theValue(usuario).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),

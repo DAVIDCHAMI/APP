@@ -24,11 +24,11 @@ public class Ingresar implements Interaction {
         for (int i = 0; i < clave.length(); i++) {
             if (i == 0) {
                 actor.attemptsTo(
-                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(""))
+                        Type.theValue(Character.toString(clave.charAt(i))).into(TXT_CLAVE_DIGITOS)
                 );
             }else{
                 actor.attemptsTo(
-                        Type.theValue(Character.toString(clave.charAt(i))).into(CLAVE_DIGITOS.of(String.valueOf(i + 1))).thenHit()
+                        Type.theValue(Character.toString(clave.charAt(i))).into(TXT_CLAVE_DIGITOS).thenHit()
                 );
             }
         }
