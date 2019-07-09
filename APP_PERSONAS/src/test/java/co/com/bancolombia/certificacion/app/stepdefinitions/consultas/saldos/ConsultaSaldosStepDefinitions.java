@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.stepdefinitions.consultas;
+package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.tasks.categorias.SeleccionarCategoria;
 import cucumber.api.PendingException;

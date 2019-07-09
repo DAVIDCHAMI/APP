@@ -25,4 +25,9 @@ public class AutenticacionStepDefinition {
         theActorInTheSpotlight().should(seeThat(ElMensajeDeClaveInvalida.enLaApp())
                 .orComplainWith(MensajeClaveInvalidoNoVisualizadoExcepcion.class,MENSAJE_PASS_INVALIDO_NO_ENCONTRADO));
     }
+
+    @Entonces("^verifico el resultado del logueo con usuario bloqueado$")
+    public void verificoElResultadoDelLogueoConUsuarioBloqueado() {
+
+    }
 }
