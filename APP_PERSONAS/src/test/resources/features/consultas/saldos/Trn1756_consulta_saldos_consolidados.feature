@@ -6,10 +6,8 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
   Para visualizar el saldo de mis cuentas
 
   Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia
-
-    Dado que yo subo los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> |
-      | <tipoDocumento> |<numeroDocumento> | <segundaClave> |  <primeraPregunta> | <validarClave> |
+    Dado que el Actor carga los datos para la prueba
+      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Cuando consulto el saldo de mis cuentas deposito
 #    Entonces Verifico el resultado de la consulta del saldo
