@@ -8,14 +8,13 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
   Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>|
     Cuando consulto el saldo de mis cuentas deposito
-#    Entonces Verifico el resultado de la consulta del saldo
+      | <tipoCuenta> | <numeroCuenta>|
+    Entonces Verifico el resultado de la consulta del saldo
 #    Y Verifico el resultado de los siguientes archivos de iSeries
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos
-      |1   |1037655531   |1   |seguridad01   |1234   |4321   |bolp   |ACTIVO    |Acierto   |000   |0369   |NO ERROR|
-
-
+      | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                          | numeroCuenta                              |
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+      | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |

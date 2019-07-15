@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.userinterface.locators.consulta.saldosmovimientos;
+package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator;
 

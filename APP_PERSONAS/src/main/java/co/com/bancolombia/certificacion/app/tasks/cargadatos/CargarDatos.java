@@ -18,11 +18,9 @@ public class CargarDatos implements Task {
 
 
     public CargarDatos(CargarDatosBuilder datosTransaccionBuilder) {
-
         this.datosTransaccion= datosTransaccionBuilder.getDatosTransaccion();
         this.datosUsuario = datosTransaccionBuilder.getDatosUsuario();
         this.datoPago = datosTransaccionBuilder.getDatoPago();
-
     }
 
 
