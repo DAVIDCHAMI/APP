@@ -8,7 +8,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarCategoria implements Interaction {
-
     private String categoria;
 
     public SeleccionarCategoria(String categoria){

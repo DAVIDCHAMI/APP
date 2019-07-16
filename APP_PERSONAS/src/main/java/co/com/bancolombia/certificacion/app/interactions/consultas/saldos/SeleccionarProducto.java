@@ -9,7 +9,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarProducto implements Interaction {
-
     private String tipoCuenta;
     private String numeroCuenta;
 

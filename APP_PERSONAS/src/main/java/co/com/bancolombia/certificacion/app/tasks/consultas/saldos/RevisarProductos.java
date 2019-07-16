@@ -1,20 +1,15 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.contarCantidadCaracter;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RevisarProductos implements Task {
     private Producto producto;
@@ -27,11 +22,6 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        /*if (!opcionCategoria.equals("Cuentas")) {
-            actor.attemptsTo(
-                    SeleccionarCategoria.deSaldosMovimientos("Inversiones")
-            );
-        }*/
         int cantCaracteresTipo = contarCantidadCaracter(producto.getTipo(), ';');
         int cadena[] = new int[cantCaracteresTipo];
         boolean tieneProducto = false;

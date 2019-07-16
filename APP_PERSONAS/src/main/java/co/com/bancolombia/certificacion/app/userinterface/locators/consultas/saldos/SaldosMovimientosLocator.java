@@ -11,6 +11,4 @@ public class SaldosMovimientosLocator {
     public static Locator OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text, '{0}')]")
             .withIos("");
-
-
 }
