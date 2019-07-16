@@ -6,7 +6,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.locators.autent
 import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.ElementFinder.theElementBy;
 
 public class InicioSesionPage {
-    public static final Target TXT_USUARIO2 = Target.the("Campo ingresar usuario2").located(theElementBy(TXT_USUARIO2_LOCATOR));
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));
     public static final Target LBL_HOLA_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LABEL_HOLA_PROVIVIONAL_LOCATOR));
     public static final Target LBL_IMAGEN_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LABEL_IMAGEN_PROVIVIONAL_LOCATOR));

@@ -22,12 +22,12 @@ public class RegistroStepDefinition {
 
     @Cuando("^quiere realizar el registro con el usuario (.*) y con el correo (.*)$")
     public void quiereRealizarElRegistroConElUsuarioYConElCorreo(String nuevoUser, String correoUser) {
-        System.out.println("usernew "+nuevoUser);
-        theActorInTheSpotlight().attemptsTo(Registrarse.conLosDatos(nuevoUser,correoUser));
+        theActorInTheSpotlight().attemptsTo(
+                Registrarse.conLosDatos(nuevoUser, correoUser));
     }
 
     @Entonces("^verifico el resultado del registro$")
     public void verificoElResultadoDelRegistro() {
-     //   theActorInTheSpotlight().should(seeThat(ElMensaje.deRegistroExitoso()));
+        theActorInTheSpotlight().should(seeThat(ElMensaje.deRegistroExitoso()));
     }
 }
