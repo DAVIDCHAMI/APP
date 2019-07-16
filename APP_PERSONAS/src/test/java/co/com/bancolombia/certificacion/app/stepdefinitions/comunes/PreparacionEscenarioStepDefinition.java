@@ -1,8 +1,10 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Dado;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -35,6 +37,13 @@ public class PreparacionEscenarioStepDefinition {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
                 IniciarSesion.conCredenciales(usuario, clave)
+        );
+    }
+
+    @After
+    public void cerrarSesionOsp(){
+        theActorInTheSpotlight().attemptsTo(
+                CerrarSesion.exitosamente()
         );
     }
 }

@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consulta.PaginaConsultarMisProductos.TITULO;
 
 public class MensajeInicioSesion implements Question<Boolean> {
 
@@ -14,6 +13,6 @@ public class MensajeInicioSesion implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return Text.of(TITULO).viewedBy(actor).asString().equalsIgnoreCase("CONSULTAR MIS PRODUCTOS");
+        return Text.of("").viewedBy(actor).asString().equalsIgnoreCase("CONSULTAR MIS PRODUCTOS");
     }
 }

@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
 
+import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 
@@ -30,6 +31,16 @@ public class Producto {
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
         this.tipo = tipoProducto;
+    }
+
+    public Producto(ProductoBuilder productoBuilder){
+        this.tipo = productoBuilder.getTipo();
+        this.numero = productoBuilder.getNumero();
+        this.codigoBanco = productoBuilder.getCodigoBanco();
+        this.nombreBanco = productoBuilder.getNombreBanco();
+        this.nombreProducto = productoBuilder.getNombreProducto();
+        this.saldo = productoBuilder.getSaldo();
+        this.movimientos = productoBuilder.getMovimientos();
     }
 
     /**
@@ -141,15 +152,15 @@ public class Producto {
     }
 
     /**
-     * Gets saldo cuenta deposito
-     * @return saldo
+     * Gets saldos cuenta deposito
+     * @return saldos
      */
     public Saldo getSaldo() {
         return saldo;
     }
 
     /**
-     * Sets saldo cuenta deposito
+     * Sets saldos cuenta deposito
      * @param saldo
      */
     public void setSaldo(Saldo saldo) {
