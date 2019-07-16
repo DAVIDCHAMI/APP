@@ -30,8 +30,7 @@ public class Registrarse implements Task {
                 Click.on(LBL_CORREO),
                 Click.on(CHECK_TIPO_CORREO),
                 Click.on(CHECK_TYC),
-                Click.on(BTN_REGISTRO)
-        );
+                Click.on(BTN_REGISTRO));
     }
 
     public static Performable conLosDatos(String nuevoUser, String correoUser) {

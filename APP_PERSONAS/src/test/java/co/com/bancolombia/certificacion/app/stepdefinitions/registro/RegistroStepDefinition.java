@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 
-import co.com.bancolombia.certificacion.app.questions.registro.ElMensaje;
+import co.com.bancolombia.certificacion.app.questions.registro.MensajeRegistro;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
@@ -28,6 +28,6 @@ public class RegistroStepDefinition {
 
     @Entonces("^verifico el resultado del registro$")
     public void verificoElResultadoDelRegistro() {
-        theActorInTheSpotlight().should(seeThat(ElMensaje.deRegistroExitoso()));
+        theActorInTheSpotlight().should(seeThat(MensajeRegistro.exitoso()));
     }
 }
