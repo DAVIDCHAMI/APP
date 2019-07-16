@@ -8,7 +8,6 @@ import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Build
 import java.util.List;
 
 public class ProductoBuilder implements Builder<Producto> {
-
     private String numero;
     private String tipo;
     private String codigoBanco;

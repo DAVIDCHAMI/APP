@@ -13,6 +13,6 @@ public class MensajeInicioSesion implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return Text.of("").viewedBy(actor).asString().equalsIgnoreCase("CONSULTAR MIS PRODUCTOS");
+        return Text.of(TITULO).viewedBy(actor).asString().equalsIgnoreCase("CONSULTAR MIS PRODUCTOS");
     }
 }
