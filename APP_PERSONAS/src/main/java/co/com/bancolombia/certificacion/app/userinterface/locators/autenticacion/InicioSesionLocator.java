@@ -12,4 +12,6 @@ public class InicioSesionLocator {
     public static Locator TXT_CLAVE_DIGITOS_LOCATOR = locator().withAndroid("id$MaskPin").withIos("class$xxxx");
     public static Locator LBL_SALDOS_LOCATOR = locator().withAndroid("id$b3-YellowTitle").withIos("id$xxx");
     public static Locator LBL_CLAVE_INVALIDA_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='CLAVE NO VALIDA']").withIos("id$xxx");
+    public static Locator BTN_CERRAR_SESION_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[@resource-id='Next']").withIos("id$xxx");
+    public static Locator BTN_SI_CERRAR_SESION_LOCATOR_= locator().withAndroid("xpath$//android.widget.Button[@resource-id='Button_CancelYesModal_ActivateBiometrics']").withIos("id$xxx");
 }

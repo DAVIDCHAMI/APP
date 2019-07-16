@@ -30,9 +30,8 @@ public class IniciarSesion implements Task {
                 Click.on(BTN_CONTINUAR),
                 Click.on(TXT_CLAVE_DIGITOS),
                 Enter.theValue(clave).into(TXT_CLAVE_DIGITOS),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
-        );
+                WaitUntil.the(BTN_CONTINUAR, isEnabled()));
+                actor.attemptsTo(Click.on(BTN_CONTINUAR));
     }
 
     public static Performable conCredenciales(String usuario, String clave) {
