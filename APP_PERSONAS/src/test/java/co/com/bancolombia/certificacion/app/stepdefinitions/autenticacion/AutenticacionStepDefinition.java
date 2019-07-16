@@ -1,12 +1,10 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.autenticacion;
 
-
 import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoExcepcion;
 import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeValidacionNoVisualizadoExcepcion;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.ElMensajeDeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.ElMensajeDeClaveValida;
 import cucumber.api.java.es.Entonces;
-
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoExcepcion.MENSAJE_PASS_INVALIDO_NO_ENCONTRADO;
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeValidacionNoVisualizadoExcepcion.MENSAJE_VALIDACION_NO_ENCONTRADO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;

@@ -22,7 +22,7 @@ public class AutenticacionRunner {
 
     private AutenticacionRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
-    }
+}
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
