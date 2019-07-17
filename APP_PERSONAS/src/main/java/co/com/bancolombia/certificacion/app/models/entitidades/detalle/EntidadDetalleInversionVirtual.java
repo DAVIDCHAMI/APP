@@ -19,16 +19,16 @@ public class EntidadDetalleInversionVirtual {
     }
 
     /**
-     * Gets detalle inversion virtual.
+     * Gets detalleproductos inversion virtual.
      *
-     * @return the detalle inversion virtual
+     * @return the detalleproductos inversion virtual
      */
     public static InversionVirtual getDetalleInversionVirtual() {
         return detalleInversionVirtual;
     }
 
     /**
-     * Sets detalle inversion virtual.
+     * Sets detalleproductos inversion virtual.
      *
      * @param data the transaccionCon
      */

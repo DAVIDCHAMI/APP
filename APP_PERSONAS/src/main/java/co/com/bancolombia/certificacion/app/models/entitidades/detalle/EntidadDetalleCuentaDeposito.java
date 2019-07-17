@@ -19,16 +19,16 @@ public class EntidadDetalleCuentaDeposito {
     }
 
     /**
-     * Gets detalle detalle cuenta deposito.
+     * Gets detalleproductos detalleproductos cuenta deposito.
      *
-     * @return the detalle detalle cuenta deposito
+     * @return the detalleproductos detalleproductos cuenta deposito
      */
     public static CuentaDeposito getCuentaDeposito() {
         return cuentaDeposito;
     }
 
     /**
-     * Sets detalle detalle cuenta deposito.
+     * Sets detalleproductos detalleproductos cuenta deposito.
      *
      * @param data the transaccionCon
      */

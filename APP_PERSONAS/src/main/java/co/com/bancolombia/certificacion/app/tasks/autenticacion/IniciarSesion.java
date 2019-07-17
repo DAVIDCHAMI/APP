@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
@@ -28,10 +29,10 @@ public class IniciarSesion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Click.on(TXT_CLAVE_DIGITOS),
                 Enter.theValue(clave).into(TXT_CLAVE_DIGITOS),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()));
-                actor.attemptsTo(Click.on(BTN_CONTINUAR));
+                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
+                Click.on(BTN_CONTINUAR)
+        );
     }
 
     public static Performable conCredenciales(String usuario, String clave) {

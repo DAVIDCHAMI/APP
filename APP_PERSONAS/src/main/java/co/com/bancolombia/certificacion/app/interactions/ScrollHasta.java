@@ -29,7 +29,7 @@ public class ScrollHasta implements Interaction {
         int posicionInicialY = dimension.height / 2;
         int posicionFinalY = (elemento.resolveFor(actor).getCoordinates().onPage().y -posicionInicialY);
         TouchAction action = new TouchAction((AppiumDriver) driver);
-
+        System.out.println(posicionInicialX + " " + posicionInicialY + " " +posicionFinalY);
         action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
         action.moveTo(PointOption.point(posicionInicialX, posicionFinalY));
         action.release().perform();
