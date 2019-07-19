@@ -22,10 +22,12 @@ public class Registrarse implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                Click.on(TXT_CREAR_USUARIO),
+              //  Click.on(TXT_CREAR_USUARIO),
+              //  Click.on(TXT_CREAR_USUARIO),
                 Type.theValue(nuevoUser).into(TXT_CREAR_USUARIO),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_SIGUIENTE),
+                Click.on(TXT_CORREO),
                 Type.theValue(correoUser).into(TXT_CORREO),
                 Click.on(LBL_CORREO),
                 Click.on(CHECK_TIPO_CORREO),
