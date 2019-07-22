@@ -16,8 +16,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
-      | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos@1
 
     @Manual
   Esquema del escenario: Consulta de productos credito desde saldos y movimientos

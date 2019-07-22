@@ -12,19 +12,19 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AutenticacionStepDefinition {
 
-    @Entonces("^verifico el resultado de la autenticacion exitosa$")
+    @Entonces("^la autenticacion deberia de ser exitosa$")
     public void verificoElResultadoDeLaAutenticacionExitosa() {
         theActorInTheSpotlight().should(seeThat(ElMensajeDeClaveValida.enLaApp())
                 .orComplainWith(MensajeValidacionNoVisualizadoExcepcion.class,MENSAJE_VALIDACION_NO_ENCONTRADO));
     }
 
-    @Entonces("^verifico el resultado del logueo fallido$")
+    @Entonces("^la autenticacion deberia de ser fallida por clave invalida$")
     public void verificoElResultadoDelLogueoFallido() {
         theActorInTheSpotlight().should(seeThat(ElMensajeDeClaveInvalida.enLaApp())
                 .orComplainWith(MensajeClaveInvalidoNoVisualizadoExcepcion.class,MENSAJE_PASS_INVALIDO_NO_ENCONTRADO));
     }
 
-    @Entonces("^verifico el resultado del logueo con usuario bloqueado$")
+    @Entonces("^la autenticacion deberia de ser fallida por usuario bloqueado$")
     public void verificoElResultadoDelLogueoConUsuarioBloqueado() {
 
     }
