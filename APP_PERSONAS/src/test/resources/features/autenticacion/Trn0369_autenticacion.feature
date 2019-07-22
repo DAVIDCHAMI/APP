@@ -5,36 +5,32 @@ Característica: Autenticación app Bancolombia
   Quiero ingresar usuario y contraseña
   Para autenticarme en la aplicación
 
-  @LoginFallido
-  Esquema del escenario: Logueo fallido a la aplicacion de Bancolombia OSP
+  Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
-    Entonces verifico el resultado del logueo fallido
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Entonces la autenticacion deberia de ser exitosa
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos
-      | 2  | 1037655531      | 1             | userqa10 | 1111  | 3221         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     |
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos@1
+   |1   |1037655531   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
 
-  @LoginUserBloqueado
-  Esquema del escenario: Logueo con usuario bloqueado a la aplicacion de Bancolombia OSP
+  Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
-    Entonces verifico el resultado del logueo con usuario bloqueado
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Entonces la autenticacion deberia de ser fallida por clave invalida
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos
-      | 3  | 95400152      | 1             | sandrita69 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     |
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos@2
+   |2   |1037655531   |1   |userqa10   |1111   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
 
-  @LoginExitoso
-  Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia OSP
+  Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
-    Entonces verifico el resultado de la autenticacion exitosa
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Entonces la autenticacion deberia de ser fallida por usuario bloqueado
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos
-      | 1  | 1037655531      | 1             | userqa10 | 1234  | 3221         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     |
-
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_0369Autenticacion.xlsx@Datos@3
+   |3   |95400152   |1   |sandrita69   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO|
