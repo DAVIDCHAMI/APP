@@ -12,17 +12,17 @@ package co.com.bancolombia.certificacion.app.runners.registro;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/registro/registro.feature"},
+        features = {"src/test/resources/features/registro/registro_usuario.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class RegistroRunner {
+public class RegistroUsuarioRunner {
 
-    public RegistroRunner() {
+    public RegistroUsuarioRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/registro/registro.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/registro/registro_usuario.feature");
     }
 }

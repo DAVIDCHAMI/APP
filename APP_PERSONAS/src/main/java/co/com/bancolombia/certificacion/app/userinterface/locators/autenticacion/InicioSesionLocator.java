@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.autenticacion;
 
-import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator;
+import co.com.todo1.modelo.builder.Locator;
 
-import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator.locator;
+import static co.com.todo1.modelo.builder.Locator.locator;
 
 public class InicioSesionLocator {
     public static Locator TXT_USUARIO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[contains(@resource-id, 'Input_Username_UserAuth')]//preceding::android.view.View[1]").withIos("id$xxxx");

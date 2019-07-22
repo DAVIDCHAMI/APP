@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.autenticacion.InicioSesionLocator.*;
-import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.ElementFinder.theElementBy;
+import static co.com.todo1.utils.ElementFinder.theElementBy;
 
 public class InicioSesionPage {
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));

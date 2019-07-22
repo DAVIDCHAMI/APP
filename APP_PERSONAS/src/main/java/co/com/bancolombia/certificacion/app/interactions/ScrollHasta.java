@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.BTN_CONTINUAR;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -29,7 +28,6 @@ public class ScrollHasta implements Interaction {
         int posicionInicialY = dimension.height / 2;
         int posicionFinalY = (elemento.resolveFor(actor).getCoordinates().onPage().y -posicionInicialY);
         TouchAction action = new TouchAction((AppiumDriver) driver);
-
         action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
         action.moveTo(PointOption.point(posicionInicialX, posicionFinalY));
         action.release().perform();

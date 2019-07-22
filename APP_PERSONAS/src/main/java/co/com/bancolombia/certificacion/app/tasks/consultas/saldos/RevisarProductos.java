@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
@@ -22,6 +23,11 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        if (!opcionCategoria.equals("Cuentas")) {
+            actor.attemptsTo(
+                    SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
+            );
+        }
         int cantCaracteresTipo = contarCantidadCaracter(producto.getTipo(), ';');
         int cadena[] = new int[cantCaracteresTipo];
         boolean tieneProducto = false;
