@@ -6,11 +6,10 @@ import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
-import cucumber.api.java.es.Y;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class RegistroStepDefinition {
+public class RegistroUsuarioStepDefinition {
 
     @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
     public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
@@ -26,7 +25,7 @@ public class RegistroStepDefinition {
                 Registrarse.conLosDatos(nuevoUser, correoUser));
     }
 
-    @Entonces("^verifico el resultado del registro$")
+    @Entonces("^el deberia de ver un mensaje de registro exitoso$")
     public void verificoElResultadoDelRegistro() {
         theActorInTheSpotlight().should(seeThat(MensajeRegistro.exitoso()));
     }

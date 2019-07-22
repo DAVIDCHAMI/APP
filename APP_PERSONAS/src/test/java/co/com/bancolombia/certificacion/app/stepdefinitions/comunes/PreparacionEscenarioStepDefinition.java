@@ -42,7 +42,7 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @After
-    public void cerrarSesionOsp(){
+    public void cerrarSesionOsp() {
         theActorInTheSpotlight().attemptsTo(
                 CerrarSesion.exitosamente()
         );

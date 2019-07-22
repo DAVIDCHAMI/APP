@@ -2,9 +2,8 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.consultas.detal
 
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.MenuLocator.OPT_MENU_PRINCIPAL_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.detalleproductos.DetalleProductosLocator.LBL_NUMERO_CUENTA_LOCATOR;
-import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.ElementFinder.dynamicElement;
+import static co.com.todo1.utils.ElementFinder.dynamicElement;
 
 public class DetalleProductosPage {
     public static final Target LBL_NUMERO_CUENTA = Target.the("Numero cuenta deposito").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_LOCATOR));

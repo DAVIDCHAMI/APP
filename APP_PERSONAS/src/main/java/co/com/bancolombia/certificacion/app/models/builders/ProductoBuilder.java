@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
-import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 import java.util.List;
 
