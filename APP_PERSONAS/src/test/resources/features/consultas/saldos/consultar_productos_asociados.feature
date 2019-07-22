@@ -14,8 +14,8 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
     #| Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/ConsultaProductosAsociados.xlsx@Datos
-      | 1  | 1037655531      | 1             | ospciclo4finde | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     |
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaProductosAsociados.xlsx@Datos@1
+   |1   |1037655531   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
 
   Esquema del escenario: Consulta de productos asociados al usuario desde saldos y movimientos
     Dado que el Actor carga los datos para la prueba
@@ -26,5 +26,5 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
     #| Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/ConsultaProductosAsociados.xlsx@Datos
-      | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     |
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaProductosAsociados.xlsx@Datos@2
+   |2   |1037655531   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|

@@ -16,7 +16,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos@1
 
     @Manual
   Esquema del escenario: Consulta de productos credito desde saldos y movimientos
@@ -30,7 +30,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                | numeroCuenta            |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
       | 1  | 1037655531      | 1             | usercdt66 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Prestamo Personal Ta;Prestamo Personal Ta | 29281005510;29281023970 |
 
   @Manual
@@ -45,7 +45,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
       | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |
 
   @Manual
@@ -60,7 +60,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
       | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |
 
   @Manual
@@ -75,7 +75,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
       | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |
 
   @Manual
@@ -90,5 +90,5 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/Trn_1756ConsultaSaldosConsolidados.xlsx@Datos
       | 1  | 1037655531      | 1             | userqa10 | 1234  | 4321         | bolp        | ACTIVO      | Acierto           | 000               | 0369            | NO ERROR     | Cuenta Corriente;Cuenta de Ahorro;Cuenta de Ahorro | 406-140100-01;406-740100-05;406-740100-06 |
