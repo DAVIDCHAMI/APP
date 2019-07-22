@@ -9,7 +9,7 @@ Característica: Autenticación app Bancolombia
   Esquema del escenario: Logueo fallido a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Entonces verifico el resultado del logueo fallido
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
@@ -20,7 +20,7 @@ Característica: Autenticación app Bancolombia
   Esquema del escenario: Logueo con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Entonces verifico el resultado del logueo con usuario bloqueado
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
@@ -31,7 +31,7 @@ Característica: Autenticación app Bancolombia
   Esquema del escenario: Acceso exitoso a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Y quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
+    Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Entonces verifico el resultado de la autenticacion exitosa
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |

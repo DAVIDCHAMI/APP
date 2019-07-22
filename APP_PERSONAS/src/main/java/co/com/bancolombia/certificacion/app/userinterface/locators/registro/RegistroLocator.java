@@ -4,8 +4,8 @@ import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locat
 import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator.locator;
 
 public class RegistroLocator {
-public static Locator TXT_CREAR_USUARIO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'Label')]]//following::android.view.View[1]").withIos("id$xxxx");
-public static Locator TXT_CREAR_USUARIO_LOCATOR2 = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'Input')]").withIos("id$xxxx");
+//public static Locator TXT_CREAR_USUARIO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'Label')]//following::android.view.View[1]").withIos("id$xxxx");
+public static Locator TXT_CREAR_USUARIO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[contains(@resource-id, 'Input_usuario2')]//preceding::android.view.View[1]").withIos("id$xxxx");
 public static Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("id$Link_Registration_Next").withIos("id$xxxx");
 public static Locator TXT_CORREO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id, 'Label')]").withIos("id$xxxx");
 public static Locator LBL_CORREO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Correo electrónico')]").withIos("xpath$xxxx");
