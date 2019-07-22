@@ -6,5 +6,4 @@ public class PropertiesDoesNotLoadException extends RuntimeException {
 	public PropertiesDoesNotLoadException(Exception e) {
 		super(e);
 	}
-
 }
