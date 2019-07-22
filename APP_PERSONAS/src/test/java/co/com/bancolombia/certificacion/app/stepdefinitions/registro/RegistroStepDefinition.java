@@ -26,7 +26,7 @@ public class RegistroStepDefinition {
                 Registrarse.conLosDatos(nuevoUser, correoUser));
     }
 
-    @Entonces("^verifico el resultado del registro$")
+    @Entonces("^el deberia de ver el registro exitoso$")
     public void verificoElResultadoDelRegistro() {
         theActorInTheSpotlight().should(seeThat(MensajeRegistro.exitoso()));
     }

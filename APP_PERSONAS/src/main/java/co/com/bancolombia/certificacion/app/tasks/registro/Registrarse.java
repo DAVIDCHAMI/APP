@@ -20,10 +20,7 @@ public class Registrarse implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
-              //  Click.on(TXT_CREAR_USUARIO),
-                //Click.on(TXT_CREAR_USUARIO),
                 Type.theValue(nuevoUser).into(TXT_CREAR_USUARIO),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_SIGUIENTE),

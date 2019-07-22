@@ -10,7 +10,7 @@ Característica: Registro en la APP personas bancolombia OSP
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
     Y quiere realizar el registro con el usuario <nuevoUser> y con el correo <correoUsuario>
-    Entonces verifico el resultado del registro
+    Entonces el deberia de ver el registro exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |
    ##@externaldata@./src/test/resources/datadriven/registro/registro.xlsx@Datos@2
