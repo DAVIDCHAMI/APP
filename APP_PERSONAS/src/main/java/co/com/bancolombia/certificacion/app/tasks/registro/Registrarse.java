@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.RegistroPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -29,7 +30,7 @@ public class Registrarse implements Task {
                 Click.on(LBL_CORREO),
                 Click.on(CHECK_TIPO_CORREO),
                 Click.on(CHECK_TYC),
-               Click.on(BTN_REGISTRO)
+                Click.on(BTN_REGISTRO)
         );
     }
 

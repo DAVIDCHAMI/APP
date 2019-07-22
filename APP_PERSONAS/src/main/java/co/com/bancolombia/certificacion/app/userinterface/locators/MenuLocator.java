@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators;
 
+
 import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator;
 
 import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator.locator;
