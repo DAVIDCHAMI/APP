@@ -37,8 +37,3 @@ Característica: Registro en la APP personas bancolombia OSP
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario |
    ##@externaldata@./src/test/resources/datadriven/registro/registro.xlsx@Datos@2
       | 1  | 1010111        | 1             | 1010111 | 2443  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |           |               |
-
-
-
-
-
