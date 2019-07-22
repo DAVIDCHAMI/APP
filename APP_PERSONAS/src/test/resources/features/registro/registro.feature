@@ -4,7 +4,7 @@ Característica: Registro en la APP personas bancolombia OSP
   Como usuario de Bancolombia
   Quiero realizar el registro
 
-  #@Registro
+  @Registro
   Esquema del escenario: Verificar el registro ingresando con documento de identidad
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |

@@ -31,8 +31,8 @@ public class Registrarse implements Task {
                 Type.theValue(correoUser).into(TXT_CORREO),
                 Click.on(LBL_CORREO),
                 Click.on(CHECK_TIPO_CORREO),
-                Click.on(CHECK_TYC)
-              //  Click.on(BTN_REGISTRO)
+                Click.on(CHECK_TYC),
+               Click.on(BTN_REGISTRO)
         );
     }
 

@@ -13,6 +13,7 @@ package co.com.bancolombia.certificacion.app.runners.registro;
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/registro/registro.feature"},
+        tags = {"@Registro"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
 public class RegistroRunner {
