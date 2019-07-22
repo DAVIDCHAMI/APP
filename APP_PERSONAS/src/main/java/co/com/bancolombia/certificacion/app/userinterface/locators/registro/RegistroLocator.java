@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.registro;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator;
+
 import static co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Locator.locator;
 
 public class RegistroLocator {
