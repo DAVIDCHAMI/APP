@@ -24,9 +24,6 @@ public class SeleccionarCategoria implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                //Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of("Cuentas")),
-                //WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria), isVisible()),
-                //WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria), isEnabled()),
                 ScrollHasta.elTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                 Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
         );

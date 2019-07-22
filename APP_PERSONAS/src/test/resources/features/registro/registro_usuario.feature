@@ -2,8 +2,8 @@
 
 Característica: Registro en la APP personas bancolombia OSP
   Como usuario de Bancolombia
-  Quiero realizar el registro un usuario
-  Para contar la autenticacion
+  Quiero realizar el registro de un usuario
+  Para realizar la autenticacion en la app
 
   Esquema del escenario: Registrar usuario con documento de identidad
     Dado que el Actor carga los datos para la prueba
