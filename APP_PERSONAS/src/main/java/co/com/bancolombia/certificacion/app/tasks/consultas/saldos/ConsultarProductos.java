@@ -25,11 +25,11 @@ public class ConsultarProductos implements Task {
         actor.attemptsTo(
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
         );
-        /*actor.remember(NUMERO_CUENTA, numeroCuenta);
+        actor.remember(NUMERO_CUENTA, numeroCuenta);
         if (tipoCuenta.contains(AHORROS))
             actor.remember(TIPO_CUENTA, AHORROS);
         else
-            actor.remember(TIPO_CUENTA, CORRIENTE);*/
+            actor.remember(TIPO_CUENTA, CORRIENTE);
     }
 
     public static ConsultarProductos conInformacion(String tipoCuenta, String numeroCuenta) {
