@@ -15,5 +15,6 @@ public class InicioSesionPage {
     public static final Target LBL_CLAVE_INVALIDA = Target.the("clave invalida").located(theElementBy(LBL_CLAVE_INVALIDA_LOCATOR));
     public static final Target LBL_CLAVE_BLOQUEADA = Target.the("clave bloqueada").located(theElementBy(LBL_CLAVE_BLOQUEADA_LOCATOR));
     public static final Target BTN_CERRAR_SESION = Target.the("Botón cerrar sesion").located(theElementBy(BTN_CERRAR_SESION_LOCATOR));
-    public static final Target BTN_SI_CERRAR_SESION = Target.the("Botón SI cerrar sesion").located(theElementBy(BTN_SI_CERRAR_SESION_LOCATOR_));
+    public static final Target BTN_SI_CERRAR_SESION = Target.the("Botón SI cerrar sesion").located(theElementBy(BTN_SI_CERRAR_SESION_LOCATOR));
+    public static final Target BTN_VOLVER = Target.the("Botón Volver").located(theElementBy(BTN_VOLVER_LOCATOR));
 }

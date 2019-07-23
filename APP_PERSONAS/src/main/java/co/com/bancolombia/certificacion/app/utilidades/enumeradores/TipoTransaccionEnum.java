@@ -15,6 +15,7 @@ public enum TipoTransaccionEnum {
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, "Consultar Puntos Colombia",""),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
+    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos","");
 
     private String menu;
