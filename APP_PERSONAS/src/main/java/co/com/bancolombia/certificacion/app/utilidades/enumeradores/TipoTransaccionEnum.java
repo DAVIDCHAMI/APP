@@ -16,7 +16,8 @@ public enum TipoTransaccionEnum {
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
-    BLOQUEOS(PERFIL, "Bloqueos","");
+    BLOQUEOS(PERFIL, "Bloqueos",""),
+    GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestiona la clave dinámica");
 
     private String menu;
     private String subMenu;

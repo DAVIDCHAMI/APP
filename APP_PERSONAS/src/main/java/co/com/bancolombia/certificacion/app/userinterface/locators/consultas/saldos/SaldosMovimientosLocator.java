@@ -19,4 +19,6 @@ public class SaldosMovimientosLocator {
     public static Locator LBL_SIN_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text,'No has realizado ningún movimiento con la tarjeta.')]")
             .withIos("");
+    public static Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Detalle del producto')]").withIos("");
+    public static Locator BTN_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Movimientos')]").withIos("");
 }
