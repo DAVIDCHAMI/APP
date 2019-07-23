@@ -15,5 +15,3 @@ Característica: Registro en billetera App
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
    |1   |1037655531   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
-
-    #PREGUNTAR A LEIDY
