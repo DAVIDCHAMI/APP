@@ -14,6 +14,7 @@ public enum TipoTransaccionEnum {
     VER_HISTORICO_PAGOS(MIS_PRODUCTOS, "Pagar y administrar facturas","Ver histórico de pagos"),
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, "Consultar Puntos Colombia",""),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
+    OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos","");
 
