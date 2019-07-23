@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.billetera;
 
-import co.com.todo1.modelo.builder.Locator;
+import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
-import static co.com.todo1.modelo.builder.Locator.locator;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class BilleteraLocator {
     public static Locator BTN_SIGUIENTE_ON_BOARDING_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@resource-id,'Button_Next_ActivateBiometricsStep2')]").withIos("id$Hola");

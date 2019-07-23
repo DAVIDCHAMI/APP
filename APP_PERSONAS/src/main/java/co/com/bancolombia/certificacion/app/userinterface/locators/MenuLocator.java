@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators;
 
-import co.com.todo1.modelo.builder.Locator;
+import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
-import static co.com.todo1.modelo.builder.Locator.locator;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class MenuLocator {
     public static Locator OPT_MENU_PRINCIPAL_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'{0}')]").withIos("id$Hola");

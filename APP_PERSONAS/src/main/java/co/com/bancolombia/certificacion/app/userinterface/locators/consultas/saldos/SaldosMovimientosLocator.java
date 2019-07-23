@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 
-import co.com.todo1.modelo.builder.Locator;
+import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
-import static co.com.todo1.modelo.builder.Locator.locator;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
 
