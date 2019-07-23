@@ -11,9 +11,7 @@ public class ConsultaDetalleCuentasDepositoStepDefinition {
 
     @Cuando("^consulto el detalle de mi Cuenta de Ahorro (.*) numero (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String tipoCuenta, String opcionCategoria) {
-        theActorInTheSpotlight().attemptsTo(
-                SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, opcionCategoria)
-        );
+
     }
 
     @Entonces("^deberia de ver el detalle de mi cuenta de ahorro$")
