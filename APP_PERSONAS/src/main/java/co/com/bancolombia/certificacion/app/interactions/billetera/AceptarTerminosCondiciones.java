@@ -9,6 +9,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class AceptarTerminosCondiciones implements Interaction{
+    
     @Override
     public <T extends Actor> void performAs(T actor) {
         while(!CHK_TERMINOS_CONDICIONES_BILLETERA.resolveFor(actor).isVisible()){
