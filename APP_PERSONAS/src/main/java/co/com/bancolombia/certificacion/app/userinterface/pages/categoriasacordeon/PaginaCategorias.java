@@ -20,9 +20,4 @@ public class PaginaCategorias {
             .the("Opcion 'Cuentas deposito'")
          .located(MobileBy.AndroidUIAutomator(
                  "new UiSelector().className(\"android.view.View\").descriptionContains(\"Transferencia realizada\")"));
-
-    //*[@id="Expandable_Accounts_Balances"]/div/div
-
-
-
 }

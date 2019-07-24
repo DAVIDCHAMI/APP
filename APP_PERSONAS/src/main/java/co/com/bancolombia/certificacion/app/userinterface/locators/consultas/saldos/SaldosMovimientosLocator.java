@@ -1,11 +1,15 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
-
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
+
+    private SaldosMovimientosLocator() {
+        throw new IllegalStateException(CLASE_LOCATOR);
+    }
 
     public static final Locator CUENTA_ESPECIFICA_PRODUCTO_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../..//android.view.View[contains(@text, '{1}')]")

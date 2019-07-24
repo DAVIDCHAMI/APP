@@ -2,9 +2,15 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.registro;
 
 import net.serenitybdd.screenplay.targets.Target;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.RegistroLocator.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class RegistroPage {
+
+    private RegistroPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
+
     public static final Target TXT_CREAR_USUARIO = Target.the("Campo crear usuario").located(theElementBy(TXT_CREAR_USUARIO_LOCATOR));
     public static final Target BTN_SIGUIENTE = Target.the("boton siguiente").located(theElementBy(BTN_SIGUIENTE_LOCATOR));
     public static final Target TXT_CORREO = Target.the("campo correo").located(theElementBy(TXT_CORREO_LOCATOR));

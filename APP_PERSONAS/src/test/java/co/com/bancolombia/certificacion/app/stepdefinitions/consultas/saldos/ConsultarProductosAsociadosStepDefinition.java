@@ -17,8 +17,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class ConsultarProductosAsociadosStepDefinition {
 
     @Cuando("quiero revisar mis movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
-    public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta){
-    theActorInTheSpotlight().attemptsTo(ConsultarProductos.conInformacion(tipoCuenta, numeroCuenta));
+    public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarProductos.conInformacion(tipoCuenta, numeroCuenta)
+        );
     }
 
     @Entonces("^El deberia de ver unicamente cuentas deposito$")
