@@ -7,11 +7,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class InicioSesionPage {
-
-    private InicioSesionPage() {
-        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
-    }
-
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));
     public static final Target LBL_HOLA_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_HOLA_PROVIVIONAL_LOCATOR));
     public static final Target LBL_IMAGEN_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_IMAGEN_PROVIVIONAL_LOCATOR));
@@ -23,4 +18,8 @@ public class InicioSesionPage {
     public static final Target BTN_CERRAR_SESION = Target.the("Botón cerrar sesion").located(theElementBy(BTN_CERRAR_SESION_LOCATOR));
     public static final Target BTN_SI_CERRAR_SESION = Target.the("Botón SI cerrar sesion").located(theElementBy(BTN_SI_CERRAR_SESION_LOCATOR));
     public static final Target BTN_VOLVER = Target.the("Botón Volver").located(theElementBy(BTN_VOLVER_LOCATOR));
+
+    private InicioSesionPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
 }

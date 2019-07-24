@@ -6,11 +6,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
-
-    private SaldosMovimientosLocator() {
-        throw new IllegalStateException(CLASE_LOCATOR);
-    }
-
     public static final Locator CUENTA_ESPECIFICA_PRODUCTO_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../..//android.view.View[contains(@text, '{1}')]")
             .withIos("");
@@ -25,4 +20,8 @@ public class SaldosMovimientosLocator {
             .withIos("");
     public static final Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Detalle del producto')]").withIos("");
     public static final Locator BTN_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Movimientos')]").withIos("");
+
+    private SaldosMovimientosLocator() {
+        throw new IllegalStateException(CLASE_LOCATOR);
+    }
 }

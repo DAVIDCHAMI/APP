@@ -6,11 +6,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class DetalleProductosLocator {
-
-    private DetalleProductosLocator() {
-        throw new IllegalStateException(CLASE_LOCATOR);
-    }
-
     public static final Locator LBL_TIPO_CUENTA_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, 'ProductDataContainer')]//android.view.View[1]")
             .withIos("");
@@ -20,4 +15,9 @@ public class DetalleProductosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo Disponible')]//following-sibling::android.view.View[2]")
             .withIos("");
+
+    private DetalleProductosLocator() {
+        throw new IllegalStateException(CLASE_LOCATOR);
+    }
+
 }
