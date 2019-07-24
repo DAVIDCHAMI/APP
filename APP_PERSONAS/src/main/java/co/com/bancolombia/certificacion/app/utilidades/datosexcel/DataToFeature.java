@@ -120,7 +120,7 @@ public class DataToFeature {
      * @since 25 /04/2018
      */
     public static void overrideFeatureFiles(String featuresDirectoryPath)
-    // public void overrideFeatureFiles(String featuresDirectoryPath)
+    // public void overrideFeatureFiles(string featuresDirectoryPath)
             throws IOException, InvalidFormatException {
         List<File> listOfFeatureFiles = listOfFeatureFiles(new File(featuresDirectoryPath));
         for (File featureFile : listOfFeatureFiles) {

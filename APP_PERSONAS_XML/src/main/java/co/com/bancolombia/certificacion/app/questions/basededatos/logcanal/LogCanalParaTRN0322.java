@@ -42,9 +42,7 @@ public class LogCanalParaTRN0322 implements Question<Boolean> {
             Boolean resultadoEntrada = true;
             Boolean resultadoSalida = true;
 
-            /**
-             * This is the Input plot.
-             */
+
             resultadoEntrada = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoEntrada);
             resultadoEntrada = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313), configuracionTransaccion.getTrace(),resultadoEntrada);
             resultadoEntrada = validarCampo(LogCanalConstante.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), configuracionTransaccion.getCodigoTransaccion(),resultadoEntrada);
@@ -52,9 +50,7 @@ public class LogCanalParaTRN0322 implements Question<Boolean> {
             resultadoEntrada = validarCampo(LogCanalConstante.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), usuario.getTipoDocumento(),resultadoEntrada);
             resultadoEntrada = validarCampo(LogCanalConstante.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoEntrada);
 
-            /**
-             * This is the Output plot.
-             */
+
             resultadoSalida = validarCampo(LogCanalConstante.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(5,20), StringManager.formatoDocumento(usuario.getNumeroDocumento()),resultadoSalida);
             resultadoSalida = validarCampo(LogCanalConstante.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(69,72), configuracionTransaccion.getCodigoError(),resultadoSalida);
             resultadoSalida = validarCampo(LogCanalConstante.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(301,313), configuracionTransaccion.getTrace(),resultadoSalida);

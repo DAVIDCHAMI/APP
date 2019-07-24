@@ -39,7 +39,7 @@ public class UtilidadLogCanal {
         LOGGER.info("Valor Obtenido Campo " + campo + " : " + valorObtenido);
         LOGGER.info("Valor Esperado Campo " + campo + " : " + valorEsperado);
         reporteTrama += "Valor Obtenido Campo " + campo + " : " + valorObtenido + "\n" +
-                "Valor Esperado Campo " + campo + " : " + valorEsperado + "\n";
+                        "Valor Esperado Campo " + campo + " : " + valorEsperado + "\n";
 
         try {
             if (valorObtenido.equalsIgnoreCase(valorEsperado)) {
@@ -60,9 +60,7 @@ public class UtilidadLogCanal {
             resultado = false;
         }
 
-        if (resultadoAntes==resultado) { resultado = true; }else{resultado = false;}
-
-        return resultado;
+        return resultado && resultadoAntes;
     }
 
 }
