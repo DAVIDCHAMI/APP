@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.registro;
 
 import net.serenitybdd.screenplay.targets.Target;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.RegistroLocator.*;
-import static co.com.todo1.utils.ElementFinder.theElementBy;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class RegistroPage {
     public static final Target TXT_CREAR_USUARIO = Target.the("Campo crear usuario").located(theElementBy(TXT_CREAR_USUARIO_LOCATOR));

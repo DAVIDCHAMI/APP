@@ -20,7 +20,7 @@ public class RevisarProductos implements Question<Boolean> {
                 break;
             }
         }
-        return productosCliente.size() != 1 ? true : false;
+        return productosCliente.size() != 1;
     }
 
     public static RevisarProductos pertenecientesAlUsuario(){

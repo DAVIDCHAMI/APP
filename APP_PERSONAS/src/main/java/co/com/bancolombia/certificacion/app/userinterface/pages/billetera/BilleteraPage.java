@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.billetera;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.billetera.BilleteraLocator.*;
-import static co.com.todo1.utils.ElementFinder.theElementBy;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class BilleteraPage {
     public static final Target BTN_SIGUIENTE_ON_BOARDING = Target.the("Boton siguiente on boparding billetera").located(theElementBy(BTN_SIGUIENTE_ON_BOARDING_LOCATOR));

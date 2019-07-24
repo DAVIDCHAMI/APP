@@ -10,7 +10,7 @@ public class VerificarProductosElegidos implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean tieneProductosSeleccionados = actor.recall(TIENE_PRODUCTOS);
-        return (tieneProductosSeleccionados) ? true : false;
+        return (tieneProductosSeleccionados);
     }
 
     public static VerificarProductosElegidos pertenecenAlUsuario() {
