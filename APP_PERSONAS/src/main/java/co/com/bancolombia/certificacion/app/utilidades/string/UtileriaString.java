@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.utilidades.String;
+package co.com.bancolombia.certificacion.app.utilidades.string;
 
 public class UtileriaString {
 
