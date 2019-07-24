@@ -23,7 +23,7 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        if (!opcionCategoria.equals("Cuentas")) {
+        if (!"Cuentas".equals(opcionCategoria)) {
             actor.attemptsTo(
                     SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
             );

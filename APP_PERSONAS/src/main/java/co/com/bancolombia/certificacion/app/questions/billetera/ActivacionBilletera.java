@@ -9,7 +9,7 @@ public class ActivacionBilletera implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return LBL_ACTIVACION_EXITOSA.resolveFor(actor).isVisible() ? true : false;
+        return LBL_ACTIVACION_EXITOSA.resolveFor(actor).isVisible();
     }
 
     public static ActivacionBilletera esExitosa(){
