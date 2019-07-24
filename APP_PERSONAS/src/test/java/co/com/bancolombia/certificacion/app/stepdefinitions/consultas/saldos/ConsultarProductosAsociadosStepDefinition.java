@@ -6,8 +6,10 @@ import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProduct
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarCuentasDeposito;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarProductos;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.GuardarDatos;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException.MENSAJE_NO_TIENE_UNICAMENTE_CUENTAS_DEPOSITO;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException.MENSAJE_SOLO_TIENE_UN_PRODUCTO;
@@ -21,7 +23,14 @@ public class ConsultarProductosAsociadosStepDefinition {
     theActorInTheSpotlight().attemptsTo(ConsultarProductos.conInformacion(tipoCuenta, numeroCuenta));
     }
 
-    @Entonces("^El deberia de ver unicamente cuentas deposito$")
+    @Y("el ingresa a sus productos$")
+    public void ingresaSusProductos(){
+        theActorInTheSpotlight().attemptsTo(
+                GuardarDatos.deProductos()
+        );
+    }
+
+    @Entonces("^El deberia ver unicamente cuentas deposito$")
     public void deberiaVerUnicamenteCuentasDeposito() {
         theActorInTheSpotlight().should(seeThat(
                 VerificarCuentasDeposito.comoUnicoProducto()).orComplainWith(
