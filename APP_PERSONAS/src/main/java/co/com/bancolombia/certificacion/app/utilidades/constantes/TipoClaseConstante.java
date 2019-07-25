@@ -13,6 +13,8 @@ public class TipoClaseConstante {
      * The constant CLASE_INTERFAZ_USUARIO.
      */
     public static final String CLASE_INTERFAZ_USUARIO = "Clase Interfaz de Usuario";
+
+    public static final String CLASE_LOCATOR = "Clase Locator";
     /**
      * The constant CLASE_CONSTANTE.
      */

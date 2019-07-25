@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.de
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class DetalleProductosLocator {
@@ -14,4 +15,8 @@ public class DetalleProductosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo Disponible')]//following-sibling::android.view.View[2]")
             .withIos("");
+
+    private DetalleProductosLocator() {
+        throw new IllegalStateException(CLASE_LOCATOR);
+    }
 }

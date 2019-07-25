@@ -20,7 +20,7 @@ public class VerificarCuentasDeposito implements Question<Boolean> {
                 break;
             }
         }
-        return productosCliente.size() != 1;
+        return productosCliente.size() == 1;
     }
 
     public static VerificarCuentasDeposito comoUnicoProducto() {
