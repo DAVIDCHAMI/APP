@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.transaccion;
 
 
+import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Transferencia {
@@ -13,6 +14,20 @@ public class Transferencia {
     private String descripcion;
     private String informacionAdicional;
     private String codigoOperacion;
+
+    public Transferencia(TransferenciaBuilder builder) {
+        this.productoOrigen = builder.getProductoOrigen();
+        this.productoDestino = builder.getProductoDestino();
+        this.monto = builder.getMonto();
+        this.tipoTransferencia = builder.getTipoTransferencia();
+        this.banco = builder.getBanco();
+        this.descripcion = builder.getDescripcion();
+        this.informacionAdicional = builder.getInformacionAdicional();
+        this.codigoOperacion = builder.getCodigoOperacion();
+    }
+
+    public Transferencia() {
+    }
 
     public Producto getProductoOrigen() {
         return productoOrigen;
