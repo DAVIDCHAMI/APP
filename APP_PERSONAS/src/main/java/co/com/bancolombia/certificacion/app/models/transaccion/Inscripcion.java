@@ -1,15 +1,20 @@
 package co.com.bancolombia.certificacion.app.models.transaccion;
 
 
+import co.com.bancolombia.certificacion.app.models.builders.InscripcionBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 
 public class Inscripcion {
-
     private String nombreBanco;
     private Producto producto;
-    private String nombrePersonalizado;
     private Usuario usuario;
+
+    public Inscripcion(InscripcionBuilder inscripcionBuilder) {
+        this.nombreBanco = inscripcionBuilder.getNombreBanco();
+        this.producto = inscripcionBuilder.getProducto();
+        this.usuario = inscripcionBuilder.getUsuario();
+    }
 
     public String getNombreBanco() {
         return nombreBanco;
@@ -27,14 +32,6 @@ public class Inscripcion {
         this.producto = producto;
     }
 
-    public String getNombrePersonalizado() {
-        return nombrePersonalizado;
-    }
-
-    public void setNombrePersonalizado(String nombrePersonalizado) {
-        this.nombrePersonalizado = nombrePersonalizado;
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
@@ -42,7 +39,4 @@ public class Inscripcion {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-
-
-   }
+}

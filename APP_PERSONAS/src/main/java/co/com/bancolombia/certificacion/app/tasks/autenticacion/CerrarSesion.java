@@ -25,7 +25,7 @@ public class CerrarSesion implements Task {
                 ScrollHasta.elTarget(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Click.on(BTN_CERRAR_SESION),
                 Click.on(BTN_SI_CERRAR_SESION)
-    );
+        );
     }
 
     public static Performable exitosamente() {

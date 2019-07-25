@@ -22,11 +22,11 @@ public class SeleccionarOpcion implements Task {
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Check.whether(!tipoTransaccion.getSubMenu().equals("")).andIfSo(
-                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                       Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 ),
                 Check.whether(!tipoTransaccion.getTercerNivel().equals("")).andIfSo(
-                        Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                      Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                 )
         );

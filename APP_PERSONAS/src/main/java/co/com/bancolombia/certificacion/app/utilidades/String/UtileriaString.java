@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.String;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PUNTO;
+
 public class UtileriaString {
 
     public static int contarCantidadCaracter(String cadena, char caracter) {
@@ -10,5 +12,16 @@ public class UtileriaString {
             posicion = cadena.indexOf(caracter, posicion + 1);
         }
         return contador;
+    }
+
+    public static String obtenerValorEntero(String cadena){
+        char [] cadenaAux = cadena.toCharArray();
+        String valorEntero = "";
+        for (int i = 0; i < cadenaAux.length; i++){
+            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == PUNTO){
+                valorEntero+=cadenaAux[i];
+            }
+        }
+        return valorEntero;
     }
 }
