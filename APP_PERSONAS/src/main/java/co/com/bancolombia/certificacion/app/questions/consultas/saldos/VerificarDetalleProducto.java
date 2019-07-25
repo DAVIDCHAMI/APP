@@ -12,13 +12,12 @@ public class VerificarDetalleProducto implements Question<Boolean> {
         String tipoCuenta = LBL_TIPO_CUENTA.resolveFor(actor).getText();
         String numeroCuenta = LBL_NUMERO_CUENTA.resolveFor(actor).getText();
 
-        if(actor.recall(TIPO_CUENTA).equals(tipoCuenta) && actor.recall(NUMERO_CUENTA).equals(numeroCuenta) && !LBL_SALDO_DISPONIBLE.resolveFor(actor).getText().equals("")){
-            return true;
-        }
-        return false;
+        return (actor.recall(TIPO_CUENTA).equals(tipoCuenta)
+                && actor.recall(NUMERO_CUENTA).equals(numeroCuenta)
+                && !"".equals(LBL_SALDO_DISPONIBLE.resolveFor(actor).getText()));
     }
 
-    public static VerificarDetalleProducto esExitoso(){
+    public static VerificarDetalleProducto esExitoso() {
         return new VerificarDetalleProducto();
     }
 }

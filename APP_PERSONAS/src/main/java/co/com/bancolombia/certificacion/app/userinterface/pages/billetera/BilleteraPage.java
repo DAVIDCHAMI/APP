@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.billetera;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.billetera.BilleteraLocator.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class BilleteraPage {
@@ -12,4 +13,8 @@ public class BilleteraPage {
     public static final Target LBL_TARJETAS_LISTADAS = Target.the("Titulo de tarjetas listadas").located(theElementBy(LBL_TARJETAS_LISTADAS_LOCATOR));
     public static final Target BTN_ACTIVAR_BILLETERA = Target.the("Boton activar Billetera").located(theElementBy(BTN_ACTIVAR_TARJETA_LOCATOR));
     public static final Target LBL_ACTIVACION_EXITOSA = Target.the("Titulo Activacion exitosa").located(theElementBy(LBL_ACTIVACION_EXITOSA_LOCATOR));
+
+    private BilleteraPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
 }
