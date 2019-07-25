@@ -6,11 +6,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class RegistroPage {
-
-    private RegistroPage() {
-        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
-    }
-
     public static final Target TXT_CREAR_USUARIO = Target.the("Campo crear usuario").located(theElementBy(TXT_CREAR_USUARIO_LOCATOR));
     public static final Target BTN_SIGUIENTE = Target.the("boton siguiente").located(theElementBy(BTN_SIGUIENTE_LOCATOR));
     public static final Target TXT_CORREO = Target.the("campo correo").located(theElementBy(TXT_CORREO_LOCATOR));
@@ -19,4 +14,8 @@ public class RegistroPage {
     public static final Target CHECK_TYC = Target.the("check terminos y condiciones").located(theElementBy(CHECK_TYC_LOCATOR));
     public static final Target BTN_REGISTRO = Target.the("boton registro").located(theElementBy(BTN_REGISTRO_LOCATOR));
     public static final Target LBL_VALIDACION_REGISTRO_OK = Target.the("label registro OK").located(theElementBy(LBL_VALIDACION_REGISTRO_OK_LOCATOR));
+
+    private RegistroPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
 }

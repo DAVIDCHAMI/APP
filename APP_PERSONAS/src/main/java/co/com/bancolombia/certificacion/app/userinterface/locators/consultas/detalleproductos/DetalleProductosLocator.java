@@ -19,5 +19,4 @@ public class DetalleProductosLocator {
     private DetalleProductosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
-
 }
