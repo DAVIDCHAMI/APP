@@ -21,7 +21,7 @@ public class Producto {
     private List<Movimiento> movimientos;
 
 
-    protected Producto(){}
+    public Producto(){}
     /**
      * Instantiates a new Producto.
      *
