@@ -9,10 +9,10 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiero INSCRIBIR_PRODUCTOS del usuario <usuario> con clave <clave>
     Y quiero realizar la inscripcion del producto con la información
-      | <nombreBanco> | <tipo> | <numero> | <tipoDocumento> | <numeroDocumento> |
+      | <nombreBanco> | <tipo> | <numero> | <tipoDocumentoInscripcion> | <numeroDocumentoInscripcion> |
     Entonces el deberia de ver el detalle del producto registrado
     Y cierrar sesión en osp
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombreBanco | tipo    | numero      |
+      | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombreBanco | tipo    | numero      |tipoDocumentoInscripcion| numeroDocumentoInscripcion|
    ##@externaldata@./src/test/resources/datadriven/registro/InscripcionProductos.xlsx@Datos@1
-      | 1  | 1044512658      | Cédula de ciudadanía | userrobot2 | 1234  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | BANCOLOMBIA | Ahorros | 20580133845 |
+   |1   |1010111   |Cédula de ciudadanía   |userrobot2   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |BANCOLOMBIA   |Ahorros   |20580133845   |Cédula de ciudadanía   |1044512658|

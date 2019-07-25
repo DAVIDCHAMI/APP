@@ -33,9 +33,8 @@ public class EntidadInscripcionActual {
         inscripcion.setNombreBanco(data.get(0));
         Producto producto = productoFactory.crarProducto(data.get(2), data.get(1));
         inscripcion.setProducto(producto);
-        inscripcion.setNombrePersonalizado(data.get(3));
-        usuario.setTipoDocumento(data.get(4));
-        usuario.setNumeroDocumento(data.get(5));
+        usuario.setTipoDocumento(data.get(3));
+        usuario.setNumeroDocumento(data.get(4));
         inscripcion.setUsuario(usuario);
 
         EntidadInscripcionActual.inscripcion = inscripcion;
