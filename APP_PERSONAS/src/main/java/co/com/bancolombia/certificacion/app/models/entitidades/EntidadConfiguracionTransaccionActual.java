@@ -9,9 +9,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Adminis
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.CanalesSistemas.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
-/**
- * The type Current trasaction config entity.
- */
+
 public class EntidadConfiguracionTransaccionActual {
 
     private static ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion();
@@ -20,20 +18,10 @@ public class EntidadConfiguracionTransaccionActual {
         throw new IllegalStateException(CLASE_ENTIDAD);
     }
 
-    /**
-     * Gets transaccion.
-     *
-     * @return the transaccion
-     */
     public static ConfiguracionTransaccion getConfiguracionTransaccion() {
         return configuracionTransaccion;
     }
 
-    /**
-     * Sets transaccion.
-     *
-     * @param dataTransaccion Datos que llegan del datadriven
-     */
     public static void setConfiguracionTransaccion(List<String> dataTransaccion) {
 
         String horaTransaccion = DateManager.obtenerFechaSistema(FORMATO_HORA);

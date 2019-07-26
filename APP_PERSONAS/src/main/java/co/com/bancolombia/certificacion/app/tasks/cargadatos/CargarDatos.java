@@ -30,10 +30,8 @@ public class CargarDatos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         EntidadConfiguracionTransaccionActual.setConfiguracionTransaccion(datosTransaccion);
         EntidadUsuarioActual.setUsuario(datosUsuario);
-
     }
 }
 

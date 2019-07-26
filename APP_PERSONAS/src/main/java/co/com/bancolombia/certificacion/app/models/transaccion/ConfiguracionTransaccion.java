@@ -20,7 +20,14 @@ public class ConfiguracionTransaccion {
     private String horaTransaccion;
     private String tipoLogCanal;
     private String codigoOperacion;
+    private String trace;
 
+
+    public String getTrace() {
+        return trace;
+    }
+
+    public void setTrace(String trace) { this.trace = trace; }
 
     public String getIdentificadorCaso() {
         return identificadorCaso;

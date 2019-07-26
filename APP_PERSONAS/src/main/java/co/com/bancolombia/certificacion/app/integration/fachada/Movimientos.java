@@ -1,0 +1,97 @@
+package co.com.bancolombia.certificacion.app.integration.fachada;
+
+import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
+import co.com.bancolombia.backend.modelo.transversal.Movimiento;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public class Movimientos {
+
+    private static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
+
+    Movimientos() {
+    }
+
+    public static List<Movimiento> verifyMovementsEprepagoConsolidated(String strNumtarjeta, String strFecha) {
+        BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();
+        List<Movimiento> movimientosConsolidado = null;
+        try {
+            movimientosConsolidado = ePrepago.consultarMovimientosConsolidado(
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFecha);
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return movimientosConsolidado;
+    }
+
+    public static List<Movimiento> verifyMovementsEprepagoDescription(String strNumtarjeta, String strDescripcion) {
+        BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();
+        List<Movimiento> movimientosDescripcion = null;
+        try {
+            movimientosDescripcion = ePrepago.consultarMovimientosPorDescripcion(
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strDescripcion);
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return movimientosDescripcion;
+    }
+
+    public static List<Movimiento> verifyMovementsEprepagoDates(String strNumtarjeta, String strFechaDesde,
+                                                                String strFechaHasta) {
+        String[] listDateDesde = strFechaDesde.split("/");
+        String[] listDateHasta = strFechaHasta.split("/");
+        String strFechaDesdeBack = listDateDesde[2] + listDateDesde[0] + listDateDesde[1];
+        String strFechaHastaBack = listDateHasta[2] + listDateHasta[0] + listDateHasta[1];
+        BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();
+        List<Movimiento> movimientosFechas = null;
+        try {
+            movimientosFechas = ePrepago.movimientosPorFechas(
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta, strFechaDesdeBack, strFechaHastaBack);
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return movimientosFechas;
+    }
+
+    public static List<Movimiento> verifyMovementsEprepagoDescriptionAndDates(String strNumtarjeta,
+                                                                              String strFechaDesde, String strFechaHasta, String strDescripcion) {
+        String[] listDateDesde = strFechaDesde.split("/");
+        String[] listDateHasta = strFechaHasta.split("/");
+        String strFechaDesdeBack = listDateDesde[2] + listDateDesde[0] + listDateDesde[1];
+        String strFechaHastaBack = listDateHasta[2] + listDateHasta[0] + listDateHasta[1];
+        BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();
+        List<Movimiento> movimientosFechasyDescripcion = null;
+        try {
+            movimientosFechasyDescripcion = ePrepago.movimientosPorFechasyDescripcion(
+                    AdministradorConstante.NUMERO_BASE_EPREPAGO + strNumtarjeta,
+                    strFechaDesdeBack, strFechaHastaBack, strDescripcion);
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return movimientosFechasyDescripcion;
+    }
+
+    /*
+    public static boolean verifyTheMovementsEprepago() throws SQLException {
+        boolean result = false;
+
+        BackMovimientosEprepago registroMovimiento = new BackMovimientosEprepago();
+        TarjetaEPrepago numeroTarjeta = Eprepago.verificoElRegistroDeLaEprepago();
+        Transaccion transaccion = new Transaccion();
+        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
+        transaccion.setHoraTransaccion(EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion().getHoraTransaccion());
+        transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
+
+        boolean verificarRegistroMovimiento = registroMovimiento.consultarMovimientosRegistro(AdministradorConstante.NUMERO_BASE_EPREPAGO + numeroTarjeta.getNumero(),
+                DateManager.obtenerFechaSistema("yyyyMMdd"),transaccion.getHoraTransaccion(),transaccion.getValorTransaccion());
+        if (verificarRegistroMovimiento) {
+            result = true;
+        }
+        return result;
+    }
+    */
+}

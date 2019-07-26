@@ -35,20 +35,25 @@ ext{
 }
 
 dependencies {
-    implementation group: 'io.appium', name: 'java-client', version: '6.1.0'
     implementation 'co.com.bancolombia.certificacion:backend-iseries:2.5.3'
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+
+    implementation group: 'io.appium', name: 'java-client', version: '6.1.0'
     implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
     implementation group: 'com.codoid.products', name: 'fillo', version: '1.18'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '3.2.0'
+
+    compile group: 'co.com.bancolombia.certificacion', name: 'conexion-bd', version: '4.1.0'
+    
     implementation 'org.apache.commons:commons-lang3:3.8'
     implementation 'org.apache.logging.log4j:log4j-api:2.6.1'
     implementation 'org.apache.logging.log4j:log4j-core:2.6.1'
     implementation 'com.google.code.gson:gson:2.8.5'
+    
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.6.2'
     testImplementation 'org.slf4j:slf4j-simple:1.7.7'

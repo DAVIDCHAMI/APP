@@ -14,20 +14,10 @@ public class EntidadDepositoActual {
         throw new IllegalStateException(CLASE_ENTIDAD);
     }
 
-    /**
-     * Gets deposito.
-     *
-     * @return  deposito
-     */
     public static CuentaDeposito getDeposito() {
         return deposito;
     }
 
-    /**
-     * Sets deposito.
-     *
-     * @param data the data
-     */
     public static void setDeposito(List<String> data){
         deposito.setNumero(data.get(0));
         deposito.setTipo(data.get(1));

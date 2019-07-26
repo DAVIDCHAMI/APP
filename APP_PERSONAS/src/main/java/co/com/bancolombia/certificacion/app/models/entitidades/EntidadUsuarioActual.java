@@ -49,7 +49,6 @@ public class EntidadUsuarioActual {
     }
 
     public static void setUsuarioYClave(String nombreUsuario, String clave) {
-
         usuario.setNombreUsuario(nombreUsuario);
         usuario.setClave(clave);
     }
