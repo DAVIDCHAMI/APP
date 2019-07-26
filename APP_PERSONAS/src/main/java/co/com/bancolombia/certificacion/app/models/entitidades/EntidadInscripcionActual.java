@@ -26,7 +26,7 @@ public class EntidadInscripcionActual {
     }
 
     public static void setInscripcion(List<String> data) {
-       // Inscripcion inscripcion = new Inscripcion();
+        Inscripcion inscripcion = new Inscripcion();
         InterfazProducto productoFactory = new FactoriaProducto();
         Usuario usuario = new Usuario();
 

@@ -17,7 +17,6 @@ public class Inscripcion {
     }
 
     public Inscripcion() {
-
     }
 
     public String getNombreBanco() {

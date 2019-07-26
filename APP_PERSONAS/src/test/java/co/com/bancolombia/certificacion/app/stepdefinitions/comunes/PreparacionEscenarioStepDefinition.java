@@ -41,7 +41,7 @@ public class PreparacionEscenarioStepDefinition {
         );
     }
 
-    @Y("cierrar sesión en osp")
+    @Y("cierra sesión en la app")
     public void cerrarSesionOsp() {
         theActorInTheSpotlight().attemptsTo(
                 CerrarSesion.exitosamente()
