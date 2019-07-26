@@ -22,12 +22,7 @@ public class Producto {
 
 
     public Producto(){}
-    /**
-     * Instantiates a new Producto.
-     *
-     * @param numero      the numero
-     * @param tipoProducto the productos type
-     */
+
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
         this.tipo = tipoProducto;
