@@ -20,7 +20,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
-    Entonces verifico el mensaje del registro
+    Entonces el deberia de ver el mensaje usuario o clave invalida
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@3
@@ -30,7 +30,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
-    Entonces verifico el mensaje del registro
+    Entonces el deberia de ver el mensaje de usuario bloqueado
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
