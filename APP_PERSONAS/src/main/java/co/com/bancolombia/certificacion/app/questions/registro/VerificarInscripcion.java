@@ -17,17 +17,13 @@ public class VerificarInscripcion implements Question<Boolean> {
         String tipoCuenta = actor.recall(TIPO_CUENTA);
         String tipoDocumento = actor.recall(TIPO_DOCUMENTO);
         String numeroDocumento = actor.recall(NUMERO_DOCUMENTO);
-        if (numeroProducto.equals(actor.recall(NUMERO_CUENTA)) &&
+        return (numeroProducto.equals(actor.recall(NUMERO_CUENTA)) &&
                 Visibility.of(IMG_CONFIRMACION).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_TIPO_PRODUCTO.of(tipoCuenta)).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_TIPO_DOCUMENTO.of(tipoDocumento)).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_NUMERO_DOCUMENTO.of(numeroDocumento)).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_BANCO.of(nombreBanco)).viewedBy(actor).asBoolean()
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+        );
     }
 
     public static VerificarInscripcion deProductos() {

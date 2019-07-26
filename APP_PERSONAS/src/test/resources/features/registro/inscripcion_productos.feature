@@ -9,7 +9,7 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiero INSCRIBIR_PRODUCTOS del usuario <usuario> con clave <clave>
     Y quiero realizar la inscripcion del producto con la información
-      | <nombreBanco> | <tipo> | <numero> | <tipoDocumentoInscripcion> | <numeroDocumentoInscripcion> |
+      | <nombreBanco> | <tipo> | <numero> | <tipoDocumentoInscripcion> | <numeroDoumentoInscripcion> |
     Entonces el deberia de ver el detalle del producto registrado
     Y cierrar sesión en osp
     Ejemplos:

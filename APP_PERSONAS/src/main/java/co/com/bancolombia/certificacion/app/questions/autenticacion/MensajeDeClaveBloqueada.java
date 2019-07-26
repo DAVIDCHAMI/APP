@@ -7,7 +7,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 public class MensajeDeClaveBloqueada implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
-        return LBL_CLAVE_BLOQUEADA.resolveFor(actor).waitUntilVisible().isVisible() ? true : false;
+        return LBL_CLAVE_BLOQUEADA.resolveFor(actor).waitUntilVisible().isVisible();
     }
 
     public static MensajeDeClaveBloqueada esVisible() {

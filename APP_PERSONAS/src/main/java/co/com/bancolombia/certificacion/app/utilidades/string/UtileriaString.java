@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.String;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PUNTO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 
 public class UtileriaString {
 
@@ -14,14 +15,18 @@ public class UtileriaString {
         return contador;
     }
 
-    public static String obtenerValorEntero(String cadena){
-        char [] cadenaAux = cadena.toCharArray();
+    public static String obtenerValorEntero(String cadena) {
+        char[] cadenaAux = cadena.toCharArray();
         String valorEntero = "";
-        for (int i = 0; i < cadenaAux.length; i++){
-            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == PUNTO){
-                valorEntero+=cadenaAux[i];
+        for (int i = 0; i < cadenaAux.length; i++) {
+            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == PUNTO) {
+                valorEntero += cadenaAux[i];
             }
         }
         return valorEntero;
+    }
+
+    private UtileriaString() {
+        throw new IllegalStateException(CLASE_UTILIDAD);
     }
 }

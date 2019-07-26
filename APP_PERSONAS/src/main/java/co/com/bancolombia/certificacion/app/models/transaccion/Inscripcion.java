@@ -16,6 +16,10 @@ public class Inscripcion {
         this.usuario = inscripcionBuilder.getUsuario();
     }
 
+    public Inscripcion() {
+
+    }
+
     public String getNombreBanco() {
         return nombreBanco;
     }

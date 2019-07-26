@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.utilidades.constantes;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_CONSTANTE;
+
 public class Constantes {
     public static final String CUENTAS_DEPOSITO = "Cuentas";
     public static final String TARJETAS_CREDITO = "Tarjetas de crédito";
@@ -10,4 +12,8 @@ public class Constantes {
     public static final String AHORROS = "Ahorros";
     public static final String CORRIENTE = "Corriente";
     public static final Character PUNTO = '.';
+
+    private Constantes() {
+        throw new IllegalStateException(CLASE_CONSTANTE);
+    }
 }

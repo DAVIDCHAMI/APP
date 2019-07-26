@@ -6,8 +6,4 @@ public class NoSeInscribioProductoException extends AssertionError {
     public NoSeInscribioProductoException(String message, Throwable cause) {
         super(message, cause);
     }
-
-    public NoSeInscribioProductoException(String detailMessage) {
-        super(detailMessage);
-    }
 }

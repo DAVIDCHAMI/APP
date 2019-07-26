@@ -21,12 +21,12 @@ public class SeleccionarOpcion implements Task {
         actor.attemptsTo(
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
-                Check.whether(!tipoTransaccion.getSubMenu().equals("")).andIfSo(
-                       Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
+                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 ),
-                Check.whether(!tipoTransaccion.getTercerNivel().equals("")).andIfSo(
-                      Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
+                        Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                 )
         );
