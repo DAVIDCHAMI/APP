@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.Scroll;
 import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
@@ -26,7 +27,8 @@ public class GuardarDatos implements Task {
         List<Producto> listaProductos = new ArrayList<>();
         Saldo saldo = new Saldo();
         actor.attemptsTo(
-                ScrollHasta.elTarget(OPT_CATEGORIA_PRODUCTOS.of(CUENTAS))
+                Scroll.hastaTargetVisible(OPCION_CATEGORIA_PRODUCTOS.of(CUENTAS))
+                //ScrollHasta.elTarget(OPT_CATEGORIA_PRODUCTOS.of(CUENTAS))
         );
         while(CONTENEDOR_INFORMACION_PRODUCTO.of(String.valueOf(iterador)).resolveFor(actor).isPresent()){
             producto.setTipo(LBL_TIPO_CUENTA.resolveFor(actor).getText());

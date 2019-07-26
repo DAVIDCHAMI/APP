@@ -11,6 +11,7 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
     Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Y el ingresa a sus productos
     Entonces El deberia ver unicamente cuentas deposito
+    Y cierra sesión en la app
     #Y Verifico el resultado de los siguientes archivos de iSeries
     #| Logcanal- COMFFLGWWW |
     Ejemplos:
@@ -23,6 +24,7 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Entonces El deberia de ver los productos asoiados a su cuenta
+    Y cierra sesión en la app
     #Y Verifico el resultado de los siguientes archivos de iSeries
     #| Logcanal- COMFFLGWWW |
     Ejemplos:
