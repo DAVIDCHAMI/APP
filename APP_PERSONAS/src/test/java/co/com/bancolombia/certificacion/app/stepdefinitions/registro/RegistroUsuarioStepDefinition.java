@@ -6,6 +6,8 @@ import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
+
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.conCredenciales;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -15,7 +17,9 @@ public class RegistroUsuarioStepDefinition {
     public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.conCredenciales(usuario, clave)
+                IniciarSesion.enApp(conCredenciales()
+                        .conNombreUsuario(usuario)
+                        .conClave(clave))
         );
     }
 
