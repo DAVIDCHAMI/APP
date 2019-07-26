@@ -9,8 +9,9 @@ public class Constantes {
     public static final String CREDIAGIL = "Crediágil";
     public static final String INVERSIONES = "Inversiones";
     public static final String CREDITOS = "Créditos";
-    public static final String AHORROS="Ahorros";
-    public static final String CORRIENTE="Corriente";
+    public static final String AHORROS = "Ahorros";
+    public static final String CORRIENTE = "Corriente";
+    public static final Character PUNTO = '.';
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

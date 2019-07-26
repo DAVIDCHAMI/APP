@@ -21,13 +21,12 @@ public class Producto {
     private List<Movimiento> movimientos;
 
 
-    protected Producto(){}
-    /**
-     * Instantiates a new Producto.
-     *
-     * @param numero      the numero
-     * @param tipoProducto the productos type
-     */
+    public Producto(){
+        this.tipo="";
+        this.numero="";
+    }
+
+
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
         this.tipo = tipoProducto;
