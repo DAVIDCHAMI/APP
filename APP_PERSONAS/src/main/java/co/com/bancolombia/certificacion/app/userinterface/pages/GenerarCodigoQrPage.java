@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GenerarCodigoQrLocator.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
@@ -18,4 +19,9 @@ public class GenerarCodigoQrPage {
     public static final Target IMG_CODIGO_QR_FLOTANTE = Target.the("Botón código qr flotante de pantella de inicio").located(theElementBy(IMG_CODIGO_QR_FLOTANTE_LOCATOR));
     public static final Target TXT_NUMERO_PRODUCTO = Target.the("Número de prodcuto").located(theElementBy(TXT_NUMERO_PRODUCTO_LOCATOR));
     public static final Target BTN_TIPO_PRODUCTO = Target.the("Botón tipo de producto").locatedBy(dynamicElement(BTN_TIPO_PRODUCTO_LOCATOR));
+
+    private GenerarCodigoQrPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
+
 }
