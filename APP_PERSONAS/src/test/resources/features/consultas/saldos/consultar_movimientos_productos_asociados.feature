@@ -5,7 +5,7 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
   Quiero consultar mis productos
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos del producto
-@manual
+
    Esquema del escenario: Consultar un producto sin movimientos
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
