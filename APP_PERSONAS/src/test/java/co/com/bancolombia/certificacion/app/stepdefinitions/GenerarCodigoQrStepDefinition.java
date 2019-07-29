@@ -14,17 +14,17 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class GenerarCodigoQrStepDefinition {
 
-    @Cuando("^quiere generar un codigo QR sin valor con nombre (.*)$")
-    public void generarCodigoQrSinValor(String nombrePersonalizado, List<Map<String, String>> datos) {
+    @Cuando("^quiere generar un codigo QR sin valor$")
+    public void generarCodigoQrSinValor(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigo.qr(con().conTipoCuenta(datos).conNumeroCuenta(datos).conDescripcion(datos), nombrePersonalizado)
+                GenerarCodigo.qr(con().conTipoCuenta(datos).conNumeroCuenta(datos).conDescripcion(datos))
         );
     }
 
-    @Cuando("^quiere generar un codigo QR con valor con nombre (.*)$")
-    public void generarCodigooQrConValor(String nombrePersonalizado, List<Map<String, String>> datos) {
+    @Cuando("^quiere generar un codigo QR con valor$")
+    public void generarCodigooQrConValor(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigo.qr(con().conTipoCuenta(datos).conNumeroCuenta(datos).conMonto(datos).conDescripcion(datos), nombrePersonalizado)
+                GenerarCodigo.qr(con().conTipoCuenta(datos).conNumeroCuenta(datos).conMonto(datos).conDescripcion(datos))
         );
     }
 

@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
-import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.contarCantidadCaracter;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.contarCantidadCaracter;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -23,7 +23,7 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        if (!opcionCategoria.equals("Cuentas")) {
+        if (!"Cuentas".equals(opcionCategoria)) {
             actor.attemptsTo(
                     SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
             );

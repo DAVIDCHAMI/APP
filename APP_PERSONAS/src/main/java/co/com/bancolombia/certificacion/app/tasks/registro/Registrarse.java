@@ -11,7 +11,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Registrarse implements Task {
-
     private String nuevoUser;
     private String correoUser;
 
