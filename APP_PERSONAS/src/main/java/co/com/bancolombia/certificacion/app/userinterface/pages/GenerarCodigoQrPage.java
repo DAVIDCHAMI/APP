@@ -15,4 +15,7 @@ public class GenerarCodigoQrPage {
     public static final Target BTN_GENERAR_QR = Target.the("Botón confirmar generación de codigo qr").located(theElementBy(BTN_GENERAR_QR_LOCATOR));
     public static final Target IMG_CODIGO_QR = Target.the("Botón confirmar generación de codigo qr").located(theElementBy(IMG_CODIGO_QR_LOCATOR));
     public static final Target IMG_CODIGO_QR_PANTALLA_INICIO = Target.the("Botón código qr de pantella de inicio").located(theElementBy(IMG_CODIGO_QR_PANTALLA_INICIO_LOCATOR));
+    public static final Target IMG_CODIGO_QR_FLOTANTE = Target.the("Botón código qr flotante de pantella de inicio").located(theElementBy(IMG_CODIGO_QR_FLOTANTE_LOCATOR));
+    public static final Target TXT_NUMERO_PRODUCTO = Target.the("Número de prodcuto").located(theElementBy(TXT_NUMERO_PRODUCTO_LOCATOR));
+    public static final Target BTN_TIPO_PRODUCTO = Target.the("Botón tipo de producto").locatedBy(dynamicElement(BTN_TIPO_PRODUCTO_LOCATOR));
 }

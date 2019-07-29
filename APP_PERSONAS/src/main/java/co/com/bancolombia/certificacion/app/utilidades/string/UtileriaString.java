@@ -1,14 +1,14 @@
-package co.com.bancolombia.certificacion.app.utilidades.string;
+package co.com.bancolombia.certificacion.app.utilidades.String;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyMetastate;
-import org.openqa.selenium.WebDriver;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class UtileriaString {
 
@@ -22,8 +22,23 @@ public class UtileriaString {
         return contador;
     }
 
-    private UtileriaString() {
-        throw new IllegalStateException(CLASE_UTILIDAD);
+    public static String obtenerValorEntero(String cadena) {
+        char[] cadenaAux = cadena.toCharArray();
+        String valorEntero = "";
+        for (int i = 0; i < cadenaAux.length; i++) {
+            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == COMA) {
+                valorEntero += cadenaAux[i];
+            }
+        }
+        return valorEntero;
+    }
+
+    public static String darFormato(String valor) {
+        DecimalFormatSymbols simbolo = new DecimalFormatSymbols();
+        simbolo.setDecimalSeparator(',');
+        simbolo.setGroupingSeparator('.');
+        DecimalFormat asignarFormato = new DecimalFormat("0,000.00", simbolo);
+        return asignarFormato.format(Double.parseDouble(valor));
     }
 
     public static void ingresarTexto(String texto) {
@@ -52,5 +67,9 @@ public class UtileriaString {
                 }
             }
         }
+    }
+
+    private UtileriaString() {
+        throw new IllegalStateException(CLASE_UTILIDAD);
     }
 }
