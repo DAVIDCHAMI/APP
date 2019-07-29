@@ -39,7 +39,6 @@ public class ConsultarMovimientos implements Task {
             );
             iterador++;
         }
-
         actor.remember(LISTA_MOVIMIENTOS, listaMovimiento);
     }
 

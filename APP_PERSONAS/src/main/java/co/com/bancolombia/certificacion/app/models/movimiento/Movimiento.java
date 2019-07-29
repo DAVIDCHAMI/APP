@@ -11,8 +11,14 @@ public class Movimiento {
     private String valorPorUnidad;
     private String numeroUnidades;
 
-    public Movimiento(MovimientoBuilder movimientoBuilder){
-
+    public Movimiento(MovimientoBuilder movimientoBuilder) {
+        this.fecha = movimientoBuilder.getFecha();
+        this.valorMovimiento = movimientoBuilder.getValorMovimiento();
+        this.naturaleza = movimientoBuilder.getNaturaleza();
+        this.codigo = movimientoBuilder.getCodigo();
+        this.descripcion = movimientoBuilder.getDescripcion();
+        this.valorPorUnidad = movimientoBuilder.getValorPorUnidad();
+        this.numeroUnidades = movimientoBuilder.getNumeroUnidades();
     }
 
     public String getFecha() {
@@ -70,5 +76,4 @@ public class Movimiento {
     public void setNumeroUnidades(String numeroUnidades) {
         this.numeroUnidades = numeroUnidades;
     }
-
 }
