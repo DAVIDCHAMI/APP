@@ -16,9 +16,9 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarDetalle implements Task {
-    String opcionCategoria;
-    String tipoCuenta;
-    String numeroCuenta;
+    private String opcionCategoria;
+    private String tipoCuenta;
+    private String numeroCuenta;
 
     public ConsultarDetalle(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;
@@ -30,7 +30,7 @@ public class ConsultarDetalle implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
-                ConsultarProductos.conInformacion(tipoCuenta, numeroCuenta),
+                ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );

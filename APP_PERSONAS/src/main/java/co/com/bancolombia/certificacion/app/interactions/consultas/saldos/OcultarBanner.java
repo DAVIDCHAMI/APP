@@ -15,7 +15,9 @@ public class OcultarBanner implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(BTN_OCULTAR_BANNER, isClickable()),
+                WaitUntil.the(BTN_OCULTAR_BANNER, isClickable())
+        );
+        actor.attemptsTo(
                 Click.on(BTN_OCULTAR_BANNER),
                 Click.on(BTN_OCULTAR_BANNER)
         );
