@@ -36,9 +36,10 @@ public class EntidadUsuarioActual {
      */
     public static void setUsuario(List<String> data) {
 
-        usuario.setTipoDocumento(data.get(0));
-        usuario.setNumeroDocumento(data.get(1));
-        usuario.setSegundaClave(data.get(2));
+        //Se movio el vecto toca ajustarlo
+        usuario.setTipoDocumento(data.get(5));
+        usuario.setNumeroDocumento(data.get(6));
+        usuario.setSegundaClave(data.get(7));
 
         String codigoTransaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion().getCodigoTransaccion();
 

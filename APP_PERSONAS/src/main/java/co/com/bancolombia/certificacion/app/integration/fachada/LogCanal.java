@@ -43,7 +43,7 @@ public class LogCanal {
             datosTransaccion.setTrace(trace);
 
             dataForQuery.put("TRACE", trace);
-            String sql = QueryManager.CONSULTAS_APP.getString("SQL.COMFFLGWWW.tramaDatos_0220_0230");
+            String sql = QueryManager.CONSULTAS.getString("SQL.COMFFLGWWW.tramaDatos_0220_0230");
             listOfFounded = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);

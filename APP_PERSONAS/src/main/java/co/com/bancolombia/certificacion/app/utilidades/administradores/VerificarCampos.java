@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class VerificarCampos {
 
-    private static final Logger LOGGER = LogManager.getLogger("LOG CANAL COMFFLGWWW");
+    private static final Logger LOGGER = LogManager.getLogger("Verificacion de campos");
     private static String reporteTrama = "";
     private static String resultadoCampo = "Resultado ";
     private static String respuestaOK = "  : OK";

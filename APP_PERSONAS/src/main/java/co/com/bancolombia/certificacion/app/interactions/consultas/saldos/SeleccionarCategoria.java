@@ -1,22 +1,24 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarCategoria implements Interaction {
     private String categoria;
 
-    public SeleccionarCategoria(String categoria){
+    public SeleccionarCategoria(String categoria) {
         this.categoria = categoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                ScrollHasta.elTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                 Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
         );
     }

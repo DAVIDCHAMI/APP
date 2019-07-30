@@ -14,8 +14,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/autenticacion/Trn0369_autenticacion.feature"},
-        tags = {"@LoginExitoso4"},
+        features = {"src/test/resources/features/autenticacion/autenticacion.feature"},
+        tags = {"@LoginExitoso7"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
@@ -27,6 +27,6 @@ public class AutenticacionRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/autenticacion/Trn0369_autenticacion.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/autenticacion/autenticacion.feature");
     }
 }

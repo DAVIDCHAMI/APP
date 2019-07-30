@@ -30,7 +30,7 @@ public class Transversales {
         dataForQuery.put("CUENTADEBITO", depositos.getNumero().substring(3,11));
         dataForQuery.put("TIPOCUENTADEBITO", formatoTipoCuentaNumero(depositos.getTipo()));
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroDeb");
+        String sql = QueryManager.CONSULTAS.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroDeb");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
@@ -43,7 +43,7 @@ public class Transversales {
         dataForQuery.put("CUENTACREDITO", depositos.getNumero().substring(3,11));
         dataForQuery.put("TIPOCUENTACREDITO", formatoTipoCuentaNumero(depositos.getTipo()));
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroCre");
+        String sql = QueryManager.CONSULTAS.getString("SQL.PCCFFMOVTFLOGTF.consultarRegistroCre");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
@@ -57,7 +57,7 @@ public class Transversales {
         dataForQuery.put(FECHA, AdministradorFechas.obtenerFechaSistema(FECHASISTEMA));
         dataForQuery.put("CANAL", CanalesSistemas.BLP);
         dataForQuery.put("HORA", AdministradorFechas.obtenerFechaSistema("hhmmss"));
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.PCCFFLGAEN.consultaClaveDinamica");
+        String sql = QueryManager.CONSULTAS.getString("SQL.PCCFFLGAEN.consultaClaveDinamica");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         claveDinamica =  resultadoConsulta.get(0).get("aenmsgenv").toString();
         return claveDinamica;
@@ -69,7 +69,7 @@ public class Transversales {
 
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(DOCUMENTO, usuario.getNumeroDocumento());
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.CABFFTARJ.validarRegistroEprepago");
+        String sql = QueryManager.CONSULTAS.getString("SQL.CABFFTARJ.validarRegistroEprepago");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
 
         if (resultadoConsulta != null) {

@@ -40,7 +40,7 @@ public class Depositos {
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
         saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
@@ -58,7 +58,7 @@ public class Depositos {
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFSALDO.consultarSaldo");
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
         saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
@@ -97,7 +97,7 @@ public class Depositos {
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_DEBIT);
         dataForQuery.put("HORA", transaccion.getHoraTransaccion());
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
@@ -114,7 +114,7 @@ public class Depositos {
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_CREDIT);
         dataForQuery.put("HORA", transaccion.getHoraTransaccion());
 
-        String sql = QueryManager.CONSULTAS_APP.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }

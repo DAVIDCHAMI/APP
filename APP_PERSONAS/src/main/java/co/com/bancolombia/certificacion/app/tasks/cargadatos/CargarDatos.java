@@ -7,22 +7,16 @@ import net.serenitybdd.screenplay.Task;
 
 import java.util.List;
 
-/**
- * The type Transaction transaccionCon task.
- */
 public class CargarDatos implements Task {
-
     private  List<String> datosTransaccion;
     private  List<String> datosUsuario;
     private List<String> datoPago;
-
 
     public CargarDatos(CargarDatosBuilder datosTransaccionBuilder) {
         this.datosTransaccion= datosTransaccionBuilder.getDatosTransaccion();
         this.datosUsuario = datosTransaccionBuilder.getDatosUsuario();
         this.datoPago = datosTransaccionBuilder.getDatoPago();
     }
-
 
     public static CargarDatosBuilder transaccionCon(List<String> data) {
         return new CargarDatosBuilder(data);
