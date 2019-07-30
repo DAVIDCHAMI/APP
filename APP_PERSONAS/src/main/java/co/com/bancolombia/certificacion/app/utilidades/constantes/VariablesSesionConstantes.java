@@ -10,6 +10,7 @@ public class VariablesSesionConstantes {
     public static final String NUMERO_DOCUMENTO = "NUMERO DOCUMENTO";
     public static final String NOMBRE_BANCO = "NOMBRE BANCO";
     public static final String SALDO_DISPONIBLE = "SALDO DISPONIBLE";
+    public static final String LISTA_MOVIMIENTOS = "LISTA MOVIMIENTOS";
 
     private VariablesSesionConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -23,6 +24,7 @@ public class ConsultarProductos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                ScrollHasta.elTarget(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta, numeroCuenta)),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
         );
         actor.remember(NUMERO_CUENTA, numeroCuenta);
@@ -32,7 +34,7 @@ public class ConsultarProductos implements Task {
             actor.remember(TIPO_CUENTA, CORRIENTE);
     }
 
-    public static ConsultarProductos conInformacion(String tipoCuenta, String numeroCuenta) {
+    public static ConsultarProductos sinMovimientosConInformacion(String tipoCuenta, String numeroCuenta) {
         return Tasks.instrumented(ConsultarProductos.class, tipoCuenta, numeroCuenta);
     }
 }

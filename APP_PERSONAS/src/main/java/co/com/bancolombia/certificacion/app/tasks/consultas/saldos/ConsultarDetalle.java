@@ -24,7 +24,7 @@ public class ConsultarDetalle implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                ConsultarProductos.conInformacion(tipoCuenta, numeroCuenta),
+                ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );

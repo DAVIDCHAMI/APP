@@ -20,6 +20,10 @@ public class SaldosMovimientosLocator {
             .withIos("");
     public static final Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Detalle del producto')]").withIos("");
     public static final Locator BTN_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Movimientos')]").withIos("");
+    public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-AccountDataContainer2']").withIos("");
+    public static final Locator LBL_FECHA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column1']//android.view.View[1]").withIos("");
+    public static final Locator LBL_DESCRIPCION_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column1']//android.view.View[2]").withIos("");
+    public static final Locator LBL_SALDO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column2']//android.view.View[1]").withIos("");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
