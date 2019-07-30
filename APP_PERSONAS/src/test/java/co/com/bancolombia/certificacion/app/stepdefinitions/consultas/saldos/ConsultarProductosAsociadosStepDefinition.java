@@ -26,7 +26,7 @@ public class ConsultarProductosAsociadosStepDefinition {
     }
 
     @Y("el ingresa a sus productos$")
-    public void ingresaSusProductos(){
+    public void ingresaSusProductos() {
         theActorInTheSpotlight().attemptsTo(
                 GuardarDatos.deProductos()
         );

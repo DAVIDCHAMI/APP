@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.detalleproductos;
 
-
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProducto;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
@@ -11,15 +10,13 @@ import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.D
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-
 public class ConsultaDetalleCuentasDepositoStepDefinition {
 
-    @Cuando("^consulto el detalle de mi Cuenta de Ahorro (.*) numero (.*)$")
-    public void consultoElSaldoDeMisCuentasDeposito(String tipoCuenta, String numeroCuenta) {
+    @Cuando("^consulto en (.*) el detalle de mi Cuenta de Ahorro (.*) numero (.*)$")
+    public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProducto(tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
         );
-
     }
 
     @Entonces("^deberia de ver el detalle de mi cuenta de ahorro$")

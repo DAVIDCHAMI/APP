@@ -20,8 +20,8 @@ public class ConsultaSaldosStepDefinition {
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, List<String> cuentasDeposito) {
         theActorInTheSpotlight().attemptsTo(
                 RevisarProductos.enSaldosMovimientos(elProducto()
-                .conTipoCuenta(cuentasDeposito)
-                .conNumero(cuentasDeposito), opcionCategoria)
+                        .conTipoCuenta(cuentasDeposito)
+                        .conNumero(cuentasDeposito), opcionCategoria)
         );
     }
 

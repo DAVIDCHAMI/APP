@@ -20,6 +20,7 @@ public class RevisarProductos implements Question<Boolean> {
                 break;
             }
         }
+        System.out.println(productosCliente.size());
         return productosCliente.size() != 1;
     }
 
