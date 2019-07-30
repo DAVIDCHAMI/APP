@@ -21,7 +21,7 @@ public class Saltar implements Interaction {
         );
     }
 
-    public static Saltar unboarding(){
+    public static Saltar onBoarding(){
         return instrumented(Saltar.class);
     }
 }

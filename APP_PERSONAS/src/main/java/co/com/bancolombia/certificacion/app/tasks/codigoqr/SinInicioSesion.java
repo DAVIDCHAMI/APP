@@ -31,7 +31,7 @@ public class SinInicioSesion extends GenerarQR {
         actor.attemptsTo(
                 Click.on(IMG_CODIGO_QR_PANTALLA_INICIO),
                 Click.on(IMG_CODIGO_QR_FLOTANTE),
-                Saltar.unboarding(),
+                Saltar.onBoarding(),
                 Escribir.enCampoTexto(nombrePersonalizado),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_NUMERO_PRODUCTO),

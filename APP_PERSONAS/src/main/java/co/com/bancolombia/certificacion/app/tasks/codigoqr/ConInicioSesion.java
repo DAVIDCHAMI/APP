@@ -29,7 +29,7 @@ public class ConInicioSesion extends GenerarQR {
         AppiumDriver driver = getProxiedDriver();
         actor.attemptsTo(
                 Click.on(BTN_GENERAR_CODIGO_QR),
-                Saltar.unboarding(),
+                Saltar.onBoarding(),
                 Click.on(LNK_SIGUIENTE),
                 Check.whether(LBL_VERIFICACION.of(CUENTAS_DEPOSITO).resolveFor(actor).isVisible()).andIfSo(
                         Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
