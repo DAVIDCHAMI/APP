@@ -12,7 +12,6 @@ public class GeneralLocator {
     public static final Locator LBL_GUARDADO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Guardado exitoso!')]");
     public static final Locator LBL_GENERACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Generación exitosa!')]");
     public static final Locator LBL_VERIFICACION_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]");
-    public static final Locator IMG_LOGO_BANCOLOMBIA_LOCATOR = locator().withAndroid("xpath$//android.widget.Image[contains(@text,'Bancolombia_Resources.logo')]");
     public static final Locator LNK_SALTAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Saltar')]");
     public static final Locator LNK_COMENZAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Comenzar')]");
 

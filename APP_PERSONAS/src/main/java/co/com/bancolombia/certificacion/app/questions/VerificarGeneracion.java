@@ -9,6 +9,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GenerarCo
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.INFO_CODIGO_QR;
 
 public class VerificarGeneracion implements Question<Boolean> {
+
     @Override
     public Boolean answeredBy(Actor actor) {
         Transferencia datos = actor.recall(INFO_CODIGO_QR);

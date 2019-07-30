@@ -10,6 +10,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Saltar implements Interaction {
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(

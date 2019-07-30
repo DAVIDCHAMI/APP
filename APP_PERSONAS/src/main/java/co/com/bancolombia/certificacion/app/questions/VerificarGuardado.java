@@ -7,6 +7,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LBL_GUARDADO_EXITOSO;
 
 public class VerificarGuardado implements Question<Boolean> {
+
     @Override
     public Boolean answeredBy(Actor actor) {
         return LBL_GUARDADO_EXITOSO.resolveFor(actor).isVisible() ||
