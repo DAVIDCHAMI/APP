@@ -1,6 +1,9 @@
 package co.com.bancolombia.certificacion.app.utilidades.String;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PUNTO;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 
 public class UtileriaString {
@@ -19,11 +22,19 @@ public class UtileriaString {
         char[] cadenaAux = cadena.toCharArray();
         String valorEntero = "";
         for (int i = 0; i < cadenaAux.length; i++) {
-            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == PUNTO) {
+            if (Character.isDigit(cadenaAux[i]) || cadenaAux[i] == COMA) {
                 valorEntero += cadenaAux[i];
             }
         }
         return valorEntero;
+    }
+
+    public static String darFormato(String valor) {
+        DecimalFormatSymbols simbolo = new DecimalFormatSymbols();
+        simbolo.setDecimalSeparator(',');
+        simbolo.setGroupingSeparator('.');
+        DecimalFormat asignarFormato = new DecimalFormat("0,000.00", simbolo);
+        return asignarFormato.format(Double.parseDouble(valor));
     }
 
     private UtileriaString() {
