@@ -68,7 +68,7 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
-    @Entonces("^El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta.$")
+    @Entonces("^El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta$")
     public void deberiaVerLosMovimientosNingunMovimientoConLaTarjeta() {
         theActorInTheSpotlight().should(seeThat(
                 VerificarProducto.sinMovimientos()

@@ -6,7 +6,6 @@ import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeVali
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveValida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeDeClaveBloqueada;
-import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveBloqueadaNoVisualizadoException.MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO;
@@ -21,9 +20,6 @@ public class AutenticacionStepDefinition {
     public void verificoElResultadoDeLaAutenticacionExitosa() {
         theActorInTheSpotlight().should(seeThat(MensajeClaveValida.esVisible())
                 .orComplainWith(MensajeValidacionNoVisualizadoException.class,MENSAJE_VALIDACION_NO_ENCONTRADO));
-        theActorInTheSpotlight().attemptsTo(
-                CerrarSesion.exitosamente()
-        );
     }
 
     @Entonces("^la autenticacion deberia de ser fallida por clave invalida$")
