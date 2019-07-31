@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
-import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

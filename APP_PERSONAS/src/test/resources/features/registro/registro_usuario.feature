@@ -14,7 +14,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@2
-   |2   |423698529   |1   |423698529   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa90   |jalzate@todo1.net|
+   |2   |1128398861   |1   |1128398861   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa91   |jalzate@todo1.net|
 
   Esquema del escenario: Registrar un usuario que ya este registrado
     Dado que el Actor carga los datos para la prueba

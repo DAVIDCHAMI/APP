@@ -10,10 +10,17 @@ import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.D
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class ConsultaDetalleCuentasDepositoStepDefinition {
+public class ConsultaDetalleProductosStepDefinition {
 
-    @Cuando("^consulto en (.*) el detalle de mi Cuenta de Ahorro (.*) numero (.*)$")
+    @Cuando("^consulto en (.*) el detalle de mi Cuenta (.*) numero (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^consulto en (.*) el detalle de tarjeta (.*) numero (.*)$")
+    public void consultoElSaldoDeEprepago(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
         );
