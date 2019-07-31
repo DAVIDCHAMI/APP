@@ -6,8 +6,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BOTON;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.RegistroPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIGUIENTE;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Registrarse implements Task {
@@ -23,8 +24,8 @@ public class Registrarse implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Type.theValue(nuevoUser).into(TXT_CREAR_USUARIO),
-                Click.on(BTN_SIGUIENTE),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(BOTON.of(SIGUIENTE)),
+                Click.on(BOTON.of(SIGUIENTE)),
                 Click.on(TXT_CORREO),
                 Type.theValue(correoUser).into(TXT_CORREO),
                 Click.on(LBL_CORREO),

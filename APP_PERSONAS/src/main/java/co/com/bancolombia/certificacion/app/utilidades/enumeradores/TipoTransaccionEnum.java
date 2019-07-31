@@ -7,7 +7,7 @@ public enum TipoTransaccionEnum {
     TRANSFERIR_DINERO(MIS_PRODUCTOS, "Transferir dinero",""),
     INSCRIBIR_PRODUCTOS(MIS_PRODUCTOS, "Inscribir productos",""),
     GENERAR_CODIGO_QR(MIS_PRODUCTOS, "Recibir dinero",""),
-    PAGAR_TARJETAS_DE_CREDITO_Y_CREDITOS(MIS_PRODUCTOS, "Pagar tarjetas de crédito y créditos",""),
+    PAGAR_TARJETAS_DE_CREDITO_Y_CREDITOS(MIS_PRODUCTOS, "Pagar tarjetas de crédito",""),
     REALIZAR_AVANCES_DESEMBOLSOS(MIS_PRODUCTOS, "Realizar avances y desembolsos",""),
     PROGRAMAR_PAGAR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     INSCRIBIR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Inscribir facturas"),

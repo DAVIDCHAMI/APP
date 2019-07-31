@@ -13,6 +13,14 @@ public class Constantes {
     public static final String CORRIENTE = "Corriente";
     public static final String CEROS = "0.00";
     public static final Character COMA = ',';
+    public static final String PAGAR_TARJETA_CREDITO_NO_PROPIA = "Pagar tarjetas no propias";
+    public static final String PAGAR_CREDITOS = "Pagar créditos";
+    public static final String PAGAR_TARJETA_CREDITO_PROPIAS = "Pagar tarjetas propias";
+    public static final String PESOS = "Pesos";
+    public static final String DOLARES = "Dólares";
+    public static final String OTRO_VALOR = "Otro valor";
+    public static final String SIGUIENTE = "SIGUIENTE";
+    public static final String PAGAR = "PAGAR";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

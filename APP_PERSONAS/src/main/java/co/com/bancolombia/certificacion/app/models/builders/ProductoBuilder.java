@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProductoBuilder implements Builder<Producto> {
     private String numero;
@@ -32,6 +33,12 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public ProductoBuilder conTipoCuenta(List<String> datosProducto){
         this.tipo = datosProducto.get(0);
+        return this;
+    }
+
+    public ProductoBuilder conProductoDebitar(List<Map<String, String>> datos){
+        this.tipo = datos.get(0).get("tipoCuenta");
+        this.numero = datos.get(0).get("numeroCuenta");
         return this;
     }
 
