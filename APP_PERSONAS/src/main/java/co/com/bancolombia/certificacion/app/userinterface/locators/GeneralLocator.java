@@ -15,7 +15,7 @@ public class GeneralLocator {
     public static final Locator LNK_SALTAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Saltar')]");
     public static final Locator LNK_COMENZAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Comenzar')]");
 
-    public GeneralLocator() {
+    private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
 }

@@ -23,13 +23,19 @@ public class ScrollHasta implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         WebDriver driver = getProxiedDriver();
+        TouchAction action = new TouchAction((AppiumDriver) driver);
         Dimension dimension = driver.manage().window().getSize();
         int posicionInicialX = dimension.width / 2;
         int posicionInicialY = dimension.height / 2;
-        int posicionFinalY = ((elemento.resolveFor(actor).getCoordinates().onPage().y / 5) + 1);
-        TouchAction action = new TouchAction((AppiumDriver) driver);
+        int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+        while (posicionFinalY > dimension.height) {
+            action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
+            action.moveTo(PointOption.point(posicionInicialX, 1000));
+            action.release().perform();
+            posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+        }
         action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
-        action.moveTo(PointOption.point(posicionInicialX, posicionFinalY));
+        action.moveTo(PointOption.point(posicionInicialX, 1000));
         action.release().perform();
     }
 

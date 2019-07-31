@@ -1,15 +1,16 @@
-package co.com.bancolombia.certificacion.app.utilidades.String;
+package co.com.bancolombia.certificacion.app.utilidades.string;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 
 public class UtileriaString {
 
     public static int contarCantidadCaracter(String cadena, char caracter) {
-        int posicion, contador = 0;
+        int posicion;
+        int contador = 0;
         posicion = cadena.indexOf(caracter);
         while (posicion != -1) {
             contador++;

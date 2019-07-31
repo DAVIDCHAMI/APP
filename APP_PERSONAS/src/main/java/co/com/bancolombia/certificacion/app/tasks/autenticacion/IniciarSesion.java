@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -14,28 +16,26 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 
 public class IniciarSesion implements Task {
 
-    private String usuario;
-    private String clave;
+    private Usuario usuario;
 
-    public IniciarSesion(String usuario, String clave) {
+    public IniciarSesion(Usuario usuario) {
         this.usuario = usuario;
-        this.clave = clave;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Type.theValue(usuario).into(TXT_USUARIO),
+                Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Enter.theValue(clave).into(TXT_CLAVE_DIGITOS),
+                Enter.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );
     }
 
-    public static Performable conCredenciales(String usuario, String clave) {
-        return instrumented(IniciarSesion.class, usuario, clave);
+    public static Performable enApp(UsuarioBuilder usuarioBuilder) {
+        return instrumented(IniciarSesion.class, usuarioBuilder.build());
     }
 }

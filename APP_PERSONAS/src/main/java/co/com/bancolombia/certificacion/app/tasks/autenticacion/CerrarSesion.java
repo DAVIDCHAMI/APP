@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -22,7 +21,6 @@ public class CerrarSesion implements Task {
                         andIfSo(
                                 Click.on(BTN_VOLVER)),
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
-                ScrollHasta.elTarget(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Click.on(BTN_CERRAR_SESION),
                 Click.on(BTN_SI_CERRAR_SESION)
         );

@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions;
+package co.com.bancolombia.certificacion.app.questions.codigoqr;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

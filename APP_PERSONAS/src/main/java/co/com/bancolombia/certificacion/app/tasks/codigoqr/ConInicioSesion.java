@@ -10,11 +10,11 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GenerarCodigoQrPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.darFormato;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS_DEPOSITO;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.INFO_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class ConInicioSesion extends GenerarQR {
@@ -32,7 +32,7 @@ public class ConInicioSesion extends GenerarQR {
                 Saltar.onBoarding(),
                 Click.on(LNK_SIGUIENTE)
         );
-        if (LBL_VERIFICACION.of(CUENTAS_DEPOSITO).resolveFor(actor).isVisible())
+        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible())
             BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()).resolveFor(actor).click();
         driver.hideKeyboard();
         actor.attemptsTo(
@@ -52,6 +52,6 @@ public class ConInicioSesion extends GenerarQR {
             datos.setMonto(CEROS);
         else
             datos.setMonto(darFormato(datos.getMonto()));
-        actor.remember(INFO_CODIGO_QR, datos);
+        actor.remember(MODELO_INFO_CODIGO_QR, datos);
     }
 }
