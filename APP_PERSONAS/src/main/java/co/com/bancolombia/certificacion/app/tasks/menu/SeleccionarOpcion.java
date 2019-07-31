@@ -26,8 +26,8 @@ public class SeleccionarOpcion implements Task {
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 ),
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
-                        Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
-                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
+                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel())),
+                        Click.on(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel()))
                 )
         );
     }
