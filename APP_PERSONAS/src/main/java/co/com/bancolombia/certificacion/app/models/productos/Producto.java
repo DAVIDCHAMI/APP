@@ -20,12 +20,10 @@ public class Producto {
     private Saldo saldo;
     private List<Movimiento> movimientos;
 
-
     public Producto(){
         this.tipo="";
         this.numero="";
     }
-
 
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
