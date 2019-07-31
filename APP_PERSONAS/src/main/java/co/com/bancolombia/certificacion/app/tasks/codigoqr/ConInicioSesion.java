@@ -13,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.INFO_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -53,6 +53,6 @@ public class ConInicioSesion extends GenerarQR {
             datos.setMonto(CEROS);
         else
             datos.setMonto(darFormato(datos.getMonto()));
-        actor.remember(INFO_CODIGO_QR, datos);
+        actor.remember(MODELO_INFO_CODIGO_QR, datos);
     }
 }

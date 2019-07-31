@@ -11,7 +11,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.LISTA_CUENTAS_DEPOSITO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_CUENTAS_DEPOSITO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class GuardarDatos implements Task {
@@ -30,7 +30,7 @@ public class GuardarDatos implements Task {
                     .build());
             iterador++;
         }
-        actor.remember(LISTA_CUENTAS_DEPOSITO, listaProductos);
+        actor.remember(MODELO_LISTA_CUENTAS_DEPOSITO, listaProductos);
     }
 
     public static Performable deProductos() {

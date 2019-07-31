@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class ElementFinder {
@@ -20,5 +21,9 @@ public class ElementFinder {
 
     public static By theElementBy(Locator baseLocator) {
         return (getPlatformCapability().equals(ANDROID)) ?  baseLocator.build().getAndroid() : baseLocator.build().getIos();
+    }
+
+    private ElementFinder() {
+        throw new IllegalStateException(CLASE_UTILIDAD);
     }
 }

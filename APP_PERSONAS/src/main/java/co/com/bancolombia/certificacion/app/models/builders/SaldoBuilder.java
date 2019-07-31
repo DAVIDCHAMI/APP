@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 public class SaldoBuilder implements Builder<Saldo> {
-
     private String saldoTotal;
     private String saldoEnCanje;
     private String saldoDisponible;
