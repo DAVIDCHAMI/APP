@@ -18,7 +18,7 @@ private VerificarProducto(String mensaje){
     @Override
     public Boolean answeredBy(Actor actor) {
         return Visibility.of(CUENTA_ESPECIFICA_PRODUCTO.of(actor.recall(TIPO_CUENTA),actor.recall(NUMERO_CUENTA))).viewedBy(actor).asBoolean()
-                && Visibility.of(LBL_SIN_MOVIMIENTOS).viewedBy(actor).asBoolean();
+                && Visibility.of(LBL_SIN_MOVIMIENTOS.of(mensaje)).viewedBy(actor).asBoolean();
     }
 
     public static VerificarProducto sinMovimientos(String mensaje) {
