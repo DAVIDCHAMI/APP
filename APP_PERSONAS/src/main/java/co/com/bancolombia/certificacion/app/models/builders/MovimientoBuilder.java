@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.models.builders;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
-import java.util.List;
 
 public class MovimientoBuilder implements Builder<Movimiento> {
     private String fecha;

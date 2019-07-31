@@ -16,12 +16,12 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class InscripcionProductosStepDefinition {
 
     @Cuando("quiero realizar la inscripcion del producto con la información$")
-    public void quieroRealizarInscripcionProductosConInformacion(List<String> datos){
+    public void quieroRealizarInscripcionProductosConInformacion(List<String> datos) {
         theActorInTheSpotlight().attemptsTo(InscribirProductos.conInformacion(inscripcionProductos(datos)));
     }
 
     @Entonces("el deberia de ver el detalle del producto registrado$")
-    public void deberiaVerDetalleProductoRegistrado(){
-theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarInscripcion.deProductos()).orComplainWith(NoSeInscribioProductoException.class,PRODUCTO_NO_INSCRITO));
+    public void deberiaVerDetalleProductoRegistrado() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarInscripcion.deProductos()).orComplainWith(NoSeInscribioProductoException.class, PRODUCTO_NO_INSCRITO));
     }
 }

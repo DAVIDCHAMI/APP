@@ -5,14 +5,14 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.Tasks;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ConsultarMovimientos implements Task {
     private String tipoCuenta;
@@ -39,10 +39,10 @@ public class ConsultarMovimientos implements Task {
             );
             iterador++;
         }
-        actor.remember(LISTA_MOVIMIENTOS, listaMovimiento);
+        actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }
 
     public static ConsultarMovimientos conInformacion(String tipoCuenta, String numeroCuenta) {
-        return Tasks.instrumented(ConsultarMovimientos.class, tipoCuenta, numeroCuenta);
+        return instrumented(ConsultarMovimientos.class, tipoCuenta, numeroCuenta);
     }
 }
