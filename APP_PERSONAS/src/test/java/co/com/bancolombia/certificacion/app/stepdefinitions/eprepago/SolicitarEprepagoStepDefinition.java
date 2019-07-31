@@ -15,12 +15,12 @@ public class SolicitarEprepagoStepDefinition {
         theActorInTheSpotlight().attemptsTo(SolicitarEprepago.enLaAppBancolombia());
     }
     @Entonces("^Debo ver el mensaje de solicitud exitosa$")
-    public void DeboVerElMensajeDeSolicitudExitosa() {
+    public void deboVerElMensajeDeSolicitudExitosa() {
         theActorInTheSpotlight().should(seeThat(SolicitudEprepago.esExitosa()));
     }
 
     @Entonces("^Debo ver el mensaje respectivo para el usuario$")
-    public void DeboVerElMensajeRespectivoParaElUsuario() {
+    public void deboVerElMensajeRespectivoParaElUsuario() {
         theActorInTheSpotlight().should(seeThat(UsuarioConEprepago.enLaApp()));
     }
 }

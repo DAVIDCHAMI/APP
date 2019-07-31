@@ -2,7 +2,6 @@ package co.com.bancolombia.certificacion.app.questions.eprepago;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.LBL_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.LBL_EPREPAGO;
 
@@ -13,7 +12,6 @@ public class UsuarioConEprepago implements Question<Boolean> {
     }
 
     public static UsuarioConEprepago enLaApp() {
-
         return new UsuarioConEprepago();
     }
 }
