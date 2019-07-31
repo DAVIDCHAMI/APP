@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.registro;
 
 import net.serenitybdd.screenplay.targets.Target;
 
+import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.CUENTA_ESPECIFICA_PRODUCTO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
@@ -17,6 +18,8 @@ public class InscripcionClaveDinamicaPage {
     public static final Target BTN_INSCRIBIR_CLAVE = Target.the("Botón inscribir clave").located(theElementBy(BTN_INSCRIBIR_CLAVE_LOCATOR));
     public static final Target BTN_INSCRIBIR_DINAMICA_CLAVE = Target.the("Botón principal para inscribir clave").located(theElementBy(BTN_INSCRIBIR_CLAVE_DINAMICA_LOCATOR));
     public static final Target BTN_CONTINUAR_SEGUNDA_CLAVE = Target.the("Botón continuar segunda clave").located(theElementBy(BTN_CONTINUAR_SEGUNDA_CLAVE_LOCATOR));
+    public static final Target LBL_VERIFICACION_CLAVE_DINAMICA = Target.the("Datos para verificación registro clave dinámica").locatedBy(dynamicElement(CUENTA_ESPECIFICA_PRODUCTO_LOCATOR));
+    public static final Target COMPROBANTE_CLAVE_DINAMICA = Target.the("Datos para verificación registro clave dinámica").located(theElementBy(COMPROBANTE_CLAVE_DINAMICA_LOCATOR));
 
     private InscripcionClaveDinamicaPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

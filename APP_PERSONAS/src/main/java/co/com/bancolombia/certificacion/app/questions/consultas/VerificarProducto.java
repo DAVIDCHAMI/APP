@@ -10,15 +10,19 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIPO_CUENTA;
 
 public class VerificarProducto implements Question<Boolean> {
+private String mensaje;
 
+private VerificarProducto(String mensaje){
+    this.mensaje=mensaje;
+}
     @Override
     public Boolean answeredBy(Actor actor) {
         return Visibility.of(CUENTA_ESPECIFICA_PRODUCTO.of(actor.recall(TIPO_CUENTA),actor.recall(NUMERO_CUENTA))).viewedBy(actor).asBoolean()
                 && Visibility.of(LBL_SIN_MOVIMIENTOS).viewedBy(actor).asBoolean();
     }
 
-    public static VerificarProducto sinMovimientos() {
-        return new VerificarProducto();
+    public static VerificarProducto sinMovimientos(String mensaje) {
+        return new VerificarProducto(mensaje);
     }
 
 }

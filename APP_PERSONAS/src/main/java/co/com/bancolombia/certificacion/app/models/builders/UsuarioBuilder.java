@@ -1,10 +1,10 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +25,7 @@ public class UsuarioBuilder implements Builder<Usuario> {
     public UsuarioBuilder() {
         this.nombreUsuario = "";
         this.clave = "";
+        this.segundaClave = "";
         this.numeroDocumento = "";
         this.tipoDocumento = "";
         this.primeraPregunta = "";
@@ -34,9 +35,10 @@ public class UsuarioBuilder implements Builder<Usuario> {
         this.correo = "";
         this.tipoCorreo = "";
         this.numeroCelular = "";
+        this.productos = new ArrayList<>();
     }
 
-    public static UsuarioBuilder usuario (){
+    public static UsuarioBuilder usuario() {
         return new UsuarioBuilder();
     }
 
@@ -62,6 +64,51 @@ public class UsuarioBuilder implements Builder<Usuario> {
 
     public UsuarioBuilder conNumeroCelular(List<Map<String, String>> datos) {
         this.numeroCelular = datos.get(0).get("numeroCelular");
+        this.productos = new ArrayList<>();
+        return this;
+    }
+
+    public static UsuarioBuilder conCredenciales() {
+        return new UsuarioBuilder();
+    }
+
+    public UsuarioBuilder conNombreUsuario(String datosUsuario) {
+        this.nombreUsuario = datosUsuario;
+        return this;
+    }
+
+    public UsuarioBuilder conClave(String clave) {
+        this.clave = clave;
+        return this;
+    }
+
+    public UsuarioBuilder conSegundaClave(String segundaClave) {
+        this.segundaClave = segundaClave;
+        return this;
+    }
+
+    public UsuarioBuilder conNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+        return this;
+    }
+
+    public UsuarioBuilder conTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+        return this;
+    }
+
+    public UsuarioBuilder conPrimeraPregunta(String primeraPregunta) {
+        this.primeraPregunta = primeraPregunta;
+        return this;
+    }
+
+    public UsuarioBuilder conEstadoClave(String estadoClave) {
+        this.estadoClave = estadoClave;
+        return this;
+    }
+
+    public UsuarioBuilder conProductos(List<Producto> productos) {
+        this.productos = productos;
         return this;
     }
 

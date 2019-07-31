@@ -1,7 +1,7 @@
-package co.com.bancolombia.certificacion.app.stepdefinitions;
+package co.com.bancolombia.certificacion.app.stepdefinitions.codigoqr;
 
-import co.com.bancolombia.certificacion.app.questions.VerificarGeneracion;
-import co.com.bancolombia.certificacion.app.questions.VerificarGuardado;
+import co.com.bancolombia.certificacion.app.questions.codigoqr.VerificarGeneracion;
+import co.com.bancolombia.certificacion.app.questions.codigoqr.VerificarGuardado;
 import co.com.bancolombia.certificacion.app.tasks.codigoqr.GenerarCodigoQr;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;

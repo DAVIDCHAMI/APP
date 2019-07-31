@@ -15,8 +15,8 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 
 public class ConsultarMovimientos implements Task {
-    String tipoCuenta;
-    String numeroCuenta;
+    private String tipoCuenta;
+    private String numeroCuenta;
 
     public ConsultarMovimientos(String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;

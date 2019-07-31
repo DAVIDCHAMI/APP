@@ -1,11 +1,11 @@
-package co.com.bancolombia.certificacion.app.questions;
+package co.com.bancolombia.certificacion.app.questions.codigoqr;
 
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LBL_VERIFICACION;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GenerarCodigoQrPage.IMG_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.IMG_CODIGO_QR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.INFO_CODIGO_QR;
 
 public class VerificarGeneracion implements Question<Boolean> {

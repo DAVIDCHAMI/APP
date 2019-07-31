@@ -1,8 +1,8 @@
-package co.com.bancolombia.certificacion.app.userinterface.pages;
+package co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.GenerarCodigoQrLocator.*;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.codigoqr.GenerarCodigoQrLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;

@@ -13,7 +13,7 @@ Característica: Generación de código QR
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/GenerarCodigoQr.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
    |1   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-785280-05   |   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR con valor
@@ -27,7 +27,7 @@ Característica: Generación de código QR
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto  | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/GenerarCodigoQr.xlsx@Datos@2
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
    |2   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Cuenta de Ahorro   |406-785280-05   |120000   |qr automatizado|
 
   @manual
@@ -42,7 +42,7 @@ Característica: Generación de código QR
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/GenerarCodigoQr.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
       |1   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-785280-05   |   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
@@ -54,7 +54,7 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmación y el código QR
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/GenerarCodigoQr.xlsx@Datos@3
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
    |3   |1010111   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Ahorros   |406-740100-05   |134000   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR sin inicio de sesión sin valor
@@ -66,5 +66,5 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmación y el código QR
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/GenerarCodigoQr.xlsx@Datos@4
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@4
    |4   |1010111   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Corriente   |406-740100-05   |134000   |qr automatizado|

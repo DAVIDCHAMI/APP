@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.userinterface.locators;
+package co.com.bancolombia.certificacion.app.userinterface.locators.codigoqr;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 

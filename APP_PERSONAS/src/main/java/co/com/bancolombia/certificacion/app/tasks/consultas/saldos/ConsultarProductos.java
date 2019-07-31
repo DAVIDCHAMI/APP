@@ -13,8 +13,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIPO_CUENTA;
 
 public class ConsultarProductos implements Task {
-    String tipoCuenta;
-    String numeroCuenta;
+    private String tipoCuenta;
+    private String numeroCuenta;
 
     public ConsultarProductos(String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;
