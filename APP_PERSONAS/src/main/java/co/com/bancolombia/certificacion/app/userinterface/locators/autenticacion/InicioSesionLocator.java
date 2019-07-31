@@ -16,7 +16,7 @@ public class InicioSesionLocator {
     public static final Locator BTN_CERRAR_SESION_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'CERRAR SESION')]").withIos("");
     public static final Locator BTN_SI_CERRAR_SESION_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[@resource-id='Button_CancelYesModal_ActivateBiometrics']").withIos("");
     public static final Locator BTN_VOLVER_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Volver')]").withIos("");
-    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Clave bloqueada')]").withIos("");
+    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'CLAVE BLOQUEADA')]").withIos("");
 
     private InicioSesionLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

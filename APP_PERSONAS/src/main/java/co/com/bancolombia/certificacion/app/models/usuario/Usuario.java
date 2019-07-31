@@ -1,15 +1,11 @@
 package co.com.bancolombia.certificacion.app.models.usuario;
 
-
+import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 import java.util.List;
 
-/**
- * The type Usuario.
- */
 public class Usuario {
-
     private String nombreUsuario;
     private String clave;
     private String segundaClave;
@@ -19,45 +15,46 @@ public class Usuario {
     private String estadoClave;
     private List<Producto> productos;
 
-    public Usuario(){
-        this.tipoDocumento="";
-        this.numeroDocumento="";
+    public Usuario(UsuarioBuilder usuarioBuilder) {
+        this.nombreUsuario = usuarioBuilder.getNombreUsuario();
+        this.clave = usuarioBuilder.getClave();
+        this.segundaClave = usuarioBuilder.getSegundaClave();
+        this.numeroDocumento = usuarioBuilder.getNumeroDocumento();
+        this.tipoDocumento = usuarioBuilder.getTipoDocumento();
+        this.primeraPregunta = usuarioBuilder.getPrimeraPregunta();
+        this.estadoClave = usuarioBuilder.getEstadoClave();
+        this.productos = usuarioBuilder.getProductos();
     }
+
+    public Usuario(){}
 
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-
     public void setNombreUsuario(String usuario) {
         this.nombreUsuario = usuario;
     }
-
 
     public String getClave() {
         return clave;
     }
 
-
     public void setClave(String clave) {
         this.clave = clave;
     }
-
 
     public String getSegundaClave() {
         return segundaClave;
     }
 
-
     public void setSegundaClave(String segundaClave) {
         this.segundaClave = segundaClave;
     }
 
-
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
-
 
     public void setNumeroDocumento(String numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
@@ -86,7 +83,6 @@ public class Usuario {
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
-
 
     public String getEstadoClave() {
         return estadoClave;

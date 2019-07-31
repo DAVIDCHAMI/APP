@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.conCredenciales;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -37,7 +38,9 @@ public class PreparacionEscenarioStepDefinition {
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.conCredenciales(usuario, clave)
+                IniciarSesion.enApp(conCredenciales()
+                        .conNombreUsuario(usuario)
+                        .conClave(clave))
         );
     }
 

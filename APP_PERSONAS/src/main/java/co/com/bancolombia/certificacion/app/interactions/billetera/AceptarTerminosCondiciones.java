@@ -8,11 +8,11 @@ import net.serenitybdd.screenplay.actions.Click;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class AceptarTerminosCondiciones implements Interaction{
+public class AceptarTerminosCondiciones implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        while(!CHK_TERMINOS_CONDICIONES_BILLETERA.resolveFor(actor).isVisible()){
+        while (!CHK_TERMINOS_CONDICIONES_BILLETERA.resolveFor(actor).isVisible()) {
             actor.attemptsTo(
                     Click.on(BTN_SIGUIENTE_ON_BOARDING)
             );
@@ -23,7 +23,7 @@ public class AceptarTerminosCondiciones implements Interaction{
         );
     }
 
-    public static Performable enBilletera(){
+    public static Performable enBilletera() {
         return instrumented(AceptarTerminosCondiciones.class);
     }
 }

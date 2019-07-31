@@ -1,11 +1,14 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
+import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.detalleproductos.DetalleProductosPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
@@ -13,27 +16,38 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarDetalle implements Task {
-    String tipoCuenta;
-    String numeroCuenta;
+    private String opcionCategoria;
+    private String tipoCuenta;
+    private String numeroCuenta;
 
-    public ConsultarDetalle(String tipoCuenta, String numeroCuenta) {
+    public ConsultarDetalle(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;
+        this.opcionCategoria = opcionCategoria;
         this.numeroCuenta = numeroCuenta;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );
-        actor.remember(TIPO_CUENTA, tipoCuenta);
-        actor.remember(NUMERO_CUENTA,numeroCuenta);
-        actor.remember(SALDO_DISPONIBLE, LBL_SALDO_DISPONIBLE.resolveFor(actor).getText());
+        actor.remember(DETALLE_PRODUCTO, elProducto()
+                .conNumero(numeroCuenta)
+                .conTipoCuenta(tipoCuenta)
+                .conSaldo(
+                        saldo()
+                                .conSaldoDisponible(LBL_SALDO_DISPONIBLE_DETALLE.resolveFor(actor).getText())
+                                .conSaldoEnCanje(LBL_SALDO_CANJE_DETALLE.resolveFor(actor).getText())
+                                .conSaldoTotal(LBL_SALDO_TOTAL_DETALLE.resolveFor(actor).getText())
+                                .build())
+                .build()
+        );
     }
 
-    public static Performable deProducto(String tipoCuenta, String numeroCuenta){
-        return instrumented(ConsultarDetalle.class, tipoCuenta, numeroCuenta);
+    public static Performable deProducto(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+        return instrumented(ConsultarDetalle.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }
 }

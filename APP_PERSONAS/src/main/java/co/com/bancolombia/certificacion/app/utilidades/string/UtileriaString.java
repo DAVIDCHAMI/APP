@@ -1,9 +1,9 @@
-package co.com.bancolombia.certificacion.app.utilidades.String;
+package co.com.bancolombia.certificacion.app.utilidades.string;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 
 public class UtileriaString {

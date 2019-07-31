@@ -6,14 +6,14 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class DetalleProductosLocator {
-    public static final Locator LBL_TIPO_CUENTA_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@resource-id, 'ProductDataContainer')]//android.view.View[1]")
+    public static final Locator LBL_SALDO_DISPONIBLE_DETALLE_LOCATOR = locator()
+            .withAndroid("xpath$//android.view.View[contains(@resource-id, 'ProductDataContainer')]/android.view.View[4]")
             .withIos("");
-    public static final Locator LBL_NUMERO_CUENTA_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text, 'Ahorros')]//following-sibling::android.view.View[2]")
+    public static final Locator LBL_SALDO_CANJE_DETALLE_LOCATOR = locator()
+            .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo en canje')]/../following-sibling::android.view.View[1]")
             .withIos("");
-    public static final Locator LBL_SALDO_DISPONIBLE_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo Disponible')]//following-sibling::android.view.View[2]")
+    public static final Locator LBL_SALDO_TOTAL_DETALLE_LOCATOR = locator()
+            .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo total')]/../following-sibling::android.view.View[1]")
             .withIos("");
 
     private DetalleProductosLocator() {
