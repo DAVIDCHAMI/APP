@@ -3,8 +3,9 @@ package co.com.bancolombia.certificacion.app.models.builders;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
-import co.com.bancolombia.certificacion.app.utilidades.mobileelementfinder.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoBuilder implements Builder<Producto> {
@@ -13,17 +14,15 @@ public class ProductoBuilder implements Builder<Producto> {
     private String codigoBanco;
     private String nombreBanco;
     private String nombreProducto;
-    private Saldo saldo;
-    private List<Movimiento> movimientos;
+    private Saldo saldo = new Saldo();
+    private List<Movimiento> movimientos = new ArrayList<>();
 
-    public ProductoBuilder(){
+    private ProductoBuilder(){
         this.numero = "";
         this.tipo = "";
         this.codigoBanco = "";
         this.nombreBanco = "";
         this.nombreProducto = "";
-        this.saldo = saldo;
-        this.movimientos = movimientos;
     }
 
     public static ProductoBuilder elProducto(){
@@ -35,8 +34,23 @@ public class ProductoBuilder implements Builder<Producto> {
         return this;
     }
 
+    public ProductoBuilder conTipoCuenta(String datosProducto){
+        this.tipo = datosProducto;
+        return this;
+    }
+
     public ProductoBuilder conNumero(List<String> datosProducto){
         this.numero = datosProducto.get(1);
+        return this;
+    }
+
+    public ProductoBuilder conNumero(String datosProducto){
+        this.numero = datosProducto;
+        return this;
+    }
+
+    public ProductoBuilder conSaldo(Saldo saldo){
+        this.saldo = saldo;
         return this;
     }
 
