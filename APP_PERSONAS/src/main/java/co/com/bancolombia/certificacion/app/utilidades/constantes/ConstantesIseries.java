@@ -8,7 +8,7 @@ public class ConstantesIseries {
     public static final String TRACE = "Trace";
     public static final String FECHA = "Fecha";
     public static final String CODIGOERROR = "CodigoError";
-    public static final String ESTADOUSUARIO = "A";
+    public static final String ESTADOUSUARIO = "ESTADO DEL USUARIO";
 
     private ConstantesIseries() {
     }

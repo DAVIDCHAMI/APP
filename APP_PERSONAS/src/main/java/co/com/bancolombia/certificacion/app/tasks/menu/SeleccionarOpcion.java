@@ -18,6 +18,12 @@ public class SeleccionarOpcion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         actor.attemptsTo(
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
