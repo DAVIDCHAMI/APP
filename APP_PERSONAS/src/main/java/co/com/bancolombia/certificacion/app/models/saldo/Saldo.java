@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Saldo extends Producto {
-
     private String saldoTotal;
     private String saldoEnCanje;
     private String saldoDisponible;
