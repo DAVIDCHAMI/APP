@@ -9,7 +9,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 public class UtileriaString {
 
     public static int contarCantidadCaracter(String cadena, char caracter) {
-        int posicion, contador = 0;
+        int posicion;
+        int contador = 0;
         posicion = cadena.indexOf(caracter);
         while (posicion != -1) {
             contador++;

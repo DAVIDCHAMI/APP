@@ -9,7 +9,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 public class InicioSesionPage {
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));
     public static final Target LBL_HOLA_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_HOLA_PROVIVIONAL_LOCATOR));
-    public static final Target LBL_IMAGEN_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_IMAGEN_PROVIVIONAL_LOCATOR));
     public static final Target BTN_CONTINUAR = Target.the("Botón Continuar").located(theElementBy(BTN_CONTINUAR_LOCATOR));
     public static final Target TXT_CLAVE_DIGITOS= Target.the("Digito para clave2").located(theElementBy(TXT_CLAVE_DIGITOS_LOCATOR));
     public static final Target LBL_CLAVE_INVALIDA = Target.the("clave invalida").located(theElementBy(LBL_CLAVE_INVALIDA_LOCATOR));
