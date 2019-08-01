@@ -9,9 +9,10 @@ Característica: Pago de tarjetas de crédito no propias
     Y quiere pagar la tarjeta de crédito no propia
       |    numeroTarjeta   | tipoPago   | valorPago   | moneda| tipoCuenta   | numeroCuenta   |
        | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> |<tipoCuenta> | <numeroCuenta> |
-    #Entonces el deberia de ver un mensaje de confirmación
+    Entonces deberia de ver el mensaje de confirmación y la información de su pago
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario        | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |  numeroTarjeta | tipoPago                 | valorPago |moneda| tipoCuenta | numeroCuenta |
-   ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoNoPropia.xlsx@Datos@2
-   |2   |1010111   |1   |userrobot2   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |345555555558888   |Otro valor   |120000   |Dólares   |Corriente   |406-132280-01|
+   ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoNoPropia.xlsx@Datos@1
+   |1   |1010111   |1   |userrobot2   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |4444444444444444   |Pago mínimo en pesos   |0,00   |Pesos   |Corriente   |406-132280-01|
+
