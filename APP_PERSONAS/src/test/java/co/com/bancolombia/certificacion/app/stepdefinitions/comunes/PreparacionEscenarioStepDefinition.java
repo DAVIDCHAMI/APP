@@ -31,21 +31,11 @@ public class PreparacionEscenarioStepDefinition {
 
     @Dado("^que el (.*) carga los datos para la prueba$")
     public void queSuboLosDatosParaLaPrueba(String actor, List<String> datosTransaccion) {
-        /*
         theActorCalled(actor).wasAbleTo(
                 CargarDatos.transaccionCon(datosTransaccion)
                         .datosDelUsuarioCon(datosTransaccion)
                         .construir()
         );
-        */
-        theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(datosTransaccion)
-                        .datosDelUsuarioCon(datosTransaccion)
-                        .construir()
-        );
-
-
-
     }
 
     @Cuando("^quiero (.*) del usuario (.*) con clave (.*)$")

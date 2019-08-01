@@ -1,19 +1,13 @@
 package co.com.bancolombia.certificacion.app.models.saldo;
 
+import co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Saldo extends Producto {
+    private String saldoTotal;
+    private String saldoEnCanje;
+    private String saldoDisponible;
 
-    private Double saldoTotal;    //Saldo Total
-    private String saldoEnCanje; //Saldo en canje
-    private String saldoDisponible; //Saldo disponible
-
-    /**
-     * Instantiates a new Producto.
-     *
-     * @param numero       the numero
-     * @param tipoProducto the productos type
-     */
     protected Saldo(String numero, String tipoProducto) {
         super(numero, tipoProducto);
     }
@@ -21,11 +15,17 @@ public class Saldo extends Producto {
     public Saldo() {
     }
 
-    public Double getSaldoTotal() {
+    public Saldo(SaldoBuilder saldoBuilder){
+        this.saldoTotal = saldoBuilder.getSaldoTotal();
+        this.saldoEnCanje = saldoBuilder.getSaldoEnCanje();
+        this.saldoDisponible = saldoBuilder.getSaldoDisponible();
+    }
+
+    public String getSaldoTotal() {
         return saldoTotal;
     }
 
-    public void setSaldoTotal(Double saldoTotal) {
+    public void setSaldoTotal(String saldoTotal) {
         this.saldoTotal = saldoTotal;
     }
 

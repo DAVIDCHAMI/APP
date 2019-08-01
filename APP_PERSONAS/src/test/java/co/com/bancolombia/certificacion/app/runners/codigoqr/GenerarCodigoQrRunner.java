@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.consultas.detalleproductos;
+package co.com.bancolombia.certificacion.app.runners.codigoqr;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,17 +14,16 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/detalleproductos/consulta_detalle_cuentas_deposito.feature"},
+        features = {"src/test/resources/features/codigoqr/generar_codigo_qr.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
-        snippets = SnippetType.CAMELCASE
-)
-public class ConsultaDetalleCuentasDepositoRunner {
-    private ConsultaDetalleCuentasDepositoRunner() {
+        snippets = SnippetType.CAMELCASE)
+public class GenerarCodigoQrRunner {
+    public GenerarCodigoQrRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/detalleproductos/consulta_detalle_cuentas_deposito.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/codigoqr/generar_codigo_qr.feature");
     }
 }

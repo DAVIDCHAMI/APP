@@ -7,6 +7,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTran
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +23,8 @@ import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.WWW;
 public class LogCanal {
 
     private static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
+
+    private LogCanal() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static List<Map<String, Object>> consultaLogCanalTrama220230() {
         Map<String, Object> dataForQuery = new HashMap<>();

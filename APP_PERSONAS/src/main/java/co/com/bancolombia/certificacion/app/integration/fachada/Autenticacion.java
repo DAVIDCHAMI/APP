@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 
@@ -9,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Autenticacion {
+
+    private Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final String DOCUMENTO = "DOCUMENTO";
 

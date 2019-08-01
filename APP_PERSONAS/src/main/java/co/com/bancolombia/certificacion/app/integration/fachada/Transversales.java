@@ -7,6 +7,7 @@ import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.CanalesSistemas;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 
@@ -17,6 +18,8 @@ import java.util.Map;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTipoCuentaNumero;
 
 public class Transversales {
+
+    private Transversales() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final String FECHA = "FECHA";
     private static final String FECHASISTEMA = "yyyyMMdd";

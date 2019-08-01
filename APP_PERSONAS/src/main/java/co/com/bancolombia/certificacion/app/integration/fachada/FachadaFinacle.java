@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 import net.serenitybdd.core.Serenity;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 public class FachadaFinacle {
 
-    private FachadaFinacle(){}
+    private FachadaFinacle() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final Logger LOGGER = LogManager.getLogger(FachadaFinacle.class.getName());
     /**

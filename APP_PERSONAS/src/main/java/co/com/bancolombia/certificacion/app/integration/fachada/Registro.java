@@ -4,6 +4,7 @@ import co.com.bancolombia.backend.iseries.personas.usuario.BackRegistroAPP;
 import co.com.bancolombia.backend.modelo.usuario.UsuarioRegistro;
 import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,6 +13,8 @@ import java.sql.SQLException;
 public class Registro {
 
     private static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
+
+    private Registro() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static UsuarioRegistro verifoEmailRegistrado() {
         Usuario user = EntidadUsuarioActual.getUsuario();

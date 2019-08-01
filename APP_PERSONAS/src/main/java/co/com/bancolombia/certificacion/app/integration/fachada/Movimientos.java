@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.transversal.Movimiento;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,8 +14,7 @@ public class Movimientos {
 
     private static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
 
-    Movimientos() {
-    }
+    private Movimientos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static List<Movimiento> verifyMovementsEprepagoConsolidated(String strNumtarjeta, String strFecha) {
         BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioBuilder implements Builder<Usuario> {
-
     private String nombreUsuario;
     private String clave;
     private String segundaClave;

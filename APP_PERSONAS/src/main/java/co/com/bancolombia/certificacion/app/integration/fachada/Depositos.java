@@ -8,6 +8,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTran
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 import net.serenitybdd.core.Serenity;
@@ -21,6 +22,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.administradores.Ad
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
 
 public class Depositos {
+
+    private Depositos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final String CUENTA = "CUENTA";
     private static final String TIPOCUENTA = "TIPOCUENTA";

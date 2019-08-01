@@ -9,7 +9,6 @@ public class InscripcionProductoLocator {
     public static final Locator TXT_BANCO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Input_BankName2']").withIos("");
     public static final Locator TXT_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Input_usuario3']").withIos("");
     public static final Locator TXT_BUSCAR_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='b26-Input_SearchParameter']").withIos("");
-    public static final Locator TXT_NOMBRE_PERSONALIZADO_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Input_ProductName']").withIos("");
     public static final Locator ITEM_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='{0}']").withIos("id$xxxx");
     public static final Locator BTN_CERRAR_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Selecciona el Banco']/../../../../android.view.View[@text='CERRAR'] ").withIos("");
     public static final Locator CHK_TIPO_CUENTA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/preceding-sibling::android.widget.Button").withIos("");

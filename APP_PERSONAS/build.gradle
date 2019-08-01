@@ -10,6 +10,7 @@ repositories {
 
 buildscript {
     repositories {
+        maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
         maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
         maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
         maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }
@@ -58,7 +59,6 @@ dependencies {
     testImplementation 'org.slf4j:slf4j-simple:1.7.7'
     testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
-    //implementation group: 'com.todo1.qa' ,name :'t1-qa-mobile-object-finder', version :'1.0.0-SNAPSHOT'
 }
 
 tasks.withType(Test){

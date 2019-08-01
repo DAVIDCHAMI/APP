@@ -7,6 +7,7 @@ import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioAct
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import net.serenitybdd.screenplay.Actor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +16,8 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 
 public class Eprepago {
+
+    private Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
 

@@ -6,7 +6,6 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import java.util.List;
 
 public class Usuario {
-
     private String nombreUsuario;
     private String clave;
     private String segundaClave;
