@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class TransferenciaBuilder implements Builder<Transferencia> {
     private Producto productoOrigen = new Producto();
-    private Producto productoDestino;
+    private Producto productoDestino = new Producto();
     private String monto;
     private String tipoTransferencia;
     private String banco;
@@ -28,8 +28,26 @@ public class TransferenciaBuilder implements Builder<Transferencia> {
     public TransferenciaBuilder() {
         this.productoOrigen.setTipo("");
         this.productoOrigen.setNumero("");
+        this.productoDestino.setTipo("");
+        this.productoDestino.setNumero("");
         this.monto = "";
         this.descripcion = "";
+        this.tipoTransferencia="";
+    }
+
+    public TransferenciaBuilder conNumeroCuentaDestino(List<Map<String, String>> datos){
+    this.productoDestino.setNumero(datos.get(0).get("numero"));
+    return this;
+    }
+
+    public TransferenciaBuilder conTipoCuentaDestino(List<Map<String, String>> datos){
+        this.productoDestino.setTipo(datos.get(0).get("tipo"));
+        return this;
+    }
+
+    public TransferenciaBuilder conTipoTransferencia(List<Map<String, String>> datos){
+        this.tipoTransferencia=datos.get(0).get("tipoTransferencia");
+        return this;
     }
 
     public TransferenciaBuilder conDescripcion(List<Map<String, String>> datos){
@@ -42,12 +60,12 @@ public class TransferenciaBuilder implements Builder<Transferencia> {
         return this;
     }
 
-    public TransferenciaBuilder conNumeroCuenta(List<Map<String, String>> datos){
+    public TransferenciaBuilder conNumeroCuentaOrigen(List<Map<String, String>> datos){
         this.productoOrigen.setNumero(datos.get(0).get("numeroCuenta"));
         return this;
     }
 
-    public TransferenciaBuilder conTipoCuenta(List<Map<String, String>> datos){
+    public TransferenciaBuilder conTipoCuentaOrigen(List<Map<String, String>> datos){
         this.productoOrigen.setTipo(datos.get(0).get("tipoCuenta"));
         return this;
     }
