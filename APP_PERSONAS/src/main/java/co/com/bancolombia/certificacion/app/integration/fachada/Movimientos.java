@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Movimientos {
 
-    private static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
 
     private Movimientos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 

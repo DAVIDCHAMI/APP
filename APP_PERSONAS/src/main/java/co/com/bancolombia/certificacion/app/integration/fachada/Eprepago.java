@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class Eprepago {
 
-    private Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
 

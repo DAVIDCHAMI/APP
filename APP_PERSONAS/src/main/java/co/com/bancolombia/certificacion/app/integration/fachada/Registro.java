@@ -14,7 +14,7 @@ public class Registro {
 
     private static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
 
-    private Registro() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Registro() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static UsuarioRegistro verifoEmailRegistrado() {
         Usuario user = EntidadUsuarioActual.getUsuario();

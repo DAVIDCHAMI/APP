@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Autenticacion {
 
-    private Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final String DOCUMENTO = "DOCUMENTO";
 

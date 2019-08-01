@@ -23,7 +23,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.administradores.Ad
 
 public class Depositos {
 
-    private Depositos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Depositos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final String CUENTA = "CUENTA";
     private static final String TIPOCUENTA = "TIPOCUENTA";

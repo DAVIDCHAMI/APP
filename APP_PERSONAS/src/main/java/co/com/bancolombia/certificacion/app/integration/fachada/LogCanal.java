@@ -22,7 +22,7 @@ import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.WWW;
 
 public class LogCanal {
 
-    private static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
 
     private LogCanal() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 

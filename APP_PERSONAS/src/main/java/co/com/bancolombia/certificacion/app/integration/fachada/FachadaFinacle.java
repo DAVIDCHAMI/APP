@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class FachadaFinacle {
 
-    private FachadaFinacle() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public FachadaFinacle() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     private static final Logger LOGGER = LogManager.getLogger(FachadaFinacle.class.getName());
     /**
