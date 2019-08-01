@@ -34,9 +34,7 @@ public class Usuario {
         this.productos = usuarioBuilder.getProductos();
     }
 
-    public Usuario() {
-
-    }
+    public Usuario(){}
 
     public String getCorreo() {
         return correo;
