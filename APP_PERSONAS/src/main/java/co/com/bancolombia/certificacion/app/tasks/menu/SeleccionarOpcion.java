@@ -6,6 +6,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.questions.Visibility;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -25,10 +27,17 @@ public class SeleccionarOpcion implements Task {
                         Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 ),
-                Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
-                        Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
-                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
-                )
+                Check.whether(!"".equals(tipoTransaccion.getTercerNivel()))
+                        .andIfSo(
+                                Check.whether(Visibility.of(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())).viewedBy(actor).asBoolean())
+                                        .andIfSo(
+                                                Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                                                Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
+                                        ).otherwise(
+                                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel())),
+                                        Click.on(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel()))
+                                )
+                        )
         );
     }
 
