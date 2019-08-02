@@ -8,6 +8,7 @@ public class ModeloConstantes {
     public static final String MODELO_DETALLE_PRODUCTO = "DETALLE PRODCUTO";
     public static final String MODELO_INFO_CODIGO_QR = "INFO_CODIGO_QR";
     public static final String MODELO_TARJETA_CREDITO = "TARJETA CREDITO";
+    public static final String MODELO_DATOS_TRANSACCION = "MODELO DATOS TRANSACCION";
 
     private ModeloConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
