@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClav
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeDeClaveBloqueada;
 import co.com.bancolombia.certificacion.app.questions.registro.MensajeRegistro;
-import co.com.bancolombia.certificacion.app.tasks.autenticacion.Autenticacion;
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
@@ -22,9 +22,9 @@ public class RegistroUsuarioStepDefinition {
 
     @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
     public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
-        theActorInTheSpotlight().attemptsTo(
+       theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                Autenticacion.enApp(credenciales()
+               IniciarSesion.con(credenciales()
                         .conNombreUsuario(usuario)
                         .conClave(clave))
         );

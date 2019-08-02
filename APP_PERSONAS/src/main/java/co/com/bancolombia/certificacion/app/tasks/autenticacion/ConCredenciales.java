@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -12,9 +13,9 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConCredenciales extends Autenticacion {
-    private UsuarioBuilder usuario;
+    private Usuario usuario;
 
-    public ConCredenciales(UsuarioBuilder usuario) {
+    public ConCredenciales(Usuario usuario) {
         this.usuario = usuario;
     }
 

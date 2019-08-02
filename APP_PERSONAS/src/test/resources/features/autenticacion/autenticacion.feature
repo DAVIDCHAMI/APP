@@ -9,11 +9,12 @@ Característica: Autenticación app Bancolombia
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando quiero CONSULTAR_PRODUCTO
+    Cuando el actor quiere CONSULTAR_PRODUCTO
     Y cierra sesión en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | 
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Transaccion@1
+   |1   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO|
 
   @Manual
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
@@ -25,7 +26,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-      | 1  | 1037655531      | 1             | userrobot1 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | EPREPAGO            |
+   |1   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
 
   @Manual
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
@@ -37,7 +38,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@2
-      | 1  | 1037655531      | 1             | userrobot1 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | EPREPAGO            |
+   |2   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |TRANSFERIR_DINERO|
 
   @Manual
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
@@ -49,7 +50,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@3
-      | 1  | 1037655531      | 1             | userrobot1 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | EPREPAGO            |
+   |3   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |001   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
   @Manual
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
@@ -61,7 +62,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
-      | 4  | 1037655531      | 1             | userrobot3 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
+   |4   |1037655531   |1   |userrobot3   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
   @Manual
   Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
@@ -72,7 +73,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
-      | 5  | 1037655531      | 1             | userrobot3 | 1111  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
+   |5   |1037655531   |1   |userrobot3   |1111   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
   @Manual
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
@@ -83,4 +84,4 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@6
-      | 6  | 95400152        | 1             | sandrita69 | 1234  | 4321         | Acierto     | 001         | 0370              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
+   |6   |95400152   |1   |sandrita69   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|

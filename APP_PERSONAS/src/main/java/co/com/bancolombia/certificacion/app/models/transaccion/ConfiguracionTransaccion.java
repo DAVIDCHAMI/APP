@@ -37,7 +37,7 @@ public class ConfiguracionTransaccion {
         this.codigoOperacion = configuracionTransaccionBuilder.getCodigoOperacion();
         this.usuario = configuracionTransaccionBuilder.getUsuario();
     }
-
+public  ConfiguracionTransaccion(){}
     public Usuario getUsuario() {
         return usuario;
     }

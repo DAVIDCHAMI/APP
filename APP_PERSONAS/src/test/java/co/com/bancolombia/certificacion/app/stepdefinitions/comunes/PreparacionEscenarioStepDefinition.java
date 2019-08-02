@@ -35,7 +35,7 @@ public class PreparacionEscenarioStepDefinition {
         );
     }
 
-    @Cuando("^quiero (.*)$")
+    @Cuando("^el actor quiere (.*)$")
     public void quieroRealizarConsulta(String tipoTransaccion) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion)
