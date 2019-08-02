@@ -40,10 +40,10 @@ public class PreparacionEscenarioStepDefinition {
 
     @Cuando("^quiero (.*) del usuario (.*) con clave (.*)$")
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
-
+/*
         theActorInTheSpotlight().should(seeThat(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV())
                 .orComplainWith(AfirmacionDelProducto.class,NO_FUNCIONA));
-
+*/
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
                 IniciarSesion.enApp(conCredenciales()

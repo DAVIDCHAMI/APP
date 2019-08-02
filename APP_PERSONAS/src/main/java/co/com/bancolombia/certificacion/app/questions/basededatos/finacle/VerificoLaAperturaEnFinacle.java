@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.finacle;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.FachadaFinacle;
+import co.com.bancolombia.certificacion.app.integration.fachada.Finacle;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +20,7 @@ public class VerificoLaAperturaEnFinacle implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         Boolean resultFinal = false;
         List<Map<String, Object>> registro;
-        registro = FachadaFinacle.consultTitleClientFinacle();
+        registro = Finacle.consultTitleClientFinacle();
         if (registro !=  null){
             resultFinal = true;
         }else{
