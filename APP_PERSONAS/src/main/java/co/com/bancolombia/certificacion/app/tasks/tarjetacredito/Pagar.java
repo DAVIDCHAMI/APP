@@ -7,6 +7,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Pagar {
     public static PagarTC tarjetaCreditoNoPropia(TarjetaCreditoBuilder tarjetaCredito, ProductoBuilder productoDebitar){
-        return instrumented(NoPropia.class, tarjetaCredito, productoDebitar);
+        return instrumented(NoPropia.class, tarjetaCredito.build(), productoDebitar.build());
     }
 }

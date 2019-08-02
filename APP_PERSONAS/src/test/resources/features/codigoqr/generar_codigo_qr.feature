@@ -14,7 +14,7 @@ Característica: Generación de código QR
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
-   |1   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-785280-05   |   |qr automatizado|
+   |1   |1010111   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-740100-05   |   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR con valor
     Dado que el Actor carga los datos para la prueba
@@ -28,7 +28,7 @@ Característica: Generación de código QR
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
-   |2   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Cuenta de Ahorro   |406-785280-05   |120000   |qr automatizado|
+   |2   |1010111   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Cuenta de Ahorro   |406-740100-05   |120000   |qr automatizado|
 
   @manual
   Esquema del escenario: Generación de codigo QR con única cuenta deposto
@@ -43,7 +43,7 @@ Característica: Generación de código QR
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
-      |1   |1010111   |1   |ospciclo4finde   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-785280-05   |   |qr automatizado|
+   |1   |1010111   |1   |userqa10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Cuenta de Ahorro   |406-740100-05   |   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
     Dado que el Actor carga los datos para la prueba

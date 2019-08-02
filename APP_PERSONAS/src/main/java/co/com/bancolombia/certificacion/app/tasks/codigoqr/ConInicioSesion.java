@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
 import co.com.bancolombia.certificacion.app.interactions.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import io.appium.java_client.AppiumDriver;
@@ -32,8 +33,12 @@ public class ConInicioSesion extends GenerarQR {
                 Saltar.onBoarding(),
                 Click.on(LNK_SIGUIENTE)
         );
-        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible())
-            BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()).resolveFor(actor).click();
+        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
+            actor.attemptsTo(
+                    ScrollHasta.elTarget(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
+                    Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
+            );
+        }
         driver.hideKeyboard();
         actor.attemptsTo(
                 Check.whether("".equals(datos.getMonto())).andIfSo(
