@@ -6,9 +6,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-/**
- * The type Transaction config.
- */
 public class ConfiguracionTransaccion {
     private String identificadorCaso;
     private String orientacionCaso;
@@ -37,7 +34,10 @@ public class ConfiguracionTransaccion {
         this.codigoOperacion = configuracionTransaccionBuilder.getCodigoOperacion();
         this.usuario = configuracionTransaccionBuilder.getUsuario();
     }
-public  ConfiguracionTransaccion(){}
+
+    public ConfiguracionTransaccion() {
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -132,9 +132,13 @@ public  ConfiguracionTransaccion(){}
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) { return true; }
+        if (this == o) {
+            return true;
+        }
 
-        if (!(o instanceof ConfiguracionTransaccion)) { return false; }
+        if (!(o instanceof ConfiguracionTransaccion)) {
+            return false;
+        }
 
         ConfiguracionTransaccion that = (ConfiguracionTransaccion) o;
 
