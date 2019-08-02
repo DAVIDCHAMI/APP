@@ -43,7 +43,7 @@ public class NoPropia extends PagarTC {
 
                 ScrollHasta.elTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
-                Click.on(BOTON.of(PAGAR)),
+                Click.on(BTN_PAGAR),
                 ScrollHasta.elTarget(LBL_VERIFICACION.of(PRODUCTO_ORIGEN)),
                 Click.on(LBL_VERIFICACION.of(PRODUCTO_ORIGEN))
         );

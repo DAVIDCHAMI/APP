@@ -7,7 +7,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class GeneralLocator {
     public static final Locator BTN_PRODUCTO_ORIGEN_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/following-sibling::android.view.View[contains(@text,'{1}')]");
-    public static final Locator BOTON_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'{0}')]");
+    public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'SIGUIENTE')]");
+    public static final Locator BTN_PAGAR_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'PAGAR')]");
     public static final Locator LNK_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Siguiente')]");
     public static final Locator LBL_GUARDADO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Guardado exitoso!')]");
     public static final Locator LBL_GENERACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Generación exitosa!')]");

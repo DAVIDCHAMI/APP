@@ -8,7 +8,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class GeneralPage {
-    public static final Target BOTON = Target.the("Boton general").locatedBy(dynamicElement(BOTON_LOCATOR));
+    public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").locatedBy(dynamicElement(BTN_SIGUIENTE_LOCATOR));
+    public static final Target BTN_PAGAR = Target.the("Boton general").locatedBy(dynamicElement(BTN_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").located(theElementBy(LBL_GUARDADO_EXITOSO_LOCATOR));

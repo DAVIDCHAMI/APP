@@ -16,8 +16,6 @@ public class Constantes {
     public static final String PAGAR_CREDITOS = "Pagar créditos";
     public static final String PAGAR_TARJETA_CREDITO_PROPIAS = "Pagar tarjetas propias";
     public static final String OTRO_VALOR = "Otro valor";
-    public static final String SIGUIENTE = "SIGUIENTE";
-    public static final String PAGAR = "PAGAR";
     public static final String CEROS = "0.00";
     public static final String PRODUCTO_ORIGEN = "Producto origen";
     public static final String PAGO_EXITOSO = "¡Pago exitoso!";
