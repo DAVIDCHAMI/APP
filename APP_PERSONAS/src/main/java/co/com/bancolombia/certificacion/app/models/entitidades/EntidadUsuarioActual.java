@@ -8,9 +8,6 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante.AUTENTICACION_CODIGO_TRANSACCION;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_ENTIDAD;
 
-/**
- * The type Current usuario entity.
- */
 public class EntidadUsuarioActual {
 
     private static Usuario usuario = new Usuario();
@@ -19,21 +16,10 @@ public class EntidadUsuarioActual {
         throw new IllegalStateException(CLASE_ENTIDAD);
     }
 
-
-    /**
-     * Gets usuario.
-     *
-     * @return the usuario
-     */
     public static Usuario getUsuario() {
         return usuario;
     }
 
-    /**
-     * Sets usuario.
-     *
-     * @param data the transaccionCon
-     */
     public static void setUsuario(List<String> data) {
 
         usuario.setTipoDocumento(data.get(0));
