@@ -28,7 +28,7 @@ public class UsuarioBuilder implements Builder<Usuario> {
         this.productos = new ArrayList<>();
     }
 
-    public static UsuarioBuilder conCredenciales(){
+    public static UsuarioBuilder credenciales(){
         return new UsuarioBuilder();
     }
 
