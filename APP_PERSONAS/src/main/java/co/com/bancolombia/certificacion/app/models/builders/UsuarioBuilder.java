@@ -68,8 +68,8 @@ public class UsuarioBuilder implements Builder<Usuario> {
         return this;
     }
 
-    public static UsuarioBuilder conCredenciales() {
-        return new UsuarioBuilder();
+    public static UsuarioBuilder credenciales(){
+         return new UsuarioBuilder();
     }
 
     public UsuarioBuilder conNombreUsuario(String datosUsuario) {

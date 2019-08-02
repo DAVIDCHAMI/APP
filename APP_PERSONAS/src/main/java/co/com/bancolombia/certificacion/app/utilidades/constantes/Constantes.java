@@ -13,9 +13,9 @@ public class Constantes {
     public static final String CORRIENTE="Corriente";
     public static final Character COMA = ',';
     public static final String CEROS = "0.00";
-    public static final String TRANSFERIR_PRODUCTOS_NO_INSCRITOS = "Productos no inscritos Bancolombia";
-    public static final String TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS = "Productos propios e inscritos Bancolombia";
-    public static final String TRANSFERIR_PRODUCTOS_OTROS_BANCOS = "Productos inscritos de otros bancos";
+    public static final String TRANSFERIR_PRODUCTOS_NO_INSCRITOS = "Productos no inscritos";
+    public static final String TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS = "Productos propios e inscritos";
+    public static final String TRANSFERIR_PRODUCTOS_OTROS_BANCOS = "Productos inscritos de otros";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

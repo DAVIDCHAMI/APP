@@ -11,7 +11,7 @@ import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.conCredenciales;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveBloqueadaNoVisualizadoException.MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO;
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoException.MENSAJE_PASS_INVALIDO_NO_ENCONTRADO;
@@ -22,9 +22,9 @@ public class RegistroUsuarioStepDefinition {
 
     @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
     public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
-        theActorInTheSpotlight().attemptsTo(
+       theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.enApp(conCredenciales()
+               IniciarSesion.con(credenciales()
                         .conNombreUsuario(usuario)
                         .conClave(clave))
         );
