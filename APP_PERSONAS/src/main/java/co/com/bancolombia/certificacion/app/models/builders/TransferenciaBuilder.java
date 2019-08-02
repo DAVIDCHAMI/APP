@@ -33,15 +33,18 @@ public class TransferenciaBuilder implements Builder<Transferencia> {
         this.monto = "";
         this.descripcion = "";
         this.tipoTransferencia="";
+        this.banco="";
+        this.codigoOperacion="";
+        this.informacionAdicional="";
     }
 
     public TransferenciaBuilder conNumeroCuentaDestino(List<Map<String, String>> datos){
-    this.productoDestino.setNumero(datos.get(0).get("numero"));
+    this.productoDestino.setNumero(datos.get(0).get("productoDestino"));
     return this;
     }
 
     public TransferenciaBuilder conTipoCuentaDestino(List<Map<String, String>> datos){
-        this.productoDestino.setTipo(datos.get(0).get("tipo"));
+        this.productoDestino.setTipo(datos.get(0).get("tipoProductoDestino"));
         return this;
     }
 

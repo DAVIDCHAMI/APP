@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.CHECK_TIPO_CORREO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.transferencia.TransferenciaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TRANSFERIR_PRODUCTOS_NO_INSCRITOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS;
@@ -34,7 +35,7 @@ public class RealizarTransferencia implements Task {
                 Check.whether((TRANSFERIR_PRODUCTOS_NO_INSCRITOS).equals(transferencia.getTipoTransferencia())).
                         andIfSo(
                                 Enter.theValue(transferencia.getProductoDestino().getNumero()).into(NUMERO_CUENTA_DESTINO),
-                                Click.on()
+                                Click.on(CHECK_TIPO_CUENTA.of(transferencia.getTipoTransferencia()))
                         ), Check.whether((TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS).equals(transferencia.getTipoTransferencia())).
                         andIfSo(
                                 ScrollHasta.elTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero())),
