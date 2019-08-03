@@ -2,13 +2,15 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.backend.iseries.personas.usuario.BackRegistroAPP;
 import co.com.bancolombia.backend.modelo.usuario.UsuarioRegistro;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
-import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
+import net.serenitybdd.screenplay.Actor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
+
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 
 public class Registro {
 
@@ -16,11 +18,11 @@ public class Registro {
 
     public Registro() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    public static UsuarioRegistro verifoEmailRegistrado() {
-        Usuario user = EntidadUsuarioActual.getUsuario();
+    public static UsuarioRegistro verifoEmailRegistrado(Actor actor) {
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-        usuario.setDocumento(user.getNumeroDocumento());
-        usuario.setTipoDocumento(user.getTipoDocumento());
+        usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
+        usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
         BackRegistroAPP registroAPP = new BackRegistroAPP();
         UsuarioRegistro consultaEmailRegister = null;
 
@@ -33,18 +35,18 @@ public class Registro {
 
     }
 
-    public Boolean verificoUsuarioVirtual() {
+    public Boolean verificoUsuarioVirtual(Actor actor) {
         boolean result = false;
-        Usuario user = EntidadUsuarioActual.getUsuario();
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-        usuario.setDocumento(user.getNumeroDocumento());
-        usuario.setTipoDocumento(user.getTipoDocumento());
+        usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
+        usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
 
         BackRegistroAPP registroAPP = new BackRegistroAPP();
         UsuarioRegistro consultarRegistroVirtual = null;
         try {
             consultarRegistroVirtual = registroAPP.consultarUsuarioVirtual(usuario);
-            if (user.getEstadoClave().equals(consultarRegistroVirtual.getStatusUser())) {
+            if (datosPrincipales.getUsuario().getEstadoClave().equals(consultarRegistroVirtual.getStatusUser())) {
                 result = true;
             }
         } catch (SQLException e) {
@@ -53,11 +55,11 @@ public class Registro {
         return result;
     }
 
-    public Boolean verificoTerminosYCondiciones() {
-        Usuario user = EntidadUsuarioActual.getUsuario();
+    public Boolean verificoTerminosYCondiciones(Actor actor) {
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-        usuario.setDocumento(user.getNumeroDocumento());
-        usuario.setTipoDocumento(user.getTipoDocumento());
+        usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
+        usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
         BackRegistroAPP registroAPP = new BackRegistroAPP();
         boolean result = false;
         try {

@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.entitidades;
 
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
+import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 public class EntidadConfiguracionTransaccionActual {
 
-    private static ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion();
+    private static ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion(ConfiguracionTransaccionBuilder.informacion());
 
     private EntidadConfiguracionTransaccionActual() {
         throw new IllegalStateException(CLASE_ENTIDAD);

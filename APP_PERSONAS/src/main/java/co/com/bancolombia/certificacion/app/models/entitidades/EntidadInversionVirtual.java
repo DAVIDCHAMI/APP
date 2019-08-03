@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.entitidades;
 
 
+import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
 import co.com.bancolombia.certificacion.app.models.productos.InversionVirtual;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
@@ -38,7 +39,7 @@ public class EntidadInversionVirtual {
     public static void setInversionVirtual(List<String> data) {
 
         CuentaDeposito cuentaDeposito = new CuentaDeposito();
-        ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion();
+        ConfiguracionTransaccion configuracionTransaccion = new ConfiguracionTransaccion(ConfiguracionTransaccionBuilder.informacion());
         inversionVirtual.setValorInversion(data.get(0));
 
         if(APERTURA_INVERSION_VIRTUAL_CODIGO_TRANSACCION.equals(configuracionTransaccion.getCodigoTransaccion()) ||

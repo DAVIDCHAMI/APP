@@ -2,14 +2,13 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.backend.iseries.transversal.log.trace.BackTrace;
 import co.com.bancolombia.certificacion.app.models.entitidades.EntidadConfiguracionTransaccionActual;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
+import net.serenitybdd.screenplay.Actor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.backend.utilidades.enums.CanalesSistemas.WWW;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 
 public class LogCanal {
 
@@ -26,11 +26,9 @@ public class LogCanal {
 
     private LogCanal() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    public static List<Map<String, Object>> consultaLogCanalTrama220230() {
+    public static List<Map<String, Object>> consultaLogCanalTrama220230(Actor actor) {
         Map<String, Object> dataForQuery = new HashMap<>();
-        Usuario user = EntidadUsuarioActual.getUsuario();
-        ConfiguracionTransaccion datosTransaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         BackTrace backTrace = new BackTrace();
         String trace = "";
         String horaConsulta = "";
@@ -38,12 +36,12 @@ public class LogCanal {
         try {
             horaConsulta = AdministradorFechas.obtenerFechaSistema("hhmmss");
             co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-            usuario.setDocumento(user.getNumeroDocumento());
+            usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
             co.com.bancolombia.backend.modelo.transversal.Transaccion transaccion = new co.com.bancolombia.backend.modelo.transversal.Transaccion();
-            transaccion.setCodigoTransaccion(EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion().getCodigoTransaccion());
+            transaccion.setCodigoTransaccion(datosPrincipales.getCodigoTransaccion());
             transaccion.setHoraTransaccion(horaConsulta);
             trace = backTrace.consultarTrace(usuario, transaccion, WWW);
-            datosTransaccion.setTrace(trace);
+            datosPrincipales.setTrace(trace);
 
             dataForQuery.put("TRACE", trace);
             String sql = QueryManager.CONSULTAS.getString("SQL.COMFFLGWWW.tramaDatos_0220_0230");

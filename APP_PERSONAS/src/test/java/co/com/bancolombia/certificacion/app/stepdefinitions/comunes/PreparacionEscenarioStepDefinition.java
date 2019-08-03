@@ -1,7 +1,5 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
-import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
-import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.basededatos.comunes.ConsultarLosArchivosDeIseries;
@@ -15,10 +13,10 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
+import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto.NO_FUNCIONA;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.conCredenciales;
+import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -27,6 +25,20 @@ public class PreparacionEscenarioStepDefinition {
     @Before
     public void configuracionInicial() {
         OnStage.setTheStage(new OnlineCast());
+    }
+
+    @Dado("^que el (.*) se autentica en la app$")
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String,String>> datos) {
+        theActorCalled(actor).wasAbleTo(
+                IniciarSesion.con(informacion().deTransaccion(datos))
+        );
+    }
+
+    @Cuando("^quiero ir a (.*)$")
+    public void quieroRealizarConsulta(String tipoTransaccion) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion)
+        );
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
@@ -40,15 +52,9 @@ public class PreparacionEscenarioStepDefinition {
 
     @Cuando("^quiero (.*) del usuario (.*) con clave (.*)$")
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
-
-        theActorInTheSpotlight().should(seeThat(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV())
-                .orComplainWith(AfirmacionDelProducto.class,NO_FUNCIONA));
-
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.enApp(conCredenciales()
-                        .conNombreUsuario(usuario)
-                        .conClave(clave))
+                IniciarSesion.con(credenciales().conNombreUsuario(usuario).conClave(clave))
         );
     }
 

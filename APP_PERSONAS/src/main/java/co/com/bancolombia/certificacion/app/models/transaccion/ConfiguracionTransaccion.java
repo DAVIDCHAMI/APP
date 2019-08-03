@@ -1,14 +1,12 @@
 package co.com.bancolombia.certificacion.app.models.transaccion;
 
+import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-/**
- * The type Transaction config.
- */
 public class ConfiguracionTransaccion {
-
     private String identificadorCaso;
     private String orientacionCaso;
     private String codigoTransaccion;
@@ -21,7 +19,26 @@ public class ConfiguracionTransaccion {
     private String tipoLogCanal;
     private String codigoOperacion;
     private String trace;
+    private Usuario usuario;
 
+    public ConfiguracionTransaccion(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
+        this.identificadorCaso = configuracionTransaccionBuilder.getIdentificadorCaso();
+        this.orientacionCaso = configuracionTransaccionBuilder.getOrientacionCaso();
+        this.codigoTransaccion = configuracionTransaccionBuilder.getCodigoTransaccion();
+        this.codigoError = configuracionTransaccionBuilder.getCodigoError();
+        this.resultadoEsperado = configuracionTransaccionBuilder.getResultadoEsperado();
+        this.codigoCanal = configuracionTransaccionBuilder.getCodigoCanal();
+        this.codigoSistema = configuracionTransaccionBuilder.getCodigoSistema();
+        this.tipoTransaccion = configuracionTransaccionBuilder.getTipoTransaccion();
+        this.horaTransaccion = configuracionTransaccionBuilder.getHoraTransaccion();
+        this.tipoLogCanal = configuracionTransaccionBuilder.getTipoLogCanal();
+        this.codigoOperacion = configuracionTransaccionBuilder.getCodigoOperacion();
+        this.usuario = configuracionTransaccionBuilder.getUsuario();
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
     public String getTrace() {
         return trace;
