@@ -82,4 +82,4 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@7
-   |7   |58156994   |1   |invictus01   |1234   |3221   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+   |7   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
