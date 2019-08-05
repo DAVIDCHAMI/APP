@@ -10,12 +10,9 @@ public class CargarDatosBuilder {
     private List<String> datosUsuario;
     private List<String> datoPago;
 
-
-
     CargarDatosBuilder(List<String> datosTransaccion) {
         this.datosTransaccion = datosTransaccion;
     }
-
 
     public  CargarDatosBuilder datosDelUsuarioCon(List<String> datosUsuario) {
         this.datosUsuario = datosUsuario;

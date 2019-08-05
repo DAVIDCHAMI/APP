@@ -16,7 +16,7 @@ Característica: APP Personas Bancolombia
   Y Realizo la apertura de la inversion virtual
   Entonces Verifico la apertura de la inversion virtual
   Y Verifico los resultados en los archivos de iseries
-   |SALDOS-SCIFFSALDO_DEBITO | MOVIMIENTO-SCIFFMRCMV_DEBITO | TEF Y MOVTF-PCCFFMOVTFLOGTF_DEBITO |
+   |SALDOS-SCIFFSALDO_DEBITO | MOVIMIENTO-SCIFFMRCMV_DEBITO | TEF Y MOVTF-PCCFFMOVTFLOGTF_DEBITO | DEPOSITOS TOTALES-SCIFFSALDO_TOTALES |
 
   Ejemplos:
    | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | CuentaOrigen |  TipoCuentaOrigen | Monto | Periodicidad | Plazo |TasaEfectiva | VersionTYC |

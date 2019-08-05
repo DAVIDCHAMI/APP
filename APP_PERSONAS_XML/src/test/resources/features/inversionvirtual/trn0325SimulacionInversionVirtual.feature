@@ -25,4 +25,4 @@ Característica: : APP Personas Bancolombia,
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | CuentaOrigen |  TipoCuentaOrigen | Monto |Periodicidad|Tiempo|TasaEfectiva|
     ##@externaldata@./src/test/resources/datadriven/inversionvirtual/Trn_0325SimulacionIV.xlsx@Datos@1
-      |1|1035103510|1|banana01|1223|1234|Acierto|000|0325|TRANSACCION EXITOSA|40676340007|Ahorros|500000|ATEXPIRATION|90|2.89|
+      |1|1035103510|1|banana01|1223|1234|Acierto|000|0325|TRANSACCION EXITOSA|40676340007|Ahorros|500000|ATEXPIRATION|90|4.20|
