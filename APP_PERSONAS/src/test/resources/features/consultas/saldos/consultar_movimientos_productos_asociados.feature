@@ -6,7 +6,6 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos del producto
 
-
   Esquema del escenario: Consultar un producto con movimientos en la app con cuentas depósito
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
@@ -24,7 +23,7 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiero CONSULTAR_PRODUCTO del usuario <usuario> con clave <clave>
     Y quiero revisar mis movimientos con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
-    Entonces El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta
+    Entonces El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta.
      Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta       | numeroCuenta  |

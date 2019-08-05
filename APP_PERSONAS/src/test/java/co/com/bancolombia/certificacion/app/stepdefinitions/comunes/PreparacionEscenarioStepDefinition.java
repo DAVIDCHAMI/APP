@@ -12,8 +12,10 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
+import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.conCredenciales;
+import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -22,6 +24,22 @@ public class PreparacionEscenarioStepDefinition {
     @Before
     public void configuracionInicial() {
         OnStage.setTheStage(new OnlineCast());
+    }
+
+    @Dado("^que el (.*) se autentica en la app$")
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String,String>> datos) {
+        theActorCalled(actor).wasAbleTo(
+                IniciarSesion.con(informacion()
+                        .deTransaccion(datos)
+                )
+        );
+    }
+
+    @Cuando("^el actor quiere (.*)$")
+    public void quieroRealizarConsulta(String tipoTransaccion) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion)
+        );
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
@@ -38,7 +56,7 @@ public class PreparacionEscenarioStepDefinition {
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.enApp(conCredenciales()
+                IniciarSesion.con(credenciales()
                         .conNombreUsuario(usuario)
                         .conClave(clave))
         );

@@ -1,41 +1,23 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
-import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.type.Type;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_TASK;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class IniciarSesion implements Task {
+public class IniciarSesion {
 
-    private Usuario usuario;
-
-    public IniciarSesion(Usuario usuario) {
-        this.usuario = usuario;
+    public static Performable con(UsuarioBuilder usuarioBuilder) {
+        return instrumented(ConCredenciales.class, usuarioBuilder.build());
     }
 
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
-                Click.on(LBL_HOLA_PROVISIONAL),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR),
-                Enter.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
-        );
+    public static Performable con(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
+        return instrumented(ConDatosTransaccion.class, configuracionTransaccionBuilder.build());
     }
 
-    public static Performable enApp(UsuarioBuilder usuarioBuilder) {
-        return instrumented(IniciarSesion.class, usuarioBuilder.build());
+    private IniciarSesion() {
+        throw new IllegalStateException(CLASE_TASK);
     }
 }
