@@ -68,5 +68,4 @@ public class RealizarTransferencia implements Task {
 
     public static RealizarTransferencia conInfo(TransferenciaBuilder transferencia) {
         return instrumented(RealizarTransferencia.class, transferencia.build());
-    }
-}
+    }}
