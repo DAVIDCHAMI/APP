@@ -1,9 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.basededatos.comunes;
 
-import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadConfiguracionTransaccionActual;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosComunesIseries;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosLogCanalIseries;
 import net.serenitybdd.screenplay.Actor;

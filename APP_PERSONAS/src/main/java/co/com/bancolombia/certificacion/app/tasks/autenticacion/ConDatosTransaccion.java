@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
+import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import net.serenitybdd.screenplay.Actor;
@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto.NO_FUNCIONA;
+import static co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto.NO_FUNCIONA;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -26,6 +26,7 @@ public class ConDatosTransaccion extends Autenticacion {
     public <T extends Actor> void performAs(T actor) {
 
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
+
         actor.should(seeThat(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV())
                 .orComplainWith(AfirmacionDelProducto.class,NO_FUNCIONA));
 

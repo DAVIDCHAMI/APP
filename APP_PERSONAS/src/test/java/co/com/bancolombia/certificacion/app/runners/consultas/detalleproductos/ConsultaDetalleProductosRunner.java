@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/consultas/detalleproductos/consulta_detalle_productos.feature"},
+        tags = {"@PRUEBA"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )

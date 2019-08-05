@@ -10,6 +10,6 @@ public class ConsultarRegistroEnWWWFFUSRSV implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return new Registro().verificoUsuarioVirtual();
+        return new Registro().verificoUsuarioVirtual(actor);
     }
 }

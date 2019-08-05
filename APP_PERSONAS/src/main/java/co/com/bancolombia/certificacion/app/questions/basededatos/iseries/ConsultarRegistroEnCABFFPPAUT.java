@@ -15,13 +15,11 @@ public class ConsultarRegistroEnCABFFPPAUT implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean result = false;
-        /*try {
-            //result = Movimientos.verifyTheMovementsEprepago(); ESTE ES EL CORRECTO
+        try {
+            result = Movimientos.verifyTheMovementsEprepago(actor);
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
-        return result;
-    }*/
         return result;
     }
 }

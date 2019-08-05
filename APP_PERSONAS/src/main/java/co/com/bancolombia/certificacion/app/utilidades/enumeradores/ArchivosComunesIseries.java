@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
-import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
+import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
 import co.com.bancolombia.certificacion.app.questions.fabrica.FabricaBaseDeDatosIseries;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;

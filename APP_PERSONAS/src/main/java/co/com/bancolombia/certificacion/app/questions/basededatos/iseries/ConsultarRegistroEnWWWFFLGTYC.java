@@ -7,6 +7,6 @@ import net.serenitybdd.screenplay.Question;
 public class ConsultarRegistroEnWWWFFLGTYC implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
-        return new Registro().verificoTerminosYCondiciones();
+        return new Registro().verificoTerminosYCondiciones(actor);
     }
 }

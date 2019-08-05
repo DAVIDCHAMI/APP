@@ -14,7 +14,7 @@ public class ConsultarDebitoEnSCIFFSALDO implements Question {
     @Override
     public Object answeredBy(Actor actor) {
         boolean resultado = false;
-        resultado = Depositos.verificarElDebitoDeLaCuenta();
+        resultado = Depositos.verificarElDebitoDeLaCuenta(actor);
         if (resultado){
             resultado = true;
         }else {

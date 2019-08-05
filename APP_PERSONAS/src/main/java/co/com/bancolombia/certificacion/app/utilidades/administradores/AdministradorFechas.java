@@ -10,41 +10,19 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Clase para manejar las funciones asociadas con la fecha.
- *
- * @author david.c.gonzalez
- */
 public class AdministradorFechas {
 
-    /**
-     * The Constant LOGGER.
-     */
     private static final Logger LOGGER = LogManager.getLogger(AdministradorFechas.class.getName());
 
     private AdministradorFechas() {
         throw new IllegalStateException(CodigosExcepciones.UTILITY_CLASS.getMsg());
     }
 
-    /**
-     * Este m&eacutetodo para obtener la fecha del sistema como una cadena de caracteres, de
-     * acuerdo a un formato especifico.
-     *
-     * @param strFormat Formato de la fecha.
-     * @return Devuelve la fecha actual con el formato deseado
-     */
     public static String obtenerFechaSistema(String strFormat) {
         SimpleDateFormat fechaActual = new SimpleDateFormat(strFormat);
         return fechaActual.format(new Date());
     }
 
-    /**
-     * Metodo para convertir un fecha de tipo Date a String.
-     *
-     * @param strFormat El formato de la fecha
-     * @param strDate   La fecha para formatear
-     * @return String Devuelve la fecha recibida en el formato indicado.
-     */
     public static Date stringToDate(String strFormat, String strDate) {
         Date resultDate = null;
         SimpleDateFormat formatter = new SimpleDateFormat(strFormat);
@@ -56,12 +34,6 @@ public class AdministradorFechas {
         return resultDate;
     }
 
-    /**
-     * Obtener fecha anterior.
-     *
-     * @param strFormat the str format
-     * @return the string
-     */
     public static String obtenerFechaAnterior(String strFormat) {
         SimpleDateFormat currentDateWithoutFormat = new SimpleDateFormat(strFormat);
         Calendar calendar = Calendar.getInstance();
@@ -77,15 +49,6 @@ public class AdministradorFechas {
         return currentDateWithoutFormat.format(new GregorianCalendar(year, month, date));
     }
 
-    /**
-     * Descripci&oacute;n  Componente generico encargado de sumar o restar meses o
-     * dias a la fecha actual.
-     *
-     * @param strFormat - se espera el siguiente formato ej "yyyyMMdd"
-     * @param intMes    - No sumar, no restar ej cero(0), para restar ej (-n), para            sumar ej (+n).
-     * @param intDia    - No sumar, no restar ej cero(0), para restar ej (-n), para            sumar ej (+n).
-     * @return retorna la siguiente variable (result), la cual contiene la fecha         calculada.
-     */
     public static String obtenerFechaAntes(String strFormat, int intMes, int intDia) {
         String result = null;
         SimpleDateFormat currentDateWithoutFormat = new SimpleDateFormat(strFormat);

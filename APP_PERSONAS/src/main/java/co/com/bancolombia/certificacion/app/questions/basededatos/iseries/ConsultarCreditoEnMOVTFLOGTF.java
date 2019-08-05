@@ -13,7 +13,7 @@ public class ConsultarCreditoEnMOVTFLOGTF implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean resultado = false;
-        String registro = Transversales.verificarElCreditoEnMOVTFLOGTF();
+        String registro = Transversales.verificarElCreditoEnMOVTFLOGTF(actor);
         if (registro != ""){
             resultado = true;
         }else {

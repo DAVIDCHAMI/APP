@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 
-import co.com.bancolombia.certificacion.app.exceptions.AfirmacionDelProducto;
+import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
 import co.com.bancolombia.certificacion.app.questions.fabrica.logcanal.FabricaLogCanal;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +11,7 @@ import java.util.Arrays;
 public enum ArchivosLogCanalIseries {
 
     COMFFLGWWW0369 (FabricaLogCanal.elLogCanal0369(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0360 (FabricaLogCanal.elLogCanal0360(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     //COMFFLGWWW0322 (FabricaLogCanal.elLogCanal0322(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     //COMFFLGWWW0325 (FabricaLogCanal.elLogCanal0325(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     //COMFFLGWWW0326 (FabricaLogCanal.elLogCanal0326(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),

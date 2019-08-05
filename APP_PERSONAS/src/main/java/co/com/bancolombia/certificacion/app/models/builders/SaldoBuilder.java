@@ -7,11 +7,13 @@ public class SaldoBuilder implements Builder<Saldo> {
     private String saldoTotal;
     private String saldoEnCanje;
     private String saldoDisponible;
+    private String monto;
 
     public SaldoBuilder(){
         this.saldoTotal = "";
         this.saldoEnCanje = "";
         this.saldoDisponible = "";
+        this.monto = "";
     }
 
     public static SaldoBuilder saldo(){
@@ -33,6 +35,11 @@ public class SaldoBuilder implements Builder<Saldo> {
         return this;
     }
 
+    public SaldoBuilder conMonto(String monto){
+        this.monto = monto;
+        return this;
+    }
+
     public String getSaldoTotal() {
         return saldoTotal;
     }
@@ -43,6 +50,10 @@ public class SaldoBuilder implements Builder<Saldo> {
 
     public String getSaldoDisponible() {
         return saldoDisponible;
+    }
+
+    public String getMonto() {
+        return monto;
     }
 
     @Override

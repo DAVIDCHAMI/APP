@@ -13,7 +13,7 @@ public class ConsultarDebitoEnSCIFFMRCMV implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean resultado = false;
-        String registro = Depositos.verificarElMovimientoDebitoDeLaCuenta();
+        String registro = Depositos.verificarElMovimientoDebitoDeLaCuenta(actor);
         if (registro != ""){
             resultado = true;
         }else {

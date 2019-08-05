@@ -9,9 +9,6 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
-/**
- * The type Channel log in data base.
- */
 public class VerificoLaAperturaEnFinacle implements Question<Boolean> {
 
     private static final Logger LOGGER = LogManager.getLogger(VerificoLaAperturaEnFinacle.class);

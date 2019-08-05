@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.backend.iseries.transversal.log.trace.BackTrace;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadConfiguracionTransaccionActual;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;

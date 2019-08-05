@@ -2,13 +2,18 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.transversal.Movimiento;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
+import net.serenitybdd.screenplay.Actor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 
 public class Movimientos {
 
@@ -75,23 +80,8 @@ public class Movimientos {
         return movimientosFechasyDescripcion;
     }
 
-    /*
-    public static boolean verifyTheMovementsEprepago() throws SQLException {
-        boolean result = false;
-
-        BackMovimientosEprepago registroMovimiento = new BackMovimientosEprepago();
-        TarjetaEPrepago numeroTarjeta = Eprepago.verificoElRegistroDeLaEprepago();
-        Transaccion transaccion = new Transaccion();
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        transaccion.setHoraTransaccion(EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion().getHoraTransaccion());
-        transaccion.setValorTransaccion(datosEprepago.getAmount().substring(1));
-
-        boolean verificarRegistroMovimiento = registroMovimiento.consultarMovimientosRegistro(AdministradorConstante.NUMERO_BASE_EPREPAGO + numeroTarjeta.getNumero(),
-                DateManager.obtenerFechaSistema("yyyyMMdd"),transaccion.getHoraTransaccion(),transaccion.getValorTransaccion());
-        if (verificarRegistroMovimiento) {
-            result = true;
-        }
-        return result;
+    public static boolean verifyTheMovementsEprepago(Actor actor) throws SQLException {
+        return false;
     }
-    */
+
 }

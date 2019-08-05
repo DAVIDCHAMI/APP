@@ -7,7 +7,7 @@ public class ConsultarRegistroEnTCBFFMAE implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean result = false;
-        //result = FachadaEprepago.verifyTheCreditOfTheCardEprepago();
+        //result = FachadaEprepago.verifyTheCreditOfTheCardEprepago(actor);
         return result;
     }
 }

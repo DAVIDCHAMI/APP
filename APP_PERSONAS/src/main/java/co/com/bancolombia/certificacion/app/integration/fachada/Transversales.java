@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.integration.fachada;
 
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadDepositoActual;
-import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
@@ -17,6 +16,7 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTipoCuentaNumero;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 
 public class Transversales {
 
@@ -27,7 +27,7 @@ public class Transversales {
     private static final String DOCUMENTO = "DOCUMENTO";
 
     public static String verificarElDebitoEnMOVTFLOGTF(Actor actor) {
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
 
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put("DIA", AdministradorFechas.obtenerFechaSistema("dd"));
@@ -40,7 +40,7 @@ public class Transversales {
     }
 
     public static String verificarElCreditoEnMOVTFLOGTF(Actor actor) {
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
         Map<String, Object> dataForQuery = new HashMap<>();
 
         dataForQuery.put("DIA", AdministradorFechas.obtenerFechaSistema("dd"));

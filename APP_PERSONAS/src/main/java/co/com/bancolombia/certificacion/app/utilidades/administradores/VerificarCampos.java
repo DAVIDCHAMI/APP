@@ -13,7 +13,7 @@ public class VerificarCampos {
     private static String resultadoCampo = "Resultado ";
     private static String respuestaOK = "  : OK";
     private static String respuestaERR = "  : ERROR";
-    private static String INFORMES_SERENITY = "logcanal";
+    private static String informes_serenity = "informes_serenity";
 
     private VerificarCampos() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
@@ -31,18 +31,18 @@ public class VerificarCampos {
             if (valorObtenido.equalsIgnoreCase(valorEsperado)) {
                 LOGGER.info(resultadoCampo + respuestaOK);
                 validadorDeInformes += resultadoCampo + respuestaOK + "\n\n";
-                Serenity.setSessionVariable(INFORMES_SERENITY).to(validadorDeInformes);
+                Serenity.setSessionVariable(informes_serenity).to(validadorDeInformes);
                 resultado = true;
             }else{
                 LOGGER.info(resultadoCampo + respuestaERR);
                 validadorDeInformes += resultadoCampo + respuestaERR + "\n\n";
-                Serenity.setSessionVariable(INFORMES_SERENITY).to(validadorDeInformes);
+                Serenity.setSessionVariable(informes_serenity).to(validadorDeInformes);
                 resultado = false;
             }
         }catch (Exception e) {
             LOGGER.info(resultadoCampo + campo + respuestaERR);
             validadorDeInformes += resultadoCampo + respuestaERR + "\n\n";
-            Serenity.setSessionVariable(INFORMES_SERENITY).to(validadorDeInformes);
+            Serenity.setSessionVariable(informes_serenity).to(validadorDeInformes);
             resultado = false;
         }
 

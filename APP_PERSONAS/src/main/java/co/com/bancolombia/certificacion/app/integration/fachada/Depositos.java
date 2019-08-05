@@ -1,9 +1,6 @@
 package co.com.bancolombia.certificacion.app.integration.fachada;
 
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadConfiguracionTransaccionActual;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadDepositoActual;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadTransferenciaActual;
-import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
@@ -12,6 +9,7 @@ import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConst
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
 import co.com.bancolombia.conexion.utilidades.consults.Consulta;
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.screenplay.Actor;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -20,6 +18,8 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTipoCuentaNumero;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 
 public class Depositos {
 
@@ -33,8 +33,18 @@ public class Depositos {
     private static final String FECHASISTEMA = "yyyyMMdd";
 
 
-    public static void saldoDepositosAntes(){
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
+
+    public static List<Map<String, Object>> saldoDepositos(Actor actor){
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
+        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+    }
+
+    public static void saldoDepositosAntes(Actor actor){
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
         String saldoDisponible ="";
         String saldoCanje ="";
         String saldoTotal ="";
@@ -51,8 +61,8 @@ public class Depositos {
         Serenity.setSessionVariable(SALDOANTES).to(saldoTotal);
     }
 
-    public static void saldoDepositosDespues(){
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
+    public static void saldoDepositosDespues(Actor actor){
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
         String saldoDisponible ="";
         String saldoCanje ="";
         String saldoTotal ="";
@@ -69,53 +79,53 @@ public class Depositos {
         Serenity.setSessionVariable(SALDODESPUES).to(saldoTotal);
     }
 
-    public static boolean verificarElDebitoDeLaCuenta(){
-        ConfiguracionTransaccion configuracionTransaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-        String valor = EntidadTransferenciaActual.getTransferencia().getMonto();
-        String orientacon = configuracionTransaccion.getOrientacionCaso();
+    public static boolean verificarElDebitoDeLaCuenta(Actor actor){
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
+        String valor = depositos.getSaldo().getMonto();
+        String orientacon = datosPrincipales.getOrientacionCaso();
         String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
         String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
         return validarDebitoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
 
 
-    public static boolean verificarElCreditoDeLaCuenta(){
-        ConfiguracionTransaccion configuracionTransaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-        String valor = EntidadTransferenciaActual.getTransferencia().getMonto();
-        String orientacon = configuracionTransaccion.getOrientacionCaso();
+    public static boolean verificarElCreditoDeLaCuenta(Actor actor){
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
+        String valor = depositos.getSaldo().getMonto();
+        String orientacon = datosPrincipales.getOrientacionCaso();
         String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
         String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
         return validarCreditoDeposito(saldoAntes,saldoDespues,orientacon,valor);
     }
 
-    public static String verificarElMovimientoDebitoDeLaCuenta() {
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
-        ConfiguracionTransaccion transaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-
+    public static String verificarElMovimientoDebitoDeLaCuenta(Actor actor) {
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, formatoTipoCuentaNumero(depositos.getTipo()));
         dataForQuery.put(FECHA, AdministradorFechas.obtenerFechaSistema(FECHASISTEMA));
-        dataForQuery.put("MONTO", EntidadTransferenciaActual.getTransferencia().getMonto());
+        dataForQuery.put("MONTO", depositos.getSaldo().getMonto());
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_DEBIT);
-        dataForQuery.put("HORA", transaccion.getHoraTransaccion());
+        dataForQuery.put("HORA", datosPrincipales.getHoraTransaccion());
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
 
-    public static String verificarElMovimientoCreditoDeLaCuenta() {
-        CuentaDeposito depositos = EntidadDepositoActual.getDeposito();
-        ConfiguracionTransaccion transaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-
+    public static String verificarElMovimientoCreditoDeLaCuenta(Actor actor) {
+        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, formatoTipoCuentaNumero(depositos.getTipo()));
         dataForQuery.put(FECHA, AdministradorFechas.obtenerFechaSistema(FECHASISTEMA));
-        dataForQuery.put("MONTO", EntidadTransferenciaActual.getTransferencia().getMonto());
+        dataForQuery.put("MONTO", depositos.getSaldo().getMonto());
         dataForQuery.put("NATURALEZA", AdministradorConstante.NATURE_CREDIT);
-        dataForQuery.put("HORA", transaccion.getHoraTransaccion());
+        dataForQuery.put("HORA", datosPrincipales.getHoraTransaccion());
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
@@ -135,5 +145,6 @@ public class Depositos {
         BigDecimal valorTransaccion = new BigDecimal(valor);
         return "ACIERTO".equalsIgnoreCase(orientacion) ? saldoAnterior.add(valorTransaccion).equals(saldoPosterior) : saldoAnterior.equals(saldoPosterior);
     }
+
 
 }
