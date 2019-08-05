@@ -30,11 +30,13 @@ public class PreparacionEscenarioStepDefinition {
     @Dado("^que el (.*) se autentica en la app$")
     public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String,String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                IniciarSesion.con(informacion().deTransaccion(datos))
+                IniciarSesion.con(informacion()
+                        .deTransaccion(datos)
+                )
         );
     }
 
-    @Cuando("^quiero ir a (.*)$")
+    @Cuando("^el actor quiere (.*)$")
     public void quieroRealizarConsulta(String tipoTransaccion) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion)
@@ -44,7 +46,8 @@ public class PreparacionEscenarioStepDefinition {
     @Dado("^que el (.*) carga los datos para la prueba$")
     public void queSuboLosDatosParaLaPrueba(String actor, List<String> datosTransaccion) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(datosTransaccion)
+                CargarDatos.transaccionCon(
+                        datosTransaccion)
                         .datosDelUsuarioCon(datosTransaccion)
                         .construir()
         );
@@ -54,7 +57,9 @@ public class PreparacionEscenarioStepDefinition {
     public void quieroTransarConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-                IniciarSesion.con(credenciales().conNombreUsuario(usuario).conClave(clave))
+                IniciarSesion.con(credenciales()
+                        .conNombreUsuario(usuario)
+                        .conClave(clave))
         );
     }
 

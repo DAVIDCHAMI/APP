@@ -15,10 +15,6 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/**
-*  Runner personalizado con el cual se puede determinar que busque y modifique los .feature antes de ser ejecutados
-* @since 27/11/2017
-*/
 public class RunnerPersonalizado extends Runner {
 
     private static final Logger LOGGER = LogManager.getLogger(RunnerPersonalizado.class.getName());

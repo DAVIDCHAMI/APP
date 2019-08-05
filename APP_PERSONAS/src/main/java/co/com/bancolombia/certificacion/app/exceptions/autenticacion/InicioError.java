@@ -6,6 +6,8 @@ public class InicioError extends AssertionError {
 
     public static final String MENSAJE_AUTENTICACION_FALLIDA = "La autenticacion ha sido fallida";
 
+    public static final String MENSAJE_AUTENTICACION_FALLIDA_BACK = "El usuario para autenticar no esta enrrolado";
+
     public InicioError(String message, Throwable cause) {
         super(message, cause);
     }
