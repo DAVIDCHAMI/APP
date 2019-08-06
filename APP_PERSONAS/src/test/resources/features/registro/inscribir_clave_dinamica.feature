@@ -6,9 +6,10 @@ Característica: Autenticación app Bancolombia
   Para autenticarme en la aplicación
 
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiero GESTIONAR_CLAVE_DINAMICA del usuario <usuario> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere GESTIONAR_CLAVE_DINAMICA
     Y gestiono la inscripcion de clave dinámica
       | segundaClave   | nombrePersonalizado   | correo   | tipoCorreo   | numeroCelular   |
       | <segundaClave> | <nombrePersonalizado> | <correo> | <tipoCorreo> | <numeroCelular> |
