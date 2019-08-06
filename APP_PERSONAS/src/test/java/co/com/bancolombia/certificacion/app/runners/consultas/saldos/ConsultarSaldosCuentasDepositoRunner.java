@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.consultas.detalleproductos;
+package co.com.bancolombia.certificacion.app.runners.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,17 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/detalleproductos/consulta_detalle_productos.feature"},
+        features = {"src/test/resources/features/consultas/saldos/consultar_saldos_consolidados_cuentas_deposito.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class ConsultaDetalleProductosRunner {
-    private ConsultaDetalleProductosRunner() {
+public class ConsultarSaldosCuentasDepositoRunner {
+    private ConsultarSaldosCuentasDepositoRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/detalleproductos/consulta_detalle_productos.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/saldos/consultar_saldos_consolidados_cuentas_deposito.feature");
     }
 }

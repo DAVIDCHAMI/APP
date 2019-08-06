@@ -34,4 +34,8 @@ public class ConsultaDetalleProductosStepDefinition {
                         DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );
     }
+
+    @Entonces("^deberia de ver el detalle de mi tarjeta eprepago$")
+    public void verificoElResultadoDeLaConsultaDeEprepago() {
+    }
 }

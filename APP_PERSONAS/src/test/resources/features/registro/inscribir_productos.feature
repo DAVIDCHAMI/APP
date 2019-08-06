@@ -5,9 +5,10 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
   Quiero realizar la inscripcion de un producto bancolombia
 
   Esquema del escenario:  Inscripcion de productos bancolombia
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiero INSCRIBIR_PRODUCTOS del usuario <usuario> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere INSCRIBIR_PRODUCTOS
     Y quiero realizar la inscripcion del producto con la información
       | <nombreBanco> | <tipo> | <numero> | <tipoDocumentoInscripcion> | <numeroDocumentoInscripcion> |
     Entonces el deberia de ver el detalle del producto registrado

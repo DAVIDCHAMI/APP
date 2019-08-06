@@ -11,17 +11,16 @@ import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
-
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveBloqueadaNoVisualizadoException.MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO;
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoException.MENSAJE_PASS_INVALIDO_NO_ENCONTRADO;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class RegistroUsuarioStepDefinition {
 
-    @Cuando("^quiere ingresar por la (.*) con el documento (.*) con clave (.*)$")
-    public void quiereIngresarPorLaOpcionConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
+    @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
+    public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
        theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
                IniciarSesion.con(credenciales()
@@ -50,6 +49,6 @@ public class RegistroUsuarioStepDefinition {
     @Entonces("^el deberia de ver el mensaje de usuario bloqueado$")
     public void elDeberiaDeVerElMensajeDeUsuaioBloqueado() {
         theActorInTheSpotlight().should(seeThat(MensajeDeClaveBloqueada.esVisible())
-                .orComplainWith(MensajeClaveBloqueadaNoVisualizadoException.class,MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO));
+                .orComplainWith(MensajeClaveBloqueadaNoVisualizadoException.class, MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO));
     }
 }

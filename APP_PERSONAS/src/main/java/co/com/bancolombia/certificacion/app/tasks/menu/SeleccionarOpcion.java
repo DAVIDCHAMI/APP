@@ -1,14 +1,17 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
 import co.com.bancolombia.certificacion.app.interactions.Scroll;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.questions.Visibility;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class SeleccionarOpcion implements Task {
 
@@ -21,6 +24,7 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()), isEnabled()),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
