@@ -1,17 +1,17 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
 import co.com.bancolombia.certificacion.app.interactions.Scroll;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.questions.Visibility;
-
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarOpcion implements Task {
+
     private TipoTransaccionEnum tipoTransaccion;
 
     public SeleccionarOpcion(String opcionMenu) {
