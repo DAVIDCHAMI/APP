@@ -16,7 +16,7 @@ public class SaldosMovimientosLocator {
             .withAndroid("xpath$//android.view.View[contains(@text, '{0}')]/../..")
             .withIos("");
     public static final Locator LBL_SIN_MOVIMIENTOS_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text,'No has realizado ningún movimiento con la tarjeta.')]")
+            .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]")
             .withIos("");
     public static final Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Detalle del producto')]").withIos("");
     public static final Locator BTN_OCULTAR_BANNER_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='b5-b1-Content']/android.view.View[2]/android.view.View").withIos("");

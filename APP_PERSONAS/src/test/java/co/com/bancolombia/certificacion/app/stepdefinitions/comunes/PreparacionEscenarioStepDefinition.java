@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.basededatos.comunes.ConsultarLosArchivosDeIseries;
-import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
@@ -44,12 +43,10 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
-    public void queSuboLosDatosParaLaPrueba(String actor, List<String> datosTransaccion) {
+    public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String,String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(
-                        datosTransaccion)
-                        .datosDelUsuarioCon(datosTransaccion)
-                        .construir()
+                CargarDatos.transaccionCon(informacion()
+                        .deTransaccion(datos))
         );
     }
 
@@ -75,3 +72,4 @@ public class PreparacionEscenarioStepDefinition {
         theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
     }
 }
+

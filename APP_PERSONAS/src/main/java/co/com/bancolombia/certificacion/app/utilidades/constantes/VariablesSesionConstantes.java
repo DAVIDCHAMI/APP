@@ -9,6 +9,9 @@ public class VariablesSesionConstantes {
     public static final String TIPO_DOCUMENTO = "TIPO DOCUMENTO";
     public static final String NUMERO_DOCUMENTO = "NUMERO DOCUMENTO";
     public static final String NOMBRE_BANCO = "NOMBRE BANCO";
+    public static final String NOMBRE_PERSONALIZADO_CLAVE_DINAMICA = "Nombre personalizado";
+    public static final String TIPO_CORREO_CLAVE_DINAMICA = "Tipo de correo";
+    public static final String CORREO_CLAVE_DINAMICA = "Correo electrónico";
 
     private VariablesSesionConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
