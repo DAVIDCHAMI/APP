@@ -16,8 +16,7 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class PreparacionEscenarioStepDefinition {
 
