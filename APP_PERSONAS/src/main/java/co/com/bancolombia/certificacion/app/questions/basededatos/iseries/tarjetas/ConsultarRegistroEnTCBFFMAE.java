@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.basededatos.iseries;
+package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
