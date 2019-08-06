@@ -6,9 +6,10 @@ Característica: Registro en la APP personas bancolombia OSP
   Para realizar la autenticacion en la app
 
   Esquema del escenario: Registrar usuario con documento de identidad
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere INSCRIBIR_PRODUCTOS
     Y quiere realizar el registro con el usuario <nuevoUser> y con el correo <correoUsuario>
     Entonces el deberia de ver un mensaje de registro exitoso
     Ejemplos:
@@ -17,9 +18,10 @@ Característica: Registro en la APP personas bancolombia OSP
    |2   |1128398861   |1   |1128398861   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa91   |jalzate@todo1.net|
 
   Esquema del escenario: Registrar un usuario que ya este registrado
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere INSCRIBIR_PRODUCTOS
     Entonces el deberia de ver el mensaje usuario o clave invalida
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario |
@@ -27,9 +29,10 @@ Característica: Registro en la APP personas bancolombia OSP
    |3   |95400152   |1   |sandrita69   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   ||
 
   Esquema del escenario: Registrar un usuario con clave bloqueada
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiere ingresar desde CONSULTAR_PRODUCTO con el documento <numeroDocumento> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere INSCRIBIR_PRODUCTOS
     Entonces el deberia de ver el mensaje de usuario bloqueado
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |
