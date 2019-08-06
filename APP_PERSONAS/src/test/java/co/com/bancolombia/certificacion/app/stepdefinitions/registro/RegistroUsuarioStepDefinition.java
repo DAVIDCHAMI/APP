@@ -20,8 +20,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class RegistroUsuarioStepDefinition {
 
-    @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
-    public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
+    @Cuando("^quiere ingresar por la (.*) con el documento (.*) con clave (.*)$")
+    public void quiereIngresarPorLaOpcionConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
        theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
                IniciarSesion.con(credenciales()
