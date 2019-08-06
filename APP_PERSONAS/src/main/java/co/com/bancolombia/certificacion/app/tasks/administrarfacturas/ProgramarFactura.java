@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
 import co.com.bancolombia.certificacion.app.models.builders.ProgramarFacturasBuilder;
 import net.serenitybdd.screenplay.Actor;
@@ -30,7 +30,7 @@ public class ProgramarFactura implements Task {
         actor.attemptsTo(
                 WaitUntil.the(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel()), isPresent()),
                 Click.on(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel())),
-                ScrollHasta.elTarget(SELECCIONAR_FACTURA.of(
+                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_FACTURA.of(
                         programarFacturas.getValorFactura(),
                         programarFacturas.getFechaFactura(),
                         programarFacturas.getDescripcionFactura())),
@@ -40,20 +40,22 @@ public class ProgramarFactura implements Task {
                         programarFacturas.getDescripcionFactura())),
                 Click.on(SELECCIONAR_PROGRAMAR),
                 Click.on(SELECCIONAR_MIS_PRODUCTOS),
-                ScrollHasta.elTarget(SELECCIONAR_CUENTA.of(programarFacturas.getProducto().
+                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_CUENTA.of(programarFacturas.getProducto().
                         getTipo(), programarFacturas.getProducto().getNumero())),
                 Click.on(SELECCIONAR_CUENTA.of(programarFacturas.getProducto().
                         getTipo(), programarFacturas.getProducto().getNumero())),
                 Click.on(CHECK_FECHA_VENCIMIENTO.of(programarFacturas.getPeriodicidad())),
                 Click.on(SELECCIONAR_NUMERO_INTENTOS),
                 Click.on(SELECCIONAR_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento())),
-                ScrollHasta.elTarget(SELECCIONAR_FECHA_INICIO_FIN),
+                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_FECHA_INICIO_FIN),
+                RealizarScroll.adicional(SELECCIONAR_FECHA_INICIO_FIN),
                 Click.on(SELECCIONAR_FECHA_INICIO_FIN),
                 Click.on(SELECCIONAR_RANGO_FECHA.of(fechaInicio)),
                 Click.on(SELECCIONAR_RANGO_FECHA.of(fechaFin)),
                 Click.on(BTN_SELECCIONAR),
                 Click.on(BTN_SIGUIENTE),
-                ScrollHasta.elTarget(CHECK_ACEPTO_TERMINOS),
+                RealizarScroll.hastaPosicionDeTarget(CHECK_ACEPTO_TERMINOS),
+                RealizarScroll.adicional(CHECK_ACEPTO_TERMINOS),
                 Click.on(CHECK_ACEPTO_TERMINOS),
                 Click.on(BTN_PROGRAMAR)
         );
