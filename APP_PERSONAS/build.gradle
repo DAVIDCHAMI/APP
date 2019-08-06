@@ -62,6 +62,9 @@ dependencies {
 }
 
 tasks.withType(Test){
+    systemProperty 'properties', System.getProperty('properties')
+    systemProperty 'serenity.outputDirectory', System.getProperty('serenity.outputDirectory')
+    systemProperty 'binResultsDir', System.getProperty('binResultsDir')
     systemProperties = System.properties
     maxParallelForks = Runtime.runtime.availableProcessors()
 }
