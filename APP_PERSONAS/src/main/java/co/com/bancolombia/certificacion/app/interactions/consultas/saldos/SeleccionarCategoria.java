@@ -20,9 +20,11 @@ public class SeleccionarCategoria implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 OcultarBanner.deSaldosMovimientos()
         );
+
         if (!CUENTAS.equals(categoria)) {
             actor.attemptsTo(
                     WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
