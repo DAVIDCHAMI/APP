@@ -37,6 +37,9 @@ public class ScrollHasta implements Interaction {
         action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
         action.moveTo(PointOption.point(posicionInicialX, 1000));
         action.release().perform();
+        action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
+        action.moveTo(PointOption.point(posicionInicialX, 1000));
+        action.release().perform();
     }
 
     public static Performable elTarget(Target elemento) {
