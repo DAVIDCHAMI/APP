@@ -23,7 +23,8 @@ public enum ArchivosComunesIseries {
     SCIFFMRCMV_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     PCCFFMOVTFLOGTF_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     PCCFFMOVTFLOGTF_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFSALDO_DETALLE (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
+    SCIFFSALDO_DETALLE (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFLOGTF_TDCTOTALES (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCFFLOGTFcreditCards(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
 
     private static final Logger LOGGER = LogManager.getLogger();

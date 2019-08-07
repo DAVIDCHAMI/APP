@@ -12,6 +12,7 @@ public enum ArchivosLogCanalIseries {
 
     COMFFLGWWW0369 (FabricaLogCanal.elLogCanal0369(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0360 (FabricaLogCanal.elLogCanal0360(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0260 (FabricaLogCanal.elLogCanal0260(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA)
     //COMFFLGWWW0322 (FabricaLogCanal.elLogCanal0322(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     //COMFFLGWWW0325 (FabricaLogCanal.elLogCanal0325(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     //COMFFLGWWW0326 (FabricaLogCanal.elLogCanal0326(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),

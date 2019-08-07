@@ -7,6 +7,7 @@ import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimi
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarCreditoEnSCIFFSALDO;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarDebitoEnSCIFFSALDO;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarDetalleDepositos;
+import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarTarjetasCreditoConsolidados;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFPPMAE;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFTARJ;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnTCBFFMAE;
@@ -53,7 +54,8 @@ public class FabricaBaseDeDatosIseries {
     public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFdebit() { return new ConsultarDebitoEnMOVTFLOGTF(); }
 
     public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFcredit() { return new ConsultarCreditoEnMOVTFLOGTF(); }
-    
+
     public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOdetalle() {return new ConsultarDetalleDepositos();}
 
+    public static Question<Boolean> elArchivoEnIseriesPCCFFLOGTFcreditCards() {return new ConsultarTarjetasCreditoConsolidados();}
 }
