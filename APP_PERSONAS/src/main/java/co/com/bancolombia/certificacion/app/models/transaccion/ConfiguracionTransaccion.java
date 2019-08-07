@@ -36,6 +36,9 @@ public class ConfiguracionTransaccion {
         this.usuario = configuracionTransaccionBuilder.getUsuario();
     }
 
+    public ConfiguracionTransaccion() {
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -136,9 +139,13 @@ public class ConfiguracionTransaccion {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) { return true; }
+        if (this == o) {
+            return true;
+        }
 
-        if (!(o instanceof ConfiguracionTransaccion)) { return false; }
+        if (!(o instanceof ConfiguracionTransaccion)) {
+            return false;
+        }
 
         ConfiguracionTransaccion that = (ConfiguracionTransaccion) o;
 

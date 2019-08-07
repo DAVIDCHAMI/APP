@@ -1,8 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException;
+import co.com.bancolombia.certificacion.app.exceptions.ProductoConMovimientosException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException;
+import co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException;
 import co.com.bancolombia.certificacion.app.questions.consultas.VerificarMovimientos;
 import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProducto;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.RevisarProductos;
@@ -14,9 +15,10 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-import static co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException.SIN_MOVIMIENTOS;
+import static co.com.bancolombia.certificacion.app.exceptions.ProductoConMovimientosException.CON_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException.MENSAJE_NO_TIENE_UNICAMENTE_CUENTAS_DEPOSITO;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException.MENSAJE_SOLO_TIENE_UN_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException.SIN_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -68,11 +70,11 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
-    @Entonces("^El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta$")
-    public void deberiaVerLosMovimientosNingunMovimientoConLaTarjeta() {
+    @Entonces("^El deberia de ver el mensaje (.*)$")
+    public void deberiaVerLosMovimientosNingunMovimientoConLaTarjeta(String mensaje) {
         theActorInTheSpotlight().should(seeThat(
-                VerificarProducto.sinMovimientos()
-                )
+                VerificarProducto.sinMovimientos(mensaje)
+                ).orComplainWith(ProductoConMovimientosException.class, CON_MOVIMIENTOS)
         );
     }
 }

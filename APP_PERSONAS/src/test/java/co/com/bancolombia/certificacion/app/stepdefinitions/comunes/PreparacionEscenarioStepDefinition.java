@@ -28,7 +28,7 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) se autentica en la app$")
-    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String,String>> datos) {
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos) {
         theActorCalled(actor).wasAbleTo(
                 IniciarSesion.con(informacion()
                         .deTransaccion(datos)
@@ -44,12 +44,10 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
-    public void queSuboLosDatosParaLaPrueba(String actor, List<String> datosTransaccion) {
+    public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String, String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(
-                        datosTransaccion)
-                        .datosDelUsuarioCon(datosTransaccion)
-                        .construir()
+                CargarDatos.transaccionCon(informacion()
+                        .deTransaccion(datos))
         );
     }
 
@@ -71,7 +69,8 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Y("^Verifico los resultados en los archivos de iseries$")
-    public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files){
+    public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files) {
         theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
     }
 }
+
