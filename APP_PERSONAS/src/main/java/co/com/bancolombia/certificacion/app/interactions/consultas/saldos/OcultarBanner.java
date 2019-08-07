@@ -18,7 +18,6 @@ public class OcultarBanner implements Interaction {
                 WaitUntil.the(BTN_OCULTAR_BANNER, isClickable())
         );
         actor.attemptsTo(
-                Click.on(BTN_OCULTAR_BANNER),
                 Click.on(BTN_OCULTAR_BANNER)
         );
     }

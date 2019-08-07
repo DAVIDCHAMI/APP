@@ -13,6 +13,10 @@ public class Usuario {
     private String tipoDocumento;
     private String primeraPregunta;
     private String estadoClave;
+    private String correo;
+    private String nombrePersonalizado;
+    private String numeroCelular;
+    private String tipoCorreo;
     private List<Producto> productos;
 
     public Usuario(UsuarioBuilder usuarioBuilder) {
@@ -23,10 +27,46 @@ public class Usuario {
         this.tipoDocumento = usuarioBuilder.getTipoDocumento();
         this.primeraPregunta = usuarioBuilder.getPrimeraPregunta();
         this.estadoClave = usuarioBuilder.getEstadoClave();
+        this.correo = usuarioBuilder.getCorreo();
+        this.nombrePersonalizado = usuarioBuilder.getNombrePersonalizado();
+        this.numeroCelular = usuarioBuilder.getNumeroCelular();
+        this.tipoCorreo = usuarioBuilder.getTipoCorreo();
         this.productos = usuarioBuilder.getProductos();
     }
 
     public Usuario(){}
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getNombrePersonalizado() {
+        return nombrePersonalizado;
+    }
+
+    public void setNombrePersonalizado(String nombrePersonalizado) {
+        this.nombrePersonalizado = nombrePersonalizado;
+    }
+
+    public String getNumeroCelular() {
+        return numeroCelular;
+    }
+
+    public void setNumeroCelular(String numeroCelular) {
+        this.numeroCelular = numeroCelular;
+    }
+
+    public String getTipoCorreo() {
+        return tipoCorreo;
+    }
+
+    public void setTipoCorreo(String tipoCorreo) {
+        this.tipoCorreo = tipoCorreo;
+    }
 
     public String getNombreUsuario() {
         return nombreUsuario;
