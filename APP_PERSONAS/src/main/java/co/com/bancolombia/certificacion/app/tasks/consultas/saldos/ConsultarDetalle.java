@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -28,8 +29,8 @@ public class ConsultarDetalle implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
+                Esperar.unTiempo(10000),
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
