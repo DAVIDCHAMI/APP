@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.basededatos.iseries;
+package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.terminos;
 
 import co.com.bancolombia.certificacion.app.integration.fachada.Registro;
 import net.serenitybdd.screenplay.Actor;

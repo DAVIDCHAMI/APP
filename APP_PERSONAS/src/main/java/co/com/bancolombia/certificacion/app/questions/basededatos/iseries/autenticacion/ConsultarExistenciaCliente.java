@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.autenticacion;
+package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.autenticacion;
 
 import co.com.bancolombia.certificacion.app.integration.fachada.Autenticacion;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
@@ -16,9 +16,9 @@ import java.util.Map;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 
-public class ExistenciaCliente implements Question<Boolean> {
+public class ConsultarExistenciaCliente implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(ExistenciaCliente.class);
+    private static final Logger LOGGER = LogManager.getLogger(ConsultarExistenciaCliente.class);
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -27,7 +27,7 @@ public class ExistenciaCliente implements Question<Boolean> {
         registros = Autenticacion.consultaDeExistenciaDelCliente(actor);
         ConfiguracionTransaccion transaccion = actor.recall(MODELO_DATOS_TRANSACCION);
 
-        if (registros !=  null){
+        if (registros.size() > 0){
             Boolean resultadoDato = true;
             resultadoDato = validarCampo(ConstantesIseries.DOCUMENTO, registros.get(0).get("cnnoss").toString().trim(), StringManager.formatoDocumento(transaccion.getUsuario().getNumeroDocumento()),resultadoDato);
             resultadoDato = validarCampo(ConstantesIseries.TIPODOCUMENTO, registros.get(0).get("cncdti").toString().trim(), transaccion.getUsuario().getTipoDocumento(),resultadoDato);

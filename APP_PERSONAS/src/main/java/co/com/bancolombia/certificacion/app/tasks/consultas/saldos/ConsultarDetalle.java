@@ -28,12 +28,14 @@ public class ConsultarDetalle implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );
+
         actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)

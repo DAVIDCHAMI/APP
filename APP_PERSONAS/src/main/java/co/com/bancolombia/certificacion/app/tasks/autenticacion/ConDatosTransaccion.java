@@ -1,8 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.exceptions.autenticacion.InicioError;
-import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
-import co.com.bancolombia.certificacion.app.integration.fachada.LogCanal;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import net.serenitybdd.screenplay.Actor;
@@ -14,10 +11,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto.NO_FUNCIONA;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConDatosTransaccion extends Autenticacion {
