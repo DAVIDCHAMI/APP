@@ -7,8 +7,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
+import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.detalleproductos.DetalleProductosPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.contarCantidadCaracter;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -23,6 +30,7 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        List<Producto> listaProductos = new ArrayList<>();
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
         );
@@ -33,12 +41,25 @@ public class RevisarProductos implements Task {
         String[] numeroCuenta = producto.getNumero().split(";");
         for(int iterador = 0; iterador <= cadena.length; iterador++){
             if(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]).resolveFor(actor).isVisible()) {
+                listaProductos.add(elProducto()
+                        .conNumero(numeroCuenta[iterador])
+                        .conTipoCuenta(tipoCuenta[iterador])
+                        .conSaldo(
+                                saldo()
+                                        .conSaldoDisponible(LBL_SALDO_DISPONIBLE_DETALLE.resolveFor(actor).getText())
+                                        .build())
+                        .build());
                 tieneProducto = true;
             } else {
                 tieneProducto = false;
             }
         }
+        actor.remember(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS, listaProductos);
         actor.remember(TIENE_PRODUCTOS, tieneProducto);
+        List<Producto> listaProductosDos = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
+        for(int i = 0; i <= listaProductosDos.size(); i++){
+            System.out.println(listaProductosDos.get(0).getNumero() +"---"+listaProductosDos.get(0).getTipo()+"---"+listaProductosDos.get(0).getSaldo().getSaldoDisponible());
+        }
     }
 
     public static Performable enSaldosMovimientos(ProductoBuilder productoBuilder, String opcionCategoria) {
