@@ -66,5 +66,10 @@ public class PreparacionEscenarioStepDefinition {
                 CerrarSesion.exitosamente()
         );
     }
+
+    @Y("^Verifico los resultados en los archivos de iseries$")
+    public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files){
+        theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
+    }
 }
 
