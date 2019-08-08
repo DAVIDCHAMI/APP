@@ -1,19 +1,16 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
 import co.com.bancolombia.certificacion.app.models.builders.ProgramarFacturasBuilder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.OPT_SUB_MENU;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarYpagarFacturasPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum.PROGRAMAR_PAGAR_FACTURAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class ProgramarFactura implements Task {
     private ProgramarFacturas programarFacturas;
@@ -28,35 +25,25 @@ public class ProgramarFactura implements Task {
         String fechaInicio = fecha[0];
         String fechaFin = fecha[1];
         actor.attemptsTo(
-                WaitUntil.the(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel()), isPresent()),
-                Click.on(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel())),
-                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_FACTURA.of(
-                        programarFacturas.getValorFactura(),
-                        programarFacturas.getFechaFactura(),
-                        programarFacturas.getDescripcionFactura())),
-                Click.on(SELECCIONAR_FACTURA.of(
-                        programarFacturas.getValorFactura(),
-                        programarFacturas.getFechaFactura(),
-                        programarFacturas.getDescripcionFactura())),
-                Click.on(SELECCIONAR_PROGRAMAR),
-                Click.on(SELECCIONAR_MIS_PRODUCTOS),
-                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_CUENTA.of(programarFacturas.getProducto().
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getDescripcionFactura()),
+                Click.on(OPT_MIS_PRODUCTOS),
+                RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().
                         getTipo(), programarFacturas.getProducto().getNumero())),
-                Click.on(SELECCIONAR_CUENTA.of(programarFacturas.getProducto().
+                Click.on(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().
                         getTipo(), programarFacturas.getProducto().getNumero())),
-                Click.on(CHECK_FECHA_VENCIMIENTO.of(programarFacturas.getPeriodicidad())),
-                Click.on(SELECCIONAR_NUMERO_INTENTOS),
-                Click.on(SELECCIONAR_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento())),
-                RealizarScroll.hastaPosicionDeTarget(SELECCIONAR_FECHA_INICIO_FIN),
-                RealizarScroll.adicional(SELECCIONAR_FECHA_INICIO_FIN),
-                Click.on(SELECCIONAR_FECHA_INICIO_FIN),
-                Click.on(SELECCIONAR_RANGO_FECHA.of(fechaInicio)),
-                Click.on(SELECCIONAR_RANGO_FECHA.of(fechaFin)),
+                Click.on(CHK_FECHA_VENCIMIENTO.of(programarFacturas.getPeriodicidad())),
+                Click.on(LST_NUMERO_INTENTOS),
+                Click.on(LST_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento())),
+                RealizarScroll.hastaPosicionDeTarget(TXT_FECHA_INICIO_FIN),
+                RealizarScroll.adicional(TXT_FECHA_INICIO_FIN),
+                Click.on(TXT_FECHA_INICIO_FIN),
+                Click.on(LST_RANGO_FECHA.of(fechaInicio)),
+                Click.on(LST_RANGO_FECHA.of(fechaFin)),
                 Click.on(BTN_SELECCIONAR),
                 Click.on(BTN_SIGUIENTE),
-                RealizarScroll.hastaPosicionDeTarget(CHECK_ACEPTO_TERMINOS),
-                RealizarScroll.adicional(CHECK_ACEPTO_TERMINOS),
-                Click.on(CHECK_ACEPTO_TERMINOS),
+                RealizarScroll.hastaPosicionDeTarget(CHK_ACEPTO_TERMINOS),
+                RealizarScroll.adicional(CHK_ACEPTO_TERMINOS),
+                Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_PROGRAMAR)
         );
     }

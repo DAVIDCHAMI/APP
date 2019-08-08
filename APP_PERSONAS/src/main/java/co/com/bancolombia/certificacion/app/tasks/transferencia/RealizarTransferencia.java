@@ -24,7 +24,6 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 public class RealizarTransferencia implements Task {
     private Transferencia transferencia;
 
-
     public RealizarTransferencia(Transferencia transferencia) {
         this.transferencia = transferencia;
     }
@@ -36,22 +35,21 @@ public class RealizarTransferencia implements Task {
                 Click.on(OPT_SUB_MENU.of(TRANSFERIR_DINERO.getSubMenu())),
                 RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero())),
                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
-                Click.on(VALOR_TRANSFERENCIA),
-                Click.on(VALOR_TRANSFERENCIA),
+                Click.on(TXT_VALOR_TRANSFERENCIA),
+                Click.on(TXT_VALOR_TRANSFERENCIA),
                 Escribir.enCampoTexto(transferencia.getMonto()),
-                Click.on(BTN_SIGUIENTE));
-        actor.attemptsTo(
+                Click.on(BTN_SIGUIENTE),
                 Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)).
                         andIfSo(
-                                Click.on(TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)),
-                                Click.on(NUMERO_CUENTA_DESTINO),
+                                Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)),
+                                Click.on(TXT_NUMERO_CUENTA_DESTINO),
                                 Escribir.enCampoTexto(transferencia.getProductoDestino().getNumero()),
-                                RealizarScroll.hastaPosicionDeTarget(CHECK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
-                                Click.on(CHECK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
+                                RealizarScroll.hastaPosicionDeTarget(CHK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
+                                Click.on(CHK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
                                 Click.on(BTN_SIGUIENTE)
                         ), Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).
                         andIfSo(
-                                Click.on(TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
+                                Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
                                 RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero())),
                                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
                         ),
