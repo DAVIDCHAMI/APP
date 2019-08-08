@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locato
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
-public class ProgramarYpagarFacturasLocator {
+public class ProgramarPagarFacturasLocator {
     public static final Locator OPT_FACTURA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/preceding-sibling::android.view.View[@text='{1}']/..//android.view.View[contains(@text,'{2}')]/../preceding-sibling::android.view.View[1]");
     public static final Locator OPT_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Programar']");
     public static final Locator OPT_MIS_PRODUCTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Mis productos']");
@@ -17,7 +17,7 @@ public class ProgramarYpagarFacturasLocator {
     public static final Locator LST_INTENTOS_PAGO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Selecciona los intentos del pago')]/..//android.view.View[@text='{0}']");
     public static final Locator CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//android.widget.CheckBox[@resource-id='Checkbox1']");
 
-    private ProgramarYpagarFacturasLocator(){
+    private ProgramarPagarFacturasLocator(){
         throw new IllegalStateException(CLASE_LOCATOR);
     }
   }

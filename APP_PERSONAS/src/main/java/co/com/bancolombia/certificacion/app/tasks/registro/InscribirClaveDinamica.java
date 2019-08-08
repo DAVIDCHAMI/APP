@@ -31,13 +31,13 @@ public class InscribirClaveDinamica implements Task {
                 Click.on(BTN_SIGUIENTE_CLAVE),
                 Click.on(TXT_CORREO),
                 Escribir.enCampoTexto(usuario.getCorreo()),
-                RealizarScroll.hastaPosicionDeTarget(CHECK_TIPO_CORREO.of(usuario.getTipoCorreo())),
-                Click.on(CHECK_TIPO_CORREO.of(usuario.getTipoCorreo())),
+                RealizarScroll.hastaPosicionDeTarget(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
+                Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
                 Click.on(BTN_SIGUIENTE_CLAVE),
                 Click.on(TXT_NUMERO_CELULAR),
                 Escribir.enCampoTexto(usuario.getNumeroCelular()),
-                RealizarScroll.hastaPosicionDeTarget(CHECK_ACEPTO_TERMINOS),
-                Click.on(CHECK_ACEPTO_TERMINOS),
+                RealizarScroll.hastaPosicionDeTarget(CHK_ACEPTO_TERMINOS),
+                Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_INSCRIBIR_CLAVE)
         );
         actor.remember(NOMBRE_PERSONALIZADO_CLAVE_DINAMICA,usuario.getNombrePersonalizado());

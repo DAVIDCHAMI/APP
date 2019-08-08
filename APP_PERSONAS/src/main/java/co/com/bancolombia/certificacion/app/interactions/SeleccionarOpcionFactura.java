@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.OPT_SUB_MENU;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarYpagarFacturasPage.OPT_FACTURA;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.OPT_FACTURA;
 import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum.PROGRAMAR_PAGAR_FACTURAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;

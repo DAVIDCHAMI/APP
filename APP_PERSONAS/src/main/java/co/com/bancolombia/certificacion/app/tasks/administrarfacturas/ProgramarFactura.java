@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarYpagarFacturasPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ProgramarFactura implements Task {
