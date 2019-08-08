@@ -14,7 +14,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class SeleccionarOpcion implements Task {
-
     private TipoTransaccionEnum tipoTransaccion;
 
     public SeleccionarOpcion(String opcionMenu) {

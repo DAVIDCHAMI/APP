@@ -31,7 +31,7 @@ allprojects {
 }
 
 ext{
-    serenityVersion = '2.0.54'
+    serenityVersion = '2.0.52'
     serenityCucumberVersion = '1.9.39'
 }
 

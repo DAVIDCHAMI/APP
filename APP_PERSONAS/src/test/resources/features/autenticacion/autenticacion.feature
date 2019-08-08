@@ -5,6 +5,7 @@ Característica: Autenticación app Bancolombia
   Quiero ingresar usuario y contraseña
   Para autenticarme en la aplicación
 
+  @Manual
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
