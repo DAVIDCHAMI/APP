@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.tasks.transferencia;
 
 import co.com.bancolombia.certificacion.app.interactions.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
@@ -34,7 +34,7 @@ public class RealizarTransferencia implements Task {
         actor.attemptsTo(
                 WaitUntil.the(OPT_SUB_MENU.of(TRANSFERIR_DINERO.getSubMenu()), isPresent()),
                 Click.on(OPT_SUB_MENU.of(TRANSFERIR_DINERO.getSubMenu())),
-                ScrollHasta.elTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero())),
+                RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero())),
                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
                 Click.on(VALOR_TRANSFERENCIA),
                 Click.on(VALOR_TRANSFERENCIA),
@@ -46,13 +46,13 @@ public class RealizarTransferencia implements Task {
                                 Click.on(TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)),
                                 Click.on(NUMERO_CUENTA_DESTINO),
                                 Escribir.enCampoTexto(transferencia.getProductoDestino().getNumero()),
-                                ScrollHasta.elTarget(CHECK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
+                                RealizarScroll.hastaPosicionDeTarget(CHECK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
                                 Click.on(CHECK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
                                 Click.on(BTN_SIGUIENTE)
                         ), Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).
                         andIfSo(
                                 Click.on(TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
-                                ScrollHasta.elTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero())),
+                                RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero())),
                                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
                         ),
 
@@ -62,4 +62,5 @@ public class RealizarTransferencia implements Task {
 
     public static RealizarTransferencia conInfo(TransferenciaBuilder transferencia) {
         return instrumented(RealizarTransferencia.class, transferencia.build());
-    }}
+    }
+}
