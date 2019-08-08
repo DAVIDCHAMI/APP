@@ -6,8 +6,10 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class AyudaLocator {
-    public static final Locator LBL_AYUDA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Ayuda')]");
+    public static final Locator LNK_AYUDA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Ayuda')]");
     public static final Locator BTN_OPCION_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]");
+    public static final Locator LBL_MENSAJE_PANTALLA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]");
+    public static final Locator LBL_LLAMANOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Llámanos')]");
 
     public AyudaLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
