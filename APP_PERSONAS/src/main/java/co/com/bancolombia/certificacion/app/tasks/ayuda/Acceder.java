@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.ayuda;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -20,7 +20,7 @@ public class Acceder implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(LNK_AYUDA),
-                ScrollHasta.elTarget(BTN_OPCION.of(opcionAyuda)),
+                RealizarScroll.hastaPosicionDeTarget(BTN_OPCION.of(opcionAyuda)),
                 Click.on(BTN_OPCION.of(opcionAyuda))
         );
     }

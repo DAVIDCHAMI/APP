@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -30,7 +30,7 @@ public class SeleccionarCategoria implements Interaction {
             actor.attemptsTo(
                     WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
-                    ScrollHasta.elTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
+                    RealizarScroll.hastaPosicionDeTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
             );
         }

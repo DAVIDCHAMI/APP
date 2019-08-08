@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.utilidades.string;
+package co.com.bancolombia.certificacion.app.utilidades.String;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import java.text.DecimalFormat;
