@@ -18,28 +18,28 @@ public class GenerarCodigoQrStepDefinition {
     @Cuando("^quiere generar un codigo QR sin valor$")
     public void generarCodigoQrSinValor(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigoQr.conInicioSesion(con().conTipoCuenta(datos).conNumeroCuenta(datos).conDescripcion(datos))
+                GenerarCodigoQr.conInicioSesion(con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conDescripcion(datos))
         );
     }
 
     @Cuando("^quiere generar un codigo QR con valor$")
-    public void generarCodigooQrConValor(List<Map<String, String>> datos) {
+    public void generarCodigoQrConValor(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigoQr.conInicioSesion(con().conTipoCuenta(datos).conNumeroCuenta(datos).conMonto(datos).conDescripcion(datos))
+                GenerarCodigoQr.conInicioSesion(con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conMonto(datos).conDescripcion(datos))
         );
     }
 
     @Cuando("^quiere generar un codigo QR con valor sin iniciar sesión con nombre (.*)$")
-    public void generarCodigooQrSinIniciarSesionConValor(String nombrePersonalizado, List<Map<String, String>> datos) {
+    public void generarCodigoQrSinIniciarSesionConValor(String nombrePersonalizado, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuenta(datos).conNumeroCuenta(datos).conMonto(datos).conDescripcion(datos))
+                GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conMonto(datos).conDescripcion(datos))
         );
     }
 
     @Cuando("^quiere generar un codigo QR sin valor sin iniciar sesión con nombre (.*)$")
-    public void generarCodigooQrSinIniciarSesionSinValor(String nombrePersonalizado, List<Map<String, String>> datos) {
+    public void generarCodigoQrSinIniciarSesionSinValor(String nombrePersonalizado, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuenta(datos).conNumeroCuenta(datos).conDescripcion(datos))
+                GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conDescripcion(datos))
         );
     }
 

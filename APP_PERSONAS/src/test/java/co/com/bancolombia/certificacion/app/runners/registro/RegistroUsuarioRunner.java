@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/registro/registro_usuario.feature"},
+        features = {"src/test/resources/features/registro/registrar_usuario.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
 public class RegistroUsuarioRunner {
@@ -25,6 +25,6 @@ public class RegistroUsuarioRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/registro/registro_usuario.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/registro/registrar_usuario.feature");
     }
 }

@@ -1,31 +1,28 @@
 package co.com.bancolombia.certificacion.app.tasks.cargadatos;
 
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadConfiguracionTransaccionActual;
-import co.com.bancolombia.certificacion.app.models.entitidades.EntidadUsuarioActual;
+import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
-import java.util.List;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class CargarDatos implements Task {
-    private  List<String> datosTransaccion;
-    private  List<String> datosUsuario;
-    private List<String> datoPago;
 
-    public CargarDatos(CargarDatosBuilder datosTransaccionBuilder) {
-        this.datosTransaccion= datosTransaccionBuilder.getDatosTransaccion();
-        this.datosUsuario = datosTransaccionBuilder.getDatosUsuario();
-        this.datoPago = datosTransaccionBuilder.getDatoPago();
-    }
+    private ConfiguracionTransaccion configuracionTransaccion;
 
-    public static CargarDatosBuilder transaccionCon(List<String> data) {
-        return new CargarDatosBuilder(data);
+    public CargarDatos(ConfiguracionTransaccion configuracionTransaccion){
+        this.configuracionTransaccion = configuracionTransaccion;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        EntidadConfiguracionTransaccionActual.setConfiguracionTransaccion(datosTransaccion);
-        EntidadUsuarioActual.setUsuario(datosUsuario);
+        actor.remember(MODELO_DATOS_TRANSACCION, configuracionTransaccion);
+    }
+
+    public static CargarDatos transaccionCon(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
+        return instrumented(CargarDatos.class, configuracionTransaccionBuilder.build());
     }
 }
 
