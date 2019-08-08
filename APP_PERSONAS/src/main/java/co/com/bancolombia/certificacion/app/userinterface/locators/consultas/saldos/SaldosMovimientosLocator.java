@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
-    public static final Locator CUENTA_ESPECIFICA_PRODUCTO_LOCATOR = locator()
+    public static final Locator OPT_CUENTA_PRODUCTO_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../..//android.view.View[contains(@text, '{1}')]")
             .withIos("xpath$a");
     public static final Locator OPCION_CATEGORIA_PRODUCTOS_LOCATOR = locator()
