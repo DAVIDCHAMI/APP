@@ -3,16 +3,13 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
-import co.com.bancolombia.certificacion.app.models.builders.ProgramarFacturasBuilder;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class ProgramarFactura implements Task {
+public class ProgramarFactura extends PagarProgramarFactura {
     private ProgramarFacturas programarFacturas;
 
     public ProgramarFactura(ProgramarFacturas programarFacturas) {
@@ -46,9 +43,5 @@ public class ProgramarFactura implements Task {
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_PROGRAMAR)
         );
-    }
-
-    public static ProgramarFactura inscritas(ProgramarFacturasBuilder programarFacturasBuilder) {
-        return instrumented(ProgramarFactura.class, programarFacturasBuilder.build());
     }
 }

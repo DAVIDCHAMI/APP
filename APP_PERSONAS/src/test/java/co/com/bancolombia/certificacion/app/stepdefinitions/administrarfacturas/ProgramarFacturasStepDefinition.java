@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.ProgramarFactura;
 import cucumber.api.java.es.Cuando;
 
@@ -13,7 +14,7 @@ public class ProgramarFacturasStepDefinition {
 
     @Cuando("el actor programa sus facturas inscritas con información$")
     public void programaSusFacturasInscritasConInformacion(List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(ProgramarFactura.inscritas(
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionProgramar(
                 programarFactura()
                         .conValor(datos)
                         .conFechaFactura(datos)

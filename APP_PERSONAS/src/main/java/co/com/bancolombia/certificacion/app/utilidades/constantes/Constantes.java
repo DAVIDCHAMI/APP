@@ -16,6 +16,9 @@ public class Constantes {
     public static final String TRANSFERIR_PRODUCTOS_NO_INSCRITOS = "Productos no inscritos";
     public static final String TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS = "Productos propios e inscritos";
     public static final String TRANSFERIR_PRODUCTOS_OTROS_BANCOS = "Productos inscritos de otros";
+    public static final String PRODUCTO_ORIGEN = "Producto origen";
+    public static final String VALOR_PAGAR = "Valor a pagar";
+    public static final String PERIODICIDAD = "Periodicidad";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

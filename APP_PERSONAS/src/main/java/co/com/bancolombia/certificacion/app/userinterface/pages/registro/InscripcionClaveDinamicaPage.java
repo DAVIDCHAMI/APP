@@ -23,4 +23,4 @@ public class InscripcionClaveDinamicaPage {
 
     private InscripcionClaveDinamicaPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
-    }}
+    }   }
