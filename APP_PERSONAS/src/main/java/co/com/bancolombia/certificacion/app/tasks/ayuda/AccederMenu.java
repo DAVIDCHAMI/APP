@@ -9,10 +9,10 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.ayuda.Ayu
 import static co.com.bancolombia.certificacion.app.userinterface.pages.ayuda.AyudaPage.LNK_AYUDA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Acceder implements Task {
+public class AccederMenu implements Task {
     private String opcionAyuda;
 
-    public Acceder(String opcionAyuda) {
+    public AccederMenu(String opcionAyuda) {
         this.opcionAyuda = opcionAyuda;
     }
 
@@ -25,7 +25,7 @@ public class Acceder implements Task {
         );
     }
 
-    public static Acceder menu(String opcionAyuda) {
-        return instrumented(Acceder.class, opcionAyuda);
+    public static AccederMenu deAyuda(String opcionAyuda) {
+        return instrumented(AccederMenu.class, opcionAyuda);
     }
 }
