@@ -16,6 +16,7 @@ public class Constantes {
     public static final String TRANSFERIR_PRODUCTOS_NO_INSCRITOS = "Productos no inscritos";
     public static final String TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS = "Productos propios e inscritos";
     public static final String TRANSFERIR_PRODUCTOS_OTROS_BANCOS = "Productos inscritos de otros";
+    public static final int NUMERO_PANTALLAS_ONBOARDING = 5;
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
