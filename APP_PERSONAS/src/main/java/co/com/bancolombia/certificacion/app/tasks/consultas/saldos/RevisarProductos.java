@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
@@ -14,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.detalleproductos.DetalleProductosPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.contarCantidadCaracter;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
@@ -30,10 +32,13 @@ public class RevisarProductos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        List<Producto> listaProductos = new ArrayList<>();
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
         );
+        actor.attemptsTo(
+                RealizarScroll.adicional(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(opcionCategoria))
+        );
+        List<Producto> listaProductos = new ArrayList<>();
         int cantCaracteresTipo = contarCantidadCaracter(producto.getTipo(), ';');
         int[] cadena = new int[cantCaracteresTipo];
         boolean tieneProducto = false;
@@ -44,10 +49,6 @@ public class RevisarProductos implements Task {
                 listaProductos.add(elProducto()
                         .conNumero(numeroCuenta[iterador])
                         .conTipoCuenta(tipoCuenta[iterador])
-                        .conSaldo(
-                                saldo()
-                                        .conSaldoDisponible(LBL_SALDO_DISPONIBLE_DETALLE.resolveFor(actor).getText())
-                                        .build())
                         .build());
                 tieneProducto = true;
             } else {
@@ -56,10 +57,6 @@ public class RevisarProductos implements Task {
         }
         actor.remember(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS, listaProductos);
         actor.remember(TIENE_PRODUCTOS, tieneProducto);
-        List<Producto> listaProductosDos = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
-        for(int i = 0; i <= listaProductosDos.size(); i++){
-            System.out.println(listaProductosDos.get(0).getNumero() +"---"+listaProductosDos.get(0).getTipo()+"---"+listaProductosDos.get(0).getSaldo().getSaldoDisponible());
-        }
     }
 
     public static Performable enSaldosMovimientos(ProductoBuilder productoBuilder, String opcionCategoria) {

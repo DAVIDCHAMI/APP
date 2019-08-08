@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ProgramarPagarFacturasLocator.*;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.OPT_CUENTA_PRODUCTO_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.CHK_TIPO_LOCATOR;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.CHK_TIPO_CORREO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
@@ -16,7 +16,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target TXT_FECHA_INICIO_FIN = Target.the("Seleccionar fecha inicio y fecha fin").located(theElementBy(TXT_FECHA_INICIO_FIN_LOCATOR));
     public static final Target BTN_PROGRAMAR= Target.the("Botón programar").located(theElementBy(BTN_PROGRAMAR_LOCATOR));
     public static final Target OPT_CUENTA_PRODUCTO = Target.the("Seleccionar la cuenta a programar").locatedBy(dynamicElement(OPT_CUENTA_PRODUCTO_LOCATOR));
-    public static final Target CHK_FECHA_VENCIMIENTO = Target.the("Seleccionar la opción de fecha vencimiento").locatedBy(dynamicElement(CHK_TIPO_LOCATOR));
+    public static final Target CHK_FECHA_VENCIMIENTO = Target.the("Seleccionar la opción de fecha vencimiento").locatedBy(dynamicElement(CHK_TIPO_CORREO_LOCATOR));
     public static final Target LST_INTENTOS_PAGO = Target.the("Seleccionar el número de intentos de pago").locatedBy(dynamicElement(LST_INTENTOS_PAGO_LOCATOR));
     public static final Target CHK_ACEPTO_TERMINOS = Target.the("Click en el check Acepto terminos y condiciones").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
     public static final Target LST_RANGO_FECHA = Target.the("Seleccionar rago de fecha inicio y fecha fin").locatedBy(dynamicElement(LST_RANGO_FECHA_LOCATOR));
