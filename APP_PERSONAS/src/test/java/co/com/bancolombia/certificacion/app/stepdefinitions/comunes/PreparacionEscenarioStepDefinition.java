@@ -17,7 +17,8 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
-import static net.serenitybdd.screenplay.actors.OnStage.*;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PreparacionEscenarioStepDefinition {
 
@@ -45,8 +46,7 @@ public class PreparacionEscenarioStepDefinition {
     @Dado("^que el (.*) carga los datos para la prueba$")
     public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String,String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(informacion()
-                        .deTransaccion(datos))
+                CargarDatos.transaccionCon(informacion().deTransaccion(datos))
         );
     }
 

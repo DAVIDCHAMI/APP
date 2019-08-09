@@ -2,9 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
-import co.com.bancolombia.certificacion.app.tasks.basededatos.comunes.ConsultarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -30,10 +28,5 @@ public class ConsultaSaldosStepDefinition {
     public void verificoElResultadoDeLaConsultaDelSaldo() {
         theActorInTheSpotlight().should(seeThat(VerificarProductosElegidos.pertenecenAlUsuario())
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
-    }
-
-    @Entonces("^Verifico el resultado de los siguientes archivos de iSeries$")
-    public void verificoElResultadoDeLosSiguientesArchivosDeISeries(List<String> archivosBack) {
-        theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(archivosBack));
     }
 }

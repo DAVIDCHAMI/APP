@@ -11,9 +11,9 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class SinInicioSesion extends GenerarQR {

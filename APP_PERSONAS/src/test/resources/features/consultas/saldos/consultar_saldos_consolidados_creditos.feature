@@ -19,4 +19,4 @@ Característica: Consulta de saldos de creditos app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                | numeroCuenta            |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Creditos@1
-      | 1  | 1037655531      | 1             | usercdt66 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Prestamo Personal Ta;Prestamo Personal Ta | 29281005510;29281023970 |
+   |1   |1037655531   |1   |usercdt66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Prestamo Personal Ta;Prestamo Personal Ta   |29281005510;29281023970|

@@ -23,7 +23,6 @@ public class CargarDatos implements Task {
 
     public static CargarDatos transaccionCon(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
         return instrumented(CargarDatos.class, configuracionTransaccionBuilder.build());
-
     }
 }
 
