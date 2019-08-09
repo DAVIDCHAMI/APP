@@ -11,7 +11,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class SaldosMovimientosPage {
-    public static final Target CUENTA_ESPECIFICA_PRODUCTO = Target.the("Producto especifico en saldos y movimientos").locatedBy(dynamicElement(CUENTA_ESPECIFICA_PRODUCTO_LOCATOR));
+    public static final Target CUENTA_ESPECIFICA_PRODUCTO = Target.the("Producto especifico en saldos y movimientos").locatedBy(dynamicElement(OPT_CUENTA_PRODUCTO_LOCATOR));
     public static final Target OPCION_CATEGORIA_PRODUCTOS = Target.the("Categorias productos en saldos y movimientos").locatedBy(dynamicElement(OPCION_CATEGORIA_PRODUCTOS_LOCATOR));
     public static final Target OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS = Target.the("Categoria especifica en saldos y movimientos").locatedBy(dynamicElement(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR));
     public static final Target LBL_SIN_MOVIMIENTOS = Target.the("label cuenta sin movimientos").locatedBy(dynamicElement(LBL_SIN_MOVIMIENTOS_LOCATOR));

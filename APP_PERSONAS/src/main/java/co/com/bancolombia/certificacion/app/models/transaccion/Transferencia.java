@@ -5,7 +5,6 @@ import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Transferencia {
-
     private Producto productoOrigen;
     private Producto productoDestino;
     private String monto;
@@ -33,8 +32,10 @@ public class Transferencia {
         return productoOrigen;
     }
 
-    public void setProductoOrigen(Producto originProduct) { this.productoOrigen = originProduct; }
-    
+    public void setProductoOrigen(Producto originProduct) {
+        this.productoOrigen = originProduct;
+    }
+
     public Producto getProductoDestino() {
         return productoDestino;
     }

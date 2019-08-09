@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.tarjetacredito;
 
 import co.com.bancolombia.certificacion.app.interactions.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import net.serenitybdd.screenplay.Actor;
@@ -29,7 +29,7 @@ public class NoPropia extends PagarTC {
                 Click.on(LBL_TIPO_PAGO.of(PAGAR_TARJETA_CREDITO_NO_PROPIA)),
                 Escribir.enCampoTexto(tarjetaCredito.getNumero()),
                 Click.on(LNK_SIGUIENTE),
-                ScrollHasta.elTarget(LBL_VERIFICACION.of(tarjetaCredito.getTipoPago())),
+                RealizarScroll.hastaPosicionDeTarget(LBL_VERIFICACION.of(tarjetaCredito.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
                         Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda())),
@@ -38,10 +38,10 @@ public class NoPropia extends PagarTC {
                         Click.on(LNK_SIGUIENTE)
                         ),
 
-                ScrollHasta.elTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
+                RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PAGAR),
-                ScrollHasta.elTarget(LBL_VERIFICACION.of(PRODUCTO_ORIGEN)),
+                RealizarScroll.hastaPosicionDeTarget(LBL_VERIFICACION.of(PRODUCTO_ORIGEN)),
                 Click.on(LBL_VERIFICACION.of(PRODUCTO_ORIGEN))
         );
         actor.remember(MODELO_DETALLE_PRODUCTO, productoDebitar);

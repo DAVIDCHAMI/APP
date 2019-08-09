@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
 import co.com.bancolombia.certificacion.app.interactions.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.Saltar;
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import io.appium.java_client.AppiumDriver;
@@ -12,10 +12,10 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class ConInicioSesion extends GenerarQR {
@@ -35,7 +35,7 @@ public class ConInicioSesion extends GenerarQR {
         );
         if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
             actor.attemptsTo(
-                    ScrollHasta.elTarget(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
+                    RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
                     Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
             );
         }
