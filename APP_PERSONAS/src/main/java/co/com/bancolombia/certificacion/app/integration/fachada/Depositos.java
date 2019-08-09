@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
@@ -41,6 +42,14 @@ public class Depositos {
         dataForQuery.put(CUENTA, depositos.getNumero().replace("-",""));
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
+        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+    }
+
+    public static List<Map<String, Object>> saldoDepositosConsolidado(Actor actor){
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put("DOCUMENTO", StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()));
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultaSaldoPertenenciaCuentaDeposito");
         return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
     }
 

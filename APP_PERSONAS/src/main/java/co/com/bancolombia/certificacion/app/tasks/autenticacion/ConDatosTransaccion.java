@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import net.serenitybdd.screenplay.Actor;
@@ -29,7 +30,7 @@ public class ConDatosTransaccion extends Autenticacion {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
 
         actor.attemptsTo(
-                Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
+                //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
                 Click.on(BTN_INGRESAR),
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
@@ -38,6 +39,7 @@ public class ConDatosTransaccion extends Autenticacion {
                 Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
-        ));
+        //)
+    );
     }
 }

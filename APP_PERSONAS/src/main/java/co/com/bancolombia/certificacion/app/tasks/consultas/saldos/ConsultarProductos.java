@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
@@ -25,7 +24,6 @@ public class ConsultarProductos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
                 ScrollHasta.elTarget(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta, numeroCuenta)),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
         );

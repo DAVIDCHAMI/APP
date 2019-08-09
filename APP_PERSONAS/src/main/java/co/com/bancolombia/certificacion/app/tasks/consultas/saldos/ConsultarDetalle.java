@@ -30,7 +30,6 @@ public class ConsultarDetalle implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),

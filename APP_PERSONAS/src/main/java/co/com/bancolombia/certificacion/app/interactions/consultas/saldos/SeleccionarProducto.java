@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
@@ -25,7 +24,6 @@ public class SeleccionarProducto implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isVisible()),
                 ScrollHasta.elTarget(target.of(tipoCuenta, numeroCuenta)),
                 Click.on(target.of(tipoCuenta, numeroCuenta))

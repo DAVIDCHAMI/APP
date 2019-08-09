@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
@@ -16,11 +15,9 @@ public class OcultarBanner implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
                 WaitUntil.the(BTN_OCULTAR_BANNER, isClickable())
         );
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
                 Click.on(BTN_OCULTAR_BANNER)
         );
     }

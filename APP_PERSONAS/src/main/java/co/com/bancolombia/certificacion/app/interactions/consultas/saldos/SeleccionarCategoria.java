@@ -8,7 +8,8 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_OCULTAR_BANNER;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
@@ -31,7 +32,6 @@ public class SeleccionarCategoria implements Interaction {
 
         if (!CUENTAS.equals(categoria)) {
             actor.attemptsTo(
-                    Esperar.unTiempo(10000),
                     WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
                     ScrollHasta.elTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),

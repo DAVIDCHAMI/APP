@@ -31,8 +31,4 @@ public class ConsultaSaldosStepDefinition {
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
     }
 
-    @Entonces("^Verifico el resultado de los siguientes archivos de iSeries$")
-    public void verificoElResultadoDeLosSiguientesArchivosDeISeries(List<String> archivosBack) {
-        throw new PendingException();
-    }
 }
