@@ -44,7 +44,6 @@ public class conOpcionEditarProgramacion extends PagarProgramarFactura {
                         Click.on(OPT_CUENTA_PRODUCTO),
                         Click.on(LNK_SIGUIENTE),
                         Click.on(BTN_SIGUIENTE),
-                        RealizarScroll.hastaPosicionDeTarget(BTN_MODIFICAR),
                         Clear.field(TXT_VALOR),
                         Click.on(TXT_VALOR),
                         Escribir.enCampoTexto(programarFacturas.getValorFactura()),
@@ -53,6 +52,7 @@ public class conOpcionEditarProgramacion extends PagarProgramarFactura {
                 Check.whether(PERIODICIDAD.equals(opcion)).andIfSo(
                         Click.on(LNK_CAMBIAR.of(opcion)),
                         Click.on(IMG_PERIODICIDAD),
+                        Click.on(LST_FRECUENCIA_PERIODICAD.of(programarFacturas.getFrecuenciaPago())),
                         Click.on(LST_FRECUENCIA_PERIODICAD),
                         Click.on(TXT_FECHA_INICIO_FIN),
                         Click.on(LST_RANGO_FECHA.of(fechaInicio)),

@@ -16,6 +16,7 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
     private String periodicidad;
     private String numeroIntento;
     private String fechaInicioFin;
+    private String frecuenciaPago;
     private Producto producto = new Producto();
 
     public ProgramarFacturasBuilder() {
@@ -25,6 +26,7 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
         this.periodicidad = "";
         this.numeroIntento = "";
         this.fechaInicioFin = "";
+        this.frecuenciaPago="";
     }
 
     public static ProgramarFacturasBuilder programarFactura() {
@@ -61,11 +63,20 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
         return this;
     }
 
+    public ProgramarFacturasBuilder conFrecuenciaPago(List<Map<String, String>> datos) {
+        this.frecuenciaPago = datos.get(0).get("frecuenciaPago");
+        return this;
+    }
+
     public ProgramarFacturasBuilder conProducto(List<Map<String, String>> datos) {
         this.producto = elProducto().conNumero(datos.get(0).get("numeroCuenta"))
                 .conTipoCuenta(datos.get(0).get("tipoCuenta"))
                 .build();
         return this;
+    }
+
+    public String getFrecuenciaPago() {
+        return frecuenciaPago;
     }
 
     public String getValorFactura() {

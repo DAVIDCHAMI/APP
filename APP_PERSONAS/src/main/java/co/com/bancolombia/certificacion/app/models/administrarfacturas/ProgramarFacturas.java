@@ -10,6 +10,7 @@ public class ProgramarFacturas {
     private String periodicidad;
     private String numeroIntento;
     private String fechaInicioFin;
+    private String frecuenciaPago;
     private Producto producto;
 
     public ProgramarFacturas(ProgramarFacturasBuilder programarFacturasBuilder) {
@@ -19,7 +20,16 @@ public class ProgramarFacturas {
         this.periodicidad = programarFacturasBuilder.getPeriodicidad();
         this.numeroIntento = programarFacturasBuilder.getNumeroIntento();
         this.fechaInicioFin = programarFacturasBuilder.getFechaInicioFin();
+        this.frecuenciaPago=programarFacturasBuilder.getFrecuenciaPago();
         this.producto = programarFacturasBuilder.getProducto();
+    }
+
+    public String getFrecuenciaPago() {
+        return frecuenciaPago;
+    }
+
+    public void setFrecuenciaPago(String frecuenciaPago) {
+        this.frecuenciaPago = frecuenciaPago;
     }
 
     public String getValorFactura() {
