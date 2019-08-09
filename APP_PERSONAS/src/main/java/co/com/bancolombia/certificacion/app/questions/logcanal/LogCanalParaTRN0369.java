@@ -41,7 +41,7 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
             resultadoEntrada = validarCampo(ConstantesIseries.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313), datosPrincipales.getTrace(),resultadoEntrada);
             resultadoEntrada = validarCampo(ConstantesIseries.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), datosPrincipales.getCodigoTransaccion(),resultadoEntrada);
             resultadoEntrada = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()),resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), "0",resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), datosPrincipales.getUsuario().getTipoDocumento(),resultadoEntrada);
             resultadoEntrada = validarCampo(ConstantesIseries.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoEntrada);
 
 
@@ -57,7 +57,7 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
                 resultFinal=true;
             }
             Serenity.recordReportData().withTitle("ResultLogCanal").
-                    andContents(Serenity.sessionVariableCalled("INFORMES_SERENITY"));
+                    andContents(Serenity.sessionVariableCalled("informes_serenity"));
         }else{
             LOGGER.info("Valores de la trama input y output sin registros");
         }

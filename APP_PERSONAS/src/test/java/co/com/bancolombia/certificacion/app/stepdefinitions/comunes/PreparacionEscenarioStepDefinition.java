@@ -44,12 +44,9 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
-    public void queSuboLosDatosParaLaPrueba(String actor, List<String> datosTransaccion) {
+    public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String,String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(
-                        datosTransaccion)
-                        .datosDelUsuarioCon(datosTransaccion)
-                        .construir()
+                CargarDatos.transaccionCon(informacion().deTransaccion(datos))
         );
     }
 
@@ -75,3 +72,4 @@ public class PreparacionEscenarioStepDefinition {
         theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
     }
 }
+

@@ -6,9 +6,10 @@ Característica: Solicitud eprepago en la app OSP Bancolombia
   Para realizar compras
 
   Esquema del escenario: Solicitud de una tarjeta eprepago desde la app de Bancolombia OSP por diferentes opciones
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere <opcionAutenticacion>
     Y quiero solicitar una tarjeta e-prepago
     Entonces Debo ver el mensaje de solicitud exitosa
 
@@ -18,9 +19,10 @@ Característica: Solicitud eprepago en la app OSP Bancolombia
    |1   |928155907   |1   |sineprepago1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
 
   Esquema del escenario: Solicitud de un cliente que ya tiene tarjeta eprepago
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere <opcionAutenticacion>
     Entonces Debo ver el mensaje respectivo para el usuario
 
     Ejemplos:

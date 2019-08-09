@@ -5,6 +5,7 @@ import co.com.bancolombia.certificacion.app.questions.consultas.saldos.Verificar
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException.MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -12,7 +13,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultaDetalleProductosStepDefinition {
 
-    @Cuando("^consulto en (.*) el detalle de mi Cuenta (.*) numero (.*)$")
+    @Y("^consulto en (.*) el detalle de mi Cuenta (.*) numero (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
@@ -33,5 +34,9 @@ public class ConsultaDetalleProductosStepDefinition {
                 ).orComplainWith(
                         DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );
+    }
+
+    @Entonces("^deberia de ver el detalle de mi tarjeta eprepago$")
+    public void verificoElResultadoDeLaConsultaDeEprepago() {
     }
 }
