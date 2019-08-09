@@ -33,31 +33,12 @@ public class ConsultarConsolidadoTarjetasCredito implements Question<Boolean> {
             for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
                 String numeroCuentaBanco = filaRegistro.get("lgdatos").toString().substring(12,16).trim();
-                String tipoCuentaBanco = filaRegistro.get("sdtipocta").toString().trim();
-                String saldoDisponibleBanco = filaRegistro.get("sdsdodsp").toString().trim();
-                //filaRegistro.get("lgdatos").toString().substring(12,16).trim();
-
-                //String numeroCuentaApp;
-                //String tipoCuentaBancoApp;
-                //String saldoDisponibleApp;
 
                 for(int j = 0; j < producto.size(); j++){
-                    /*if(producto.get(j).getNumero().contains("Personal American Express")){
-                        tipoCuentaBancoApp =
-                    }
-                    else if(){
+                    String numeroCuentaApp = producto.get(j).getNumero().trim().replace("*","");
 
-                    }
-                    else{
-
-                    }*/
-                    String numeroCuentaApp = producto.get(j).getNumero().trim().replace("-","");
-                    String tipoCuentaBancoApp = tipoCuentaLetra(producto.get(j).getTipo().trim());
-                    String saldoDisponibleApp = producto.get(j).getSaldo().getSaldoDisponible().replace("$","").replace(".","").replace(",",".").trim();
-                    if (numeroCuentaApp.equals(numeroCuentaBanco) && tipoCuentaBancoApp.equals(tipoCuentaBanco)){
-                        resultadoRegistro = validarCampo("", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
-                        resultadoRegistro = validarCampo("TIPO CUENTA", tipoCuentaBanco, tipoCuentaBancoApp, resultadoDato);
-                        resultadoRegistro = validarCampo("SALDO DISPONIBLE", saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
+                    if (numeroCuentaApp.equals(numeroCuentaBanco)){
+                        resultadoRegistro = validarCampo("NUMERO DE TARJETA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
                     }
                 }
             }
@@ -65,7 +46,7 @@ public class ConsultarConsolidadoTarjetasCredito implements Question<Boolean> {
             if (resultadoDato && resultadoRegistro){
                 resultFinal=true;
             }
-            Serenity.recordReportData().withTitle("Verificacion Back Consolidado Depositos").andContents(Serenity.sessionVariableCalled("informes_serenity"));
+            Serenity.recordReportData().withTitle("Verificacion Back Consolidado Tarjetas").andContents(Serenity.sessionVariableCalled("informes_serenity"));
         }else{
             LOGGER.info("Sin registros en la consulta");
         }
