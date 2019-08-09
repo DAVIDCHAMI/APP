@@ -45,7 +45,5 @@ public class FabricaBaseDeDatosIseries {
     public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFcredit() { return new ConsultarCreditoEnMOVTFLOGTF(); }
     public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOdetalle() {return new ConsultarDetalleDepositos();}
     public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOConsolidado() {return new ConsultarConsolidadoDepositos();}
-
-
     public static Question<Boolean> elArchivoEnIseriesPCCFFLOGTFcreditCards() {return new ConsultarConsolidadoTarjetasCredito();}
 }
