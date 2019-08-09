@@ -14,6 +14,7 @@ public class GeneralLocator {
     public static final Locator LBL_VERIFICACION_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]").withIos("xpath$");
     public static final Locator LNK_SALTAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Saltar')]").withIos("xpath$");
     public static final Locator LNK_COMENZAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Comenzar')]").withIos("xpath$");
+    public static final Locator LNK_INSCRIBIR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Inscribir')]");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
