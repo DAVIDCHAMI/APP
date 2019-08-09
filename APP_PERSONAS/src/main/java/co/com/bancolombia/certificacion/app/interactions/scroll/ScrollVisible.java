@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.interactions;
+package co.com.bancolombia.certificacion.app.interactions.scroll;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
@@ -13,10 +13,10 @@ import org.openqa.selenium.WebDriver;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
-public class Scroll implements Interaction {
+public class ScrollVisible implements Interaction {
     private Target elemento;
 
-    public Scroll(Target elemento) {
+    public ScrollVisible(Target elemento) {
         this.elemento = elemento;
     }
 
@@ -37,7 +37,4 @@ public class Scroll implements Interaction {
         }
     }
 
-    public static Performable hastaTargetVisible(Target elemento) {
-        return instrumented(Scroll.class, elemento);
-    }
 }

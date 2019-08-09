@@ -1,17 +1,15 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
-import co.com.bancolombia.certificacion.app.interactions.Scroll;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.questions.Visibility;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class SeleccionarOpcion implements Task {
     private TipoTransaccionEnum tipoTransaccion;
@@ -23,21 +21,20 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()), isEnabled()),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
-                Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                RealizarScroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
-                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                        RealizarScroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 ),
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel()))
                         .andIfSo(
                                 Check.whether(Visibility.of(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())).viewedBy(actor).asBoolean())
                                         .andIfSo(
-                                                Scroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                                                RealizarScroll.hastaTargetVisible(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                                                 Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                                         ).otherwise(
-                                        Scroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel())),
+                                        RealizarScroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel())),
                                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel()))
                                 )
                         )
