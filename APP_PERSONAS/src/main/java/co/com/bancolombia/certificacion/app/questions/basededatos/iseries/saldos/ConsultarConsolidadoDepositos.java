@@ -30,19 +30,20 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
             Boolean resultadoDato = true;
             Boolean resultadoRegistro = true;
 
-            for(int i = 0; i <= registros.size(); i++){
+            for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
                 String numeroCuentaBanco = filaRegistro.get("sdcuenta").toString().trim();
                 String tipoCuentaBanco = filaRegistro.get("sdtipocta").toString().trim();
-                //String saldoDisponibleBanco = filaRegistro.get("sdsdodsp").toString().trim();
+                String saldoDisponibleBanco = filaRegistro.get("sdsdodsp").toString().trim();
 
-                for(int j = 0; j <= producto.size(); j++){
+                for(int j = 0; j < producto.size(); j++){
                     String numeroCuentaApp = producto.get(j).getNumero().trim().replace("-","");
                     String tipoCuentaBancoApp = tipoCuentaLetra(producto.get(j).getTipo().trim());
+                    String saldoDisponibleApp = producto.get(j).getSaldo().getSaldoDisponible().replace("$","").replace(".","").replace(",",".").trim();
                     if (numeroCuentaApp.equals(numeroCuentaBanco) && tipoCuentaBancoApp.equals(tipoCuentaBanco)){
                         resultadoRegistro = validarCampo("CUENTA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
                         resultadoRegistro = validarCampo("TIPO CUENTA", tipoCuentaBanco, tipoCuentaBancoApp, resultadoDato);
-                        //resultadoRegistro = validarCampo("SALDO DISPONIBLE", saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
+                        resultadoRegistro = validarCampo("SALDO DISPONIBLE", saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
                     }
                 }
             }

@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.billetera;
 
-import co.com.bancolombia.certificacion.app.interactions.ScrollHasta;
 import co.com.bancolombia.certificacion.app.interactions.billetera.AceptarTerminosCondiciones;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -20,7 +20,7 @@ public class RegistrarBilletera implements Task {
         actor.attemptsTo(
                 AceptarTerminosCondiciones.enBilletera(),
                 WaitUntil.the(LBL_TARJETAS_LISTADAS, isVisible()),
-                ScrollHasta.elTarget(BTN_ACTIVAR_BILLETERA),
+                RealizarScroll.hastaPosicionDeTarget(BTN_ACTIVAR_BILLETERA),
                 Click.on(BTN_ACTIVAR_BILLETERA)
         );
     }
