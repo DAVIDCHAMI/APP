@@ -21,6 +21,7 @@ public class SaldosMovimientosPage {
     public static final Target LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS = Target.the("Tipo cuenta deposito").locatedBy(dynamicElement(LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR));
     public static final Target LBL_NUMERO_CUENTA_SALDOS_MOVIMIENTOS = Target.the("Numero cuenta deposito").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS = Target.the("Saldo disponible cuenta deposito").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS_LOCATOR));
+    public static final Target LBL_SALDO_SALDOS_MOVIMIENTOS = Target.the("Saldo disponible cuenta deposito").locatedBy(dynamicElement(LBL_SALDO_SALDOS_MOVIMIENTOS_LOCATOR));
     public static final Target CONTENEDOR_MOVIMIENTOS = Target.the("Contenedor con detalles de movimiento").locatedBy(dynamicElement(VER_MOVIMIENTOS_LOCATOR));
     public static final Target LBL_FECHA_MOVIMIENTO = Target.the("Label que muestra la fecha del movimiento").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_LOCATOR));
     public static final Target LBL_DESCRIPCION_MOVIMIENTO = Target.the("Label que muestra la descripción del movimiento").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_LOCATOR));
