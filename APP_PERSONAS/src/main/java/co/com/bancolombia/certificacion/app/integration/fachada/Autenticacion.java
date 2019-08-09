@@ -27,6 +27,4 @@ public class Autenticacion {
         String sql = QueryManager.CONSULTAS.getString("SQL.CNAME_WWWFFUSRSV.consultaCliente");
         return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
     }
-
-
 }
