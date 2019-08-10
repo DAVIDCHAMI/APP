@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import co.com.bancolombia.conexion.basedatos.ConnectionManager;
@@ -19,6 +20,7 @@ import java.util.Map;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTipoCuentaNumero;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 
 public class Depositos {
@@ -34,12 +36,20 @@ public class Depositos {
 
 
 
-    public static List<Map<String, Object>> saldoDepositos(Actor actor){
-        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+    public static List<Map<String, Object>> saldoDepositosDetalle(Actor actor){
+        Producto depositos = actor.recall(MODELO_DETALLE_PRODUCTO);
         Map<String, Object> dataForQuery = new HashMap<>();
-        dataForQuery.put(CUENTA, depositos.getNumero());
+        dataForQuery.put(CUENTA, depositos.getNumero().replace("-",""));
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
+        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+    }
+
+    public static List<Map<String, Object>> saldoDepositosConsolidado(Actor actor){
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put("DOCUMENTO", StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()));
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultaSaldoPertenenciaCuentaDeposito");
         return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
     }
 

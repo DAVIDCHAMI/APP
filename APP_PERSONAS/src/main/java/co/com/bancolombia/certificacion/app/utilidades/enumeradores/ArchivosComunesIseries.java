@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 public enum ArchivosComunesIseries {
 
+
     SCIFFSALDO_DEBITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     SCIFFSALDO_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     CABFFPPAUT(FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
@@ -24,6 +25,7 @@ public enum ArchivosComunesIseries {
     PCCFFMOVTFLOGTF_DEBITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     PCCFFMOVTFLOGTF_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     SCIFFSALDO_DETALLE(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_CONSOLIDADO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOConsolidado(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     CXREF_CNAME_LMBAL_SALDO_CREDITOS(FabricaBaseDeDatosIseries.elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
     private static final Logger LOGGER = LogManager.getLogger();

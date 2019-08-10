@@ -5,16 +5,29 @@ import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClav
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeDeClaveBloqueada;
 import co.com.bancolombia.certificacion.app.questions.registro.MensajeRegistro;
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
+import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.tasks.registro.Registrarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveBloqueadaNoVisualizadoException.MENSAJE_CLAVE_BLOQUEADA_NO_ENCONTRADO;
 import static co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoException.MENSAJE_PASS_INVALIDO_NO_ENCONTRADO;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class RegistroUsuarioStepDefinition {
+
+    @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
+    public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion),
+                IniciarSesion.con(credenciales()
+                        .conNombreUsuario(usuario)
+                        .conClave(clave))
+        );
+    }
 
     @Cuando("^quiere realizar el registro con el usuario (.*) y con el correo (.*)$")
     public void quiereRealizarElRegistroConElUsuarioYConElCorreo(String nuevoUser, String correoUser) {

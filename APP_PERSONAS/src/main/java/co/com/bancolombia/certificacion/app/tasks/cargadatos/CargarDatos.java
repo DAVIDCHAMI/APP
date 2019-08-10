@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.cargadatos;
 
-
 import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
