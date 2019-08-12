@@ -15,7 +15,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultaSaldosStepDefinition {
 
-    @Cuando("^consulto el saldo de mis (.*)$")
+    @Cuando("^consulto el saldo de mis (.*) de crédito$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, List<String> cuentasDeposito) {
         theActorInTheSpotlight().attemptsTo(
                 RevisarProductos.enSaldosMovimientos(elProducto()
