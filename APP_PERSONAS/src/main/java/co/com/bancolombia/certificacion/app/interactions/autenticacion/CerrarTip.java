@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class AceptarTip implements Interaction {
+public class CerrarTip implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -21,6 +21,6 @@ public class AceptarTip implements Interaction {
     }
 
     public static Performable alIniciarApp() {
-        return instrumented(AceptarTip.class);
+        return instrumented(CerrarTip.class);
     }
 }

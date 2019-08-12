@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.autenticacion.AceptarTip;
+import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
@@ -23,7 +23,7 @@ public class ConDatosTransaccion extends Autenticacion {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                AceptarTip.alIniciarApp(),
+                CerrarTip.alIniciarApp(),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
