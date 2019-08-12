@@ -4,10 +4,7 @@ import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.autent
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos.ConsultarCreditoEnSCIFFMRCMV;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos.ConsultarDebitoEnSCIFFMRCMV;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos.ConsultarRegistroEnCABFFPPAUT;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarConsolidadoDepositos;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarCreditoEnSCIFFSALDO;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarDebitoEnSCIFFSALDO;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.ConsultarDetalleDepositos;
+import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.*;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFPPMAE;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFTARJ;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnTCBFFMAE;
@@ -86,6 +83,6 @@ public class FabricaBaseDeDatosIseries {
 
 
     public static Question<Boolean> elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos() {
-        return new ConsultarDetalleDepositos();
+        return new ConsultarSaldosConsolidadosCreditos();
     }
 }

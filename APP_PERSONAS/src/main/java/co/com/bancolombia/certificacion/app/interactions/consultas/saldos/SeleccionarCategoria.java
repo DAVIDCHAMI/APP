@@ -22,6 +22,10 @@ public class SeleccionarCategoria implements Interaction {
         this.categoria = categoria;
     }
 
+    public static SeleccionarCategoria deSaldosMovimientos(String categoria) {
+        return instrumented(SeleccionarCategoria.class, categoria);
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -39,9 +43,5 @@ public class SeleccionarCategoria implements Interaction {
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
             );
         }
-    }
-
-    public static SeleccionarCategoria deSaldosMovimientos(String categoria) {
-        return instrumented(SeleccionarCategoria.class, categoria);
     }
 }
