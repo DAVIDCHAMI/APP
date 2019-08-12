@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
@@ -22,7 +23,9 @@ public class ConCredenciales extends Autenticacion {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Check.whether(BTN_INSCRIBIR_DINAMICA_CLAVE.resolveFor(actor).isVisible()).
+        actor.attemptsTo(
+                CerrarTip.alIniciarApp(),
+                Check.whether(BTN_INSCRIBIR_DINAMICA_CLAVE.resolveFor(actor).isVisible()).
                         andIfSo(Click.on(BTN_INSCRIBIR_DINAMICA_CLAVE)),
                 Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
