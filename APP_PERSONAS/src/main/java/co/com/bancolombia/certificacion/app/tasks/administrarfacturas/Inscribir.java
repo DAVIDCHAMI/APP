@@ -24,11 +24,11 @@ public class Inscribir implements Task {
         actor.attemptsTo(
                 Click.on(BTN_INCRIBIR_MANUALMENTE),
                 Click.on(TXT_EMPRESA_SERVICIO),
-                Escribir.enCampoTexto(factura.getEmpresa()),
+                Escribir.enCampoTexto(factura.getConvenio()),
                 Click.on(TXT_EMPRESA_SERVICIO_POP_UP),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_DESCRIPCION),
-                Escribir.enCampoTexto(factura.getDescripcion()),
+                Escribir.enCampoTexto(factura.getDescripcionFactura()),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_REFERENCIA),
                 Escribir.enCampoTexto(factura.getReferencia()),

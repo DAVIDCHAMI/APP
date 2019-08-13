@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.con;
-import static co.com.bancolombia.certificacion.app.models.builders.ProgramarFacturasBuilder.programarFactura;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AdministrarFacturasStepDefinition {
@@ -16,7 +15,7 @@ public class AdministrarFacturasStepDefinition {
     @Cuando("el actor programa sus facturas inscritas con información$")
     public void programaSusFacturasInscritasConInformacion(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(ProgramarFactura.inscritas(
-                programarFactura()
+                con()
                         .conValor(datos)
                         .conFechaFactura(datos)
                         .conDescripcionFactura(datos)
@@ -30,7 +29,7 @@ public class AdministrarFacturasStepDefinition {
     @Cuando("inscribe una factura$")
     public void inscribirFacura(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                Inscribir.facturas(con().conEmpresa(datos).conDescripcion(datos).conReferencia(datos))
+                Inscribir.facturas(con().conConvenio(datos).conDescripcionFactura(datos).conReferencia(datos))
         );
     }
 }
