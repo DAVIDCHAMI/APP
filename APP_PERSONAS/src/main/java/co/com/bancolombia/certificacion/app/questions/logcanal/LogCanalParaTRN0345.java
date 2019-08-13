@@ -31,34 +31,34 @@ public class LogCanalParaTRN0345 implements Question<Boolean> {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         trama = LogCanal.consultaLogCanalTrama220230(actor);
 
-        if (trama !=  null){
-            String trama0220 = trama.get(0).toString().replace("datos=","");
-            String trama0230 = trama.get(1).toString().replace("datos=","");
+        if (trama != null) {
+            String trama0220 = trama.get(0).toString().replace("datos=", "");
+            String trama0230 = trama.get(1).toString().replace("datos=", "");
             Boolean resultadoEntrada = true;
             Boolean resultadoSalida = true;
 
-            resultadoEntrada = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5,20), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()),resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301,313), datosPrincipales.getTrace(),resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313,317), datosPrincipales.getCodigoTransaccion(),resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317,332), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()),resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332,333), "0",resultadoEntrada);
-            resultadoEntrada = validarCampo(ConstantesIseries.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359,367), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(5, 20), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()), resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.TRACE + AdministradorConstante.TRAMAINPUT, trama0220.substring(301, 313), datosPrincipales.getTrace(), resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.CODIGOTRN + AdministradorConstante.TRAMAINPUT, trama0220.substring(313, 317), datosPrincipales.getCodigoTransaccion(), resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(317, 332), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()), resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAINPUT, trama0220.substring(332, 333), datosPrincipales.getUsuario().getTipoDocumento(), resultadoEntrada);
+            resultadoEntrada = validarCampo(ConstantesIseries.FECHA + AdministradorConstante.TRAMAINPUT, trama0220.substring(359, 367), DateManager.obtenerFechaSistema("YYYYMMdd"), resultadoEntrada);
 
 
-            resultadoSalida = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(5,20), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(69,72), datosPrincipales.getCodigoError(),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(301,313), datosPrincipales.getTrace(),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(313,317), datosPrincipales.getCodigoTransaccion(),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(317,332), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(332,333), datosPrincipales.getUsuario().getTipoDocumento(),resultadoSalida);
-            resultadoSalida = validarCampo(ConstantesIseries.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(349,357), DateManager.obtenerFechaSistema("YYYYMMdd"),resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(5, 20), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.CODIGOERROR + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(69, 72), datosPrincipales.getCodigoError(), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.TRACE + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(301, 313), datosPrincipales.getTrace(), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.CODIGOTRN + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(313, 317), datosPrincipales.getCodigoTransaccion(), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.DOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(317, 332), StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.TIPODOCUMENTO + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(332, 333), datosPrincipales.getUsuario().getTipoDocumento(), resultadoSalida);
+            resultadoSalida = validarCampo(ConstantesIseries.FECHA + AdministradorConstante.TRAMAOUTPUT, trama0230.substring(349, 357), DateManager.obtenerFechaSistema("YYYYMMdd"), resultadoSalida);
 
-            if (resultadoEntrada && resultadoSalida){
-                resultFinal=true;
+            if (resultadoEntrada && resultadoSalida) {
+                resultFinal = true;
             }
             Serenity.recordReportData().withTitle("ResultLogCanal").
                     andContents(Serenity.sessionVariableCalled("INFORMES_SERENITY"));
-        }else{
+        } else {
             LOGGER.info("Valores de la trama input y output sin registros");
         }
         return resultFinal;

@@ -29,7 +29,7 @@ public class SeleccionarCategoria implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(2000),
                 Check.whether(BTN_OCULTAR_BANNER.resolveFor(actor).isVisible()).andIfSo(
                         OcultarBanner.deSaldosMovimientos()
                 )
