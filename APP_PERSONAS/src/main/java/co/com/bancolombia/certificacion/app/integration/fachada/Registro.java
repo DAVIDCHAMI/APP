@@ -63,8 +63,8 @@ public class Registro {
         BackRegistroAPP registroAPP = new BackRegistroAPP();
         boolean result = false;
         try {
-            boolean consultaTermConditional = registroAPP.consultarTerminosyCondicionesRegistro(usuario);
-            if (consultaTermConditional) result = true;
+            if (registroAPP.consultarTerminosyCondicionesRegistro(usuario))
+                result = true;
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }

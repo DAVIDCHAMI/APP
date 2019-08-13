@@ -27,7 +27,7 @@ public class ConsultarExistenciaCliente implements Question<Boolean> {
         registros = Autenticacion.consultaDeExistenciaDelCliente(actor);
         ConfiguracionTransaccion transaccion = actor.recall(MODELO_DATOS_TRANSACCION);
 
-        if (registros.size() > 0){
+        if (!registros.isEmpty()){
             Boolean resultadoDato = true;
             resultadoDato = validarCampo(ConstantesIseries.DOCUMENTO, registros.get(0).get("cnnoss").toString().trim(), StringManager.formatoDocumento(transaccion.getUsuario().getNumeroDocumento()),resultadoDato);
             resultadoDato = validarCampo(ConstantesIseries.TIPODOCUMENTO, registros.get(0).get("cncdti").toString().trim(), transaccion.getUsuario().getTipoDocumento(),resultadoDato);

@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
@@ -31,7 +32,7 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.attemptsTo(
                 Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                CerrarTip.alIniciarApp(),
+                        //CerrarTip.alIniciarApp(),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
