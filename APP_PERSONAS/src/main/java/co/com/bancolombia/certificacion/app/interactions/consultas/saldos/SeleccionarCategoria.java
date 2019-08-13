@@ -22,10 +22,14 @@ public class SeleccionarCategoria implements Interaction {
         this.categoria = categoria;
     }
 
+    public static SeleccionarCategoria deSaldosMovimientos(String categoria) {
+        return instrumented(SeleccionarCategoria.class, categoria);
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(2000),
                 Check.whether(BTN_OCULTAR_BANNER.resolveFor(actor).isVisible()).andIfSo(
                         OcultarBanner.deSaldosMovimientos()
                 )
@@ -39,9 +43,5 @@ public class SeleccionarCategoria implements Interaction {
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
             );
         }
-    }
-
-    public static SeleccionarCategoria deSaldosMovimientos(String categoria) {
-        return instrumented(SeleccionarCategoria.class, categoria);
     }
 }

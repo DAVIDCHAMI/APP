@@ -14,17 +14,18 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 
-public class Autenticacion {
+public class Creditos {
 
-    public Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Creditos() {
+        throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
+    }
 
-    private static final String DOCUMENTO = "DOCUMENTO";
 
-    public static List<Map<String, Object>> consultaDeExistenciaDelCliente(Actor actor) {
+    public static List<Map<String, Object>> saldoCreditosConsolidado(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         Map<String, Object> dataForQuery = new HashMap<>();
-        dataForQuery.put(DOCUMENTO, StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()));
-        String sql = QueryManager.CONSULTAS.getString("SQL.CNAME_WWWFFUSRSV.consultaCliente");
-        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        dataForQuery.put("DOCUMENTO", StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()));
+        String sql = QueryManager.CONSULTAS.getString("SQL.CXREF.consultarListaCreditos");
+        return Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
     }
 }

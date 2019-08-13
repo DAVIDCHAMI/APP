@@ -74,7 +74,7 @@ public class ConsultarProductosAsociadosStepDefinition {
     public void deberiaVerLosMovimientosNingunMovimientoConLaTarjeta(String mensaje) {
         theActorInTheSpotlight().should(seeThat(
                 VerificarProducto.sinMovimientos(mensaje)
-                ).orComplainWith(ProductoConMovimientosException.class,CON_MOVIMIENTOS)
+                ).orComplainWith(ProductoConMovimientosException.class, CON_MOVIMIENTOS)
         );
     }
 }

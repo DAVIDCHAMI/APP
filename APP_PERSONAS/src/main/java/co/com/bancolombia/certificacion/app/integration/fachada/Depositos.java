@@ -25,89 +25,88 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 
 public class Depositos {
 
-    public Depositos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
-
     private static final String CUENTA = "CUENTA";
     private static final String TIPOCUENTA = "TIPOCUENTA";
     private static final String SALDOANTES = "saldoDepositoAntes";
     private static final String SALDODESPUES = "saldoDepositoDespues";
     private static final String FECHA = "FECHA";
     private static final String FECHASISTEMA = "yyyyMMdd";
-
-
-
-    public static List<Map<String, Object>> saldoDepositosDetalle(Actor actor){
-        Producto depositos = actor.recall(MODELO_DETALLE_PRODUCTO);
-        Map<String, Object> dataForQuery = new HashMap<>();
-        dataForQuery.put(CUENTA, depositos.getNumero().replace("-",""));
-        dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
-        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
-        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+    private Depositos() {
+        throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
     }
 
-    public static List<Map<String, Object>> saldoDepositosConsolidado(Actor actor){
+    public static List<Map<String, Object>> saldoDepositosDetalle(Actor actor) {
+        Producto depositos = actor.recall(MODELO_DETALLE_PRODUCTO);
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put(CUENTA, depositos.getNumero().replace("-", ""));
+        dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
+        String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
+        return Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
+    }
+
+    public static List<Map<String, Object>> saldoDepositosConsolidado(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put("DOCUMENTO", StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento()));
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultaSaldoPertenenciaCuentaDeposito");
-        return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        return Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
     }
 
-    public static void saldoDepositosAntes(Actor actor){
+    public static void saldoDepositosAntes(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);
-        String saldoDisponible ="";
-        String saldoCanje ="";
-        String saldoTotal ="";
+        String saldoDisponible = "";
+        String saldoCanje = "";
+        String saldoTotal = "";
 
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
-        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
-        saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
-        saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
+        saldoDisponible = resultadoConsulta.get(0).get("sdsdodsp").toString();
+        saldoCanje = resultadoConsulta.get(0).get("sdfltdsp").toString();
         saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
         Serenity.setSessionVariable(SALDOANTES).to(saldoTotal);
     }
 
-    public static void saldoDepositosDespues(Actor actor){
+    public static void saldoDepositosDespues(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);
-        String saldoDisponible ="";
-        String saldoCanje ="";
-        String saldoTotal ="";
+        String saldoDisponible = "";
+        String saldoCanje = "";
+        String saldoTotal = "";
 
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
-        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
-        saldoDisponible =  resultadoConsulta.get(0).get("sdsdodsp").toString();
-        saldoCanje =  resultadoConsulta.get(0).get("sdfltdsp").toString();
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
+        saldoDisponible = resultadoConsulta.get(0).get("sdsdodsp").toString();
+        saldoCanje = resultadoConsulta.get(0).get("sdfltdsp").toString();
         saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
         Serenity.setSessionVariable(SALDODESPUES).to(saldoTotal);
     }
 
-    public static boolean verificarElDebitoDeLaCuenta(Actor actor){
+    public static boolean verificarElDebitoDeLaCuenta(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         String valor = depositos.getSaldo().getMonto();
         String orientacon = datosPrincipales.getOrientacionCaso();
         String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
         String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
-        return validarDebitoDeposito(saldoAntes,saldoDespues,orientacon,valor);
+        return validarDebitoDeposito(saldoAntes, saldoDespues, orientacon, valor);
     }
 
 
-    public static boolean verificarElCreditoDeLaCuenta(Actor actor){
+    public static boolean verificarElCreditoDeLaCuenta(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         String valor = depositos.getSaldo().getMonto();
         String orientacon = datosPrincipales.getOrientacionCaso();
         String saldoAntes = Serenity.sessionVariableCalled(SALDOANTES);
         String saldoDespues = Serenity.sessionVariableCalled(SALDODESPUES);
-        return validarCreditoDeposito(saldoAntes,saldoDespues,orientacon,valor);
+        return validarCreditoDeposito(saldoAntes, saldoDespues, orientacon, valor);
     }
 
     public static String verificarElMovimientoDebitoDeLaCuenta(Actor actor) {
@@ -122,7 +121,7 @@ public class Depositos {
         dataForQuery.put("HORA", datosPrincipales.getHoraTransaccion());
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
-        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
 
@@ -138,7 +137,7 @@ public class Depositos {
         dataForQuery.put("HORA", datosPrincipales.getHoraTransaccion());
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFMRCMV.MovimientoDeposito");
-        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());
+        List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
         return resultadoConsulta.get(0).toString();
     }
 

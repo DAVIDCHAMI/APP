@@ -126,24 +126,6 @@ public class Eprepago {
         return result;
     }
 
-    /*
-    public static boolean verifyTheCreditOfTheCardEprepago(Actor actor){
-        boolean result = false;
-        EPrepago datosEprepago = CreateLoadEPrepagoEntity.getLoadEPrepago();
-        ConfiguracionTransaccion configuracionTransaccion = EntidadConfiguracionTransaccionActual.getConfiguracionTransaccion();
-        DecimalFormat formatter = new DecimalFormat("##0");
-
-        boolean verificarCreditoEprepago = validarCreditoEprepago(formatter.format(datosEprepago.getBalnceBefore()),
-                formatter.format(datosEprepago.getBalanceAfter()),
-                datosEprepago.getAmount().substring(1), configuracionTransaccion.getOrientacionCaso());
-
-        if (verificarCreditoEprepago) {
-            result = true;
-        }
-        return result;
-    }
-    */
-
     public static boolean validarCreditoEprepago(String saldoAntes, String saldoDespues, String monto, String orientacion) {
         BigDecimal saldoAnterior = new BigDecimal(saldoAntes);
         BigDecimal saldoPosterior = new BigDecimal(saldoDespues);

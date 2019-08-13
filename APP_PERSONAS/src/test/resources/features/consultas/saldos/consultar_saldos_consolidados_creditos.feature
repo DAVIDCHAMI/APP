@@ -13,10 +13,10 @@ Característica: Consulta de saldos de creditos app Bancolombia
     Cuando consulto el saldo de mis Créditos
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
-    Y cierra sesión en la app
-#    Y Verifico el resultado de los siguientes archivos de iSeries
-#    | Logcanal- COMFFLGWWW |
+ #   Y cierra sesión en la app
+    Y Verifico los resultados en los archivos de iseries
+      | LOGCANAL-COMFFLGWWW | Saldo consolidados Creditos-CXREF_CNAME_LMBAL_SALDO_CREDITOS |
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                | numeroCuenta            |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta           | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Creditos@1
-   |1   |1037655531   |1   |usercdt66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Prestamo Personal Ta;Prestamo Personal Ta   |29281005510;29281023970|
+   |1   |22419862   |1   |invictus12   |1234   |4321   |Acierto   |000   |0345   |NO ERROR   |bolp   |ACTIVO   |Prestamo Personal Ta   |29281023955|

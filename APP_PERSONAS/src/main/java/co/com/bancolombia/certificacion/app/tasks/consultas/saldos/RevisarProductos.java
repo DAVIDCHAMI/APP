@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
@@ -32,9 +33,14 @@ public class RevisarProductos implements Task {
         this.tipoProductosEnum = TipoProductosEnum.valueOf(eliminarTildes(opcionCategoria).toUpperCase());
     }
 
+    public static Performable enSaldosMovimientos(ProductoBuilder productoBuilder, String opcionCategoria) {
+        return instrumented(RevisarProductos.class, productoBuilder.build(), opcionCategoria);
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                CerrarTip.alIniciarApp(),
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
         );
         actor.attemptsTo(
@@ -46,13 +52,13 @@ public class RevisarProductos implements Task {
         boolean tieneProducto = false;
         String[] tipoCuenta = producto.getTipo().split(";");
         String[] numeroCuenta = producto.getNumero().split(";");
-        for(int iterador = 0; iterador <= cadena.length; iterador++){
-            if(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]).resolveFor(actor).isVisible()) {
+        for (int iterador = 0; iterador <= cadena.length; iterador++) {
+            if (CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]).resolveFor(actor).isVisible()) {
                 listaProductos.add(elProducto()
                         .conNumero(numeroCuenta[iterador])
                         .conTipoCuenta(tipoCuenta[iterador])
                         .conSaldo(saldo()
-                                .conSaldoDisponible(LBL_SALDO_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador),tipoProductosEnum.getTipoProducto()).resolveFor(actor).getText())
+                                .conSaldoDisponible(LBL_SALDO_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador), tipoProductosEnum.getTipoProducto()).resolveFor(actor).getText())
                                 .build())
                         .build()
                 );
@@ -63,9 +69,5 @@ public class RevisarProductos implements Task {
         }
         actor.remember(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS, listaProductos);
         actor.remember(TIENE_PRODUCTOS, tieneProducto);
-    }
-
-    public static Performable enSaldosMovimientos(ProductoBuilder productoBuilder, String opcionCategoria) {
-        return instrumented(RevisarProductos.class, productoBuilder.build(), opcionCategoria);
     }
 }

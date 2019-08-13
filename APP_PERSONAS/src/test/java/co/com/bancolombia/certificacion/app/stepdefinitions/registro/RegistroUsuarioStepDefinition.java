@@ -21,9 +21,9 @@ public class RegistroUsuarioStepDefinition {
 
     @Cuando("^quiere ingresar desde (.*) con el documento (.*) con clave (.*)$")
     public void quiereIngresarARegistrarseConElDocumentoConClave(String tipoTransaccion, String usuario, String clave) {
-       theActorInTheSpotlight().attemptsTo(
+        theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),
-               IniciarSesion.con(credenciales()
+                IniciarSesion.con(credenciales()
                         .conNombreUsuario(usuario)
                         .conClave(clave))
         );

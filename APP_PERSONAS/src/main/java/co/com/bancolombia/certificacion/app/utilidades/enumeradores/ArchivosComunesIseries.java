@@ -10,22 +10,23 @@ import java.util.Arrays;
 
 public enum ArchivosComunesIseries {
 
-    SCIFFSALDO_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFSALDO_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFPPAUT (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFPPCLI (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCFFPPCLI(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFTARJ  (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFTARJ(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    WWWFFUSRSV (FabricaBaseDeDatosIseries.elArchivoEnIseriesWWWFFUSRSV(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    TERMCONDITION (FabricaBaseDeDatosIseries.elArchivoEnIseriesTERMCONDITION(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CABFFPPMAE (FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    TCBFFMAE (FabricaBaseDeDatosIseries.elArchivoEnIseriesTCBFFMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFMRCMV_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFMRCMV_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFMOVTFLOGTF_DEBITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    PCCFFMOVTFLOGTF_CREDITO (FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFSALDO_DETALLE(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    SCIFFSALDO_CONSOLIDADO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOConsolidado(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
+    SCIFFSALDO_DEBITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPAUT(FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPAUT(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFPPCLI(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCFFPPCLI(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFTARJ(FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFTARJ(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    WWWFFUSRSV(FabricaBaseDeDatosIseries.elArchivoEnIseriesWWWFFUSRSV(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TERMCONDITION(FabricaBaseDeDatosIseries.elArchivoEnIseriesTERMCONDITION(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CABFFPPMAE(FabricaBaseDeDatosIseries.elArchivoEnIseriesCABFFPPMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    TCBFFMAE(FabricaBaseDeDatosIseries.elArchivoEnIseriesTCBFFMAE(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_DEBITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFMRCMV_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFMRCMVcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_DEBITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFdebit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFMOVTFLOGTF_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_DETALLE(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    SCIFFSALDO_CONSOLIDADO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOConsolidado(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CXREF_CNAME_LMBAL_SALDO_CREDITOS(FabricaBaseDeDatosIseries.elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -39,16 +40,6 @@ public enum ArchivosComunesIseries {
         this.mensaje = mensaje;
     }
 
-    public Question<Boolean> delArchivo() {
-        return question;
-    }
-    public Class<AssertionError> getException() {
-        return clase;
-    }
-    public String getMessage() {
-        return mensaje;
-    }
-
     public static ArchivosComunesIseries getSearchFile(String nombre) {
 
         ArchivosComunesIseries[] lista = ArchivosComunesIseries.values();
@@ -57,5 +48,17 @@ public enum ArchivosComunesIseries {
             LOGGER.error(new RuntimeException("".concat(nombre) + "'s question not exits"));
         }
         return ArchivosComunesIseries.valueOf(nombre);
+    }
+
+    public Question<Boolean> delArchivo() {
+        return question;
+    }
+
+    public Class<AssertionError> getException() {
+        return clase;
+    }
+
+    public String getMessage() {
+        return mensaje;
     }
 }
