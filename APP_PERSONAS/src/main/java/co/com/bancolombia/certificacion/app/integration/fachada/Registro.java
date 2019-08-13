@@ -16,7 +16,9 @@ public class Registro {
 
     private static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
 
-    public Registro() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Registro() {
+        throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
+    }
 
     public static UsuarioRegistro verifoEmailRegistrado(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
@@ -64,7 +66,7 @@ public class Registro {
         boolean result = false;
         try {
             boolean consultaTermConditional = registroAPP.consultarTerminosyCondicionesRegistro(usuario);
-            if (consultaTermConditional) result = true;
+            result = consultaTermConditional;
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }

@@ -43,6 +43,7 @@ public class TipoClaseConstante {
      * The constant CLASE_FACTORY.
      */
     public static final String CLASE_FACTORY = "Clase Factory";
+    public static final String INTEGRATION_CLASS = "Integration Class";
 
     /**
      * Instantiates a new constant manager.
@@ -50,5 +51,6 @@ public class TipoClaseConstante {
     private TipoClaseConstante() {
         throw new IllegalStateException(CLASE_CONSTANTE);
     }
+
 
 }

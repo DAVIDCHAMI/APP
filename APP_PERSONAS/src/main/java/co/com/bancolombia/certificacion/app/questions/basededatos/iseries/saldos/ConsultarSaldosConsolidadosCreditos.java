@@ -30,17 +30,17 @@ public class ConsultarSaldosConsolidadosCreditos implements Question<Boolean> {
         List<Producto> listaProductos = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
         registros = Creditos.saldoCreditosConsolidado(actor);
 
-        if (registros.size() > 0) {
+        if (!registros.isEmpty()) {
             Boolean resultadoDato = true;
 
-            String deuda_fecha = registros.get(0).get("deuda_fecha").toString().trim();
-            String valor_total = registros.get(0).get("valor_total").toString().trim();
+            String deudaFecha = registros.get(0).get("deuda_fecha").toString().trim();
+            String valorTotal = registros.get(0).get("valor_total").toString().trim();
 
 
             String saldoTotalFront = listaProductos.get(0).getSaldo().getSaldoDisponible().replace("$", "").replace(".", "").replace(",", ".").trim();
 
             resultadoDato = validarCampo("CUENTA", registros.get(0).get("numero_credito").toString().trim(), listaProductos.get(0).getNumero().replace("-", ""), resultadoDato);
-            resultadoDato = validarCampo("SALDO TOTAL", deuda_fecha, saldoTotalFront, resultadoDato);
+            resultadoDato = validarCampo("SALDO TOTAL", deudaFecha, saldoTotalFront, resultadoDato);
 
             if (resultadoDato) {
                 resultFinal = true;
