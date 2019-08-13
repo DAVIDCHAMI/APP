@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.utilidades.enumeradores;
 public enum TipoProductosEnum {
     CUENTAS("AccountContentContainer"),
     TARJETAS("CreditCardContentContainer"),
-    E_PREPAGO("EprepagoContentContainer"),
+    EPREPAGO("EprepagoContentContainer"),
     CREDIAGIL("CrediagilContentContainer"),
     INVERSIONES("InvestmentContentContainer"),
     CREDITOS("LoansContentContainer");
