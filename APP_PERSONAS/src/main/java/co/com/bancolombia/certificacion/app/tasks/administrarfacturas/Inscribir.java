@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_INSCRIBIR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.InscribirPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_FACTURA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Inscribir implements Task {
@@ -35,6 +36,7 @@ public class Inscribir implements Task {
                 Click.on(LNK_SIGUIENTE),
                 Click.on(LNK_INSCRIBIR)
         );
+        actor.remember(MODELO_FACTURA, factura);
     }
 
     public static Inscribir facturas(FacturaBuilder factura) {

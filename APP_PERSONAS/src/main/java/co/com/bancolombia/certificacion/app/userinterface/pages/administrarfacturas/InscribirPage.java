@@ -12,6 +12,7 @@ public class InscribirPage {
     public static final Target TXT_EMPRESA_SERVICIO_POP_UP = Target.the("Primer posición pop up empresa o servicio").located(theElementBy(TXT_EMPRESA_SERVICIO_POP_UP_LOCATOR));
     public static final Target TXT_DESCRIPCION = Target.the("Texto descripción").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
     public static final Target TXT_REFERENCIA = Target.the("Texto referencia").located(theElementBy(TXT_REFERENCIA_LOCATOR));
+    public static final Target LBL_INSCRIPCION_EXITOSA = Target.the("Mensaje inscripción exitosa").located(theElementBy(LBL_INSCRIPCION_EXITOSA_LOCATOR));
 
     private InscribirPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

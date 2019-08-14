@@ -8,10 +8,10 @@ Característica: Inscripción de facturas
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Y el actor quiere INSCRIBIR_FACTURAS
     Cuando inscribe una factura
-      | convenio   | descripcion   | referencia   |
-      | <convenio> | <descripcion> | <referencia> |
-#Entonces deberia ver el mensaje de confirmación
+      | convenio   | descripcionFactura   | referencia   |
+      | <convenio> | <descripcionFactura> | <referencia> |
+    Entonces deberia ver el mensaje de confirmación
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | convenio | descripcion | referencia |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | convenio | descripcionFactura   | referencia   |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/InscribirFacturas.xlsx@Datos@1
-   |1   |22483228   |1   |userrobot2   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |movistar   |descripcion 1   |referencia 1|
+   |1   |22483228   |1   |userrobot2   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |65401   |descripcion 1   |8419|
