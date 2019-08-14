@@ -13,11 +13,11 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 
-public class conOpcionEditarProgramacion extends PagarProgramarFactura {
+public class EditarProgramacion extends PagarProgramarFactura {
     private ProgramarFacturas programarFacturas;
     private String opcion;
 
-    public conOpcionEditarProgramacion(ProgramarFacturas programarFacturas, String opcion) {
+    public EditarProgramacion(ProgramarFacturas programarFacturas, String opcion) {
         this.programarFacturas = programarFacturas;
         this.opcion = opcion;
     }
@@ -29,7 +29,7 @@ public class conOpcionEditarProgramacion extends PagarProgramarFactura {
         String fechaFin = fecha[1];
         actor.attemptsTo(
                 Click.on(OPT_SUB_MENU_PROGRAMADAS),
-                SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getDescripcionFactura()),
+                SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getEmpresaServicio()),
                 Check.whether(PRODUCTO_ORIGEN.equals(opcion)).andIfSo(
                         Click.on(LNK_CAMBIAR.of(opcion))),
                 Click.on(OPT_MIS_PRODUCTOS),

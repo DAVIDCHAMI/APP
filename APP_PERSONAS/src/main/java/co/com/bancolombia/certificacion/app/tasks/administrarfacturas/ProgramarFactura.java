@@ -22,7 +22,7 @@ public class ProgramarFactura extends PagarProgramarFactura {
         String fechaInicio = fecha[0];
         String fechaFin = fecha[1];
         actor.attemptsTo(
-                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getDescripcionFactura()),
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getEmpresaServicio()),
                 Click.on(OPT_MIS_PRODUCTOS),
                 RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().
                         getTipo(), programarFacturas.getProducto().getNumero())),

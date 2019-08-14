@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.exceptions;
 
-public class ModificacionProgramacionException extends AssertionError {
-    public static final String MENSAJE_MODIFICACION= "La programación de la factura no se modificó";
+public class EliminacionFacturasException extends AssertionError {
+    public static final String MENSAJE_ELIMINACION= "La factura seleccionada no se eliminó";
 
-    public ModificacionProgramacionException(String message, Throwable cause) {
+    public EliminacionFacturasException(String message, Throwable cause) {
         super(message, cause);
     }
 }

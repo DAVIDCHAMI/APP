@@ -10,4 +10,12 @@ public class AdministrarFactura {
     public static Performable conOpcionProgramar(ProgramarFacturasBuilder programarFacturasBuilder) {
         return instrumented(ProgramarFactura.class, programarFacturasBuilder.build());
     }
+
+    public static Performable conOpcionEditar(ProgramarFacturasBuilder programarFacturasBuilder,String opcion) {
+        return instrumented(EditarProgramacion.class, programarFacturasBuilder.build(),opcion);
+    }
+
+    public static Performable conOpcionELiminar(ProgramarFacturasBuilder programarFacturasBuilder, String opcion) {
+        return instrumented(EliminarFactura.class, programarFacturasBuilder.build(),opcion);
+    }
 }

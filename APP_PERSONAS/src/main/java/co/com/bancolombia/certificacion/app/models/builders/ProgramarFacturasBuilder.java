@@ -11,22 +11,24 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 
 public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
     private String valorFactura;
-    private String descripcionFactura;
+    private String empresaServicio;
     private String fechaFactura;
     private String periodicidad;
     private String numeroIntento;
     private String fechaInicioFin;
     private String frecuenciaPago;
+    private String referencia;
     private Producto producto = new Producto();
 
     public ProgramarFacturasBuilder() {
         this.valorFactura = "";
-        this.descripcionFactura = "";
+        this.empresaServicio = "";
         this.fechaFactura = "";
         this.periodicidad = "";
         this.numeroIntento = "";
         this.fechaInicioFin = "";
         this.frecuenciaPago="";
+        this.referencia="";
     }
 
     public static ProgramarFacturasBuilder programarFactura() {
@@ -39,7 +41,7 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
     }
 
     public ProgramarFacturasBuilder conDescripcionFactura(List<Map<String, String>> datos) {
-        this.descripcionFactura = datos.get(0).get("descripcionFactura");
+        this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
     }
 
@@ -68,11 +70,20 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
         return this;
     }
 
+    public ProgramarFacturasBuilder conReferencia(List<Map<String, String>> datos) {
+        this.frecuenciaPago = datos.get(0).get("referencia");
+        return this;
+    }
+
     public ProgramarFacturasBuilder conProducto(List<Map<String, String>> datos) {
         this.producto = elProducto().conNumero(datos.get(0).get("numeroCuenta"))
                 .conTipoCuenta(datos.get(0).get("tipoCuenta"))
                 .build();
         return this;
+    }
+
+    public String getReferencia() {
+        return referencia;
     }
 
     public String getFrecuenciaPago() {
@@ -83,8 +94,8 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
         return valorFactura;
     }
 
-    public String getDescripcionFactura() {
-        return descripcionFactura;
+    public String getEmpresaServicio() {
+        return empresaServicio;
     }
 
     public String getFechaFactura() {

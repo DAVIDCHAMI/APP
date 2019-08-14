@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.exceptions;
 
-public class ProductoSinMovimientosException extends AssertionError {
-    public static final String SIN_MOVIMIENTOS= "La cuenta no tiene movimientos";
+public class ModificacionProgramacionException extends AssertionError {
+    public static final String MENSAJE_MODIFICACION= "La programación de la factura no se modificó";
 
-    public ProductoSinMovimientosException(String message, Throwable cause) {
+    public ModificacionProgramacionException(String message, Throwable cause) {
         super(message, cause);
     }
 }

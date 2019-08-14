@@ -5,23 +5,33 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class ProgramarFacturas {
     private String valorFactura;
-    private String descripcionFactura;
+    private String empresaServicio;
     private String fechaFactura;
     private String periodicidad;
     private String numeroIntento;
     private String fechaInicioFin;
     private String frecuenciaPago;
+    private String referencia;
     private Producto producto;
 
     public ProgramarFacturas(ProgramarFacturasBuilder programarFacturasBuilder) {
         this.valorFactura = programarFacturasBuilder.getValorFactura();
-        this.descripcionFactura = programarFacturasBuilder.getDescripcionFactura();
+        this.empresaServicio = programarFacturasBuilder.getEmpresaServicio();
         this.fechaFactura = programarFacturasBuilder.getFechaFactura();
         this.periodicidad = programarFacturasBuilder.getPeriodicidad();
         this.numeroIntento = programarFacturasBuilder.getNumeroIntento();
         this.fechaInicioFin = programarFacturasBuilder.getFechaInicioFin();
         this.frecuenciaPago=programarFacturasBuilder.getFrecuenciaPago();
+        this.referencia=programarFacturasBuilder.getReferencia();
         this.producto = programarFacturasBuilder.getProducto();
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
     }
 
     public String getFrecuenciaPago() {
@@ -40,12 +50,12 @@ public class ProgramarFacturas {
         this.valorFactura = valorFactura;
     }
 
-    public String getDescripcionFactura() {
-        return descripcionFactura;
+    public String getEmpresaServicio() {
+        return empresaServicio;
     }
 
-    public void setDescripcionFactura(String descripcionFactura) {
-        this.descripcionFactura = descripcionFactura;
+    public void setEmpresaServicio(String empresaServicio) {
+        this.empresaServicio = empresaServicio;
     }
 
     public String getFechaFactura() {
