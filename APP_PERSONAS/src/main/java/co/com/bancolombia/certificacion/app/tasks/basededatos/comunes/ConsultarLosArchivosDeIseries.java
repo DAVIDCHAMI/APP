@@ -25,6 +25,9 @@ public class ConsultarLosArchivosDeIseries implements Task {
         this.files = files;
     }
 
+    private ConsultarLosArchivosDeIseries() {
+    }
+
     public static ConsultarLosArchivosDeIseries enApp(List<String> files) {
         return instrumented(ConsultarLosArchivosDeIseries.class, files);
     }
@@ -33,20 +36,18 @@ public class ConsultarLosArchivosDeIseries implements Task {
     public <T extends Actor> void performAs(T actor) {
         ConfiguracionTransaccion transaccion = actor.recall(MODELO_DATOS_TRANSACCION);
 
-        for (String file : files){
-           String dato = getFileName(file);
-           String codTrn = transaccion.getCodigoTransaccion();
+        for (String file : files) {
+            String dato = getFileName(file);
+            String codTrn = transaccion.getCodigoTransaccion();
 
-            if (LOGCANAL.equals(dato)){
-               ArchivosLogCanalIseries laVerificacion = ArchivosLogCanalIseries.getSearchFile(dato+codTrn);
-               theActorInTheSpotlight().should(seeThat(laVerificacion.delArchivo(),is(true)).orComplainWith( laVerificacion.getException(), laVerificacion.getMessage()));
-           }else{
+            if (LOGCANAL.equals(dato)) {
+                ArchivosLogCanalIseries laVerificacion = ArchivosLogCanalIseries.getSearchFile(dato + codTrn);
+                theActorInTheSpotlight().should(seeThat(laVerificacion.delArchivo(), is(true)).orComplainWith(laVerificacion.getException(), laVerificacion.getMessage()));
+            } else {
                 ArchivosComunesIseries theVerification = ArchivosComunesIseries.getSearchFile(dato);
                 theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(), is(true)).orComplainWith(theVerification.getException(), theVerification.getMessage()));
-           }
-       }
+            }
+        }
     }
-
-    private ConsultarLosArchivosDeIseries(){}
 
 }

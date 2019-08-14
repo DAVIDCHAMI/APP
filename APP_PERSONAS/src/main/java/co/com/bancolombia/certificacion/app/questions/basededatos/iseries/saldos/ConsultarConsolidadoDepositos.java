@@ -26,7 +26,7 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
         List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
         registros = Depositos.saldoDepositosConsolidado(actor);
 
-        if (registros.size() > 0){
+        if (!registros.isEmpty()){
             Boolean resultadoDato = true;
             Boolean resultadoRegistro = true;
 

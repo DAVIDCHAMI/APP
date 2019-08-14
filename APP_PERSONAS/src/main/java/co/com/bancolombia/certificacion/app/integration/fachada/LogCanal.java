@@ -21,9 +21,11 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class LogCanal {
 
-    public static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
 
-    private LogCanal() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private LogCanal() {
+        throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
+    }
 
     public static List<Map<String, Object>> consultaLogCanalTrama220230(Actor actor) {
         Map<String, Object> dataForQuery = new HashMap<>();

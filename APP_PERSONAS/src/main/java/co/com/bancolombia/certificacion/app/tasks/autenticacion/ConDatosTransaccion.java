@@ -1,7 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-
-import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import net.serenitybdd.screenplay.Actor;
@@ -18,12 +16,12 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConDatosTransaccion extends Autenticacion {
+    public static final Logger LOGGER = LogManager.getLogger(ConfiguracionTransaccion.class);
     private ConfiguracionTransaccion usuario;
 
     public ConDatosTransaccion(ConfiguracionTransaccion usuario) {
         this.usuario = usuario;
     }
-    public static final Logger LOGGER = LogManager.getLogger(ConfiguracionTransaccion.class);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -32,7 +30,6 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.attemptsTo(
                 Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                CerrarTip.alIniciarApp(),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
@@ -43,6 +40,8 @@ public class ConDatosTransaccion extends Autenticacion {
                 Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
-        ));
-    }
+        )
+    );
+  }
+
 }

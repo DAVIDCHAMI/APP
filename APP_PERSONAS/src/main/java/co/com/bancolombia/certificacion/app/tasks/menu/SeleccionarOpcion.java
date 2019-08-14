@@ -20,6 +20,10 @@ public class SeleccionarOpcion implements Task {
         this.tipoTransaccion = TipoTransaccionEnum.valueOf(opcionMenu);
     }
 
+    public static SeleccionarOpcion delMenu(String opcionMenu) {
+        return instrumented(SeleccionarOpcion.class, opcionMenu);
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -43,9 +47,5 @@ public class SeleccionarOpcion implements Task {
                                 )
                         )
         );
-    }
-
-    public static SeleccionarOpcion delMenu(String opcionMenu) {
-        return instrumented(SeleccionarOpcion.class, opcionMenu);
     }
 }

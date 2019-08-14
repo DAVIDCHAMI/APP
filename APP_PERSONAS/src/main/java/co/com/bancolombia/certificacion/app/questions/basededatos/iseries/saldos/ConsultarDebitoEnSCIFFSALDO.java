@@ -1,19 +1,20 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
+
 import co.com.bancolombia.certificacion.app.integration.fachada.Depositos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ConsultarCreditoDepositos implements Question {
+public class ConsultarDebitoEnSCIFFSALDO implements Question {
 
-    private static final Logger LOGGER = LogManager.getLogger(ConsultarCreditoDepositos.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(ConsultarDebitoEnSCIFFSALDO.class.getName());
 
     @Override
     public Object answeredBy(Actor actor) {
         boolean resultado = false;
-        resultado = Depositos.verificarElCreditoDeLaCuenta(actor);
+        resultado = Depositos.verificarElDebitoDeLaCuenta(actor);
         if (resultado){
             resultado = true;
         }else {
