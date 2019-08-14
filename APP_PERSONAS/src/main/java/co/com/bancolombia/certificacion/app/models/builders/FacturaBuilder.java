@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
-import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
+import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 
-public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
+public class FacturaBuilder implements Builder<Factura> {
     private String valorFactura;
     private String descripcionFactura;
     private String fechaFactura;
@@ -17,54 +17,68 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
     private String numeroIntento;
     private String fechaInicioFin;
     private Producto producto = new Producto();
+    private String convenio;
+    private String referencia;
 
-    public ProgramarFacturasBuilder() {
+    public FacturaBuilder() {
         this.valorFactura = "";
         this.descripcionFactura = "";
         this.fechaFactura = "";
         this.periodicidad = "";
         this.numeroIntento = "";
         this.fechaInicioFin = "";
+        this.convenio = "";
+        this.referencia = "";
     }
 
-    public static ProgramarFacturasBuilder programarFactura() {
-        return new ProgramarFacturasBuilder();
+    public static FacturaBuilder con() {
+        return new FacturaBuilder();
     }
 
-    public ProgramarFacturasBuilder conValor(List<Map<String, String>> datos) {
+    public FacturaBuilder conValor(List<Map<String, String>> datos) {
         this.valorFactura = datos.get(0).get("valorFactura");
         return this;
     }
 
-    public ProgramarFacturasBuilder conDescripcionFactura(List<Map<String, String>> datos) {
+    public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
         this.descripcionFactura = datos.get(0).get("descripcionFactura");
         return this;
     }
 
-    public ProgramarFacturasBuilder conFechaFactura(List<Map<String, String>> datos) {
+    public FacturaBuilder conFechaFactura(List<Map<String, String>> datos) {
         this.fechaFactura = datos.get(0).get("fechaFactura");
         return this;
     }
 
-    public ProgramarFacturasBuilder conPeriodicidad(List<Map<String, String>> datos) {
+    public FacturaBuilder conPeriodicidad(List<Map<String, String>> datos) {
         this.periodicidad = datos.get(0).get("periodicidad");
         return this;
     }
 
-    public ProgramarFacturasBuilder conNumeroIntento(List<Map<String, String>> datos) {
+    public FacturaBuilder conNumeroIntento(List<Map<String, String>> datos) {
         this.numeroIntento = datos.get(0).get("numeroIntento");
         return this;
     }
 
-    public ProgramarFacturasBuilder conFechaInicioFin(List<Map<String, String>> datos) {
+    public FacturaBuilder conFechaInicioFin(List<Map<String, String>> datos) {
         this.fechaInicioFin = datos.get(0).get("fechaInicioFin");
         return this;
     }
 
-    public ProgramarFacturasBuilder conProducto(List<Map<String, String>> datos) {
+    public FacturaBuilder conProducto(List<Map<String, String>> datos) {
         this.producto = elProducto().conNumero(datos.get(0).get("numeroCuenta"))
                 .conTipoCuenta(datos.get(0).get("tipoCuenta"))
                 .build();
+        return this;
+    }
+
+    public FacturaBuilder conReferencia(List<Map<String, String>> datos) {
+        this.referencia = datos.get(0).get("referencia");
+        return this;
+    }
+
+    public FacturaBuilder conConvenio(List<Map<String, String>> datos) {
+        this.convenio = datos.get(0).get("convenio");
         return this;
     }
 
@@ -96,8 +110,16 @@ public class ProgramarFacturasBuilder implements Builder<ProgramarFacturas> {
         return producto;
     }
 
+    public String getConvenio() {
+        return convenio;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
     @Override
-    public ProgramarFacturas build() {
-        return new ProgramarFacturas(this);
+    public Factura build() {
+        return new Factura(this);
     }
 }
