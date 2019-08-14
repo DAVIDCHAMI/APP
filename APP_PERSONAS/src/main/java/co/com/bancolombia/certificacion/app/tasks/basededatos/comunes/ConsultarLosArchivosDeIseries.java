@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.basededatos.comunes;
 
+import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosComunesIseries;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosLogCanalIseries;
@@ -41,7 +42,7 @@ public class ConsultarLosArchivosDeIseries implements Task {
                theActorInTheSpotlight().should(seeThat(laVerificacion.delArchivo(),is(true)).orComplainWith( laVerificacion.getException(), laVerificacion.getMessage()));
            }else{
                ArchivosComunesIseries theVerification = ArchivosComunesIseries.getSearchFile(dato);
-               theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(),is(true)).orComplainWith( theVerification.getException(), theVerification.getMessage()));
+               theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(),is(true)).orComplainWith(AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA));
            }
        }
     }
