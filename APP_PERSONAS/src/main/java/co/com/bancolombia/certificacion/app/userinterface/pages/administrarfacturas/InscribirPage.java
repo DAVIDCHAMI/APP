@@ -17,5 +17,4 @@ public class InscribirPage {
     private InscribirPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
     }
-
 }
