@@ -1,6 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages;
 
+import io.appium.java_client.MobileBy;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.MenuLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
