@@ -12,17 +12,16 @@ public class CargarDatos implements Task {
 
     private ConfiguracionTransaccion configuracionTransaccion;
 
-    public CargarDatos(ConfiguracionTransaccion configuracionTransaccion){
+    public CargarDatos(ConfiguracionTransaccion configuracionTransaccion) {
         this.configuracionTransaccion = configuracionTransaccion;
+    }
+
+    public static CargarDatos transaccionCon(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
+        return instrumented(CargarDatos.class, configuracionTransaccionBuilder.build());
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.remember(MODELO_DATOS_TRANSACCION, configuracionTransaccion);
     }
-
-    public static CargarDatos transaccionCon(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
-        return instrumented(CargarDatos.class, configuracionTransaccionBuilder.build());
-    }
 }
-

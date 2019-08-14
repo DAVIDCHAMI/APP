@@ -2,8 +2,6 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.transversal.Movimiento;
-import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorFechas;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import net.serenitybdd.screenplay.Actor;
@@ -13,13 +11,13 @@ import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 import java.util.List;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
-
 public class Movimientos {
 
-    public static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(Movimientos.class.getName());
 
-    private Movimientos() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Movimientos() {
+        throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
+    }
 
     public static List<Movimiento> verifyMovementsEprepagoConsolidated(String strNumtarjeta, String strFecha) {
         BackMovimientosEprepago ePrepago = new BackMovimientosEprepago();

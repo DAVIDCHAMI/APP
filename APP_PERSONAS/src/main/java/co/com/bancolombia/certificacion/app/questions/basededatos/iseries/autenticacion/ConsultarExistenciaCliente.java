@@ -27,17 +27,17 @@ public class ConsultarExistenciaCliente implements Question<Boolean> {
         registros = Autenticacion.consultaDeExistenciaDelCliente(actor);
         ConfiguracionTransaccion transaccion = actor.recall(MODELO_DATOS_TRANSACCION);
 
-        if (!registros.isEmpty()){
+        if (!registros.isEmpty()) {
             Boolean resultadoDato = true;
-            resultadoDato = validarCampo(ConstantesIseries.DOCUMENTO, registros.get(0).get("cnnoss").toString().trim(), StringManager.formatoDocumento(transaccion.getUsuario().getNumeroDocumento()),resultadoDato);
-            resultadoDato = validarCampo(ConstantesIseries.TIPODOCUMENTO, registros.get(0).get("cncdti").toString().trim(), transaccion.getUsuario().getTipoDocumento(),resultadoDato);
-            resultadoDato = validarCampo(ConstantesIseries.ESTADOUSUARIO, registros.get(0).get("estado").toString().trim(), "A",resultadoDato);
+            resultadoDato = validarCampo(ConstantesIseries.DOCUMENTO, registros.get(0).get("cnnoss").toString().trim(), StringManager.formatoDocumento(transaccion.getUsuario().getNumeroDocumento()), resultadoDato);
+            resultadoDato = validarCampo(ConstantesIseries.TIPODOCUMENTO, registros.get(0).get("cncdti").toString().trim(), transaccion.getUsuario().getTipoDocumento(), resultadoDato);
+            resultadoDato = validarCampo(ConstantesIseries.ESTADOUSUARIO, registros.get(0).get("estado").toString().trim(), "A", resultadoDato);
 
-            if (resultadoDato){
-                resultFinal=true;
+            if (resultadoDato) {
+                resultFinal = true;
             }
             Serenity.recordReportData().withTitle("Verificacion Back Autenticacion").andContents(Serenity.sessionVariableCalled("log"));
-        }else{
+        } else {
             LOGGER.info("Sin registros en la consulta");
         }
         return resultFinal;

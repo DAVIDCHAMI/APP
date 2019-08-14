@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.questions.fabrica.autenticacion.FabricaAutenticacion;
 import net.serenitybdd.screenplay.Actor;
@@ -28,16 +27,15 @@ public class ConCredenciales extends Autenticacion {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
         actor.attemptsTo(
                 Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                CerrarTip.alIniciarApp(),
                 Check.whether(BTN_INSCRIBIR_DINAMICA_CLAVE.resolveFor(actor).isVisible()).
                         andIfSo(Click.on(BTN_INSCRIBIR_DINAMICA_CLAVE)),
-                Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
-                Click.on(LBL_HOLA_PROVISIONAL),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR),
-                Enter.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
-                WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
+                        Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
+                        Click.on(LBL_HOLA_PROVISIONAL),
+                        WaitUntil.the(BTN_CONTINUAR, isEnabled()),
+                        Click.on(BTN_CONTINUAR),
+                        Enter.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
+                        WaitUntil.the(BTN_CONTINUAR, isEnabled()),
+                        Click.on(BTN_CONTINUAR)
                 )
         );
     }
