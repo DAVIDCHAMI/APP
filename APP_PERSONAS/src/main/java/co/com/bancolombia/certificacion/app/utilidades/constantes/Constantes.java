@@ -19,6 +19,7 @@ public class Constantes {
     public static final String PRODUCTO_ORIGEN = "Producto origen";
     public static final String VALOR_PAGAR = "Valor a pagar";
     public static final String PERIODICIDAD = "Periodicidad";
+    public static final int NUMERO_PANTALLAS_ONBOARDING = 5;
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
