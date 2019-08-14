@@ -41,8 +41,8 @@ public class ConsultarLosArchivosDeIseries implements Task {
                ArchivosLogCanalIseries laVerificacion = ArchivosLogCanalIseries.getSearchFile(dato+codTrn);
                theActorInTheSpotlight().should(seeThat(laVerificacion.delArchivo(),is(true)).orComplainWith( laVerificacion.getException(), laVerificacion.getMessage()));
            }else{
-               ArchivosComunesIseries theVerification = ArchivosComunesIseries.getSearchFile(dato);
-               theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(),is(true)).orComplainWith(AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA));
+                ArchivosComunesIseries theVerification = ArchivosComunesIseries.getSearchFile(dato);
+                theActorInTheSpotlight().should(seeThat(theVerification.delArchivo(), is(true)).orComplainWith(theVerification.getException(), theVerification.getMessage()));
            }
        }
     }
