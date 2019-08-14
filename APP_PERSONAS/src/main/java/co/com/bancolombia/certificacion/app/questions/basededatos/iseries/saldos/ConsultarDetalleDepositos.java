@@ -28,7 +28,7 @@ public class ConsultarDetalleDepositos implements Question<Boolean> {
         registros = Depositos.saldoDepositosDetalle(actor);
         DecimalFormat formato = new DecimalFormat("#.00");
 
-        if (registros.size() > 0){
+        if (!registros.isEmpty()){
             Boolean resultadoDato = true;
 
             Double valorDisponible = Double.parseDouble(registros.get(0).get("sdsdodsp").toString().trim());
