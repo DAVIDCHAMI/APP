@@ -30,6 +30,9 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, 'l1-{0}-AccountContentContainer')]//android.view.View[1]//following-sibling::android.view.View[3]")
             .withIos("xpath$g");
+    public static final Locator LBL_SALDO_SALDOS_MOVIMIENTOS_LOCATOR = locator()
+            .withAndroid("xpath$//android.view.View[contains(@resource-id, '{0}-{1}')]//android.view.View[1]//following-sibling::android.view.View[3]")
+            .withIos("xpath$g");
     public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-AccountDataContainer2']").withIos("xpath$h");
     public static final Locator LBL_FECHA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column1']//android.view.View[1]").withIos("xpath$i");
     public static final Locator LBL_DESCRIPCION_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column1']//android.view.View[2]").withIos("xpath$j");
