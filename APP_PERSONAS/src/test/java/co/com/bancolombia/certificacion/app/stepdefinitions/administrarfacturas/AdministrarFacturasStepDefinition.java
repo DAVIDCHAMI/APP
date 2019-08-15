@@ -30,7 +30,7 @@ public class AdministrarFacturasStepDefinition {
                 factura()
                         .conValor(datos)
                         .conFechaFactura(datos)
-                        .conDescripcionFactura(datos)
+                        .conEmpresaServicio(datos)
                         .conProducto(datos)
                         .conPeriodicidad(datos)
                         .conNumeroIntento(datos)
@@ -50,7 +50,7 @@ public class AdministrarFacturasStepDefinition {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionELiminar(
                 factura().conValor(datos)
                         .conFechaFactura(datos)
-                        .conDescripcionFactura(datos),
+                        .conEmpresaServicio(datos),
                 opcion
                 )
         );
@@ -61,7 +61,7 @@ public class AdministrarFacturasStepDefinition {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
                         .conFechaInicioFin(datos)
-                        .conDescripcionFactura(datos)
+                        .conEmpresaServicio(datos)
                         .conProducto(datos)
                         .conFrecuenciaPago(datos)
                         .conPeriodicidad(datos)

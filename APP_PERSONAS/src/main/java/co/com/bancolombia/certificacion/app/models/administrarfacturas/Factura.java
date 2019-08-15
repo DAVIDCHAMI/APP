@@ -14,6 +14,7 @@ public class Factura {
     private String convenio;
     private String referencia;
     private String frecuenciaPago;
+    private String descripcionFactura;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
@@ -26,6 +27,15 @@ public class Factura {
         this.convenio = programarFacturaBuilder.getConvenio();
         this.referencia = programarFacturaBuilder.getReferencia();
         this.frecuenciaPago=programarFacturaBuilder.getFrecuenciaPago();
+        this.descripcionFactura=programarFacturaBuilder.getDescripcionFactura();
+    }
+
+    public String getDescripcionFactura() {
+        return descripcionFactura;
+    }
+
+    public void setDescripcionFactura(String descripcionFactura) {
+        this.descripcionFactura = descripcionFactura;
     }
 
     public String getValorFactura() {

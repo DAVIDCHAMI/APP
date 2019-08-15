@@ -20,6 +20,7 @@ public class FacturaBuilder implements Builder<Factura> {
     private String referencia;
     private Producto producto = new Producto();
     private String convenio;
+    private String descripcionFactura;
 
     public FacturaBuilder() {
         this.valorFactura = "";
@@ -43,7 +44,7 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
-    public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
+    public FacturaBuilder conEmpresaServicio(List<Map<String, String>> datos) {
         this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
     }
@@ -81,13 +82,22 @@ public class FacturaBuilder implements Builder<Factura> {
     }
 
     public FacturaBuilder conReferencia(List<Map<String, String>> datos) {
-        this.frecuenciaPago = datos.get(0).get("referencia");
+        this.referencia = datos.get(0).get("referencia");
         return this;
     }
 
     public FacturaBuilder conConvenio(List<Map<String, String>> datos) {
         this.convenio = datos.get(0).get("convenio");
         return this;
+    }
+
+    public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
+        this.descripcionFactura = datos.get(0).get("descripcionFactura");
+        return this;
+    }
+
+    public String getDescripcionFactura() {
+        return descripcionFactura;
     }
 
     public String getValorFactura() {
