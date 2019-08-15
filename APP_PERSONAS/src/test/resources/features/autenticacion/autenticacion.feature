@@ -15,7 +15,7 @@ Característica: Autenticación app Bancolombia
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1,2,3
    |1   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
 
 
@@ -31,7 +31,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
    |4   |1037655531   |1   |userrobot3   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
+
   Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -43,7 +43,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
    |5   |1037655531   |1   |userrobot3   |1111   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
+  
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -53,4 +53,4 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@6
-   |6   |95400152   |1   |sandrita69   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+   |6   |10757877   |1   |usrblocked01   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|

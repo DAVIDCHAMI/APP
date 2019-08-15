@@ -23,6 +23,8 @@ public class ConDatosTransaccion extends Autenticacion {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BTN_INGRESAR),
+                WaitUntil.the(TXT_USUARIO, isEnabled()),
+                Click.on(TXT_USUARIO),
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
