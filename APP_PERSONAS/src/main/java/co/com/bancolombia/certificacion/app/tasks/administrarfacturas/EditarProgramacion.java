@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 import co.com.bancolombia.certificacion.app.interactions.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
-import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
+import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
@@ -14,10 +14,10 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.administr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 
 public class EditarProgramacion extends PagarProgramarFactura {
-    private ProgramarFacturas programarFacturas;
+    private Factura programarFacturas;
     private String opcion;
 
-    public EditarProgramacion(ProgramarFacturas programarFacturas, String opcion) {
+    public EditarProgramacion(Factura programarFacturas, String opcion) {
         this.programarFacturas = programarFacturas;
         this.opcion = opcion;
     }

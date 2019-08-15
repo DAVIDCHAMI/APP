@@ -24,7 +24,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator IMG_PERIODICIDAD_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Periodicidad']/following-sibling::android.view.View[1]/android.view.View/android.widget.Image[@text='Bancolombia_Resources.CalendarIcon']");
     public static final Locator LST_FRECUENCIA_PERIODICAD_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Selecciona la frecuencia']/..//android.view.View[@text='{0}']");
     public static final Locator BTN_MODIFICAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='MODIFICAR']");
-    public static final Locator BTN_CONFIRMAR_ELIMINACION_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='ELIMINAR']");
+    public static final Locator BTN_CONFIRMAR_ELIMINACION_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[@text='ELIMINAR']");
     public static final Locator LBL_MENSAJE_MODIFICACION_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='¡Modificación exitosa!']");
     public static final Locator LBL_ELIMINACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='¡Eliminación exitosa!']");
     public static final Locator LBL_EMPRESA_SERIVICIO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Empresa o servicio')]/..//android.view.View[contains(@text,'{0}')]");

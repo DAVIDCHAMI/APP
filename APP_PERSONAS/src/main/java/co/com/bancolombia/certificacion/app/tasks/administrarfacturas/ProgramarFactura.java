@@ -3,14 +3,11 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
-import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ProgramarFactura  extends PagarProgramarFactura {
     private Factura factura;
@@ -25,7 +22,7 @@ public class ProgramarFactura  extends PagarProgramarFactura {
         String fechaInicio = fecha[0];
         String fechaFin = fecha[1];
         actor.attemptsTo(
-                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura.getValorFactura(), factura.getFechaFactura(), factura.getDescripcionFactura()),
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura.getValorFactura(), factura.getFechaFactura(), factura.getEmpresaServicio()),
                 Click.on(OPT_MIS_PRODUCTOS),
                 RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
                         getTipo(), factura.getProducto().getNumero())),

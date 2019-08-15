@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
-import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
@@ -35,7 +34,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.referencia = "";
     }
 
-    public static FacturaBuilder con() {
+    public static FacturaBuilder factura() {
         return new FacturaBuilder();
     }
 
@@ -45,7 +44,7 @@ public class FacturaBuilder implements Builder<Factura> {
     }
 
     public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
-        this.empresaServicio = datos.get(0).get("descripcionFactura");
+        this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
     }
 
@@ -125,6 +124,10 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public String getReferencia() {
         return referencia;
+    }
+
+    public String getFrecuenciaPago() {
+        return frecuenciaPago;
     }
 
     @Override

@@ -8,12 +8,14 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.administr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.SERVICIO;
 
 public class VerificarEliminacionFactura implements Question<Boolean> {
+
     @Override
     public Boolean answeredBy(Actor actor) {
         String empresaServicio=actor.recall(SERVICIO);
         return Visibility.of(LBL_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean() && Visibility.of(LBL_EMPRESA_SERIVICIO.of(empresaServicio)).viewedBy(actor).asBoolean()  ;
     }
-    public static VerificarEliminacionFactura inscritas(){
+
+    public static VerificarEliminacionFactura exitoso(){
         return new VerificarEliminacionFactura();
     }
 }

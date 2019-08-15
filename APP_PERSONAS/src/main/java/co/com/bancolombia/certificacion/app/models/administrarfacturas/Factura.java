@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Factura {
     private String valorFactura;
-    private String descripcionFactura;
+    private String empresaServicio;
     private String fechaFactura;
     private String periodicidad;
     private String numeroIntento;
@@ -13,10 +13,11 @@ public class Factura {
     private Producto producto;
     private String convenio;
     private String referencia;
+    private String frecuenciaPago;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
-        this.descripcionFactura = programarFacturaBuilder.getDescripcionFactura();
+        this.empresaServicio = programarFacturaBuilder.getEmpresaServicio();
         this.fechaFactura = programarFacturaBuilder.getFechaFactura();
         this.periodicidad = programarFacturaBuilder.getPeriodicidad();
         this.numeroIntento = programarFacturaBuilder.getNumeroIntento();
@@ -24,14 +25,23 @@ public class Factura {
         this.producto = programarFacturaBuilder.getProducto();
         this.convenio = programarFacturaBuilder.getConvenio();
         this.referencia = programarFacturaBuilder.getReferencia();
+        this.frecuenciaPago=programarFacturaBuilder.getFrecuenciaPago();
     }
 
     public String getValorFactura() {
         return valorFactura;
     }
 
-    public String getDescripcionFactura() {
-        return descripcionFactura;
+    public String getEmpresaServicio() {
+        return empresaServicio;
+    }
+
+    public String getFrecuenciaPago() {
+        return frecuenciaPago;
+    }
+
+    public void setFrecuenciaPago(String frecuenciaPago) {
+        this.frecuenciaPago = frecuenciaPago;
     }
 
     public String getFechaFactura() {

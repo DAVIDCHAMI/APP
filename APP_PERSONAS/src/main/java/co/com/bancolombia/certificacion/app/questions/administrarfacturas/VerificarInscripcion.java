@@ -15,7 +15,7 @@ public class VerificarInscripcion implements Question<Boolean> {
         Factura factura = actor.recall(MODELO_FACTURA);
         return LBL_INSCRIPCION_EXITOSA.resolveFor(actor).isVisible() &&
                 LBL_VERIFICACION.of(factura.getConvenio()).resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(factura.getDescripcionFactura()).resolveFor(actor).isVisible() &&
+                LBL_VERIFICACION.of(factura.getEmpresaServicio()).resolveFor(actor).isVisible() &&
                 LBL_VERIFICACION.of(factura.getReferencia()).resolveFor(actor).isVisible();
     }
 
