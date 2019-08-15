@@ -33,6 +33,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.referencia = "";
         this.frecuenciaPago = "";
         this.referencia = "";
+        this.descripcionFactura="";
     }
 
     public static FacturaBuilder factura() {
