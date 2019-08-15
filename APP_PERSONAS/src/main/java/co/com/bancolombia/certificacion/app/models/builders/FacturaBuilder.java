@@ -11,27 +11,32 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 
 public class FacturaBuilder implements Builder<Factura> {
     private String valorFactura;
-    private String descripcionFactura;
+    private String empresaServicio;
     private String fechaFactura;
     private String periodicidad;
     private String numeroIntento;
     private String fechaInicioFin;
+    private String frecuenciaPago;
+    private String referencia;
     private Producto producto = new Producto();
     private String convenio;
-    private String referencia;
+    private String descripcionFactura;
 
     public FacturaBuilder() {
         this.valorFactura = "";
-        this.descripcionFactura = "";
+        this.empresaServicio = "";
         this.fechaFactura = "";
         this.periodicidad = "";
         this.numeroIntento = "";
         this.fechaInicioFin = "";
         this.convenio = "";
         this.referencia = "";
+        this.frecuenciaPago = "";
+        this.referencia = "";
+        this.descripcionFactura="";
     }
 
-    public static FacturaBuilder con() {
+    public static FacturaBuilder factura() {
         return new FacturaBuilder();
     }
 
@@ -40,8 +45,8 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
-    public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
-        this.descripcionFactura = datos.get(0).get("descripcionFactura");
+    public FacturaBuilder conEmpresaServicio(List<Map<String, String>> datos) {
+        this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
     }
 
@@ -72,6 +77,11 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+    public FacturaBuilder conFrecuenciaPago(List<Map<String, String>> datos) {
+        this.frecuenciaPago = datos.get(0).get("frecuenciaPago");
+        return this;
+    }
+
     public FacturaBuilder conReferencia(List<Map<String, String>> datos) {
         this.referencia = datos.get(0).get("referencia");
         return this;
@@ -82,12 +92,21 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
-    public String getValorFactura() {
-        return valorFactura;
+    public FacturaBuilder conDescripcionFactura(List<Map<String, String>> datos) {
+        this.descripcionFactura = datos.get(0).get("descripcionFactura");
+        return this;
     }
 
     public String getDescripcionFactura() {
         return descripcionFactura;
+    }
+
+    public String getValorFactura() {
+        return valorFactura;
+    }
+
+    public String getEmpresaServicio() {
+        return empresaServicio;
     }
 
     public String getFechaFactura() {
@@ -116,6 +135,10 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public String getReferencia() {
         return referencia;
+    }
+
+    public String getFrecuenciaPago() {
+        return frecuenciaPago;
     }
 
     @Override
