@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.autenticacion.CerrarTip;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
