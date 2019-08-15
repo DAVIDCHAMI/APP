@@ -32,11 +32,11 @@ public class Registrarse implements Task {
                 Type.theValue(correoUser).into(TXT_CORREO),
                 Check.whether(LBL_TIPO_CORREO.resolveFor(actor).isVisible())
                         .andIfSo(Click.on(LBL_TIPO_CORREO)).otherwise(
-                    Click.on(LBL_CORREO)
+                        Click.on(LBL_CORREO)
                 ),
                 Click.on(CHECK_TIPO_CORREO),
-                Click.on(CHECK_TYC));
-        //   Click.on(BTN_REGISTRO)
+                Click.on(CHECK_TYC),
+                Click.on(BTN_REGISTRO));
     }
 
     public static Performable conLosDatos(String nuevoUser, String correoUser) {
