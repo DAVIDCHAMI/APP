@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -28,7 +27,9 @@ public class ConCredenciales extends Autenticacion {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Enter.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
+                WaitUntil.the(TXT_CLAVE_DIGITOS, isEnabled()),
+                Click.on(TXT_CLAVE_DIGITOS),
+                Type.theValue(usuario.getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );

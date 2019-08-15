@@ -27,7 +27,8 @@ public class ConDatosTransaccion extends Autenticacion {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
+                Click.on(TXT_CLAVE_DIGITOS),
+                Type.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );
