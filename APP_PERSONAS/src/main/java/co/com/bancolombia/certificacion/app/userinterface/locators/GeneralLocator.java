@@ -15,8 +15,9 @@ public class GeneralLocator {
     public static final Locator LNK_SALTAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Saltar')]").withIos("xpath$");
     public static final Locator LNK_COMENZAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Comenzar')]").withIos("xpath$");
     public static final Locator LNK_INSCRIBIR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Inscribir')]");
-    public static final Locator TIP_BOTON_SIGUIENTE_TRANSACCIONES_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'SIGUIENTE')]").withIos("xpath$");
-    public static final Locator TIP_BOTON_CERRAR_TIP_LOCATOR = locator().withAndroid("xpath$//android.widget.Image[contains(@text,'Bancolombia_Resources.close')]").withIos("xpath$");
+    public static final Locator BTN_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'outerlayer')]//android.widget.Button[@text='BLOQUEAR']");
+    public static final Locator LNK_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Bloquear')]");
+    public static final Locator BTN_TARJETA_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../following-sibling::android.view.View//android.view.View[contains(@text,'{1}')]");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

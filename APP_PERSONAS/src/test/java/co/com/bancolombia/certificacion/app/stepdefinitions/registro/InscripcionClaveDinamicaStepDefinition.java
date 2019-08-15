@@ -2,10 +2,12 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 
 import co.com.bancolombia.certificacion.app.exceptions.ClaveNoInscrptaCorrectamente;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
+import co.com.bancolombia.certificacion.app.tasks.bloqueos.Bloquear;
+import co.com.bancolombia.certificacion.app.tasks.bloqueos.ClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
+import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
-import net.serenitybdd.screenplay.GivenWhenThen;
 
 import java.util.List;
 import java.util.Map;
@@ -27,10 +29,21 @@ public class InscripcionClaveDinamicaStepDefinition {
                         conSegundaClave(datos)));
     }
 
+    @Cuando("^bloquea la clave dinámica$")
+    public void bloquearClaveDinamica() {
+        theActorInTheSpotlight().attemptsTo(
+                Bloquear.claveDinamica()
+        );
+    }
+
     @Entonces("Yo debería ver mis datos registrados en clave dinámica$")
     public void deberiaVerClaveDinamExitosa(){
         theActorInTheSpotlight().should(seeThat(VerificarInscripcionClaveDinamica.exitosa()).orComplainWith(
                 ClaveNoInscrptaCorrectamente.class, NO_INCRIBE_CLAVE_DINAMICA
         ));
+    }
+
+    @Entonces("^visualiza el mensaje de bloqueo exitoso$")
+    public void vializaMensajeBloqueoExitoso() {
     }
 }
