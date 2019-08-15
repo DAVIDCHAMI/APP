@@ -70,20 +70,17 @@ public class FabricaBaseDeDatosIseries {
         return new ConsultarDebitoEnMOVTFLOGTF();
     }
 
-    public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFcredit() {
-        return new ConsultarCreditoEnMOVTFLOGTF();
-    }
+    public static Question<Boolean> elArchivoEnIseriesPCCMOVTFLOGTFcredit() { return new ConsultarCreditoEnMOVTFLOGTF(); }
 
     public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOdetalle() {
         return new ConsultarDetalleDepositos();
     }
 
-    public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOConsolidado() {
-        return new ConsultarConsolidadoDepositos();
-    }
+    public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOConsolidado() { return new ConsultarConsolidadoDepositos(); }
 
+    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos() {return new ConsultarSaldosConsolidadosCreditos(); }
 
-    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos() {
-        return new ConsultarSaldosConsolidadosCreditos();
-    }
+    public static Question<Boolean> elArchivoEnIseriesPCCFFLOGTFtarjetasCredito(){return new ConsultarConsolidadoTarjetasCredito();}
+
+    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMEtarjetasCredito(){return new ConsultarPertenenciaTarjetasCredito();}
 }

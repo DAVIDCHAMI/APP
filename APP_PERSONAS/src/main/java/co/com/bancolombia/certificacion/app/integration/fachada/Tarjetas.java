@@ -17,6 +17,7 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 
 public class Tarjetas {
@@ -25,13 +26,18 @@ public class Tarjetas {
 
     public static List<Map<String, Object>> saldoConsolidadoTarjetas(Actor actor){
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
-        Producto depositos = actor.recall(TIENE_PRODUCTOS);
+        List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
         Map<String, Object> dataForQuery = new HashMap<>();
+
+
+        String documentoFormateado = String.format("%s%s%s", "%", datosPrincipales.getUsuario().getNumeroDocumento(), "%");
+
         dataForQuery.put("ANIO", AdministradorFechas.obtenerFechaSistema("yy"));
         dataForQuery.put("MES", AdministradorFechas.obtenerFechaSistema("MM"));
         dataForQuery.put("DIA", AdministradorFechas.obtenerFechaSistema("dd"));
         dataForQuery.put("SISTEMA", CanalesSistemas.APP);
-        dataForQuery.put("DOCUMENTO", datosPrincipales.getUsuario().getNumeroDocumento());
+        dataForQuery.put("DOCUMENTO", documentoFormateado);
+        dataForQuery.put("SIZE" , producto.size());
 
         String sql = QueryManager.CONSULTAS.getString("SQL.PCCLIBRAMD.consultarLogTFSaldosTDC");
         return Consulta.ejecutar(sql,dataForQuery, ConnectionManager.getIseriesConnection());

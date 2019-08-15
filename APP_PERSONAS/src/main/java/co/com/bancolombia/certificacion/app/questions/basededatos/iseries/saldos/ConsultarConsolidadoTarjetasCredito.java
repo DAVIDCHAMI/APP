@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
 import co.com.bancolombia.certificacion.app.integration.fachada.Depositos;
+import co.com.bancolombia.certificacion.app.integration.fachada.Tarjetas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
@@ -24,7 +25,7 @@ public class ConsultarConsolidadoTarjetasCredito implements Question<Boolean> {
         Boolean resultFinal = false;
         List<Map<String, Object>> registros;
         List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
-        registros = Depositos.saldoDepositosConsolidado(actor);
+        registros = Tarjetas.saldoConsolidadoTarjetas(actor);
 
         if (registros.size() > 0){
             Boolean resultadoDato = true;

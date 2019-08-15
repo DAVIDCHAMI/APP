@@ -25,8 +25,9 @@ public enum ArchivosComunesIseries {
     PCCFFMOVTFLOGTF_CREDITO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCMOVTFLOGTFcredit(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     SCIFFSALDO_DETALLE(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOdetalle(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     SCIFFSALDO_CONSOLIDADO(FabricaBaseDeDatosIseries.elArchivoEnIseriesSCIFFSALDOConsolidado(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    CXREF_CNAME_LMBAL_SALDO_CREDITOS(FabricaBaseDeDatosIseries.elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
-
+    CXREF_CNAME_LMBAL_SALDO_CREDITOS(FabricaBaseDeDatosIseries.elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    PCCFFLOGTF_TDCCONSOLIDADO(FabricaBaseDeDatosIseries.elArchivoEnIseriesPCCFFLOGTFtarjetasCredito(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    CXREF_CNAME_CONSOLIDADOTDC(FabricaBaseDeDatosIseries.elArchivoEnIseriesCXREFCNAMEtarjetasCredito(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA);
 
     private static final Logger LOGGER = LogManager.getLogger();
 
