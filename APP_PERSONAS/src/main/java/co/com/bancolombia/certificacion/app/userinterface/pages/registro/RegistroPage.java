@@ -15,6 +15,7 @@ public class RegistroPage {
     public static final Target CHECK_TYC = Target.the("check terminos y condiciones").located(theElementBy(CHECK_TYC_LOCATOR));
     public static final Target BTN_REGISTRO = Target.the("boton registro").located(theElementBy(BTN_REGISTRO_LOCATOR));
     public static final Target LBL_VALIDACION_REGISTRO_OK = Target.the("label registro OK").located(theElementBy(LBL_VALIDACION_REGISTRO_OK_LOCATOR));
+    public static final Target LBL_INICIA_REGISTRO = Target.the("label inicia el registro").located(theElementBy(LBL_INICIA_REGISTRO_LOCATOR));
 
     private RegistroPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
