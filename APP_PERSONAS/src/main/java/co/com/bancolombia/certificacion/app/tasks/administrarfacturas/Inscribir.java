@@ -29,7 +29,7 @@ public class Inscribir implements Task {
                 Click.on(TXT_EMPRESA_SERVICIO_POP_UP),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_DESCRIPCION),
-                Escribir.enCampoTexto(factura.getEmpresaServicio()),
+                Escribir.enCampoTexto(factura.getDescripcionFactura()),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_REFERENCIA),
                 Escribir.enCampoTexto(factura.getReferencia()),

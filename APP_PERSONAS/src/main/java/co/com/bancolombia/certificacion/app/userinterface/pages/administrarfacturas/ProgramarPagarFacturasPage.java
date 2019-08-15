@@ -26,8 +26,8 @@ public class ProgramarPagarFacturasPage {
     public static final Target OPT_MODIFICAR_PROGRAMACION= Target.the("Clic para seleccionar la opción modificar programación").located(theElementBy(OPT_MODIFICAR_PROGRAMACION_LOCATOR));
     public static final Target OPT_ELIMINAR_FACTURA= Target.the("Clic para seleccionar la opción eliminar factura").located(theElementBy(OPT_ELIMINAR_FACTURA_LOCATOR));
     public static final Target OPT_SUB_MENU_PROGRAMADAS= Target.the("Seleccionar la opcion Programadas del sub menú").located(theElementBy(OPT_SUB_MENU_PROGRAMADAS_LOCATOR));
-    public static final Target LNK_CAMBIAR= Target.the("Clic para seleccionar la opción modificar programación").locatedBy(dynamicElement(LNK_CAMBIAR_LOCATOR));
-    public static final Target LNK_SIGUIENTE= Target.the("Clic para seleccionar la opción modificar programación").locatedBy(dynamicElement(LNK_SIGUIENTE_LOCATOR));
+    public static final Target LNK_CAMBIAR= Target.the("link para cambiar").locatedBy(dynamicElement(LNK_CAMBIAR_LOCATOR));
+    public static final Target LNK_SIGUIENTE= Target.the("link para siguiente").locatedBy(dynamicElement(LNK_SIGUIENTE_LOCATOR));
     public static final Target TXT_VALOR= Target.the("Campo de texto para ingresar valor").locatedBy(dynamicElement(TXT_VALOR_LOCATOR));
     public static final Target IMG_PERIODICIDAD = Target.the("Clic en el foco periodicidad").locatedBy(dynamicElement(IMG_PERIODICIDAD_LOCATOR));
     public static final Target LST_FRECUENCIA_PERIODICAD = Target.the("Opcion frecuencia del pago").locatedBy(dynamicElement(LST_FRECUENCIA_PERIODICAD_LOCATOR));
