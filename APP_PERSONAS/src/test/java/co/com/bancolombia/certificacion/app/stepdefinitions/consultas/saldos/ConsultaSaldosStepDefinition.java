@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
