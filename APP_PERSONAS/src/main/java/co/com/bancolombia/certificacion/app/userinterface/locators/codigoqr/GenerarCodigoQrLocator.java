@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class GenerarCodigoQrLocator {
-    public static final Locator BTN_GENERAR_CODIGO_QR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Generar código QR')]/..");
+    public static final Locator BTN_GENERAR_CODIGO_QR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Generar código QR')]");
     public static final Locator TXT_VALOR_RECIBIR_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Currency']");
     public static final Locator BTN_SIN_VALOR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Sin valor')]/preceding-sibling::android.widget.Button");
     public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='TextArea_Reference']");
