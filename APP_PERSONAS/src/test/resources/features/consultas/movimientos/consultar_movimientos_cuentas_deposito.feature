@@ -6,7 +6,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos de su cuenta deposito
 
-  @Manual
+
   Esquema del escenario: Consultar cuenta Corriente con movimientos en la app con cuentas depósito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
