@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder;
 
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
 public class BaseLocator {
@@ -39,10 +40,10 @@ public class BaseLocator {
         By resp;
         switch (locator){
             case "id":
-                resp = By.id(path);
+                resp = MobileBy.id(path);
                 break;
             case "xpath":
-                resp = By.xpath(path);
+                resp =MobileBy.xpath(path);
                 break;
             case "className":
                 resp = By.className(path);

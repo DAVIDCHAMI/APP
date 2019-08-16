@@ -44,7 +44,7 @@ public class SinInicioSesion extends GenerarQR {
                 Check.whether("".equals(transferencia.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
-                        Click.on(TXT_VALOR_RECIBIR),
+                        Click.on(BTN_CON_VALOR),
                         Escribir.enCampoTexto(transferencia.getMonto())
                 ),
                 Click.on(LNK_SIGUIENTE),

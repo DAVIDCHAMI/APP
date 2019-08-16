@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.support.ui.Wait;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
@@ -17,6 +18,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaStr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -31,13 +33,14 @@ public class ConInicioSesion extends GenerarQR {
     public <T extends Actor> void performAs(T actor) {
         AppiumDriver driver = getProxiedDriver();
         actor.attemptsTo(
-                WaitUntil.the(BTN_GENERAR_CODIGO_QR, isVisible()),
-                Click.on(BTN_GENERAR_CODIGO_QR),
+                //WaitUntil.the(BTN_GENERAR_CODIGO_QR, isVisible()),
+                //Click.on(BTN_GENERAR_CODIGO_QR),
                 Saltar.onBoarding(),
                 Click.on(LNK_SIGUIENTE)
         );
         if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
             actor.attemptsTo(
+                    WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
                     RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
                     Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
             );
@@ -47,7 +50,7 @@ public class ConInicioSesion extends GenerarQR {
                 Check.whether("".equals(datos.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
-                        Click.on(TXT_VALOR_RECIBIR),
+                        Click.on(BTN_CON_VALOR),
                         Escribir.enCampoTexto(datos.getMonto())
                 ),
                 Click.on(LNK_SIGUIENTE),
