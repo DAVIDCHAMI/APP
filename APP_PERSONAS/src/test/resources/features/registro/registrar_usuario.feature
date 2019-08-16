@@ -5,6 +5,7 @@ Característica: Registro en la APP personas bancolombia OSP
   Quiero realizar el registro de un usuario
   Para realizar la autenticacion en la app
 
+  @Manual
   Esquema del escenario: Registrar un usuario y su nickname es el numero de identificacion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -30,7 +31,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
    |1   |10757880   |1   |10757880   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |usrregistro80   |jalzate@todo1.net|
 
-
+  @Manual
   Esquema del escenario: Registrar usuario con documento de identidad desde otra opcion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -43,7 +44,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@2
    |2   |10757881   |1   |10757881   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |usrregistro81   |jalzate@todo1.net|
 
-
+  @Manual
   Esquema del escenario: Registrar un usuario con clave bloqueada
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -55,7 +56,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@3
    |3   |10757882   |1   |10757882   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   ||
 
-
+  @Manual
   Esquema del escenario: Registrar un usuario que ya este registrado
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
