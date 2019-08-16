@@ -18,8 +18,8 @@ public class GeneralPage {
     public static final Target LNK_COMENZAR = Target.the("Link comenzar").located(theElementBy(LNK_COMENZAR_LOCATOR));
     public static final Target IMG_COMUN_CAMPO_TEXTO = Target.the("imagen comun crear usuario").located(theElementBy(IMG_COMUN_CAMPO_TEXTO_LOCATOR));
     public static final Target LNK_INSCRIBIR = Target.the("Link inscribir").located(theElementBy(LNK_INSCRIBIR_LOCATOR));
-    public static final Target TIP_BOTON_SIGUIENTE_TRANSACCIONES = Target.the("Boton Siguiente Tip Transacciones").located(theElementBy(TIP_BOTON_SIGUIENTE_TRANSACCIONES_LOCATOR));
-    public static final Target TIP_BOTON_CERRAR_TIP = Target.the("Boton Cerrar Tip").located(theElementBy(TIP_BOTON_CERRAR_TIP_LOCATOR));
+    public static final Target BTN_CANCELAR_TRANSACCION = Target.the("Boton Cancelar Transaccion").located(theElementBy(BTN_CANCELAR_TRANSACCION_LOCATOR));
+    public static final Target BTN_SI_CANCELAR_REGISTRO = Target.the("Boton Si Cancelar Transaccion").located(theElementBy(BTN_SI_CANCELAR_REGISTRO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
