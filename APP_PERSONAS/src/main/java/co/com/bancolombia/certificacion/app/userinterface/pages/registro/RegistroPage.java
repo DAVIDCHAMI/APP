@@ -8,9 +8,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class RegistroPage {
     public static final Target TXT_CREAR_USUARIO = Target.the("Campo crear usuario").located(theElementBy(TXT_CREAR_USUARIO_LOCATOR));
-    public static final Target IMG_CREAR_USUARIO = Target.the("imagen crear usuario").located(theElementBy(IMG_CREAR_USUARIO_LOCATOR));
     public static final Target TXT_CORREO = Target.the("campo correo").located(theElementBy(TXT_CORREO_LOCATOR));
     public static final Target LBL_CORREO = Target.the("label correo").located(theElementBy(LBL_CORREO_LOCATOR));
+    public static final Target LBL_TIPO_CORREO = Target.the("label correo").located(theElementBy(LBL_TIPO_CORREO_LOCATOR));
     public static final Target CHECK_TIPO_CORREO = Target.the("check tipo correo").located(theElementBy(CHECK_TIPO_CORREO_LOCATOR));
     public static final Target CHECK_TYC = Target.the("check terminos y condiciones").located(theElementBy(CHECK_TYC_LOCATOR));
     public static final Target BTN_REGISTRO = Target.the("boton registro").located(theElementBy(BTN_REGISTRO_LOCATOR));
