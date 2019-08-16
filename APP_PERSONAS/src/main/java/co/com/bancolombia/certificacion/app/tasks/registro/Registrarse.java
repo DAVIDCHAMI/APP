@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
@@ -29,12 +28,23 @@ public class Registrarse implements Task {
                 Click.on(IMG_COMUN_CAMPO_TEXTO),
                 Click.on(LNK_SIGUIENTE),
                 WaitUntil.the(TXT_CORREO, isEnabled()),
-                Type.theValue(correoUser).into(TXT_CORREO),
-                Click.on(LBL_TIPO_CORREO),
-                WaitUntil.the(CHECK_TIPO_CORREO, isEnabled()),
-                Click.on(CHECK_TIPO_CORREO),
-                Click.on(CHECK_TYC),
-                Click.on(BTN_REGISTRO));
+                Type.theValue(correoUser).into(TXT_CORREO));
+        if(LBL_TIPO_CORREO.resolveFor(actor).isVisible()){
+            actor.attemptsTo(
+                    Click.on(LBL_TIPO_CORREO),
+                    WaitUntil.the(CHECK_TIPO_CORREO, isEnabled()),
+                    Click.on(CHECK_TIPO_CORREO)
+            );
+        }else{
+            actor.attemptsTo(
+                    Click.on(LBL_CORREO),
+                    WaitUntil.the(CHECK_TIPO_CORREO, isEnabled()),
+                    Click.on(CHECK_TIPO_CORREO)
+            );
+        }
+        actor.attemptsTo(
+                Click.on(CHECK_TYC)
+        );
     }
 
     public static Performable conLosDatos(String nuevoUser, String correoUser) {
