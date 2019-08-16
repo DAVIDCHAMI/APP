@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
-import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoProductosEnum;
@@ -36,9 +35,6 @@ public class RevisarProductos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
-        );
-        actor.attemptsTo(
-                RealizarScroll.adicional(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(opcionCategoria))
         );
         List<Producto> listaProductos = new ArrayList<>();
         int cantCaracteresTipo = contarCantidadCaracter(producto.getTipo(), ';');
