@@ -24,6 +24,7 @@ public class Registrarse implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(TXT_CREAR_USUARIO, isEnabled()),
                 Type.theValue(nuevoUser).into(TXT_CREAR_USUARIO),
                 Click.on(IMG_COMUN_CAMPO_TEXTO),
                 Click.on(LNK_SIGUIENTE),
@@ -43,7 +44,8 @@ public class Registrarse implements Task {
             );
         }
         actor.attemptsTo(
-                Click.on(CHECK_TYC)
+                Click.on(CHECK_TYC),
+                Click.on(BTN_REGISTRO)
         );
     }
 
