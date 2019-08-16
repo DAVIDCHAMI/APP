@@ -61,7 +61,7 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
-    @Entonces("^El deberia de ver los productos asoiados a su cuenta$")
+    @Entonces("^El deberia de ver los productos asociados a su cuenta$")
     public void deberiaVerProductosAsociadosSuCuenta() {
         theActorInTheSpotlight().should(seeThat(
                 RevisarProductos.pertenecientesAlUsuario()).orComplainWith(

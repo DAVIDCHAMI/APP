@@ -12,6 +12,7 @@ public class VariablesSesionConstantes {
     public static final String NOMBRE_PERSONALIZADO_CLAVE_DINAMICA = "Nombre personalizado";
     public static final String TIPO_CORREO_CLAVE_DINAMICA = "Tipo de correo";
     public static final String CORREO_CLAVE_DINAMICA = "Correo electrónico";
+    public static final String SERVICIO = "EMPRESA O SERVICIO";
 
     private VariablesSesionConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

@@ -30,10 +30,8 @@ public class Registrarse implements Task {
                 Click.on(LNK_SIGUIENTE),
                 WaitUntil.the(TXT_CORREO, isEnabled()),
                 Type.theValue(correoUser).into(TXT_CORREO),
-                Check.whether(LBL_TIPO_CORREO.resolveFor(actor).isVisible())
-                        .andIfSo(Click.on(LBL_TIPO_CORREO)).otherwise(
-                        Click.on(LBL_CORREO)
-                ),
+                Click.on(LBL_TIPO_CORREO),
+                WaitUntil.the(CHECK_TIPO_CORREO, isEnabled()),
                 Click.on(CHECK_TIPO_CORREO),
                 Click.on(CHECK_TYC),
                 Click.on(BTN_REGISTRO));

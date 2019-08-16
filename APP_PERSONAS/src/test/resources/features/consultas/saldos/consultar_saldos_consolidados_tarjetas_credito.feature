@@ -10,7 +10,7 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
-    Cuando consulto el saldo de mis Tarjetas de crédito
+    Cuando consulto el saldo de mis Tarjetas
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesión en la app
@@ -19,4 +19,4 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                                                                                                              | numeroCuenta                                                |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1
-   |1   |1037655531   |1   |creadoosp11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Personal American Express;Personal American Express;Personal American Express;Personal Visa;Personal Visa;Personal Visa;Personal Mastercard;Personal Mastercard;Personal Mastercard;Personal Mastercard   |*0350;*9056;*6269;*7757;*1597;*0606;*6095;*7287;*4452;*2390|
+   |1   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Personal American Express;Personal American Express;Personal Visa;Personal Visa;Personal Mastercard;Personal Mastercard   |*7826;*2736;*6392;*5880;*1389;*9802|

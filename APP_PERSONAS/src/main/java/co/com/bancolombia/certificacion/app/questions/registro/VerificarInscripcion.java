@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.Visibility;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionProductoPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.obtenerValorEntero;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.obtenerValorEntero;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 
 public class VerificarInscripcion implements Question<Boolean> {
