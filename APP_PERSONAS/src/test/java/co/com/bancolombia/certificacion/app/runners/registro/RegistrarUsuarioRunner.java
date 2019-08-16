@@ -17,9 +17,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         features = {"src/test/resources/features/registro/registrar_usuario.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class RegistroUsuarioRunner {
+public class RegistrarUsuarioRunner {
 
-    public RegistroUsuarioRunner() {
+    public RegistrarUsuarioRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
