@@ -5,6 +5,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 public class Constantes {
     public static final String CUENTAS = "Cuentas";
     public static final String TARJETAS_CREDITO = "CreditCards";
+    public static final String TARJETAS_CREDITO_MOVIMIENTOS = "Tarjetas de crédito";
     public static final String E_PREPAGO = "ePrepaid";
     public static final String CREDIAGIL = "Crediagil";
     public static final String INVERSIONES = "Investments";

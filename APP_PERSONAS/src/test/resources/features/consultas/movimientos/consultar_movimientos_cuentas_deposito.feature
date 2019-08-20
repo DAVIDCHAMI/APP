@@ -12,8 +12,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiero revisar mis movimientos en la app con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
-    Entonces El deberia de ver los movimientos asociados a su cuenta
+  quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>    Entonces El deberia de ver los movimientos asociados a su cuenta
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
