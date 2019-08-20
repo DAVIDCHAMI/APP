@@ -23,4 +23,3 @@ public class GeneralLocator {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
 }
-

@@ -18,7 +18,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1,2,3
    |1   |1037655531   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
 
-  @Manual
+
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -43,7 +43,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
    |5   |1037655531   |1   |userrobot3   |1111   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
+    
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
