@@ -4,7 +4,7 @@ import co.com.bancolombia.certificacion.app.exceptions.ProductoConMovimientosExc
 import co.com.bancolombia.certificacion.app.exceptions.ProductoSinMovimientosException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException;
-import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProductos;
+import co.com.bancolombia.certificacion.app.questions.consultas.VerificarMovimientos;
 import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProducto;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarCuentasDeposito;
@@ -63,7 +63,7 @@ public class ConsultarProductosAsociadosStepDefinition {
 
     @Entonces("^El deberia de ver los movimientos asociados a su cuenta$")
     public void deberiaVerMovimientosAsociadosSuCuenta() {
-        theActorInTheSpotlight().should(seeThat(VerificarProductos.deMoviemientos())
+        theActorInTheSpotlight().should(seeThat(VerificarMovimientos.productos())
                 .orComplainWith(ProductoSinMovimientosException.class, SIN_MOVIMIENTOS)
         );
     }

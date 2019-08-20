@@ -8,7 +8,7 @@ import java.util.List;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 
-public class VerificarProductos implements Question<Boolean> {
+public class VerificarMovimientos implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -16,7 +16,7 @@ public class VerificarProductos implements Question<Boolean> {
         return movimientos != null;
     }
 
-    public static VerificarProductos deMoviemientos() {
-        return new VerificarProductos();
+    public static VerificarMovimientos productos() {
+        return new VerificarMovimientos();
     }
 }
