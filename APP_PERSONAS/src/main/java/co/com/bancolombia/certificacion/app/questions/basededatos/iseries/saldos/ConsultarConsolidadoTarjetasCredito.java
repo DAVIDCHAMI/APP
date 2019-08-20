@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Depositos;
 import co.com.bancolombia.certificacion.app.integration.fachada.Tarjetas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.core.Serenity;
@@ -12,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 

@@ -23,7 +23,7 @@ public class ConsultarPertenenciaTarjetasCredito implements Question<Boolean> {
         Boolean resultFinal = false;
         List<Map<String, Object>> registros;
         List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
-        registros = Tarjetas.saldoConsolidadoTarjetas(actor);
+        registros = Tarjetas.pertenenciaTarjetas(actor);
 
         if (registros.size() > 0){
             Boolean resultadoDato = true;
@@ -31,7 +31,8 @@ public class ConsultarPertenenciaTarjetasCredito implements Question<Boolean> {
 
             for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
-                String numeroCuentaBanco = filaRegistro.get("lgdatos").toString().substring(12,16).trim();
+                String numeroCuentaBanco = filaRegistro.get("numero_tarjeta").toString().trim();
+                //String
 
                 for(int j = 0; j < producto.size(); j++){
                     String numeroCuentaApp = producto.get(j).getNumero().trim().replace("*","");
