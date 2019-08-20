@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
-
 import co.com.bancolombia.certificacion.app.models.builders.CrediagilBuilder;
 
 public class Crediagil extends Producto {

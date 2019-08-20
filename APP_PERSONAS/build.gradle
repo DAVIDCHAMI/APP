@@ -32,7 +32,7 @@ allprojects {
 
 ext{
     serenityVersion = '2.0.52'
-    serenityCucumberVersion = '1.0.15'
+    serenityCucumberVersion = '1.9.39'
 }
 
 dependencies {
