@@ -28,8 +28,9 @@ public class SeleccionarCategoria implements Interaction {
         );
         if (!CUENTAS.equals(categoria)) {
             actor.attemptsTo(
+                    Check.whether(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS).resolveFor(actor).isVisible()).andIfSo(
                     WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
-                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
+                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS))),
                     RealizarScroll.hastaPosicionDeTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
             );

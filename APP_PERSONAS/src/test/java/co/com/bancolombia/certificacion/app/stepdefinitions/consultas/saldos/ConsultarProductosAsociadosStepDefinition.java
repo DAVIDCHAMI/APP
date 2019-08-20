@@ -24,17 +24,24 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultarProductosAsociadosStepDefinition {
 
-    @Cuando("^quiero revisar mis movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
+    @Cuando("^quiere revisar sus movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
     public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta)
         );
     }
 
-    @Cuando("^quiero revisar mis movimientos en la app con tipo de cuenta (.*) y número cuenta (.*)$")
-    public void revisarMisMovimientosEnlaApps(String tipoCuenta, String numeroCuenta) {
+    @Cuando("^quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta (.*) y número cuenta (.*)$")
+    public void revisarMisMovimientosCuentasEnlaApps(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarMovimientos.conInformacion(tipoCuenta, numeroCuenta)
+                ConsultarMovimientos.deCuentas(tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^quiero revisar mis movimientos de tarjeta de crédito en la app con tipo de cuenta (.*) y número cuenta (.*)$")
+    public void revisarMisMovimientosTarjetaEnlaApps(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.deTarjetasCredito(tipoCuenta, numeroCuenta)
         );
     }
 
@@ -56,7 +63,7 @@ public class ConsultarProductosAsociadosStepDefinition {
 
     @Entonces("^El deberia de ver los movimientos asociados a su cuenta$")
     public void deberiaVerMovimientosAsociadosSuCuenta() {
-        theActorInTheSpotlight().should(seeThat(VerificarMovimientos.deCuentas())
+        theActorInTheSpotlight().should(seeThat(VerificarMovimientos.productos())
                 .orComplainWith(ProductoSinMovimientosException.class, SIN_MOVIMIENTOS)
         );
     }
