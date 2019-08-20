@@ -48,4 +48,5 @@ public class SaldosMovimientosLocator {
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
-    }}
+    }
+}
