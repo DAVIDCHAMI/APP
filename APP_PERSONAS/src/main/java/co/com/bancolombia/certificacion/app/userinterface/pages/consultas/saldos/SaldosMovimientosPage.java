@@ -31,7 +31,7 @@ public class SaldosMovimientosPage {
     public static final Target LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra la fecha del movimiento de tarjeta de crédito").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
     public static final Target LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra la descripción del movimiento de tarjeta de crédito").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
     public static final Target LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra saldo del movimiento de tarjeta de crédito").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
-
+    public static final Target LBL_SALDO_CREDIAGIL_SALDOS_MOVIMIENTOS = Target.the("Saldo disponible cuenta crediagil").locatedBy(dynamicElement(LBL_SALDO_SALDOS_CREDIAGIL_MOVIMIENTOS_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

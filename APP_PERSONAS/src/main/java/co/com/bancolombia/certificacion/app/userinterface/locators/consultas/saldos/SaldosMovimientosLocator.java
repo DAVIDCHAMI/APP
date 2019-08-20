@@ -34,6 +34,9 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_SALDO_SALDOS_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, '{0}-{1}')]//android.view.View[1]//following-sibling::android.view.View[3]")
             .withIos("xpath$g");
+    public static final Locator LBL_SALDO_SALDOS_CREDIAGIL_MOVIMIENTOS_LOCATOR = locator()
+            .withAndroid("xpath$//android.view.View[contains(@resource-id, '0-{0}')]//android.view.View[3]")
+            .withIos("xpath$g");
     public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-AccountDataContainer2']").withIos("xpath$h");
     public static final Locator VER_MOVIMIENTOS_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l2-{0}-AccountDataContainer3").withIos("xpath$h");
     public static final Locator LBL_FECHA_MOVIMIENTO_CUENTAS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-AccountDataContainer2']/android.view.View/android.view.View[1]/android.view.View[1]").withIos("xpath$i");

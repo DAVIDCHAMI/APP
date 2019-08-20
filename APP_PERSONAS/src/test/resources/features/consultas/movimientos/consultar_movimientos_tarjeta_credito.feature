@@ -26,7 +26,7 @@ Característica: Consulta de productos Tarjeta de crédito de un cliente en app 
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Y quiere revisar sus movimientos con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
-    Entonces El deberia de ver el mensaje mensaje.
+    Entonces El deberia de ver el mensaje La Tarjeta no tiene movimientos.
     Y cierra sesión en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |

@@ -18,13 +18,13 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class ConsultarMovimientosTarjetaCreditoRunner {
-    private ConsultarMovimientosTarjetaCreditoRunner() {
+public class ConsultarMovimientoTarjetasCreditoRunner {
+    private ConsultarMovimientoTarjetasCreditoRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/movimientos/consultar_movimientos_tarjeta_credito.feature");
+        DataToFeature.overrideFeatureFiles(".src/test/resources/features/consultas/movimientos/consultar_movimientos_tarjeta_credito.feature");
     }
 }
