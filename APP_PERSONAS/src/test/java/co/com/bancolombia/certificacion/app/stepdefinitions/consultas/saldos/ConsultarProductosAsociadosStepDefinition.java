@@ -24,7 +24,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultarProductosAsociadosStepDefinition {
 
-    @Cuando("^quiero revisar mis movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
+    @Cuando("^quiere revisar sus movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
     public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta)

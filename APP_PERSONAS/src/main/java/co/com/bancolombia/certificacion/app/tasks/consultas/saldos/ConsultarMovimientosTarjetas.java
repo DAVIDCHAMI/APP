@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBui
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TARJETAS_CREDITO_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosTarjetas extends Movimientos{
     private String tipoCuenta;
@@ -30,7 +32,8 @@ public class ConsultarMovimientosTarjetas extends Movimientos{
                 SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO_MOVIMIENTOS),
                 RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta, numeroCuenta)),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO),
-                Click.on()
+                WaitUntil.the(BTN_MOVIMIENTO, isVisible()),
+                Click.on(BTN_MOVIMIENTO)
         );
         List<Movimiento> listaMovimiento = new ArrayList<>();
         int iterador = 0;

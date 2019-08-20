@@ -24,7 +24,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiero revisar mis movimientos con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
+    Y quiere revisar sus movimientos con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
     Entonces El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta.
     Y cierra sesión en la app
     Ejemplos:

@@ -19,7 +19,7 @@ public class SaldosMovimientosLocator {
             .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]")
             .withIos("xpath$d");
     public static final Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Detalle del producto')]").withIos("xpath$n");
-    public static final Locator BTN_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Movimientos')]").withIos("xpath$n");
+    public static final Locator BTN_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[2][@text='Movimientos']").withIos("xpath$n");
     public static final Locator BTN_OCULTAR_BANNER_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='b5-b1-Content']/android.view.View[2]/android.view.View").withIos("xpath$n");
     public static final Locator CONTENEDOR_INFORMACION_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'l1-{0}-Screen_Account_Line')]").withIos("xpath$n");
     public static final Locator LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR = locator()
@@ -45,5 +45,4 @@ public class SaldosMovimientosLocator {
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
-    }
-}
+    }}
