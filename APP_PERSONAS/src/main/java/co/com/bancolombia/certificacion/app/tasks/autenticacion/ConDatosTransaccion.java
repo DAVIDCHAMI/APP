@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 
+import co.com.bancolombia.certificacion.app.interactions.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.apache.logging.log4j.LogManager;
@@ -30,7 +30,7 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(20000),
 
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
@@ -38,8 +38,12 @@ public class ConDatosTransaccion extends Autenticacion {
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR),
-                Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
+                Click.on(BTN_CONTINUAR));
+
+        actor.attemptsTo(
+                Click.on(TXT_CLAVE_DIGITOS),
+                Escribir.enCampoTexto(usuario.getUsuario().getClave()),
+                //  Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR));
     }
