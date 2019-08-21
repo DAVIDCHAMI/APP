@@ -19,5 +19,4 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Depositos@1
-   |1   |1037655531   |1   |userrobot3   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente;Adelanto;Ahorros;Ahorros   |406-101390-08;406101390-09;406-701390-12;406-701390-13|
-
+   |1   |22452521   |1   |invictus10   |1234   |4321   |Acierto   |000   |1756   |TRANSACCION EXITOSA   |bolp   |ACTIVO   |Corriente;Corriente;Adelanto;Ahorros;Ahorros;Ahorros;Ahorros   |406-125210-00;406-125210-01;406-125210-02;406-725210-11;406-725210-12;406-725210-13;406-725210-14|
