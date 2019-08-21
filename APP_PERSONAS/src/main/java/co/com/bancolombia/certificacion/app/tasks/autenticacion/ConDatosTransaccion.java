@@ -48,4 +48,3 @@ public class ConDatosTransaccion extends Autenticacion {
                 Click.on(BTN_CONTINUAR));
     }
 }
-
