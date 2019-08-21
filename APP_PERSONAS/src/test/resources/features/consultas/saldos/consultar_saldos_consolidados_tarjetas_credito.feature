@@ -20,7 +20,7 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
          ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1
-   |1   |58156998   |1   |automata98   |1234   |4321   |Acierto   |000   |0260   |NO ERROR   |bolp   |ACTIVO   |Personal American Express;Personal Visa;Personal Mastercard   |*4379;*2391;*0299|
+   |1   |58156998   |1   |automata98   |1234   |4321   |Acierto   |000   |0260   |NO ERROR   |bolp   |ACTIVO   |CREDIT_CARD;CREDIT_CARD;CREDIT_CARD   |*4379;*2391;*0299|
       
 
    
