@@ -7,13 +7,12 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class SaldosMovimientosLocator {
     public static final Locator OPT_CUENTA_PRODUCTO_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../..//android.view.View[contains(@text, '{1}')]")
-            .withIos("xpath$a");
+            .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']").withIos("xpath$a");
     public static final Locator OPCION_CATEGORIA_PRODUCTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, 'Expandable')][{0}]/android.view.View/android.view.View/android.view.View/android.view.View[1]")
             .withIos("xpath$b");
     public static final Locator OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text, '{0}')]/../..")
+            .withAndroid("xpath$//*[contains(text(),'{0}')]")
             .withIos("xpath$c");
     public static final Locator LBL_SIN_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]")
@@ -31,7 +30,7 @@ public class SaldosMovimientosLocator {
             .withAndroid("xpath$//android.view.View[contains(@resource-id, 'l1-{0}-AccountContentContainer')]//android.view.View[1]//following-sibling::android.view.View[3]")
             .withIos("xpath$g");
     public static final Locator LBL_SALDO_SALDOS_MOVIMIENTOS_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@resource-id, '{0}-{1}')]//android.view.View[1]//following-sibling::android.view.View[3]")
+            .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']//div[@class='text-right']")
             .withIos("xpath$g");
     public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-AccountDataContainer2']").withIos("xpath$h");
     public static final Locator LBL_FECHA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[@resource-id='l1-{0}-b35-Column1']//android.view.View[1]").withIos("xpath$i");

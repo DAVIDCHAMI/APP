@@ -57,7 +57,7 @@ public class LogCanalParaTRN0345 implements Question<Boolean> {
                 resultFinal = true;
             }
             Serenity.recordReportData().withTitle("ResultLogCanal").
-                    andContents(Serenity.sessionVariableCalled("INFORMES_SERENITY"));
+                    andContents(Serenity.sessionVariableCalled("informes_serenity"));
         } else {
             LOGGER.info("Valores de la trama input y output sin registros");
         }
