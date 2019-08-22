@@ -17,7 +17,7 @@ build/
 *.iml
 *.iws
 .idea/
-.driver/
+.test/resources/driver/
 !/gradle/wrapper/gradle-wrapper.jar
 
 # Libraries
