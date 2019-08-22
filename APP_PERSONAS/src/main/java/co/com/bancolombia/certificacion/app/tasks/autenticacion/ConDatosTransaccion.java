@@ -27,11 +27,11 @@ public class ConDatosTransaccion extends Autenticacion {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR));
-
         actor.attemptsTo(
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR));
+                Click.on(BTN_CONTINUAR)
+        );
     }
 }

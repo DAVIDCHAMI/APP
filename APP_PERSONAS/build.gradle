@@ -38,7 +38,7 @@ ext{
 
 dependencies {
     implementation 'co.com.bancolombia.certificacion:backend-iseries:2.5.3'
-   // compile(group: 'co.com.bancolombia.certificacion', name:'conexion-bd', version:'4.0.3')
+    implementation 'co.com.bancolombia.certificacion:conexion-bd:4.1.0'
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
@@ -49,8 +49,6 @@ dependencies {
     implementation group: 'com.codoid.products', name: 'fillo', version: '1.18'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '3.2.0'
-
-    compile group: 'co.com.bancolombia.certificacion', name: 'conexion-bd', version: '4.1.0'
     
     implementation 'org.apache.commons:commons-lang3:3.8'
     implementation 'org.apache.logging.log4j:log4j-api:2.6.1'
