@@ -16,7 +16,7 @@ public class Registro {
 
     public static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
 
-    private Registro() {
+    public Registro() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
     }
 

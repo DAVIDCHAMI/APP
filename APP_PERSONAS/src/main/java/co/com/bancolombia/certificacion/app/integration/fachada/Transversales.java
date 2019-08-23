@@ -20,7 +20,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 
 public class Transversales {
 
-    private Transversales() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    public Transversales() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static final String FECHA = "FECHA";
     public static final String FECHASISTEMA = "yyyyMMdd";
