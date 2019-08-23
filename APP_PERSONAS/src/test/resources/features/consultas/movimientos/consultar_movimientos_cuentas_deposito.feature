@@ -14,7 +14,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Y quiero revisar mis movimientos con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
     Entonces El deberia de ver el mensaje No has realizado ningún movimiento con la tarjeta.
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta       | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@1
@@ -28,7 +28,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Y quiero revisar mis movimientos en la app con tipo de cuenta <tipoCuenta> y número cuenta <numeroCuenta>
     Entonces El deberia de ver los movimientos asociados a su cuenta
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@2

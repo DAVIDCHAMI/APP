@@ -14,7 +14,7 @@ Característica: Consulta de saldos de inversiones app Bancolombia
     Cuando consulto el saldo de mis Inversiones
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
-    Y cierra sesión en la app
+    Y cierra sesion en la app
 #    Y Verifico el resultado de los siguientes archivos de iSeries
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:

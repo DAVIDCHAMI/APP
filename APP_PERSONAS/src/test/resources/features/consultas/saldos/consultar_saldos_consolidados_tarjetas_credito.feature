@@ -13,7 +13,7 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
     Cuando consulto el saldo de mis Tarjetas
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
-    Y cierra sesión en la app
+    Y cierra sesion en la app
 #    Y Verifico el resultado de los siguientes archivos de iSeries
 #    | Logcanal- COMFFLGWWW |
     Ejemplos:

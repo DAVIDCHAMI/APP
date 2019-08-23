@@ -12,7 +12,7 @@ Característica: Consulta de detalle cuentas deposito ahorro y corriente
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Y consulto en Cuentas el detalle de mi Cuenta <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi cuenta de ahorro
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Y Verifico los resultados en los archivos de iseries
       | LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
