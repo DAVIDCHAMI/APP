@@ -104,4 +104,17 @@ public class AdministradorUtilidades {
         }
         return dateFormat;
     }
+
+    public static String tipoTarjetaPrefijo(String accountType){
+        String accountTypeUpper = accountType.toUpperCase();
+        String castAccountType = "";
+        if (accountTypeUpper.contains("AMERICAN EXPRESS")){
+            castAccountType = "3";
+        } else if (accountTypeUpper.contains("VISA")){
+            castAccountType = "4";
+        } else if (accountTypeUpper.contains("MASTERCARD")) {
+            castAccountType = "5";
+        }
+        return castAccountType;
+    }
 }

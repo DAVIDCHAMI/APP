@@ -2,6 +2,9 @@ package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldo
 
 import co.com.bancolombia.certificacion.app.integration.fachada.Tarjetas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
+
+import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -11,7 +14,10 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.cerosIzquierda;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 
 public class ConsultarPertenenciaTarjetasCredito implements Question<Boolean> {
@@ -23,22 +29,38 @@ public class ConsultarPertenenciaTarjetasCredito implements Question<Boolean> {
         Boolean resultFinal = false;
         List<Map<String, Object>> registros;
         List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
+        ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         registros = Tarjetas.pertenenciaTarjetas(actor);
 
         if (registros.size() > 0){
-            Boolean resultadoDato = true;
-            Boolean resultadoRegistro = true;
+            Boolean resultadoRegistro = false;
+            Boolean resultadoDato = false;
+            String numeroCuentaBanco;
+            String documentoClienteBanco;
+            String numeroCuentaApp;
+            String documentoClienteApp;
+            String franquiciaBanco;
+            String franquiciaApp;
+
 
             for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
-                String numeroCuentaBanco = filaRegistro.get("numero_tarjeta").toString().trim();
-                //String
+                numeroCuentaBanco = StringManager.ultimosCaracteres(filaRegistro.get("numero_tarjeta").toString().trim(),4);
+                documentoClienteBanco = StringManager.formatoDocumento(filaRegistro.get("documento").toString().trim());
+                franquiciaBanco = filaRegistro.get("franquicia").toString().trim();
 
                 for(int j = 0; j < producto.size(); j++){
-                    String numeroCuentaApp = producto.get(j).getNumero().trim().replace("*","");
+                    numeroCuentaApp = producto.get(j).getNumero().trim().replace("*","");
+                    documentoClienteApp = StringManager.formatoDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
+                    franquiciaApp = formatoTarjetaCredito(numeroCuentaApp, producto.get(j).getTipo().trim());
 
                     if (numeroCuentaApp.equals(numeroCuentaBanco)){
+                        resultadoRegistro = true;
+                        resultadoDato = true;
                         resultadoRegistro = validarCampo("NUMERO DE TARJETA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
+                        resultadoRegistro = validarCampo("NUMERO DOCUMENTO CLIENTE", documentoClienteBanco, documentoClienteApp, resultadoDato);
+                        resultadoRegistro = validarCampo("FRANQUICIA DE TARJETA", franquiciaBanco, franquiciaApp, resultadoDato);
+
                     }
                 }
             }

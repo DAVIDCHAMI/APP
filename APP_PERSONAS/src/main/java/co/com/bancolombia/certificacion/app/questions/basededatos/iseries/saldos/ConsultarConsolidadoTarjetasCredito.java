@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.cerosIzquierda;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaPrefijo;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 
@@ -32,15 +34,21 @@ public class ConsultarConsolidadoTarjetasCredito implements Question<Boolean> {
             for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
                 String numeroCuentaBanco = filaRegistro.get("lgdatos").toString().substring(12,16).trim();
+                String tipoCuentaBanco = filaRegistro.get("lgdatos").toString().substring(33,34).trim();
+                String saldoBanco = filaRegistro.get("lgdatos").toString().substring(403,421).trim();
 
                 for(int j = 0; j < producto.size(); j++){
                     String numeroCuentaApp = producto.get(j).getNumero().trim().replace("*","");
+                    String tipoCuentaApp =  tipoTarjetaPrefijo(producto.get(j).getTipo().trim());
+                    String saldoApp = cerosIzquierda(producto.get(j).getSaldo().getSaldoDisponible().replace("$", "").replace(" ","").replace(".", "").replace(",",""),17);
 
                     if (numeroCuentaApp.equals(numeroCuentaBanco)){
                         resultadoRegistro = validarCampo("NUMERO DE TARJETA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
-                    }
-                }
-            }
+                        resultadoRegistro = validarCampo("TIPO DE TARJETA", tipoCuentaBanco, tipoCuentaApp, resultadoDato);
+            resultadoRegistro = validarCampo("CUPO DE TARJETA", saldoBanco, saldoApp, resultadoDato);
+        }
+    }
+}
 
             if (resultadoDato && resultadoRegistro){
                 resultFinal=true;
