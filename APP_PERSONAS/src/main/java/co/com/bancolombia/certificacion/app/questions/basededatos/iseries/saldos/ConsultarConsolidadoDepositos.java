@@ -27,8 +27,8 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
         registros = Depositos.saldoDepositosConsolidado(actor);
 
         if (!registros.isEmpty()){
-            Boolean resultadoDato = true;
-            Boolean resultadoRegistro = true;
+            Boolean resultadoDato = false;
+            Boolean resultadoRegistro = false;
 
             for(int i = 0; i < registros.size(); i++){
                 Map<String, Object> filaRegistro = registros.get(i);
@@ -41,6 +41,8 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
                     String tipoCuentaBancoApp = tipoCuentaLetra(producto.get(j).getTipo().trim());
                     String saldoDisponibleApp = producto.get(j).getSaldo().getSaldoDisponible().replace("$","").replace(".","").replace(",",".").trim();
                     if (numeroCuentaApp.equals(numeroCuentaBanco) && tipoCuentaBancoApp.equals(tipoCuentaBanco)){
+                        resultadoDato = true;
+                        resultadoRegistro = true;
                         resultadoRegistro = validarCampo("CUENTA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
                         resultadoRegistro = validarCampo("TIPO CUENTA", tipoCuentaBanco, tipoCuentaBancoApp, resultadoDato);
                         resultadoRegistro = validarCampo("SALDO DISPONIBLE", saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
