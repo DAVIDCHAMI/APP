@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.runners.autenticacion;
 
-import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
+import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.DataToFeature;
 import cucumber.api.CucumberOptions;
@@ -16,13 +16,14 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @CucumberOptions(
         features = {"src/test/resources/features/autenticacion/autenticacion.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
+        tags = {"@EscenarioExitoso"},
         snippets = SnippetType.CAMELCASE
 )
 public class AutenticacionRunner {
 
     private AutenticacionRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
-}
+    }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {

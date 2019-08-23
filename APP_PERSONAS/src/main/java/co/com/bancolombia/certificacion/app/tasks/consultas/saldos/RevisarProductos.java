@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoProductosEnum;
@@ -14,10 +15,9 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.contarCantidadCaracter;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.eliminarTildes;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class RevisarProductos implements Task {
@@ -28,13 +28,16 @@ public class RevisarProductos implements Task {
     public RevisarProductos(Producto producto, String opcionCategoria) {
         this.producto = producto;
         this.opcionCategoria = opcionCategoria;
-        this.tipoProductosEnum = TipoProductosEnum.valueOf(eliminarTildes(opcionCategoria).toUpperCase());
+        this.tipoProductosEnum = TipoProductosEnum.valueOf(eliminarCaracter(opcionCategoria, "-"));
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria)
+        );
+        actor.attemptsTo(
+                RealizarScroll.adicional(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(opcionCategoria))
         );
         List<Producto> listaProductos = new ArrayList<>();
         int cantCaracteresTipo = contarCantidadCaracter(producto.getTipo(), ';');

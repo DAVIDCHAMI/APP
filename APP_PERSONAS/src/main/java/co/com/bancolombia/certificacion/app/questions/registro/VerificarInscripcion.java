@@ -12,6 +12,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 public class VerificarInscripcion implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
+        /*
         String numeroProducto = obtenerValorEntero(Text.of(LBL_NUMERO_PRODUCTO).viewedBy(actor).asString());
         String nombreBanco = actor.recall(NOMBRE_BANCO);
         String tipoCuenta = actor.recall(TIPO_CUENTA);
@@ -28,5 +29,8 @@ public class VerificarInscripcion implements Question<Boolean> {
 
     public static VerificarInscripcion deProductos() {
         return new VerificarInscripcion();
+    }
+    */
+        return null;
     }
 }

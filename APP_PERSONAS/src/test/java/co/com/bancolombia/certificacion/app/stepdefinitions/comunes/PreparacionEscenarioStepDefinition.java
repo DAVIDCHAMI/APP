@@ -2,8 +2,9 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
-import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
+import co.com.bancolombia.certificacion.app.tasks.basededatos.comunes.ConsultarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
+import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -16,7 +17,8 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
-import static net.serenitybdd.screenplay.actors.OnStage.*;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PreparacionEscenarioStepDefinition {
 
@@ -26,7 +28,7 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) se autentica en la app$")
-    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String,String>> datos) {
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos) {
         theActorCalled(actor).wasAbleTo(
                 IniciarSesion.con(informacion()
                         .deTransaccion(datos)
@@ -42,10 +44,9 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) carga los datos para la prueba$")
-    public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String,String>> datos) {
+    public void queSuboLosDatosParaLaPrueba(String actor, List<Map<String, String>> datos) {
         theActorCalled(actor).wasAbleTo(
-                CargarDatos.transaccionCon(informacion()
-                        .deTransaccion(datos))
+                CargarDatos.transaccionCon(informacion().deTransaccion(datos))
         );
     }
 
@@ -65,4 +66,10 @@ public class PreparacionEscenarioStepDefinition {
                 CerrarSesion.exitosamente()
         );
     }
+
+    @Y("^Verifico los resultados en los archivos de iseries$")
+    public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files) {
+        theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
+    }
 }
+

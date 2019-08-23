@@ -14,8 +14,7 @@ public class RegistroLocator {
     public static final Locator CHECK_TYC_LOCATOR = locator().withAndroid("id$Chk_TerminosCondiciones").withIos("xpath$//XCUIElementTypeStaticText[@name='Laboral']//following::XCUIElementTypeSwitch[1]");
     public static final Locator BTN_REGISTRO_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@text,'REGISTRAR')]").withIos("xpath$//XCUIElementTypeButton[@name='REGISTRAR']");
     public static final Locator LBL_VALIDACION_REGISTRO_OK_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Registro exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Registro exitoso!']");
-    public static final Locator IMG_CREAR_USUARIO_LOCATOR = locator().withAndroid("xpath$a").withIos("id$Iconografia/accionables/Usuario");
-    public static final Locator LBL_INICIA_REGISTRO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Inicia el registro')]").withIos("xpath$");
+    public static final Locator LBL_INICIA_REGISTRO_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Inicia el registro')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Inicia el registro')]");
 
     private RegistroLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
