@@ -33,7 +33,6 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
       | 4  | 1037655531      | 1             | userrobot1 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
 
-
   @Manual
   Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba

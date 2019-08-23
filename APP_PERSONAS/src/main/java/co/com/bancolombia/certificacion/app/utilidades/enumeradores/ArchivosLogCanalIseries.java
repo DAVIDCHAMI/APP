@@ -10,11 +10,11 @@ import java.util.Arrays;
 
 public enum ArchivosLogCanalIseries {
 
-
     COMFFLGWWW0369(FabricaLogCanal.elLogCanal0369(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0360(FabricaLogCanal.elLogCanal0360(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0345(FabricaLogCanal.elLogCanal0345(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW1756(FabricaLogCanal.elLogCanal1756(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0260(FabricaLogCanal.elLogCanal0260(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA)
     ;
 
 

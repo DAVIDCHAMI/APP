@@ -11,6 +11,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
+
 public class ConCredenciales extends Autenticacion {
     private Usuario usuario;
 
