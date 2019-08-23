@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.interactions;
+package co.com.bancolombia.certificacion.app.interactions.comunes;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyMetastate;

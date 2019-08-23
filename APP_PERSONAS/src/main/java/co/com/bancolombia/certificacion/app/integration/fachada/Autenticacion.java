@@ -16,9 +16,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class Autenticacion {
 
-    public Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Autenticacion() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final String DOCUMENTO = "DOCUMENTO";
+    public static final String DOCUMENTO = "DOCUMENTO";
 
     public static List<Map<String, Object>> consultaDeExistenciaDelCliente(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
