@@ -16,7 +16,7 @@ public class Finacle {
 
     public Finacle() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final Logger LOGGER = LogManager.getLogger(Finacle.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(Finacle.class.getName());
 
     public static List<Map<String, Object>> consultTitleClientFinacle() {
         Map<String, Object> dataForQuery = new HashMap<>();

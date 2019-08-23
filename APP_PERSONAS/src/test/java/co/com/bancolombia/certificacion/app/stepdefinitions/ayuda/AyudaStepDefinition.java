@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.ayuda;
 
-import co.com.bancolombia.certificacion.app.exceptions.PantallaSinDesplegar;
+import co.com.bancolombia.certificacion.app.exceptions.comunes.PantallaSinDesplegar;
 import co.com.bancolombia.certificacion.app.questions.ayuda.Despliege;
 import co.com.bancolombia.certificacion.app.questions.ayuda.Visualizar;
 import co.com.bancolombia.certificacion.app.tasks.ayuda.AccederMenu;
@@ -9,7 +9,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-import static co.com.bancolombia.certificacion.app.exceptions.PantallaSinDesplegar.NO_PRESENTA_MENSAJE;
+import static co.com.bancolombia.certificacion.app.exceptions.comunes.PantallaSinDesplegar.NO_PRESENTA_MENSAJE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 

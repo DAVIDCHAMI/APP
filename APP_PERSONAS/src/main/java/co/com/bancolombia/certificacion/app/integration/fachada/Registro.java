@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class Registro {
 
-    private static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(Registro.class.getName());
 
     public Registro() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -25,7 +25,7 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(8000),
+                Esperar.unTiempo(10000),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))

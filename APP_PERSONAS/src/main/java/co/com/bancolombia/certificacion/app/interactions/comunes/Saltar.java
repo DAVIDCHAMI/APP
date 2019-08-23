@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.interactions;
+package co.com.bancolombia.certificacion.app.interactions.comunes;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;

@@ -21,7 +21,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class LogCanal {
 
-    private static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(LogCanal.class.getName());
 
     private LogCanal() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);

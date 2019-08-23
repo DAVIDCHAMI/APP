@@ -18,7 +18,7 @@ public class Eprepago {
 
     public Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
 
     public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
@@ -39,7 +39,7 @@ public class Eprepago {
     }
 
     public static boolean verificoEstadoDeLaActivacionDeLaEprepago(Actor actor) {
-        boolean result = false;
+        boolean resultadoActivacion = false;
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
         usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
@@ -51,16 +51,16 @@ public class Eprepago {
         try {
             stateEprepago = ePrepago.consultarDetalleEprepago(usuario, AdministradorConstante.CODIGO_BANCO_EPREPAGO);
             if (stateEprepago != null && AdministradorConstante.ESTADO_TARJETA_ACTIVA.equals(stateEprepago.getEstado())){
-                result = true;
+                resultadoActivacion = true;
             }
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
-        return result;
+        return resultadoActivacion;
     }
 
     public static boolean verificoEstadoDeLaInactivacionDeLaEprepago(Actor actor) {
-        boolean result = false;
+        boolean resultadoInactivacion = false;
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
         co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
         usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
@@ -72,12 +72,12 @@ public class Eprepago {
         try {
             stateEprepago = ePrepago.consultarDetalleEprepago(usuario, AdministradorConstante.CODIGO_BANCO_EPREPAGO);
             if (stateEprepago != null && AdministradorConstante.ESTADO_TARJETA_INACTIVA.equals(stateEprepago.getEstado())){
-                result = true;
+                resultadoInactivacion = true;
             }
         } catch (SQLException e) {
             LOGGER.error(e.getMessage(), e);
         }
-        return result;
+        return resultadoInactivacion;
     }
 
     public static TarjetaEPrepago verificoElRegistroDeLaEprepago(Actor actor) {

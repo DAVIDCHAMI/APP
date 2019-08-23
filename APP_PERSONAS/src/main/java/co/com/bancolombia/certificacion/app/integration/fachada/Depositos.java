@@ -31,6 +31,7 @@ public class Depositos {
     private static final String SALDODESPUES = "saldoDepositoDespues";
     private static final String FECHA = "FECHA";
     private static final String FECHASISTEMA = "yyyyMMdd";
+
     private Depositos() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
     }
@@ -72,19 +73,15 @@ public class Depositos {
 
     public static void saldoDepositosDespues(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);
-        String saldoDisponible = "";
-        String saldoCanje = "";
-        String saldoTotal = "";
-
         Map<String, Object> dataForQuery = new HashMap<>();
         dataForQuery.put(CUENTA, depositos.getNumero());
         dataForQuery.put(TIPOCUENTA, tipoCuentaLetra(depositos.getTipo()));
 
         String sql = QueryManager.CONSULTAS.getString("SQL.SCIFFSALDO.consultarSaldo");
         List<Map<String, Object>> resultadoConsulta = Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
-        saldoDisponible = resultadoConsulta.get(0).get("sdsdodsp").toString();
-        saldoCanje = resultadoConsulta.get(0).get("sdfltdsp").toString();
-        saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
+        String saldoDisponible = resultadoConsulta.get(0).get("sdsdodsp").toString();
+        String saldoCanje = resultadoConsulta.get(0).get("sdfltdsp").toString();
+        String saldoTotal = Double.toString(Double.parseDouble(saldoDisponible) + Double.parseDouble(saldoCanje));
         Serenity.setSessionVariable(SALDODESPUES).to(saldoTotal);
     }
 

@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 
-import co.com.bancolombia.certificacion.app.interactions.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
@@ -30,8 +30,7 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                Esperar.unTiempo(20000),
-
+                Esperar.unTiempo(5000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
@@ -41,9 +40,9 @@ public class ConDatosTransaccion extends Autenticacion {
                 Click.on(BTN_CONTINUAR));
 
         actor.attemptsTo(
+                Esperar.unTiempo(10000),
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
-                //  Enter.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR));
     }
