@@ -1,16 +1,15 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 
-import co.com.bancolombia.certificacion.app.exceptions.ClaveNoInscrptaCorrectamente;
+import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscrptaCorrectamente;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
-import net.serenitybdd.screenplay.GivenWhenThen;
 
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.exceptions.ClaveNoInscrptaCorrectamente.NO_INCRIBE_CLAVE_DINAMICA;
+import static co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscrptaCorrectamente.NO_INCRIBE_CLAVE_DINAMICA;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

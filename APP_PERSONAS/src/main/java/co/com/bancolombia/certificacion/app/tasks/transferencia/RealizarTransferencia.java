@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.transferencia;
 
-import co.com.bancolombia.certificacion.app.interactions.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
