@@ -27,13 +27,13 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         clearReport();
         Boolean resultFinal = false;
-        List<Map<String, Object>> trama;
+        List<Map<String, Object>> registroTrn0369;
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
-        trama = LogCanal.consultaLogCanalTrama220230(actor);
+        registroTrn0369 = LogCanal.consultaLogCanalTrama220230(actor);
 
-        if (trama !=  null){
-            String trama0220 = trama.get(0).toString().replace("datos=","");
-            String trama0230 = trama.get(1).toString().replace("datos=","");
+        if (registroTrn0369 !=  null){
+            String trama0220 = registroTrn0369.get(0).toString().replace("datos=","");
+            String trama0230 = registroTrn0369.get(1).toString().replace("datos=","");
             Boolean resultadoEntrada = true;
             Boolean resultadoSalida = true;
 
@@ -56,10 +56,10 @@ public class LogCanalParaTRN0369 implements Question<Boolean> {
             if (resultadoEntrada && resultadoSalida){
                 resultFinal=true;
             }
-            Serenity.recordReportData().withTitle("Resultado del LogCanal").
+            Serenity.recordReportData().withTitle("Resultado del LogCanal Trn0369").
                     andContents(Serenity.sessionVariableCalled("informes_serenity"));
         }else{
-            LOGGER.info("Valores de la trama input y output sin registros");
+            LOGGER.info("Sin registros: Transaccion 0369 Autenticacion");
         }
         return resultFinal;
     }
