@@ -20,11 +20,11 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Variabl
 
 public class Transversales {
 
-    public Transversales() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Transversales() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final String FECHA = "FECHA";
-    private static final String FECHASISTEMA = "yyyyMMdd";
-    private static final String DOCUMENTO = "DOCUMENTO";
+    public static final String FECHA = "FECHA";
+    public static final String FECHASISTEMA = "yyyyMMdd";
+    public static final String DOCUMENTO = "DOCUMENTO";
 
     public static String verificarElDebitoEnMOVTFLOGTF(Actor actor) {
         Producto depositos = actor.recall(TIENE_PRODUCTOS);

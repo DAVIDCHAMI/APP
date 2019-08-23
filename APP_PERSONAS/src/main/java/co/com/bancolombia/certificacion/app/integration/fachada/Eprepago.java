@@ -16,9 +16,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class Eprepago {
 
-    public Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
 
     public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
