@@ -18,7 +18,7 @@ public class Eprepago {
 
     public Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
-    private static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(TipoClaseConstante.CLASE_UTILIDAD);
 
     public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);

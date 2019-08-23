@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoCuentaLetra;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.clearReport;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 
@@ -21,6 +22,7 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
+        clearReport();
         Boolean resultFinal = false;
         List<Map<String, Object>> registros;
         List<Producto> producto = actor.recall(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS);
@@ -41,11 +43,12 @@ public class ConsultarConsolidadoDepositos implements Question<Boolean> {
                     String tipoCuentaBancoApp = tipoCuentaLetra(producto.get(j).getTipo().trim());
                     String saldoDisponibleApp = producto.get(j).getSaldo().getSaldoDisponible().replace("$","").replace(".","").replace(",",".").trim();
                     if (numeroCuentaApp.equals(numeroCuentaBanco) && tipoCuentaBancoApp.equals(tipoCuentaBanco)){
+                        int k = j + 1;
                         resultadoDato = true;
                         resultadoRegistro = true;
-                        resultadoRegistro = validarCampo("CUENTA", numeroCuentaBanco, numeroCuentaApp, resultadoDato);
-                        resultadoRegistro = validarCampo("TIPO CUENTA", tipoCuentaBanco, tipoCuentaBancoApp, resultadoDato);
-                        resultadoRegistro = validarCampo("SALDO DISPONIBLE", saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
+                        resultadoRegistro = validarCampo("CUENTA # " + k, numeroCuentaBanco, numeroCuentaApp, resultadoDato);
+                        resultadoRegistro = validarCampo("TIPO CUENTA # " + k, tipoCuentaBanco, tipoCuentaBancoApp, resultadoDato);
+                        resultadoRegistro = validarCampo("SALDO DISPONIBLE # " + k, saldoDisponibleBanco, saldoDisponibleApp,resultadoDato);
                     }
                 }
             }
