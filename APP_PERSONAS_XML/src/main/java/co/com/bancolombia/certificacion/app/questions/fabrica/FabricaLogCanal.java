@@ -1,9 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.fabrica;
 
-import co.com.bancolombia.certificacion.app.questions.basededatos.logcanal.LogCanalParaTRN0322;
-import co.com.bancolombia.certificacion.app.questions.basededatos.logcanal.LogCanalParaTRN0325;
-import co.com.bancolombia.certificacion.app.questions.basededatos.logcanal.LogCanalParaTRN0326;
-import co.com.bancolombia.certificacion.app.questions.basededatos.logcanal.LogCanalParaTRN0369;
+import co.com.bancolombia.certificacion.app.questions.basededatos.logcanal.*;
 import net.serenitybdd.screenplay.Question;
 
 /**
@@ -42,6 +39,13 @@ public class FabricaLogCanal {
      * @return the question
      */
     public static Question<Boolean> elLogCanal0326() { return new LogCanalParaTRN0326();}
+
+    /**
+     * Verify channel log question TRN0326.
+     *
+     * @return the question
+     */
+    public static Question<Boolean> elLogCanal0533() { return new LogCanalParaTRN0533();}
 
 
 

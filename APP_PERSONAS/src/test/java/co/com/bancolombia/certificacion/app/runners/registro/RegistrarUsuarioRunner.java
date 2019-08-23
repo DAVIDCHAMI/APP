@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.runners.registro;
 
-import co.com.bancolombia.certificacion.app.utilidades.RunnerPersonalizado;
+
+import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.DataToFeature;
 import cucumber.api.CucumberOptions;
@@ -11,6 +12,7 @@ import org.junit.runner.RunWith;
 import java.io.IOException;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
+
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(

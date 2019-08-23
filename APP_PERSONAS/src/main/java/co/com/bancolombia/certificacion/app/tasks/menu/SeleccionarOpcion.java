@@ -24,6 +24,7 @@ public class SeleccionarOpcion implements Task {
         actor.attemptsTo(
                 WaitUntil.the(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()), isEnabled()),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
+                RealizarScroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         RealizarScroll.hastaTargetVisible(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))

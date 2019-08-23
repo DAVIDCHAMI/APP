@@ -23,7 +23,6 @@ public class AdministradorUtilidades {
     public static String formatoCuentaDeposito(String cuentaDeposito) {
         String cuentaDepositoCeros = String.format("%011d", Long.parseLong(cuentaDeposito));
         return cuentaDepositoCeros.replaceFirst("(\\d{3})(\\d{6})(\\d{2})", "$1-$2-$3");
-
     }
 
     public static String tipoCuentaLetra(String tipoCuenta) {

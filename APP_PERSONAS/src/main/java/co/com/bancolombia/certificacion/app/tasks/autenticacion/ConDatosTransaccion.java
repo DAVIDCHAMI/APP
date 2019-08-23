@@ -1,15 +1,13 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.Escribir;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.BTN_CONTINUAR;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConDatosTransaccion extends Autenticacion {
@@ -28,12 +26,12 @@ public class ConDatosTransaccion extends Autenticacion {
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR),
+                Click.on(BTN_CONTINUAR));
+        actor.attemptsTo(
                 Click.on(TXT_CLAVE_DIGITOS),
-                Type.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
+                Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );
-        actor.remember(MODELO_DATOS_TRANSACCION, usuario);
     }
 }

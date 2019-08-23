@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.interactions.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -34,6 +35,7 @@ public class ConsultarDetalle implements Task {
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );
+
         actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)

@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTran
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import co.com.bancolombia.certificacion.app.utilidades.XML.UtilidadXml;
+import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

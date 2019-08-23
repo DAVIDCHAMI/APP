@@ -15,7 +15,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Adminis
  * The type Current transferencias entity.
  */
 public class CargarEntidadTransferencias {
-    public static Transferencias transferencias;
+    private static Transferencias transferencias = new Transferencias();
 
     private CargarEntidadTransferencias() {
 

@@ -1,13 +1,17 @@
 package co.com.bancolombia.certificacion.app.utilidades.string;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.Normalizer;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 
 public class UtileriaString {
+
+    private UtileriaString() {
+        throw new IllegalStateException(CLASE_UTILIDAD);
+    }
 
     public static int contarCantidadCaracter(String cadena, char caracter) {
         int posicion;
@@ -52,9 +56,5 @@ public class UtileriaString {
         }else{
             return resultado;
         }
-    }
-
-    private UtileriaString() {
-        throw new IllegalStateException(CLASE_UTILIDAD);
     }
 }

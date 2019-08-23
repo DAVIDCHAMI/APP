@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.questions.autenticacion;
 
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransaccion;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.utilidades.XML.UtilidadXml;
+import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

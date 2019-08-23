@@ -4,7 +4,7 @@ import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadTransa
 import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuario;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import co.com.bancolombia.certificacion.app.utilidades.XML.UtilidadXml;
+import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
 import net.serenitybdd.core.Serenity;
@@ -56,7 +56,8 @@ public class PrepararYenviarConsultaTasasInversionVirtualXml implements Interact
 					" \n" + strResponse + "\n");
 			
 		}else {LOGGER.info("No se encontro el xml request parametrizado en la ruta");}
-		
+
+		Serenity.recordReportData().withTitle("Request Consulta de tasas").andContents(Serenity.sessionVariableCalled("Request"));
 	}
 
 }

@@ -18,6 +18,7 @@ public class ConfiguracionTransaccion {
     private String horaTransaccion;
     private String tipoLogCanal;
     private String codigoOperacion;
+    private String trace;
     private Usuario usuario;
 
     public ConfiguracionTransaccion(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
@@ -41,6 +42,12 @@ public class ConfiguracionTransaccion {
     public Usuario getUsuario() {
         return usuario;
     }
+
+    public String getTrace() {
+        return trace;
+    }
+
+    public void setTrace(String trace) { this.trace = trace; }
 
     public String getIdentificadorCaso() {
         return identificadorCaso;
