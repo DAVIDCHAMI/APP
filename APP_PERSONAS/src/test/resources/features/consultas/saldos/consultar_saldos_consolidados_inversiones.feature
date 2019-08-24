@@ -5,7 +5,6 @@ Característica: Consulta de saldos de inversiones app Bancolombia
   Quiero consultar mis inversiones
   Para visualizar el saldo de mis inversiones
 
-  @Manual
   Esquema del escenario: Consulta de productos inversiones desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -15,9 +14,9 @@ Característica: Consulta de saldos de inversiones app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesión en la app
-#    Y Verifico el resultado de los siguientes archivos de iSeries
-#    | Logcanal- COMFFLGWWW |
+    Y Verifico los resultados en los archivos de iseries
+   | Logcanal-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Inversiones@1
-   |1   |1037655531   |1   |userrobot3   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |   ||
+   |1   |22452521   |1   |invictus10   |1234   |4321   |Acierto   |000   |0410   |TRANSACCION EXITOSA   |bolp   |ACTIVO   |FIDUCUENTA;FIDUCUENTA   |0935000000538;0935000000832|
