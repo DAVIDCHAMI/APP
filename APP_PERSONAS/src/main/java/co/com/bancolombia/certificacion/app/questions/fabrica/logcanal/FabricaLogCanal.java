@@ -17,6 +17,7 @@ public class FabricaLogCanal {
     public static Question<Boolean> elLogCanal0345() {
         return new LogCanalParaTRN0345();
     }
+    public static Question<Boolean> elLogCanal0260() { return new LogCanalParaTRN0260(); }
     public static Question<Boolean> elLogCanal0410() {
         return new LogCanalParaTRN0410();
     }

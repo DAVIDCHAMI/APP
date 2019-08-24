@@ -16,7 +16,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConDatosTransaccion extends Autenticacion {
-    public static final Logger LOGGER = LogManager.getLogger(ConfiguracionTransaccion.class);
+    private static final Logger LOGGER = LogManager.getLogger(ConfiguracionTransaccion.class);
     private ConfiguracionTransaccion usuario;
 
     public ConDatosTransaccion(ConfiguracionTransaccion usuario) {

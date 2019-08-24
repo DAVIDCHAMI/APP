@@ -18,8 +18,7 @@ import net.serenitybdd.screenplay.Question;
 
 public class FabricaBaseDeDatosIseries {
 
-    private FabricaBaseDeDatosIseries() {
-    }
+    private FabricaBaseDeDatosIseries() { }
 
     public static Question<Boolean> elArchivoEnIseriesPCCFFPPCLI() {
         return new ConsultarRegistroEnPCCFFPPCLI();
@@ -62,7 +61,8 @@ public class FabricaBaseDeDatosIseries {
         return new ConsultarDetalleDepositos();
     }
     public static Question<Boolean> elArchivoEnIseriesSCIFFSALDOConsolidado() { return new ConsultarConsolidadoDepositos(); }
-    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos() { return new ConsultarSaldosConsolidadosCreditos(); }
+    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMELMBALconsultaSaldoCreditos() {return new ConsultarSaldosConsolidadosCreditos(); }
+    public static Question<Boolean> elArchivoEnIseriesPCCFFLOGTFtarjetasCredito(){return new ConsultarConsolidadoTarjetasCredito();}
+    public static Question<Boolean> elArchivoEnIseriesCXREFCNAMEtarjetasCredito(){return new ConsultarPertenenciaTarjetasCredito();}
     public static Question<Boolean> elArchivoEnIseriesENCARC() { return new ConsultarConsolidadoFiducias(); }
-
 }

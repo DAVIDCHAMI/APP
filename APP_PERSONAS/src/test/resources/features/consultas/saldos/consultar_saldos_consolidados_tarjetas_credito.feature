@@ -14,9 +14,13 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesión en la app
-#    Y Verifico el resultado de los siguientes archivos de iSeries
-#    | Logcanal- COMFFLGWWW |
+    Y Verifico los resultados en los archivos de iseries
+      | Logcanal-COMFFLGWWW | Saldos TDC-PCCFFLOGTF_TDCCONSOLIDADO | Pertenencia TDC-CXREF_CNAME_CONSOLIDADOTDC |
+
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                                                                                                              | numeroCuenta                                                |
-   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1
-   |1   |1037655531   |1   |creadoosp11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Personal American Express;Personal American Express;Personal American Express;Personal Visa;Personal Visa;Personal Visa;Personal Mastercard;Personal Mastercard;Personal Mastercard;Personal Mastercard   |*0350;*9056;*6269;*7757;*1597;*0606;*6095;*7287;*4452;*2390|
+      | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
+         ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1
+   |1   |58156998   |1   |automata98   |1234   |4321   |Acierto   |000   |0260   |NO ERROR   |bolp   |ACTIVO   |Personal American Express;Personal Visa;Personal Mastercard   |*4379;*2391;*0299|
+      
+
+   
