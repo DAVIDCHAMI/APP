@@ -15,7 +15,7 @@ Característica: Consulta de saldos de inversiones app Bancolombia
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesión en la app
     Y Verifico los resultados en los archivos de iseries
-   | Logcanal-COMFFLGWWW |
+   | Logcanal-COMFFLGWWW | Pertenencia fondos-ENCARC |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Inversiones@1

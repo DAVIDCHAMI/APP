@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.integration.fachada;
 import co.com.bancolombia.backend.iseries.consultas.Consulta;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante;
+import co.com.bancolombia.certificacion.app.utilidades.constantes.FondoLibrerias;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import net.serenitybdd.screenplay.Actor;
 import org.apache.logging.log4j.LogManager;
@@ -25,14 +25,13 @@ public class FondosInversion {
     }
 
     public static List<Map<String, Object>> consultarExistenciaFondosEncarc(Actor actor) {
-        Map<String, Object> parametrosQuery = new HashMap<>();
+        Map<String, Object> dataForQuery = new HashMap<>();
         List<Map<String, Object>> listaFondosIversion = new ArrayList<>();
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
-        parametrosQuery.put("idCliente", datosPrincipales.getUsuario().getNumeroDocumento());
+        dataForQuery.put("DOCUMENTO", datosPrincipales.getUsuario().getNumeroDocumento());
         List<String> librerias = new ArrayList<>();
 
-
-        FondoConstante.BIBLIOTECA_POR_CODIGO.forEach((clave, valor) -> {
+        FondoLibrerias.BIBLIOTECA_POR_CODIGO.forEach((clave, valor) -> {
             if (!librerias.contains(valor)) {
                 librerias.add(valor);
             }
@@ -41,7 +40,7 @@ public class FondosInversion {
         for (String libreria : librerias) {
             String query = QueryManager.CONSULTAS.getString("SQL.ENCARC.consultaFondosInversion");
             query = query.replace("libreria", libreria);
-            listaFondosIversion.addAll(Consulta.ejecutar(query, parametrosQuery));
+            listaFondosIversion.addAll(Consulta.ejecutar(query, dataForQuery));
 
         }
 
@@ -50,5 +49,5 @@ public class FondosInversion {
         }
         return listaFondosIversion;
     }
-    
+
 }
