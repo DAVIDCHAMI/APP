@@ -9,7 +9,7 @@ import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante.BIBLIOTECA_POR_CODIGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoLibrerias.BIBLIOTECA_POR_CODIGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.AHORRO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.CORRIENTE;
 

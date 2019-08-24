@@ -40,7 +40,7 @@ public class ConDatosTransaccion extends Autenticacion {
                 Click.on(BTN_CONTINUAR));
 
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(5000),
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),

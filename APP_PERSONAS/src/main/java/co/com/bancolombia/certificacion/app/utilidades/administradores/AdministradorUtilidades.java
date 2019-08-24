@@ -32,6 +32,8 @@ public class AdministradorUtilidades {
             tipoCuentaCasteo = "S";
         } else if (tipoCuentaMayuscula.contains("CORRIENTE")) {
             tipoCuentaCasteo = "D";
+        } else if (tipoCuentaMayuscula.contains("ADELANTO")) {
+            tipoCuentaCasteo = "D";
         }
         return tipoCuentaCasteo;
 
