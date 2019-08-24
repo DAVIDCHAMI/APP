@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.integration.fachada;
+package co.com.bancolombia.certificacion.app.integration.basededatos.finacle;
 
 import co.com.bancolombia.certificacion.app.utilidades.administradores.QueryManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;

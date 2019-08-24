@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Movimientos;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.movimientos.Movimientos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Tarjetas;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.tarjetas.Tarjetas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 
@@ -14,7 +14,6 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.cerosIzquierda;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;

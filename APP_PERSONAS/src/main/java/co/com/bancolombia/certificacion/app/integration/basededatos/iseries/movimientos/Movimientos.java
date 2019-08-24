@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.integration.fachada;
+package co.com.bancolombia.certificacion.app.integration.basededatos.iseries.movimientos;
 
 import co.com.bancolombia.backend.iseries.transversal.productos.eprepago.BackMovimientosEprepago;
 import co.com.bancolombia.backend.modelo.transversal.Movimiento;

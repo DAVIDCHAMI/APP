@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.integration.fachada;
+package co.com.bancolombia.certificacion.app.integration.basededatos.iseries.terminos;
 
 import co.com.bancolombia.backend.iseries.personas.usuario.BackRegistroAPP;
 import co.com.bancolombia.backend.modelo.usuario.UsuarioRegistro;

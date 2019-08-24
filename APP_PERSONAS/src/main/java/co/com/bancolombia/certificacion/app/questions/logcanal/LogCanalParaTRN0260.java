@@ -1,9 +1,7 @@
 package co.com.bancolombia.certificacion.app.questions.logcanal;
 
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
-import co.com.bancolombia.certificacion.app.integration.fachada.Depositos;
-import co.com.bancolombia.certificacion.app.integration.fachada.LogCanal;
-import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.logcanal.LogCanal;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
@@ -20,7 +18,6 @@ import java.util.Map;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.clearReport;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.VerificarCampos.validarCampo;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
 
 public class LogCanalParaTRN0260 implements Question<Boolean> {
     private static final Logger LOGGER = LogManager.getLogger(LogCanalParaTRN0360.class);
