@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.models.productos;
 
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante.BIBLIOTECA_POR_CODIGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoLibrerias.BIBLIOTECA_POR_CODIGO;
 
 public class FondoInversion extends Producto {
 
