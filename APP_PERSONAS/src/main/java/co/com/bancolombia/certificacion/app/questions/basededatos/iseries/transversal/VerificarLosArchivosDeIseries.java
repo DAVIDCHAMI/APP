@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal;
 
-import co.com.bancolombia.certificacion.app.exceptions.productos.AfirmacionDelProducto;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosComunesIseries;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.ArchivosLogCanalIseries;

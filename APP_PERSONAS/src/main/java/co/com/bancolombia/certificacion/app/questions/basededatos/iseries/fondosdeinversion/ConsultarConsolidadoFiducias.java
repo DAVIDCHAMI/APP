@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.fondosdeinversion;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.FondosInversion;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.fondosdeinversion.FondosInversion;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstantes;
 import net.serenitybdd.core.Serenity;

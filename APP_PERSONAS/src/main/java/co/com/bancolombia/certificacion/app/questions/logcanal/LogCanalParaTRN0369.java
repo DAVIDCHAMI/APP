@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.questions.logcanal;
 
 import co.com.bancolombia.backend.utilidades.managers.DateManager;
-import co.com.bancolombia.certificacion.app.integration.fachada.LogCanal;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.logcanal.LogCanal;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.StringManager;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;

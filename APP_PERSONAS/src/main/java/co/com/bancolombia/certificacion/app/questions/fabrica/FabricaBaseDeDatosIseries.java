@@ -6,8 +6,8 @@ import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimi
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos.ConsultarDebitoEnSCIFFMRCMV;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.movimientos.ConsultarRegistroEnCABFFPPAUT;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos.*;
+import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarEprepagoEnCABFFTARJ;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFPPMAE;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnCABFFTARJ;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas.ConsultarRegistroEnTCBFFMAE;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.terminos.ConsultarRegistroEnWWWFFLGTYC;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal.ConsultarCreditoEnMOVTFLOGTF;
@@ -24,7 +24,7 @@ public class FabricaBaseDeDatosIseries {
         return new ConsultarRegistroEnPCCFFPPCLI();
     }
     public static Question<Boolean> elArchivoEnIseriesCABFFTARJ() {
-        return new ConsultarRegistroEnCABFFTARJ();
+        return new ConsultarEprepagoEnCABFFTARJ();
     }
     public static Question<Boolean> elArchivoEnIseriesWWWFFUSRSV() {
         return new ConsultarRegistroEnWWWFFUSRSV();
@@ -65,4 +65,5 @@ public class FabricaBaseDeDatosIseries {
     public static Question<Boolean> elArchivoEnIseriesPCCFFLOGTFtarjetasCredito(){return new ConsultarConsolidadoTarjetasCredito();}
     public static Question<Boolean> elArchivoEnIseriesCXREFCNAMEtarjetasCredito(){return new ConsultarPertenenciaTarjetasCredito();}
     public static Question<Boolean> elArchivoEnIseriesENCARC() { return new ConsultarConsolidadoFiducias(); }
+    public static Question<Boolean> elArchivoEnIseriesCABFFTARJeprepago() { return new ConsultarEprepagoEnCABFFTARJ(); }
 }

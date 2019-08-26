@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.integration.fachada;
+package co.com.bancolombia.certificacion.app.integration.basededatos.iseries.fondosdeinversion;
 
 import co.com.bancolombia.backend.iseries.consultas.Consulta;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Tarjetas;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.tarjetas.Tarjetas;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;

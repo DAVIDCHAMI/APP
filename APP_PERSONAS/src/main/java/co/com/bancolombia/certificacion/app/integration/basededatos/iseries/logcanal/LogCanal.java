@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.integration.fachada;
+package co.com.bancolombia.certificacion.app.integration.basededatos.iseries.logcanal;
 
 import co.com.bancolombia.backend.iseries.transversal.log.trace.BackTrace;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
