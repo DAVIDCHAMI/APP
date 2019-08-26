@@ -16,7 +16,7 @@ public class VerificarMovimientos implements Question<Boolean> {
         return movimientos != null;
     }
 
-    public static VerificarMovimientos deCuentas() {
+    public static VerificarMovimientos productos() {
         return new VerificarMovimientos();
     }
 }

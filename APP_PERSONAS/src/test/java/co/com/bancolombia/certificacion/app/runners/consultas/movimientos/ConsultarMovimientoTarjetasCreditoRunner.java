@@ -1,5 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.registro;
-
+package co.com.bancolombia.certificacion.app.runners.consultas.movimientos;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -13,20 +12,19 @@ import java.io.IOException;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
-
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/registro/registrar_usuario.feature"},
+        features = {"src/test/resources/features/consultas/movimientos/consultar_movimientos_tarjeta_credito.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
-        snippets = SnippetType.CAMELCASE)
-public class RegistroUsuarioRunner {
-
-    public RegistroUsuarioRunner() {
+        snippets = SnippetType.CAMELCASE
+)
+public class ConsultarMovimientoTarjetasCreditoRunner {
+    private ConsultarMovimientoTarjetasCreditoRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/registro/registrar_usuario.feature");
+        DataToFeature.overrideFeatureFiles(".src/test/resources/features/consultas/movimientos/consultar_movimientos_tarjeta_credito.feature");
     }
 }
