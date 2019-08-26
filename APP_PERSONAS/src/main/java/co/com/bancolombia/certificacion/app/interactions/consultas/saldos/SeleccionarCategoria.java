@@ -32,7 +32,9 @@ public class SeleccionarCategoria implements Interaction {
                     WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
                     Scroll.to(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
-                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
+                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
+                    Esperar.unTiempo(5000)
+
             );
         }
     }
