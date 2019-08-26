@@ -1,7 +1,8 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
+
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
