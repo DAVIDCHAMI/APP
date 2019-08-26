@@ -11,12 +11,13 @@ Característica: Autenticación app Bancolombia
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser exitosa
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Y Verifico los resultados en los archivos de iseries
       | LOG CANAL-COMFFLGWWW |
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1,2,3
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
+      | 1  | 43024987        | 1             | automata87 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
 
   @EscenarioExitoso
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
@@ -25,13 +26,13 @@ Característica: Autenticación app Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser exitosa
-    Y cierra sesión en la app
-   # Y Verifico los resultados en los archivos de iseries
-    #  | LOG CANAL-COMFFLGWWW |
+    Y cierra sesion en la app
+    Y Verifico los resultados en los archivos de iseries
+      | LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
-      | 4  | 1037655531      | 1             | userrobot1 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
+      | 4  | 43024987        | 1             | automata87 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
 
   @Manual
   Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
@@ -45,7 +46,7 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
-      | 5  | 1037655531      | 1             | userrobot1 | 1111  | 4321         | Alterno     | 052         | 0369              | CLAVE NO VALIDA   | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
+      | 5  | 45612862        | 1             | userrobot1 | 1111  | 4321         | Alterno     | 052         | 0369              | CLAVE NO VALIDA   | bolp            | ACTIVO       | CONSULTAR_PRODUCTO  |
 
   @Manual
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP

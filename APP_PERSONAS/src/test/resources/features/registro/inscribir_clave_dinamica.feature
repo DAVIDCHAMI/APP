@@ -14,7 +14,7 @@ Característica: Autenticación app Bancolombia
       | segundaClave   | nombrePersonalizado   | correo   | tipoCorreo   | numeroCelular   |
       | <segundaClave> | <nombrePersonalizado> | <correo> | <tipoCorreo> | <numeroCelular> |
     Entonces Yo debería ver mis datos registrados en clave dinámica
-    Y cierra sesión en la app
+    Y cierra sesion en la app
 
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo                 | tipoCorreo | numeroCelular |

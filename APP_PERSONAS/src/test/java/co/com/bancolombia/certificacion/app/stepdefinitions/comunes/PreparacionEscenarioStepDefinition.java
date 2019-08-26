@@ -1,8 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
+import co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIseriesFallido;
+import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal.VerificarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
-import co.com.bancolombia.certificacion.app.tasks.basededatos.comunes.ConsultarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
 import cucumber.api.java.Before;
@@ -15,8 +16,10 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIseriesFallido.ARCHIVOS_ISERIES_FALLIDO;
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -60,7 +63,7 @@ public class PreparacionEscenarioStepDefinition {
         );
     }
 
-    @Y("cierra sesión en la app")
+    @Y("cierra sesion en la app")
     public void cerrarSesionOsp() {
         theActorInTheSpotlight().attemptsTo(
                 CerrarSesion.exitosamente()
@@ -69,7 +72,7 @@ public class PreparacionEscenarioStepDefinition {
 
     @Y("^Verifico los resultados en los archivos de iseries$")
     public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files) {
-        theActorInTheSpotlight().attemptsTo(ConsultarLosArchivosDeIseries.enApp(files));
+        theActorInTheSpotlight().should(seeThat(VerificarLosArchivosDeIseries.enApp(files)).orComplainWith(ArchivosIseriesFallido.class, ARCHIVOS_ISERIES_FALLIDO));
     }
 }
 
