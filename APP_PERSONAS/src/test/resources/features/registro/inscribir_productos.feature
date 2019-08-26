@@ -12,7 +12,7 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
     Y quiero realizar la inscripcion del producto con la información
       | <nombreBanco> | <tipo> | <numero> | <tipoDocumentoInscripcion> | <numeroDocumentoInscripcion> |
     Entonces el deberia de ver el detalle del producto registrado
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombreBanco | tipo    | numero      |tipoDocumentoInscripcion| numeroDocumentoInscripcion|
    ##@externaldata@./src/test/resources/datadriven/registro/InscripcionProductos.xlsx@Datos@1

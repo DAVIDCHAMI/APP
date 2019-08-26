@@ -9,6 +9,8 @@ public class FabricaAutenticacion {
     private FabricaAutenticacion() {
     }
 
-    public static Question<Boolean> elArchivoEnIseriesWWWFFUSRSV() { return new ConsultarExistenciaCliente(); }
+    public static Question<Boolean> elArchivoEnIseriesWWWFFUSRSV() {
+        return new ConsultarExistenciaCliente();
+    }
 
 }

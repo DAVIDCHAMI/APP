@@ -13,7 +13,7 @@ Característica: Consulta de saldos de e prepago app Bancolombia
     Cuando consulto el saldo de mis e-Prepago
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Y Verifico los resultados en los archivos de iseries
       | Logcanal-COMFFLGWWW | consultar tarjeta ePrepago-CABFFTARJ_EPREPAGO|
     Ejemplos:

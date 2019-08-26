@@ -28,19 +28,17 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
 
+
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                Esperar.unTiempo(5000),
+                Esperar.unTiempo(10000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR));
-
-        actor.attemptsTo(
-                Esperar.unTiempo(5000),
+                Click.on(BTN_CONTINUAR),
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
