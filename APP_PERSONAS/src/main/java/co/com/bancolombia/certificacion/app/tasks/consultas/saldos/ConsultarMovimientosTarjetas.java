@@ -17,7 +17,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constan
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosTarjetas extends Movimientos {
+public class ConsultarMovimientosTarjetas extends Movimientos{
     private String tipoCuenta;
     private String numeroCuenta;
 
