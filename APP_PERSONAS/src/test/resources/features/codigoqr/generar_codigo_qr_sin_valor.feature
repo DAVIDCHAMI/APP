@@ -11,7 +11,7 @@ Característica: Generación de código QR
       | tipoCuenta   | numeroCuenta   | descripcion   |
       | <tipoCuenta> | <numeroCuenta> | <descripcion> |
     Entonces el deberia de ver un mensaje de confirmación y el código QR
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1

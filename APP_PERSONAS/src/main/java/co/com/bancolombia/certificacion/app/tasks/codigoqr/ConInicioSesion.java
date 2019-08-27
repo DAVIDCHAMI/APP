@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
-import co.com.bancolombia.certificacion.app.interactions.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import io.appium.java_client.AppiumDriver;
@@ -16,6 +16,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaStr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -33,6 +34,7 @@ public class ConInicioSesion extends GenerarQR {
                 //WaitUntil.the(BTN_GENERAR_CODIGO_QR, isVisible()),
                 //Click.on(BTN_GENERAR_CODIGO_QR),
                 Saltar.onBoarding(),
+                WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE)
         );
         if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {

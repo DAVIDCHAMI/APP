@@ -1,13 +1,13 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
+
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_OCULTAR_BANNER;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -20,26 +20,22 @@ public class SeleccionarCategoria implements Interaction {
         this.categoria = categoria;
     }
 
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Check.whether(BTN_OCULTAR_BANNER.resolveFor(actor).isVisible()).andIfSo(
-                        OcultarBanner.deSaldosMovimientos()
-                )
-        );
-        if (!CUENTAS.equals(categoria)) {
-            actor.attemptsTo(
-                    Check.whether(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS).resolveFor(actor).isVisible()).andIfSo(
-                            WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
-                            Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
-                            Scroll.to(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
-                            Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
-                    )
-            );
-        }
-    }
-
     public static SeleccionarCategoria deSaldosMovimientos(String categoria) {
         return instrumented(SeleccionarCategoria.class, categoria);
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        if (!CUENTAS.equals(categoria)) {
+            actor.attemptsTo(
+                    Esperar.unTiempo(7000),
+                    WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
+                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
+                    Scroll.to(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
+                    Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
+                    Esperar.unTiempo(5000)
+
+            );
+        }
     }
 }

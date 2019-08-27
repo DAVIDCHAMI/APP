@@ -9,6 +9,9 @@ public class ConstantesIseries {
     public static final String FECHA = "Fecha";
     public static final String CODIGOERROR = "CodigoError";
     public static final String ESTADOUSUARIO = "ESTADO DEL USUARIO";
+    public static final String NUMEROPRODUCTO = "NUMERO PRODUCTO";
+    public static final String TIPOPRODUCTO = "TIPO PRODUCTO";
+    public static final String SALDOPRODUCTO = "SALDO PRODUCTO";
 
     private ConstantesIseries() {
     }

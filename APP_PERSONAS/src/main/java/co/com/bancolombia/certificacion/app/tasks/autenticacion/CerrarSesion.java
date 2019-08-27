@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -21,6 +21,7 @@ public class CerrarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(7000),
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Esperar.unTiempo(5000),
                 Click.on(BTN_CERRAR_SESION),

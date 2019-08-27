@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
-import co.com.bancolombia.certificacion.app.interactions.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import io.appium.java_client.AppiumDriver;
