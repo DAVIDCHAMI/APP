@@ -5,6 +5,7 @@ import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransacc
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.questions.Visibility;
 
@@ -36,7 +37,8 @@ public class SeleccionarOpcion implements Task {
                                         .andIfSo(
                                                 Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                                         ).otherwise(
-                                        Click.on(OPT_SUB_MENU.of(tipoTransaccion.getTercerNivel()))
+                                        Scroll.to(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                                 )
                         )
         );
