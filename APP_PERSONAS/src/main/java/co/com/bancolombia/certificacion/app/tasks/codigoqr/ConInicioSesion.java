@@ -31,7 +31,7 @@ public class ConInicioSesion extends GenerarQR {
         AppiumDriver driver = getProxiedDriver();
         actor.attemptsTo(
                 //WaitUntil.the(BTN_GENERAR_CODIGO_QR, isVisible()),
-                Click.on(BTN_GENERAR_CODIGO_QR),
+                //Click.on(BTN_GENERAR_CODIGO_QR),
                 Saltar.onBoarding(),
                 Click.on(LNK_SIGUIENTE)
         );
