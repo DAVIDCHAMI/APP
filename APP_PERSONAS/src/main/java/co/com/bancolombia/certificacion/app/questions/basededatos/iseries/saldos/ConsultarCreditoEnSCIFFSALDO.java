@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.saldos;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Depositos;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.depositos.Depositos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import org.apache.logging.log4j.LogManager;

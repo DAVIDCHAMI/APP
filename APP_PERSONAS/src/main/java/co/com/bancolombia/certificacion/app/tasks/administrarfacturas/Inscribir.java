@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;

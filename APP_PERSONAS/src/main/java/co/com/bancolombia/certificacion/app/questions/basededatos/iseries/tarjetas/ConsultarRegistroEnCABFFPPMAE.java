@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.basededatos.iseries.tarjetas;
 
-import co.com.bancolombia.certificacion.app.integration.fachada.Eprepago;
+import co.com.bancolombia.certificacion.app.integration.basededatos.iseries.tarjetas.Eprepago;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import net.serenitybdd.screenplay.Actor;
