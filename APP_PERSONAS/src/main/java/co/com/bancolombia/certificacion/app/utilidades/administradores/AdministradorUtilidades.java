@@ -32,6 +32,8 @@ public class AdministradorUtilidades {
             tipoCuentaCasteo = "S";
         } else if (tipoCuentaMayuscula.contains("CORRIENTE")) {
             tipoCuentaCasteo = "D";
+        } else if (tipoCuentaMayuscula.contains("ADELANTO")) {
+            tipoCuentaCasteo = "D";
         }
         return tipoCuentaCasteo;
 
@@ -103,5 +105,18 @@ public class AdministradorUtilidades {
                 LOGGER.error(e.getMessage(), e);
         }
         return dateFormat;
+    }
+
+    public static String tipoTarjetaPrefijo(String accountType){
+        String accountTypeUpper = accountType.toUpperCase();
+        String castAccountType = "";
+        if (accountTypeUpper.contains("AMERICAN EXPRESS")){
+            castAccountType = "3";
+        } else if (accountTypeUpper.contains("VISA")){
+            castAccountType = "4";
+        } else if (accountTypeUpper.contains("MASTERCARD")) {
+            castAccountType = "5";
+        }
+        return castAccountType;
     }
 }

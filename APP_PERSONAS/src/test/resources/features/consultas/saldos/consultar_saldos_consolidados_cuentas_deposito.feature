@@ -13,7 +13,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
     Cuando consulto el saldo de mis Cuentas
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
-    Y cierra sesión en la app
+    Y cierra sesion en la app
     Y Verifico los resultados en los archivos de iseries
     | Logcanal-COMFFLGWWW |Consolidados Depositos-SCIFFSALDO_CONSOLIDADO|
     Ejemplos:

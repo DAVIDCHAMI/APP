@@ -2,7 +2,6 @@ package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
-import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
@@ -18,7 +17,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constan
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosTarjetas extends Movimientos{
+public class ConsultarMovimientosTarjetas extends Movimientos {
     private String tipoCuenta;
     private String numeroCuenta;
 
@@ -31,7 +30,6 @@ public class ConsultarMovimientosTarjetas extends Movimientos{
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO_MOVIMIENTOS),
-               // RealizarScroll.hastaPosicionDeTarget(CUENTA_ESPECIFICA_TARJETA_CREDITO.of(tipoCuenta, numeroCuenta)),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO),
                 WaitUntil.the(BTN_MOVIMIENTO, isVisible()),
                 Click.on(BTN_MOVIMIENTO)

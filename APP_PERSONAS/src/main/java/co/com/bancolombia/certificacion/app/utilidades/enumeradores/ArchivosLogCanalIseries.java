@@ -10,17 +10,14 @@ import java.util.Arrays;
 
 public enum ArchivosLogCanalIseries {
 
-
     COMFFLGWWW0369(FabricaLogCanal.elLogCanal0369(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0360(FabricaLogCanal.elLogCanal0360(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0345(FabricaLogCanal.elLogCanal0345(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW1756(FabricaLogCanal.elLogCanal1756(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    //COMFFLGWWW0322 (FabricaLogCanal.elLogCanal0322(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    //COMFFLGWWW0325 (FabricaLogCanal.elLogCanal0325(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    //COMFFLGWWW0326 (FabricaLogCanal.elLogCanal0326(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
-    //COMFFLGWWW0533 (FabricaLogCanal.elLogCanal0533(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA)
+    COMFFLGWWW0260(FabricaLogCanal.elLogCanal0260(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW0410(FabricaLogCanal.elLogCanal0410(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWWW1228(FabricaLogCanal.elLogCanal1228(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     ;
-
 
     private static final Logger LOGGER = LogManager.getLogger();
 

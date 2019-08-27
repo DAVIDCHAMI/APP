@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/consultas/movimientos/consultar_movimientos_tarjeta_credito.feature"},
+        tags = "@Tarjetas",
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
