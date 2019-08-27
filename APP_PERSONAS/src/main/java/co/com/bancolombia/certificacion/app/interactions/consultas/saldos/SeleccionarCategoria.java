@@ -22,19 +22,18 @@ public class SeleccionarCategoria implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
+       actor.attemptsTo(
                 Check.whether(BTN_OCULTAR_BANNER.resolveFor(actor).isVisible()).andIfSo(
                         OcultarBanner.deSaldosMovimientos()
                 )
         );
         if (!CUENTAS.equals(categoria)) {
             actor.attemptsTo(
-                    Check.whether(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS).resolveFor(actor).isVisible()).andIfSo(
+                  Check.whether(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS).resolveFor(actor).isVisible()).andIfSo(
                             WaitUntil.the(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS), isClickable()),
-                            Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS)),
+                            Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(CUENTAS))),
                             Scroll.to(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                             Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria))
-                    )
             );
         }
     }
