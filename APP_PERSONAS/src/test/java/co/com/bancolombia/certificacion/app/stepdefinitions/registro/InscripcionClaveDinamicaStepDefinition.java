@@ -16,7 +16,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class InscripcionClaveDinamicaStepDefinition {
 
-    @Y("gestiono la inscripcion de clave dinámica$")
+    @Y("gestiono la inscripcion de clave dinamica$")
     public void gestionaInscripcionClaveDinamica(List<Map<String,String>>datos){
         theActorInTheSpotlight().attemptsTo(InscribirClaveDinamica.conDatos(usuario()
                 .conNombrePersonalizado(datos)

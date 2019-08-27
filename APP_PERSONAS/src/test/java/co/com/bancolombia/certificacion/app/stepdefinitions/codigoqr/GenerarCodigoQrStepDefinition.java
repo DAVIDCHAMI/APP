@@ -43,7 +43,7 @@ public class GenerarCodigoQrStepDefinition {
         );
     }
 
-    @Entonces("^el deberia de ver un mensaje de confirmación y el código QR$")
+    @Entonces("^el deberia de ver un mensaje de confirmacion y el codigo QR$")
     public void deberiaVerMensajeConfirmacionCodigoQr() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarGuardado.exitoso()),

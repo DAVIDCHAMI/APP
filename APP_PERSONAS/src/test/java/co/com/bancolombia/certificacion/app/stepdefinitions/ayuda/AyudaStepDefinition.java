@@ -15,7 +15,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AyudaStepDefinition {
 
-    @Cuando("^quiere ingresar a la opción (.*)$")
+    @Cuando("^quiere ingresar a la opcion (.*)$")
     public void quiereIngresarOpcion(String opcionAyuda) {
         theActorInTheSpotlight().attemptsTo(
                 AccederMenu.deAyuda(opcionAyuda)
