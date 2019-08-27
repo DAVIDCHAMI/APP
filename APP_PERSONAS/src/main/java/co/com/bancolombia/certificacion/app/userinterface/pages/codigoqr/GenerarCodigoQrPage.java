@@ -8,7 +8,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class GenerarCodigoQrPage {
-    public static final Target BTN_GENERAR_CODIGO_QR = Target.the("Botón generar codigo qr").locatedBy(dynamicElement(BTN_GENERAR_CODIGO_QR_LOCATOR));
+    public static final Target TXT_NOMBRE_PERSONALIZADO = Target.the("Nombre personalizado").locatedBy(dynamicElement(TXT_NOMBRE_PERSONALIZADO_LOCATOR));
     public static final Target TXT_VALOR_RECIBIR = Target.the("Valor a recibir").located(theElementBy(TXT_VALOR_RECIBIR_LOCATOR));
     public static final Target BTN_CON_VALOR = Target.the("Botón con valor").located(theElementBy(BTN_CON_VALOR_LOCATOR));
     public static final Target BTN_SIN_VALOR = Target.the("Botón sin valor").located(theElementBy(BTN_SIN_VALOR_LOCATOR));

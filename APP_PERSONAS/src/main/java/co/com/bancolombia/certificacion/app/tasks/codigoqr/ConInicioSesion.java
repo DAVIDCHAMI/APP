@@ -12,9 +12,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
@@ -61,7 +60,7 @@ public class ConInicioSesion extends GenerarQR {
                 Click.on(BTN_GENERAR_QR)
         );
         if ("".equals(datos.getMonto()))
-            datos.setMonto(CEROS);
+            datos.setMonto(SIN_VALOR);
         else
             datos.setMonto(darFormato(datos.getMonto()));
         actor.remember(MODELO_INFO_CODIGO_QR, datos);
