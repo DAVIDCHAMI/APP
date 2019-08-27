@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 
-import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamente;
+import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamenteException;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
 import cucumber.api.java.es.Entonces;
@@ -9,7 +9,7 @@ import cucumber.api.java.es.Y;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamente.NO_INCRIBE_CLAVE_DINAMICA;
+import static co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamenteException.NO_INCRIBE_CLAVE_DINAMICA;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -29,7 +29,7 @@ public class InscripcionClaveDinamicaStepDefinition {
     @Entonces("Yo debería ver mis datos registrados en clave dinámica$")
     public void deberiaVerClaveDinamExitosa(){
         theActorInTheSpotlight().should(seeThat(VerificarInscripcionClaveDinamica.exitosa()).orComplainWith(
-                ClaveNoInscritaCorrectamente.class, NO_INCRIBE_CLAVE_DINAMICA
+                ClaveNoInscritaCorrectamenteException.class, NO_INCRIBE_CLAVE_DINAMICA
         ));
     }
 }
