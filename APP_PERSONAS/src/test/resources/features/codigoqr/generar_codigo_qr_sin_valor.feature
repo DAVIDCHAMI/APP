@@ -1,8 +1,7 @@
 #language: es
 
 Característica: Generación de código QR
-
-  @Manual
+  
   Esquema del escenario: Generación de codigo QR sin valor
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
