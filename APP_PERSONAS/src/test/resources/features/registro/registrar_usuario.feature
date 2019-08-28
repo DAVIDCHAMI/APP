@@ -5,6 +5,7 @@ Característica: Registro en la APP personas bancolombia OSP
   Quiero realizar el registro de un usuario
   Para realizar la autenticacion en la app
 
+
   Esquema del escenario: Registrar un usuario y su nickname es el numero de identificacion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

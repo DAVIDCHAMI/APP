@@ -12,11 +12,11 @@ public class InicioSesionLocator {
     public static final Locator LBL_HOLA_PROVIVIONAL_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Hola')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Hola!']");
     public static final Locator TXT_CLAVE_DIGITOS_LOCATOR = locator().withAndroid("xpath$//div/span[contains(@class,'inputPass OSFillParent')]").withIos("xpath$//XCUIElementTypeOther[@name='Ingreso de la clave']/XCUIElementTypeOther[9]/XCUIElementTypeOther[3]");
     public static final Locator LBL_CLAVE_INVALIDA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'CLAVE NO VALIDA')]").withIos("xpath$test");
-    public static final Locator BTN_CERRAR_MODAL_CLAVE_NO_VALIDA_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='CLAVE NO VALIDA']/following-sibling::android.view.View").withIos("xpath$test");
+    public static final Locator BTN_CERRAR_MODAL_CLAVE_NO_VALIDA_LOCATOR = locator().withAndroid("xpath$//*[contains(@id,'IconClose')]/child::div[1]").withIos("xpath$test");
     public static final Locator BTN_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Next").withIos("xpath$//XCUIElementTypeButton[contains(@name,'CERRAR SESION')]");
     public static final Locator BTN_SI_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Button_CancelYesModal_ActivateBiometrics").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
     public static final Locator BTN_VOLVER_LOCATOR = locator().withAndroid("xpath$//span[text()='Volver']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Volver')]");
-    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'CLAVE BLOQUEADA')]").withIos("xpath$test");
+    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'CLAVE BLOQUEADA')]").withIos("xpath$test");
     public static final Locator LBL_SALDO_DISPONIBLE_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Saldos y movimientos')]").withIos("xpath$test");
 
     private InicioSesionLocator() {
