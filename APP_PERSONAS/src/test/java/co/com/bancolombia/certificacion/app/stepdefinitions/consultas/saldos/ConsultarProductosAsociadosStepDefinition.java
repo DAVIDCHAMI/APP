@@ -31,7 +31,7 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
-    @Cuando("^quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta (.*) y número cuenta (.*)$")
+    @Cuando("^quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
     public void revisarMisMovimientosCuentasEnlaApps(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarMovimientos.deCuentas(tipoCuenta, numeroCuenta)

@@ -13,8 +13,8 @@ Característica: Autenticación app Bancolombia
     Cuando el actor elimina su factura con opcion <opcion> e informacion
       | valorFactura   | empresaServicio   | fechaFactura   |
       | <valorFactura> | <empresaServicio> | <fechaFactura> |
-    Entonces debería ver el mensaje de eliminación exitosa
+    Entonces deberia ver el mensaje de eliminacion exitosa
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura | opcion    |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EliminarFactura.xlsx@Datos@1
-   |1   |1037655531   |1   |nuevaapp09   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |  55.700,07   |FACTURANET01    |15 Feb 2019   |Inscritas|
+      | 1  | 1037655531      | 1             | nuevaapp09 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 55.700,07    | FACTURANET01    | 15 Feb 2019  | Inscritas |

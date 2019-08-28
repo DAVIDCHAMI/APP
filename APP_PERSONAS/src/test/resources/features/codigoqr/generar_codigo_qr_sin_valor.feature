@@ -20,7 +20,7 @@ Característica: Generación de código QR
   Esquema del escenario: Generación de codigo QR sin inicio de sesión sin valor
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiere generar un codigo QR sin valor sin iniciar sesión con nombre <nombrePersonalizado>
+    Cuando quiere generar un codigo QR sin valor sin iniciar sesion con nombre <nombrePersonalizado>
       | tipoCuenta   | numeroCuenta   | descripcion   |
       | <tipoCuenta> | <numeroCuenta> | <descripcion> |
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR

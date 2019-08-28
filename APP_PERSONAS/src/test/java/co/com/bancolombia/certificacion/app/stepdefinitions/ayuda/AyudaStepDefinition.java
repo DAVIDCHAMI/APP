@@ -37,7 +37,7 @@ public class AyudaStepDefinition {
         );
     }
 
-    @Entonces("^deberia de visualizar el enlace con título (.*)$")
+    @Entonces("^deberia de visualizar el enlace con titulo (.*)$")
     public void deberiaVisualzoarMensajeEnlace(String tituloPantalla) {
         theActorInTheSpotlight().should(
                 seeThat(Visualizar.enlaceWeb(tituloPantalla)).orComplainWith(
