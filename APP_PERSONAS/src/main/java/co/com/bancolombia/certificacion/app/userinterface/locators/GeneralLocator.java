@@ -17,9 +17,9 @@ public class GeneralLocator {
     public static final Locator LNK_INSCRIBIR_LOCATOR = locator().withAndroid("xpath$//span[text()='Inscribir']").withIos("xpath$b");
     public static final Locator BTN_CANCELAR_TRANSACCION_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Cancelar')]").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Cancelar')]");
     public static final Locator BTN_SI_CANCELAR_REGISTRO_LOCATOR = locator().withAndroid("xpath$//android.widget.Button[contains(@resource-id, 'btn_ModalSi')]").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
-    public static final Locator BTN_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@resource-id,'outerlayer')]//android.widget.Button[@text='BLOQUEAR']");
-    public static final Locator LNK_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'Bloquear')]");
-    public static final Locator BTN_TARJETA_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'{0}')]/../following-sibling::android.view.View//android.view.View[contains(@text,'{1}')]");
+    public static final Locator BTN_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'outerlayer')]//*[text()='BLOQUEAR']");
+    public static final Locator LNK_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Bloquear']");
+    public static final Locator BTN_TARJETA_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../../following-sibling::div//span[contains(text(),'{1}')]");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
