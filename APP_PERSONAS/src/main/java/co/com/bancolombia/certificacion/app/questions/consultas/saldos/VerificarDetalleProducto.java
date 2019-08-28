@@ -18,6 +18,7 @@ public class VerificarDetalleProducto implements Question<Boolean> {
                 && producto.getSaldo().getSaldoTotal() != null);
     }
 
+
     public static VerificarDetalleProducto esExitoso() {
         return new VerificarDetalleProducto();
     }
