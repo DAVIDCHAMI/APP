@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.*;
@@ -17,6 +18,7 @@ public class SaldosMovimientosPage {
     public static final Target OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS = Target.the("Categoria especifica en saldos y movimientos").locatedBy(dynamicElement(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR));
     public static final Target LBL_SIN_MOVIMIENTOS = Target.the("label cuenta sin movimientos").locatedBy(dynamicElement(LBL_SIN_MOVIMIENTOS_LOCATOR));
     public static final Target BTN_DETALLE_PRODUCTO = Target.the("Boton detalles de producto").located(theElementBy(BTN_DETALLE_PRODUCTO_LOCATOR));
+    public static final  Target BTN_DEVOLVER_PANTALLA  = Target.the("Boton para devolver a pantalla anterior").located(theElementBy(SaldosMovimientosLocator.BTN_DEVOLVER_PANTALLA));
     public static final Target BTN_MOVIMIENTO= Target.the("Boton movimientos").located(theElementBy(BTN_MOVIMIENTO_LOCATOR));
     public static final Target BTN_OCULTAR_BANNER = Target.the("Boton ocultar banner saldos movimientos").locatedBy(dynamicElement(BTN_OCULTAR_BANNER_LOCATOR));
     public static final Target CONTENEDOR_INFORMACION_PRODUCTO = Target.the("Contenedor Informacion producto").locatedBy(dynamicElement(CONTENEDOR_INFORMACION_PRODUCTO_LOCATOR));
