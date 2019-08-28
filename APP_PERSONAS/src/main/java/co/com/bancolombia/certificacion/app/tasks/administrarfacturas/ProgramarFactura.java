@@ -4,12 +4,13 @@ import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 
-public class ProgramarFactura  extends PagarProgramarFactura {
+public class ProgramarFactura implements Task {
     private Factura factura;
 
     public ProgramarFactura(Factura factura) {

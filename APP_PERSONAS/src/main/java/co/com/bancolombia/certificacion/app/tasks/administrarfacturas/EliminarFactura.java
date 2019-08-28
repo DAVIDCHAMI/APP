@@ -5,6 +5,7 @@ import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 
@@ -13,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.administr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.INSCRITAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.SERVICIO;
 
-public class EliminarFactura extends PagarProgramarFactura {
+public class EliminarFactura implements Task {
     private Factura programarFacturas;
     private String opcion;
 

@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -17,7 +18,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constan
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosTarjetas extends Movimientos{
+public class ConsultarMovimientosTarjetas implements Task {
     private String tipoCuenta;
     private String numeroCuenta;
 
