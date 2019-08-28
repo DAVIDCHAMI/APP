@@ -16,4 +16,4 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombreBanco | tipo    | numero      |tipoDocumentoInscripcion| numeroDocumentoInscripcion|
    ##@externaldata@./src/test/resources/datadriven/registro/InscripcionProductos.xlsx@Datos@1
-   |1   |1010111   |Cédula de ciudadanía   |userrobot2   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |BANCOLOMBIA   |Ahorros   |20580133845   |Cédula de ciudadanía   |1044512658|
+   |1   |1010111   |Cédula de ciudadanía   |userrobot2   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Bancolombia   |Ahorros   |20580133845   |Cédula de ciudadanía   |1044512658|
