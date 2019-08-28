@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
@@ -14,7 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 
-public class EditarProgramacion extends PagarProgramarFactura {
+public class EditarProgramacion implements Task {
     private Factura programarFacturas;
     private String opcion;
 

@@ -11,11 +11,14 @@ public class AdministrarFactura {
         return instrumented(ProgramarFactura.class, programarFacturasBuilder.build());
     }
 
-    public static Performable conOpcionEditar(FacturaBuilder programarFacturasBuilder,String opcion) {
-        return instrumented(EditarProgramacion.class, programarFacturasBuilder.build(),opcion);
+    public static Performable conOpcionEditar(FacturaBuilder programarFacturasBuilder, String opcion) {
+        return instrumented(EditarProgramacion.class, programarFacturasBuilder.build(), opcion);
     }
 
     public static Performable conOpcionELiminar(FacturaBuilder programarFacturasBuilder, String opcion) {
-        return instrumented(EliminarFactura.class, programarFacturasBuilder.build(),opcion);
+        return instrumented(EliminarFactura.class, programarFacturasBuilder.build(), opcion);
+    }
+
+    private AdministrarFactura() {
     }
 }

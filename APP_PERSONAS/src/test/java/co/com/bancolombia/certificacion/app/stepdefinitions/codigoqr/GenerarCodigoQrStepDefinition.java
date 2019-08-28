@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.codigoqr;
 
+import co.com.bancolombia.certificacion.app.exceptions.codigoqr.InformacionCodigoQrException;
+import co.com.bancolombia.certificacion.app.exceptions.codigoqr.MensajeVerificacionNoPresentadoException;
 import co.com.bancolombia.certificacion.app.questions.codigoqr.VerificarGeneracion;
 import co.com.bancolombia.certificacion.app.questions.codigoqr.VerificarGuardado;
 import co.com.bancolombia.certificacion.app.tasks.codigoqr.GenerarCodigoQr;
@@ -9,6 +11,8 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.exceptions.codigoqr.InformacionCodigoQrException.INFORMACION_CONFIRMACION_INCORRECTA;
+import static co.com.bancolombia.certificacion.app.exceptions.codigoqr.MensajeVerificacionNoPresentadoException.NO_PRESENTA_MENSAJE_CONFIRMACION;
 import static co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -46,8 +50,8 @@ public class GenerarCodigoQrStepDefinition {
     @Entonces("^el deberia de ver un mensaje de confirmación y el código QR$")
     public void deberiaVerMensajeConfirmacionCodigoQr() {
         theActorInTheSpotlight().should(
-                seeThat(VerificarGuardado.exitoso()),
-                seeThat(VerificarGeneracion.qr())
+                seeThat(VerificarGuardado.exitoso()).orComplainWith(MensajeVerificacionNoPresentadoException.class, NO_PRESENTA_MENSAJE_CONFIRMACION),
+                seeThat(VerificarGeneracion.qr()).orComplainWith(InformacionCodigoQrException.class, INFORMACION_CONFIRMACION_INCORRECTA)
         );
     }
 }

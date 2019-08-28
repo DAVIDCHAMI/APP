@@ -25,8 +25,7 @@ public class SeleccionarProducto implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isVisible()),
-                RealizarScroll.hastaPosicionDeTarget(target.of(tipoCuenta, numeroCuenta)),
-                Click.on(target.of(tipoCuenta, numeroCuenta))
+                  Click.on(target.of(tipoCuenta, numeroCuenta))
         );
     }
 
