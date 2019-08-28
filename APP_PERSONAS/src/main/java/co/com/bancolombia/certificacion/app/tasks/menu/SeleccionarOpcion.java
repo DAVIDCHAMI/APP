@@ -30,7 +30,9 @@ public class SeleccionarOpcion implements Task {
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
-                ),
+                )
+        );
+        actor.attemptsTo(
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel()))
                         .andIfSo(
                                 Check.whether(Visibility.of(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())).viewedBy(actor).asBoolean())

@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_INSCRIBIR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
@@ -24,15 +24,12 @@ public class Inscribir implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BTN_INCRIBIR_MANUALMENTE),
-                Click.on(TXT_EMPRESA_SERVICIO),
-                Escribir.enCampoTexto(factura.getConvenio()),
+                Enter.theValue(factura.getConvenio()).into(TXT_EMPRESA_SERVICIO),
                 Click.on(TXT_EMPRESA_SERVICIO_POP_UP),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(TXT_DESCRIPCION),
-                Escribir.enCampoTexto(factura.getDescripcionFactura()),
+                Enter.theValue(factura.getDescripcionFactura()).into(TXT_DESCRIPCION),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(TXT_REFERENCIA),
-                Escribir.enCampoTexto(factura.getReferencia()),
+                Enter.theValue(factura.getReferencia()).into(TXT_REFERENCIA),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(LNK_INSCRIBIR)
         );
