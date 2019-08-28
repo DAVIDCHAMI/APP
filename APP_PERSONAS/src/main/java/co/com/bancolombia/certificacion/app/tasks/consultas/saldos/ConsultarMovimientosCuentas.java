@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosCuentas extends Movimientos {
+public class ConsultarMovimientosCuentas implements Task {
     private String tipoCuenta;
     private String numeroCuenta;
 
