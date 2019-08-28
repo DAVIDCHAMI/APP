@@ -34,6 +34,7 @@ public class ConsultarDetalle implements Task {
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO)
         );
+
         actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)

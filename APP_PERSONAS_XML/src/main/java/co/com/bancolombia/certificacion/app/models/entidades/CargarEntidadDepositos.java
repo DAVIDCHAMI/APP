@@ -33,10 +33,9 @@ public class CargarEntidadDepositos {
      * @param data the data
      */
     public static void conEstos(List<String> data){
-        Transferencias transferencias = new Transferencias();
+        Transferencias transferencias = CargarEntidadTransferencias.getTransferencias();
         deposito.setNumero(data.get(0));
         deposito.setTipo(data.get(1));
         transferencias.setAmount(data.get(2));
-        CargarEntidadTransferencias.transferencias = transferencias;
     }
 }

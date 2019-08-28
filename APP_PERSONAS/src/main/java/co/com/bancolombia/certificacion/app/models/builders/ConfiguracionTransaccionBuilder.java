@@ -41,6 +41,7 @@ public class ConfiguracionTransaccionBuilder implements Builder<ConfiguracionTra
         return new ConfiguracionTransaccionBuilder();
     }
 
+
     public ConfiguracionTransaccionBuilder deTransaccion(List<Map<String, String>> datos) {
         this.identificadorCaso = datos.get(0).get("ID");
         this.orientacionCaso = datos.get(0).get("orientacion");

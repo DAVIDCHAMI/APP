@@ -8,7 +8,7 @@ import co.com.bancolombia.certificacion.app.models.entidades.CargarEntidadUsuari
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencias;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import co.com.bancolombia.certificacion.app.utilidades.XML.UtilidadXml;
+import co.com.bancolombia.certificacion.app.utilidades.xml.UtilidadXml;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.AdministradorConstante;
 import org.apache.logging.log4j.LogManager;

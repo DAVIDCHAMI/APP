@@ -11,12 +11,14 @@ public class GeneralPage {
     public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").located(theElementBy(BTN_SIGUIENTE_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
-    public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").located(theElementBy(LBL_GUARDADO_EXITOSO_LOCATOR));
-    public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generación exitosa").located(theElementBy(LBL_GENERACION_EXITOSA_LOCATOR));
+    public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generación exitosa").locatedBy(dynamicElement(LBL_GENERACION_EXITOSA_LOCATOR));
     public static final Target LBL_VERIFICACION = Target.the("Label verificación").locatedBy(dynamicElement(LBL_VERIFICACION_LOCATOR));
     public static final Target LNK_SALTAR = Target.the("Link saltar").located(theElementBy(LNK_SALTAR_LOCATOR));
     public static final Target LNK_COMENZAR = Target.the("Link comenzar").located(theElementBy(LNK_COMENZAR_LOCATOR));
+    public static final Target IMG_COMUN_CAMPO_TEXTO = Target.the("imagen comun crear usuario").located(theElementBy(IMG_COMUN_CAMPO_TEXTO_LOCATOR));
     public static final Target LNK_INSCRIBIR = Target.the("Link inscribir").located(theElementBy(LNK_INSCRIBIR_LOCATOR));
+    public static final Target BTN_CANCELAR_TRANSACCION = Target.the("Boton Cancelar Transaccion").located(theElementBy(BTN_CANCELAR_TRANSACCION_LOCATOR));
+    public static final Target BTN_SI_CANCELAR_REGISTRO = Target.the("Boton Si Cancelar Transaccion").located(theElementBy(BTN_SI_CANCELAR_REGISTRO_LOCATOR));
     public static final Target BTN_BLOQUEAR = Target.the("Botón bloquear").located(theElementBy(BTN_BLOQUEAR_LOCATOR));
     public static final Target LNK_BLOQUEAR = Target.the("Link bloquear").located(theElementBy(LNK_BLOQUEAR_LOCATOR));
     public static final Target BTN_TARJETA_BLOQUEAR = Target.the("Tarjeta a bloquear").locatedBy(dynamicElement(BTN_TARJETA_BLOQUEAR_LOCATOR));

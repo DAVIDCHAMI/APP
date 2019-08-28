@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.utilidades.datosexcel;
 
-import co.com.bancolombia.certificacion.app.exceptions.PropertiesDoesNotLoadException;
+import co.com.bancolombia.certificacion.app.exceptions.comunes.PropertiesDoesNotLoadException;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 
 import java.io.*;
@@ -168,4 +168,5 @@ public class DataToFeature {
 			}
 		}
 	}
+
 }
