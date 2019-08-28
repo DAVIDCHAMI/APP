@@ -7,15 +7,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class SaldosMovimientosLocator {
     public static final Locator OPT_CUENTA_PRODUCTO_LOCATOR = locator()
-            .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']").withIos("xpath$a");
+            .withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[text()='{1}']").withIos("xpath$a");
+    public static final Locator OPT_CUENTA_TAJETA_CREDITO_LOCATOR = locator()
+            .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']").withIos("xpath$a");
     public static final Locator OPCION_CATEGORIA_PRODUCTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, 'Expandable')][{0}]/android.view.View/android.view.View/android.view.View/android.view.View[1]")
             .withIos("xpath$b");
     public static final Locator OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR = locator()
-            .withAndroid("xpath$//*[contains(text(),'{0}')]")
+            .withAndroid("xpath$//span[text()='{0}']")
             .withIos("xpath$c");
     public static final Locator LBL_SIN_MOVIMIENTOS_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text,'{0}')]")
+            .withAndroid("xpath$//span[contains(text(),'{0}')]")
             .withIos("xpath$d");
     public static final Locator BTN_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("id$b15-Tab1").withIos("xpath$n");
     public static final Locator BTN_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//android.view.View[2][@text='Movimientos']").withIos("xpath$n");

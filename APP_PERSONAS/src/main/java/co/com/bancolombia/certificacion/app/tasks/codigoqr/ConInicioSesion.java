@@ -1,21 +1,21 @@
 package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
-import io.appium.java_client.AppiumDriver;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CEROS;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class ConInicioSesion extends GenerarQR {
     private Transferencia datos;
@@ -26,31 +26,31 @@ public class ConInicioSesion extends GenerarQR {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        AppiumDriver driver = getProxiedDriver();
         actor.attemptsTo(
-                Click.on(BTN_GENERAR_CODIGO_QR),
                 Saltar.onBoarding(),
-                Click.on(LNK_SIGUIENTE),
-                Check.whether(LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()).andIfSo(
-                        Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
-                )
+                WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
+                Click.on(LNK_SIGUIENTE)
         );
-        driver.hideKeyboard();
+        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
+            actor.attemptsTo(
+                    WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
+                    Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
+            );
+        }
         actor.attemptsTo(
                 Check.whether("".equals(datos.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
-                        Click.on(TXT_VALOR_RECIBIR),
-                        Escribir.enCampoTexto(datos.getMonto())
+                        Click.on(BTN_CON_VALOR),
+                        Enter.theValue(datos.getMonto()).into(TXT_VALOR_RECIBIR)
                 ),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(TXT_DESCRIPCION),
-                Escribir.enCampoTexto(datos.getDescripcion()),
+                Enter.theValue(datos.getDescripcion()).into(TXT_DESCRIPCION),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(BTN_GENERAR_QR)
         );
         if ("".equals(datos.getMonto()))
-            datos.setMonto(CEROS);
+            datos.setMonto(SIN_VALOR);
         else
             datos.setMonto(darFormato(datos.getMonto()));
         actor.remember(MODELO_INFO_CODIGO_QR, datos);
