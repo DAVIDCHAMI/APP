@@ -9,6 +9,7 @@ public class ModeloConstantes {
     public static final String MODELO_PRODUCTO_SALDOS_MOVIMIENTOS = "Detalle Producto";
     public static final String MODELO_INFO_CODIGO_QR = "INFO_CODIGO_QR";
     public static final String MODELO_DATOS_TRANSACCION = "MODELO DATOS TRANSACCION";
+    public static final String MODELO_FACTURA = "MODELO FACTURA";
     public static final String MODELO_DATOS_AUTENTICACION = "MODELO DATOS AUTENTICACION";
 
 

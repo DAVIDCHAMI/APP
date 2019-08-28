@@ -46,6 +46,15 @@ public class UtileriaString {
     public static String eliminarTildes(String palabra) {
         palabra = Normalizer.normalize(palabra, Normalizer.Form.NFD);
         palabra = palabra.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-        return palabra;
+        return palabra.toUpperCase();
+    }
+
+    public static String eliminarCaracter(String palabra, String caracter){
+        String resultado = eliminarTildes(palabra);
+        if(resultado.contains(caracter)){
+            return resultado.replace(caracter, "");
+        }else{
+            return resultado;
+        }
     }
 }

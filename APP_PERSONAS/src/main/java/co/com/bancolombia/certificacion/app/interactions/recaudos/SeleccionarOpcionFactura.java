@@ -7,9 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.OPT_SUB_MENU;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.OPT_FACTURA;
-import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum.PROGRAMAR_PAGAR_FACTURAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
@@ -29,8 +27,10 @@ public class SeleccionarOpcionFactura implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel()), isPresent()),
-                Click.on(OPT_SUB_MENU.of(PROGRAMAR_PAGAR_FACTURAS.getTercerNivel())),
+                WaitUntil.the(OPT_FACTURA.of(
+                        valorFactura,
+                        fechaFactura,
+                        descripcionFactura), isPresent()),
                 RealizarScroll.hastaPosicionDeTarget(OPT_FACTURA.of(
                         valorFactura,
                         fechaFactura,

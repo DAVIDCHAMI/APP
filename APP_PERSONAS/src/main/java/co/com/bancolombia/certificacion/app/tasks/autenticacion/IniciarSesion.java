@@ -17,6 +17,10 @@ public class IniciarSesion {
         return instrumented(ConDatosTransaccion.class, configuracionTransaccionBuilder.build());
     }
 
+    public static Performable con(String usuario, String clave) {
+        return instrumented(ConDatos.class, usuario, clave);
+    }
+
     private IniciarSesion() {
         throw new IllegalStateException(CLASE_TASK);
     }
