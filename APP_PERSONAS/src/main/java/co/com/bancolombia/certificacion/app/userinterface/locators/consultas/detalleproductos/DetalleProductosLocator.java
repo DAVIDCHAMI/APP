@@ -7,13 +7,13 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class DetalleProductosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_DETALLE_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@resource-id, 'ProductDataContainer')]/android.view.View[4]")
+            .withAndroid("xpath$(//div/span[contains(@class,'font-family-nunito font-family-nunito-bold text-black')])[1]")
             .withIos("");
     public static final Locator LBL_SALDO_CANJE_DETALLE_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo en canje')]/../following-sibling::android.view.View[1]")
+            .withAndroid("xpath$(//div/span[contains(@class,'font-family-nunito font-family-nunito-bold text-black')])[3]")
             .withIos("");
     public static final Locator LBL_SALDO_TOTAL_DETALLE_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@text, 'Saldo total')]/../following-sibling::android.view.View[1]")
+            .withAndroid("xpath$(//div/span[contains(@class,'font-family-nunito font-family-nunito-bold text-black')])[4]")
             .withIos("");
 
     private DetalleProductosLocator() {
