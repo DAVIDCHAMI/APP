@@ -46,23 +46,6 @@ public class Eprepago {
 
     }
 
-  //  public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
-  //      ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
-  //      co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-  //      usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
-  //      usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
-  //      usuario.setUsername(datosPrincipales.getUsuario().getNombreUsuario());
-  //      usuario.setPassword(datosPrincipales.getUsuario().getClave());
-  //      BackTarjetaEPrepago ePrepago = new BackTarjetaEPrepago();
-  //      TarjetaEPrepago consultarDetalleEprepago = null;
-  //      try {
-  //          consultarDetalleEprepago = ePrepago.consultarDetalleEprepago(usuario,
-  //                  AdministradorConstante.CODIGO_BANCO_EPREPAGO);
-  //      } catch (SQLException e) {
-  //          LOGGER.error(e.getMessage(), e);
-  //      }
-  //      return consultarDetalleEprepago;
-  //  }
 
     public static boolean verificoEstadoDeLaActivacionDeLaEprepago(Actor actor) {
         boolean resultadoActivacion = false;
