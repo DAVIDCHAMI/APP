@@ -17,6 +17,7 @@ public enum ArchivosLogCanalIseries {
     COMFFLGWWW0260(FabricaLogCanal.elLogCanal0260(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW0410(FabricaLogCanal.elLogCanal0410(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
     COMFFLGWWW1228(FabricaLogCanal.elLogCanal1228(), AfirmacionDelProducto.class, AfirmacionDelProducto.NO_FUNCIONA),
+    COMFFLGWW00228(FabricaLogCanal.elLogCanal0228(), AfirmacionDelProducto.class,AfirmacionDelProducto.NO_FUNCIONA),
     ;
 
     private static final Logger LOGGER = LogManager.getLogger();

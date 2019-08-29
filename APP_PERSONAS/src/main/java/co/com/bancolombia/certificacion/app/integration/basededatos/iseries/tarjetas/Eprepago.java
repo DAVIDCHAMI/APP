@@ -22,7 +22,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 
 public class Eprepago {
 
-    public Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
+    private Eprepago() { throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD); }
 
     public static final Logger LOGGER = LogManager.getLogger(Eprepago.class.getName());
 
@@ -36,23 +36,33 @@ public class Eprepago {
         return Consulta.ejecutar(sql, dataForQuery, ConnectionManager.getIseriesConnection());
     }
 
-    public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
+    public static List<Map<String,Object>>verificoElDetalleDeLaEprepago(Actor actor){
         ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
-        co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
-        usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
-        usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
-        usuario.setUsername(datosPrincipales.getUsuario().getNombreUsuario());
-        usuario.setPassword(datosPrincipales.getUsuario().getClave());
-        BackTarjetaEPrepago ePrepago = new BackTarjetaEPrepago();
-        TarjetaEPrepago consultarDetalleEprepago = null;
-        try {
-            consultarDetalleEprepago = ePrepago.consultarDetalleEprepago(usuario,
-                    AdministradorConstante.CODIGO_BANCO_EPREPAGO);
-        } catch (SQLException e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-        return consultarDetalleEprepago;
+        Map<String, Object> dataForQuery = new HashMap<>();
+        dataForQuery.put("DOCUMENTO", datosPrincipales.getUsuario().getNumeroDocumento());
+        dataForQuery.put("TIPODOCUMENTO", datosPrincipales.getUsuario().getTipoDocumento());
+        String sql = QueryManager.CONSULTAS.getString("SQL.CABFFTARJ.consultarDetalleTarjetaEprepago");
+        return Consulta.ejecutar(sql,dataForQuery,ConnectionManager.getIseriesConnection());
+
     }
+
+  //  public static TarjetaEPrepago verificoElDetalleDeLaEprepago(Actor actor) {
+  //      ConfiguracionTransaccion datosPrincipales = actor.recall(MODELO_DATOS_TRANSACCION);
+  //      co.com.bancolombia.backend.modelo.usuario.Usuario usuario = new co.com.bancolombia.backend.modelo.usuario.Usuario();
+  //      usuario.setDocumento(datosPrincipales.getUsuario().getNumeroDocumento());
+  //      usuario.setTipoDocumento(datosPrincipales.getUsuario().getTipoDocumento());
+  //      usuario.setUsername(datosPrincipales.getUsuario().getNombreUsuario());
+  //      usuario.setPassword(datosPrincipales.getUsuario().getClave());
+  //      BackTarjetaEPrepago ePrepago = new BackTarjetaEPrepago();
+  //      TarjetaEPrepago consultarDetalleEprepago = null;
+  //      try {
+  //          consultarDetalleEprepago = ePrepago.consultarDetalleEprepago(usuario,
+  //                  AdministradorConstante.CODIGO_BANCO_EPREPAGO);
+  //      } catch (SQLException e) {
+  //          LOGGER.error(e.getMessage(), e);
+  //      }
+  //      return consultarDetalleEprepago;
+  //  }
 
     public static boolean verificoEstadoDeLaActivacionDeLaEprepago(Actor actor) {
         boolean resultadoActivacion = false;
