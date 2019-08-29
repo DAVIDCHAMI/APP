@@ -12,8 +12,8 @@ public class RegistroLocator {
     public static final Locator LBL_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Selecciona el tipo de correo')]").withIos("xpath$//XCUIElementTypeStaticText[@name='Selecciona el tipo de correo']");
     public static final Locator CHECK_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Personal')]//following::button[1]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name, 'Personal')]/../../XCUIElementTypeButton[1]");
     public static final Locator CHECK_TYC_LOCATOR = locator().withAndroid("id$Chk_TerminosCondiciones").withIos("xpath$//XCUIElementTypeStaticText[@name='Laboral']//following::XCUIElementTypeSwitch[1]");
-    public static final Locator BTN_REGISTRO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'términos y condiciones')]//following::span[1]").withIos("xpath$//XCUIElementTypeButton[@name='REGISTRAR']");
-    public static final Locator LBL_VALIDACION_REGISTRO_OK_LOCATOR = locator().withAndroid("xpath$//*[contains(@text,'¡Registro exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Registro exitoso!']");
+    public static final Locator BTN_REGISTRO_LOCATOR = locator().withAndroid("xpath$//span[contains(.,'REGISTRAR')]/ancestor::button").withIos("xpath$//XCUIElementTypeButton[@name='REGISTRAR']");
+    public static final Locator LBL_VALIDACION_REGISTRO_OK_LOCATOR = locator().withAndroid("xpath$//*[contains(.,'¡Registro exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Registro exitoso!']");
     public static final Locator LBL_INICIA_REGISTRO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Inicia el registro')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Inicia el registro')]");
 
     private RegistroLocator() {
