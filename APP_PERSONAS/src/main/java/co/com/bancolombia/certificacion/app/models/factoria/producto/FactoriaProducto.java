@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.factoria.producto;
 
 
-import co.com.bancolombia.certificacion.app.exceptions.ProductoFallido;
+import co.com.bancolombia.certificacion.app.exceptions.productos.ProductoFallido;
 import co.com.bancolombia.certificacion.app.models.productos.CuentaDeposito;
 import co.com.bancolombia.certificacion.app.models.productos.FondoInversion;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
@@ -9,13 +9,10 @@ import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoConstante.BIBLIOTECA_POR_CODIGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.FondoLibrerias.BIBLIOTECA_POR_CODIGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.AHORRO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCuentas.CORRIENTE;
 
-/**
- * The type Producto factoria.
- */
 public class FactoriaProducto implements InterfazProducto {
 
     private static CuentaDeposito crearCuentaDeposito(String numero, String tipoCuenta) {

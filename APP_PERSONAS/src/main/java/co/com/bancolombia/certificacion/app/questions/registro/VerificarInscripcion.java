@@ -6,12 +6,13 @@ import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.Visibility;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionProductoPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.String.UtileriaString.obtenerValorEntero;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.obtenerValorEntero;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 
 public class VerificarInscripcion implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
+        /*
         String numeroProducto = obtenerValorEntero(Text.of(LBL_NUMERO_PRODUCTO).viewedBy(actor).asString());
         String nombreBanco = actor.recall(NOMBRE_BANCO);
         String tipoCuenta = actor.recall(TIPO_CUENTA);
@@ -28,5 +29,8 @@ public class VerificarInscripcion implements Question<Boolean> {
 
     public static VerificarInscripcion deProductos() {
         return new VerificarInscripcion();
+    }
+    */
+        return null;
     }
 }

@@ -1,39 +1,37 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.SeleccionarOpcionFactura;
+import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
-import co.com.bancolombia.certificacion.app.models.administrarfacturas.ProgramarFacturas;
-import co.com.bancolombia.certificacion.app.models.builders.ProgramarFacturasBuilder;
+import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ProgramarFactura implements Task {
-    private ProgramarFacturas programarFacturas;
+    private Factura factura;
 
-    public ProgramarFactura(ProgramarFacturas programarFacturas) {
-        this.programarFacturas = programarFacturas;
+    public ProgramarFactura(Factura factura) {
+        this.factura = factura;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String fecha[] = programarFacturas.getFechaInicioFin().split("-");
+        String fecha[] = factura.getFechaInicioFin().split("-");
         String fechaInicio = fecha[0];
         String fechaFin = fecha[1];
         actor.attemptsTo(
-                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getDescripcionFactura()),
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura.getValorFactura(), factura.getFechaFactura(), factura.getEmpresaServicio()),
                 Click.on(OPT_MIS_PRODUCTOS),
-                RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().
-                        getTipo(), programarFacturas.getProducto().getNumero())),
-                Click.on(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().
-                        getTipo(), programarFacturas.getProducto().getNumero())),
-                Click.on(CHK_FECHA_VENCIMIENTO.of(programarFacturas.getPeriodicidad())),
+                RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
+                        getTipo(), factura.getProducto().getNumero())),
+                Click.on(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
+                        getTipo(), factura.getProducto().getNumero())),
+                Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getPeriodicidad())),
                 Click.on(LST_NUMERO_INTENTOS),
-                Click.on(LST_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento())),
+                Click.on(LST_INTENTOS_PAGO.of(factura.getNumeroIntento())),
                 RealizarScroll.hastaPosicionDeTarget(TXT_FECHA_INICIO_FIN),
                 RealizarScroll.adicional(TXT_FECHA_INICIO_FIN),
                 Click.on(TXT_FECHA_INICIO_FIN),
@@ -46,9 +44,5 @@ public class ProgramarFactura implements Task {
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_PROGRAMAR)
         );
-    }
-
-    public static ProgramarFactura inscritas(ProgramarFacturasBuilder programarFacturasBuilder) {
-        return instrumented(ProgramarFactura.class, programarFacturasBuilder.build());
     }
 }
