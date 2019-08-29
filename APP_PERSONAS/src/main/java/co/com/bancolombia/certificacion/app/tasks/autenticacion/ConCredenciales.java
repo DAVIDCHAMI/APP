@@ -27,7 +27,7 @@ public class ConCredenciales extends Autenticacion {
         actor.remember(MODELO_DATOS_AUTENTICACION, usuario);
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                Esperar.unTiempo(8000),
+                Esperar.unTiempo(20000),
                 Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),

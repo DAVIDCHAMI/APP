@@ -12,8 +12,8 @@ public class GeneralPage {
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").located(theElementBy(LBL_GUARDADO_EXITOSO_LOCATOR));
-    public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generación exitosa").located(theElementBy(LBL_GENERACION_EXITOSA_LOCATOR));
-    public static final Target LBL_VERIFICACION = Target.the("Label verificación").locatedBy(dynamicElement(LBL_VERIFICACION_LOCATOR));
+    public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generacion exitosa").located(theElementBy(LBL_GENERACION_EXITOSA_LOCATOR));
+    public static final Target LBL_VERIFICACION = Target.the("Label verificacion").locatedBy(dynamicElement(LBL_VERIFICACION_LOCATOR));
     public static final Target LNK_SALTAR = Target.the("Link saltar").located(theElementBy(LNK_SALTAR_LOCATOR));
     public static final Target LNK_COMENZAR = Target.the("Link comenzar").located(theElementBy(LNK_COMENZAR_LOCATOR));
     public static final Target IMG_COMUN_CAMPO_TEXTO = Target.the("imagen comun crear usuario").located(theElementBy(IMG_COMUN_CAMPO_TEXTO_LOCATOR));

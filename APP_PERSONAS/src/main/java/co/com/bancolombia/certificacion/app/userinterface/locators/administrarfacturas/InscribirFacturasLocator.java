@@ -13,7 +13,7 @@ public class InscribirFacturasLocator {
     public static final Locator TXT_REFERENCIA_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Input_Personal_Name']");
     public static final Locator LBL_INSCRIPCION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'¡Inscripción exitosa!')]");
 
-    private InscribirFacturasLocator(){
+    private InscribirFacturasLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
 }

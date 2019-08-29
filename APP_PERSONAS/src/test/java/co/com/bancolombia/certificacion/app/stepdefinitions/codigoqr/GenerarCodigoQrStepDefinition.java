@@ -29,21 +29,21 @@ public class GenerarCodigoQrStepDefinition {
         );
     }
 
-    @Cuando("^quiere generar un codigo QR con valor sin iniciar sesión con nombre (.*)$")
+    @Cuando("^quiere generar un codigo QR con valor sin iniciar sesion con nombre (.*)$")
     public void generarCodigoQrSinIniciarSesionConValor(String nombrePersonalizado, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conMonto(datos).conDescripcion(datos))
         );
     }
 
-    @Cuando("^quiere generar un codigo QR sin valor sin iniciar sesión con nombre (.*)$")
+    @Cuando("^quiere generar un codigo QR sin valor sin iniciar sesion con nombre (.*)$")
     public void generarCodigoQrSinIniciarSesionSinValor(String nombrePersonalizado, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 GenerarCodigoQr.sinInciarSesion(nombrePersonalizado, con().conTipoCuentaOrigen(datos).conNumeroCuentaOrigen(datos).conDescripcion(datos))
         );
     }
 
-    @Entonces("^el deberia de ver un mensaje de confirmación y el código QR$")
+    @Entonces("^el deberia de ver un mensaje de confirmacion y el codigo QR$")
     public void deberiaVerMensajeConfirmacionCodigoQr() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarGuardado.exitoso()),

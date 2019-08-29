@@ -31,7 +31,7 @@ public class ConDatosTransaccion extends Autenticacion {
 
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(30000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),

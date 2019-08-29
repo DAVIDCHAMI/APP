@@ -18,6 +18,10 @@ public class InscribirProductos implements Task {
         this.inscripcion = inscripcion;
     }
 
+    public static InscribirProductos conInformacion(InscripcionBuilder inscripcionBuilder) {
+        return instrumented(InscribirProductos.class, inscripcionBuilder.build());
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -32,7 +36,7 @@ public class InscribirProductos implements Task {
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),
                 Click.on(BTN_CERRAR_TIPO_DOCUMENTO),
-                Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUEMENTO),
+                Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUMENTO),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_INSCRIBIR)
         );
@@ -41,9 +45,5 @@ public class InscribirProductos implements Task {
         actor.remember(NOMBRE_BANCO, inscripcion.getNombreBanco());
         actor.remember(TIPO_DOCUMENTO, inscripcion.getUsuario().getTipoDocumento());
         actor.remember(NUMERO_DOCUMENTO, inscripcion.getUsuario().getNumeroDocumento());
-    }
-
-    public static InscribirProductos conInformacion(InscripcionBuilder inscripcionBuilder) {
-        return instrumented(InscribirProductos.class, inscripcionBuilder.build());
     }
 }
