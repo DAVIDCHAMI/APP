@@ -31,10 +31,6 @@ public class SeleccionarOpcionFactura implements Interaction {
                         valorFactura,
                         fechaFactura,
                         descripcionFactura), isPresent()),
-                RealizarScroll.hastaPosicionDeTarget(OPT_FACTURA.of(
-                        valorFactura,
-                        fechaFactura,
-                        descripcionFactura)),
                 Click.on(OPT_FACTURA.of(
                         valorFactura,
                         fechaFactura,
@@ -43,7 +39,7 @@ public class SeleccionarOpcionFactura implements Interaction {
         );
     }
 
-    public static SeleccionarOpcionFactura conInformacion(Target target, String valorFactura, String fechaFactura, String descripcionFactura){
-        return instrumented(SeleccionarOpcionFactura.class,target, valorFactura,  fechaFactura,  descripcionFactura);
+    public static SeleccionarOpcionFactura conInformacion(Target target, String valorFactura, String fechaFactura, String descripcionFactura) {
+        return instrumented(SeleccionarOpcionFactura.class, target, valorFactura, fechaFactura, descripcionFactura);
     }
 }
