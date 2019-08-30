@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;
 import net.serenitybdd.screenplay.Performable;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_TASK;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Pagar {
@@ -12,5 +13,6 @@ public class Pagar {
     }
 
     private Pagar() {
+        throw new IllegalStateException(CLASE_TASK);
     }
 }

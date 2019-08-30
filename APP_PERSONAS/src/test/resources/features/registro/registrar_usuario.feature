@@ -15,8 +15,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |1040748710   |1   |1040748710   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro22   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
-
+   |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   Esquema del escenario: Registrar usuario con documento de identidad desde mis Productos
     Dado que el Actor carga los datos para la prueba
@@ -28,8 +27,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |1040748710   |1   |1040748710   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro22   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
-
+   |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   Esquema del escenario:Registrar usuario con documento de identidad desde otra opcion
     Dado que el Actor carga los datos para la prueba
@@ -41,9 +39,8 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@2
-   |2   |1040748711   |1   |1040748711   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro23   |jalzate@todo1.net   |EPREPAGO|
+   |2   |44832982   |1   |44832982   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro41   |jalzate@todo1.net   |EPREPAGO|
 
-  
   Esquema del escenario: Registrar un usuario que ya este registrado
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

@@ -34,8 +34,5 @@ public class HastaElTarget extends Scroll {
         action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
         action.moveTo(PointOption.point(posicionInicialX, 1000));
         action.release().perform();
-        action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
-        action.moveTo(PointOption.point(posicionInicialX, 1000));
-        action.release().perform();
     }
 }
