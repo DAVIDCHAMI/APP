@@ -10,8 +10,8 @@ Característica: Pago de tarjetas de crédito no propias
     Y quiere pagar la tarjeta de crédito no propia
       | numeroTarjeta   | tipoPago   | valorPago   | moneda   | tipoCuenta   | numeroCuenta   |
       | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
-    #Entonces deberia de ver el mensaje de confirmación y la información de su pago
-    #Y cierra sesion en la app
+    Entonces deberia de ver el mensaje de confirmación y la información de su pago
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | numeroTarjeta    | tipoPago              | valorPago | moneda  | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoNoPropia.xlsx@Datos@

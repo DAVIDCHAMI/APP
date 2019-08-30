@@ -9,7 +9,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class GeneralPage {
     public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").locatedBy(dynamicElement(BTN_SIGUIENTE_LOCATOR));
-    public static final Target BTN_PAGAR = Target.the("Boton pagar").located(theElementBy(BTN_PAGAR_LOCATOR));
+    public static final Target LNK_PAGAR = Target.the("Boton pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generación exitosa").locatedBy(dynamicElement(LBL_GENERACION_EXITOSA_LOCATOR));

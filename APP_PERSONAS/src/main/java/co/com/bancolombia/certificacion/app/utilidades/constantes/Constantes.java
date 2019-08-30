@@ -13,6 +13,7 @@ public class Constantes {
     public static final String AHORROS = "Ahorros";
     public static final String CORRIENTE = "Corriente";
     public static final Character COMA = ',';
+    public static final Character VISA = '4';
     public static final String PAGAR_TARJETA_CREDITO_NO_PROPIA = "Pagar tarjetas no propias";
     public static final String PAGAR_CREDITOS = "Pagar créditos";
     public static final String PAGAR_TARJETA_CREDITO_PROPIAS = "Pagar tarjetas propias";
