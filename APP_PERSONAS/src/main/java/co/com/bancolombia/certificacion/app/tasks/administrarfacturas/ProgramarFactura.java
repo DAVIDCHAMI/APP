@@ -27,7 +27,7 @@ public class ProgramarFactura implements Task {
         String fechaFin = fecha[1];
         actor.attemptsTo(
                 Saltar.onBoarding(),
-                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura.getValorFactura(), factura.getFechaFactura(), factura.getEmpresaServicio()),
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR,factura),
                 Click.on(OPT_MIS_PRODUCTOS),
                 Click.on(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
                         getTipo(), factura.getProducto().getNumero())),

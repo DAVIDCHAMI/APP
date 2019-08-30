@@ -1,6 +1,8 @@
 package co.com.bancolombia.certificacion.app.interactions.recaudos;
 
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
+import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
+import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -13,33 +15,29 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 
 public class SeleccionarOpcionFactura implements Interaction {
     private Target target;
-    private String valorFactura;
-    private String fechaFactura;
-    private String descripcionFactura;
+    private Factura factura;
 
-    public SeleccionarOpcionFactura(Target target, String valorFactura, String fechaFactura, String descripcionFactura) {
+    public SeleccionarOpcionFactura(Target target, Factura factura) {
         this.target = target;
-        this.valorFactura = valorFactura;
-        this.fechaFactura = fechaFactura;
-        this.descripcionFactura = descripcionFactura;
+        this.factura=factura;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(OPT_FACTURA.of(
-                        valorFactura,
-                        fechaFactura,
-                        descripcionFactura), isPresent()),
+                        factura.getValorFactura(),
+                        factura.getFechaFactura(),
+                        factura.getEmpresaServicio()), isPresent()),
                 Click.on(OPT_FACTURA.of(
-                        valorFactura,
-                        fechaFactura,
-                        descripcionFactura)),
+                        factura.getValorFactura(),
+                        factura.getFechaFactura(),
+                        factura.getEmpresaServicio())),
                 Click.on(target)
         );
     }
 
-    public static SeleccionarOpcionFactura conInformacion(Target target, String valorFactura, String fechaFactura, String descripcionFactura) {
-        return instrumented(SeleccionarOpcionFactura.class, target, valorFactura, fechaFactura, descripcionFactura);
+    public static SeleccionarOpcionFactura conInformacion(Target target, Factura factura) {
+        return instrumented(SeleccionarOpcionFactura.class, target,factura);
     }
 }

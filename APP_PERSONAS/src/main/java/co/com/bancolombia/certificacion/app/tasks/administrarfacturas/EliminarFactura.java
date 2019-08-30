@@ -28,7 +28,7 @@ public class EliminarFactura implements Task {
                 Saltar.onBoarding(),
                 Check.whether(INSCRITAS.equals(opcion.toUpperCase()))
                         .andIfSo(
-                                SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getEmpresaServicio())
+                                SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas)
                         ),
                 Scroll.to(OPT_ELIMINAR_FACTURA),
                 Click.on(OPT_ELIMINAR_FACTURA),

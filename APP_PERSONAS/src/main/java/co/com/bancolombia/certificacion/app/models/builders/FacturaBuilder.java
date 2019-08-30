@@ -49,6 +49,20 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+  /*  public FacturaBuilder conValor(String factura) {
+        this.valorFactura = factura;
+        return this;
+    }
+
+    public FacturaBuilder conFecha(String factura) {
+        this.valorFactura = factura;
+        return this;
+    }
+    public FacturaBuilder conValor(String factura) {
+        this.valorFactura = factura;
+        return this;
+    }*/
+
     public FacturaBuilder conEmpresaServicio(List<Map<String, String>> datos) {
         this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;

@@ -5,8 +5,7 @@ Característica: Autenticación app Bancolombia
   Quiero ingresar usuario y contraseña
   Para autenticarme en la aplicación
 
-  @Pending
-  Esquema del escenario: Programar facturas inscritas
+    Esquema del escenario: Programar facturas inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
