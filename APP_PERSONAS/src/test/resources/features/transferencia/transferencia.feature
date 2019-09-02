@@ -17,4 +17,4 @@ Característica: Transferencia desde la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto  | tipoTransferencia                  | productoDestino | tipoProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@2
-   |2   |1010111   |Cédula de ciudadanía   |usercdt66   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |406-130790-03   |Corriente   |100000   |Productos propios e inscritos Bancolombia   |406-732280-07   |Ahorros|
+   |2   |1010111   |Cédula de ciudadanía   |usercdt66   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |406-130790-03   |Corriente   |100000   |Productos propios e inscritos Bancolombia   |406-130790-06   |Corriente|

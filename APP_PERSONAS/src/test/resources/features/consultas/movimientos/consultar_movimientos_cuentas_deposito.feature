@@ -17,7 +17,7 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@2
-      | 2  | 1037655531      | 1             | creadoosp11 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Corriente  | 406-101530-07 |
+   |2   |1037655531   |1   |creadoosp11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-101530-07|
 
   @manual
   Esquema del escenario: Consultar cuenta Corriente con movimientos en la app con cuentas depósito
@@ -31,4 +31,4 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@2
-      | 2  | 1037655531      | 1             | creadoosp11 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Corriente  | 406-101530-07 |
+   |2   |1037655531   |1   |creadoosp11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-101530-07|
