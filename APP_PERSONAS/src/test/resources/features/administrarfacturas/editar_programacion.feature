@@ -14,7 +14,7 @@ Característica: Autenticación app Bancolombia
     Cuando el actor modifica sus facturas programadas por la opcion <opcionModificacion>
       | valorFactura   | empresaServicio   | fechaFactura   | numeroCuenta   | tipoCuenta   | periodicidad   | frecuenciaPago   | fechaInicioFin   |
       | <valorFactura> | <empresaServicio> | <fechaFactura> | <numeroCuenta> | <tipoCuenta> | <periodicidad> | <frecuenciaPago> | <fechaInicioFin> |
-    Entonces debería ver el mensaje de modificación exitosa
+    Entonces deberia ver el mensaje de modificacion exitosa
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio               | fechaFactura | numeroCuenta  | tipoCuenta         | periodicidad               | frecuenciaPago | fechaInicioFin | opcionModificacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EditarProgramacion.xlsx@Datos@1

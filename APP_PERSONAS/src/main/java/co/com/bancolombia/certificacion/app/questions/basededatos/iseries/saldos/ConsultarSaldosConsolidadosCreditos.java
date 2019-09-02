@@ -40,12 +40,12 @@ public class ConsultarSaldosConsolidadosCreditos implements Question<Boolean> {
             String saldoTotalFront = listaProductos.get(0).getSaldo().getSaldoDisponible().replace("$", "").replace(".", "").replace(",", ".").trim();
 
             resultadoDato = validarCampo("CUENTA", registros.get(0).get("numero_credito").toString().trim(), listaProductos.get(0).getNumero().replace("-", ""), resultadoDato);
-            resultadoDato = validarCampo("SALDO TOTAL", deudaFecha, saldoTotalFront, resultadoDato);
+            resultadoDato = validarCampo("SALDO TOTAL", valorTotal, saldoTotalFront, resultadoDato);
 
             if (resultadoDato) {
                 resultFinal = true;
             }
-            Serenity.recordReportData().withTitle("Verificacion Back Detalle Depositos").andContents(Serenity.sessionVariableCalled("informes_serenity"));
+            Serenity.recordReportData().withTitle("Verificacion Back saldos creditos").andContents(Serenity.sessionVariableCalled("informes_serenity"));
         } else {
             LOGGER.info("Sin registros en la consulta");
         }
