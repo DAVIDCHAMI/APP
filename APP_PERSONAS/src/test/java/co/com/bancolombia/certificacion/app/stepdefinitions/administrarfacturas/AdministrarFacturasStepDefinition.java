@@ -24,7 +24,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AdministrarFacturasStepDefinition {
 
-    @Cuando("^el actor programa sus facturas inscritas con información$")
+    @Cuando("^el actor programa sus facturas inscritas con informacion$")
     public void programaSusFacturasInscritasConInformacion(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionProgramar(
                 factura()
@@ -35,6 +35,8 @@ public class AdministrarFacturasStepDefinition {
                         .conPeriodicidad(datos)
                         .conNumeroIntento(datos)
                         .conFechaInicioFin(datos)
+                        .conMesProgramacion(datos)
+                        .conDuracionProgramacion(datos)
         ));
     }
 
@@ -45,7 +47,7 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("el actor elimina su factura con opción (.*) e información$")
+    @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
     public void eliminaSusFacturasInscritas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionELiminar(
                 factura().conValor(datos)
@@ -70,18 +72,18 @@ public class AdministrarFacturasStepDefinition {
         ));
     }
 
-    @Entonces("debería ver el mensaje de modificación exitosa$")
+    @Entonces("deberia ver el mensaje de modificacion exitosa$")
     public void deberiaVerMensajeModificacionExitosa() {
         theActorInTheSpotlight().should(seeThat(VerificarModificacionFacturas.programadas())
                 .orComplainWith(ModificacionProgramacionException.class, MENSAJE_MODIFICACION));
     }
 
-    @Entonces("debería ver el mensaje de eliminación exitosa$")
-    public void mensajeEliminaciónExitosa() {
+    @Entonces("deberia ver el mensaje de eliminacion exitosa$")
+    public void mensajeEliminacionExitosa() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarEliminacionFactura.exitoso()).orComplainWith(EliminacionFacturasException.class, MENSAJE_ELIMINACION));
     }
 
-    @Entonces("^deberia ver el mensaje de confirmación$")
+    @Entonces("^deberia ver el mensaje de confirmacion$")
     public void deberiaVisualzoarMensajeEnlace() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarInscripcion.factura()).orComplainWith(VerificarInscripcionFactura.class, INSCRIPCION_FALLIDA)

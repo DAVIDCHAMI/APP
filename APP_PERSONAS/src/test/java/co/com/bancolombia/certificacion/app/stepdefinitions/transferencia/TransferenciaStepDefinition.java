@@ -11,7 +11,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.Transferencia
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class TransferenciaStepDefinition {
-    @Y("diligencios los datos de la transferencia con información$")
+    @Y("diligencios los datos de la transferencia con informacion$")
     public void diligenciaDatosDeTransferencia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(RealizarTransferencia.conInfo(
                 con().
