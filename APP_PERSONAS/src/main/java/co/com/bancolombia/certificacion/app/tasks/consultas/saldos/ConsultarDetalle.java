@@ -13,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.detalleproductos.DetalleProductosPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_DETALLE_PRODUCTO;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_DEVOLVER_PANTALLA;
+//import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_DEVOLVER_PANTALLA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -54,8 +54,8 @@ public class ConsultarDetalle implements Task {
                 .build()
         );
         actor.attemptsTo(
-                Esperar.unTiempo(8000),
-                Click.on(BTN_DEVOLVER_PANTALLA)
+                Esperar.unTiempo(8000)
+             // Click.on(BTN_DEVOLVER_PANTALLA)
         );
 
 
