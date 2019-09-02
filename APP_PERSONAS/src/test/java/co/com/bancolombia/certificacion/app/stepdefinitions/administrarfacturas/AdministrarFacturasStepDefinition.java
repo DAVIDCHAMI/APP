@@ -35,6 +35,8 @@ public class AdministrarFacturasStepDefinition {
                         .conPeriodicidad(datos)
                         .conNumeroIntento(datos)
                         .conFechaInicioFin(datos)
+                        .conMesProgramacion(datos)
+                        .conDuracionProgramacion(datos)
         ));
     }
 
