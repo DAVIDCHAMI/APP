@@ -30,7 +30,7 @@ public class InscribirProductos implements Task {
                 Click.on(BTN_CERRAR_NOMBRE_BANCO),
                 Click.on(CHK_TIPO_CUENTA.of(inscripcion.getProducto().getTipo())),
                 Click.on(BTN_SIGUIENTE),
-                Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUEMENTO),
+                Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUMENTO),
                 Click.on(TXT_TIPO_DOCUMENTO),
                 WaitUntil.the(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim()),isVisible()),
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),

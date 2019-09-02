@@ -19,7 +19,7 @@ public class RegistroBilleteraStepDefinition {
         );
     }
 
-    @Entonces("^El deberia de ver que la activación de su billetera fue exitoso$")
+    @Entonces("^El deberia de ver que la activacion de su billetera fue exitoso$")
     public void deberiaVerActivacionBilleteraExitoso() {
         theActorInTheSpotlight().should(seeThat(
                 ActivacionBilletera.esExitosa()).orComplainWith(

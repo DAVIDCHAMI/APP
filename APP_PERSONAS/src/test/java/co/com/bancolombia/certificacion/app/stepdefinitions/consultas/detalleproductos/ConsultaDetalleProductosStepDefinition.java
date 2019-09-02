@@ -16,14 +16,14 @@ public class ConsultaDetalleProductosStepDefinition {
     @Y("^consulto en (.*) el detalle de mi Cuenta (.*) numero (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProducto(opcionCategoria, tipoCuenta, numeroCuenta)
         );
     }
 
     @Cuando("^consulto en (.*) el detalle de tarjeta (.*) numero (.*)$")
     public void consultoElSaldoDeEprepago(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProducto(opcionCategoria, tipoCuenta, numeroCuenta)
         );
     }
 
@@ -32,11 +32,20 @@ public class ConsultaDetalleProductosStepDefinition {
         theActorInTheSpotlight().should(seeThat(
                 VerificarDetalleProducto.esExitoso()
                 ).orComplainWith(
-                        DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );
     }
 
     @Entonces("^deberia de ver el detalle de mi tarjeta eprepago$")
     public void verificoElResultadoDeLaConsultaDeEprepago() {
+    }
+
+    @Y("^consulto en (.*) el detalle de mi credito de consumo con (.*) numero (.*)$")
+    public void consultoElDetalleDelCreditoDeConsumo(String opcionCategoria, String tipoCredito, String numeroCredito) {
+    }
+
+
+    @Y("^deberia de ver el detalle de mi credito de consumo$")
+    public void deberiaDeVerElDetalleDeMiCreditoDeConsumo() {
     }
 }

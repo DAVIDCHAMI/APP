@@ -11,7 +11,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class InscripcionProductosStepDefinition {
 
-    @Cuando("quiero realizar la inscripcion del producto con la información$")
+    @Cuando("quiero realizar la inscripcion del producto con la informacion$")
     public void quieroRealizarInscripcionProductosConInformacion(List<String> datos) {
         theActorInTheSpotlight().attemptsTo(InscribirProductos.conInformacion(inscripcionProductos(datos)));
     }
