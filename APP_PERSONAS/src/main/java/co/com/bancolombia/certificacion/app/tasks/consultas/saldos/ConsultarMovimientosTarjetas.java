@@ -44,6 +44,9 @@ public class ConsultarMovimientosTarjetas implements Task {
                     .conValorMovimiento(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
             );
             iterador++;
+            if(iterador == 5){
+                break;
+            }
         }
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }

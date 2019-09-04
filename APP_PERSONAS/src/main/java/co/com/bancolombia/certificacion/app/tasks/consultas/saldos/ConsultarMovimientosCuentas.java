@@ -34,13 +34,16 @@ public class ConsultarMovimientosCuentas implements Task {
                 WaitUntil.the(CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)), isVisible())
         );
         while (CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)).resolveFor(actor).isVisible()) {
-            listaMovimiento.add(movimiento().
-                    conFecha(LBL_FECHA_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
-                    .conDescripcion(LBL_DESCRIPCION_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
-                    .conValorMovimiento(LBL_SALDO_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
-            );
-            iterador++;
-        }
+                listaMovimiento.add(movimiento().
+                        conFecha(LBL_FECHA_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
+                        .conDescripcion(LBL_DESCRIPCION_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
+                        .conValorMovimiento(LBL_SALDO_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
+                );
+                iterador++;
+                if(iterador == 20){
+                    break;
+                }
+            }
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }
 }
