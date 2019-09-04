@@ -10,7 +10,7 @@ public class GenerarCodigoQrLocator {
     public static final Locator TXT_VALOR_RECIBIR_LOCATOR = locator().withAndroid("xpath$//span[text()='Ingresa el valor a recibir']/../following-sibling::div//span[@class='input-tel']/input");
     public static final Locator BTN_CON_VALOR_LOCATOR = locator().withAndroid("xpath$//span[text()='Con Valor']/preceding-sibling::button");
     public static final Locator BTN_SIN_VALOR_LOCATOR = locator().withAndroid("xpath$//span[text()='Sin valor']/preceding-sibling::button");
-    public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//textarea[@id='TextArea_Reference']");
+    public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Reference']");
     public static final Locator BTN_GENERAR_QR_LOCATOR = locator().withAndroid("xpath$//span[text()='GENERAR QR']/..");
     public static final Locator IMG_CODIGO_QR_LOCATOR = locator().withAndroid("xpath$//img[@alt='Scan me!']");
     public static final Locator IMG_CODIGO_QR_PANTALLA_INICIO_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'FloatingIcon')]/img");

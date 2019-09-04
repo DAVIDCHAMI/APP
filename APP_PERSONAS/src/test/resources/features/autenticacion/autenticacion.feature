@@ -5,7 +5,7 @@ Característica: Autenticación app Bancolombia
   Quiero ingresar usuario y contraseña
   Para autenticarme en la aplicación
 
-  @Manual
+  @Pending
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
@@ -16,7 +16,7 @@ Característica: Autenticación app Bancolombia
       | LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
-   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1,2,3
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
   @EscenarioExitoso
@@ -34,7 +34,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
    |4   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
+  @Pending
   Esquema del escenario: Login fallido a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -48,7 +48,7 @@ Característica: Autenticación app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
    |5   |45612862   |1   |userrobot1   |1111   |4321   |Alterno   |052   |0369   |CLAVE NO VALIDA   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
+  @Pending
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

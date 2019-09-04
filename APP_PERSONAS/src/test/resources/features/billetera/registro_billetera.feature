@@ -5,6 +5,7 @@ Característica: Registro en billetera App
   Quiero realizar el registro en Billetera
   Para realizar transacciones
 
+  @Pending
   Esquema del escenario: Registro exitoso en billetera App
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
