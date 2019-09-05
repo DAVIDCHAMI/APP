@@ -18,6 +18,7 @@ public class GeneralLocator {
     public static final Locator BTN_SI_CANCELAR_REGISTRO_LOCATOR = locator().withAndroid("id$btn_ModalSi").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
     public static final Locator LNK_INSCRIBIR_LOCATOR = locator().withAndroid("xpath$//span[text()='Inscribir']").withIos("xpath$b");
     public static final Locator LNK_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Pagar']");
+    public static final Locator BTN_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='PAGAR']/..");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
