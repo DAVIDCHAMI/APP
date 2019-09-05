@@ -13,9 +13,22 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto  | descripcion     |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
-      | 2  | 1010111         | 1             | userqa10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | pruebasqa99 | jalzate@todo1.net | conValor            | Cuenta de Ahorro | 406-785280-05 | 120000 | qr automatizado |
+   |2   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Ahorros   |406-749870-13   |150000   |qr automatizado|
+
+  Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
+    Dado que el Actor carga los datos para la prueba
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando quiere generar un codigo QR con valor sin iniciar sesion con nombre <nombrePersonalizado>
+      | tipoCuenta   | numeroCuenta   | monto   | descripcion   |
+      | <tipoCuenta> | <numeroCuenta> | <monto> | <descripcion> |
+    Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
+    Ejemplos:
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
+   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
+   |3   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Ahorros   |406-749870-13   |134000   |qr automatizado|
 
   @Manual
   Esquema del escenario: Generación de codigo QR con única cuenta deposito
@@ -29,18 +42,6 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta       | numeroCuenta  | monto | descripcion     |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
-      | 1  | 1010111         | 1             | userqa10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | pruebasqa99 | jalzate@todo1.net | sinValor            | Cuenta de Ahorro | 406-785280-05 |       | qr automatizado |
-
-  Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
-    Dado que el Actor carga los datos para la prueba
-      | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
-    Cuando quiere generar un codigo QR con valor sin iniciar sesion con nombre <nombrePersonalizado>
-      | tipoCuenta   | numeroCuenta   | monto   | descripcion   |
-      | <tipoCuenta> | <numeroCuenta> | <monto> | <descripcion> |
-    Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
-    Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
-   ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
-      | 3  | 1010111         | 1             | userqa10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | pruebasqa99 | jalzate@todo1.net | conValor            | Ahorros    | 406-740100-05 | 134000 | qr automatizado |
+   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Ahorros   |406-749870-13   |   |qr automatizado|
