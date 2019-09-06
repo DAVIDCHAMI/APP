@@ -20,6 +20,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class TransferenciaStepDefinition {
+
     @Y("diligencios los datos de la transferencia con informacion$")
     public void diligenciaDatosDeTransferencia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
