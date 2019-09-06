@@ -13,7 +13,8 @@ public class Constantes {
     public static final String AHORROS = "Ahorros";
     public static final String CORRIENTE = "Corriente";
     public static final Character COMA = ',';
-    public static final Character VISA = '4';
+    public static final Character NUMERO_VISA = '4';
+    public static final String VISA = "Visa";
     public static final String OTRO_VALOR = "Otro valor";
     public static final String CEROS = "0.00";
     public static final String SIN_VALOR = "Sin valor";

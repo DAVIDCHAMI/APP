@@ -32,7 +32,7 @@ public class NoPropia implements Task {
                 Scroll.to(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
-                        Check.whether(tarjetaCredito.getNumero().charAt(0) != VISA).andIfSo(
+                        Check.whether(tarjetaCredito.getNumero().charAt(0) != NUMERO_VISA).andIfSo(
                                 Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda()))
                         ),
                         Enter.theValue(tarjetaCredito.getValorPago()).into(TXT_VALOR_PAGAR),
@@ -40,7 +40,8 @@ public class NoPropia implements Task {
                 ),
                 Scroll.to(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
-                Click.on(LNK_PAGAR)
+                Click.on(LNK_PAGAR),
+                Click.on(LNK_PRODUCTO_ORIGEN)
         );
         actor.remember(MODELO_DETALLE_PRODUCTO, productoDebitar);
         actor.remember(MODELO_TARJETA_CREDITO, tarjetaCredito);

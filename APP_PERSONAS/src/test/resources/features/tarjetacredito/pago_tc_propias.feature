@@ -14,5 +14,5 @@ Característica: Pago de tarjetas de crédito propias
     #Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | tipoTarjeta   | numeroTarjeta | tipoPago            | valorPago | moneda | tipoCuenta | numeroCuenta  |
-   ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoPropia.xlsx@Datos@1
-   |1   |22493944   |1   |userrobot1   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |Personal American Express   |*2736   |Pago mínimo en dólares   |21   |Dolares   |Ahorros   |406-739440-03|
+   ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoPropia.xlsx@Datos@3
+   |3   |22493944   |1   |userrobot1   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |Personal Visa   |*5880   |Otro valor   |480369   |Pesos   |Ahorros   |406-739440-03|
