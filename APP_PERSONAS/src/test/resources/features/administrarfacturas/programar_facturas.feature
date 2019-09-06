@@ -10,7 +10,7 @@ Característica: Autenticación app Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Y el actor quiere PROGRAMAR_PAGAR_FACTURAS
-    Cuando el actor programa sus facturas inscritas con información
+    Cuando el actor programa sus facturas inscritas con informacion
       | valorFactura   | empresaServicio   | fechaFactura   | numeroCuenta   | tipoCuenta   | periodicidad   | numeroIntento   | fechaInicioFin   | mesProgramacion   | duracionProgramacion   |
       | <valorFactura> | <empresaServicio> | <fechaFactura> | <numeroCuenta> | <tipoCuenta> | <periodicidad> | <numeroIntento> | <fechaInicioFin> | <mesProgramacion> | <duracionProgramacion> |
 
