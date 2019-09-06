@@ -1,11 +1,7 @@
 #language: es
 
-Característica: Transferencia desde la app
-  Como usuario de Bancolombia
-  Quiero realizar una transferencia
-  Desde mi app
+Característica: Realizar una transferencia
 
-  @manual
   Esquema del escenario: Transferencia a cuentas no inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -15,6 +11,7 @@ Característica: Transferencia desde la app
       | tipoTransferencia   | numeroCuenta     | tipoCuenta           | monto   | productoDestino   | tipoProductoDestino   |
       | <tipoTransferencia> | <productoOrigen> | <tipoProductoOrigen> | <monto> | <productoDestino> | <tipoProductoDestino> |
     Entonces deberia ver la confirmacion exitosa de la transferencia
+
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto  | tipoTransferencia                  | productoDestino | tipoProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@1

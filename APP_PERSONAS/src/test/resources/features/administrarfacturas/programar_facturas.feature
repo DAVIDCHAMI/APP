@@ -5,6 +5,7 @@ Característica: Autenticación app Bancolombia
   Quiero ingresar usuario y contraseña
   Para autenticarme en la aplicación
 
+  @Pending
     Esquema del escenario: Programar facturas inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -13,7 +14,6 @@ Característica: Autenticación app Bancolombia
     Cuando el actor programa sus facturas inscritas con informacion
       | valorFactura   | empresaServicio   | fechaFactura   | numeroCuenta   | tipoCuenta   | periodicidad   | numeroIntento   | fechaInicioFin   | mesProgramacion   | duracionProgramacion   |
       | <valorFactura> | <empresaServicio> | <fechaFactura> | <numeroCuenta> | <tipoCuenta> | <periodicidad> | <numeroIntento> | <fechaInicioFin> | <mesProgramacion> | <duracionProgramacion> |
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio      | fechaFactura      | numeroCuenta  | tipoCuenta | periodicidad               | numeroIntento | fechaInicioFin | mesProgramacion | duracionProgramacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ProgramarFacturas.xlsx@Datos@1
