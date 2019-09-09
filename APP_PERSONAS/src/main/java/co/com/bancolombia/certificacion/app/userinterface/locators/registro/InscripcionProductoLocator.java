@@ -10,7 +10,6 @@ public class InscripcionProductoLocator {
     public static final Locator TXT_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_usuario3']").withIos("");
     public static final Locator TXT_BUSCAR_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//input[contains(@id,'Input_SearchParameter')]").withIos("");
     public static final Locator ITEM_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("id$xxxx");
-    public static final Locator BTN_CERRAR_NOMBRE_BANCO_LOCATOR = locator().withAndroid("xpath$//*[@id='b23-ActionSheetContainer']/div[2]/div[3]/a/span").withIos("");
     public static final Locator CHK_TIPO_CUENTA_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../button").withIos("");
     public static final Locator TXT_TIPO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_BankName3']").withIos("");
     public static final Locator TXT_NUMERO_DOCUEMENTO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_DocumentNumber']").withIos("");
