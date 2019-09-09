@@ -26,10 +26,7 @@ public class ConDatosTransaccion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
-
-
         actor.attemptsTo(
                 //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
                 Esperar.unTiempo(30000),

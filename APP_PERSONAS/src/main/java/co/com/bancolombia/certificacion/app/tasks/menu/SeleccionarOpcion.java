@@ -36,7 +36,6 @@ public class SeleccionarOpcion implements Task {
                         Esperar.unTiempo(3000),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                 )
-
         );
     }
 }
