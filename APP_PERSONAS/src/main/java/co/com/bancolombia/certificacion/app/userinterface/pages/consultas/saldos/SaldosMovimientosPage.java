@@ -1,12 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.*;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.LBL_NUMERO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;

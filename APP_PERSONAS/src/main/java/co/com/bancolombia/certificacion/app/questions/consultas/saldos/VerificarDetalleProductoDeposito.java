@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 
-public class VerificarDetalleProducto implements Question<Boolean> {
+public class VerificarDetalleProductoDeposito implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -19,7 +19,7 @@ public class VerificarDetalleProducto implements Question<Boolean> {
     }
 
 
-    public static VerificarDetalleProducto esExitoso() {
-        return new VerificarDetalleProducto();
+    public static VerificarDetalleProductoDeposito esExitoso() {
+        return new VerificarDetalleProductoDeposito();
     }
 }

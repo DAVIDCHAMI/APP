@@ -11,8 +11,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_MOVIMIENTO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_CUENTA;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIPO_CUENTA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -20,7 +18,7 @@ public class ConsultarProductos implements Task {
     private String tipoCuenta;
     private String numeroCuenta;
 
-    public ConsultarProductos(String tipoCuenta, String numeroCuenta) {
+       public ConsultarProductos(String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;
         this.numeroCuenta = numeroCuenta;
     }
