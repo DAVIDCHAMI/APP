@@ -4,7 +4,7 @@ package co.com.bancolombia.certificacion.app.models.transaccion;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
-public class Transferencia {
+public class Transferencia{
     private Producto productoOrigen;
     private Producto productoDestino;
     private String monto;

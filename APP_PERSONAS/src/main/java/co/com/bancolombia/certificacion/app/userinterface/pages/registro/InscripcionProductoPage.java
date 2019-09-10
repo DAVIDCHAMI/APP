@@ -12,7 +12,6 @@ public class InscripcionProductoPage {
     public static final Target TXT_NUMERO_PRODUCTO = Target.the("Campo para ingresar numero de producto a inscribir").located(theElementBy(TXT_NUMERO_PRODUCTO_LOCATOR));
     public static final Target ITEM_NOMBRE_BANCO = Target.the("Selecciona el nombre del banco").locatedBy(dynamicElement(ITEM_NOMBRE_BANCO_LOCATOR));
     public static final Target TXT_BUSCAR_NOMBRE_BANCO = Target.the("Campo para ingresar nombre banco").located(theElementBy(TXT_BUSCAR_NOMBRE_BANCO_LOCATOR));
-    public static final Target BTN_CERRAR_NOMBRE_BANCO = Target.the("Boton para cerrar vista de seleccion banco").located(theElementBy(BTN_CERRAR_NOMBRE_BANCO_LOCATOR));
     public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").located(theElementBy(BTN_SIGUIENTE_LOCATOR));
     public static final Target CHK_TIPO_CUENTA = Target.the("Selecciona el tipo de cuenta que desea inscribir").locatedBy(dynamicElement(CHK_TIPO_CUENTA_LOCATOR));
     public static final Target TXT_TIPO_DOCUMENTO = Target.the("Campo para ingresar tipo de documento").located(theElementBy(TXT_TIPO_DOCUMENTO_LOCATOR));

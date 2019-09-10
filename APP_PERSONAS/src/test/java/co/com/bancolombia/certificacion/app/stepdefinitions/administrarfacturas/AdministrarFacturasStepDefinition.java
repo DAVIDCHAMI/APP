@@ -43,7 +43,7 @@ public class AdministrarFacturasStepDefinition {
     @Cuando("^inscribe una factura$")
     public void inscribirFacura(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                Inscribir.facturas(factura().conConvenio(datos).conDescripcionFactura(datos).conReferencia(datos))
+                Inscribir.facturas(factura().conConvenio(datos).conDescripcionFactura(datos).conReferencia(datos).conConvenio(datos))
         );
     }
 

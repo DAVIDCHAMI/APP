@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.type.Type;
@@ -13,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.BTN_INSCRIBIR_DINAMICA_CLAVE;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class ConDatos extends Autenticacion {
+public class ConDatos implements Task {
     private String usuario;
     private String clave;
 

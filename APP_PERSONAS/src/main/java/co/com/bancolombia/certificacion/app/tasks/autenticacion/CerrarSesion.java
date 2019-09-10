@@ -20,8 +20,15 @@ public class CerrarSesion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        try {
+            actor.attemptsTo(
+                    Check.whether(!OPT_MENU_PRINCIPAL.of(PERFIL).resolveFor(actor).isVisible()).andIfSo
+                            (Click.on(BTN_VOLVER))
+            );
+        } catch (Exception e) {
+            actor.attemptsTo(Click.on(BTN_VOLVER));
+        }
         actor.attemptsTo(
-                Check.whether(!OPT_MENU_PRINCIPAL.of(PERFIL).resolveFor(actor).isVisible()).andIfSo(Click.on(BTN_VOLVER)),
                 Esperar.unTiempo(7000),
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Esperar.unTiempo(5000),

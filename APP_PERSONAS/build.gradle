@@ -18,7 +18,7 @@ buildscript {
         maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.52")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.70")
     }
 }
 
@@ -32,8 +32,8 @@ allprojects {
 }
 
 ext {
-    serenityVersion = '2.0.52'
-    serenityCucumberVersion = '1.9.39'
+    serenityVersion = '2.0.70'
+    serenityCucumberVersion = '1.9.45'
 }
 
 dependencies {

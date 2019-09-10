@@ -6,20 +6,20 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 
-public class VerificarDetalleProducto implements Question<Boolean> {
+public class VerificarDetalleProductoTarjetas implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
         Producto producto = actor.recall(MODELO_DETALLE_PRODUCTO);
         return (producto.getTipo() != null
                 && producto.getNumero() != null
-                && producto.getSaldo().getSaldoDisponible() != null
-                && producto.getSaldo().getSaldoEnCanje() != null
-                && producto.getSaldo().getSaldoTotal() != null);
+                && producto.getTarjetaCredito().getFechaLimitePago() != null
+                && producto.getTarjetaCredito().getDeudaALaFechaEnPesos()!= null
+                && producto.getTarjetaCredito().getDeudaTotalEnDolares() != null
+                && producto.getTarjetaCredito().getAvancesDisponiblesEnPesos() != null);
     }
 
-
-    public static VerificarDetalleProducto esExitoso() {
-        return new VerificarDetalleProducto();
+    public static VerificarDetalleProductoTarjetas esExitoso() {
+        return new VerificarDetalleProductoTarjetas();
     }
 }
