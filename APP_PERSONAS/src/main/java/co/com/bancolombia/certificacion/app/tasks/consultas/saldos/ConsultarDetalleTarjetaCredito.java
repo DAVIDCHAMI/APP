@@ -6,7 +6,6 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
@@ -36,8 +35,7 @@ public class ConsultarDetalleTarjetaCredito implements Task {
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO),
                 Esperar.unTiempo(2000));
-        System.out.println("text"+LBL_FECHA_PROXIMO_PAGO.resolveFor(actor).getText());
-              actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
+        actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)
                 .conTarjetaCredito(

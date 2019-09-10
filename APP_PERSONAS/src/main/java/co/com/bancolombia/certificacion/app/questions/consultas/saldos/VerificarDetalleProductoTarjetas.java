@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
-import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
@@ -19,7 +18,6 @@ public class VerificarDetalleProductoTarjetas implements Question<Boolean> {
                 && producto.getTarjetaCredito().getDeudaTotalEnDolares() != null
                 && producto.getTarjetaCredito().getAvancesDisponiblesEnPesos() != null);
     }
-
 
     public static VerificarDetalleProductoTarjetas esExitoso() {
         return new VerificarDetalleProductoTarjetas();

@@ -24,10 +24,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultarProductosAsociadosStepDefinition {
 
-    @Cuando("^quiere revisar sus movimientos con tipo de cuenta (.*) y numero cuenta (.*)$")
-    public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta) {
+    @Cuando("^consulto en (.*) los movimientos con tipo (.*) y numero cuenta (.*)$")
+    public void revisarMisMovimientosEnApp(String categoria,String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta)
+                ConsultarProductos.sinMovimientosConInformacion(categoria,tipoCuenta, numeroCuenta)
         );
     }
 

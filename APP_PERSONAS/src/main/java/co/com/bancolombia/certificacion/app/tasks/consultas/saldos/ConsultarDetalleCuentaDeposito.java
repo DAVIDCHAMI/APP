@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
@@ -36,13 +35,13 @@ public class ConsultarDetalleCuentaDeposito implements Task {
                 Check.whether(!CUENTAS.equals(opcionCategoria)).
                         andIfSo(
                                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO)
-                                ).otherwise(
+                        ).otherwise(
                         SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
-                        ),
+                ),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO),
                 Esperar.unTiempo(2000));
-                actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
+        actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)
                 .conSaldo(
@@ -52,13 +51,11 @@ public class ConsultarDetalleCuentaDeposito implements Task {
                                 .conSaldoTotal(LBL_SALDO_TOTAL_DETALLE.resolveFor(actor).getText())
                                 .build())
                 .build()
-                );
+        );
 
         actor.attemptsTo(
                 Esperar.unTiempo(8000)
                 // Click.on(BTN_DEVOLVER_PANTALLA)
         );
-
-
     }
 }
