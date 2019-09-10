@@ -55,7 +55,6 @@ public class ConsultarDetalleCuentaDeposito implements Task {
 
         actor.attemptsTo(
                 Esperar.unTiempo(8000)
-                // Click.on(BTN_DEVOLVER_PANTALLA)
         );
     }
 }
