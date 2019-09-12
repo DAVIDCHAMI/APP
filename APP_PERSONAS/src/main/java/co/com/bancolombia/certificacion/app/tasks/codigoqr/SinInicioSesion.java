@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.IMG_FOCO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
@@ -33,10 +34,9 @@ public class SinInicioSesion extends GenerarQR {
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_NUMERO_PRODUCTO),
                 Enter.theValue(transferencia.getProductoOrigen().getNumero()).into(TXT_NUMERO_PRODUCTO),
+                Click.on(IMG_FOCO),
                 Click.on(BTN_TIPO_PRODUCTO.of(transferencia.getProductoOrigen().getTipo())),
-                Click.on(LNK_SIGUIENTE)
-        );
-        actor.attemptsTo(
+                Click.on(LNK_SIGUIENTE),
                 Check.whether("".equals(transferencia.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
