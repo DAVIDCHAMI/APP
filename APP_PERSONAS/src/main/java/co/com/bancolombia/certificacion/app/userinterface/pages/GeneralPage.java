@@ -12,7 +12,7 @@ public class GeneralPage {
     public static final Target LNK_PAGAR = Target.the("Boton pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
-    public static final Target LBL_GENERACION_EXITOSA = Target.the("Label generación exitosa").locatedBy(dynamicElement(LBL_GENERACION_EXITOSA_LOCATOR));
+    public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").locatedBy(dynamicElement(LBL_GUARDADO_EXITOSO_LOCATOR));
     public static final Target LBL_VERIFICACION = Target.the("Label verificación").locatedBy(dynamicElement(LBL_VERIFICACION_LOCATOR));
     public static final Target LNK_SALTAR = Target.the("Link saltar").located(theElementBy(LNK_SALTAR_LOCATOR));
     public static final Target LNK_COMENZAR = Target.the("Link comenzar").located(theElementBy(LNK_COMENZAR_LOCATOR));
