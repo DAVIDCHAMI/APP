@@ -16,4 +16,4 @@ Característica: Activacion eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/activacion_eprepago.xlsx@Datos@1
-   |1   |44832981   |1   |pruebasregistro30   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+   |1   |22483228   |1   |matrix01   |6789   |9876   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
