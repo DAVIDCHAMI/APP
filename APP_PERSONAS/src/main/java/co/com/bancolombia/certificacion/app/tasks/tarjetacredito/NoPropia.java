@@ -8,12 +8,14 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.tarjetacredito.TarjetaCreditoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TARJETA_CREDITO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class NoPropia implements Task {
     private TarjetaCredito tarjetaCredito;
@@ -40,7 +42,9 @@ public class NoPropia implements Task {
                 ),
                 Scroll.to(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
-                Click.on(LNK_PAGAR),
+                WaitUntil.the(BTN_PAGAR, isEnabled()),
+                Click.on(BTN_PAGAR),
+                WaitUntil.the(LNK_PRODUCTO_ORIGEN, isEnabled()),
                 Click.on(LNK_PRODUCTO_ORIGEN)
         );
         actor.remember(MODELO_DETALLE_PRODUCTO, productoDebitar);

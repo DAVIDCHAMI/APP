@@ -2,7 +2,6 @@ package co.com.bancolombia.certificacion.app.tasks.tarjetacredito;
 
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
-import co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -10,8 +9,6 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.serenitybdd.screenplay.waits.WaitUntilAngularIsReady;
-import org.openqa.selenium.support.ui.Wait;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.tarjetacredito.TarjetaCreditoPage.*;

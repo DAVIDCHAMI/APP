@@ -33,10 +33,9 @@ public class SinInicioSesion extends GenerarQR {
                 Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_NUMERO_PRODUCTO),
                 Enter.theValue(transferencia.getProductoOrigen().getNumero()).into(TXT_NUMERO_PRODUCTO),
+                Click.on(IMG_FOCO),
                 Click.on(BTN_TIPO_PRODUCTO.of(transferencia.getProductoOrigen().getTipo())),
-                Click.on(LNK_SIGUIENTE)
-        );
-        actor.attemptsTo(
+                Click.on(LNK_SIGUIENTE),
                 Check.whether("".equals(transferencia.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
