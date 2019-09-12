@@ -9,6 +9,7 @@ import java.util.List;
 
 public class InscripcionBuilder implements Builder<Inscripcion> {
     private String nombreBanco;
+    private String tipoFondo;
     private Producto producto = new Producto();
     private Usuario usuario = new Usuario();
 
@@ -18,10 +19,15 @@ public class InscripcionBuilder implements Builder<Inscripcion> {
         this.producto.setNumero(datos.get(2));
         this.usuario.setTipoDocumento(datos.get(3));
         this.usuario.setNumeroDocumento(datos.get(4));
+        this.tipoFondo=datos.get(5);
     }
 
     public static InscripcionBuilder inscripcionProductos(List<String> datos) {
         return new InscripcionBuilder(datos);
+    }
+
+    public String getTipoFondo() {
+        return tipoFondo;
     }
 
     public String getNombreBanco() {
