@@ -18,7 +18,8 @@ public enum TipoTransaccionEnum {
     OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
-    GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica");
+    GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
+    CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques");
 
     private String menu;
     private String subMenu;
