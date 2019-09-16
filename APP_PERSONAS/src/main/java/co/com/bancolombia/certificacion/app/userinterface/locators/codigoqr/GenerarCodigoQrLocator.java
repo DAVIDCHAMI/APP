@@ -17,6 +17,7 @@ public class GenerarCodigoQrLocator {
     public static final Locator IMG_CODIGO_QR_FLOTANTE_LOCATOR = locator().withAndroid("xpath$//div[@class='floating-actions-items OSInline']/div[3]//img");
     public static final Locator TXT_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_ProductNumber']");
     public static final Locator BTN_TIPO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/preceding-sibling::button");
+    public static final Locator IMG_FOCO_LOCATOR = locator().withAndroid("xpath$//img[@src='/Personas/img/Bancolombia_Resources.times_2_.svg?++ow1o_qMnxW+fTcJQuAng']");
 
     private GenerarCodigoQrLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

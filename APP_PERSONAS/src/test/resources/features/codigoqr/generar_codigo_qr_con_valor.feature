@@ -13,9 +13,9 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
+      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
-   |2   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Ahorros   |406-749870-13   |150000   |qr automatizado|
+   |2   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-02   |150000   |qr automatizado|
 
   Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
     Dado que el Actor carga los datos para la prueba
@@ -26,9 +26,9 @@ Característica: Generación de código QR
       | <tipoCuenta> | <numeroCuenta> | <monto> | <descripcion> |
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
+      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
-   |3   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |conValor   |Ahorros   |406-749870-13   |134000   |qr automatizado|
+   |3   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-01   |134000   |qr automatizado|
 
   @Manual
   Esquema del escenario: Generación de codigo QR con única cuenta deposito
@@ -42,6 +42,6 @@ Característica: Generación de código QR
     Entonces el deberia de ver un mensaje de confirmacion y el codigo QR
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto | descripcion     |
+      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  |monto| descripcion |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |sinValor   |Ahorros   |406-749870-13   |   |qr automatizado|
+   |1   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |sinValor   |Corriente   |406-139740-01   |   |qr automatizado|

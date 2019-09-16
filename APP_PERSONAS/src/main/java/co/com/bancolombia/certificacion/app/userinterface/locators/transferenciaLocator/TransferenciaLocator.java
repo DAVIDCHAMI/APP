@@ -13,6 +13,8 @@ public class TransferenciaLocator {
     public static final Locator LBL_TRANFERENCIA_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Transferencia exitosa!']").withIos("");
     public static final Locator LBL_CUENTA_ORIGEN_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[text()='{1}']").withIos("");
     public static final Locator LBL_CUENTA_DESTINO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../following-sibling::div/span[text()='{1}']").withIos("");
+    public static final Locator BTN_INVERSIONES_LOCATOR = locator().withAndroid("xpath$//span[text()='Inversiones']").withIos("xpath$n");
+    public static final Locator BTN_CUENTAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Cuentas']").withIos("xpath$n");
 
     private TransferenciaLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

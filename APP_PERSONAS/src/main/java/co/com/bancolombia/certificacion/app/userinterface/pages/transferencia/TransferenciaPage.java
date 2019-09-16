@@ -19,6 +19,8 @@ public class TransferenciaPage {
     public static final Target LBL_TRANFERENCIA_EXITOSA = Target.the("Mensaje exitoso").located(theElementBy(LBL_TRANFERENCIA_EXITOSA_LOCATOR));
     public static final Target LBL_CUENTA_ORIGEN = Target.the("Label para verificar cuenta origen").locatedBy(dynamicElement(LBL_CUENTA_ORIGEN_LOCATOR));
     public static final Target LBL_CUENTA_DESTINO = Target.the("Label para verificar cuenta destino").locatedBy(dynamicElement(LBL_CUENTA_DESTINO_LOCATOR));
+    public static final Target BTN_INVERSIONES = Target.the("Botón para visualizar cuentas inversiones").located(theElementBy(BTN_INVERSIONES_LOCATOR));
+    public static final Target BTN_CUENTAS = Target.the("Botón para visualizar cuentas deposito").located(theElementBy(BTN_CUENTAS_LOCATOR));
 
     private TransferenciaPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
