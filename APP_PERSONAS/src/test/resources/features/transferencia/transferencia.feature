@@ -16,7 +16,6 @@ Característica: Realizar una transferencia
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@7
    |7   |1010111   |Cédula de ciudadanía   |testing10   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |7001000033569   |FIDURENTA   |100000   |Productos propios e inscritos Bancolombia   |7001000003707   |RENTA FIJA PLAZO   |Inversiones|
 
-
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia a cuenta depósto
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
