@@ -18,4 +18,4 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio               | fechaFactura | numeroCuenta  | tipoCuenta         | periodicidad               | frecuenciaPago | fechaInicioFin | opcionModificacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EditarProgramacion.xlsx@Datos@1
-      | 1  | 1037655531      | 1             | userrobot2 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 10.000,00    | FUNERARIA SAGRADO CORAZON (N) | 15 Feb 2019  | 406-139440-00 | Cuentas corrientes | En la fecha de vencimiento | Semanal        | 9-12           | Poducto origen     |
+   |1   |1037655531   |1   |userrobot2   |2445   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10.000,00   |FACTURANET01   |15 Feb 2019   |406-139440-00   |Cuentas corrientes   |En la fecha de vencimiento   |Semanal   |9-12   |Poducto origen|

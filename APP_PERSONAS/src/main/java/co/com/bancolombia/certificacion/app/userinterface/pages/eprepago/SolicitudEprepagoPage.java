@@ -12,5 +12,5 @@ public class SolicitudEprepagoPage {
     public static final Target LBL_EPREPAGO = Target.the("label eprepago").located(theElementBy(LBL_EPREPAGO_LOCATOR));
     public static final Target LBL_DETALLE_PRODUCTO = Target.the("label detalle del producto").located(theElementBy(LBL_DETALLE_PRODUCTO_LOCATOR));
 
-    public SolicitudEprepagoPage() {throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
+    private SolicitudEprepagoPage() {throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }
