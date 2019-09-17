@@ -31,7 +31,7 @@ public class EditarProgramacion implements Task {
         String fechaFin = fecha[1];
         actor.attemptsTo(
                 Click.on(OPT_SUB_MENU_PROGRAMADAS),
-                SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas.getValorFactura(), programarFacturas.getFechaFactura(), programarFacturas.getEmpresaServicio()),
+                SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
                 Check.whether(PRODUCTO_ORIGEN.equals(opcion)).andIfSo(
                         Click.on(LNK_CAMBIAR.of(opcion))),
                 Click.on(OPT_MIS_PRODUCTOS),

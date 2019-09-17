@@ -15,7 +15,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AyudaStepDefinition {
 
-    @Cuando("^quiere ingresar a la opción (.*)$")
+    @Cuando("^quiere ingresar a la opcion (.*)$")
     public void quiereIngresarOpcion(String opcionAyuda) {
         theActorInTheSpotlight().attemptsTo(
                 AccederMenu.deAyuda(opcionAyuda)
@@ -37,7 +37,7 @@ public class AyudaStepDefinition {
         );
     }
 
-    @Entonces("^deberia de visualizar el enlace con título (.*)$")
+    @Entonces("^deberia de visualizar el enlace con titulo (.*)$")
     public void deberiaVisualzoarMensajeEnlace(String tituloPantalla) {
         theActorInTheSpotlight().should(
                 seeThat(Visualizar.enlaceWeb(tituloPantalla)).orComplainWith(

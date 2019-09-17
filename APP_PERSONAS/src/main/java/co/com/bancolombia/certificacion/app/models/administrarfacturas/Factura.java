@@ -15,6 +15,8 @@ public class Factura {
     private String referencia;
     private String frecuenciaPago;
     private String descripcionFactura;
+    private String duracionProgramacion;
+    private String mesProgramacion;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
@@ -28,6 +30,24 @@ public class Factura {
         this.referencia = programarFacturaBuilder.getReferencia();
         this.frecuenciaPago=programarFacturaBuilder.getFrecuenciaPago();
         this.descripcionFactura=programarFacturaBuilder.getDescripcionFactura();
+        this.duracionProgramacion=programarFacturaBuilder.getDuracionProgramacion();
+        this.mesProgramacion=programarFacturaBuilder.getMesProgramacion();
+    }
+
+    public String getMesProgramacion() {
+        return mesProgramacion;
+    }
+
+    public void setMesProgramacion(String mesProgramacion) {
+        this.mesProgramacion = mesProgramacion;
+    }
+
+    public String getDuracionProgramacion() {
+        return duracionProgramacion;
+    }
+
+    public void setDuracionProgramacion(String duracionProgramacion) {
+        this.duracionProgramacion = duracionProgramacion;
     }
 
     public String getDescripcionFactura() {

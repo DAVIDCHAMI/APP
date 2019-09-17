@@ -16,7 +16,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @CucumberOptions(
         features = {"src/test/resources/features/autenticacion/autenticacion.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
-        tags = {"@EscenarioExitoso"},
         snippets = SnippetType.CAMELCASE
 )
 public class AutenticacionRunner {

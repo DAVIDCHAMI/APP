@@ -4,12 +4,15 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
@@ -17,7 +20,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constan
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosTarjetas extends Movimientos{
+public class ConsultarMovimientosTarjetas implements Task {
+    private static final Logger LOGGER = Logger.getAnonymousLogger();
     private String tipoCuenta;
     private String numeroCuenta;
 
@@ -36,6 +40,7 @@ public class ConsultarMovimientosTarjetas extends Movimientos{
         );
         List<Movimiento> listaMovimiento = new ArrayList<>();
         int iterador = 0;
+        try {
         while (Visibility.of(CONTENEDOR_MOVIMIENTOS_TARJETA.of(String.valueOf(iterador))).viewedBy(actor).asBoolean()) {
             listaMovimiento.add(movimiento().
                     conFecha(LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText())
@@ -43,6 +48,9 @@ public class ConsultarMovimientosTarjetas extends Movimientos{
                     .conValorMovimiento(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
             );
             iterador++;
+        }
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Movements Elements saved", e);
         }
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }

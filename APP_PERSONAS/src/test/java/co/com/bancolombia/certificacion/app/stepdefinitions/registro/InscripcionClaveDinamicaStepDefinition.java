@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamenteException;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.bloqueos.Bloquear;
-import co.com.bancolombia.certificacion.app.tasks.bloqueos.ClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
@@ -19,7 +18,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class InscripcionClaveDinamicaStepDefinition {
 
-    @Y("gestiono la inscripcion de clave dinámica$")
+    @Y("gestiono la inscripcion de clave dinamica$")
     public void gestionaInscripcionClaveDinamica(List<Map<String,String>>datos){
         theActorInTheSpotlight().attemptsTo(InscribirClaveDinamica.conDatos(usuario()
                 .conNombrePersonalizado(datos)
@@ -29,18 +28,18 @@ public class InscripcionClaveDinamicaStepDefinition {
                         conSegundaClave(datos)));
     }
 
+    @Entonces("Yo deberia ver mis datos registrados en clave dinamica$")
+    public void deberiaVerClaveDinamExitosa(){
+        theActorInTheSpotlight().should(seeThat(VerificarInscripcionClaveDinamica.exitosa()).orComplainWith(
+                ClaveNoInscritaCorrectamenteException.class, NO_INCRIBE_CLAVE_DINAMICA
+        ));
+    }
+
     @Cuando("^bloquea la clave dinámica$")
     public void bloquearClaveDinamica() {
         theActorInTheSpotlight().attemptsTo(
                 Bloquear.claveDinamica()
         );
-    }
-
-    @Entonces("Yo debería ver mis datos registrados en clave dinámica$")
-    public void deberiaVerClaveDinamExitosa(){
-        theActorInTheSpotlight().should(seeThat(VerificarInscripcionClaveDinamica.exitosa()).orComplainWith(
-                ClaveNoInscritaCorrectamenteException.class, NO_INCRIBE_CLAVE_DINAMICA
-        ));
     }
 
     @Entonces("^visualiza el mensaje de bloqueo exitoso$")

@@ -1,8 +1,8 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.exceptions.movimientos.ProductoConMovimientosException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException;
+import co.com.bancolombia.certificacion.app.exceptions.movimientos.ProductoConMovimientosException;
 import co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException;
 import co.com.bancolombia.certificacion.app.questions.consultas.VerificarMovimientos;
 import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProducto;
@@ -15,30 +15,30 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-import static co.com.bancolombia.certificacion.app.exceptions.movimientos.ProductoConMovimientosException.CON_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.NoPoseeSoloCuentasDepositoException.MENSAJE_NO_TIENE_UNICAMENTE_CUENTAS_DEPOSITO;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.SoloTieneUnProductoException.MENSAJE_SOLO_TIENE_UN_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.exceptions.movimientos.ProductoConMovimientosException.CON_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.exceptions.productos.ProductoSinMovimientosException.SIN_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ConsultarProductosAsociadosStepDefinition {
 
-    @Cuando("^quiere revisar sus movimientos con tipo de cuenta (.*) y número cuenta (.*)$")
-    public void revisarMisMovimientosEnApp(String tipoCuenta, String numeroCuenta) {
+    @Cuando("^consulto en (.*) los movimientos con tipo (.*) y numero cuenta (.*)$")
+    public void revisarMisMovimientosEnApp(String categoria,String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarProductos.sinMovimientosConInformacion(tipoCuenta, numeroCuenta)
+                ConsultarProductos.sinMovimientosConInformacion(categoria,tipoCuenta, numeroCuenta)
         );
     }
 
-    @Cuando("^quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta (.*) y número cuenta (.*)$")
+    @Cuando("^quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
     public void revisarMisMovimientosCuentasEnlaApps(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarMovimientos.deCuentas(tipoCuenta, numeroCuenta)
         );
     }
 
-    @Cuando("^quiero revisar mis movimientos de tarjeta de crédito en la app con tipo de cuenta (.*) y número cuenta (.*)$")
+    @Cuando("^quiero revisar mis movimientos de tarjeta de credito en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
     public void revisarMisMovimientosTarjetaEnlaApps(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarMovimientos.deTarjetasCredito(tipoCuenta, numeroCuenta)

@@ -1,10 +1,11 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
+import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;
+
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaCreditoEnNumero;
 
 public class TarjetaCredito extends Producto {
-
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
     private String fechaLimitePago;
@@ -16,7 +17,28 @@ public class TarjetaCredito extends Producto {
     private String pagoMinimoEnDolares;
     private String totalPagoEnDolares;
     private String deudaTotalEnDolares;
+    private String tipoPago;
+    private String valorPago;
+    private String moneda;
 
+    public TarjetaCredito(TarjetaCreditoBuilder builder) {
+        super(builder.getNumeroCuenta(), builder.getTipoCuenta());
+        this.formatoTarjetaCredito = builder.getFormatoTarjetaCredito();
+        this.tipoTarjetaCreditoEnNumero = builder.getTipoTarjetaCreditoEnNumero();
+        this.fechaLimitePago = builder.getFechaLimitePago();
+        this.pagoMinimoEnPesos = builder.getPagoMinimoEnPesos();
+        this.pagoTotalEnPesos = builder.getPagoTotalEnPesos();
+        this.deudaALaFechaEnPesos = builder.getDeudaALaFechaEnPesos();
+        this.avancesDisponiblesEnPesos = builder.getAvancesDisponiblesEnPesos();
+        this.totalDisponibleEnPesos = builder.getTotalDisponibleEnPesos();
+        this.pagoMinimoEnDolares = builder.getPagoMinimoEnDolares();
+        this.totalPagoEnDolares = builder.getTotalPagoEnDolares();
+        this.deudaTotalEnDolares = builder.getDeudaTotalEnDolares();
+        this.tipoPago = builder.getTipoPago();
+        this.valorPago = builder.getValorPago();
+        this.moneda = builder.getMoneda();
+    }
+    public TarjetaCredito(){}
 
     public TarjetaCredito(String numero, String tipoProducto) {
         super(numero, tipoProducto);
@@ -112,5 +134,21 @@ public class TarjetaCredito extends Producto {
 
     public void setDeudaTotalEnDolares(String deudaTotalEnDolares) {
         this.deudaTotalEnDolares = deudaTotalEnDolares;
+    }
+
+    public String getPagoMinimoEnPesos() {
+        return pagoMinimoEnPesos;
+    }
+
+    public String getTipoPago() {
+        return tipoPago;
+    }
+
+    public String getValorPago() {
+        return valorPago;
+    }
+
+    public String getMoneda() {
+        return moneda;
     }
 }

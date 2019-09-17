@@ -26,23 +26,16 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(10000),
+                Esperar.unTiempo(20000),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
+                        Esperar.unTiempo(3000),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
+                ),
+                Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
+                        Esperar.unTiempo(3000),
+                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
                 )
-        );
-        actor.attemptsTo(
-                Check.whether(!"".equals(tipoTransaccion.getTercerNivel()))
-                        .andIfSo(
-                                Check.whether(Visibility.of(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())).viewedBy(actor).asBoolean())
-                                        .andIfSo(
-                                                Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
-                                        ).otherwise(
-                                        Scroll.to(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
-                                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
-                                )
-                        )
         );
     }
 }

@@ -1,13 +1,15 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.detalleproductos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException;
-import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProducto;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoDeposito;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoTarjetas;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException.MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TARJETAS_CREDITO_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -16,27 +18,45 @@ public class ConsultaDetalleProductosStepDefinition {
     @Y("^consulto en (.*) el detalle de mi Cuenta (.*) numero (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProductoCuentas(opcionCategoria, tipoCuenta, numeroCuenta)
         );
     }
 
-    @Cuando("^consulto en (.*) el detalle de tarjeta (.*) numero (.*)$")
-    public void consultoElSaldoDeEprepago(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+    @Cuando("^consulto el detalle de tarjeta de credito (.*) numero (.*)$")
+    public void consultoDetalleDeTarjetaCredito( String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProducto(opcionCategoria,tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProductoTarjetas(TARJETAS_CREDITO_MOVIMIENTOS, tipoCuenta, numeroCuenta)
         );
     }
 
     @Entonces("^deberia de ver el detalle de mi cuenta de ahorro$")
     public void verificoElResultadoDeLaConsultaDelSaldo() {
         theActorInTheSpotlight().should(seeThat(
-                VerificarDetalleProducto.esExitoso()
+                VerificarDetalleProductoDeposito.esExitoso()
                 ).orComplainWith(
-                        DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );
     }
 
     @Entonces("^deberia de ver el detalle de mi tarjeta eprepago$")
     public void verificoElResultadoDeLaConsultaDeEprepago() {
+    }
+
+    @Entonces("^deberia de ver el detalle de mi tarjeta de credito$")
+    public void verificoElResultadoDeLaConsultaDeTarjetaCredito() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleProductoTarjetas.esExitoso()
+                ).orComplainWith(
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
+    }
+
+    @Y("^consulto en (.*) el detalle de mi credito de consumo con (.*) numero (.*)$")
+    public void consultoElDetalleDelCreditoDeConsumo(String opcionCategoria, String tipoCredito, String numeroCredito) {
+    }
+
+
+    @Y("^deberia de ver el detalle de mi credito de consumo$")
+    public void deberiaDeVerElDetalleDeMiCreditoDeConsumo() {
     }
 }

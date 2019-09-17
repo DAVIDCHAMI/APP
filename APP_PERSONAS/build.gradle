@@ -18,7 +18,7 @@ buildscript {
         maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.52")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.70")
     }
 }
 
@@ -31,9 +31,9 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-ext{
-    serenityVersion = '2.0.52'
-    serenityCucumberVersion = '1.9.39'
+ext {
+    serenityVersion = '2.0.70'
+    serenityCucumberVersion = '1.9.45'
 }
 
 dependencies {
@@ -49,12 +49,12 @@ dependencies {
     implementation group: 'com.codoid.products', name: 'fillo', version: '1.18'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '3.2.0'
-    
+
     implementation 'org.apache.commons:commons-lang3:3.8'
     implementation 'org.apache.logging.log4j:log4j-api:2.6.1'
     implementation 'org.apache.logging.log4j:log4j-core:2.6.1'
     implementation 'com.google.code.gson:gson:2.8.5'
-    
+
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.6.2'
     testImplementation 'org.slf4j:slf4j-simple:1.7.7'
@@ -62,16 +62,20 @@ dependencies {
     testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
 }
 
-tasks.withType(Test){
+/*tasks.withType(Test){
     systemProperty 'properties', System.getProperty('properties')
     systemProperty 'serenity.outputDirectory', System.getProperty('serenity.outputDirectory')
     systemProperty 'binResultsDir', System.getProperty('binResultsDir')
     systemProperties = System.properties
     maxParallelForks = Runtime.runtime.availableProcessors()
+}*/
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
 }
 
-tasks.withType(Test){
-    systemProperty "file.encoding","UTF-8"
+test {
+    systemProperty 'properties', System.getProperty('properties')
 }
 
 gradle.startParameter.continueOnFailure = true

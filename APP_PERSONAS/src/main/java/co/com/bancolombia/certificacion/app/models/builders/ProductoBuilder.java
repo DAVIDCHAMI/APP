@@ -2,11 +2,13 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ProductoBuilder implements Builder<Producto> {
     private String numero;
@@ -15,6 +17,7 @@ public class ProductoBuilder implements Builder<Producto> {
     private String nombreBanco;
     private String nombreProducto;
     private Saldo saldo = new Saldo();
+    private TarjetaCredito tarjetaCredito= new TarjetaCredito();
     private List<Movimiento> movimientos = new ArrayList<>();
 
     private ProductoBuilder(){
@@ -31,6 +34,12 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public ProductoBuilder conTipoCuenta(List<String> datosProducto){
         this.tipo = datosProducto.get(0);
+        return this;
+    }
+
+    public ProductoBuilder conProductoDebitar(List<Map<String, String>> datos){
+        this.tipo = datos.get(0).get("tipoCuenta");
+        this.numero = datos.get(0).get("numeroCuenta");
         return this;
     }
 
@@ -51,6 +60,11 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public ProductoBuilder conSaldo(Saldo saldo){
         this.saldo = saldo;
+        return this;
+    }
+
+    public ProductoBuilder conTarjetaCredito(TarjetaCredito tarjetaCredito){
+        this.tarjetaCredito = tarjetaCredito;
         return this;
     }
 
@@ -76,6 +90,10 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public Saldo getSaldo() {
         return saldo;
+    }
+
+    public TarjetaCredito getTarjetaCredito() {
+        return tarjetaCredito;
     }
 
     public List<Movimiento> getMovimientos() {

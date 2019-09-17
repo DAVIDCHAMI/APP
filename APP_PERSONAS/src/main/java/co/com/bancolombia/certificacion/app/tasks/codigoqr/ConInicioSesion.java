@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -14,8 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ConInicioSesion extends GenerarQR {
     private Transferencia datos;
@@ -34,6 +34,7 @@ public class ConInicioSesion extends GenerarQR {
         if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
             actor.attemptsTo(
                     WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
+                    Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
                     Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
             );
         }
@@ -47,7 +48,8 @@ public class ConInicioSesion extends GenerarQR {
                 Click.on(LNK_SIGUIENTE),
                 Enter.theValue(datos.getDescripcion()).into(TXT_DESCRIPCION),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_GENERAR_QR)
+                Click.on(BTN_GENERAR_QR),
+                WaitUntil.the(LBL_GUARDADO_EXITOSO, isVisible())
         );
         if ("".equals(datos.getMonto()))
             datos.setMonto(SIN_VALOR);
