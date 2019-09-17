@@ -22,7 +22,8 @@ public enum TipoTransaccionEnum {
     BLOQUEAR_TARJETAS(PERFIL, "Bloqueos","Bloquear tarjetas definitivamente"),
     BLOQUEAR_CLAVE(PERFIL, "Bloqueos","Bloquear clave"),
     BLOQUEAR_TARJETAS_CLAVE(PERFIL, "Bloqueos","Bloquear tarjetas y clave"),
-    BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica");
+    BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
+    CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques");
 
     private String menu;
     private String subMenu;
