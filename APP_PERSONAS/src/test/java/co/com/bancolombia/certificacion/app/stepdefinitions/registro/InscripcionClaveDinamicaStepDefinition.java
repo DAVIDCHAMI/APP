@@ -2,9 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 
 import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamenteException;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
-import co.com.bancolombia.certificacion.app.tasks.bloqueos.Bloquear;
 import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
-import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
@@ -33,16 +31,5 @@ public class InscripcionClaveDinamicaStepDefinition {
         theActorInTheSpotlight().should(seeThat(VerificarInscripcionClaveDinamica.exitosa()).orComplainWith(
                 ClaveNoInscritaCorrectamenteException.class, NO_INCRIBE_CLAVE_DINAMICA
         ));
-    }
-
-    @Cuando("^bloquea la clave dinámica$")
-    public void bloquearClaveDinamica() {
-        theActorInTheSpotlight().attemptsTo(
-                Bloquear.claveDinamica()
-        );
-    }
-
-    @Entonces("^visualiza el mensaje de bloqueo exitoso$")
-    public void vializaMensajeBloqueoExitoso() {
     }
 }
