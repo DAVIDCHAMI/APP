@@ -34,7 +34,8 @@ public class SeleccionarOpcion implements Task {
                 ),
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
                         Esperar.unTiempo(3000),
-                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()))
+                        Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
+                                Esperar.unTiempo(3000)
                 )
         );
     }

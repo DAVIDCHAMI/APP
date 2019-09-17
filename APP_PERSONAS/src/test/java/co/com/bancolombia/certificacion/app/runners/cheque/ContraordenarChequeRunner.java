@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/cheque/contraordenar_cheques.feature"},
+        features = {"src/test/resources/features/cheque/contraordenar_cheques.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
@@ -21,6 +21,6 @@ public class ContraordenarChequeRunner {
     private ContraordenarChequeRunner(){}
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/cheque/contraordenar_cheques.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/cheque/contraordenar_cheques.feature");
     }
 }
