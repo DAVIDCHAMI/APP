@@ -11,7 +11,6 @@ public class Inscripcion {
     private Usuario usuario;
     private String tipoFondo;
 
-
     public Inscripcion(InscripcionBuilder inscripcionBuilder) {
         this.nombreBanco = inscripcionBuilder.getNombreBanco();
         this.producto = inscripcionBuilder.getProducto();

@@ -31,5 +31,4 @@ public class VerificarInscripcion implements Question<Boolean> {
     public static VerificarInscripcion deProductos() {
         return new VerificarInscripcion();
     }
-
 }
