@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
@@ -16,6 +17,7 @@ public class ProductoBuilder implements Builder<Producto> {
     private String nombreBanco;
     private String nombreProducto;
     private Saldo saldo = new Saldo();
+    private TarjetaCredito tarjetaCredito= new TarjetaCredito();
     private List<Movimiento> movimientos = new ArrayList<>();
 
     private ProductoBuilder(){
@@ -61,6 +63,11 @@ public class ProductoBuilder implements Builder<Producto> {
         return this;
     }
 
+    public ProductoBuilder conTarjetaCredito(TarjetaCredito tarjetaCredito){
+        this.tarjetaCredito = tarjetaCredito;
+        return this;
+    }
+
     public String getNumero() {
         return numero;
     }
@@ -83,6 +90,10 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public Saldo getSaldo() {
         return saldo;
+    }
+
+    public TarjetaCredito getTarjetaCredito() {
+        return tarjetaCredito;
     }
 
     public List<Movimiento> getMovimientos() {

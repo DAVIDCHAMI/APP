@@ -68,6 +68,24 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return this;
     }
 
+    public TarjetaCreditoBuilder conDeudaFechaPesos(String datos){
+        this.deudaALaFechaEnPesos = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conDeudaFechaDolares(String datos){
+        this.deudaTotalEnDolares = datos;
+        return this;
+    }
+    public TarjetaCreditoBuilder conAvanceDisponiblePeso(String datos){
+        this.avancesDisponiblesEnPesos = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conFechaProximoPago(String datos){
+        this.fechaLimitePago = datos;
+        return this;
+    }
     public String getTipoCuenta() {
         return tipoCuenta;
     }

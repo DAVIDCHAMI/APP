@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.models.productos;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
+import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Producto {
     private String nombreBanco;
     private String nombreProducto;
     private Saldo saldo;
+    private TarjetaCredito tarjetaCredito;
     private List<Movimiento> movimientos;
 
     public Producto(){
@@ -33,6 +35,7 @@ public class Producto {
         this.nombreBanco = productoBuilder.getNombreBanco();
         this.nombreProducto = productoBuilder.getNombreProducto();
         this.saldo = productoBuilder.getSaldo();
+        this.tarjetaCredito=productoBuilder.getTarjetaCredito();
         this.movimientos = productoBuilder.getMovimientos();
     }
 
@@ -86,6 +89,10 @@ public class Producto {
 
     public Saldo getSaldo() {
         return saldo;
+    }
+
+    public TarjetaCredito getTarjetaCredito() {
+        return tarjetaCredito;
     }
 
     public void setSaldo(Saldo saldo) {

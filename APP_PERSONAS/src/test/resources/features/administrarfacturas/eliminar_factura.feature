@@ -11,10 +11,10 @@ Característica: Autenticación app Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Y el actor quiere ELIMINAR_FACTURA
-    Cuando el actor elimina su factura con opción <opcion> e información
+    Cuando el actor elimina su factura con opcion <opcion> e informacion
       | valorFactura   | empresaServicio   | fechaFactura   |
       | <valorFactura> | <empresaServicio> | <fechaFactura> |
-    Entonces debería ver el mensaje de eliminación exitosa
+    Entonces deberia ver el mensaje de eliminacion exitosa
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura | opcion    |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EliminarFactura.xlsx@Datos@1

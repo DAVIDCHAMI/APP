@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.IMG_FOCO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;

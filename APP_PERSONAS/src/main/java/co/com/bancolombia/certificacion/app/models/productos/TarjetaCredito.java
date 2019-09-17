@@ -38,6 +38,7 @@ public class TarjetaCredito extends Producto {
         this.valorPago = builder.getValorPago();
         this.moneda = builder.getMoneda();
     }
+    public TarjetaCredito(){}
 
     public TarjetaCredito(String numero, String tipoProducto) {
         super(numero, tipoProducto);

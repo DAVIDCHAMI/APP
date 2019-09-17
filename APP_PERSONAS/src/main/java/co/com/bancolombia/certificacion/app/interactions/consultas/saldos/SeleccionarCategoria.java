@@ -1,17 +1,14 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
-
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 
 public class SeleccionarCategoria implements Interaction {
     private String categoria;
