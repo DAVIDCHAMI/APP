@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.tarjetacredito;
+package co.com.bancolombia.certificacion.app.questions.pagos;
 
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;

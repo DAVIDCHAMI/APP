@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.userinterface.locators.tarjetacredito;
+package co.com.bancolombia.certificacion.app.userinterface.locators.pagos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 

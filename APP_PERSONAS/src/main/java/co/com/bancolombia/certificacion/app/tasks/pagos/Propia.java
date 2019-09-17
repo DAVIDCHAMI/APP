@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.tasks.tarjetacredito;
+package co.com.bancolombia.certificacion.app.tasks.pagos;
 
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
@@ -11,17 +11,18 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.tarjetacredito.TarjetaCreditoPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.TarjetaCreditoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TARJETA_CREDITO;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class NoPropia implements Task {
+public class Propia implements Task {
     private TarjetaCredito tarjetaCredito;
     private Producto productoDebitar;
 
-    public NoPropia(TarjetaCredito tarjetaCredito, Producto productoDebitar) {
+    public Propia(TarjetaCredito tarjetaCredito, Producto productoDebitar) {
         this.tarjetaCredito = tarjetaCredito;
         this.productoDebitar = productoDebitar;
     }
@@ -29,12 +30,12 @@ public class NoPropia implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(tarjetaCredito.getNumero()).into(TXT_NUMERO_TARJETA),
-                Click.on(LNK_SIGUIENTE),
+                Scroll.to(BTN_TARJETA_CREDITO_PAGAR.of(tarjetaCredito.getTipo(), tarjetaCredito.getNumero())),
+                Click.on(BTN_TARJETA_CREDITO_PAGAR.of(tarjetaCredito.getTipo(), tarjetaCredito.getNumero())),
                 Scroll.to(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
-                        Check.whether(tarjetaCredito.getNumero().charAt(0) != NUMERO_VISA).andIfSo(
+                        Check.whether(!tarjetaCredito.getTipo().toLowerCase().contains(VISA.toLowerCase())).andIfSo(
                                 Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda()))
                         ),
                         Enter.theValue(tarjetaCredito.getValorPago()).into(TXT_VALOR_PAGAR),
@@ -47,6 +48,7 @@ public class NoPropia implements Task {
                 WaitUntil.the(LNK_PRODUCTO_ORIGEN, isEnabled()),
                 Click.on(LNK_PRODUCTO_ORIGEN)
         );
+        tarjetaCredito.setValorPago(darFormato(tarjetaCredito.getValorPago()));
         actor.remember(MODELO_DETALLE_PRODUCTO, productoDebitar);
         actor.remember(MODELO_TARJETA_CREDITO, tarjetaCredito);
     }

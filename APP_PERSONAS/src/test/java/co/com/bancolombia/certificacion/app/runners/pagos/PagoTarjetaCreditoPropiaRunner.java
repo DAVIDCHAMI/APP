@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.tarjetacredito;
+package co.com.bancolombia.certificacion.app.runners.pagos;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;

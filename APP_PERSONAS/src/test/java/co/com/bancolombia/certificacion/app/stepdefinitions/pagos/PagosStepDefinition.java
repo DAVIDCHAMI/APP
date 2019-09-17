@@ -1,7 +1,7 @@
-package co.com.bancolombia.certificacion.app.stepdefinitions.tarjetacredito;
+package co.com.bancolombia.certificacion.app.stepdefinitions.pagos;
 
-import co.com.bancolombia.certificacion.app.questions.tarjetacredito.VerificarPago;
-import co.com.bancolombia.certificacion.app.tasks.tarjetacredito.Pagar;
+import co.com.bancolombia.certificacion.app.questions.pagos.VerificarPago;
+import co.com.bancolombia.certificacion.app.tasks.pagos.Pagar;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -13,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.TarjetaCredit
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class PagoTarjetaCredito {
+public class PagosStepDefinition {
 
     @Cuando("^quiere pagar la tarjeta de crédito no propia$")
     public void pagoTarjetaCreditoNoPropia(List<Map<String, String>> datos) {

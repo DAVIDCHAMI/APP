@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.tarjetacredito;
+package co.com.bancolombia.certificacion.app.runners.pagos;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/tarjetacredito/pago_tc_no_propias.feature"},
+        features = {"src/test/resources/features/pagos/pago_tc_no_propias.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
 public class PagoTarjetaCreditoNoPropiaRunner {
@@ -24,6 +24,6 @@ public class PagoTarjetaCreditoNoPropiaRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/tarjetacredito/pago_tc_no_propias.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/pagos/pago_tc_no_propias.feature");
     }
 }

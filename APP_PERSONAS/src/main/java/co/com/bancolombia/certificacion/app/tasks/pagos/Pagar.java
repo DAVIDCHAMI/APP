@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.tasks.tarjetacredito;
+package co.com.bancolombia.certificacion.app.tasks.pagos;
 
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;

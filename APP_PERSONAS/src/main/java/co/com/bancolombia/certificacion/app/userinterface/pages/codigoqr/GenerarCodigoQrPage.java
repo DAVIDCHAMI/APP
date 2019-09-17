@@ -20,7 +20,6 @@ public class GenerarCodigoQrPage {
     public static final Target TXT_NUMERO_PRODUCTO = Target.the("Número de producto").located(theElementBy(TXT_NUMERO_PRODUCTO_LOCATOR));
     public static final Target IMG_FOCO = Target.the("Foco").locatedBy(dynamicElement(IMG_FOCO_LOCATOR));
     public static final Target BTN_TIPO_PRODUCTO = Target.the("Botón tipo de producto").locatedBy(dynamicElement(BTN_TIPO_PRODUCTO_LOCATOR));
-    public static final Target IMG_FOCO = Target.the("Foco").locatedBy(dynamicElement(IMG_FOCO_LOCATOR));
 
     private GenerarCodigoQrPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

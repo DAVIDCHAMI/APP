@@ -1,9 +1,9 @@
-package co.com.bancolombia.certificacion.app.userinterface.pages.tarjetacredito;
+package co.com.bancolombia.certificacion.app.userinterface.pages.pagos;
 
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.BTN_PRODUCTO_ORIGEN_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.tarjetacredito.TarjetaCreditoLocator.*;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.pagos.TarjetaCreditoLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 
