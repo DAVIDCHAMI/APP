@@ -11,6 +11,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OPCION_INVERSIONES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -29,7 +30,7 @@ public class ConsultarProductos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
-                Check.whether(!CUENTAS.equals(opcionCategoria)).
+                Check.whether(!CUENTAS.equals(opcionCategoria)||!OPCION_INVERSIONES.equals(opcionCategoria) ).
                         andIfSo(
                                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO)
                         ).otherwise(
