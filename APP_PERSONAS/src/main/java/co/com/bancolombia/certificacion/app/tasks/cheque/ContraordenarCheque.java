@@ -15,6 +15,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.cheque.ChequePage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_CHEQUE;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_CUENTA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ContraordenarCheque implements Task {
@@ -33,6 +35,8 @@ public class ContraordenarCheque implements Task {
                 Click.on(LNK_SIGUIENTE),
                 Click.on(BTN_CONTRAORDENAR)
         );
+         actor.remember(NUMERO_CUENTA,cheque.getProducto().getNumero());
+         actor.remember(NUMERO_CHEQUE,cheque.getNumeroCheque());
     }
 
     public static ContraordenarCheque conInfo(ChequeBuilder chequeBuilder){
