@@ -20,6 +20,10 @@ public class GeneralPage {
     public static final Target LNK_INSCRIBIR = Target.the("Link inscribir").located(theElementBy(LNK_INSCRIBIR_LOCATOR));
     public static final Target BTN_CANCELAR_TRANSACCION = Target.the("Boton Cancelar Transaccion").located(theElementBy(BTN_CANCELAR_TRANSACCION_LOCATOR));
     public static final Target BTN_SI_CANCELAR_REGISTRO = Target.the("Boton Si Cancelar Transaccion").located(theElementBy(BTN_SI_CANCELAR_REGISTRO_LOCATOR));
+    public static final Target BTN_BLOQUEAR = Target.the("Botón bloquear").located(theElementBy(BTN_BLOQUEAR_LOCATOR));
+    public static final Target LNK_BLOQUEAR = Target.the("Link bloquear").located(theElementBy(LNK_BLOQUEAR_LOCATOR));
+    public static final Target BTN_TARJETA_BLOQUEAR = Target.the("Tarjeta a bloquear").locatedBy(dynamicElement(BTN_TARJETA_BLOQUEAR_LOCATOR));
+    public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueo exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

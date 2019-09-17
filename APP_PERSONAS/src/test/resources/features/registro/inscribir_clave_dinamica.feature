@@ -19,4 +19,4 @@ Característica: Autenticación app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo           | tipoCorreo | numeroCelular |
    ##@externaldata@./src/test/resources/datadriven/clavedinamica/InscribirClaveDinamica.xlsx@Datos@1
-   |1   |67652517   |1   |AutoTest1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Test2   |scampo@todo1.net   |Laboral   |3145678956|
+   |1   |67652517   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Test2   |scampo@todo1.net   |Laboral   |3145678956|

@@ -9,14 +9,24 @@ public class Inscripcion {
     private String nombreBanco;
     private Producto producto;
     private Usuario usuario;
+    private String tipoFondo;
 
     public Inscripcion(InscripcionBuilder inscripcionBuilder) {
         this.nombreBanco = inscripcionBuilder.getNombreBanco();
         this.producto = inscripcionBuilder.getProducto();
         this.usuario = inscripcionBuilder.getUsuario();
+        this.tipoFondo=inscripcionBuilder.getTipoFondo();
     }
 
     public Inscripcion() {
+    }
+
+    public String getTipoFondo() {
+        return tipoFondo;
+    }
+
+    public void setTipoFondo(String tipoFondo) {
+        this.tipoFondo = tipoFondo;
     }
 
     public String getNombreBanco() {
