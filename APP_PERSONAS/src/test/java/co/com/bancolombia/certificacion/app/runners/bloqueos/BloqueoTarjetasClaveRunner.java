@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.clavedinamica;
+package co.com.bancolombia.certificacion.app.runners.bloqueos;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,18 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/clavedinamica/inscribir_clave_dinamica.feature"},
+        features = {"src/test/resources/features/bloqueos/bloqueo_tarjetas_clave.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class RegistrarClaveDinamicaRunner {
-
-    private RegistrarClaveDinamicaRunner() {
+public class BloqueoTarjetasClaveRunner {
+    private BloqueoTarjetasClaveRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/inscribir_clave_dinamica.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/bloqueos/bloqueo_tarjetas_clave.feature");
     }
 }

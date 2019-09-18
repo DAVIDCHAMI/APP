@@ -5,6 +5,7 @@ Característica: Registro en la APP personas bancolombia OSP
   Quiero realizar el registro de un usuario
   Para realizar la autenticacion en la app
 
+  @Manual:Passed
   Esquema del escenario: Registrar un usuario y su nickname es el numero de identificacion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -17,6 +18,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
    |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
+  @Manual:Passed
   Esquema del escenario: Registrar usuario con documento de identidad desde mis Productos
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -29,6 +31,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
    |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
+  @Manual:Passed
   Esquema del escenario:Registrar usuario con documento de identidad desde otra opcion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -41,6 +44,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@2
    |2   |44832982   |1   |44832982   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro41   |jalzate@todo1.net   |EPREPAGO|
 
+  @Manual:Passed
   Esquema del escenario: Registrar un usuario que ya este registrado
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -52,6 +56,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@3
    |3   |95400152   |1   |95400152   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   |   |CONSULTAR_PRODUCTO|
 
+  @Manual:Passed
   Esquema del escenario: Registrar un usuario con clave bloqueada
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
