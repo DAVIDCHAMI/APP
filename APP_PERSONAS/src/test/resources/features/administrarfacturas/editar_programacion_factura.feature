@@ -1,11 +1,10 @@
 #language: es
 
-Característica: Autenticación app Bancolombia
+Característica: Editar programcion de facturas
   Como usuario de Bancolombia
-  Quiero ingresar usuario y contraseña
-  Para modificar programación
+  Quiero modificar una factura
+  Para tener un control de pagos posteriores
 
-  @Pending
   Esquema del escenario: Modificar facturas programadas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

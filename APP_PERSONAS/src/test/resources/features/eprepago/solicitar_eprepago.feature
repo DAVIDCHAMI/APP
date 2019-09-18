@@ -12,7 +12,6 @@ Característica: Solicitud eprepago en la app OSP Bancolombia
     Cuando el actor quiere <opcionAutenticacion>
     Y quiero solicitar una tarjeta e-prepago
     Entonces Debo ver el mensaje de solicitud exitosa
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/eprepago.xlsx@Datos@1
@@ -24,7 +23,6 @@ Característica: Solicitud eprepago en la app OSP Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere <opcionAutenticacion>
     Entonces Debo ver el mensaje respectivo para el usuario
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/eprepago.xlsx@Datos@2

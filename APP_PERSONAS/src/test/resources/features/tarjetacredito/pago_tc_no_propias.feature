@@ -1,8 +1,11 @@
 #language: es
 
-Característica: Pago de tarjetas de crédito no propias
+Característica: Pago de tarjetas de credito no propias
+  Yo como usuario de Bancolombia
+  Quiero realizar el pago de una tarjeta de credito no propia
+  Para saldar las deudas externas
 
-  Esquema del escenario: Pago de tarjetas de crédito no propias
+  Esquema del escenario: Pago de tarjetas de credito no propias
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
