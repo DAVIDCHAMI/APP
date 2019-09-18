@@ -1,8 +1,11 @@
 #language: es
 
-Característica: Generación de código QR
+Característica: Generacion de codigo QR con valor
+  Yo como usuario de Bancolombia
+  Quiero generar un codigo QR con valor
+  Para recibir transferencias a mi cuenta
 
-  Esquema del escenario: Generación de codigo QR con valor
+  Esquema del escenario: Generacion de codigo QR con valor exitoso
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
@@ -17,7 +20,7 @@ Característica: Generación de código QR
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
    |2   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-02   |150000   |qr automatizado|
 
-  Esquema del escenario: Generación de codigo QR sin inicio de sesión con valor
+  Esquema del escenario: Generacion de codigo QR sin inicio de sesion con valor
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
@@ -30,8 +33,8 @@ Característica: Generación de código QR
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
    |3   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-01   |134000   |qr automatizado|
 
-  @Manual
-  Esquema del escenario: Generación de codigo QR con única cuenta deposito
+  @Manual:Passed
+  Esquema del escenario: Generacion de codigo QR con unica cuenta deposito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |

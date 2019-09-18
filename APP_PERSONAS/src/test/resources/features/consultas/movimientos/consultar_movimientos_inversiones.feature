@@ -13,7 +13,7 @@ Característica: Consulta de productos de inversiones de un cliente en app Banco
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Y consulto en Inversiones los movimientos con tipo <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver el mensaje El fondo no tiene movimientos
-    #Y cierra sesion en la app
+    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Inversiones@1

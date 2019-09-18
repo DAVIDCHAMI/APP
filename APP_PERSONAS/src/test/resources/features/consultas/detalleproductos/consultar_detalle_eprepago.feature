@@ -13,8 +13,8 @@ Característica: Consulta de detalle de E-prepago
     Cuando consulto en e-Prepago el detalle de mi Cuenta <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi tarjeta eprepago
     Y cierra sesion en la app
-    Y Verifico los resultados en los archivos de iseries
-      | LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
+    #Y Verifico los resultados en los archivos de iseries
+     # | LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@Eprepago@1
