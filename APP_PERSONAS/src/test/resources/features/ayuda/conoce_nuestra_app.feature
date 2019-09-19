@@ -2,7 +2,6 @@
 
 Característica: Sección de ayuda
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Conoce nuestra app
     Dado que el Actor carga los datos para la prueba
@@ -16,7 +15,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Failed
   Esquema del escenario: Visitanos
     Dado que el Actor carga los datos para la prueba
@@ -29,7 +27,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Chatea con nosotros
     Dado que el Actor carga los datos para la prueba
@@ -42,7 +39,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Llamanos
     Dado que el Actor carga los datos para la prueba
@@ -55,7 +51,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Te llamamos
     Dado que el Actor carga los datos para la prueba
@@ -68,7 +63,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Tips de seguridad
     Dado que el Actor carga los datos para la prueba
@@ -81,7 +75,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Actualidad economica
     Dado que el Actor carga los datos para la prueba
@@ -94,7 +87,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Defensor financiero del consumidor
     Dado que el Actor carga los datos para la prueba
@@ -107,7 +99,6 @@ Característica: Sección de ayuda
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Informacion de interes
     Dado que el Actor carga los datos para la prueba

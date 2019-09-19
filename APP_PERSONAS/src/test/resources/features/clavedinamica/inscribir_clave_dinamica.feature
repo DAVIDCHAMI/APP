@@ -5,7 +5,6 @@ Característica: Inscribir clave dinamica
   Quiero inscribir mi clave dinamica
   Para poder realizar transacciones
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Inscripcion clave dinamica exitoso
     Dado que el Actor se autentica en la app
