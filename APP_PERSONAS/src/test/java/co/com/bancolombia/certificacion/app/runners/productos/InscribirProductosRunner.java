@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.bloqueo;
+package co.com.bancolombia.certificacion.app.runners.productos;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,17 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/bloqueos/bloqueo.feature"},
+        features = {"src/test/resources/features/productos/inscribir_productos.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
-        snippets = SnippetType.CAMELCASE
-)
-public class BloqueoRunner {
-    private BloqueoRunner() {
+        snippets = SnippetType.CAMELCASE)
+public class InscribirProductosRunner {
+
+    public InscribirProductosRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/bloqueos/bloqueo.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/productos/inscribir_productos.feature");
     }
 }

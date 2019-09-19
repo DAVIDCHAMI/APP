@@ -1,11 +1,13 @@
 #language: es
 
-Característica: Autenticación app Bancolombia
-  Como usuario de Bancolombia
-  Quiero ingresar usuario y contraseña
-  Para autenticarme en la aplicación
+Característica: Inscribir clave dinamica
+  Yo como usuario Bancolombia
+  Quiero inscribir mi clave dinamica
+  Para poder realizar transacciones
 
-  Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
+  @Manual
+  @Manual:Passed
+  Esquema del escenario: Inscripcion clave dinamica exitoso
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
@@ -15,7 +17,6 @@ Característica: Autenticación app Bancolombia
       | <segundaClave> | <nombrePersonalizado> | <correo> | <tipoCorreo> | <numeroCelular> |
     Entonces Yo deberia ver mis datos registrados en clave dinamica
     Y cierra sesion en la app
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo           | tipoCorreo | numeroCelular |
    ##@externaldata@./src/test/resources/datadriven/clavedinamica/InscribirClaveDinamica.xlsx@Datos@1
