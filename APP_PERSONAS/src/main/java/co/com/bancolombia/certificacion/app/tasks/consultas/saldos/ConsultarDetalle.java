@@ -13,4 +13,8 @@ public class ConsultarDetalle {
     public static Performable deProductoTarjetas(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         return instrumented(ConsultarDetalleTarjetaCredito.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }
+
+    public static Performable deCreditosConsumo(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+        return instrumented(ConsultarDetalleCreditoConsumo.class, opcionCategoria, tipoCuenta, numeroCuenta);
+    }
 }
