@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.TarjetaCreditoPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TARJETA_CREDITO;
@@ -31,8 +31,8 @@ public class NoPropia implements Task {
         actor.attemptsTo(
                 Enter.theValue(tarjetaCredito.getNumero()).into(TXT_NUMERO_TARJETA),
                 Click.on(LNK_SIGUIENTE),
-                Scroll.to(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
-                Click.on(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
+                Scroll.to(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
+                Click.on(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
                         Check.whether(tarjetaCredito.getNumero().charAt(0) != NUMERO_VISA).andIfSo(
                                 Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda()))

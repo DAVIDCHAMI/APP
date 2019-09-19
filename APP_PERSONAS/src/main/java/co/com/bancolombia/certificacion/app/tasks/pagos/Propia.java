@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.TarjetaCreditoPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TARJETA_CREDITO;
@@ -32,8 +32,8 @@ public class Propia implements Task {
         actor.attemptsTo(
                 Scroll.to(BTN_TARJETA_CREDITO_PAGAR.of(tarjetaCredito.getTipo(), tarjetaCredito.getNumero())),
                 Click.on(BTN_TARJETA_CREDITO_PAGAR.of(tarjetaCredito.getTipo(), tarjetaCredito.getNumero())),
-                Scroll.to(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
-                Click.on(LBL_TIPO_PAGO_TARJETA.of(tarjetaCredito.getTipoPago())),
+                Scroll.to(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
+                Click.on(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
                         Check.whether(!tarjetaCredito.getTipo().toLowerCase().contains(VISA.toLowerCase())).andIfSo(
                                 Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda()))

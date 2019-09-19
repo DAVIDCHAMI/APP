@@ -8,6 +8,7 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.models.builders.PrestamoBuilder.prestamo;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder.tarjetaCredito;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -26,6 +27,13 @@ public class PagosStepDefinition {
     public void pagoTarjetaCreditoPropia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 Pagar.tarjetaCreditoPropia(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos), elProducto().conProductoDebitar(datos))
+        );
+    }
+
+    @Cuando("^quiere pagar el credito$")
+    public void pagoCreditos(List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(
+                Pagar.prestamos(prestamo().conPrestamo(datos).conTipoPago(datos).conValor(datos), elProducto().conProductoDebitar(datos))
         );
     }
 

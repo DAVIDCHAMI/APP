@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.pagos;
 
+import co.com.bancolombia.certificacion.app.models.builders.PrestamoBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;
 import net.serenitybdd.screenplay.Performable;
@@ -14,6 +15,10 @@ public class Pagar {
 
     public static Performable tarjetaCreditoPropia(TarjetaCreditoBuilder tarjetaCredito, ProductoBuilder productoDebitar) {
         return instrumented(Propia.class, tarjetaCredito.build(), productoDebitar.build());
+    }
+
+    public static Performable prestamos(PrestamoBuilder prestamo, ProductoBuilder productoDebitar){
+        return instrumented(Creditos.class, prestamo.build(), productoDebitar.build());
     }
 
     private Pagar() {
