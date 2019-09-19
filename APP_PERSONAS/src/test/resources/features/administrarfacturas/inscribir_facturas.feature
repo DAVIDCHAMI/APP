@@ -5,6 +5,7 @@ Característica: Inscripcion de facturas
   Quiero inscribir mis facturas
   Para tener control de mis finanzas
 
+  @Manual:Failed
   Esquema del escenario: Inscribir facturas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
