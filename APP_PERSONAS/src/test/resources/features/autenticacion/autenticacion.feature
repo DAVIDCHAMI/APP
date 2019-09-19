@@ -57,4 +57,4 @@ Característica: Autenticacion app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@6
-   |6   |95400152   |1   |zulay1cta   |1234   |4321   |Alterno   |607   |0370   |Clave bloqueada   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+   |6   |22493944   |1   |userrobot9   |1234   |4321   |Alterno   |607   |0370   |Clave bloqueada   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|

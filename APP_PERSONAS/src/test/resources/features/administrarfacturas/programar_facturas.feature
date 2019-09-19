@@ -16,4 +16,4 @@ Característica: Programar Facturas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio      | fechaFactura      | numeroCuenta  | tipoCuenta | periodicidad               | numeroIntento | fechaInicioFin | mesProgramacion | duracionProgramacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ProgramarFacturas.xlsx@Datos@1
-   |1   |1037655531   |1   |userrobot2   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |55.000,09   |FACTURANET01 - 65401   |Vence 05 Abr 2020   |406-132280-01   |Corriente   |En la fecha de vencimiento   |1   |7-9   |Septiembre   |Rango de fechas|
+   |1   |48346663   |1   |autotest11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |55.000,09   |FACTURANET01 - 65401   |Vence 05 Abr 2020   |406-166630-04   |Corriente   |En la fecha de vencimiento   |1   |7-9   |Septiembre   |Rango de fechas|

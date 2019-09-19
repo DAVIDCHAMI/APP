@@ -18,7 +18,7 @@ Característica: Generacion de codigo QR con valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
-   |2   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-02   |150000   |qr automatizado|
+   |2   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Ahorros   |406-139740-02   |150000   |qr automatizado|
 
   Esquema del escenario: Generacion de codigo QR sin inicio de sesion con valor
     Dado que el Actor carga los datos para la prueba

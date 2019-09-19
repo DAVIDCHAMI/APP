@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import io.appium.java_client.ios.IOSDriver;
@@ -13,8 +12,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_AUTENTICACION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
-
 
 public class ConCredenciales implements Task {
     private Usuario usuario;
@@ -26,12 +23,8 @@ public class ConCredenciales implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        IOSDriver mydriver = getProxiedDriver();
-
         actor.remember(MODELO_DATOS_AUTENTICACION, usuario);
         actor.attemptsTo(
-                //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
-                //Esperar.unTiempo(20000),
                 Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),

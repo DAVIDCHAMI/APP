@@ -31,4 +31,4 @@ Característica: Generacion de codigo QR sin valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave     | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@4
-   |4   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |sinValor   |Corriente   |406-139740-02   |   |qr automatizado|
+   |4   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |sinValor   |Ahorros   |406-139740-02   |   |qr automatizado|
