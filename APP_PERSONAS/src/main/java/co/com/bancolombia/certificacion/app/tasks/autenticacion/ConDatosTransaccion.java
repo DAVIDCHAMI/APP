@@ -12,7 +12,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PERMITIR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
