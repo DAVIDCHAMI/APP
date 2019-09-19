@@ -16,7 +16,8 @@ public class InscripcionProductoPage {
     public static final Target CHK_TIPO_CUENTA = Target.the("Selecciona el tipo de cuenta que desea inscribir").locatedBy(dynamicElement(CHK_TIPO_CUENTA_LOCATOR));
     public static final Target TXT_TIPO_DOCUMENTO = Target.the("Campo para ingresar tipo de documento").located(theElementBy(TXT_TIPO_DOCUMENTO_LOCATOR));
     public static final Target ITEM_TIPO_DOCUMENTO = Target.the("Selecciona item del tipo de documento en la lista").locatedBy(dynamicElement(ITEM_TIPO_DOCUMENTO_LOCATOR));
-    public static final Target BTN_CERRAR_TIPO_DOCUMENTO = Target.the("Boton cerrar de la lista tipo de documento").located(theElementBy(BTN_CERRAR_TIPO_DOCUMENTO_LOCATOR));
+    public static final Target ITEM_TIPO_FONDO = Target.the("Selecciona item del tipo de fondo").locatedBy(dynamicElement(ITEM_TIPO_FONDO_LOCATOR));
+    public static final Target LST_TIPO_FONDO = Target.the("Selecciona el campo para seleccionar el fondo").located(theElementBy(LST_TIPO_FONDO_LOCATOR));
     public static final Target TXT_NUMERO_DOCUMENTO = Target.the("Campo ingresa numero de documento").located(theElementBy(TXT_NUMERO_DOCUEMENTO_LOCATOR));
     public static final Target BTN_INSCRIBIR = Target.the("Clic en el boton inscribir").located(theElementBy(BTN_INSCRIBIR_LOCATOR));
     public static final Target IMG_CONFIRMACION = Target.the("Imagen confirmacion").located(theElementBy(IMG_CONFIRMACION_LOCATOR));

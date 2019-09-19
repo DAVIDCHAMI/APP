@@ -1,12 +1,11 @@
 #language: es
 
-Característica: Autenticación app Bancolombia
+Característica: Eliminar facturas
   Como usuario de Bancolombia
-  Quiero ingresar usuario y contraseña
-  Para Eliminar una factura
+  Quiero eliminar una factura
+  Para tener solo facturas inscritas
 
-  @Pending
-  Esquema del escenario: Eliminar facturas inscrita
+  Esquema del escenario: Eliminar facturas inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |

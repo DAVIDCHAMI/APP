@@ -21,15 +21,15 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class TransferenciaStepDefinition {
 
-    @Y("diligencios los datos de la transferencia con informacion$")
-    public void diligenciaDatosDeTransferencia(List<Map<String, String>> datos) {
+   @Y("diligencios los datos de la transferencia desde (.*) con informacion$")
+    public void diligenciaDatosDeTransferenciaInversiones( String opcion,List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 RealizarTransferencia.conInfo(
                 con().
                         conTipoTransferencia(datos)
                         .conNumeroCuentaOrigen(datos).conTipoCuentaOrigen(datos)
                         .conNumeroCuentaDestino(datos).conTipoCuentaDestino(datos)
-                        .conMonto(datos)));
+                        .conMonto(datos),opcion));
     }
 
     @Entonces("deberia ver la confirmacion exitosa de la transferencia$")

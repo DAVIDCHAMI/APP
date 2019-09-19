@@ -14,8 +14,8 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesion en la app
-    Y Verifico los resultados en los archivos de iseries
-    | Logcanal-COMFFLGWWW |Consolidados Depositos-SCIFFSALDO_CONSOLIDADO|
+    #Y Verifico los resultados en los archivos de iseries
+    #| Logcanal-COMFFLGWWW |Consolidados Depositos-SCIFFSALDO_CONSOLIDADO|
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                         | numeroCuenta                              |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Depositos@1

@@ -27,6 +27,8 @@ public class Constantes {
     public static final int NUMERO_PANTALLAS_ONBOARDING = 5;
     public static final String INSCRITAS = "INSCRITAS";
     public static final String RANGO_FECHAS = "RANGO DE FECHAS";
+    public static final String FONDO_INVERSION = "Fondo de inversión";
+    public static final String OPCION_INVERSIONES = "Inversiones";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
