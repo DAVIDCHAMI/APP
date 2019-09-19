@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.pagos;
 
-import co.com.bancolombia.certificacion.app.models.productos.Prestamo;
+import co.com.bancolombia.certificacion.app.models.productos.Credito;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,11 +18,11 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constan
 
 public class Creditos implements Task {
     private static final Logger LOGGER = Logger.getAnonymousLogger();
-    private Prestamo prestamo;
+    private Credito credito;
     private Producto productoDebitar;
 
-    public Creditos(Prestamo prestamo, Producto productoDebitar) {
-        this.prestamo = prestamo;
+    public Creditos(Credito credito, Producto productoDebitar) {
+        this.credito = credito;
         this.productoDebitar = productoDebitar;
     }
 
@@ -31,17 +31,17 @@ public class Creditos implements Task {
         try {
             actor.attemptsTo(
                     Check.whether(LBL_CREDITOS.resolveFor(actor).isVisible()).andIfSo(
-                            Click.on(BTN_CREDITO.of(prestamo.getTipo(), prestamo.getNumero()))
+                            Click.on(BTN_CREDITO.of(credito.getTipo(), credito.getNumero()))
                     )
             );
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "El usuario únicamente posee un único crédito", e);
         }
         actor.attemptsTo(
-                Scroll.to(LBL_TIPO_PAGO.of(prestamo.getTipoPago())),
-                Click.on(LBL_TIPO_PAGO.of(prestamo.getTipoPago())),
-                Check.whether(OTRO_VALOR.equals(prestamo.getTipoPago())).andIfSo(
-                        Enter.theValue(prestamo.getValorPago()).into(TXT_VALOR_PAGAR),
+                Scroll.to(LBL_TIPO_PAGO.of(credito.getTipoPago())),
+                Click.on(LBL_TIPO_PAGO.of(credito.getTipoPago())),
+                Check.whether(OTRO_VALOR.equals(credito.getTipoPago())).andIfSo(
+                        Enter.theValue(credito.getValorPago()).into(TXT_VALOR_PAGAR),
                         Click.on(LNK_SIGUIENTE)
                 ),
                 Scroll.to(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
