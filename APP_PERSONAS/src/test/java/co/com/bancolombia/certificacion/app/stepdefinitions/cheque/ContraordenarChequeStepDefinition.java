@@ -23,12 +23,14 @@ public class ContraordenarChequeStepDefinition {
                         .contipoCuenta(datos)
                         .conTipoCheque(datos)
                         .conNumeroCheque(datos)
+                        .conRangoDesde(datos)
+                        .conRangoHasta(datos)
                 )
         );
     }
 
     @Entonces("El deberia ver contraordenación de su cheque exitoso")
     public void deberiaVerContraodenarCheque() {
-        theActorInTheSpotlight().should(seeThat(VerificarContraorden.deCheque()).orComplainWith(NoRegistraContraordenChequeException.class,NO_INCRIBE_CONTRAORDEN));
+        theActorInTheSpotlight().should(seeThat(VerificarContraorden.deCheque()).orComplainWith(NoRegistraContraordenChequeException.class, NO_INCRIBE_CONTRAORDEN));
     }
 }

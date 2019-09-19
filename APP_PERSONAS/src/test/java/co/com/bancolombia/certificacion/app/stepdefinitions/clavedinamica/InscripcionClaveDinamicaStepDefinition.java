@@ -1,8 +1,8 @@
-package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
+package co.com.bancolombia.certificacion.app.stepdefinitions.clavedinamica;
 
 import co.com.bancolombia.certificacion.app.exceptions.clavedinamica.ClaveNoInscritaCorrectamenteException;
-import co.com.bancolombia.certificacion.app.questions.registro.VerificarInscripcionClaveDinamica;
-import co.com.bancolombia.certificacion.app.tasks.registro.InscribirClaveDinamica;
+import co.com.bancolombia.certificacion.app.questions.clavedinamica.VerificarInscripcionClaveDinamica;
+import co.com.bancolombia.certificacion.app.tasks.clavedinamica.GestionarClaveDinamica;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
@@ -18,7 +18,7 @@ public class InscripcionClaveDinamicaStepDefinition {
 
     @Y("gestiono la inscripcion de clave dinamica$")
     public void gestionaInscripcionClaveDinamica(List<Map<String,String>>datos){
-        theActorInTheSpotlight().attemptsTo(InscribirClaveDinamica.conDatos(usuario()
+        theActorInTheSpotlight().attemptsTo(GestionarClaveDinamica.conDatosInscripcion(usuario()
                 .conNombrePersonalizado(datos)
                 .conCorreo(datos)
                 .conTipoCorreo(datos)

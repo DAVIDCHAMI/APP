@@ -1,18 +1,9 @@
 package co.com.bancolombia.certificacion.app.interactions.comunes;
 
-import com.gargoylesoftware.htmlunit.javascript.host.event.TouchEvent;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyMetastate;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSTouchAction;
-import io.appium.java_client.ios.touch.IOSPressOptions;
-import io.appium.java_client.remote.HideKeyboardStrategy;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import org.apache.xalan.xsltc.compiler.Key;
-import org.openqa.selenium.Keys;
-import sun.awt.SunHints;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
@@ -27,7 +18,6 @@ public class Escribir implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         AndroidDriver driver = getProxiedDriver();
-        IOSDriver driverIos = getProxiedDriver();
 
         for (int i = 0; i < cadena.length(); i++) {
             char letra = cadena.charAt(i);
@@ -44,7 +34,6 @@ public class Escribir implements Interaction {
             for (int j = 0; j <= 38; j++) {
                 String letraA = String.valueOf(letras[j]);
                 if (letraTeclado.equalsIgnoreCase(letraA) && mayus) {
-                  com.sun.glass.events.TouchEvent.TOUCH_PRESSED
                     driver.pressKeyCode(codigoLetra[j],
                            AndroidKeyMetastate.META_CAPS_LOCK_ON);
                 } else if (letraTeclado.equalsIgnoreCase(letraA) && !mayus) {
