@@ -9,11 +9,15 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OTRO_VALOR;
 
 public class Creditos implements Task {
+    private static final Logger LOGGER = Logger.getAnonymousLogger();
     private Prestamo prestamo;
     private Producto productoDebitar;
 
@@ -24,10 +28,16 @@ public class Creditos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        try {
+            actor.attemptsTo(
+                    Check.whether(LBL_CREDITOS.resolveFor(actor).isVisible()).andIfSo(
+                            Click.on(BTN_CREDITO.of(prestamo.getTipo(), prestamo.getNumero()))
+                    )
+            );
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "El usuario únicamente posee un único crédito", e);
+        }
         actor.attemptsTo(
-                Check.whether(LBL_CREDITOS.resolveFor(actor).isVisible()).andIfSo(
-                        Click.on(BTN_CREDITO.of(prestamo.getTipo(), prestamo.getNumero()))
-                ),
                 Scroll.to(LBL_TIPO_PAGO.of(prestamo.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO.of(prestamo.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(prestamo.getTipoPago())).andIfSo(
