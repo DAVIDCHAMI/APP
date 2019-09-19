@@ -13,7 +13,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class BloqueoStepDefinition {
 
-    @Cuando("^quiere bloquear la tarjeta (.*) con número (.*)$")
+    @Cuando("^quiere bloquear la tarjeta (.*) con numero (.*)$")
     public void bloquearTarjeta(String tipoTarjeta, String numeroTarjeta) {
         theActorInTheSpotlight().attemptsTo(
                 Bloquear.tarjeta(elProducto().conTipoCuenta(tipoTarjeta).conNumero(numeroTarjeta))
@@ -34,7 +34,7 @@ public class BloqueoStepDefinition {
         );
     }
 
-    @Cuando("^quiere bloquear la clave dinámica$")
+    @Cuando("^quiere bloquear la clave dinamica$")
     public void bloquearClaveDinamica() {
         theActorInTheSpotlight().attemptsTo(
                 Bloquear.claveDinamica()
