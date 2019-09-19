@@ -32,4 +32,3 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@TarjetasCredito@2
-   |   |   |   |   |   |   |   |   |   |   |   |   |   ||
