@@ -14,6 +14,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.apache.poi.util.SystemOutLogger;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.BTN_SOLICITAR_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.CHK_TYC;
@@ -22,6 +23,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIPO_CORREO_LABORAL;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isSelected;
 
 public class SolicitarEprepago implements Task {
     public SolicitarEprepago(){}
@@ -39,10 +41,10 @@ public class SolicitarEprepago implements Task {
                 Click.on(BTN_CONTINUAR_SEGUNDA_CLAVE),
                 Enter.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_NOMBRE_PERSONALIZADO),
                 Click.on(LNK_SIGUIENTE),
-                Enter.theValue(usuario.getUsuario().getCorreo()).into(TXT_CORREO),
-                Check.whether(TIPO_CORREO_LABORAL.equalsIgnoreCase(usuario.getUsuario().getTipoCorreo())).
+                Enter.theValue(usuario.getUsuario().getCorreo()).into(TXT_CORREO)
+                /*Check.whether(TIPO_CORREO_LABORAL.equalsIgnoreCase(usuario.getUsuario().getTipoCorreo())).
                         otherwise(WaitUntil.the(CHK_TIPO_CORREO.of(usuario.getUsuario().getTipoCorreo()), isEnabled()),
-                                Click.on(CHK_TIPO_CORREO.of(usuario.getUsuario().getTipoCorreo())))
+                                Click.on(CHK_TIPO_CORREO.of(usuario.getUsuario().getTipoCorreo())))*/
 
         );
     };
