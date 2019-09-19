@@ -5,6 +5,7 @@ Característica: Bloqueo de primera clave
   Quiero bloquear mi primera clave
   Por motivos de seguridad
 
+  @Manual
   @Manual:Passed
   Esquema del escenario: Bloqueo de clave
     Dado que el Actor se autentica en la app

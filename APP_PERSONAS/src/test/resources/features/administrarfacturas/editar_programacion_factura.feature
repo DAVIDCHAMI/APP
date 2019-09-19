@@ -1,6 +1,6 @@
 #language: es
 
-Característica: Editar programcion de facturas
+Característica: Editar programacion de facturas
   Como usuario de Bancolombia
   Quiero modificar una factura
   Para tener un control de pagos posteriores
@@ -15,6 +15,6 @@ Característica: Editar programcion de facturas
       | <valorFactura> | <empresaServicio> | <fechaFactura> | <numeroCuenta> | <tipoCuenta> | <periodicidad> | <frecuenciaPago> | <fechaInicioFin> |
     Entonces deberia ver el mensaje de modificacion exitosa
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio               | fechaFactura | numeroCuenta  | tipoCuenta         | periodicidad               | frecuenciaPago | fechaInicioFin | opcionModificacion |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura | numeroCuenta  | tipoCuenta         | periodicidad               | frecuenciaPago | fechaInicioFin | opcionModificacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EditarProgramacion.xlsx@Datos@1
    |1   |48646663   |1   |autotest11   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10.000,00   |FACTURANET01   |15 Feb 2019   |406-166630-04   |Cuentas corrientes   |En la fecha de vencimiento   |Semanal   |9-12   |Producto origen|
