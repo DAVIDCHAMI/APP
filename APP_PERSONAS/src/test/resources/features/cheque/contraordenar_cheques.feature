@@ -17,4 +17,4 @@ Característica: Contraordenar cheques como usario Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@2
-   |2   |1010111   |Cédula de ciudadanía   |zcreditos10   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-158690-06   |Rango de cheques    |2   |3211   |3216|
+   |2   |1010111   |Cédula de ciudadanía   |zcreditos10   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-158690-06   |Rango de cheques    |2   |3202   |3239|
