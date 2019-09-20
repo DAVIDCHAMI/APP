@@ -16,15 +16,17 @@ public class InscripcionProductoLocator {
     public static final Locator ITEM_TIPO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//div[@id='AccountOptions']//div//span[text()='{0}']").withIos("");
     public static final Locator BTN_CERRAR_TIPO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//*[@id='Title']/label/div/span/../../../../../../../div[3]//span[text()='CERRAR']").withIos("");
     public static final Locator BTN_INSCRIBIR_LOCATOR = locator().withAndroid("xpath$//span[text()='INSCRIBIR']/..").withIos("");
-    public static final Locator IMG_CONFIRMACION_LOCATOR = locator().withAndroid("xpath$//android.widget.Image[@text='Bancolombia_Resources.confirmationicon']").withIos("");
-    public static final Locator LBL_TIPO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Tipo de producto']/../span[@text='{0}']").withIos("");
-    public static final Locator LBL_BANCO_LOCATOR = locator().withAndroid("xpath$//span[@text='Banco']/../span[@text='{0}']").withIos("");
-    public static final Locator LBL_TIPO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//span[@text='Tipo de documento']/../android.view.View[@text='{0}']").withIos("");
-    public static final Locator LBL_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[@text='Número de producto']/following-sibling::span[1]").withIos("");
-    public static final Locator LBL_NUMERO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//span[@text='Número de documento']/../span[@text='{0}']").withIos("");
+    public static final Locator IMG_CONFIRMACION_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Inscripción pendiente de activación!']").withIos("");
+    public static final Locator LBL_TIPO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Tipo de producto']/../../span[text()='{0}']").withIos("");
+    public static final Locator LBL_BANCO_LOCATOR = locator().withAndroid("xpath$//span[text()='Banco']/../../span[text()='{0}']").withIos("");
+    public static final Locator LBL_TIPO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Tipo de documento']/../../span[text()='{0}']").withIos("");
+    public static final Locator LBL_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Número de producto']/../../span[1]").withIos("");
+    public static final Locator LBL_NUMERO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Número de documento']/../../span[text()='{0}']").withIos("");
     public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//*[@id='btn']").withIos("");
     public static final Locator LST_TIPO_FONDO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_BankName4']").withIos("");
     public static final Locator ITEM_TIPO_FONDO_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'ContentOnClick')]//span[text()='{0}']").withIos("");
+    public static final Locator LBL_CUENATA_PENDIENTE_CONFIRMACION_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("");
+    public static final Locator LINK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']").withIos("");
 
     private InscripcionProductoLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

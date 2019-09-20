@@ -26,6 +26,8 @@ public class InscripcionProductoPage {
     public static final Target LBL_NUMERO_PRODUCTO = Target.the("Label tipo de numero en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_NUMERO_PRODUCTO_LOCATOR));
     public static final Target LBL_TIPO_DOCUMENTO = Target.the("Label tipo de documento en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_TIPO_DOCUMENTO_LOCATOR));
     public static final Target LBL_NUMERO_DOCUMENTO = Target.the("Label numero de docuemento en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_NUMERO_DOCUMENTO_LOCATOR));
+    public static final Target LBL_CUENATA_PENDIENTE_CONFIRMACION = Target.the("Label cuenta pendiente de activacon").locatedBy(dynamicElement(LBL_CUENATA_PENDIENTE_CONFIRMACION_LOCATOR));
+    public static final Target LINK_CERRAR = Target.the("Link cerrar").locatedBy(dynamicElement(LINK_CERRAR_LOCATOR));
 
     private InscripcionProductoPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
