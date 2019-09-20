@@ -2,7 +2,6 @@ package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
-import io.appium.java_client.ios.IOSDriver;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

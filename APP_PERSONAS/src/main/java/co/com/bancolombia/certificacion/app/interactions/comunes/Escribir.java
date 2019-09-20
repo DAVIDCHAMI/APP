@@ -23,10 +23,9 @@ public class Escribir implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        IOSDriver myDriver = getProxiedDriver();
-        String libreria= ElementFinder.getPlatformCapability();
+        String platform= ElementFinder.getPlatformCapability();
 
-        if(("Android").equalsIgnoreCase(libreria)){
+        if(("Android").equalsIgnoreCase(platform)){
             AndroidDriver driver = getProxiedDriver();
             for (int i = 0; i < cadena.length(); i++) {
                 char letra = cadena.charAt(i);
@@ -52,6 +51,7 @@ public class Escribir implements Interaction {
             }
         }
         else{
+            IOSDriver myDriver = getProxiedDriver();
             (new TouchAction(myDriver)).tap(PointOption.point(104,296)).perform();
             actor.attemptsTo(
                     Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
