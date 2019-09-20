@@ -53,7 +53,6 @@ public class SolicitarEprepago implements Task {
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_INSCRIBIR_CLAVE)
         );
-
     };
 
     public static SolicitarEprepago enLaAppBancolombia(UsuarioBuilder usuarioBuilder){
