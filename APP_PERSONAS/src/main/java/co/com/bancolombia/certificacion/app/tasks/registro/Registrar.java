@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.registro;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import net.serenitybdd.screenplay.Actor;
@@ -27,6 +28,7 @@ public class Registrar implements Task {
                 Click.on(BTN_CANCELAR_TRANSACCION),
                 WaitUntil.the(BTN_SI_CANCELAR_REGISTRO, isVisible()),
                 Click.on(BTN_SI_CANCELAR_REGISTRO),
+                Esperar.unTiempo(3000),
                 Click.on(OPT_MENU_PRINCIPAL.of(INICIO)),
                 IniciarSesion.con(configuracionTransaccion.getUsuario().getNombreUsuario(), configuracionTransaccion.getUsuario().getClave())
         );
