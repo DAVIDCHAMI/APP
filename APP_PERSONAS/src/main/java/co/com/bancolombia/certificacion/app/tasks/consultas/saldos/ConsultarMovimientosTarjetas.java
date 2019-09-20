@@ -7,13 +7,10 @@ import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
@@ -22,7 +19,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosTarjetas implements Task {
-    private static final Logger LOGGER = Logger.getAnonymousLogger();
     private String tipoCuenta;
     private String numeroCuenta;
 

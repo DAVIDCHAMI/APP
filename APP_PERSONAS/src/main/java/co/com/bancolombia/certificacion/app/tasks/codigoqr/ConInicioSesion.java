@@ -11,18 +11,16 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import java.util.logging.Logger;
-
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ConInicioSesion extends GenerarQR {
     private Transferencia datos;
-    private static final Logger LOGGER = Logger.getAnonymousLogger();
 
     public ConInicioSesion(TransferenciaBuilder datos) {
         this.datos = datos.build();
