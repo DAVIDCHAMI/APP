@@ -38,7 +38,7 @@ public class InscribirProductos implements Task {
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_INSCRIBIR),
-                Esperar.unTiempo(30000)
+                Esperar.unTiempo(10000)
                 );
         actor.remember(NUMERO_CUENTA, inscripcion.getProducto().getNumero());
         actor.remember(TIPO_CUENTA, inscripcion.getProducto().getTipo());
