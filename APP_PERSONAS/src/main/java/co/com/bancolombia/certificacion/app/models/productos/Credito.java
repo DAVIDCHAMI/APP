@@ -12,10 +12,13 @@ public class Credito extends Producto {
     private String otrosCargos;
     private String fechasDesembolso;
     private String valorDesembolso;
+    private String tipoPago;
+    private String valorPago;
 
     public Credito(){}
 
     public Credito(CreditoBuilder creditoBuilder){
+        super(creditoBuilder.getNumeroPrestamo(), creditoBuilder.getTipoPrestamo());
         this.deudaFechaCredito = creditoBuilder.getDeudaFechaCredito();
         this.capitalVigente = creditoBuilder.getCapitalVigente();
         this.fechaProximoPago = creditoBuilder.getFechaProximoPago();
@@ -25,6 +28,8 @@ public class Credito extends Producto {
         this.otrosCargos = creditoBuilder.getOtrosCargos();
         this.fechasDesembolso = creditoBuilder.getFechasDesembolso();
         this.valorDesembolso = creditoBuilder.getValorDesembolso();
+        this.tipoPago = creditoBuilder.getTipoPago();
+        this.valorPago = creditoBuilder.getValorPago();
     }
 
     public String getDeudaFechaCredito() {
@@ -61,5 +66,13 @@ public class Credito extends Producto {
 
     public String getValorDesembolso() {
         return valorDesembolso;
+    }
+
+    public String getTipoPago() {
+        return tipoPago;
+    }
+
+    public String getValorPago() {
+        return valorPago;
     }
 }

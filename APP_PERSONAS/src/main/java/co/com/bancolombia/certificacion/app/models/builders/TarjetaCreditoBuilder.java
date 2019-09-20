@@ -57,7 +57,8 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return this;
     }
 
-    public TarjetaCreditoBuilder conNumeroTarjeta(List<Map<String, String>> datos){
+    public TarjetaCreditoBuilder conTarjeta(List<Map<String, String>> datos){
+        this.tipoCuenta = datos.get(0).get("tipoTarjeta");
         this.numeroCuenta = datos.get(0).get("numeroTarjeta");
         return this;
     }

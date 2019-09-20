@@ -3,6 +3,9 @@ package co.com.bancolombia.certificacion.app.models.builders;
 import co.com.bancolombia.certificacion.app.models.productos.Credito;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
+import java.util.List;
+import java.util.Map;
+
 public class CreditoBuilder implements Builder<Credito>{
     private String deudaFechaCredito;
     private String capitalVigente;
@@ -13,6 +16,10 @@ public class CreditoBuilder implements Builder<Credito>{
     private String otrosCargos;
     private String fechasDesembolso;
     private String valorDesembolso;
+    private String tipoPago;
+    private String valorPago;
+    private String tipoPrestamo;
+    private String numeroPrestamo;
 
     private CreditoBuilder() {
         this.deudaFechaCredito = "";
@@ -24,6 +31,10 @@ public class CreditoBuilder implements Builder<Credito>{
         this.otrosCargos = "";
         this.fechasDesembolso = "";
         this.valorDesembolso = "";
+        this.tipoPago = "";
+        this.valorPago = "";
+        this.tipoPrestamo = "";
+        this.numeroPrestamo = "";
     }
 
     public static CreditoBuilder credito(){
@@ -75,6 +86,22 @@ public class CreditoBuilder implements Builder<Credito>{
         return this;
     }
 
+    public CreditoBuilder conTipoPago(List<Map<String, String>> datos){
+        this.tipoPago = datos.get(0).get("tipoPago");
+        return this;
+    }
+
+    public CreditoBuilder conValor(List<Map<String, String>> datos){
+        this.valorPago = datos.get(0).get("valorPago");
+        return this;
+    }
+
+    public CreditoBuilder conCredito(List<Map<String, String>> datos){
+        this.tipoPrestamo = datos.get(0).get("tipoPrestamo");
+        this.numeroPrestamo = datos.get(0).get("numeroPrestamo");
+        return this;
+    }
+
     public String getDeudaFechaCredito() {
         return deudaFechaCredito;
     }
@@ -109,6 +136,22 @@ public class CreditoBuilder implements Builder<Credito>{
 
     public String getValorDesembolso() {
         return valorDesembolso;
+    }
+
+    public String getTipoPago() {
+        return tipoPago;
+    }
+
+    public String getValorPago() {
+        return valorPago;
+    }
+
+    public String getTipoPrestamo() {
+        return tipoPrestamo;
+    }
+
+    public String getNumeroPrestamo() {
+        return numeroPrestamo;
     }
 
     @Override
