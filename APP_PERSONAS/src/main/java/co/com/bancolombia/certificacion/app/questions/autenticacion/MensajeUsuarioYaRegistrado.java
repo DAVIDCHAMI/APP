@@ -10,10 +10,8 @@ public class MensajeUsuarioYaRegistrado implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         return LBL_USER_YA_REGISTRADO.resolveFor(actor).waitUntilVisible().isVisible();
-
     }
     public static MensajeUsuarioYaRegistrado esVisible() {
         return new MensajeUsuarioYaRegistrado();
     }
-
 }

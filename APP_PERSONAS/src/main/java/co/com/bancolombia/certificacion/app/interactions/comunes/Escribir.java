@@ -43,7 +43,6 @@ public class Escribir implements Interaction {
                     if (letraTeclado.equalsIgnoreCase(letraA) && mayus) {
                         driver.pressKeyCode(codigoLetra[j],
                                 AndroidKeyMetastate.META_CAPS_LOCK_ON);
-
                     } else if (letraTeclado.equalsIgnoreCase(letraA) && !mayus) {
                         driver.pressKeyCode(codigoLetra[j]);
                     }
@@ -56,10 +55,8 @@ public class Escribir implements Interaction {
             actor.attemptsTo(
                     Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
             );
-
         }
     }
-
     public static Escribir enCampoTexto(String cadena) {
         return instrumented(Escribir.class, cadena);
     }
