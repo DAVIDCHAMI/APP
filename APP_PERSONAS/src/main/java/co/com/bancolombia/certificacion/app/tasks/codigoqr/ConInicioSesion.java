@@ -10,6 +10,8 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import java.util.logging.Logger;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
@@ -19,6 +21,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ConInicioSesion extends GenerarQR {
     private Transferencia datos;
+    private static final Logger LOGGER = Logger.getAnonymousLogger();
 
     public ConInicioSesion(TransferenciaBuilder datos) {
         this.datos = datos.build();
@@ -31,12 +34,16 @@ public class ConInicioSesion extends GenerarQR {
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE)
         );
-        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
-            actor.attemptsTo(
-                    WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
-                    Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
-                    Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
-            );
+        try{
+            if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
+                actor.attemptsTo(
+                        WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
+                        Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
+                        Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
+                );
+            }
+        }catch (Exception e){
+            LOGGER.info("Transaccion con unica cuenta");
         }
         actor.attemptsTo(
                 Check.whether("".equals(datos.getMonto())).andIfSo(

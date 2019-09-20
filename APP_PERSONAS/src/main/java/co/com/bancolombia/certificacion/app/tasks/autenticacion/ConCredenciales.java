@@ -21,7 +21,6 @@ public class ConCredenciales implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.remember(MODELO_DATOS_AUTENTICACION, usuario);
         actor.attemptsTo(
                 Type.theValue(usuario.getNombreUsuario()).into(TXT_USUARIO),
@@ -29,7 +28,7 @@ public class ConCredenciales implements Task {
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 Click.on(TXT_CLAVE_DIGITOS),
-               Escribir.enCampoTexto(usuario.getClave()),
+                Escribir.enCampoTexto(usuario.getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
         );

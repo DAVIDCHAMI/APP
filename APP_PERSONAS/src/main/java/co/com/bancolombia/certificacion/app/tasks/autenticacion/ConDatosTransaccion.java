@@ -26,10 +26,9 @@ public class ConDatosTransaccion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
         actor.attemptsTo(
-                Esperar.unTiempo(30000),
+                Esperar.unTiempo(3000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
@@ -37,6 +36,7 @@ public class ConDatosTransaccion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
+                Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR)
