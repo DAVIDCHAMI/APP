@@ -5,14 +5,23 @@ import co.com.bancolombia.certificacion.app.questions.eprepago.UsuarioConEprepag
 import co.com.bancolombia.certificacion.app.tasks.eprepago.SolicitarEprepago;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
+
+import java.util.List;
+import java.util.Map;
+
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class SolicitarEprepagoStepDefinition {
 
     @Cuando("^quiero solicitar una tarjeta e-prepago$")
-    public void quieroSolicitarUnaTarjetaEprepago(){
-        theActorInTheSpotlight().attemptsTo(SolicitarEprepago.enLaAppBancolombia());
+    public void quieroSolicitarUnaTarjetaEprepago(List<Map<String, String>> datos){
+        theActorInTheSpotlight().attemptsTo(
+                SolicitarEprepago.enLaAppBancolombia(usuario()
+                        .conCorreo(datos)
+                        .conTipoCorreo(datos)
+                        .conNumeroCelular(datos)));
     }
     @Entonces("^Debo ver el mensaje de solicitud exitosa$")
     public void deboVerElMensajeDeSolicitudExitosa() {

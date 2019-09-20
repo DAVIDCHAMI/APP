@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -12,9 +13,10 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ConInicioSesion extends GenerarQR {
@@ -31,7 +33,7 @@ public class ConInicioSesion extends GenerarQR {
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE)
         );
-        if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
+        if (Verificar.elementoVisible(actor, LBL_VERIFICACION.of(CUENTAS))) {
             actor.attemptsTo(
                     WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
                     Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
