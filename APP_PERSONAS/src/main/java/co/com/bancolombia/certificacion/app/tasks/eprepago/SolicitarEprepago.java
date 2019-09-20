@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
@@ -24,7 +23,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class SolicitarEprepago implements Task {
-
     private Usuario cliente;
 
     public SolicitarEprepago(Usuario cliente){this.cliente = cliente;}
@@ -34,7 +32,7 @@ public class SolicitarEprepago implements Task {
         ConfiguracionTransaccion usuario = actor.recall(MODELO_DATOS_TRANSACCION);
 
         actor.attemptsTo(
-                WaitUntil.the(CHK_TYC, WebElementStateMatchers.isEnabled()),
+                WaitUntil.the(CHK_TYC, isEnabled()),
                 Click.on(CHK_TYC),
                 Click.on(BTN_SOLICITAR_EPREPAGO),
                 Saltar.onBoarding(),
