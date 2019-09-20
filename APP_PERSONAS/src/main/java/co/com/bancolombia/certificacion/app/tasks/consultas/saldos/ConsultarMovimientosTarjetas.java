@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -40,17 +41,13 @@ public class ConsultarMovimientosTarjetas implements Task {
         );
         List<Movimiento> listaMovimiento = new ArrayList<>();
         int iterador = 0;
-        try {
-        while (Visibility.of(CONTENEDOR_MOVIMIENTOS_TARJETA.of(String.valueOf(iterador))).viewedBy(actor).asBoolean()) {
+        while (Verificar.elementoVisible(actor, CONTENEDOR_MOVIMIENTOS_TARJETA.of(String.valueOf(iterador)))) {
             listaMovimiento.add(movimiento().
                     conFecha(LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conValorMovimiento(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
             );
             iterador++;
-        }
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, "Movements Elements saved", e);
         }
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }

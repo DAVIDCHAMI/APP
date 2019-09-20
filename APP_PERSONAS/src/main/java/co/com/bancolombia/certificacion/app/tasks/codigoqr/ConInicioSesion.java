@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -34,16 +35,12 @@ public class ConInicioSesion extends GenerarQR {
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE)
         );
-        try{
-            if (LBL_VERIFICACION.of(CUENTAS).resolveFor(actor).isVisible()) {
-                actor.attemptsTo(
-                        WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
-                        Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
-                        Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
-                );
-            }
-        }catch (Exception e){
-            LOGGER.info("Transaccion con unica cuenta");
+        if (Verificar.elementoVisible(actor, LBL_VERIFICACION.of(CUENTAS))) {
+            actor.attemptsTo(
+                    WaitUntil.the(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()), isPresent()),
+                    Scroll.to(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero())),
+                    Click.on(BTN_PRODUCTO_ORIGEN.of(datos.getProductoOrigen().getTipo(), datos.getProductoOrigen().getNumero()))
+            );
         }
         actor.attemptsTo(
                 Check.whether("".equals(datos.getMonto())).andIfSo(

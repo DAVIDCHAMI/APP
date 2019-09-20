@@ -23,6 +23,7 @@ public class GeneralLocator {
     public static final Locator LNK_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Pagar']").withIos("xpath$b");
     public static final Locator LBL_BLOQUEO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Bloqueo exitoso!')  or contains(text(),'exitoso!') or contains(text(),'¡Bloqueo')]").withIos("xpath$q");
     public static final Locator BTN_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='PAGAR']/..");
+    public static final Locator LNK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

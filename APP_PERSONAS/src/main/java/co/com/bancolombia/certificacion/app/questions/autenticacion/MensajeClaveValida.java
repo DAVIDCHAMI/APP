@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.autenticacion;
 
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
@@ -13,10 +14,6 @@ public class MensajeClaveValida implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        try {
-            return !LBL_CLAVE_INVALIDA.resolveFor(actor).isVisible();
-        } catch (Exception e) {
-            return true;
-        }
+            return !Verificar.elementoVisible(actor, LBL_CLAVE_INVALIDA);
     }
 }

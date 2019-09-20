@@ -25,6 +25,7 @@ public class GeneralPage {
     public static final Target LNK_BLOQUEAR = Target.the("Link bloquear").located(theElementBy(LNK_BLOQUEAR_LOCATOR));
     public static final Target BTN_TARJETA_BLOQUEAR = Target.the("Tarjeta a bloquear").locatedBy(dynamicElement(BTN_TARJETA_BLOQUEAR_LOCATOR));
     public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueos exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
+    public static final Target LNK_CERRAR = Target.the("Label Cerrar").located(theElementBy(LNK_CERRAR_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
