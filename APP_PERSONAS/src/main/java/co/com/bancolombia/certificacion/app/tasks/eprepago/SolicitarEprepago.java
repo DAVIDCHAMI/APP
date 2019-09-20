@@ -25,9 +25,9 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 
 public class SolicitarEprepago implements Task {
 
-    private Usuario usuario1;
+    private Usuario cliente;
 
-    public SolicitarEprepago(Usuario usuario1){this.usuario1 = usuario1;}
+    public SolicitarEprepago(Usuario cliente){this.cliente = cliente;}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -44,12 +44,12 @@ public class SolicitarEprepago implements Task {
                 Click.on(BTN_CONTINUAR_SEGUNDA_CLAVE),
                 Enter.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_NOMBRE_PERSONALIZADO),
                 Click.on(LNK_SIGUIENTE),
-                Enter.theValue(usuario1.getCorreo()).into(TXT_CORREO),
-                Check.whether(TIPO_CORREO_LABORAL.equalsIgnoreCase(usuario1.getTipoCorreo())).
-                        otherwise(WaitUntil.the(CHK_TIPO_CORREO.of(usuario1.getTipoCorreo()), isEnabled()),
-                                Click.on(CHK_TIPO_CORREO.of(usuario1.getTipoCorreo()))),
+                Enter.theValue(cliente.getCorreo()).into(TXT_CORREO),
+                Check.whether(TIPO_CORREO_LABORAL.equalsIgnoreCase(cliente.getTipoCorreo())).
+                        otherwise(WaitUntil.the(CHK_TIPO_CORREO.of(cliente.getTipoCorreo()), isEnabled()),
+                                Click.on(CHK_TIPO_CORREO.of(cliente.getTipoCorreo()))),
                 Click.on(LNK_SIGUIENTE),
-                Enter.theValue(usuario1.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
+                Enter.theValue(cliente.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_INSCRIBIR_CLAVE)
         );
