@@ -8,8 +8,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class GeneralPage {
-    public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").located(theElementBy(BTN_SIGUIENTE_LOCATOR));
-    public static final Target LNK_PAGAR = Target.the("Boton pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
+    public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").locatedBy(dynamicElement(BTN_SIGUIENTE_LOCATOR));
+    public static final Target LNK_PAGAR = Target.the("Link boton pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
+    public static final Target BTN_PAGAR = Target.the("Boton pagar").located(theElementBy(BTN_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").locatedBy(dynamicElement(LBL_GUARDADO_EXITOSO_LOCATOR));
@@ -23,7 +24,7 @@ public class GeneralPage {
     public static final Target BTN_BLOQUEAR = Target.the("Botón bloquear").located(theElementBy(BTN_BLOQUEAR_LOCATOR));
     public static final Target LNK_BLOQUEAR = Target.the("Link bloquear").located(theElementBy(LNK_BLOQUEAR_LOCATOR));
     public static final Target BTN_TARJETA_BLOQUEAR = Target.the("Tarjeta a bloquear").locatedBy(dynamicElement(BTN_TARJETA_BLOQUEAR_LOCATOR));
-    public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueo exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
+    public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueos exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

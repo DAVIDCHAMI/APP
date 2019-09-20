@@ -44,7 +44,7 @@ Característica: Realizar una transferencia
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@1
    |1   |1010111   |Cédula de ciudadanía   |testing10   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |406-139740-01   |Corriente   |100000   |Productos no inscritos Bancolombia   |40670694007   |Corriente   ||
 
-    @manual
+  @Manual:Passed
   Esquema del escenario: Transferencia a cuentas inscritas Bancolombia
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -59,7 +59,7 @@ Característica: Realizar una transferencia
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@2
    |2   |1010111   |Cédula de ciudadanía   |testing10   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |406-739740-05   |Ahorros   |100000   |Productos propios e inscritos Bancolombia   |406-139740-01   |Corriente   ||
 
-      @manual
+  @Manual:Passed
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas de otros bancos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
@@ -27,9 +26,9 @@ public class ConDatosTransaccion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
         actor.attemptsTo(
-                //Check.whether(FabricaAutenticacion.elArchivoEnIseriesWWWFFUSRSV()).andIfSo(
                 Esperar.unTiempo(30000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
@@ -38,10 +37,10 @@ public class ConDatosTransaccion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR));
+                Click.on(BTN_CONTINUAR)
+        );
     }
 }
 
