@@ -5,7 +5,6 @@ Característica: Bloqueo de tarjetas
   Quiero bloquear una tarjeta
   Por motivos de seguridad
 
-  @Manual
   @Manual:Passed
   Esquema del escenario: Bloqueo de tarjetas
     Dado que el Actor se autentica en la app

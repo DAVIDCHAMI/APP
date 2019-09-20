@@ -16,6 +16,7 @@ public class Producto {
     private String nombreProducto;
     private Saldo saldo;
     private TarjetaCredito tarjetaCredito;
+    private Credito credito;
     private List<Movimiento> movimientos;
 
     public Producto(){
@@ -36,6 +37,7 @@ public class Producto {
         this.nombreProducto = productoBuilder.getNombreProducto();
         this.saldo = productoBuilder.getSaldo();
         this.tarjetaCredito=productoBuilder.getTarjetaCredito();
+        this.credito=productoBuilder.getCredito();
         this.movimientos = productoBuilder.getMovimientos();
     }
 
@@ -93,6 +95,10 @@ public class Producto {
 
     public TarjetaCredito getTarjetaCredito() {
         return tarjetaCredito;
+    }
+
+    public Credito getCredito() {
+        return credito;
     }
 
     public void setSaldo(Saldo saldo) {
