@@ -23,10 +23,7 @@ public class InscripcionProductoLocator {
     public static final Locator LBL_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Número de producto']/../../span[1]").withIos("");
     public static final Locator LBL_NUMERO_DOCUMENTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Número de documento']/../../span[text()='{0}']").withIos("");
     public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//*[@id='btn']").withIos("");
-    public static final Locator LST_TIPO_FONDO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_BankName4']").withIos("");
-    public static final Locator ITEM_TIPO_FONDO_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'ContentOnClick')]//span[text()='{0}']").withIos("");
     public static final Locator LBL_CUENATA_PENDIENTE_CONFIRMACION_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("");
-    public static final Locator LINK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']").withIos("");
 
     private InscripcionProductoLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

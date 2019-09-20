@@ -96,6 +96,10 @@ public class TarjetaCredito extends Producto {
         this.deudaALaFechaEnPesos = deudaALaFechaEnPesos;
     }
 
+    public void setValorPago(String valorPago) {
+        this.valorPago = valorPago;
+    }
+
     public String getAvancesDisponiblesEnPesos() {
         return avancesDisponiblesEnPesos;
     }
