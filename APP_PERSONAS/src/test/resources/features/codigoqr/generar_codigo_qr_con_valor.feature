@@ -5,7 +5,7 @@ Característica: Generacion de codigo QR con valor
   Quiero generar un codigo QR con valor
   Para recibir transferencias a mi cuenta
 
-
+@Manual
   Esquema del escenario: Generacion de codigo QR con valor exitoso
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -35,7 +35,7 @@ Característica: Generacion de codigo QR con valor
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
    |3   |43024987   |1   |testing10   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |conValor   |Corriente   |406-139740-01   |134000   |qr automatizado|
 
-
+  @Manual
   Esquema del escenario: Generacion de codigo QR con unica cuenta deposito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -49,4 +49,4 @@ Característica: Generacion de codigo QR con valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  |monto| descripcion |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@5
-   |5   |6456734   |1   |userunico01   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |sinValor   |Ahorros   |406-767340-26   |   |qr automatizado|
+   |5   |87576483   |1   |autotest13   |1234   |4321   |Acierto   |0   |369   |NO ERROR   |bolp   |ACTIVO   |sinValor   |Ahorros   |406-764830-24   |   |qr automatizado|
