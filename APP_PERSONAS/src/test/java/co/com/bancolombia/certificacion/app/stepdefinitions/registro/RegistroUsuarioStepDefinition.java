@@ -5,6 +5,7 @@ import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClav
 import co.com.bancolombia.certificacion.app.exceptions.registro.PantallaRegistroNoPresenteException;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeDeClaveBloqueada;
+import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeUsuarioYaRegistrado;
 import co.com.bancolombia.certificacion.app.questions.registro.MensajeRegistro;
 import co.com.bancolombia.certificacion.app.questions.registro.VerificarPantalla;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
@@ -47,7 +48,7 @@ public class RegistroUsuarioStepDefinition {
 
     @Entonces("^el deberia de ver el mensaje usuario o clave invalida$")
     public void elDeberiaDeVerElMensajeUsuarioOClaveInvalida() {
-        theActorInTheSpotlight().should(seeThat(MensajeClaveInvalida.esVisible())
+        theActorInTheSpotlight().should(seeThat(MensajeUsuarioYaRegistrado.esVisible())
                 .orComplainWith(MensajeClaveInvalidoNoVisualizadoException.class, MENSAJE_PASS_INVALIDO_NO_ENCONTRADO));
     }
 

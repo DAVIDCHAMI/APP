@@ -17,9 +17,9 @@ Característica: Pago de tarjetas de credito no propias
     Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | numeroTarjeta    | tipoPago              | valorPago | moneda  | tipoCuenta | numeroCuenta  |
-   ##@externaldata@./src/test/resources/datadriven/tarjetacredito/TarjetaCreditoNoPropia.xlsx@Datos@
-   |1   |22493944   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |4444444444444444   |Otro valor   |80000   |Pesos   |Corriente   |406-139440-01|
-   |2   |22493944   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |345555555558888   |Otro valor   |120000   |Dólares   |Corriente   |406-139440-01|
-   |3   |22493944   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |5326666666666666   |Pago total en dólares   |0,00   |Dólares   |Corriente   |406-139440-01|
-   |4   |22493944   |1   |userrobot1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |5326666666666666   |Pago mínimo en pesos   |0,00   |Pesos   |Corriente   |406-139440-01|
+   ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoNoPropia.xlsx@Datos@
+   |1   |22493944   |1   |autotest10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |4444444444444444   |Otro valor   |80000   |Pesos   |Corriente   |406-125170-00|
+   |2   |22493944   |1   |autotest10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |345555555558888   |Otro valor   |120000   |Dólares   |Ahorros   |406-725170-06|
+   |3   |22493944   |1   |autotest10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |5326666666666666   |Pago total en dólares   |0,00   |Dólares   |Corriente   |406-125170-00|
+   |4   |22493944   |1   |autotest10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasqa99   |jalzate@todo1.net   |5326666666666666   |Pago mínimo en pesos   |0,00   |Pesos   |Ahorros   |406-725170-06|
     

@@ -5,7 +5,6 @@ Característica: Registro en billetera App
   Quiero realizar el registro en Billetera
   Para realizar transacciones
 
-  @Manual
   @Manual:Failed
   Esquema del escenario: Registro exitoso en billetera App
     Dado que el Actor se autentica en la app

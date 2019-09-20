@@ -17,7 +17,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
+   |1   |700100   |1   |700100   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro48   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   @Manual
   @Manual:Passed
@@ -31,7 +31,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |44832981   |1   |44832981   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro30   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
+   |1   |700100   |1   |700100   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro48   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   @Manual
   @Manual:Passed
@@ -45,7 +45,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     |opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@2
-   |2   |44832982   |1   |44832982   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro41   |jalzate@todo1.net   |EPREPAGO|
+   |2   |700101   |1   |700101   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |pruebasregistro49   |jalzate@todo1.net   |EPREPAGO|
 
   @Manual
   @Manual:Passed
@@ -58,7 +58,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@3
-   |3   |95400152   |1   |95400152   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   |   |CONSULTAR_PRODUCTO|
+   |3   |48313974   |1   |48313974   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   |   |CONSULTAR_PRODUCTO|
 
   @Manual
   @Manual:Passed
@@ -71,4 +71,4 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@4
-   |4   |1010111   |1   |1010111   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   |   |CONSULTAR_PRODUCTO|
+   |4   |22493944   |1   |22493944   |1234   |4321   |Acierto   |001   |0370   |NO ERROR   |bolp   |ACTIVO   |   |   |CONSULTAR_PRODUCTO|
