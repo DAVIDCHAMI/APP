@@ -7,7 +7,6 @@ import io.appium.java_client.touch.offset.PointOption;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -34,18 +33,13 @@ public class HastaElTarget extends Scroll {
             int posicionInicialY = dimension.height / 2;
             int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
             while (posicionFinalY > dimension.height) {
-                //action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
                 action.longPress(PointOption.point(posicionInicialX, 500));
-                //action.moveTo(PointOption.point(posicionInicialX, 1000));
                 action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
                 action.release().perform();
                 posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
             }
             action.longPress(PointOption.point(posicionInicialX, 500));
             action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
-
-//            action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
-  //          action.moveTo(PointOption.point(posicionInicialX, 1000));
             action.release().perform();
         }
     }

@@ -18,7 +18,6 @@ public class GenerarCodigoQrPage {
     public static final Target IMG_CODIGO_QR_PANTALLA_INICIO = Target.the("Botón código qr de pantalla de inicio").located(theElementBy(IMG_CODIGO_QR_PANTALLA_INICIO_LOCATOR));
     public static final Target IMG_CODIGO_QR_FLOTANTE = Target.the("Botón código qr flotante de pantalla de inicio").located(theElementBy(IMG_CODIGO_QR_FLOTANTE_LOCATOR));
     public static final Target TXT_NUMERO_PRODUCTO = Target.the("Número de producto").located(theElementBy(TXT_NUMERO_PRODUCTO_LOCATOR));
-    public static final Target IMG_FOCO = Target.the("Foco").locatedBy(dynamicElement(IMG_FOCO_LOCATOR));
     public static final Target BTN_TIPO_PRODUCTO = Target.the("Botón tipo de producto").locatedBy(dynamicElement(BTN_TIPO_PRODUCTO_LOCATOR));
 
     private GenerarCodigoQrPage() {

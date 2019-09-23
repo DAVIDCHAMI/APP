@@ -5,7 +5,6 @@ import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.DoubleClick;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 

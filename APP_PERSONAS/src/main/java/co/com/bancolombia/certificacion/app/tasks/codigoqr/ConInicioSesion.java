@@ -45,9 +45,9 @@ public class ConInicioSesion extends GenerarQR {
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
                         Click.on(BTN_CON_VALOR),
-                        Enter.theValue(datos.getMonto()).into(TXT_VALOR_RECIBIR)
+                        Enter.theValue(datos.getMonto()).into(TXT_VALOR_RECIBIR),
+                        Click.on(FOCO)
                 ),
-                Click.on(FOCO),
                 Click.on(BTN_SIGUIENTE),
                 Enter.theValue(datos.getDescripcion()).into(TXT_DESCRIPCION),
                 Click.on(FOCO),

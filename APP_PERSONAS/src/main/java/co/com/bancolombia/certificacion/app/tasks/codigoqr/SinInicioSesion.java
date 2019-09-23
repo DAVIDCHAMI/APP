@@ -7,13 +7,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.IMG_FOCO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_INFO_CODIGO_QR;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SinInicioSesion extends GenerarQR {
     private String nombrePersonalizado;
@@ -27,25 +28,29 @@ public class SinInicioSesion extends GenerarQR {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(IMG_CODIGO_QR_PANTALLA_INICIO, isVisible()),
                 Click.on(IMG_CODIGO_QR_PANTALLA_INICIO),
                 Click.on(IMG_CODIGO_QR_FLOTANTE),
                 Saltar.onBoarding(),
                 Enter.theValue(nombrePersonalizado).into(TXT_NOMBRE_PERSONALIZADO),
-                Click.on(LNK_SIGUIENTE),
+                Click.on(FOCO),
+                Click.on(BTN_SIGUIENTE),
                 Click.on(TXT_NUMERO_PRODUCTO),
                 Enter.theValue(transferencia.getProductoOrigen().getNumero()).into(TXT_NUMERO_PRODUCTO),
-                Click.on(IMG_FOCO),
+                Click.on(FOCO),
                 Click.on(BTN_TIPO_PRODUCTO.of(transferencia.getProductoOrigen().getTipo())),
-                Click.on(LNK_SIGUIENTE),
+                Click.on(BTN_SIGUIENTE),
                 Check.whether("".equals(transferencia.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
                         Click.on(BTN_CON_VALOR),
-                        Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_RECIBIR)
+                        Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_RECIBIR),
+                        Click.on(FOCO)
                 ),
-                Click.on(LNK_SIGUIENTE),
+                Click.on(BTN_SIGUIENTE),
                 Enter.theValue(transferencia.getDescripcion()).into(TXT_DESCRIPCION),
-                Click.on(LNK_SIGUIENTE),
+                Click.on(FOCO),
+                Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_GENERAR_QR)
         );
         if ("".equals(transferencia.getMonto()))
