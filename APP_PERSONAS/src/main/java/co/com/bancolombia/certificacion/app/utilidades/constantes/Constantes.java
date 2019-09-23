@@ -14,7 +14,8 @@ public class Constantes {
     public static final String CORRIENTE = "Corriente";
     public static final String OPCION_EPREPAGO = "Generar número";
     public static final Character COMA = ',';
-    public static final Character VISA = '4';
+    public static final Character NUMERO_VISA = '4';
+    public static final String VISA = "Visa";
     public static final String OTRO_VALOR = "Otro valor";
     public static final String CEROS = "0.00";
     public static final String SIN_VALOR = "Sin valor";
@@ -27,6 +28,8 @@ public class Constantes {
     public static final int NUMERO_PANTALLAS_ONBOARDING = 5;
     public static final String INSCRITAS = "INSCRITAS";
     public static final String RANGO_FECHAS = "RANGO DE FECHAS";
+    public static final String FONDO_INVERSION = "Fondo de inversión";
+    public static final String OPCION_INVERSIONES = "Inversiones";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

@@ -8,6 +8,8 @@ public enum TipoTransaccionEnum {
     INSCRIBIR_PRODUCTOS(MIS_PRODUCTOS, "Inscribir productos",""),
     GENERAR_CODIGO_QR(MIS_PRODUCTOS, "Recibir dinero","Generar código QR"),
     PAGAR_TARJETAS_DE_CREDITO_NO_PROPIAS(MIS_PRODUCTOS, "Pagar tarjetas de crédito","Pagar tarjetas no propias"),
+    PAGAR_CREDITOS(MIS_PRODUCTOS, "Pagar tarjetas de crédito","Pagar créditos"),
+    PAGAR_TARJETAS_DE_CREDITO_PROPIAS(MIS_PRODUCTOS, "Pagar tarjetas de crédito","Pagar tarjetas propias"),
     REALIZAR_AVANCES_DESEMBOLSOS(MIS_PRODUCTOS, "Realizar avances y desembolsos",""),
     PROGRAMAR_PAGAR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     ELIMINAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
@@ -18,7 +20,12 @@ public enum TipoTransaccionEnum {
     OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
-    GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica");
+    GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
+    BLOQUEAR_TARJETAS(PERFIL, "Bloqueos","Bloquear tarjetas definitivamente"),
+    BLOQUEAR_CLAVE(PERFIL, "Bloqueos","Bloquear clave"),
+    BLOQUEAR_TARJETAS_CLAVE(PERFIL, "Bloqueos","Bloquear tarjetas y clave"),
+    BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
+    CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques");
 
     private String menu;
     private String subMenu;

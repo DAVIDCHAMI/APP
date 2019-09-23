@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.detalleproductos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoCreditos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoDeposito;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoTarjetas;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
@@ -53,10 +54,18 @@ public class ConsultaDetalleProductosStepDefinition {
 
     @Y("^consulto en (.*) el detalle de mi credito de consumo con (.*) numero (.*)$")
     public void consultoElDetalleDelCreditoDeConsumo(String opcionCategoria, String tipoCredito, String numeroCredito) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deCreditosConsumo(opcionCategoria, tipoCredito, numeroCredito)
+        );
     }
 
 
     @Y("^deberia de ver el detalle de mi credito de consumo$")
     public void deberiaDeVerElDetalleDeMiCreditoDeConsumo() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleProductoCreditos.esExitoso()
+                ).orComplainWith(
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
     }
 }

@@ -16,7 +16,6 @@ public class InscripcionProductoPage {
     public static final Target CHK_TIPO_CUENTA = Target.the("Selecciona el tipo de cuenta que desea inscribir").locatedBy(dynamicElement(CHK_TIPO_CUENTA_LOCATOR));
     public static final Target TXT_TIPO_DOCUMENTO = Target.the("Campo para ingresar tipo de documento").located(theElementBy(TXT_TIPO_DOCUMENTO_LOCATOR));
     public static final Target ITEM_TIPO_DOCUMENTO = Target.the("Selecciona item del tipo de documento en la lista").locatedBy(dynamicElement(ITEM_TIPO_DOCUMENTO_LOCATOR));
-    public static final Target BTN_CERRAR_TIPO_DOCUMENTO = Target.the("Boton cerrar de la lista tipo de documento").located(theElementBy(BTN_CERRAR_TIPO_DOCUMENTO_LOCATOR));
     public static final Target TXT_NUMERO_DOCUMENTO = Target.the("Campo ingresa numero de documento").located(theElementBy(TXT_NUMERO_DOCUEMENTO_LOCATOR));
     public static final Target BTN_INSCRIBIR = Target.the("Clic en el boton inscribir").located(theElementBy(BTN_INSCRIBIR_LOCATOR));
     public static final Target IMG_CONFIRMACION = Target.the("Imagen confirmacion").located(theElementBy(IMG_CONFIRMACION_LOCATOR));
@@ -25,6 +24,7 @@ public class InscripcionProductoPage {
     public static final Target LBL_NUMERO_PRODUCTO = Target.the("Label tipo de numero en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_NUMERO_PRODUCTO_LOCATOR));
     public static final Target LBL_TIPO_DOCUMENTO = Target.the("Label tipo de documento en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_TIPO_DOCUMENTO_LOCATOR));
     public static final Target LBL_NUMERO_DOCUMENTO = Target.the("Label numero de docuemento en la pantalla de confirmacion").locatedBy(dynamicElement(LBL_NUMERO_DOCUMENTO_LOCATOR));
+    public static final Target LBL_CUENTA_PENDIENTE_CONFIRMACION = Target.the("Label cuenta pendiente de activacon").locatedBy(dynamicElement(LBL_CUENATA_PENDIENTE_CONFIRMACION_LOCATOR));
 
     private InscripcionProductoPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
