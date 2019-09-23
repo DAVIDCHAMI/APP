@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.interactions.scroll;
 
+import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
@@ -19,20 +20,33 @@ public class HastaElTarget extends Scroll {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        WebDriver driver = getProxiedDriver();
-        TouchAction action = new TouchAction((AppiumDriver) driver);
-        Dimension dimension = driver.manage().window().getSize();
-        int posicionInicialX = dimension.width / 2;
-        int posicionInicialY = dimension.height / 2;
-        int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
-        while (posicionFinalY > dimension.height) {
-            action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
-            action.moveTo(PointOption.point(posicionInicialX, 1000));
+
+        String platform = ElementFinder.getPlatformCapability();
+        if (("Android").equalsIgnoreCase(platform)) {
+            actor.attemptsTo(
+                    net.serenitybdd.screenplay.actions.Scroll.to(elemento)
+            );
+        }else {
+            AppiumDriver driver = getProxiedDriver();
+            TouchAction action = new TouchAction((AppiumDriver) driver);
+            Dimension dimension = driver.manage().window().getSize();
+            int posicionInicialX = dimension.width / 2;
+            int posicionInicialY = dimension.height / 2;
+            int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+            while (posicionFinalY > dimension.height) {
+                //action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
+                action.longPress(PointOption.point(posicionInicialX, 500));
+                //action.moveTo(PointOption.point(posicionInicialX, 1000));
+                action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
+                action.release().perform();
+                posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+            }
+            action.longPress(PointOption.point(posicionInicialX, 500));
+            action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
+
+//            action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
+  //          action.moveTo(PointOption.point(posicionInicialX, 1000));
             action.release().perform();
-            posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
         }
-        action.longPress(PointOption.point(posicionInicialX, posicionInicialY));
-        action.moveTo(PointOption.point(posicionInicialX, 1000));
-        action.release().perform();
     }
 }

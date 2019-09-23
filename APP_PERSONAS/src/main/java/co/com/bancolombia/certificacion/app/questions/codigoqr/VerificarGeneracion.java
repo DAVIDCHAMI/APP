@@ -14,8 +14,8 @@ public class VerificarGeneracion implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         Transferencia datos = actor.recall(MODELO_INFO_CODIGO_QR);
         return IMG_CODIGO_QR.resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(datos.getProductoOrigen().getNumero()).resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(datos.getMonto()).resolveFor(actor).isVisible();
+                LBL_VERIFICACION.of(datos.getProductoOrigen().getNumero()).resolveFor(actor).isPresent() &&
+                LBL_VERIFICACION.of(datos.getMonto()).resolveFor(actor).isPresent();
     }
 
     public static VerificarGeneracion qr(){
