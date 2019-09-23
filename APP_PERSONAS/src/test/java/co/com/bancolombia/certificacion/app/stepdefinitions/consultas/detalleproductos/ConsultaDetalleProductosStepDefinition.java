@@ -10,7 +10,6 @@ import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException.MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TARJETAS_CREDITO_MOVIMIENTOS;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -26,7 +25,7 @@ public class ConsultaDetalleProductosStepDefinition {
     @Cuando("^consulto el detalle de tarjeta de credito (.*) numero (.*)$")
     public void consultoDetalleDeTarjetaCredito( String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarDetalle.deProductoTarjetas(TARJETAS_CREDITO_MOVIMIENTOS, tipoCuenta, numeroCuenta)
+                ConsultarDetalle.deProductoTarjetas(tipoCuenta, numeroCuenta)
         );
     }
 

@@ -38,14 +38,14 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_SALDO_SALDOS_CREDIAGIL_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, '0-{0}')]//android.view.View[3]")
             .withIos("xpath$g");
-    public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-AccountDataContainer2']").withIos("xpath$h");
-    public static final Locator VER_MOVIMIENTOS_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='l2-{0}-AccountDataContainer3']").withIos("xpath$h");
-    public static final Locator LBL_FECHA_MOVIMIENTO_CUENTAS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-AccountDataContainer2']//div/div/div/div/div[1]/span").withIos("xpath$i");
-    public static final Locator LBL_DESCRIPCION_MOVIMIENTO_CUENTAS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-AccountDataContainer2']/div/div/div/div/div[2]/span").withIos("xpath$j");
-    public static final Locator LBL_SALDO_CUENTASLOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-AccountDataContainer2']/div/div/div[2]//span").withIos("xpath$k");
-    public static final Locator LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='l2-{0}-AccountDataContainer3']//div/div/div/div/div[1]/span").withIos("xpath$k");
-    public static final Locator LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='l2-{0}-AccountDataContainer3']//div/div/div/div/div[2]/span").withIos("xpath$k");
-    public static final Locator LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='l2-0-AccountDataContainer3']/div/div/div[2]/div/span").withIos("xpath$k");
+    public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-ContentAccountElement']").withIos("xpath$h");
+    public static final Locator VER_MOVIMIENTOS_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]").withIos("xpath$h");
+    public static final Locator LBL_FECHA_MOVIMIENTO_CUENTAS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-ContentAccountElement']//div[@class='datalist-date']/span[1]").withIos("xpath$i");
+    public static final Locator LBL_DESCRIPCION_MOVIMIENTO_CUENTAS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-ContentAccountElement']//div//div[2]/span[1]").withIos("xpath$j");
+    public static final Locator LBL_SALDO_CUENTASLOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-ContentAccountElement']//div[@class='datalist-date']/span[1]").withIos("xpath$k");
+    public static final Locator LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]//div[@class='datalist-date']/span[1]").withIos("xpath$k");
+    public static final Locator LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]//div[2]//span").withIos("xpath$k");
+    public static final Locator LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]//div[@class='datalist-date']/span[2]").withIos("xpath$k");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -24,6 +25,7 @@ public class SeleccionarProducto implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isVisible()),
+                Scroll.to(target.of(tipoCuenta, numeroCuenta)),
                   Click.on(target.of(tipoCuenta, numeroCuenta))
         );
     }
