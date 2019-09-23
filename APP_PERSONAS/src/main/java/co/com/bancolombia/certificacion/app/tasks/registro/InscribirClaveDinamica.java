@@ -11,7 +11,9 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_SEGUNDA_CLAVE_DIGITOS;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -28,17 +30,19 @@ public class InscribirClaveDinamica implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BTN_INSCRIBIR_CLAVE),
-                Click.on(TXT_CLAVE_DIGITOS),
+                WaitUntil.the(TXT_CLAVE_DIGITOS, isEnabled()),
+                Click.on(TXT_SEGUNDA_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getSegundaClave()),
                 WaitUntil.the(BTN_CONTINUAR_SEGUNDA_CLAVE, isEnabled()),
                 Click.on(BTN_CONTINUAR_SEGUNDA_CLAVE),
                 Enter.theValue(usuario.getNombrePersonalizado()).into(TXT_NOMBRE_PERSONALIZADO),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(LNK_SIGUIENTE),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO),
+                Click.on(CHK_FOCO_ACEPTO),
                 Check.whether(TIPO_CORREO_LABORAL.equalsIgnoreCase(usuario.getTipoCorreo())).
                         otherwise(WaitUntil.the(CHK_TIPO_CORREO.of(usuario.getTipoCorreo()), isEnabled()),
                                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo()))),
-                Click.on(BTN_SIGUIENTE_CLAVE),
+                Click.on(LNK_SIGUIENTE),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
                 Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_ACEPTO_TERMINOS),

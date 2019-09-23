@@ -16,5 +16,5 @@ Característica: Bloqueo de primera clave
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta     |
    ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@2
-   |2   |22483228   |1   |userrobot9   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |   ||
+   |2   |22483228   |1   |autotest13   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |   ||
 
