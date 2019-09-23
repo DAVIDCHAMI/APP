@@ -53,8 +53,6 @@ public class ChequeBuilder implements Builder<Cheque> {
         return this;
     }
 
-
-
     public String getRangoDesde() {
         return rangoDesde;
     }
