@@ -30,8 +30,8 @@ public class ConInicioSesion extends GenerarQR {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Saltar.onBoarding(),
-                WaitUntil.the(BTN_SIGUIENTE, isEnabled()),
-                Click.on(BTN_SIGUIENTE)
+                WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
+                Click.on(LNK_SIGUIENTE)
         );
         if (Verificar.elementoVisible(actor, LBL_VERIFICACION.of(CUENTAS))) {
             actor.attemptsTo(
@@ -48,9 +48,10 @@ public class ConInicioSesion extends GenerarQR {
                         Enter.theValue(datos.getMonto()).into(TXT_VALOR_RECIBIR),
                         Click.on(FOCO)
                 ),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(LNK_SIGUIENTE),
                 Enter.theValue(datos.getDescripcion()).into(TXT_DESCRIPCION),
                 Click.on(FOCO),
+                WaitUntil.the(BTN_SIGUIENTE, isVisible()),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_GENERAR_QR),
                 WaitUntil.the(LBL_GUARDADO_EXITOSO, isVisible())

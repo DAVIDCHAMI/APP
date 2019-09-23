@@ -34,12 +34,12 @@ public class SinInicioSesion extends GenerarQR {
                 Saltar.onBoarding(),
                 Enter.theValue(nombrePersonalizado).into(TXT_NOMBRE_PERSONALIZADO),
                 Click.on(FOCO),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(LNK_SIGUIENTE),
                 Click.on(TXT_NUMERO_PRODUCTO),
                 Enter.theValue(transferencia.getProductoOrigen().getNumero()).into(TXT_NUMERO_PRODUCTO),
                 Click.on(FOCO),
                 Click.on(BTN_TIPO_PRODUCTO.of(transferencia.getProductoOrigen().getTipo())),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(LNK_SIGUIENTE),
                 Check.whether("".equals(transferencia.getMonto())).andIfSo(
                         Click.on(BTN_SIN_VALOR)
                 ).otherwise(
@@ -47,7 +47,7 @@ public class SinInicioSesion extends GenerarQR {
                         Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_RECIBIR),
                         Click.on(FOCO)
                 ),
-                Click.on(BTN_SIGUIENTE),
+                Click.on(LNK_SIGUIENTE),
                 Enter.theValue(transferencia.getDescripcion()).into(TXT_DESCRIPCION),
                 Click.on(FOCO),
                 Click.on(BTN_SIGUIENTE),
