@@ -17,14 +17,15 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class EliminarClaveDinamicaStepDefinition {
 
     @Y("quiere eliminar su clave dinamica con nombre personalizado (.*)$")
-    public void gestionaInscripcionClaveDinamica(String datos){
-        theActorInTheSpotlight().attemptsTo(GestionarClaveDinamica.conDatosEliminacion(usuario()
-                .conNombrePersonalizado(datos)
+    public void gestionaInscripcionClaveDinamica(String datos) {
+        theActorInTheSpotlight().attemptsTo(
+                GestionarClaveDinamica.conDatosEliminacion(usuario()
+                        .conNombrePersonalizado(datos)
                 ));
     }
 
     @Entonces("Yo mensaje exitoso de eliminación clave dinamica$")
-    public void deberiaVerClaveDinamExitosa(){
+    public void deberiaVerClaveDinamExitosa() {
         theActorInTheSpotlight().should(seeThat(VerificarEliminacionClaveDinamica.exitosa()).orComplainWith(
                 ClaveNoEliminaClaveDinamicaException.class, NO_ELIMINA_CLAVE_DINAMICA
         ));
