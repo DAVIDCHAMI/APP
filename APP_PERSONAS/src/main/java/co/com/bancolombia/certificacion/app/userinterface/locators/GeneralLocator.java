@@ -7,7 +7,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class GeneralLocator {
     public static final Locator BTN_PRODUCTO_ORIGEN_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div/div/span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@value='{0}']/../../following-sibling:: XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='{1}']");
-    public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//span[text()='SIGUIENTE']/..").withIos("xpath$//XCUIElementTypeButton[@name='SIGUIENTE']");
+    public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//button[text()='SIGUIENTE']").withIos("xpath$//XCUIElementTypeButton[@name='SIGUIENTE']");
     public static final Locator LNK_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//span[text()='Siguiente']").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Siguiente')]");
     public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[@name='GENERAR CÓDIGO QR']");
     public static final Locator LBL_GUARDADO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Guardado exitoso!' or text()='¡Generación exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@value='¡Generación exitosa!' or @value='¡Guardado exitoso!']");

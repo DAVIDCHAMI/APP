@@ -19,7 +19,6 @@ public class HastaElTarget extends Scroll {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         String platform = ElementFinder.getPlatformCapability();
         if (("Android").equalsIgnoreCase(platform)) {
             actor.attemptsTo(
