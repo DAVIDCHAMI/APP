@@ -5,7 +5,8 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
   Quiero consultar mis productos
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos de su cuenta deposito
-@Manual:Passed
+
+
    Esquema del escenario: Consultar cuenta Corriente con movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -21,7 +22,6 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@1
    |1   |1037655531   |1   |invictus10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-125210-01|
 
-@Manual:Passed
    Esquema del escenario: Consultar cuenta Ahorros con movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
