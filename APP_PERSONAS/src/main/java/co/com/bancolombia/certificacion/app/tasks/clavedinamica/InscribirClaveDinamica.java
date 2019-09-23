@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.tasks.registro;
+package co.com.bancolombia.certificacion.app.tasks.clavedinamica;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
@@ -47,9 +47,5 @@ public class InscribirClaveDinamica implements Task {
         actor.remember(NOMBRE_PERSONALIZADO_CLAVE_DINAMICA, usuario.getNombrePersonalizado());
         actor.remember(CORREO_CLAVE_DINAMICA, usuario.getCorreo());
         actor.remember(TIPO_CORREO_CLAVE_DINAMICA, usuario.getTipoCorreo());
-    }
-
-    public static InscribirClaveDinamica conDatos(UsuarioBuilder usuarioBuilder) {
-        return instrumented(InscribirClaveDinamica.class, usuarioBuilder.build());
     }
 }

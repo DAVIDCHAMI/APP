@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.questions.registro;
+package co.com.bancolombia.certificacion.app.questions.clavedinamica;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
