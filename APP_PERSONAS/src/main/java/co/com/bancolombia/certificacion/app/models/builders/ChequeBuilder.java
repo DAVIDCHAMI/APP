@@ -13,6 +13,8 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 public class ChequeBuilder implements Builder<Cheque> {
     private String tipoContraordenacion;
     private String numeroCheque;
+    private String rangoDesde;
+    private String rangoHasta;
     Producto producto = new Producto();
 
     public ChequeBuilder() {
@@ -39,6 +41,24 @@ public class ChequeBuilder implements Builder<Cheque> {
                 .conTipoCuenta(datos.get(0).get("tipoCuenta"))
                 .build();
         return this;
+    }
+
+    public ChequeBuilder conRangoDesde(List<Map<String, String>> datos){
+        this.rangoDesde = datos.get(0).get("rangoDesde");
+        return this;
+    }
+
+    public ChequeBuilder conRangoHasta(List<Map<String, String>> datos){
+        this.rangoHasta = datos.get(0).get("rangoHasta");
+        return this;
+    }
+
+    public String getRangoDesde() {
+        return rangoDesde;
+    }
+
+    public String getRangoHasta() {
+        return rangoHasta;
     }
 
     public Producto getProducto() {

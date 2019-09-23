@@ -16,4 +16,6 @@ public class ChequePage {
     public static final Target LBL_COMPROBANTE = Target.the("Label para verificar comprandote").located(theElementBy(LBL_COMPROBANTE_LOCATOR));
     public static final Target LBL_NUMERO_CHEQUE = Target.the("Label para verificar numero de cheque").locatedBy(dynamicElement(LBL_NUMERO_CHEQUE_LOCATOR));
     public static final Target LBL_CUENTA_ASOCIADA = Target.the("Label para verificar cuenta asociada").locatedBy(dynamicElement(LBL_CUENTA_ASOCIADA_LOCATOR));
+    public static final Target TXT_DESDE = Target.the("Campo de texto cheque a contraordenar rango desde").located(theElementBy(TXT_DESDE_LOCATOR));
+    public static final Target TXT_HASTA = Target.the("Campo de texto cheque a contraordenar rango hasta").located(theElementBy(TXT_HASTA_LOCATOR));
 }

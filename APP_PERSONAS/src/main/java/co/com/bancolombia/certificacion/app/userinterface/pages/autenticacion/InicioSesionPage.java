@@ -11,7 +11,8 @@ public class InicioSesionPage {
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));
     public static final Target LBL_HOLA_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_HOLA_PROVIVIONAL_LOCATOR));
     public static final Target BTN_CONTINUAR = Target.the("Boton Continuar").located(theElementBy(BTN_CONTINUAR_LOCATOR));
-    public static final Target TXT_CLAVE_DIGITOS = Target.the("Digito para clave2").located(theElementBy(TXT_CLAVE_DIGITOS_LOCATOR));
+    public static final Target TXT_CLAVE_DIGITOS = Target.the("Digito para clave").located(theElementBy(TXT_CLAVE_DIGITOS_LOCATOR));
+    public static final Target TXT_SEGUNDA_CLAVE_DIGITOS = Target.the("Digito para Segunda clave").located(theElementBy(TXT_SEGUNDA_CLAVE_DIGITOS_LOCATOR));
     public static final Target LBL_CLAVE_INVALIDA = Target.the("clave invalida").located(theElementBy(LBL_CLAVE_INVALIDA_LOCATOR));
     public static final Target LBL_USER_YA_REGISTRADO = Target.the("mensaje usuario ya registrado").located(theElementBy(LBL_USER_YA_REGISTRADO_LOCATOR));
     public static final Target BTN_CERRAR_MODAL_CLAVE_NO_VALIDA = Target.the("Boton cerrar clave invalida").located(theElementBy(BTN_CERRAR_MODAL_CLAVE_NO_VALIDA_LOCATOR));

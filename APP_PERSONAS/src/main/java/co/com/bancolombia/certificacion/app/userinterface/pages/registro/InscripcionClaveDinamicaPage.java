@@ -21,6 +21,10 @@ public class InscripcionClaveDinamicaPage {
     public static final Target BTN_CONTINUAR_SEGUNDA_CLAVE = Target.the("Boton continuar segunda clave").located(theElementBy(BTN_CONTINUAR_SEGUNDA_CLAVE_LOCATOR));
     public static final Target LBL_VERIFICACION_CLAVE_DINAMICA = Target.the("Datos para verificacion registro clave dinamica").locatedBy(dynamicElement(OPT_CUENTA_PRODUCTO_LOCATOR));
     public static final Target LNL_COMPROBANTE_CLAVE_DINAMICA = Target.the("Comprobante de inscripcion clave dinamica").located(theElementBy(LBL_COMPROBANTE_CLAVE_DINAMICA_LOCATOR));
+    public static final Target LNK_ELIMINAR_CLAVE_DINAMICA = Target.the("Link eliminar clave dinamica").locatedBy(dynamicElement(LNK_ELIMINAR_CLAVE_DINAMICA_LOCATOR));
+    public static final Target BTN_ELIMINAR_CLAVE_DINAMICA = Target.the("Botón eliminar clave dinamica").located(theElementBy(BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR));
+    public static final Target LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA = Target.the("label verificar elimincacion clave dinamica").locatedBy(dynamicElement(LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA_LOCATOR));
+    public static final Target LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA = Target.the("Label mensaje eliminacion clave dinamica").located(theElementBy(LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA_LOCATOR));
 
     private InscripcionClaveDinamicaPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
