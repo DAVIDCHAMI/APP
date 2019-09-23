@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
 import net.serenitybdd.screenplay.Performable;

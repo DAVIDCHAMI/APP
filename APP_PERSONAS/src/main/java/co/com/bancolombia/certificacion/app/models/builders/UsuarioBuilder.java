@@ -77,6 +77,11 @@ public class UsuarioBuilder implements Builder<Usuario> {
         return this;
     }
 
+    public UsuarioBuilder conNombrePersonalizado(String datosUsuario) {
+        this.nombrePersonalizado = datosUsuario;
+        return this;
+    }
+
     public UsuarioBuilder conClave(String clave) {
         this.clave = clave;
         return this;

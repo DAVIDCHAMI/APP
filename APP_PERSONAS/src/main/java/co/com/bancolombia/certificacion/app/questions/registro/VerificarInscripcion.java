@@ -24,7 +24,7 @@ public class VerificarInscripcion implements Question<Boolean> {
                 Visibility.of(LBL_TIPO_PRODUCTO.of(tipoCuenta)).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_TIPO_DOCUMENTO.of(tipoDocumento)).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_NUMERO_DOCUMENTO.of(numeroDocumento)).viewedBy(actor).asBoolean() &&
-                Visibility.of(LBL_BANCO.of(nombreBanco)).viewedBy(actor).asBoolean()
+                Visibility.of(LBL_BANCO.of(nombreBanco.toLowerCase())).viewedBy(actor).asBoolean()
         );
     }
 
