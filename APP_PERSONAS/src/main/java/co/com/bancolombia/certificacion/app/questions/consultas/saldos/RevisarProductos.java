@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.consultas.saldos;
 
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
@@ -14,7 +15,7 @@ public class RevisarProductos implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         List<String> productosCliente = new ArrayList<>();
         for(int i = 1; i <=6; i++){
-            if(OPCION_CATEGORIA_PRODUCTOS.of(String.valueOf(i)).resolveFor(actor).isVisible()){
+            if(Verificar.elementoVisible(actor, OPCION_CATEGORIA_PRODUCTOS.of(String.valueOf(i)))){
                 productosCliente.add(OPCION_CATEGORIA_PRODUCTOS.of(String.valueOf(i)).resolveFor(actor).getText());
             }else{
                 break;

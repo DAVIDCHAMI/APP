@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.BTN_CONTINUAR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.BTN_INSCRIBIR_DINAMICA_CLAVE;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ConDatos implements Task {
@@ -27,7 +28,7 @@ public class ConDatos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Check.whether(BTN_INSCRIBIR_DINAMICA_CLAVE.resolveFor(actor).isVisible()).
+                Check.whether(elementoVisible(actor, BTN_INSCRIBIR_DINAMICA_CLAVE)).
                         andIfSo(Click.on(BTN_INSCRIBIR_DINAMICA_CLAVE)),
                 Esperar.unTiempo(3000),
                 Click.on(BTN_INGRESAR),
