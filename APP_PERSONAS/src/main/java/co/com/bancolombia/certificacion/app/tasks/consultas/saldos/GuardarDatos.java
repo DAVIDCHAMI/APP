@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -20,7 +21,7 @@ public class GuardarDatos implements Task {
     public <T extends Actor> void performAs(T actor) {
         int iterador = 0;
         List<Producto> listaProductos = new ArrayList<>();
-        while (CONTENEDOR_INFORMACION_PRODUCTO.of(String.valueOf(iterador)).resolveFor(actor).isPresent()) {
+        while (Verificar.elementoPresente(actor, CONTENEDOR_INFORMACION_PRODUCTO.of(String.valueOf(iterador)))){
             listaProductos.add(elProducto()
                     .conTipoCuenta(LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conNumero(LBL_NUMERO_CUENTA_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText())
