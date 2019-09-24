@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.billetera;
 
 import co.com.bancolombia.certificacion.app.interactions.billetera.AceptarTerminosCondiciones;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -8,9 +9,10 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.BTN_ACTIVAR_BILLETERA;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.LBL_TARJETAS_LISTADAS;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RegistrarBilletera implements Task {
@@ -18,6 +20,10 @@ public class RegistrarBilletera implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(20000),
+                WaitUntil.the(BTN_CONTINUAR_BILLETERA, isEnabled()),
+                Click.on(BTN_CONTINUAR_BILLETERA),
+                Click.on(LNK_SALTAR),
                 AceptarTerminosCondiciones.enBilletera(),
                 WaitUntil.the(LBL_TARJETAS_LISTADAS, isVisible()),
                 RealizarScroll.hastaPosicionDeTarget(BTN_ACTIVAR_BILLETERA),
