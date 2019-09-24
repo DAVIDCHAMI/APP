@@ -31,7 +31,9 @@ public class SeleccionarOpcion implements Task {
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         Esperar.unTiempo(3000),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
-                ),
+                )
+        );
+        actor.attemptsTo(
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
                         Esperar.unTiempo(3000),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
