@@ -14,5 +14,4 @@ public class ActualizarDatosSeguridadPage {
     public static final Target TXT_CORREO_ACTUALIZAR = Target.the("Campo de texto para actualizar correo").located(theElementBy(TXT_CORREO_ACTUALIZAR_LOCATOR));
     public static final Target TXT_NUMERO_ACTUALIZAR = Target.the("Campo de texto para actualizar numero de celular").located(theElementBy(TXT_NUMERO_ACTUALIZAR_LOCATOR));
     public static final Target FOCO = Target.the("foco").located(theElementBy(FOCO_LOCATOR));
-
 }
