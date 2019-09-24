@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages.billetera;
 
-import co.com.bancolombia.certificacion.app.userinterface.locators.billetera.BilleteraLocator;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.billetera.BilleteraLocator.*;
