@@ -29,9 +29,6 @@ public class GuardarCamposEprepago implements Interaction {
                         .conFechaVencimiento(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(camposeprepago[2]).resolveFor(actor).getText())
                         .conCvc(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(camposeprepago[3]).resolveFor(actor).getText()).build()
         );
-         /*   listaCamposEprepago.add(
-                    TXT_CAMPOS_ACTIVACION_EPREPAGO.of(String.valueOf(camposeprepago[i])).resolveFor(actor).getText())
-            );*/
 
         actor.remember(MODELO_ACTIVACION_EPREPAGO, listaCamposEprepago);
     }

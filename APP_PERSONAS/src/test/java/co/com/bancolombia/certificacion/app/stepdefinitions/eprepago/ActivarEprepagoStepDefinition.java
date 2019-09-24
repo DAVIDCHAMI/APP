@@ -14,8 +14,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ActivarEprepagoStepDefinition {
 
-  //  List<String> listaCamposEprepago = new ArrayList<>();
-
     @Cuando("^quiero activar una tarjeta (.*)$")
     public void quieroActivarUnaTarjetaEprepago(String opcionCategoria){
         theActorInTheSpotlight().attemptsTo(ActivarEprepago.enLaAppBancolombia(opcionCategoria));

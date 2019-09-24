@@ -7,6 +7,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.Wait;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.Activacion_InactivacionEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OPCION_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_ACTIVACION_EPREPAGO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ActivarEprepago implements Task {
 
@@ -30,6 +33,7 @@ public class ActivarEprepago implements Task {
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 Click.on(BTN_MAS_OPCIONES_EPREPAGO),
                 Click.on(OPT_EPREPAGO.of(OPCION_EPREPAGO)),
+                WaitUntil.the(BTN_GENERAR_EPREPAGO, isEnabled()),
                 Click.on(BTN_GENERAR_EPREPAGO),
                 Esperar.unTiempo(5000),
                 GuardarCamposEprepago.esExitoso()
