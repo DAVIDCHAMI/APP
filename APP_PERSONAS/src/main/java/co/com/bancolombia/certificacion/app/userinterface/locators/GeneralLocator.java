@@ -25,6 +25,7 @@ public class GeneralLocator {
     public static final Locator BTN_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='PAGAR']/..");
     public static final Locator LNK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']");
     public static final Locator LBL_TARJETAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Tarjetas']");
+    public static final Locator LNK_ACTUALIZAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Actualizar']");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

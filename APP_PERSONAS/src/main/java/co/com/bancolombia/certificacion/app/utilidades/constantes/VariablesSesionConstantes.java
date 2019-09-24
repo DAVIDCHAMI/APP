@@ -14,6 +14,7 @@ public class VariablesSesionConstantes {
     public static final String TIPO_CORREO_CLAVE_DINAMICA = "Tipo de correo";
     public static final String TIPO_CORREO_LABORAL = "Laboral";
     public static final String CORREO_CLAVE_DINAMICA = "Correo electrónico";
+    public static final String NUMERO_CELULAR = "Número de celular";
     public static final String SERVICIO = "EMPRESA O SERVICIO";
     public static final String CHEQUE = "Rango de Cheques";
     public static final String TIPO_ORIGEN_VERIFICACION = "TIPO ORIGEN VERIFICACION";
