@@ -38,7 +38,7 @@ public class ContraordenarChequeStepDefinition {
                 .orComplainWith(NoRegistraContraordenChequeException.class, NO_INSCRIBE_CONTRAORDEN));
     }
 
-    @Entonces("El deberia ver contraordenación de su cheque con rango exitoso")
+    @Entonces("El deberia ver contraordenacion de su cheque con rango exitoso")
     public void deberiaVerContraordernaChequeConRango(){
         theActorInTheSpotlight().should(seeThat(VerificarContraordenConRango.deChequeConRango())
                 .orComplainWith(NoRegistraContraordenChequeConRangoException.class, NO_INSCRIBE_CONTRAORDEN_CON_RANGO));

@@ -27,7 +27,7 @@ Característica: Contraordenar cheques como usario Bancolombia
     Y el actor contraordena su cheque con informacion
       | tipoCuenta   | numeroCuenta   | tipoContraordenacion   | numeroCheque   | rangoDesde   | rangoHasta   |
       | <tipoCuenta> | <numeroCuenta> | <tipoContraordenacion> | <numeroCheque> | <rangoDesde> | <rangoHasta> |
-    Entonces El deberia ver contraordenación de su cheque con rango exitoso
+    Entonces El deberia ver contraordenacion de su cheque con rango exitoso
     Y cierra sesion en la app
     #Y Verifico los resultados en los archivos de iseries
       #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
