@@ -9,9 +9,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class GeneralPage {
     public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").locatedBy(dynamicElement(BTN_SIGUIENTE_LOCATOR));
-    public static final Target LNK_PAGAR = Target.the("Link boton pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
     public static final Target BTN_PAGAR = Target.the("Boton pagar").located(theElementBy(BTN_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
+    public static final Target FOCO = Target.the("Foco generar qr").located(theElementBy(FOCO_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_GUARDADO_EXITOSO = Target.the("Label guardado exitoso").locatedBy(dynamicElement(LBL_GUARDADO_EXITOSO_LOCATOR));
     public static final Target LBL_VERIFICACION = Target.the("Label verificación").locatedBy(dynamicElement(LBL_VERIFICACION_LOCATOR));
@@ -26,6 +26,8 @@ public class GeneralPage {
     public static final Target BTN_TARJETA_BLOQUEAR = Target.the("Tarjeta a bloquear").locatedBy(dynamicElement(BTN_TARJETA_BLOQUEAR_LOCATOR));
     public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueos exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
     public static final Target LNK_CERRAR = Target.the("Label Cerrar").located(theElementBy(LNK_CERRAR_LOCATOR));
+    public static final Target LBL_TARJETAS = Target.the("Label Tarjetas Bloqueo").located(theElementBy(LBL_TARJETAS_LOCATOR));
+    public static final Target BTN_PERMISO = Target.the("Boton de alerta para administrar los permisos de llamada y camara").located(theElementBy(BTN_PERMISO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

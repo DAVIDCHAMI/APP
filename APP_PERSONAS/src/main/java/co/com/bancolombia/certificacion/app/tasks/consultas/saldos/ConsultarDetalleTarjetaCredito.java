@@ -14,23 +14,22 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.BTN_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.TARJETAS_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarDetalleTarjetaCredito implements Task {
-    private String opcionCategoria;
     private String tipoCuenta;
     private String numeroCuenta;
 
-    public ConsultarDetalleTarjetaCredito(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+    public ConsultarDetalleTarjetaCredito(String tipoCuenta, String numeroCuenta) {
         this.tipoCuenta = tipoCuenta;
         this.numeroCuenta = numeroCuenta;
-        this.opcionCategoria = opcionCategoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
+                SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO.getCategoria()),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
                 Click.on(BTN_DETALLE_PRODUCTO),

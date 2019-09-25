@@ -10,8 +10,8 @@ public class ConsultarDetalle {
         return instrumented(ConsultarDetalleCuentaDeposito.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }
 
-    public static Performable deProductoTarjetas(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
-        return instrumented(ConsultarDetalleTarjetaCredito.class, opcionCategoria, tipoCuenta, numeroCuenta);
+    public static Performable deProductoTarjetas( String tipoCuenta, String numeroCuenta) {
+        return instrumented(ConsultarDetalleTarjetaCredito.class, tipoCuenta, numeroCuenta);
     }
 
     public static Performable deCreditosConsumo(String opcionCategoria, String tipoCuenta, String numeroCuenta) {

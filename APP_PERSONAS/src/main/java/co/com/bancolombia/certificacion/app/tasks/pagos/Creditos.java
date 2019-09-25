@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OTRO_VALOR;
 
 public class Creditos implements Task {
@@ -30,7 +31,7 @@ public class Creditos implements Task {
     public <T extends Actor> void performAs(T actor) {
         try {
             actor.attemptsTo(
-                    Check.whether(LBL_CREDITOS.resolveFor(actor).isVisible()).andIfSo(
+                    Check.whether(elementoVisible(actor, LBL_CREDITOS)).andIfSo(
                             Click.on(BTN_CREDITO.of(credito.getTipo(), credito.getNumero()))
                     )
             );
