@@ -13,6 +13,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.getPlatformCapability;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosCuentas implements Task {
@@ -26,11 +27,16 @@ public class ConsultarMovimientosCuentas implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        int iterador;
         actor.attemptsTo(
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
         );
+        if ("Android".equalsIgnoreCase(getPlatformCapability())){
+          iterador= 0;
+        }else {
+            iterador=1;
+        }
         List<Movimiento> listaMovimiento = new ArrayList<>();
-        int iterador = 0;
         actor.attemptsTo(
                 WaitUntil.the(CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)), isVisible())
         );
@@ -42,6 +48,7 @@ public class ConsultarMovimientosCuentas implements Task {
             );
             iterador++;
         }
+
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }
 }
