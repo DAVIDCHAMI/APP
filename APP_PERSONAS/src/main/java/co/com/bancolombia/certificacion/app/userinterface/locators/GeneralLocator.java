@@ -26,6 +26,7 @@ public class GeneralLocator {
     public static final Locator LNK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Cerrar')]");
     public static final Locator LBL_TARJETAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Tarjetas']").withIos("xpath$q");
     public static final Locator LNK_ACTUALIZAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Actualizar']").withIos("xpath$q");
+    public static final Locator BTN_PERMISO_LOCATOR = locator().withAndroid("xpath$//span[text()='PERMITIR']").withIos("xpath$q");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

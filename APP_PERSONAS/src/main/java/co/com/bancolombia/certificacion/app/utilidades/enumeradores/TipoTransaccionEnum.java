@@ -20,6 +20,7 @@ public enum TipoTransaccionEnum {
     OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
+    GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     BLOQUEAR_TARJETAS(PERFIL, "Bloqueos","Bloquear tarjetas definitivamente"),
     BLOQUEAR_CLAVE(PERFIL, "Bloqueos","Bloquear clave"),
