@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.eprepago;
 
-import co.com.bancolombia.certificacion.app.exceptions.billetera.NoSeActivoEprepago;
+import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeActivoEprepago;
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaConsulta;
 import co.com.bancolombia.certificacion.app.questions.eprepago.SolicitudEprepago;
 import co.com.bancolombia.certificacion.app.questions.eprepago.UsuarioConEprepago;
@@ -11,7 +11,7 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.exceptions.billetera.NoSeActivoEprepago.MENSAJE_E_PREPAGO_NO_ACTIVADA;
+import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeActivoEprepago.MENSAJE_E_PREPAGO_NO_ACTIVADA;
 import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaConsulta.MENSAJE_CONSULTA_NO_REALIZADA;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
