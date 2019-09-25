@@ -5,7 +5,7 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
   Quiero consultar mis productos
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos de su tarjeta de credito
-
+  
   Esquema del escenario: Consultar cuenta Corriente con movimientos en la app con tarjetas de credito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -17,7 +17,7 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@TarjetasCredito@1
-   |1   |1037655531   |1   |invictus10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Tarjeta de crédito   |*6682|
+   |1   |1037655531   |1   |pagotdc1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Personal American Express   |*0702|
 
 
    Esquema del escenario: Consultar tarjetas de credito sin movimientos
@@ -31,4 +31,4 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@TarjetasCredito@2
-   |2   |1037655531   |1   |invictus10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Tarjeta de crédito   |*7767|
+   |2   |1037655531   |1   |pagotdc1   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Personal American Express   |*1277|

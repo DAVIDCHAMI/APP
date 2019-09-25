@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SeleccionarProducto implements Interaction {
@@ -25,8 +26,8 @@ public class SeleccionarProducto implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isVisible()),
-                RealizarScroll.hastaTargetVisible(  target.of(tipoCuenta, numeroCuenta)),
+                WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
+                RealizarScroll.hastaTargetVisible( target.of(tipoCuenta, numeroCuenta)),
                   Click.on(target.of(tipoCuenta, numeroCuenta))
         );
     }
