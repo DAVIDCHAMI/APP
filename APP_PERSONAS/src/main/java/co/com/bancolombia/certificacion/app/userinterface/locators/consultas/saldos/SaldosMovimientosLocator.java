@@ -7,7 +7,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class SaldosMovimientosLocator {
     public static final Locator OPT_CUENTA_PRODUCTO_LOCATOR = locator()
-            .withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[text()='{1}']").withIos("xpath$a");
+            .withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[contains(text(),'{1}')]").withIos("xpath$a");
     public static final Locator OPT_CUENTA_TAJETA_CREDITO_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']").withIos("xpath$a");
     public static final Locator OPCION_CATEGORIA_PRODUCTOS_LOCATOR = locator()

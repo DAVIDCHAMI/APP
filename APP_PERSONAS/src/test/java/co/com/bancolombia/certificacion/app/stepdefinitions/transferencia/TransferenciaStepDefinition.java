@@ -24,7 +24,7 @@ public class TransferenciaStepDefinition {
                         conTipoTransferencia(datos)
                         .conNumeroCuentaOrigen(datos).conTipoCuentaOrigen(datos)
                         .conNumeroCuentaDestino(datos).conTipoCuentaDestino(datos)
-                        .conMonto(datos),opcion));
+                        .conMonto(datos),opcion, "Mis productos"));
     }
 
     @Entonces("deberia ver la confirmacion exitosa de la transferencia$")
