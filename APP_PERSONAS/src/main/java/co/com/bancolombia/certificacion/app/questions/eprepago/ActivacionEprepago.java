@@ -15,5 +15,4 @@ public class ActivacionEprepago implements Question<Boolean> {
     public static ActivacionEprepago esExitosa(){
         return new ActivacionEprepago();
     }
-
 }

@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.eprepago.Eprepago;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +14,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 public class GuardarCamposEprepago implements Interaction {
 
     private String[] camposeprepago = {"Saldo Disponible",
-            "Tarjeta MasterCard",
-            "Fecha de Vencimiento",
-            "Codigo de Seguridad (CVC2)"};
+                                       "Tarjeta MasterCard",
+                                       "Fecha de Vencimiento",
+                                       "Codigo de Seguridad (CVC2)"};
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -29,7 +28,6 @@ public class GuardarCamposEprepago implements Interaction {
                         .conFechaVencimiento(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(camposeprepago[2]).resolveFor(actor).getText())
                         .conCvc(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(camposeprepago[3]).resolveFor(actor).getText()).build()
         );
-
         actor.remember(MODELO_ACTIVACION_EPREPAGO, listaCamposEprepago);
     }
 
