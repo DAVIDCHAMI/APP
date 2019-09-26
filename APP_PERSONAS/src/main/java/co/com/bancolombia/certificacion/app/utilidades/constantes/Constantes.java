@@ -29,6 +29,10 @@ public class Constantes {
     public static final String RANGO_FECHAS = "RANGO DE FECHAS";
     public static final String FONDO_INVERSION = "Fondo de inversión";
     public static final String OPCION_INVERSIONES = "Inversiones";
+    public static final String SALDO_DISPONIBLE = "Saldo Disponible";
+    public static final String TARJETA_MASTERCARD = "Tarjeta MasterCard";
+    public static final String FECHAVENCIMIENTO = "Fecha de Vencimiento";
+    public static final String CODIGOSEGURIDAD = "Codigo de Seguridad (CVC2)";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

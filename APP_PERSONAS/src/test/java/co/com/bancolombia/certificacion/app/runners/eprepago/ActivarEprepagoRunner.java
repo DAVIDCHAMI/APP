@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.runners.eprepago;
 
-
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.DataToFeature;
@@ -28,5 +27,4 @@ public class ActivarEprepagoRunner {
     public ActivarEprepagoRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
-
 }

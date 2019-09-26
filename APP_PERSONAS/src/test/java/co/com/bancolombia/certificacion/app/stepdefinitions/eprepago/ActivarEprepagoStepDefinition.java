@@ -14,8 +14,8 @@ public class ActivarEprepagoStepDefinition {
         theActorInTheSpotlight().attemptsTo(ActivarEprepago.enLaAppBancolombia(opcionCategoria));
     }
 
-    @Entonces("^Debo ver el mensaje de activacion exitosa$")
-    public void deboVerElMensajeDeActivacionExitosa(){
+    @Entonces("^el deberia de ver un mensaje de activación exitosa para su eprepago$")
+    public void elDeberiaDeVerUnMensajeDeActivacionExitosaParaSuEprepago(){
         theActorInTheSpotlight().should(seeThat(ActivacionEprepago.esExitosa()));
     }
 }
