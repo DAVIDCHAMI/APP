@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.LBL_VERIFICACION_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.CHK_TIPO_CORREO_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.transferenciaLocator.TransferenciaLocator.*;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.transferencia.TransferenciaLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;

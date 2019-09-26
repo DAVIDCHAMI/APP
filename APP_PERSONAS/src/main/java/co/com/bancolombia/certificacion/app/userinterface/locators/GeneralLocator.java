@@ -8,7 +8,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 public class GeneralLocator {
     public static final Locator BTN_PRODUCTO_ORIGEN_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div/div/span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@value='{0}']/../../following-sibling:: XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='{1}']");
     public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//button[text()='SIGUIENTE']").withIos("xpath$//XCUIElementTypeButton[@name='SIGUIENTE']");
-    public static final Locator LNK_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//span[text()='Siguiente']").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Siguiente')]");
+    public static final Locator LNK_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//span[text()='Siguiente']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Siguiente')]");
     public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$//span[text()='GENERAR CÓDIGO QR']").withIos("xpath$//XCUIElementTypeStaticText[@name='GENERAR CÓDIGO QR']");
     public static final Locator LBL_GUARDADO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Guardado exitoso!' or text()='¡Generación exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@value='¡Generación exitosa!' or @value='¡Guardado exitoso!']");
     public static final Locator LBL_VERIFICACION_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'{0}')]");
@@ -23,9 +23,10 @@ public class GeneralLocator {
     public static final Locator BTN_TARJETA_BLOQUEAR_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../../following-sibling::div//span[contains(text(),'{1}')]").withIos("xpath$b");
     public static final Locator LBL_BLOQUEO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Bloqueo exitoso!')  or contains(text(),'exitoso!') or contains(text(),'¡Bloqueo')]").withIos("xpath$q");
     public static final Locator BTN_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='PAGAR']/..").withIos("xpath$q");
-    public static final Locator LNK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']").withIos("xpath$q");
+    public static final Locator LNK_CERRAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cerrar']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Cerrar')]");
     public static final Locator LBL_TARJETAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Tarjetas']").withIos("xpath$q");
-    public static final Locator LNK_ACTUALIZAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Actualizar']");
+    public static final Locator LNK_ACTUALIZAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Actualizar']").withIos("xpath$//XCUIElementTypeButton[@name='ACTUALIZAR']");
+    public static final Locator BTN_PERMISO_LOCATOR = locator().withAndroid("xpath$//span[text()='PERMITIR']").withIos("xpath$q");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.actualizardatos;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
@@ -14,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.datossegu
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.CHK_TIPO_CORREO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ActualizarDatosSeguridad implements Task {
@@ -26,10 +28,12 @@ public class ActualizarDatosSeguridad implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(30000),
                 WaitUntil.the(TXT_CORREO_ACTUALIZAR, isVisible()),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO_ACTUALIZAR),
                 Click.on(FOCO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
+                WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_ACTUALIZAR),
                 Click.on(LNK_ACTUALIZAR)
