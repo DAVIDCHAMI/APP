@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.datossegu
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.CHK_TIPO_CORREO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ActualizarDatosSeguridad implements Task {
@@ -32,6 +33,7 @@ public class ActualizarDatosSeguridad implements Task {
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO_ACTUALIZAR),
                 Click.on(FOCO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
+                WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_ACTUALIZAR),
                 Click.on(LNK_ACTUALIZAR)
