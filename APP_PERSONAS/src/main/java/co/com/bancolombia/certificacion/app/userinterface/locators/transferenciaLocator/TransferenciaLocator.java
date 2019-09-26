@@ -14,7 +14,7 @@ public class TransferenciaLocator {
     public static final Locator LBL_CUENTA_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[contains(text(),'{1}')]").withIos("");
     public static final Locator BTN_INVERSIONES_LOCATOR = locator().withAndroid("xpath$//span[text()='Inversiones']").withIos("xpath$n");
     public static final Locator BTN_CUENTAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Cuentas']").withIos("xpath$n");
-    public static final Locator LBL_VALOR_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$n");
+    public static final Locator LBL_VALOR_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor enviado']/../following-sibling::div/span[contains(text(),'{0}')]").withIos("xpath$n");
     public static final Locator BTN_TIPO_PRODUCTO_DESTINO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("xpath$n");
 
     private TransferenciaLocator() {

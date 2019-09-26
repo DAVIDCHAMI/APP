@@ -17,9 +17,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         features = {"src/test/resources/features/transferencia/transferencia_cuenta_no_inscrita.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class TransferenciaRunner {
+public class TransferenciaProductosNoPropiosRunner {
 
-    public TransferenciaRunner() {
+    public TransferenciaProductosNoPropiosRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 

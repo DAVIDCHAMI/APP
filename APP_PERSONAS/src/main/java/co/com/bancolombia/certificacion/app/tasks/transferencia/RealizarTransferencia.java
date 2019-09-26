@@ -50,7 +50,7 @@ public class RealizarTransferencia implements Task {
                                 Enter.theValue(transferencia.getProductoDestino().getNumero()).into(TXT_NUMERO_CUENTA_DESTINO),
                                 Click.on(TXT_FOCO),
                                 Click.on(CHK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
-                                Click.on(BTN_SIGUIENTE)).
+                                Click.on(LNK_SIGUIENTE)).
                         otherwise(
                                 Check.whether(transferencia.getTipoTransferencia().contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).andIfSo(
                                         Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
@@ -62,10 +62,12 @@ public class RealizarTransferencia implements Task {
                                         )
                                 ).otherwise(
                                         Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_DE_OTROS)),
-                                        SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
-                                )
+                                        SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
+                                        Click.on(LNK_SIGUIENTE)
+                                        )
                         ),
-                Click.on(BTN_ENVIAR_DINERO)
+                Click.on(BTN_ENVIAR_DINERO),
+                WaitUntil.the(LBL_TRANFERENCIA_EXITOSA, isVisible())
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }

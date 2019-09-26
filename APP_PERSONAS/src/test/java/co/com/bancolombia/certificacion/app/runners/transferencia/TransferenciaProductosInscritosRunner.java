@@ -14,17 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/transferencia/transferencia_cuenta_no_inscrita.feature"},
+        features = {"src/test/resources/features/transferencia/transferencia_productos_inscritos.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class TransferenciaRunner {
+public class TransferenciaProductosInscritosRunner {
 
-    public TransferenciaRunner() {
+    public TransferenciaProductosInscritosRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/transferencia/transferencia_cuenta_no_inscrita.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/transferencia/transferencia_productos_inscritos.feature");
     }
 }
