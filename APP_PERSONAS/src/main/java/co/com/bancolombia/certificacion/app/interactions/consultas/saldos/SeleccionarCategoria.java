@@ -26,7 +26,7 @@ public class SeleccionarCategoria implements Interaction {
         if (!CUENTAS.equals(categoria)) {
             actor.attemptsTo(
                     Esperar.unTiempo(7000),
-                    RealizarScroll.hastaTargetVisible(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
+                    RealizarScroll.hastaPosicionDeTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Esperar.unTiempo(5000)
 
