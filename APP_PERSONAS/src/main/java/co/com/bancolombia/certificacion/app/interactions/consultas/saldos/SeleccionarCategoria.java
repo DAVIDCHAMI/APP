@@ -5,7 +5,6 @@ import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;

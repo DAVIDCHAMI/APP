@@ -51,5 +51,3 @@ public class SaldosMovimientosLocator {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
 }
-
-

@@ -4,13 +4,11 @@ import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SeleccionarProducto implements Interaction {
     private String tipoCuenta;
