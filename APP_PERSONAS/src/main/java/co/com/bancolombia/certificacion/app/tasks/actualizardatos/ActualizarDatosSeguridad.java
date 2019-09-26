@@ -27,7 +27,7 @@ public class ActualizarDatosSeguridad implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(20000),
+                Esperar.unTiempo(30000),
                 WaitUntil.the(TXT_CORREO_ACTUALIZAR, isVisible()),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO_ACTUALIZAR),
                 Click.on(FOCO),
