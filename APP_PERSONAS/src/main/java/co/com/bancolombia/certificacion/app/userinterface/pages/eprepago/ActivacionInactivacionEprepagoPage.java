@@ -16,8 +16,5 @@ public class ActivacionInactivacionEprepagoPage {
     public static final Target TXT_CAMPOS_ACTIVACION_EPREPAGO = Target.the("campos activacion eprepago").locatedBy(dynamicElement(TXT_CAMPOS_ACTIVACION_EPREPAGO_LOCATOR));
     public static final Target BTN_CANCELAR_ACTIVACION_EPREPAGO = Target.the("boton cancelar activacion eprepago").located(theElementBy(BTN_CANCELAR_ACTIVACION_EPREPAGO_LOCATOR));
 
-
-
-
     private ActivacionInactivacionEprepagoPage() {throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }

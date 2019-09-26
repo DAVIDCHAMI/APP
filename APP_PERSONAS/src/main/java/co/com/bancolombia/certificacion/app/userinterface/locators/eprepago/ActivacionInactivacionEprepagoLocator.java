@@ -13,8 +13,6 @@ public class ActivacionInactivacionEprepagoLocator {
     public static final Locator TXT_CAMPOS_ACTIVACION_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']//following::span[1]").withIos("xpath$n");
     public static final Locator BTN_CANCELAR_ACTIVACION_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//button[contains(text(),'CANCELAR')]").withIos("xpath$n");
 
-
-
     private ActivacionInactivacionEprepagoLocator() {throw new IllegalStateException(CLASE_LOCATOR);}
 
 
