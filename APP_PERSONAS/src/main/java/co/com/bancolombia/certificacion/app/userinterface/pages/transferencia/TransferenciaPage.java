@@ -23,6 +23,7 @@ public class TransferenciaPage {
     public static final Target BTN_CUENTAS = Target.the("Botón para visualizar cuentas deposito").located(theElementBy(BTN_CUENTAS_LOCATOR));
     public static final Target LBL_VALOR = Target.the("Label para verificar valor de transferencia").locatedBy(dynamicElement(LBL_VALOR_LOCATOR));
     public static final Target BTN_TIPO_PRODUCTO_DESTINO = Target.the("Botón tipo producto destino").locatedBy(dynamicElement(BTN_TIPO_PRODUCTO_DESTINO_LOCATOR));
+    public static final Target BTN_PRODUCTO_INSCRITO = Target.the("Botón selección producto inscrito").locatedBy(dynamicElement(BTN_PRODUCTO_INSCRITO_LOCATOR));
 
     private TransferenciaPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

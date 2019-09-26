@@ -1,18 +1,15 @@
 package co.com.bancolombia.certificacion.app.tasks.transferencia;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
-import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.transferencia.TransferenciaPage.*;
@@ -55,8 +52,8 @@ public class RealizarTransferencia implements Task {
                                 Check.whether(transferencia.getTipoTransferencia().contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).andIfSo(
                                         Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
                                         Check.whether(INSCRITOS.contains(opcionProductoDestino)).andIfSo(
-                                                Click.on(BTN_TIPO_PRODUCTO_DESTINO.of(opcionProductoDestino))
-                                                //dar click en la cuenta de inscritos PENDIENTE MAPEO
+                                                Click.on(BTN_TIPO_PRODUCTO_DESTINO.of(opcionProductoDestino)),
+                                                Click.on(BTN_PRODUCTO_INSCRITO.of(transferencia.getProductoDestino().getNumero()))
                                         ).otherwise(
                                                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
                                         )
