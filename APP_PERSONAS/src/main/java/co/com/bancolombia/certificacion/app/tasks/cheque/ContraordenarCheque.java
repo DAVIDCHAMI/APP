@@ -41,7 +41,8 @@ public class ContraordenarCheque implements Task {
                 Click.on(BTN_CONTRAORDENAR)
         );
         actor.remember(NUMERO_CUENTA, cheque.getProducto().getNumero());
-        actor.remember(NUMERO_CHEQUE, cheque.getNumeroCheque());
+        actor.remember(NUMERO_CHEQUE, cheque.getRangoHasta());
+        actor.remember(CHEQUE, cheque.getRangoDesde());
     }
 
     public static ContraordenarCheque conInfo(ChequeBuilder chequeBuilder) {

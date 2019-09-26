@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.userinterface.locators.transferenciaLocator;
+package co.com.bancolombia.certificacion.app.userinterface.locators.transferencia;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
