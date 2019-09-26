@@ -14,4 +14,4 @@ Característica: Realizar una transferencia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                  | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@5
-   |5   |1010111   |Cédula de ciudadanía   |pruebauser01   |6789   |4321   |Alterno   |001   |0369   |NO ERROR   |bolp   |ACTIVO   |406-182800-02   |Cuenta   |100000   | Productos inscritos de otros bancos   |00004097937784857   |Corriente   |Mis productos   ||
+   |5   |1010111   |Cédula de ciudadanía   |pruebauser01   |6789   |4321   |Alterno   |001   |0369   |NO ERROR   |bolp   |ACTIVO   |406-182800-02   |Cuenta   |1000   | Productos inscritos de otros bancos   |00004097937784857   |Corriente   |Mis productos   ||

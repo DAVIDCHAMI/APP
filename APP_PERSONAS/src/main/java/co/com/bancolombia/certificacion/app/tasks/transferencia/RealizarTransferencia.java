@@ -63,8 +63,8 @@ public class RealizarTransferencia implements Task {
                                         Click.on(LNK_SIGUIENTE)
                                         )
                         ),
-                Click.on(BTN_ENVIAR_DINERO),
-                WaitUntil.the(LBL_TRANFERENCIA_EXITOSA, isVisible())
+                Click.on(BTN_ENVIAR_DINERO)
+                //WaitUntil.the(LBL_TRANFERENCIA_EXITOSA, isVisible())
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }
