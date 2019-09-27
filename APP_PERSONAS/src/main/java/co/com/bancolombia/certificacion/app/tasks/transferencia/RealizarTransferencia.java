@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.transferencia;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
@@ -64,7 +65,7 @@ public class RealizarTransferencia implements Task {
                                         )
                         ),
                 Click.on(BTN_ENVIAR_DINERO),
-                WaitUntil.the(LBL_TRANFERENCIA_EXITOSA, isVisible())
+                Validar.carga()
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }

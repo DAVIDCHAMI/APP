@@ -29,6 +29,8 @@ public class GeneralPage {
     public static final Target LBL_TARJETAS = Target.the("Label Tarjetas Bloqueo").located(theElementBy(LBL_TARJETAS_LOCATOR));
     public static final Target BTN_PERMISO = Target.the("Boton de alerta para administrar los permisos de llamada y camara").located(theElementBy(BTN_PERMISO_LOCATOR));
     public static final Target LNK_ACTUALIZAR = Target.the("Link actualizar").located(theElementBy(LNK_ACTUALIZAR_LOCATOR));
+    public static final Target LBL_MENSAJE_CARGA = Target.the("Mensaje de carga").located(theElementBy(LBL_MENSAJE_CARGA_LOCATOR));
+    public static final Target IMG_CARGA = Target.the("Imagen de carga").located(theElementBy(IMG_CARGA_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
