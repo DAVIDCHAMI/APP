@@ -63,7 +63,7 @@ public class RealizarTransferencia implements Task {
                                         )
                         ),
                 Click.on(BTN_ENVIAR_DINERO),
-                Validar.cargaClaveDinamica()
+                Validar.carga()
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }

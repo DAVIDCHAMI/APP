@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.pagos;
 
 import co.com.bancolombia.certificacion.app.questions.pagos.VerificarPago;
+import co.com.bancolombia.certificacion.app.questions.pagos.VerificarPagoCredito;
 import co.com.bancolombia.certificacion.app.tasks.pagos.Pagar;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
@@ -41,6 +42,13 @@ public class PagosStepDefinition {
     public void verMensajeConfirmacionInformacionPago() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarPago.exitoso())
+        );
+    }
+
+    @Entonces("^deberia de ver el mensaje de confirmación y la información del pago de su credito$")
+    public void verMensajeConfirmacionInformacionPagoCredito() {
+        theActorInTheSpotlight().should(
+                seeThat(VerificarPagoCredito.exitoso())
         );
     }
 }
