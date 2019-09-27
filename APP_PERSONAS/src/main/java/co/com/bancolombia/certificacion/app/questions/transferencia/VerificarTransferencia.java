@@ -1,23 +1,22 @@
 package co.com.bancolombia.certificacion.app.questions.transferencia;
 
+import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Visibility;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.transferencia.TransferenciaPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TRANSFERENCIA;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 
 public class VerificarTransferencia implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String tipoOrigen = actor.recall(TIPO_ORIGEN_VERIFICACION);
-        String cuentaOrigen = actor.recall(CUENTA_ORIGEN_VERIFICACION);
-        String tipoDestino = actor.recall(TIPO_DESTINO_VERIFICACION);
-        String cuentaDestino = actor.recall(CUENTA_DESTINO_VERIFICACION);
-        return Visibility.of(LBL_TRANFERENCIA_EXITOSA).viewedBy(actor).asBoolean() &&
-                Visibility.of(LBL_CUENTA_ORIGEN.of(tipoOrigen, cuentaOrigen)).viewedBy(actor).asBoolean() &&
-                Visibility.of(LBL_CUENTA_DESTINO.of(tipoDestino, cuentaDestino)).viewedBy(actor).asBoolean();
+        Transferencia transferencia = actor.recall(MODELO_TRANSFERENCIA);
+        return LBL_TRANFERENCIA_EXITOSA.resolveFor(actor).isVisible() &&
+                LBL_CUENTA_ORIGEN.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero()).resolveFor(actor).isPresent() &&
+                LBL_CUENTA_DESTINO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero()).resolveFor(actor).isPresent()&&
+                LBL_VALOR.of(darFormato(transferencia.getMonto())).resolveFor(actor).isPresent();
     }
 
     public static VerificarTransferencia exitosa() {

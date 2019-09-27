@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
-import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Crediagil;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoProductosEnum;
 import net.serenitybdd.screenplay.Actor;
@@ -10,9 +9,9 @@ import net.serenitybdd.screenplay.Task;
 
 import static co.com.bancolombia.certificacion.app.models.builders.CrediagilBuilder.crediagil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.eliminarTildes;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.eliminarTildes;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class RevisarSaldos implements Task {
