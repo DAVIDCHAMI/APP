@@ -9,7 +9,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
@@ -17,7 +16,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.transfere
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TRANSFERENCIA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RealizarTransferencia implements Task {
     private Transferencia transferencia;
@@ -65,7 +63,7 @@ public class RealizarTransferencia implements Task {
                                         )
                         ),
                 Click.on(BTN_ENVIAR_DINERO),
-                Validar.carga()
+                Validar.cargaClaveDinamica()
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }

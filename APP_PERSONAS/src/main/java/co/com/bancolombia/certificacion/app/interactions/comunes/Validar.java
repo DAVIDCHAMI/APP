@@ -16,7 +16,7 @@ public class Validar implements Interaction {
         }
     }
 
-    public static Validar carga(){
+    public static Validar cargaClaveDinamica(){
         return instrumented(Validar.class);
     }
 }

@@ -55,7 +55,7 @@ public class ConInicioSesion extends GenerarQR {
                 WaitUntil.the(BTN_SIGUIENTE, isVisible()),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_GENERAR_QR),
-                Validar.carga()
+                Validar.cargaClaveDinamica()
         );
         if ("".equals(datos.getMonto()))
             datos.setMonto(SIN_VALOR);
