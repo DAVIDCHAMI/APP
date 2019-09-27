@@ -21,6 +21,7 @@ public class InicioSesionPage {
     public static final Target BTN_CERRAR_SESION = Target.the("Boton cerrar sesion").located(theElementBy(BTN_CERRAR_SESION_LOCATOR));
     public static final Target BTN_SI_CERRAR_SESION = Target.the("Boton SI cerrar sesion").located(theElementBy(BTN_SI_CERRAR_SESION_LOCATOR));
     public static final Target BTN_VOLVER = Target.the("Boton Volver").located(theElementBy(BTN_VOLVER_LOCATOR));
+    public static final Target BTN_FOCO_CERRAR_SESION = Target.the("foco cerrar sesion").located(theElementBy(BTN_FOCO_CERRAR_SESION_LOCATOR));
 
     private InicioSesionPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
