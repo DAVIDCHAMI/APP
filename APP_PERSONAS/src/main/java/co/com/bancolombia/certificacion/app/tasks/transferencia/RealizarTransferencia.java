@@ -7,67 +7,69 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.transferencia.TransferenciaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TRANSFERENCIA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RealizarTransferencia implements Task {
     private Transferencia transferencia;
-    private String opcion;
+    private String opcionProductoOrigen;
+    private String opcionProductoDestino;
 
-    public RealizarTransferencia(Transferencia transferencia, String opcion) {
+    public RealizarTransferencia(Transferencia transferencia, String opcionProductoOrigen, String opcionProductoDestino) {
         this.transferencia = transferencia;
-        this.opcion=opcion;
+        this.opcionProductoOrigen = opcionProductoOrigen;
+        this.opcionProductoDestino = opcionProductoDestino;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Check.whether(OPCION_INVERSIONES.equalsIgnoreCase(opcion))
+                Check.whether(OPCION_INVERSIONES.equalsIgnoreCase(opcionProductoOrigen))
                         .andIfSo(
-                        Click.on(BTN_INVERSIONES)
+                                Click.on(BTN_INVERSIONES)
                         ).otherwise(
-                                Click.on(BTN_CUENTAS)
+                        Click.on(BTN_CUENTAS)
                 ),
-                 WaitUntil.the(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero()), isVisible()),
-                Scroll.to(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero())),
                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
                 Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_TRANSFERENCIA),
-                Click.on(LNK_SIGUIENTE));
-        actor.attemptsTo(
+                Click.on(LNK_SIGUIENTE),
                 Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)).
                         andIfSo(
                                 Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)),
                                 Enter.theValue(transferencia.getProductoDestino().getNumero()).into(TXT_NUMERO_CUENTA_DESTINO),
                                 Click.on(TXT_FOCO),
                                 Click.on(CHK_TIPO_CUENTA.of(transferencia.getProductoDestino().getTipo())),
-                                Click.on(BTN_SIGUIENTE)
-                        ), Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).
-                        andIfSo(
-                                Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
-                                WaitUntil.the(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero()), isVisible()),
-                                Scroll.to(CUENTA_ESPECIFICA_PRODUCTO.of(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero())),
-                                SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
+                                Click.on(LNK_SIGUIENTE)).
+                        otherwise(
+                                Check.whether(transferencia.getTipoTransferencia().contains(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)).andIfSo(
+                                        Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS)),
+                                        Check.whether(INSCRITOS.contains(opcionProductoDestino)).andIfSo(
+                                                Click.on(BTN_TIPO_PRODUCTO_DESTINO.of(opcionProductoDestino)),
+                                                Click.on(BTN_PRODUCTO_INSCRITO.of(transferencia.getProductoDestino().getNumero()))
+                                        ).otherwise(
+                                                SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO)
+                                        )
+                                ).otherwise(
+                                        Click.on(OPT_TIPO_TRANSFERENCIA.of(TRANSFERIR_PRODUCTOS_DE_OTROS)),
+                                        SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoDestino().getTipo(), transferencia.getProductoDestino().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
+                                        Click.on(LNK_SIGUIENTE)
+                                        )
                         ),
-
-                Click.on(BTN_ENVIAR_DINERO)
+                Click.on(BTN_ENVIAR_DINERO),
+                WaitUntil.the(LBL_TRANFERENCIA_EXITOSA, isVisible())
         );
-        actor.remember(TIPO_ORIGEN_VERIFICACION, transferencia.getProductoOrigen().getTipo());
-        actor.remember(CUENTA_ORIGEN_VERIFICACION, transferencia.getProductoOrigen().getNumero());
-        actor.remember(TIPO_DESTINO_VERIFICACION, transferencia.getProductoDestino().getTipo());
-        actor.remember(CUENTA_DESTINO_VERIFICACION, transferencia.getProductoDestino().getNumero());
+        actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }
 
-    public static RealizarTransferencia conInfo(TransferenciaBuilder transferencia,String opcion) {
-        return instrumented(RealizarTransferencia.class, transferencia.build(),opcion);
+    public static RealizarTransferencia conInfo(TransferenciaBuilder transferencia, String opcionProductoOrigen, String opcionProductodestino) {
+        return instrumented(RealizarTransferencia.class, transferencia.build(), opcionProductoOrigen, opcionProductodestino);
     }
 }

@@ -14,6 +14,8 @@ public class ModeloConstantes {
     public static final String MODELO_FACTURA = "MODELO FACTURA";
     public static final String MODELO_DATOS_AUTENTICACION = "MODELO DATOS AUTENTICACION";
     public static final String MODELO_ACTIVACION_EPREPAGO = "MODELO ACTIVACION EPREPAGO";
+    public static final String MODELO_TRANSFERENCIA = "MODELO TRANSFERENCIA";
+
     private ModeloConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
     }
