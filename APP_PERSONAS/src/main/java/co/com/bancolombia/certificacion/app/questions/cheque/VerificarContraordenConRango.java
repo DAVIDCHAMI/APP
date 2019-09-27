@@ -16,7 +16,7 @@ public class VerificarContraordenConRango implements Question<Boolean> {
         return Visibility.of(LBL_CONTRAORDEN_EXITOSA).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_COMPROBANTE).viewedBy(actor).asBoolean() &&
                 Visibility.of(LBL_NUMERO_CHEQUE_RANGO.of(cheque.getRangoDesde(), cheque.getRangoHasta())).viewedBy(actor).asBoolean() &&
-                Visibility.of(LBL_CUENTA_ASOCIADA.of(cheque.getProducto().getNumero())).viewedBy(actor).asBoolean();
+                Visibility.of(LBL_CUENTA_ASOCIADA.of(cheque.getProducto().getTipo(),cheque.getProducto().getNumero())).viewedBy(actor).asBoolean();
     }
     public static VerificarContraordenConRango deChequeConRango(){return new VerificarContraordenConRango();}
 }

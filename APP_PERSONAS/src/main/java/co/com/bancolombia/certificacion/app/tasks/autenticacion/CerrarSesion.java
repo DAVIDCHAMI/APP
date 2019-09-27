@@ -33,9 +33,6 @@ public class CerrarSesion implements Task {
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Esperar.unTiempo(5000),
                 Click.on(BTN_CERRAR_SESION),
-                        Esperar.unTiempo(10000));
-
-        actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, BTN_SI_CERRAR_SESION)).andIfSo(
                         Click.on(BTN_SI_CERRAR_SESION)
                 ).otherwise(

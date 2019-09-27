@@ -18,6 +18,7 @@ public class InicioSesionLocator {
     public static final Locator BTN_CERRAR_MODAL_CLAVE_NO_VALIDA_LOCATOR = locator().withAndroid("xpath$//*[contains(@id,'IconClose')]/child::div[1]").withIos("xpath$test");
     public static final Locator BTN_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Next").withIos("xpath$//XCUIElementTypeButton[contains(@name,'CERRAR SESIÓN')]");
     public static final Locator BTN_SI_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Button_CancelYesModal_ActivateBiometrics").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
+    public static final Locator BTN_FOCO_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Button_CancelYesModal_ActivateBiometrics").withIos("xpath$//XCUIElementTypeStaticText[@name='¿Quieres cerrar sesión?']");
     public static final Locator BTN_VOLVER_LOCATOR = locator().withAndroid("xpath$//span[text()='Volver']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Volver')]");
     public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'CLAVE BLOQUEADA')]").withIos("xpath$//XCUIElementTypeStaticText[@name='CLAVE BLOQUEADA']");
 

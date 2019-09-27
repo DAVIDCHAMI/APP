@@ -2,7 +2,7 @@
 
 Característica: Contraordenar cheques como usario Bancolombia
 
-  @manual:passed
+
   Esquema del escenario: Contraordenar cheques
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -18,7 +18,7 @@ Característica: Contraordenar cheques como usario Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@1
-   |1   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Cheque   |65728   |   ||
+   |1   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Cheque   |65740   |   ||
 
  
   Esquema del escenario: Contraordenar cheques con rango
@@ -36,4 +36,4 @@ Característica: Contraordenar cheques como usario Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@2
-   |2   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Rango de cheques    |2   |65729   |65730|
+   |2   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Rango de cheques    |   |65735   |65736|
