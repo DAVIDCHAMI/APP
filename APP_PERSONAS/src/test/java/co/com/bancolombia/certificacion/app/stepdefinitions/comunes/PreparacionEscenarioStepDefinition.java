@@ -75,4 +75,3 @@ public class PreparacionEscenarioStepDefinition {
         theActorInTheSpotlight().should(seeThat(VerificarLosArchivosDeIseries.enApp(files)).orComplainWith(ArchivosIseriesFallido.class, ARCHIVOS_ISERIES_FALLIDO));
     }
 }
-
