@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Visibility;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.cheque.ChequePage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_CHEQUE;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 
 public class VerificarContraordenConRango implements Question<Boolean> {
