@@ -5,7 +5,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 public class VariablesSesionConstantes {
     public static final String TIENE_PRODUCTOS = "tiene productos";
     public static final String NUMERO_CUENTA = "NUMERO DE CUENTA PRODUCTO";
-    public static final String NUMERO_CHEQUE= "NUMERO DE CHEQUE";
+    public static final String MODELO_CHEQUE = "MODELO_CHEQUE";
     public static final String TIPO_CUENTA = "TIPO CUENTA";
     public static final String TIPO_DOCUMENTO = "TIPO DOCUMENTO";
     public static final String NUMERO_DOCUMENTO = "NUMERO DOCUMENTO";
