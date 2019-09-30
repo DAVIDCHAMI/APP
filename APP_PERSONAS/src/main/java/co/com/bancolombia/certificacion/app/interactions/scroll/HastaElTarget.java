@@ -37,15 +37,16 @@ public class HastaElTarget implements Interaction {
             int posicionInicialX = dimension.width / 2;
             int posicionInicialY = dimension.height / 2;
             int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
-            while (posicionFinalY > dimension.height) {
-                action.longPress(PointOption.point(posicionInicialX, 500));
+            //while (posicionFinalY > dimension.height) {
+            while (!Verificar.elementoVisible(actor, elemento)) {
+                action.longPress(PointOption.point(posicionInicialX, 300));
                 action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
                 action.release().perform();
                 posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
             }
-            action.longPress(PointOption.point(posicionInicialX, 500));
-            action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
-            action.release().perform();
+            //action.longPress(PointOption.point(posicionInicialX, 500));
+            //action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
+            //action.release().perform();
         }
     }
 }
