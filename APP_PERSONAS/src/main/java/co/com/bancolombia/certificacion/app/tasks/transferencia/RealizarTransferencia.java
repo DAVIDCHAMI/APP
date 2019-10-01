@@ -45,7 +45,6 @@ public class RealizarTransferencia implements Task {
                 Click.on(TXT_FOCO)
         );
         actor.attemptsTo(
-
                 Click.on(LNK_SIGUIENTE),
                 Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)).
                         andIfSo(
