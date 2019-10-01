@@ -7,7 +7,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class TransferenciaLocator {
     public static final Locator TXT_VALOR_TRANSFERENCIA_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'MaskedContent')]//input[@id='Currency']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa el valor a enviar']/../following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeTextField");
-    public static final Locator TXT_FOCO_LOCATOR = locator().withAndroid("xpath$//span[text()='Selecciona el tipo de producto']").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'TRANSFERIR')]");
+    public static final Locator TXT_FOCO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'TRANSFERIR')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'TRANSFERIR')]");
     public static final Locator TXT_NUMERO_CUENTA_DESTINO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_ProductNumber']").withIos("xpath$//XCUIElementTypeStaticText[@value='Ingresa el número del producto']/../../following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeTextField");
     public static final Locator BTN_ENVIAR_DINERO_LOCATOR = locator().withAndroid("xpath$//span[text()='ENVIAR DINERO']/..").withIos("xpath$//XCUIElementTypeButton[@name='ENVIAR DINERO']");
     public static final Locator LBL_TRANFERENCIA_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Transferencia realizada!' or text()='¡Transferencia exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Transferencia realizada!' or @name='¡Transferencia exitosa!']");
