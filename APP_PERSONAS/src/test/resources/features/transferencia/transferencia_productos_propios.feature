@@ -16,7 +16,7 @@ Característica: Realizar una transferencia a productos propios
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@Datos@2
    |2   |1010111   |Cédula de ciudadanía   |pruebauser01   |6789   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |406-182800-02   |Corriente   |6000   |Productos propios e inscritos Bancolombia   |406-182800-03   |Corriente   |Mis productos   |Mis productos|
 
-  Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia a cuenta inversión
+  Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia cuenta inversión
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |

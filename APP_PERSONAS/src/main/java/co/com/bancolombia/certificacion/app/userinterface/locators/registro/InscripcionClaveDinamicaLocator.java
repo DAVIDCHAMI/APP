@@ -8,7 +8,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 public class InscripcionClaveDinamicaLocator {
     public static final Locator TXT_NOMBRE_PERSONALIZADO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_CustomName_CustomNameDK']").withIos("xpath$test");
     public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$test");
-    public static final Locator CHK_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../preceding-sibling:: XCUIElementTypeButton[1]");
+    public static final Locator CHK_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../preceding-sibling::XCUIElementTypeButton[1]");
     public static final Locator TXT_NUMERO_CELULAR_LOCATOR= locator().withAndroid("xpath$//input[@id='Input_PhoneNumber_VerifyPhoneDK']").withIos("xpath$test");
     public static final Locator CHK_ACEPTO_TERMINOS_LOCATOR= locator().withAndroid("xpath$//input[@id='Checkbox_AcceptTermsConditions_VerifyPhoneDK']").withIos("xpath$test");
     public static final Locator CHK_FOCO_ACEPTO_LOCATOR= locator().withAndroid("xpath$//img[@src='/Personas/img/Bancolombia_Resources.times2.svg?GhP9CS2n0kZPigLrvSfZjg']").withIos("xpath$test");

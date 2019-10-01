@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/transferencia/transferencia_cuenta_no_inscritos.feature"},
+        features = {"src/test/resources/features/transferencia/transferencia_productos_no_inscritos.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
 public class TransferenciaProductosNoInscritosRunner {
@@ -25,6 +25,6 @@ public class TransferenciaProductosNoInscritosRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/transferencia/transferencia_cuenta_no_inscritos.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/transferencia/transferencia_productos_no_inscritos.feature");
     }
 }

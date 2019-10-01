@@ -1,6 +1,6 @@
 #language: es
 
-Característica: Realizar una transferencia a cuentas no inscritas
+Característica: Realizar una transferencia a productos no inscritas
 
   Esquema del escenario: Transferencia a cuentas no inscritas
     Dado que el Actor se autentica en la app
