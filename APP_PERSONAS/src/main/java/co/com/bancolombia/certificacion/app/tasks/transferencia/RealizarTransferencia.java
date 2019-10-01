@@ -42,9 +42,7 @@ public class RealizarTransferencia implements Task {
 
                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
                 Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_TRANSFERENCIA),
-                Click.on(TXT_FOCO)
-        );
-        actor.attemptsTo(
+                Click.on(TXT_FOCO),
                 Click.on(LNK_SIGUIENTE),
                 Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)).
                         andIfSo(
@@ -70,7 +68,7 @@ public class RealizarTransferencia implements Task {
                         ),
                 WaitUntil.the(BTN_ENVIAR_DINERO, isClickable()),
                 Click.on(BTN_ENVIAR_DINERO),
-                Validar.cargaClaveDinamica()
+                Validar.carga()
         );
         actor.remember(MODELO_TRANSFERENCIA, transferencia);
     }

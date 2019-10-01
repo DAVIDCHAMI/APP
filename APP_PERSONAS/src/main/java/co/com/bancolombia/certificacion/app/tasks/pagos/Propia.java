@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.pagos;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import net.serenitybdd.screenplay.Actor;
@@ -43,9 +45,10 @@ public class Propia implements Task {
                 ),
                 Scroll.to(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
-                WaitUntil.the(BTN_PAGAR, isEnabled()),
+                Validar.carga(),
                 Click.on(BTN_PAGAR),
-                WaitUntil.the(LNK_PRODUCTO_ORIGEN, isEnabled()),
+                Validar.carga(),
+                RealizarScroll.hastaPosicionDeTarget(LNK_PRODUCTO_ORIGEN),
                 Click.on(LNK_PRODUCTO_ORIGEN)
         );
         tarjetaCredito.setValorPago(darFormato(tarjetaCredito.getValorPago()));
