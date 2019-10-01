@@ -23,6 +23,7 @@ public class FacturaBuilder implements Builder<Factura> {
     private String descripcionFactura;
     private String duracionProgramacion;
     private String mesProgramacion;
+    private String estadoFactura;
 
     public FacturaBuilder() {
         this.valorFactura = "";
@@ -38,6 +39,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.descripcionFactura = "";
         this.duracionProgramacion = "";
         this.mesProgramacion = "";
+        this.estadoFactura="";
     }
 
     public static FacturaBuilder factura() {
@@ -49,6 +51,11 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+    public FacturaBuilder conValor(String datos) {
+        this.valorFactura = datos;
+        return this;
+    }
+
     public FacturaBuilder conEmpresaServicio(List<Map<String, String>> datos) {
         this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
@@ -56,6 +63,16 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public FacturaBuilder conFechaFactura(List<Map<String, String>> datos) {
         this.fechaFactura = datos.get(0).get("fechaFactura");
+        return this;
+    }
+
+    public FacturaBuilder conFechaFactura(String datos) {
+        this.fechaFactura = datos;
+        return this;
+    }
+
+    public FacturaBuilder conEstadoHistorico(String datos) {
+        this.estadoFactura = datos;
         return this;
     }
 
@@ -91,6 +108,11 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+ public FacturaBuilder conReferencia(String datos) {
+        this.referencia = datos;
+        return this;
+    }
+
     public FacturaBuilder conConvenio(List<Map<String, String>> datos) {
         this.convenio = datos.get(0).get("convenio");
         return this;
@@ -109,6 +131,10 @@ public class FacturaBuilder implements Builder<Factura> {
     public FacturaBuilder conMesProgramacion(List<Map<String, String>> datos) {
         this.mesProgramacion = datos.get(0).get("mesProgramacion");
         return this;
+    }
+
+    public String getEstadoFactura() {
+        return estadoFactura;
     }
 
     public String getDuracionProgramacion() {

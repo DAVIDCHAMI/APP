@@ -19,6 +19,10 @@ public class AdministrarFactura {
         return instrumented(EliminarFactura.class, programarFacturasBuilder.build(), opcion);
     }
 
+    public static Performable conHistoricoPago() {
+        return instrumented(HistoricoPago.class);
+    }
+
     private AdministrarFactura() {
     }
 }

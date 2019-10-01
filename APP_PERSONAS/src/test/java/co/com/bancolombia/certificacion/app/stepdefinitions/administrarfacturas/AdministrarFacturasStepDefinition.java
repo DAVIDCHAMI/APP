@@ -3,7 +3,9 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.administrarfacturas
 import co.com.bancolombia.certificacion.app.exceptions.EliminacionFacturasException;
 import co.com.bancolombia.certificacion.app.exceptions.ModificacionProgramacionException;
 import co.com.bancolombia.certificacion.app.exceptions.VerificarInscripcionFactura;
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarEliminacionFactura;
+import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarHistoricoPago;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarInscripcion;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarModificacionFacturas;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
@@ -18,6 +20,7 @@ import java.util.Map;
 import static co.com.bancolombia.certificacion.app.exceptions.EliminacionFacturasException.MENSAJE_ELIMINACION;
 import static co.com.bancolombia.certificacion.app.exceptions.ModificacionProgramacionException.MENSAJE_MODIFICACION;
 import static co.com.bancolombia.certificacion.app.exceptions.VerificarInscripcionFactura.INSCRIPCION_FALLIDA;
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException.NO_TIENE_HISTORICO_DE_PAGOS;
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -45,6 +48,11 @@ public class AdministrarFacturasStepDefinition {
         theActorInTheSpotlight().attemptsTo(
                 Inscribir.facturas(factura().conConvenio(datos).conDescripcionFactura(datos).conReferencia(datos).conConvenio(datos))
         );
+    }
+
+    @Cuando("^el actor ingresa al historico de sus pagos$")
+    public void elActorIngresaHistoricoPagos() {
+        theActorInTheSpotlight().attemptsTo( AdministrarFactura.conHistoricoPago());
     }
 
     @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
@@ -87,6 +95,13 @@ public class AdministrarFacturasStepDefinition {
     public void deberiaVisualzoarMensajeEnlace() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarInscripcion.factura()).orComplainWith(VerificarInscripcionFactura.class, INSCRIPCION_FALLIDA)
+        );
+    }
+
+    @Entonces("^deberia ver el historico de pagos$")
+    public void deberiaVerHistoricoPago() {
+        theActorInTheSpotlight().should(
+                seeThat(VerificarHistoricoPago.enFacturas()).orComplainWith(HistoricoPagoException.class, NO_TIENE_HISTORICO_DE_PAGOS)
         );
     }
 }
