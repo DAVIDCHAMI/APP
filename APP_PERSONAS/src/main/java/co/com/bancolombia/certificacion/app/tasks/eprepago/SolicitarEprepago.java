@@ -19,7 +19,8 @@ public class SolicitarEprepago implements Task {
                 Validar.carga(),
                 Click.on(CHK_TYC_EPREPAGO),
                 WaitUntil.the(LNK_SOLICITAR, isEnabled()),
-                Click.on(LNK_SOLICITAR)
+                Click.on(LNK_SOLICITAR),
+                Validar.carga()
         );
     }
 
