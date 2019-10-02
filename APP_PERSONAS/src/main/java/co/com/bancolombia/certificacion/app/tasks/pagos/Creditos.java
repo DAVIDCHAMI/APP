@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Credito;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -25,6 +26,7 @@ public class Creditos implements Task {
         this.credito = credito;
         this.productoDebitar = productoDebitar;
     }
+    //XCUIElementTypeStaticText[@value='Corriente']/../../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='406-182800-03']
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -36,8 +38,11 @@ public class Creditos implements Task {
                 Click.on(LBL_TIPO_PAGO.of(credito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(credito.getTipoPago())).andIfSo(
                         Enter.theValue(credito.getValorPago()).into(TXT_VALOR_PAGAR),
+                        Click.on(FOCO_PAGOS),
                         Click.on(LNK_SIGUIENTE)
-                ),
+                )
+        );
+        actor.attemptsTo(
                 RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Validar.carga(),

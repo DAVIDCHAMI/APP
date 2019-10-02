@@ -17,6 +17,7 @@ public class PagosPage {
     public static final Target LNK_PRODUCTO_ORIGEN= Target.the("Link producto origen question").locatedBy(dynamicElement(LNK_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target LBL_CREDITOS= Target.the("Label créditos").located(theElementBy(LBL_CREDITOS_LOCATOR));
     public static final Target BTN_CREDITO = Target.the("Botón crédito").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
+    public static final Target FOCO_PAGOS = Target.the("Foco").located(theElementBy(FOCO_PAGOS_LOCATOR));
 
     private PagosPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
