@@ -17,6 +17,7 @@ public class Factura {
     private String descripcionFactura;
     private String duracionProgramacion;
     private String mesProgramacion;
+    private String estadoFactura;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
@@ -32,6 +33,47 @@ public class Factura {
         this.descripcionFactura=programarFacturaBuilder.getDescripcionFactura();
         this.duracionProgramacion=programarFacturaBuilder.getDuracionProgramacion();
         this.mesProgramacion=programarFacturaBuilder.getMesProgramacion();
+        this.estadoFactura=programarFacturaBuilder.getEstadoFactura();
+    }
+
+    public void setValorFactura(String valorFactura) {
+        this.valorFactura = valorFactura;
+    }
+
+    public void setEmpresaServicio(String empresaServicio) {
+        this.empresaServicio = empresaServicio;
+    }
+
+    public void setFechaFactura(String fechaFactura) {
+        this.fechaFactura = fechaFactura;
+    }
+
+    public void setPeriodicidad(String periodicidad) {
+        this.periodicidad = periodicidad;
+    }
+
+    public void setNumeroIntento(String numeroIntento) {
+        this.numeroIntento = numeroIntento;
+    }
+
+    public void setFechaInicioFin(String fechaInicioFin) {
+        this.fechaInicioFin = fechaInicioFin;
+    }
+
+    public void setConvenio(String convenio) {
+        this.convenio = convenio;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
+    }
+
+    public String getEstadoFactura() {
+        return estadoFactura;
+    }
+
+    public void setEstadoFactura(String estadoFactura) {
+        this.estadoFactura = estadoFactura;
     }
 
     public String getMesProgramacion() {
