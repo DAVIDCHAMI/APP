@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     maven {url "http://cdv4.todo1.com/nexus/content/groups/public/"}
-    /*maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
+   /* maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
     maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
     maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
     maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
@@ -12,7 +12,7 @@ repositories {
 buildscript {
     repositories {
         maven {url "http://cdv4.todo1.com/nexus/content/groups/public/"}
-        /*maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
+       /* maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
         maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
         maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
         maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/

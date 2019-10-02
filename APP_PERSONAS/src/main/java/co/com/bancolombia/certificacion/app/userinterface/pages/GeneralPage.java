@@ -32,6 +32,7 @@ public class GeneralPage {
     public static final Target LNK_ACTUALIZAR = Target.the("Link actualizar").located(theElementBy(LNK_ACTUALIZAR_LOCATOR));
     public static final Target LBL_MENSAJE_CARGA = Target.the("Mensaje de carga").located(theElementBy(LBL_MENSAJE_CARGA_LOCATOR));
     public static final Target IMG_CARGA = Target.the("Imagen de carga").located(theElementBy(IMG_CARGA_LOCATOR));
+    public static final Target LNK_SOLICITAR = Target.the("Link Solicitar").located(theElementBy(LNK_SOLICITAR_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

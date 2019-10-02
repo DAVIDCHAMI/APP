@@ -5,7 +5,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SolicitudEprepagoLocator {
-    public static final Locator CHK_TYC_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("");
+    public static final Locator CHK_TYC_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("");
     public static final Locator BTN_SOLICITAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='SOLICITAR']").withIos("");
     public static final Locator LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Solicitud exitosa!']").withIos("");
     public static final Locator LBL_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='OSBlockWidget']/child::div/child::div[2]/span[contains(text(),'e-Prepago')]").withIos("");
