@@ -30,6 +30,7 @@ public class Creditos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Check.whether(elementoVisible(actor, LBL_CREDITOS)).andIfSo(
+                        Validar.carga(),
                         Click.on(BTN_CREDITO.of(credito.getTipo(), credito.getNumero()))
                 ),
                 RealizarScroll.hastaPosicionDeTarget(LBL_TIPO_PAGO.of(credito.getTipoPago())),
