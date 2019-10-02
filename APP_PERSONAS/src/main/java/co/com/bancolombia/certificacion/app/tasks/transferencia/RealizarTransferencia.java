@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.CUENTA_ESPECIFICA_PRODUCTO;
@@ -16,6 +17,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.transfere
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TRANSFERENCIA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class RealizarTransferencia implements Task {
     private Transferencia transferencia;
@@ -35,10 +37,12 @@ public class RealizarTransferencia implements Task {
                         .andIfSo(
                                 Click.on(BTN_INVERSIONES)
                         ).otherwise(
-                        Click.on(BTN_CUENTAS)
-                ),
+                            Click.on(BTN_CUENTAS)
+                    ),
+
                 SeleccionarProducto.desdeSaldosMovimientos(transferencia.getProductoOrigen().getTipo(), transferencia.getProductoOrigen().getNumero(), CUENTA_ESPECIFICA_PRODUCTO),
                 Enter.theValue(transferencia.getMonto()).into(TXT_VALOR_TRANSFERENCIA),
+                Click.on(TXT_FOCO),
                 Click.on(LNK_SIGUIENTE),
                 Check.whether((transferencia.getTipoTransferencia()).contains(TRANSFERIR_PRODUCTOS_NO_INSCRITOS)).
                         andIfSo(
@@ -62,6 +66,7 @@ public class RealizarTransferencia implements Task {
                                         Click.on(LNK_SIGUIENTE)
                                         )
                         ),
+                WaitUntil.the(BTN_ENVIAR_DINERO, isClickable()),
                 Click.on(BTN_ENVIAR_DINERO),
                 Validar.carga()
         );
