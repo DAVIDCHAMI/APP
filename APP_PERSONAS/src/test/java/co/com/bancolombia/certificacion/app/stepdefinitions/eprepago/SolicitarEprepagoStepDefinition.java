@@ -20,12 +20,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class SolicitarEprepagoStepDefinition {
 
     @Cuando("^quiero solicitar una tarjeta e-prepago$")
-    public void quieroSolicitarUnaTarjetaEprepago(List<Map<String, String>> datos){
+    public void quieroSolicitarUnaTarjetaEprepago(){
         theActorInTheSpotlight().attemptsTo(
-                SolicitarEprepago.enLaAppBancolombia(usuario()
-                        .conCorreo(datos)
-                        .conTipoCorreo(datos)
-                        .conNumeroCelular(datos)));
+                SolicitarEprepago.enLaAppBancolombia());
     }
     @Entonces("^Debo ver el mensaje de solicitud exitosa$")
     public void deboVerElMensajeDeSolicitudExitosa() {
