@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.models.builders.ChequeBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Performable;
 

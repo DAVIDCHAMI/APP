@@ -50,7 +50,7 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("^el actor ingresa al historico de sus pagos$")
+    @Cuando("^el actor ingresa al historico de pagos$")
     public void elActorIngresaHistoricoPagos() {
         theActorInTheSpotlight().attemptsTo( AdministrarFactura.conHistoricoPago());
     }

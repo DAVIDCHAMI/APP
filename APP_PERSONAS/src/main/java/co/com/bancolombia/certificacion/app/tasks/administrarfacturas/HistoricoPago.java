@@ -16,8 +16,6 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class HistoricoPago implements Task {
 
-    private Factura factura;
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         int iterador = 1;
@@ -35,6 +33,6 @@ public class HistoricoPago implements Task {
             );
             iterador++;
         }
-        actor.remember(MODELO_HISTORICO_FACTURA,factura );
+        actor.remember(MODELO_HISTORICO_FACTURA,listaHistoricoPago );
     }
 }

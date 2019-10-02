@@ -10,7 +10,7 @@
        | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
        | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
      Y el actor quiere VER_HISTORICO_PAGOS
-     Cuando el actor ingresa al historico de sus pagos
+     Cuando el actor ingresa al historico de pagos
      Entonces deberia ver el historico de pagos
 
      Ejemplos:
