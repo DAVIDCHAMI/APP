@@ -36,12 +36,12 @@ public class HastaElTarget implements Interaction {
             Dimension dimension = driver.manage().window().getSize();
             int posicionInicialX = dimension.width / 2;
             int posicionInicialY = dimension.height / 2;
-            int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+//            int posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
             while (!Verificar.elementoVisible(actor, elemento)) {
                 action.longPress(PointOption.point(posicionInicialX, 300));
                 action.moveTo(PointOption.point(posicionInicialX, posicionInicialY));
                 action.release().perform();
-                posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
+  //              posicionFinalY = elemento.resolveFor(actor).getCoordinates().onPage().y;
             }
         }
     }

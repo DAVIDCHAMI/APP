@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.pagos;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.BTN_PRODUCTO_ORIGEN_LOCATOR;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.OPT_CUENTA_PRODUCTO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.pagos.PagosLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
@@ -18,6 +19,8 @@ public class PagosPage {
     public static final Target LBL_CREDITOS= Target.the("Label créditos").located(theElementBy(LBL_CREDITOS_LOCATOR));
     public static final Target BTN_CREDITO = Target.the("Botón crédito").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
     public static final Target FOCO_PAGOS = Target.the("Foco").located(theElementBy(FOCO_PAGOS_LOCATOR));
+    public static final Target FOCO_PAGO = Target.the("Foco").locatedBy(dynamicElement(FOCO_PAGO_LOCATOR));
+    public static final Target OPT_PRODUCTO_ORIGEN = Target.the("Producto origen").locatedBy(dynamicElement(OPT_CUENTA_PRODUCTO_LOCATOR));
 
     private PagosPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

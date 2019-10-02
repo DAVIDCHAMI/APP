@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class GeneralLocator {
-    public static final Locator BTN_PRODUCTO_ORIGEN_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div/div/span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@value='{0}']/../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='{1}']");
+    public static final Locator BTN_PRODUCTO_ORIGEN_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div/div/span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@value='{0}']/../../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='{1}']");
     public static final Locator BTN_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//button[text()='SIGUIENTE']").withIos("xpath$//XCUIElementTypeButton[@name='SIGUIENTE']");
     public static final Locator LNK_SIGUIENTE_LOCATOR = locator().withAndroid("xpath$//span[text()='Siguiente']").withIos("xpath$//*[contains(@name,'Siguiente')]");
     public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$//span[text()='GENERAR CÓDIGO QR']").withIos("xpath$//XCUIElementTypeStaticText[@name='GENERAR CÓDIGO QR']");

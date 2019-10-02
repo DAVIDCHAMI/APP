@@ -33,17 +33,19 @@ public class NoPropia implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(tarjetaCredito.getNumero()).into(TXT_NUMERO_TARJETA),
+                Click.on(FOCO_PAGOS),
                 Click.on(LNK_SIGUIENTE),
-                Scroll.to(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
+                RealizarScroll.hastaPosicionDeTarget(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO.of(tarjetaCredito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(tarjetaCredito.getTipoPago())).andIfSo(
                         Check.whether(tarjetaCredito.getNumero().charAt(0) != NUMERO_VISA).andIfSo(
                                 Click.on(CHK_MONEDA.of(tarjetaCredito.getMoneda()))
                         ),
                         Enter.theValue(tarjetaCredito.getValorPago()).into(TXT_VALOR_PAGAR),
+                        Click.on(FOCO_PAGO.of(tarjetaCredito.getTipoPago())),
                         Click.on(LNK_SIGUIENTE)
                 ),
-                Scroll.to(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
+                RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Validar.carga(),
                 Click.on(BTN_PAGAR),
