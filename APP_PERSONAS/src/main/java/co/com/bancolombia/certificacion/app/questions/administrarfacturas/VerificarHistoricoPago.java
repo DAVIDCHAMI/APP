@@ -13,14 +13,14 @@ public class VerificarHistoricoPago implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         List<Factura> factura = actor.recall(MODELO_HISTORICO_FACTURA);
-        boolean list=false;
+        boolean lista=false;
         for (Factura f : factura) {
-            list = f.getReferencia() != null
+            lista = f.getReferencia() != null
                     && f.getValorFactura() != null
                     && f.getEstadoFactura() != null
                     && f.getFechaFactura() != null;
         }
-        return list;
+        return lista;
     }
 
     public static VerificarHistoricoPago enFacturas() {
