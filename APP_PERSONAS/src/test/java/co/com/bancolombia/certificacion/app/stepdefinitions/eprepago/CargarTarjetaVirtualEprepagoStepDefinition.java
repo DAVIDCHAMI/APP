@@ -6,10 +6,10 @@ import cucumber.api.java.es.Entonces;
 public class CargarTarjetaVirtualEprepagoStepDefinition {
 
     @Cuando("^quiere cargar una tarjeta ePrepago activa$")
-    public void quiereCargarUnaTarjetaEPrepagoActiva() {
+    public void cargarTarjetaEprepagoActiva() {
     }
 
     @Entonces("^el deberia de ver un mensaje de carga de tarjeta ePrepago exitosa$")
-    public void elDeberiaDeVerUnMensajeDeCargaDeTarjetaEPrepagoExitosa() {
+    public void deberiaVerMensajeCargaTarjetaEprepagoExitosa() {
     }
 }
