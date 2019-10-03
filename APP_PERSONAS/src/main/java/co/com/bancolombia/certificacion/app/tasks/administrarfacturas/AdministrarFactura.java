@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.models.builders.ChequeBuilder;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Performable;
 
@@ -17,6 +18,10 @@ public class AdministrarFactura {
 
     public static Performable conOpcionELiminar(FacturaBuilder programarFacturasBuilder, String opcion) {
         return instrumented(EliminarFactura.class, programarFacturasBuilder.build(), opcion);
+    }
+
+    public static Performable conHistoricoPago() {
+        return instrumented(HistoricoPago.class);
     }
 
     private AdministrarFactura() {
