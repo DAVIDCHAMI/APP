@@ -30,16 +30,18 @@ public class Creditos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Check.whether(elementoVisible(actor, LBL_CREDITOS)).andIfSo(
+                        Validar.carga(),
                         Click.on(BTN_CREDITO.of(credito.getTipo(), credito.getNumero()))
                 ),
                 RealizarScroll.hastaPosicionDeTarget(LBL_TIPO_PAGO.of(credito.getTipoPago())),
                 Click.on(LBL_TIPO_PAGO.of(credito.getTipoPago())),
                 Check.whether(OTRO_VALOR.equals(credito.getTipoPago())).andIfSo(
                         Enter.theValue(credito.getValorPago()).into(TXT_VALOR_PAGAR),
+                        Click.on(FOCO_PAGOS),
                         Click.on(LNK_SIGUIENTE)
                 ),
-                RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
-                Click.on(BTN_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
+                RealizarScroll.hastaPosicionDeTarget(OPT_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
+                Click.on(OPT_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                 Validar.carga(),
                 Click.on(BTN_PAGAR),
                 Validar.carga(),
