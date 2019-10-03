@@ -16,7 +16,7 @@ Característica: Solicitud eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario     | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/eprepago.xlsx@Datos@1
-   |1   |93221452   |1   |autotest27   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
+   |1   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |EPREPAGO|
     
   Esquema del escenario: Solicitud de un cliente que ya tiene tarjeta eprepago
     Dado que el Actor se autentica en la app
