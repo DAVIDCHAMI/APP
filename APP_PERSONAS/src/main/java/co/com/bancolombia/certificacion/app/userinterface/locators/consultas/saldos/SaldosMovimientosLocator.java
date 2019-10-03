@@ -32,9 +32,12 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//div[@id='l1-0-AccountContentContainer']//div[3]//span")
             .withIos("xpath$g");
-    public static final Locator LBL_SALDO_SALDOS_MOVIMIENTOS_LOCATOR = locator()
+    public static final Locator LBL_SALDOS_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']//div[@class='text-right']")
-            .withIos("xpath$g");
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther[1][.//XCUIElementTypeStaticText[@name='{1}']]/following-sibling:: XCUIElementTypeOther[2]/XCUIElementTypeStaticText");
+    public static final Locator LBL_SALDO_CUENTAS_LOCATOR = locator()
+            .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']//div[@class='text-right']")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther[1][.//XCUIElementTypeStaticText[@name='{1}']]/following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
     public static final Locator LBL_SALDO_SALDOS_CREDIAGIL_MOVIMIENTOS_LOCATOR = locator()
             .withAndroid("xpath$//android.view.View[contains(@resource-id, '0-{0}')]//android.view.View[3]")
             .withIos("xpath$g");

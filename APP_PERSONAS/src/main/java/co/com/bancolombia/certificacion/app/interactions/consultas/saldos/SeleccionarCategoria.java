@@ -29,7 +29,6 @@ public class SeleccionarCategoria implements Interaction {
                     RealizarScroll.hastaPosicionDeTarget(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Click.on(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS.of(categoria)),
                     Esperar.unTiempo(5000)
-
             );
         }
     }
