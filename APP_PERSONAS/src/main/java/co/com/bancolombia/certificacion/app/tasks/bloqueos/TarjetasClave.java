@@ -14,8 +14,8 @@ public class TarjetasClave implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(LNK_BLOQUEAR),
                 WaitUntil.the(LNK_BLOQUEAR, isEnabled()),
+                Click.on(LNK_BLOQUEAR),
                 Click.on(BTN_BLOQUEAR),
                 WaitUntil.the(LBL_BLOQUEO_EXITOSO, isVisible())
         );

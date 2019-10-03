@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.bloqueos;
 
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -25,7 +26,7 @@ public class Tarjeta implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Check.whether(elementoVisible(actor, LBL_TARJETAS)).andIfSo(
-                        Scroll.to(BTN_TARJETA_BLOQUEAR.of(producto.getTipo(), producto.getNumero())),
+                        RealizarScroll.hastaPosicionDeTarget(BTN_TARJETA_BLOQUEAR.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_TARJETA_BLOQUEAR.of(producto.getTipo(), producto.getNumero()))
                         ),
                 Click.on(LNK_BLOQUEAR),
