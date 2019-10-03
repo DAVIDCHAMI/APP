@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.locators.administrarf
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class ConsultarDetalleFacturaLocator {
@@ -19,6 +20,7 @@ public class ConsultarDetalleFacturaLocator {
     public static final Locator OPT_VER_DETALLE_FACTURA_PROGRAMADA_LOCATOR=locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../../../..//div//span[contains(text(),'VER DETALLE')]").withIos("xpath$");
     public static final Locator LBL_DETALLE_FECHA_INICIO_LOCATOR=locator().withAndroid("xpath$//span[text()='Fecha inicio de la programación']/../following-sibling::div/span").withIos("xpath$");
     public static final Locator LBL_DETALLE_FECHA_FIN_LOCATOR=locator().withAndroid("xpath$//span[text()='Fecha fin de la programación']/../following-sibling::div/span").withIos("xpath$");
-    public static final Locator LBL_DETALLE_CEDULA_LOCATOR=locator().withAndroid("xpath$//span[contains(text(),'CEDULA')]/../following-sibling::div/span").withIos("xpath$");
-    public static final Locator LBL_DETALLE_FACTURA_LOCATOR=locator().withAndroid("xpath$//span[contains(text(),'FACTURA')]/../following-sibling::div/span").withIos("xpath$");
+    public ConsultarDetalleFacturaLocator(){
+        throw new IllegalStateException(CLASE_LOCATOR);
+    }
 }

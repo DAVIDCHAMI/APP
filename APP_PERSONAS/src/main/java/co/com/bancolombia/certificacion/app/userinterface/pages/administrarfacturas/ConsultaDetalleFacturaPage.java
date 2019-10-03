@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ConsultarDetalleFacturaLocator.*;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ProgramarPagarFacturasLocator.LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
@@ -23,4 +24,8 @@ public class ConsultaDetalleFacturaPage {
     public static final Target OPT_VER_DETALLE_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_VER_DETALLE_FACTURA_PROGRAMADA_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_INICIO = Target.the("Label verificacion fecha inicio").located(theElementBy(LBL_DETALLE_FECHA_INICIO_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_FIN = Target.the("Label verificacion fecha fin").located(theElementBy(LBL_DETALLE_FECHA_FIN_LOCATOR));
+
+    public ConsultaDetalleFacturaPage(){
+            throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    }
 }
