@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -20,7 +21,8 @@ public class SolicitarEprepago implements Task {
                 Click.on(CHK_TYC_EPREPAGO),
                 WaitUntil.the(LNK_SOLICITAR, isEnabled()),
                 Click.on(LNK_SOLICITAR),
-                Validar.carga()
+                //Validar.carga(),
+                Esperar.unTiempo(30000)
         );
     }
 
