@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.bloqueos;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
@@ -32,7 +33,7 @@ public class Tarjeta implements Task {
                 Click.on(LNK_BLOQUEAR),
                 WaitUntil.the(BTN_BLOQUEAR, isEnabled()),
                 Click.on(BTN_BLOQUEAR),
-                WaitUntil.the(LBL_BLOQUEO_EXITOSO, isVisible())
+                Validar.carga()
         );
         actor.remember(MODELO_PRODUCTO, producto);
     }
