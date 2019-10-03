@@ -39,7 +39,7 @@ public class SaldosMovimientosLocator {
             .withAndroid("xpath$//*[contains(text(),'{0}')]/ancestor::div[@class='cardlist-item']//*[contains(text(),'{1}')]/ancestor::div[@class='cardlist-item']//div[@class='text-right']")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther[1][.//XCUIElementTypeStaticText[@name='{1}']]/following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
     public static final Locator LBL_SALDO_CREDIAGIL_MOVIMIENTOS_LOCATOR = locator()
-            .withAndroid("xpath$//android.view.View[contains(@resource-id, '0-{0}')]//android.view.View[3]")
+            .withAndroid("xpath$//span[text()='Crediágil']/../../following-sibling::div/div/div/div[3]/span")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='Crediágil']/../following-sibling:: XCUIElementTypeOther[3]/XCUIElementTypeStaticText");
     public static final Locator VER_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-ContentAccountElement']").withIos("xpath$(//XCUIElementTypeImage/../following-sibling::XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText)[{0}]");
     public static final Locator VER_MOVIMIENTOS_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]").withIos("xpath$h(((//XCUIElementTypeStaticText[@name='Movimientos'])[1]/../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeImage)[2]/../following-sibling::XCUIElementTypeOther//XCUIElementTypeOther/XCUIElementTypeStaticText)[{0}]");

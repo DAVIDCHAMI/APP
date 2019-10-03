@@ -29,16 +29,10 @@ public class RevisarProductos implements Task {
     }
 
     private String consultarSaldo(Actor actor, String tipoCuenta, String numeroCuenta) {
-        String a;
-        if (CUENTAS.equals(opcionCategoria)) {
-            a = LBL_SALDO_CUENTAS.of(tipoCuenta, numeroCuenta).resolveFor(actor).getText();
-            System.out.println("El saldo es:" + a);
-            return a;
-        } else {
-            a = LBL_SALDO_MOVIMIENTOS.of(tipoCuenta, numeroCuenta).resolveFor(actor).getText();
-            System.out.println("El saldo es:" + a);
-            return a;
-        }
+        if (CUENTAS.equals(opcionCategoria))
+            return LBL_SALDO_CUENTAS.of(tipoCuenta, numeroCuenta).resolveFor(actor).getText();
+         else
+            return LBL_SALDO_MOVIMIENTOS.of(tipoCuenta, numeroCuenta).resolveFor(actor).getText();
     }
 
     public static Performable enSaldosMovimientos(ProductoBuilder productoBuilder, String opcionCategoria) {
