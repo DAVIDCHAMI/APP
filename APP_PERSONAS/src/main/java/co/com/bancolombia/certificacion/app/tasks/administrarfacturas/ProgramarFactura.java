@@ -22,9 +22,6 @@ public class ProgramarFactura implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String fecha[] = factura.getFechaInicioFin().split("-");
-        String fechaInicio = fecha[0];
-        String fechaFin = fecha[1];
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR,factura),
@@ -43,8 +40,8 @@ public class ProgramarFactura implements Task {
                 actor.attemptsTo(Click.on(BTN_FLECHA_MES_SIGUIENTE));
             }
             String valorMes = LBL_VALOR_MES.of(factura.getMesProgramacion()).resolveFor(actor).getValue();
-            actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(fechaInicio, valorMes)),
-                    Click.on(LST_RANGO_FECHA.of(fechaFin, valorMes)),
+            actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(factura.getFechaInicio(), valorMes)),
+                    Click.on(LST_RANGO_FECHA.of(factura.getFechaFin(), valorMes)),
                     Click.on(BTN_SELECCIONAR));
         }else {
             actor.attemptsTo(

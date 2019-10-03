@@ -26,9 +26,6 @@ public class EditarProgramacion implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String fecha[] = programarFacturas.getFechaInicioFin().split("-");
-        String fechaInicio = fecha[0];
-        String fechaFin = fecha[1];
         actor.attemptsTo(
                 Click.on(OPT_SUB_MENU_PROGRAMADAS),
                 SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
@@ -56,8 +53,8 @@ public class EditarProgramacion implements Task {
                         Click.on(LST_FRECUENCIA_PERIODICAD.of(programarFacturas.getFrecuenciaPago())),
                         Click.on(LST_FRECUENCIA_PERIODICAD),
                         Click.on(TXT_FECHA_INICIO_FIN),
-                        Click.on(LST_RANGO_FECHA.of(fechaInicio)),
-                        Click.on(LST_RANGO_FECHA.of(fechaFin)),
+                        Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaInicio())),
+                        Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaFin())),
                         Click.on(BTN_SELECCIONAR),
                         Click.on(BTN_SIGUIENTE)),
                 RealizarScroll.hastaPosicionDeTarget(BTN_MODIFICAR),
