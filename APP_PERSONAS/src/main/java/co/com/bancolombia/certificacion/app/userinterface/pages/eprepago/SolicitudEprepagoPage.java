@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class SolicitudEprepagoPage {
-    public static final Target CHK_TYC = Target.the("check terminos y condiciones").located(theElementBy(CHK_TYC_LOCATOR));
+    public static final Target CHK_TYC_EPREPAGO = Target.the("check terminos y condiciones").located(theElementBy(CHK_TYC_EPREPAGO_LOCATOR));
     public static final Target BTN_SOLICITAR_EPREPAGO = Target.the("boton solicitar eprepago").located(theElementBy(BTN_SOLICITAR_EPREPAGO_LOCATOR));
     public static final Target LBL_SOLICITUD_EPREPAGO_EXITOSA = Target.the("solicitud eprepago exitosa").located(theElementBy(LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR));
     public static final Target LBL_EPREPAGO = Target.the("label eprepago").located(theElementBy(LBL_EPREPAGO_LOCATOR));

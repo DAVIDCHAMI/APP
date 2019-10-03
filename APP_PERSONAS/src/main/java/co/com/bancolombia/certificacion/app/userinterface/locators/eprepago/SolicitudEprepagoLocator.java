@@ -5,11 +5,11 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SolicitudEprepagoLocator {
-    public static final Locator CHK_TYC_LOCATOR = locator().withAndroid("xpath$//div[@id='b13-MarginContainer']/child::div[5]/descendant::span[1]/input").withIos("");
-    public static final Locator BTN_SOLICITAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//div[@id='b15-MarginContainer']/child::div/descendant::button[1]").withIos("");
-    public static final Locator LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR = locator().withAndroid("xpath$//android.view.View[contains(@text,'EXITOSA')]").withIos("");
-    public static final Locator LBL_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='OSBlockWidget']/child::div/child::div[2]/span[contains(text(),'e-Prepago')]").withIos("");
-    public static final Locator LBL_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//div[@id='b20-Tab1']/span[contains(text(),'Detalle del producto')]").withIos("");
+    public static final Locator CHK_TYC_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("");
+    public static final Locator BTN_SOLICITAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='SOLICITAR']").withIos("");
+    public static final Locator LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Solicitud exitosa!']").withIos("");
+    public static final Locator LBL_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='e-Prepago']").withIos("");
+    public static final Locator LBL_DETALLE_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[text()='Detalle del producto']").withIos("");
 
     public SolicitudEprepagoLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

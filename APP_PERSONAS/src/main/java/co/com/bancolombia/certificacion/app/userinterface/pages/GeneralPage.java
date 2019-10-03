@@ -10,7 +10,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 public class GeneralPage {
     public static final Target BTN_SIGUIENTE = Target.the("Boton siguiente").locatedBy(dynamicElement(BTN_SIGUIENTE_LOCATOR));
     public static final Target BTN_PAGAR = Target.the("Boton pagar").located(theElementBy(BTN_PAGAR_LOCATOR));
-    public static final Target LNK_PAGAR = Target.the("Link pagar").located(theElementBy(LNK_PAGAR_LOCATOR));
     public static final Target LNK_SIGUIENTE = Target.the("Link boton siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target FOCO = Target.the("Foco generar qr").located(theElementBy(FOCO_LOCATOR));
     public static final Target BTN_PRODUCTO_ORIGEN = Target.the("Boton producto origen").locatedBy(dynamicElement(BTN_PRODUCTO_ORIGEN_LOCATOR));
@@ -32,6 +31,7 @@ public class GeneralPage {
     public static final Target LNK_ACTUALIZAR = Target.the("Link actualizar").located(theElementBy(LNK_ACTUALIZAR_LOCATOR));
     public static final Target LBL_MENSAJE_CARGA = Target.the("Mensaje de carga").located(theElementBy(LBL_MENSAJE_CARGA_LOCATOR));
     public static final Target IMG_CARGA = Target.the("Imagen de carga").located(theElementBy(IMG_CARGA_LOCATOR));
+    public static final Target LNK_SOLICITAR = Target.the("Link Solicitar").located(theElementBy(LNK_SOLICITAR_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
