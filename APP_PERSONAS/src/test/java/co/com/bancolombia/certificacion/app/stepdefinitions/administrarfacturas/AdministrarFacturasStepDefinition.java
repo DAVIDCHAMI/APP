@@ -37,7 +37,6 @@ public class AdministrarFacturasStepDefinition {
                         .conProducto(datos)
                         .conPeriodicidad(datos)
                         .conNumeroIntento(datos)
-                        .conFechaInicioFin(datos)
                         .conMesProgramacion(datos)
                         .conDuracionProgramacion(datos)
         ));
@@ -67,15 +66,16 @@ public class AdministrarFacturasStepDefinition {
     }
 
     @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
-    public void elActorModificaSusFacturasProgramadas(List<Map<String, String>> datos, String opcion) {
+    public void elActorModificaSusFacturasProgramadas(String opcion,List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
-                        .conFechaInicioFin(datos)
+                        .conFechaInicio(datos)
+                        .conFechaFin(datos)
                         .conEmpresaServicio(datos)
                         .conProducto(datos)
-                        .conFrecuenciaPago(datos)
+                        .conNumeroIntento(datos)
                         .conPeriodicidad(datos)
-                        .conFechaInicioFin(datos),
+                    .conMesProgramacion(datos),
                 opcion
         ));
     }

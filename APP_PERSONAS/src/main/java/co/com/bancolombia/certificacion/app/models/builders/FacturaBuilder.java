@@ -114,13 +114,17 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
-    public FacturaBuilder conFechaInicioFin(List<Map<String, String>> datos) {
-        this.fechaInicio = datos.get(0).get("fechaInicioFin");
+    public FacturaBuilder conFechaInicio(List<Map<String, String>> datos) {
+        this.fechaInicio = datos.get(0).get("fechaInicio");
         return this;
     }
 
     public FacturaBuilder conFechaFin(List<Map<String, String>> datos) {
-        this.fechaFin = datos.get(0).get("fechaInicioFin");
+        this.fechaFin = datos.get(0).get("fechaFin");
+        return this;
+    }
+    public FacturaBuilder conMes(List<Map<String, String>> datos) {
+        this.mesProgramacion = datos.get(0).get("<mesProgramacion>");
         return this;
     }
 

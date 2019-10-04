@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
@@ -27,13 +28,12 @@ public class EliminarFactura implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Saltar.onBoarding(),
-                Check.whether(INSCRITAS.equals(opcion.toUpperCase()))
-                        .andIfSo(
-                                SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas)
+                Check.whether(!INSCRITAS.equalsIgnoreCase(opcion.toUpperCase())).andIfSo(
+                        Click.on(OPT_PROGRAMADAS)
                         ),
-                RealizarScroll.hastaPosicionDeTarget(OPT_ELIMINAR_FACTURA),
-                Click.on(OPT_ELIMINAR_FACTURA),
-                Click.on(BTN_CONFIRMAR_ELIMINACION)
+                SeleccionarOpcionFactura.conInformacion(OPT_ELIMINAR_FACTURA, programarFacturas),
+                Click.on(BTN_CONFIRMAR_ELIMINACION),
+                Validar.carga()
         );
         actor.remember(SERVICIO, programarFacturas.getEmpresaServicio());
     }

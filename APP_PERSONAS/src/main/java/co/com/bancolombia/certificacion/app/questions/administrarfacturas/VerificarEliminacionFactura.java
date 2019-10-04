@@ -11,11 +11,13 @@ public class VerificarEliminacionFactura implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String empresaServicio=actor.recall(SERVICIO);
-        return Visibility.of(LBL_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean() && Visibility.of(LBL_EMPRESA_SERIVICIO.of(empresaServicio)).viewedBy(actor).asBoolean()  ;
+       // String empresaServicio = actor.recall(SERVICIO);
+        return Visibility.of(LBL_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean()
+                //&& Visibility.of(LBL_EMPRESA_SERIVICIO.of(empresaServicio)).viewedBy(actor).asBoolean()
+                && Visibility.of(LBL_COMPROBANTE_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean();
     }
 
-    public static VerificarEliminacionFactura exitoso(){
+    public static VerificarEliminacionFactura exitoso() {
         return new VerificarEliminacionFactura();
     }
 }
