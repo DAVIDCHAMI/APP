@@ -17,5 +17,6 @@ public class CargarTarjetaVirtualEprepagoStepDefinition {
 
     @Entonces("^el deberia de ver un mensaje de carga de tarjeta ePrepago exitosa$")
     public void deberiaVerMensajeCargaTarjetaEprepagoExitosa() {
+        
     }
 }
