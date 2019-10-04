@@ -51,6 +51,28 @@ public static final Locator LBL_DISPONIBLE_AVACE_PESOS_LOCATOR = locator()
     public static final Locator LBL_DEUDA_FECHA_CREDITO_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='Deuda a la fecha']/../following-sibling::div/div/span")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='Deuda a la fecha']/../../following-sibling::XCUIElementTypeOther[2]/XCUIElementTypeStaticText");
+    public static final Locator LBL_CUPO_ASIGNADO_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo asignado']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_CUPO_UTILIZADO_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo utilizado']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_CUPO_EN_CANJE_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo en canje']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_DISPONIBLE_SOBRECUPO_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Disponible con sobrecupo']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_MAXIMO_DESEMBOLSAR_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Valor máximo a desembolsar']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_MINIMO_DESEMBOLSAR_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Valor mínimo a desembolsar']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_CUPO_DISPONIBLE_LOCATOR = locator()
+            .withAndroid("xpath$s")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo disponible']/../../following-sibling::XCUIElementTypeOther[2]/XCUIElementTypeStaticText");
+
     private DetalleProductosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
