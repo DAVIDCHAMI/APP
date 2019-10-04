@@ -13,6 +13,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoPresente;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.TIENE_PRODUCTOS;
@@ -51,7 +52,7 @@ public class RevisarProductos implements Task {
         String[] tipoCuenta = producto.getTipo().split(";");
         String[] numeroCuenta = producto.getNumero().split(";");
         for (int iterador = 0; iterador <= cadena.length; iterador++) {
-            if (CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]).resolveFor(actor).isPresent()) {
+            if (elementoPresente(actor, CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]))) {
                 listaProductos.add(elProducto()
                         .conNumero(numeroCuenta[iterador])
                         .conTipoCuenta(tipoCuenta[iterador])
