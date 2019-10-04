@@ -49,7 +49,6 @@ public class ConsultarDetalleCreditoConsumo implements Task {
                                 .conOtrosCargos(LBL_OTROS_CARGOS.resolveFor(actor).getText())
                                 .conFechasDesembolso(LBL_FECHA_DESEMBOLSO.resolveFor(actor).getText())
                                 .conValorDesembolso(LBL_VALOR_DESEMBOLSO.resolveFor(actor).getText())
-                                .conFechaProximoPago(LBL_FECHA_PROXIMO_PAGO.resolveFor(actor).getText())
                                 .build()
                 ).build()
         );
