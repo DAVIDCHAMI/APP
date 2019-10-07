@@ -15,7 +15,9 @@ public class Activar implements Interaction {
         actor.attemptsTo(
                 WaitUntil.the(LNK_CANCELAR, isEnabled()),
                 Click.on(LNK_CANCELAR),
-                Click.on(BTN_SI_CANCELAR_REGISTRO));
+                WaitUntil.the(BTN_SI, isEnabled()),
+                Click.on(BTN_SI)
+        );
     }
 
     public static Activar huella(){ return instrumented(Activar.class);}
