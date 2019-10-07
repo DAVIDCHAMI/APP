@@ -15,7 +15,7 @@ public class GenerarCodigoQrLocator {
     public static final Locator IMG_CODIGO_QR_LOCATOR = locator().withAndroid("xpath$//img[@alt='Scan me!']").withIos("xpath$//XCUIElementTypeImage[@name='Scan me!']");
     public static final Locator IMG_CODIGO_QR_PANTALLA_INICIO_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'FloatingIcon')]/img").withIos("xpath$//XCUIElementTypeOther[contains(@name,'QR')]/..");
     public static final Locator IMG_CODIGO_QR_FLOTANTE_LOCATOR = locator().withAndroid("xpath$//div[@class='floating-actions-items OSInline']/div[3]//img").withIos("xpath$//XCUIElementTypeLink[@name='Generar código QR']/following-sibling:: XCUIElementTypeOther[1]");
-    public static final Locator TXT_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_ProductNumber']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa el número del producto']/../following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeTextField");
+    public static final Locator TXT_NUMERO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//input[@id='CreditCard']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa el número del producto']/../following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeTextField");
     public static final Locator BTN_TIPO_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/preceding-sibling::button").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../preceding-sibling::XCUIElementTypeButton[1]");
 
     private GenerarCodigoQrLocator() {

@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
@@ -54,7 +55,7 @@ public class ConInicioSesion extends GenerarQR {
                 WaitUntil.the(BTN_SIGUIENTE, isVisible()),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_GENERAR_QR),
-                WaitUntil.the(LBL_GUARDADO_EXITOSO, isVisible())
+                Validar.carga()
         );
         if ("".equals(datos.getMonto()))
             datos.setMonto(SIN_VALOR);

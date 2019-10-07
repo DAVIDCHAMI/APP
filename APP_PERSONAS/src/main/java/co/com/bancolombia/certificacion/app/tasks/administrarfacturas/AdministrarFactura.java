@@ -19,6 +19,18 @@ public class AdministrarFactura {
         return instrumented(EliminarFactura.class, programarFacturasBuilder.build(), opcion);
     }
 
+    public static Performable conOpcionConsultarDetalleFacturasInscritas(FacturaBuilder programarFacturasBuilder) {
+        return instrumented(ConsultarDetalleFacturaInscrita.class, programarFacturasBuilder.build());
+    }
+
+ public static Performable conOpcionConsultarDetalleFacturasProgramadas(FacturaBuilder programarFacturasBuilder) {
+        return instrumented(ConsultarDetalleFacturaProgramada.class, programarFacturasBuilder.build());
+    }
+
+    public static Performable conHistoricoPago() {
+        return instrumented(HistoricoPago.class);
+    }
+
     private AdministrarFactura() {
     }
 }

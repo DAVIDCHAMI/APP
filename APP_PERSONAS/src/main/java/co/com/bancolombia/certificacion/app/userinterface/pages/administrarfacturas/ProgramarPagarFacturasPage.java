@@ -40,6 +40,12 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_MENSAJE_MODIFICACION = Target.the("Mensaje modificación exitosa").located(theElementBy(LBL_MENSAJE_MODIFICACION_LOCATOR));
     public static final Target LBL_ELIMINACION_EXITOSA = Target.the("Mensaje eliminación exitosa").located(theElementBy(LBL_ELIMINACION_EXITOSA_LOCATOR));
     public static final Target LBL_EMPRESA_SERIVICIO = Target.the("Label de verificación empresa servicio").locatedBy(dynamicElement(LBL_EMPRESA_SERIVICIO_LOCATOR));
+    public static final Target LBL_ESTADO_HISTORICO_PAGO = Target.the("Label de verifica el estado del historico de pago").locatedBy(dynamicElement(LBL_ESTADO_HISTORICO_PAGO_LOCATOR));
+    public static final Target LBL_FECHA_HISTORICO_PAGO = Target.the("Label de verifica la fecha del historico de pago").locatedBy(dynamicElement(LBL_FECHA_HISTORICO_PAGO_LOCATOR));
+    public static final Target LBL_REFERENCIA_HISTORICO_PAGO = Target.the("Label de verifica la referencia del historico de pago").locatedBy(dynamicElement(LBL_REFERENCIA_HISTORICO_PAGO_LOCATOR));
+    public static final Target LBL_VALOR_HISTORICO_PAGO = Target.the("Label de verifica el valor del historico de pago").locatedBy(dynamicElement(LBL_VALOR_HISTORICO_PAGO_LOCATOR));
+    public static final Target LBL_CONTENEDOR_HISTORICO_PAGO = Target.the("Contenedor detalle historico de pago").locatedBy(dynamicElement(LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR));
+    public static final Target OPT_PROGRAMADAS = Target.the("Opcion programadas").located(theElementBy(OPT_PROGRAMADAS_LOCATOR));
 
     private ProgramarPagarFacturasPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

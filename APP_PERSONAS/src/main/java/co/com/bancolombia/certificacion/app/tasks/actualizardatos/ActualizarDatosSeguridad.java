@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.actualizardatos;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
@@ -28,7 +28,7 @@ public class ActualizarDatosSeguridad implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(30000),
+                Validar.carga(),
                 WaitUntil.the(TXT_CORREO_ACTUALIZAR, isVisible()),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO_ACTUALIZAR),
                 Click.on(FOCO),

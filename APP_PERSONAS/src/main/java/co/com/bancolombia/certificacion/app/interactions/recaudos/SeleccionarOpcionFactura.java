@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.interactions.recaudos;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
@@ -12,6 +13,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.OPT_FACTURA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SeleccionarOpcionFactura implements Interaction {
     private Target target;
@@ -25,6 +27,8 @@ public class SeleccionarOpcionFactura implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Saltar.onBoarding());
+        actor.attemptsTo(
                 WaitUntil.the(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
@@ -33,6 +37,7 @@ public class SeleccionarOpcionFactura implements Interaction {
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
                         factura.getEmpresaServicio())),
+                WaitUntil.the(target,isVisible()),
                 Click.on(target)
         );
     }

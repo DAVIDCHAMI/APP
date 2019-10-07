@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.bloqueos;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -15,7 +16,7 @@ public class Clave implements Task {
         actor.attemptsTo(
                 Click.on(LNK_BLOQUEAR),
                 Click.on(BTN_BLOQUEAR),
-                WaitUntil.the(LBL_BLOQUEO_EXITOSO, isVisible())
+                Validar.carga()
         );
     }
 }

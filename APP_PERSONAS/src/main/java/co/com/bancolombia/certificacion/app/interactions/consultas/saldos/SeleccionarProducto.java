@@ -13,24 +13,24 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 public class SeleccionarProducto implements Interaction {
     private String tipoCuenta;
     private String numeroCuenta;
-    Target target;
+    private Target target;
 
-    public SeleccionarProducto(String tipoCuenta, String numeroCuenta,Target target) {
+    public SeleccionarProducto(String tipoCuenta, String numeroCuenta, Target target) {
         this.tipoCuenta = tipoCuenta;
         this.numeroCuenta = numeroCuenta;
-        this.target=target;
+        this.target = target;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
-                RealizarScroll.hastaPosicionDeTarget( target.of(tipoCuenta, numeroCuenta)),
-                  Click.on(target.of(tipoCuenta, numeroCuenta))
+                RealizarScroll.hastaPosicionDeTarget(target.of(tipoCuenta, numeroCuenta)),
+                Click.on(target.of(tipoCuenta, numeroCuenta))
         );
     }
 
-    public static SeleccionarProducto desdeSaldosMovimientos(String tipoCuenta, String numeroCuenta,Target target) {
-        return instrumented(SeleccionarProducto.class, tipoCuenta, numeroCuenta,target);
+    public static SeleccionarProducto desdeSaldosMovimientos(String tipoCuenta, String numeroCuenta, Target target) {
+        return instrumented(SeleccionarProducto.class, tipoCuenta, numeroCuenta, target);
     }
 }

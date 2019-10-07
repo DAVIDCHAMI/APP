@@ -2,12 +2,14 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
+import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
+import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 
 public class FacturaBuilder implements Builder<Factura> {
     private String valorFactura;
@@ -15,14 +17,21 @@ public class FacturaBuilder implements Builder<Factura> {
     private String fechaFactura;
     private String periodicidad;
     private String numeroIntento;
-    private String fechaInicioFin;
+    private String fechaInicio;
+    private String fechaFin;
     private String frecuenciaPago;
     private String referencia;
     private Producto producto = new Producto();
+    private Usuario usuario= new Usuario();
     private String convenio;
     private String descripcionFactura;
     private String duracionProgramacion;
     private String mesProgramacion;
+    private String estadoFactura;
+    private String nitFactura;
+    private String negocio;
+    private String numeroFactura;
+    private String canalInscripcionFactura;
 
     public FacturaBuilder() {
         this.valorFactura = "";
@@ -30,7 +39,8 @@ public class FacturaBuilder implements Builder<Factura> {
         this.fechaFactura = "";
         this.periodicidad = "";
         this.numeroIntento = "";
-        this.fechaInicioFin = "";
+        this.fechaInicio = "";
+        this.fechaFin= "";
         this.convenio = "";
         this.referencia = "";
         this.frecuenciaPago = "";
@@ -38,6 +48,11 @@ public class FacturaBuilder implements Builder<Factura> {
         this.descripcionFactura = "";
         this.duracionProgramacion = "";
         this.mesProgramacion = "";
+        this.estadoFactura = "";
+        this.nitFactura = "";
+        this.negocio = "";
+        this.numeroFactura = "";
+        this.canalInscripcionFactura = "";
     }
 
     public static FacturaBuilder factura() {
@@ -49,13 +64,43 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+    public FacturaBuilder conValor(String datos) {
+        this.valorFactura = datos;
+        return this;
+    }
+
     public FacturaBuilder conEmpresaServicio(List<Map<String, String>> datos) {
         this.empresaServicio = datos.get(0).get("empresaServicio");
         return this;
     }
 
+    public FacturaBuilder conEmpresaServicio(String datos) {
+        this.empresaServicio = datos;
+        return this;
+    }
+
     public FacturaBuilder conFechaFactura(List<Map<String, String>> datos) {
         this.fechaFactura = datos.get(0).get("fechaFactura");
+        return this;
+    }
+
+    public FacturaBuilder conFechaFactura(String datos) {
+        this.fechaFactura = datos;
+        return this;
+    }
+
+    public FacturaBuilder conNumeroFactura(String datos) {
+        this.numeroFactura = datos;
+        return this;
+    }
+
+    public FacturaBuilder conCanalInscripcionFactura(String datos) {
+        this.canalInscripcionFactura = datos;
+        return this;
+    }
+
+    public FacturaBuilder conEstadoHistorico(String datos) {
+        this.estadoFactura = datos;
         return this;
     }
 
@@ -70,7 +115,22 @@ public class FacturaBuilder implements Builder<Factura> {
     }
 
     public FacturaBuilder conFechaInicioFin(List<Map<String, String>> datos) {
-        this.fechaInicioFin = datos.get(0).get("fechaInicioFin");
+        this.fechaInicio = datos.get(0).get("fechaInicioFin");
+        return this;
+    }
+
+    public FacturaBuilder conFechaFin(List<Map<String, String>> datos) {
+        this.fechaFin = datos.get(0).get("fechaInicioFin");
+        return this;
+    }
+
+    public FacturaBuilder conFechaInicio(String datos) {
+        this.fechaInicio = datos;
+        return this;
+    }
+
+    public FacturaBuilder conFechaFin(String datos) {
+        this.fechaFin = datos;
         return this;
     }
 
@@ -81,6 +141,22 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+    public FacturaBuilder conTipoCuenta(String datos) {
+        this.producto = elProducto().conTipoCuenta(datos).build();
+        return this;
+    }
+
+ public FacturaBuilder conCedula(String datos) {
+        this.usuario = usuario().conNumeroDocumento(datos).build();
+        return this;
+    }
+
+
+    public FacturaBuilder conNumeroCuenta(String datos) {
+        this.producto = elProducto().conNumero(datos).build();
+        return this;
+    }
+
     public FacturaBuilder conFrecuenciaPago(List<Map<String, String>> datos) {
         this.frecuenciaPago = datos.get(0).get("frecuenciaPago");
         return this;
@@ -88,6 +164,21 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public FacturaBuilder conReferencia(List<Map<String, String>> datos) {
         this.referencia = datos.get(0).get("referencia");
+        return this;
+    }
+
+    public FacturaBuilder conNit(String datos) {
+        this.nitFactura = datos;
+        return this;
+    }
+
+    public FacturaBuilder conNegocio(String datos) {
+        this.negocio = datos;
+        return this;
+    }
+
+    public FacturaBuilder conReferencia(String datos) {
+        this.referencia = datos;
         return this;
     }
 
@@ -109,6 +200,34 @@ public class FacturaBuilder implements Builder<Factura> {
     public FacturaBuilder conMesProgramacion(List<Map<String, String>> datos) {
         this.mesProgramacion = datos.get(0).get("mesProgramacion");
         return this;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+    }
+
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public String getNitFactura() {
+        return nitFactura;
+    }
+
+    public String getNegocio() {
+        return negocio;
+    }
+
+    public String getCanalInscripcionFactura() {
+        return canalInscripcionFactura;
+    }
+
+    public String getEstadoFactura() {
+        return estadoFactura;
     }
 
     public String getDuracionProgramacion() {
@@ -141,10 +260,6 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public String getNumeroIntento() {
         return numeroIntento;
-    }
-
-    public String getFechaInicioFin() {
-        return fechaInicioFin;
     }
 
     public Producto getProducto() {

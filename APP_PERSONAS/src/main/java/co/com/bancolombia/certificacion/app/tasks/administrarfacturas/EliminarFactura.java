@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -30,7 +31,7 @@ public class EliminarFactura implements Task {
                         .andIfSo(
                                 SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas)
                         ),
-                Scroll.to(OPT_ELIMINAR_FACTURA),
+                RealizarScroll.hastaPosicionDeTarget(OPT_ELIMINAR_FACTURA),
                 Click.on(OPT_ELIMINAR_FACTURA),
                 Click.on(BTN_CONFIRMAR_ELIMINACION)
         );

@@ -23,10 +23,12 @@ public class Constantes {
     public static final String PAGO_EXITOSO = "¡Pago exitoso!";
     public static final String TRANSFERIR_PRODUCTOS_NO_INSCRITOS = "Productos no inscritos";
     public static final String TRANSFERIR_PRODUCTOS_PROPIOS_INSCRITOS = "Productos propios e inscritos";
+    public static final String TRANSFERIR_PRODUCTOS_DE_OTROS= "Productos inscritos de otros";
     public static final String VALOR_PAGAR = "Valor a pagar";
     public static final String PERIODICIDAD = "Periodicidad";
     public static final int NUMERO_PANTALLAS_ONBOARDING = 5;
     public static final String INSCRITAS = "INSCRITAS";
+    public static final String INSCRITOS = "Inscritos";
     public static final String RANGO_FECHAS = "RANGO DE FECHAS";
     public static final String FONDO_INVERSION = "Fondo de inversión";
     public static final String OPCION_INVERSIONES = "Inversiones";
