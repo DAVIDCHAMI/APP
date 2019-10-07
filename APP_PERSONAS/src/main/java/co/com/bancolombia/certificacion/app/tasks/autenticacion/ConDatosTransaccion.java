@@ -41,8 +41,7 @@ public class ConDatosTransaccion implements Task {
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                CancelarActivacion.deHuella(),
-                Validar.carga()
+                CancelarActivacion.deHuella()
         );
     }
 }

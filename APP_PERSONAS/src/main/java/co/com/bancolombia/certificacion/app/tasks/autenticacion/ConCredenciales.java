@@ -33,8 +33,7 @@ public class ConCredenciales implements Task {
                 Escribir.enCampoTexto(usuario.getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                CancelarActivacion.deHuella(),
-                Validar.carga()
+                CancelarActivacion.deHuella()
         );
     }
 }
