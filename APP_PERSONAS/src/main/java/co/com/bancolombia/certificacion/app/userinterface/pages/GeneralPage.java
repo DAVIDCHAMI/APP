@@ -33,6 +33,8 @@ public class GeneralPage {
     public static final Target LBL_MENSAJE_CARGA = Target.the("Mensaje de carga").located(theElementBy(LBL_MENSAJE_CARGA_LOCATOR));
     public static final Target IMG_CARGA = Target.the("Imagen de carga").located(theElementBy(IMG_CARGA_LOCATOR));
     public static final Target LNK_SOLICITAR = Target.the("Link Solicitar").located(theElementBy(LNK_SOLICITAR_LOCATOR));
+    public static final Target LNK_CANCELAR = Target.the("Botón cancelar activar huella").located(theElementBy(LNK_CANCELAR_LOCATOR));
+    public static final Target BTN_SI = Target.the("Botón confirmación cancelar verificación por huella").located(theElementBy(BTN_SI_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
