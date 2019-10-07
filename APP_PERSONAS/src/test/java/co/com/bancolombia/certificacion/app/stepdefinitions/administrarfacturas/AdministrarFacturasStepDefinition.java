@@ -37,7 +37,6 @@ public class AdministrarFacturasStepDefinition {
                         .conProducto(datos)
                         .conPeriodicidad(datos)
                         .conNumeroIntento(datos)
-                        .conFechaInicioFin(datos)
                         .conMesProgramacion(datos)
                         .conDuracionProgramacion(datos)
         ));
@@ -52,7 +51,7 @@ public class AdministrarFacturasStepDefinition {
 
     @Cuando("^el actor ingresa al historico de pagos$")
     public void elActorIngresaHistoricoPagos() {
-        theActorInTheSpotlight().attemptsTo( AdministrarFactura.conHistoricoPago());
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago());
     }
 
     @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
@@ -67,15 +66,17 @@ public class AdministrarFacturasStepDefinition {
     }
 
     @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
-    public void elActorModificaSusFacturasProgramadas(List<Map<String, String>> datos, String opcion) {
+    public void elActorModificaSusFacturasProgramadas(String opcion,List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
-                        .conFechaInicioFin(datos)
+                        .conFechaFactura(datos)
+                        .conFechaInicio(datos)
+                        .conFechaFin(datos)
                         .conEmpresaServicio(datos)
                         .conProducto(datos)
-                        .conFrecuenciaPago(datos)
+                        .conNumeroIntento(datos)
                         .conPeriodicidad(datos)
-                        .conFechaInicioFin(datos),
+                    .conMesProgramacion(datos),
                 opcion
         ));
     }
@@ -88,7 +89,7 @@ public class AdministrarFacturasStepDefinition {
 
     @Entonces("deberia ver el mensaje de eliminacion exitosa$")
     public void mensajeEliminacionExitosa() {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarEliminacionFactura.exitoso()).orComplainWith(EliminacionFacturasException.class, MENSAJE_ELIMINACION));
+        theActorInTheSpotlight().should(seeThat(VerificarEliminacionFactura.exitoso()).orComplainWith(EliminacionFacturasException.class, MENSAJE_ELIMINACION));
     }
 
     @Entonces("^deberia ver el mensaje de confirmacion$")
