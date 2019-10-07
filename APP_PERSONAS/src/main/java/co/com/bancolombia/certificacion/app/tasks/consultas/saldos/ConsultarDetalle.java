@@ -17,4 +17,8 @@ public class ConsultarDetalle {
     public static Performable deCreditosConsumo(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         return instrumented(ConsultarDetalleCreditoConsumo.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }
+
+    public static Performable deCrediagil(String opcionCategoria) {
+        return instrumented(ConsultaDetalleCrediagil.class, opcionCategoria);
+    }
 }

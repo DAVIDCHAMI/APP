@@ -1,20 +1,18 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.CancelarActivacion;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
-import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_CANCELAR_HUELLA;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.OPT_CANCELAR_HUELLA_SI;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
@@ -39,13 +37,11 @@ public class ConDatosTransaccion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Type.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
+                Click.on(TXT_CLAVE_DIGITOS),
+                Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-                Check.whether(Verificar.elementoVisible(actor,LNK_CANCELAR_HUELLA)).
-                        andIfSo(
-                                Click.on(LNK_CANCELAR_HUELLA),
-                                Click.on(OPT_CANCELAR_HUELLA_SI))
+                CancelarActivacion.deHuella()
         );
     }
 }

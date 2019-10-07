@@ -14,17 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/detalleproductos/consultar_detalle_credito_consumo.feature"},
+        features = {"src/test/resources/features/consultas/detalleproductos/consultar_detalle_crediagil.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class ConsultarDetalleCreditoConsumo {
-    private ConsultarDetalleCreditoConsumo() {
+public class ConsultarDetalleCrediagil {
+    private ConsultarDetalleCrediagil() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/detalleproductos/consultar_detalle_credito_consumo.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/detalleproductos/consultar_detalle_crediagil.feature");
     }
 }
