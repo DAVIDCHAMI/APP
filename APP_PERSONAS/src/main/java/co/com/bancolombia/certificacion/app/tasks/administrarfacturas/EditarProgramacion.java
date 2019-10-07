@@ -32,9 +32,7 @@ public class EditarProgramacion implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 Click.on(OPT_PROGRAMADAS),
-                SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas),
-                Click.on(OPT_MODIFICAR_PROGRAMACION));
-        actor.attemptsTo(
+                SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
                 Check.whether(PRODUCTO_ORIGEN.equals(opcion)).andIfSo(
                         Validar.carga(),
                         Click.on(FOCO),

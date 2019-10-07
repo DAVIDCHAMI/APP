@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.interactions.recaudos;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
-import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -33,6 +32,10 @@ public class SeleccionarOpcionFactura implements Interaction {
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
                         factura.getEmpresaServicio()), isPresent()),
+                RealizarScroll.hastaPosicionDeTarget(OPT_FACTURA.of(
+                        factura.getValorFactura(),
+                        factura.getFechaFactura(),
+                        factura.getEmpresaServicio())),
                 Click.on(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),

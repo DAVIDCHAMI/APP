@@ -51,7 +51,7 @@ public class AdministrarFacturasStepDefinition {
 
     @Cuando("^el actor ingresa al historico de pagos$")
     public void elActorIngresaHistoricoPagos() {
-        theActorInTheSpotlight().attemptsTo( AdministrarFactura.conHistoricoPago());
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago());
     }
 
     @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
@@ -69,6 +69,7 @@ public class AdministrarFacturasStepDefinition {
     public void elActorModificaSusFacturasProgramadas(String opcion,List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
+                        .conFechaFactura(datos)
                         .conFechaInicio(datos)
                         .conFechaFin(datos)
                         .conEmpresaServicio(datos)
