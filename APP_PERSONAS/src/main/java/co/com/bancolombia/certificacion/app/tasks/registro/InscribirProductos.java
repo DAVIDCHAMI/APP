@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.registro;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.InscripcionBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Inscripcion;
 import net.serenitybdd.screenplay.Actor;
@@ -29,7 +30,8 @@ public class InscribirProductos implements Task {
                 WaitUntil.the(TXT_NUMERO_PRODUCTO, isVisible()),
                 Click.on(TXT_BANCO),
                 Type.theValue(inscripcion.getNombreBanco()).into(TXT_BUSCAR_NOMBRE_BANCO),
-                Click.on(ITEM_NOMBRE_BANCO.of(inscripcion.getNombreBanco())),
+                RealizarScroll.hastaPosicionDeTarget(ITEM_NOMBRE_BANCO),
+                Click.on(ITEM_NOMBRE_BANCO),
                 Enter.theValue(inscripcion.getProducto().getNumero()).into(TXT_NUMERO_PRODUCTO),
                 Click.on(FOCO),
                 Click.on(CHK_TIPO_CUENTA.of(inscripcion.getProducto().getTipo())),
