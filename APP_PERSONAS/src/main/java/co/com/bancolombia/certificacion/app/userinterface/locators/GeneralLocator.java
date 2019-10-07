@@ -31,7 +31,7 @@ public class GeneralLocator {
     public static final Locator IMG_CARGA_LOCATOR = locator().withAndroid("xpath$//*[@class='spinner-container']").withIos("xpath$q");
     public static final Locator LNK_SOLICITAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Solicitar']").withIos("xpath$q");
     public static final Locator LNK_CANCELAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cancelar']").withIos("xpath$q");
-    public static final Locator BTN_SI_LOCATOR = locator().withAndroid("xpath//button[text()='SI']").withIos("xpath$q");
+    public static final Locator BTN_SI_LOCATOR = locator().withAndroid("xpath$//button[text()='SI']").withIos("xpath$q");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
