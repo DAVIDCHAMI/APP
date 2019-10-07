@@ -11,7 +11,8 @@ public class Constantes {
     public static final String CREDITOS = "Credits";
     public static final String AHORROS = "Ahorros";
     public static final String CORRIENTE = "Corriente";
-    public static final String OPCION_EPREPAGO = "Generar número";
+    public static final String OPCION_ACTIVAR_EPREPAGO = "Generar número";
+    public static final String OPCION_INACTIVAR_EPREPAGO = "Inactivar numero";
     public static final Character COMA = ',';
     public static final Character NUMERO_VISA = '4';
     public static final String VISA = "Visa";
