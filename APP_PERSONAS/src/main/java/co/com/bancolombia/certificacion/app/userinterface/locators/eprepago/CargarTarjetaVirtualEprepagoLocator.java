@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.locators.eprepago;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
 
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class CargarTarjetaVirtualEprepagoLocator {
@@ -12,4 +13,6 @@ public class CargarTarjetaVirtualEprepagoLocator {
     public static final Locator BTN_CARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='RECARGAR']").withIos("");
     public static final Locator LNK_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Recargar']").withIos("");
     public static final Locator LBL_RECARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Recarga exitosa!']").withIos("");
+
+    private CargarTarjetaVirtualEprepagoLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }

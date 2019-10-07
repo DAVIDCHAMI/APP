@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -8,7 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SOLICITAR;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.CHK_TYC_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarEprepagoPage.CHK_TYC_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 

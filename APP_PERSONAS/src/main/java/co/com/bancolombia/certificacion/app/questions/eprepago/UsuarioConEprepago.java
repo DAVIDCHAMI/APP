@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.questions.eprepago;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitudEprepagoPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarEprepagoPage.*;
 
 public class UsuarioConEprepago implements Question<Boolean> {
     @Override
