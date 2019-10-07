@@ -12,7 +12,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.administradores.Ve
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class Activar implements Interaction {
+public class CancelarActivacion implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -25,7 +25,7 @@ public class Activar implements Interaction {
         );
     }
 
-    public static Activar laHuella() {
-        return instrumented(Activar.class);
+    public static CancelarActivacion deHuella() {
+        return instrumented(CancelarActivacion.class);
     }
 }
