@@ -123,6 +123,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.fechaFin = datos.get(0).get("fechaFin");
         return this;
     }
+
     public FacturaBuilder conMes(List<Map<String, String>> datos) {
         this.mesProgramacion = datos.get(0).get("<mesProgramacion>");
         return this;
@@ -154,7 +155,6 @@ public class FacturaBuilder implements Builder<Factura> {
         this.usuario = usuario().conNumeroDocumento(datos).build();
         return this;
     }
-
 
     public FacturaBuilder conNumeroCuenta(String datos) {
         this.producto = elProducto().conNumero(datos).build();
