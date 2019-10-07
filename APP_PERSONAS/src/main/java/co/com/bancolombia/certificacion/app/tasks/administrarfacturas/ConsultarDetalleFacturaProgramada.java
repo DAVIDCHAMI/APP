@@ -33,7 +33,7 @@ public class ConsultarDetalleFacturaProgramada implements Task {
         );
         actor.remember(MODELO_CONSULTA_DETALLE_FACTURA,
                 factura()
-                       // .conEmpresaServicio(LBL_DETALLE_EMPRESA_SERVICIO.of(factura.getEmpresaServicio()).resolveFor(actor).getText())
+                       .conEmpresaServicio(LBL_DETALLE_EMPRESA_SERVICIO.of(factura.getEmpresaServicio()).resolveFor(actor).getText())
                         .conNit(LBL_DETALLE_NIT.resolveFor(actor).getText())
                         .conNegocio(LBL_DETALLE_NEGOCIO.resolveFor(actor).getText())
                         .conEstadoHistorico(LBL_DETALLE_ESTADO.resolveFor(actor).getText())

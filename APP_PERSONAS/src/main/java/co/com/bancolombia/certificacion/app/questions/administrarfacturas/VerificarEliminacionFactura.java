@@ -4,16 +4,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Visibility;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.SERVICIO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.LBL_COMPROBANTE_ELIMINACION_EXITOSA;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.LBL_ELIMINACION_EXITOSA;
 
 public class VerificarEliminacionFactura implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-       // String empresaServicio = actor.recall(SERVICIO);
         return Visibility.of(LBL_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean()
-                //&& Visibility.of(LBL_EMPRESA_SERIVICIO.of(empresaServicio)).viewedBy(actor).asBoolean()
                 && Visibility.of(LBL_COMPROBANTE_ELIMINACION_EXITOSA).viewedBy(actor).asBoolean();
     }
 

@@ -89,7 +89,7 @@ public class AdministrarFacturasStepDefinition {
 
     @Entonces("deberia ver el mensaje de eliminacion exitosa$")
     public void mensajeEliminacionExitosa() {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarEliminacionFactura.exitoso()).orComplainWith(EliminacionFacturasException.class, MENSAJE_ELIMINACION));
+        theActorInTheSpotlight().should(seeThat(VerificarEliminacionFactura.exitoso()).orComplainWith(EliminacionFacturasException.class, MENSAJE_ELIMINACION));
     }
 
     @Entonces("^deberia ver el mensaje de confirmacion$")
