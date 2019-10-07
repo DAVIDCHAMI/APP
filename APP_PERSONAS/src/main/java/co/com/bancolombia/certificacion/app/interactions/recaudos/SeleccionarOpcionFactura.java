@@ -20,14 +20,13 @@ public class SeleccionarOpcionFactura implements Interaction {
 
     public SeleccionarOpcionFactura(Target target, Factura factura) {
         this.target = target;
-        this.factura=factura;
+        this.factura = factura;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Saltar.onBoarding());
-        actor.attemptsTo(
+                Saltar.onBoarding(),
                 WaitUntil.the(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
@@ -40,12 +39,12 @@ public class SeleccionarOpcionFactura implements Interaction {
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
                         factura.getEmpresaServicio())),
-                WaitUntil.the(target,isVisible()),
+                WaitUntil.the(target, isVisible()),
                 Click.on(target)
         );
     }
 
     public static SeleccionarOpcionFactura conInformacion(Target target, Factura factura) {
-        return instrumented(SeleccionarOpcionFactura.class, target,factura);
+        return instrumented(SeleccionarOpcionFactura.class, target, factura);
     }
 }
