@@ -20,6 +20,7 @@ public class ModeloConstantes {
     public static final String MODELO_CHEQUE = "MODELO_CHEQUE";
     public static final String MODELO_HISTORICO_FACTURA = "MODELO HISTORICO FACTURA";
     public static final String MODELO_CONSULTA_DETALLE_FACTURA = "MODELO DETALLE FACTURA";
+    public static final String MODELO_INSCRIPCION = "MODELO INSCRIPCION";
 
     private ModeloConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
