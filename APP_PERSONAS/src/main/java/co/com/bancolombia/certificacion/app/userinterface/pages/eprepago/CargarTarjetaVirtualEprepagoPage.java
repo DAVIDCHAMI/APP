@@ -13,6 +13,7 @@ public class CargarTarjetaVirtualEprepagoPage {
     public static final Target TXT_VALOR_RECARGA = Target.the("Input que recibe el valor de recarga").located(theElementBy(TXT_VALOR_RECARGA_LOCATOR));
     public static final Target LNK_RECARGAR_EPREPAGO = Target.the("Link para confirmar recarga ePrepago").located(theElementBy(LNK_RECARGAR_EPREPAGO_LOCATOR));
     public static final Target LBL_RECARGA_EXITOSA_EPREPAGO = Target.the("Mensaje recarga exitosa tarjeta virtual ePrepago").located(theElementBy(LBL_RECARGA_EXITOSA_EPREPAGO_LOCATOR));
+    public static final Target LBL_PRODUCTO_ORIGEN_EPREPAGO = Target.the("Foco para identificar cunado un cliente cuenta con mas de una cuenta").located(theElementBy(LBL_PRODUCTO_ORIGEN_EPREPAGO_LOCATOR));
 
     private CargarTarjetaVirtualEprepagoPage(){throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }

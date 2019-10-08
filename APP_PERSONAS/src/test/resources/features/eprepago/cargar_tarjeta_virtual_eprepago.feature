@@ -9,11 +9,11 @@ Característica: Cargar tarjeta virtual ePrepago
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CARGAR_EPREPAGO
     Y quiere cargar una tarjeta virtual ePrepago activa
-      | valorRecarga   | opcionSubmenu   |
-      | <valorRecarga> | <opcionSubmenu> |
+      | valorRecarga   | opcionSubmenu   | tipoCuenta   | numeroCuenta   |
+      | <valorRecarga> | <opcionSubmenu> | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | opcionSubmenu |
+      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | opcionSubmenu | tipoCuenta | numeroCuenta |
   ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-   |1   |48313974   |1   |autotest27   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10000   |Recargar|
+   |1   |93221452   |1   |autotest27   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10000   |Recargar   |Ahorros   |406-739740-05|
