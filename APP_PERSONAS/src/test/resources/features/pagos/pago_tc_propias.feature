@@ -2,7 +2,6 @@
 
 Característica: Pago de tarjetas de crédito propias
 
-  @manual
   Esquema del escenario: Pago de tarjetas de crédito propias
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
