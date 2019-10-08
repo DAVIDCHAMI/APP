@@ -1,6 +1,8 @@
 package co.com.bancolombia.certificacion.app.tasks.clavedinamica;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.EscribirSegundaClave;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -27,9 +29,11 @@ public class InscribirClaveDinamica implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BTN_INSCRIBIR_CLAVE),
-                WaitUntil.the(TXT_CLAVE_DIGITOS, isEnabled()),
-                Click.on(TXT_SEGUNDA_CLAVE_DIGITOS),
-                Escribir.enCampoTexto(usuario.getSegundaClave()),
+                Saltar.onBoarding(),
+        //        WaitUntil.the(TXT_SEGUNDA_CLAVE_DIGITOS, isEnabled()),
+         //     Click.on(TXT_SEGUNDA_CLAVE_DIGITOS),
+         //       Escribir.enCampoTexto(usuario.getSegundaClave()),
+                EscribirSegundaClave.enLaApp(),
                 WaitUntil.the(BTN_CONTINUAR_SEGUNDA_CLAVE, isEnabled()),
                 Click.on(BTN_CONTINUAR_SEGUNDA_CLAVE),
                 Enter.theValue(usuario.getNombrePersonalizado()).into(TXT_NOMBRE_PERSONALIZADO),

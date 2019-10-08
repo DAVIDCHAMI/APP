@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.interactions.comunes;
 
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -51,12 +52,13 @@ public class Escribir implements Interaction {
                 }
             }
         }
-        else{
+        else {
             actor.attemptsTo(
                     Click.on(TAB),
                     Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
             );
         }
+
     }
     public static Escribir enCampoTexto(String cadena) {
         return instrumented(Escribir.class, cadena);
