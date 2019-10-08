@@ -18,8 +18,6 @@ public class DescargarEprepago implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Activar.huella(),
-                WaitUntil.the(BTN_DESPLEGAR_EPREPAGO, isVisible()),
-                Click.on(BTN_DESPLEGAR_EPREPAGO),
                 WaitUntil.the(BTN_SUB_MENU_EPREPAGO, isVisible()),
                 Click.on(BTN_SUB_MENU_EPREPAGO),
                 Click.on(BTN_DESCARGAR_EPREPAGO),

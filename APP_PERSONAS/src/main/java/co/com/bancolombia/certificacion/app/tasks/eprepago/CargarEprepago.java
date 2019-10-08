@@ -1,42 +1,41 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
-import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
+import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
+import co.com.bancolombia.certificacion.app.interactions.eprepago.SeleccionarOpcion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import java.util.List;
+import java.util.Map;
+
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.LNK_RECARGAR_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.TXT_VALOR_RECARGA;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarEprepagoPage.LBL_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CargarEprepago implements Task {
-    private String valorRecarga;
+    private List<Map<String, String>> datos;
 
-    public CargarEprepago(String valorRecarga){this.valorRecarga = valorRecarga;}
+    public CargarEprepago(List<Map<String, String>> datos){this.datos = datos;}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                RealizarScroll.hastaPosicionDeTarget(LBL_EPREPAGO),
-                WaitUntil.the(BTN_DESPLEGAR_EPREPAGO, isVisible()),
-                Click.on(BTN_DESPLEGAR_EPREPAGO),
-                WaitUntil.the(BTN_SUB_MENU_EPREPAGO, isVisible()),
-                Click.on(BTN_SUB_MENU_EPREPAGO),
-                Click.on(BTN_RECARGAR_EPREPAGO),
-                Enter.theValue(valorRecarga).into(TXT_VALOR_RECARGA),
+                SeleccionarCategoria.deSaldosMovimientos(LBL_EPREPAGO.resolveFor(actor).getText()),
+                SeleccionarOpcion.deSubmenu(datos.get(0).get("opcionSubmenu")),
+                Enter.theValue(datos.get(0).get("valorRecarga")).into(TXT_VALOR_RECARGA),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
-                WaitUntil.the(LNK_RECARGAR_EPREPAGO, isEnabled()),
                 Click.on(LNK_RECARGAR_EPREPAGO)
         );
     }
 
-    public static CargarEprepago enLaAppBancolombia(String valorRecarga){
-        return instrumented(CargarEprepago.class, valorRecarga);
+    public static CargarEprepago enLaAppBancolombia(List<Map<String, String>> datos){
+        return instrumented(CargarEprepago.class, datos);
     }
 }
