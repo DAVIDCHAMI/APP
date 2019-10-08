@@ -7,7 +7,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class InscripcionClaveDinamicaLocator {
     public static final Locator TXT_NOMBRE_PERSONALIZADO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_CustomName_CustomNameDK']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa un nombre personalizado']/..//following::XCUIElementTypeOther[1]");
-    public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Verifica el correo electrónico']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeTextField");
+   // public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Verifica el correo electrónico']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeTextField");
+    public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$//XCUIElementTypeOther[@name='Correo electrónico de la clave dinámica']/XCUIElementTypeOther[9]/XCUIElementTypeTextField");
     public static final Locator TXT_LIMPIAR_CORREO_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeOther[@name='Correo electrónico de la clave dinámica']/XCUIElementTypeOther[9]/XCUIElementTypeTextField");
     public static final Locator CHK_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../preceding-sibling::XCUIElementTypeButton[1]");
     public static final Locator TXT_NUMERO_CELULAR_LOCATOR= locator().withAndroid("xpath$//input[@id='Input_PhoneNumber_VerifyPhoneDK']").withIos("xpath$//XCUIElementTypeOther[@name='Editar']/..");

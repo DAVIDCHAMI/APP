@@ -41,7 +41,7 @@ public class InscribirClaveDinamica implements Task {
         );
         TXT_CORREO.resolveFor(actor).clear();
         actor.attemptsTo(
-                Enter.theValue(usuario.getCorreo()).into(TXT_CORREO),
+                Enter.theValue(usuario.getCorreo()).into(TXT_LIMPIAR_CORREO),
                 Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
                 Click.on(LNK_SIGUIENTE)
