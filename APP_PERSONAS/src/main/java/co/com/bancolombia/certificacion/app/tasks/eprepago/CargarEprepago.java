@@ -20,7 +20,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarEprepagoPage.LBL_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CargarEprepago implements Task {
     private List<Map<String, String>> datos;

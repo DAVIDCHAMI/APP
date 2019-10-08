@@ -11,7 +11,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class DescargarTarjetaVirtualEprepagoStepDefinition {
 
-    @Cuando("^quiere descargar una tarjeta virtual ePrepago activa$")
+    @Cuando("^quiere descargar el valor total de una tarjeta virtual ePrepago activa$")
     public void descargarTarjetaVirtualEPrepagoActiva(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 DescargarEprepago.enLaAppBancolombia(datos)
