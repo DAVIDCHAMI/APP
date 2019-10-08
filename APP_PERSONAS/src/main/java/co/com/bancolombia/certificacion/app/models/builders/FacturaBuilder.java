@@ -22,7 +22,6 @@ public class FacturaBuilder implements Builder<Factura> {
     private String frecuenciaPago;
     private String referencia;
     private Producto producto = new Producto();
-    private Usuario usuario= new Usuario();
     private String convenio;
     private String descripcionFactura;
     private String duracionProgramacion;
@@ -32,6 +31,7 @@ public class FacturaBuilder implements Builder<Factura> {
     private String negocio;
     private String numeroFactura;
     private String canalInscripcionFactura;
+    private String fechaVencimiento;
 
     public FacturaBuilder() {
         this.valorFactura = "";
@@ -53,6 +53,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.negocio = "";
         this.numeroFactura = "";
         this.canalInscripcionFactura = "";
+        this.fechaVencimiento="";
     }
 
     public static FacturaBuilder factura() {
@@ -61,6 +62,11 @@ public class FacturaBuilder implements Builder<Factura> {
 
     public FacturaBuilder conValor(List<Map<String, String>> datos) {
         this.valorFactura = datos.get(0).get("valorFactura");
+        return this;
+    }
+
+    public FacturaBuilder conFechaVencimiento(List<Map<String, String>> datos) {
+        this.fechaVencimiento = datos.get(0).get("fechaVencimiento");
         return this;
     }
 
@@ -114,13 +120,18 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
-    public FacturaBuilder conFechaInicioFin(List<Map<String, String>> datos) {
-        this.fechaInicio = datos.get(0).get("fechaInicioFin");
+    public FacturaBuilder conFechaInicio(List<Map<String, String>> datos) {
+        this.fechaInicio = datos.get(0).get("fechaInicio");
         return this;
     }
 
     public FacturaBuilder conFechaFin(List<Map<String, String>> datos) {
-        this.fechaFin = datos.get(0).get("fechaInicioFin");
+        this.fechaFin = datos.get(0).get("fechaFin");
+        return this;
+    }
+
+    public FacturaBuilder conMes(List<Map<String, String>> datos) {
+        this.mesProgramacion = datos.get(0).get("<mesProgramacion>");
         return this;
     }
 
@@ -145,12 +156,6 @@ public class FacturaBuilder implements Builder<Factura> {
         this.producto = elProducto().conTipoCuenta(datos).build();
         return this;
     }
-
- public FacturaBuilder conCedula(String datos) {
-        this.usuario = usuario().conNumeroDocumento(datos).build();
-        return this;
-    }
-
 
     public FacturaBuilder conNumeroCuenta(String datos) {
         this.producto = elProducto().conNumero(datos).build();
@@ -200,6 +205,10 @@ public class FacturaBuilder implements Builder<Factura> {
     public FacturaBuilder conMesProgramacion(List<Map<String, String>> datos) {
         this.mesProgramacion = datos.get(0).get("mesProgramacion");
         return this;
+    }
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
     }
 
     public String getFechaInicio() {

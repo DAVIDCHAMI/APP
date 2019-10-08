@@ -3,6 +3,7 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -36,7 +37,7 @@ public class ProgramarFactura implements Task {
                     Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getDuracionProgramacion())),
                     Click.on(TXT_FECHA_INICIO_FIN)
             );
-            while (!Visibility.of(LBL_MES.of(factura.getMesProgramacion())).viewedBy(actor).asBoolean()) {
+            while (!Verificar.elementoVisible(actor,LBL_MES.of(factura.getMesProgramacion()))) {
                 actor.attemptsTo(Click.on(BTN_FLECHA_MES_SIGUIENTE));
             }
             String valorMes = LBL_VALOR_MES.of(factura.getMesProgramacion()).resolveFor(actor).getValue();

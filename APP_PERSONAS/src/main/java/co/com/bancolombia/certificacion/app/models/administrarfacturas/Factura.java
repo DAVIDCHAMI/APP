@@ -25,6 +25,7 @@ public class Factura {
     private String negocio;
     private String numeroFactura;
     private String canalInscripcionFactura;
+    private String fechaVencimiento;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
@@ -46,6 +47,15 @@ public class Factura {
         this.negocio=programarFacturaBuilder.getNegocio();
         this.numeroFactura=programarFacturaBuilder.getNumeroFactura();
         this.canalInscripcionFactura=programarFacturaBuilder.getCanalInscripcionFactura();
+        this.fechaVencimiento=programarFacturaBuilder.getFechaVencimiento();
+    }
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(String fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
     }
 
     public String getFechaInicio() {
