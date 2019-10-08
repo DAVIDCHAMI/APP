@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
@@ -27,6 +28,7 @@ public class EditarProgramacion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Saltar.onBoarding(),
                 Click.on(OPT_SUB_MENU_PROGRAMADAS),
                 SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
                 Check.whether(PRODUCTO_ORIGEN.equals(opcion)).andIfSo(

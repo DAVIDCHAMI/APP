@@ -31,6 +31,11 @@ public class AdministrarFactura {
         return instrumented(HistoricoPago.class);
     }
 
+    public static Performable conOpcionPagar(FacturaBuilder programarFacturasBuilder) {
+        return instrumented(PagarFacturacaProgramada.class, programarFacturasBuilder.build());
+    }
+
+
     private AdministrarFactura() {
     }
 }
