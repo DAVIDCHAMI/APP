@@ -18,6 +18,7 @@ public class PagosLocator {
     public static final Locator FOCO_PAGO_PROPIAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']");
     public static final Locator TXT_TARJETAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Tarjetas')]").withIos("xpath$//XCUIElementTypeStaticText[@value='Tarjetas']");
     public static final Locator BTN_TAREJETA_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div/div/span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@value='{0}']/../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeStaticText[@value='{1}']");
+    public static final Locator TXT_MAYOR_DEUDA_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[@name='El valor a pagar supera el total de la deuda']");
 
     private PagosLocator(){
         throw new IllegalStateException(CLASE_LOCATOR);
