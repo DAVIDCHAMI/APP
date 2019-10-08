@@ -11,10 +11,12 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 public class InscripcionClaveDinamicaPage {
     public static final Target TXT_NOMBRE_PERSONALIZADO = Target.the("Campo de texto para ingresar nombre personalizado").located(theElementBy(TXT_NOMBRE_PERSONALIZADO_LOCATOR));
     public static final Target TXT_CORREO = Target.the("Campo de texto para ingresar correo").located(theElementBy(TXT_CORREO_CLAVE_LOCATOR));
+    public static final Target TXT_LIMPIAR_CORREO = Target.the("limpiar el campo de correo").located(theElementBy(TXT_LIMPIAR_CORREO_LOCATOR));
     public static final Target CHK_TIPO_CORREO = Target.the("Selecciona el tipo de correo").locatedBy(dynamicElement(CHK_TIPO_CORREO_LOCATOR));
     public static final Target TXT_NUMERO_CELULAR = Target.the("Campo de texto para ingresar numero de celular").located(theElementBy(TXT_NUMERO_CELULAR_LOCATOR));
     public static final Target CHK_ACEPTO_TERMINOS = Target.the("Check acepto terminos y condiciones").located(theElementBy(CHK_ACEPTO_TERMINOS_LOCATOR));
     public static final Target CHK_FOCO_ACEPTO = Target.the("Check acepto terminos y condiciones").located(theElementBy(CHK_FOCO_ACEPTO_LOCATOR));
+    public static final Target TXT_FOCO_NOMBRE_PERSONALIZADO = Target.the("Foco en pantalla de nombre personalizado").located(theElementBy(TXT_FOCO_NOMBRE_PERSONALIZADO_LOCATOR));
     public static final Target BTN_INSCRIBIR_CLAVE = Target.the("Boton inscribir clave").located(theElementBy(BTN_INSCRIBIR_CLAVE_LOCATOR));
     public static final Target BTN_INSCRIBIR_DINAMICA_CLAVE = Target.the("Boton principal para inscribir clave").located(theElementBy(BTN_INSCRIBIR_CLAVE_DINAMICA_LOCATOR));
     public static final Target TXT_SEGUNDA_CLAVE = Target.the("Campo de texto segunda clave").located(theElementBy(TXT_SEGUNDA_CLAVE_LOCATOR));
