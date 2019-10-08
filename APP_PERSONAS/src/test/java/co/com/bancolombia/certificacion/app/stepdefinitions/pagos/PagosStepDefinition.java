@@ -1,6 +1,8 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.pagos;
 
+import co.com.bancolombia.certificacion.app.exceptions.pagos.MensajeNoPresentadoException;
 import co.com.bancolombia.certificacion.app.exceptions.pagos.PagoNoRealizadoException;
+import co.com.bancolombia.certificacion.app.questions.pagos.VerificarMensajePagoMayor;
 import co.com.bancolombia.certificacion.app.questions.pagos.VerificarPago;
 import co.com.bancolombia.certificacion.app.questions.pagos.VerificarPagoCredito;
 import co.com.bancolombia.certificacion.app.tasks.pagos.Pagar;
@@ -10,6 +12,7 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.exceptions.pagos.MensajeNoPresentadoException.MENSAJE_NO_PRESENTADO;
 import static co.com.bancolombia.certificacion.app.exceptions.pagos.PagoNoRealizadoException.PAGO_NO_REALIZADO;
 import static co.com.bancolombia.certificacion.app.models.builders.CreditoBuilder.credito;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
@@ -33,6 +36,13 @@ public class PagosStepDefinition {
         );
     }
 
+    @Cuando("^quiere pagar la tarjeta de crédito propia mayor a la deuda$")
+    public void pagoTarjetaCreditoPropiaMayorDeuda(List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(
+                Pagar.tarjetaCreditoPropiaMayorDeuda(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos))
+        );
+    }
+
     @Cuando("^quiere pagar el credito$")
     public void pagoCreditos(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
@@ -44,6 +54,13 @@ public class PagosStepDefinition {
     public void verMensajeConfirmacionInformacionPago() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarPago.exitoso()).orComplainWith(PagoNoRealizadoException.class, PAGO_NO_REALIZADO)
+        );
+    }
+
+    @Entonces("^deberia de ver el mensaje de valor supera el total de la deuda$")
+    public void verMensajeValorMayorDeduda() {
+        theActorInTheSpotlight().should(
+                seeThat(VerificarMensajePagoMayor.aDeuda()).orComplainWith(MensajeNoPresentadoException.class, MENSAJE_NO_PRESENTADO)
         );
     }
 
