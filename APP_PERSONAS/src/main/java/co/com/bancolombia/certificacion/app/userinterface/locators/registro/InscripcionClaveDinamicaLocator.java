@@ -7,11 +7,11 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class InscripcionClaveDinamicaLocator {
     public static final Locator TXT_NOMBRE_PERSONALIZADO_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_CustomName_CustomNameDK']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa un nombre personalizado']/..//following::XCUIElementTypeOther[1]");
-    public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Verifica el correo electrónico']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeTextField");
+    public static final Locator TXT_CORREO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Email']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[contains(@name,'correo electrónico')]]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeTextField");
     public static final Locator TXT_LIMPIAR_CORREO_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeOther[@name='Correo electrónico de la clave dinámica']/XCUIElementTypeOther[9]/XCUIElementTypeTextField");
     public static final Locator CHK_TIPO_CORREO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../preceding-sibling::XCUIElementTypeButton[1]");
-    public static final Locator TXT_NUMERO_CELULAR_LOCATOR= locator().withAndroid("xpath$//input[@id='Input_PhoneNumber_VerifyPhoneDK']").withIos("xpath$//XCUIElementTypeOther[@name='Editar']/..");
-    public static final Locator CHK_ACEPTO_TERMINOS_LOCATOR= locator().withAndroid("xpath$//input[@id='Checkbox_AcceptTermsConditions_VerifyPhoneDK']").withIos("xpath$//XCUIElementTypeOther[@name='Editar']//parent::XCUIElementTypeOther[1]//following::XCUIElementTypeSwitch");
+    public static final Locator TXT_NUMERO_CELULAR_LOCATOR= locator().withAndroid("xpath$//input[@id='Input_PhoneNumber_VerifyPhoneDK']").withIos("xpath$//XCUIElementTypeOther[@name='Editar']/preceding-sibling::XCUIElementTypeTextField");
+    public static final Locator CHK_ACEPTO_TERMINOS_LOCATOR= locator().withAndroid("xpath$//input[@id='Checkbox_AcceptTermsConditions_VerifyPhoneDK']").withIos("xpath$//XCUIElementTypeOther[@name='Editar']//parent::XCUIElementTypeOther[1]//following-sibling::XCUIElementTypeSwitch");
     public static final Locator CHK_FOCO_ACEPTO_LOCATOR= locator().withAndroid("xpath$//img[@src='/Personas/img/Bancolombia_Resources.times2.svg?GhP9CS2n0kZPigLrvSfZjg']").withIos("xpath$//XCUIElementTypeStaticText[@name='Correo electrónico']");
     public static final Locator TXT_FOCO_NOMBRE_PERSONALIZADO_LOCATOR= locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[@name='Te ayudará a identificar la clave dinámica']");
     public static final Locator BTN_INSCRIBIR_CLAVE_LOCATOR= locator().withAndroid("xpath$//span[text()='Inscribir']/../..").withIos("xpath$//XCUIElementTypeStaticText[@name='Inscribir']");
@@ -24,6 +24,7 @@ public class InscripcionClaveDinamicaLocator {
     public static final Locator BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//button[text()='ELIMINAR']").withIos("xpath$test");
     public static final Locator LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='Clave dinámica eliminada']/../following-sibling::div//span[text()='{0}']").withIos("xpath$test");
     public static final Locator LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Eliminación exitosa!']").withIos("xpath$test");
+    public static final Locator FOCO_INSCRIPCION_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'INSCRIBIR')]");
 
     private InscripcionClaveDinamicaLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

@@ -27,6 +27,7 @@ public class InscripcionClaveDinamicaPage {
     public static final Target BTN_ELIMINAR_CLAVE_DINAMICA = Target.the("Botón eliminar clave dinamica").located(theElementBy(BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR));
     public static final Target LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA = Target.the("label verificar elimincacion clave dinamica").locatedBy(dynamicElement(LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA_LOCATOR));
     public static final Target LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA = Target.the("Label mensaje eliminacion clave dinamica").located(theElementBy(LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA_LOCATOR));
+    public static final Target FOCO_INSCRIPCION = Target.the("Foco inscripción").located(theElementBy(FOCO_INSCRIPCION_LOCATOR));
 
     private InscripcionClaveDinamicaPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

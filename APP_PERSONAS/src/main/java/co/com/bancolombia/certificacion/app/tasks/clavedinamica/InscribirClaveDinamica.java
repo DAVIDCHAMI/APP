@@ -41,6 +41,7 @@ public class InscribirClaveDinamica implements Task {
         );
         TXT_CORREO.resolveFor(actor).clear();
         actor.attemptsTo(
+                Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO),
                 Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
@@ -48,8 +49,8 @@ public class InscribirClaveDinamica implements Task {
         );
         TXT_NUMERO_CELULAR.resolveFor(actor).clear();
         actor.attemptsTo(
+                Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
-                Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_ACEPTO_TERMINOS)
                 //Click.on(BTN_INSCRIBIR_CLAVE)
         );
