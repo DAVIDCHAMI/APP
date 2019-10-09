@@ -2,14 +2,12 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
-import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
-import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
 
 public class FacturaBuilder implements Builder<Factura> {
     private String valorFactura;
@@ -32,6 +30,7 @@ public class FacturaBuilder implements Builder<Factura> {
     private String numeroFactura;
     private String canalInscripcionFactura;
     private String fechaVencimiento;
+    private String valorFacturaReferenciaPagar;
 
     public FacturaBuilder() {
         this.valorFactura = "";
@@ -205,6 +204,15 @@ public class FacturaBuilder implements Builder<Factura> {
     public FacturaBuilder conMesProgramacion(List<Map<String, String>> datos) {
         this.mesProgramacion = datos.get(0).get("mesProgramacion");
         return this;
+    }
+
+ public FacturaBuilder conValorFacturaReferencia(List<Map<String, String>> datos) {
+        this.valorFacturaReferenciaPagar = datos.get(0).get("valorFacturaReferenciaPagar");
+        return this;
+    }
+
+    public String getValorFacturaReferenciaPagar() {
+        return valorFacturaReferenciaPagar;
     }
 
     public String getFechaVencimiento() {

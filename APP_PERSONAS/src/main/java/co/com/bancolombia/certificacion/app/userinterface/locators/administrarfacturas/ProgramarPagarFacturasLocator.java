@@ -22,12 +22,13 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LST_INTENTOS_PAGO_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[1]");
     public static final Locator CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//input[@id='Checkbox1']");
     public static final Locator OPT_MODIFICAR_PROGRAMACION_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Modificar programación')]");
+    public static final Locator OPT_PAGAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Pagar')]");
     public static final Locator OPT_ELIMINAR_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[text()='Eliminar factura'])[1]");
     public static final Locator OPT_VER_DETALLE_LOCATOR = locator().withAndroid("xpath$//span[text()='Ver detalle']/..");
     public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$//span[text()='Verifica la programación']/..");
     public static final Locator LNK_CAMBIAR_PRODUCTO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Producto origen')]/../../following-sibling::div//span/..");
     public static final Locator LNK_CAMBIAR_PERIODICIDAD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Periodicidad')]/../../following-sibling::div//span");
-    public static final Locator TXT_VALOR_LOCATOR = locator().withAndroid("xpath$//android.widget.EditText[@resource-id='Input_Value']");
+    public static final Locator TXT_VALOR_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Value']");
     public static final Locator IMG_PERIODICIDAD_LOCATOR = locator().withAndroid("xpath$//android.view.View[@text='Periodicidad']/following-sibling::android.view.View[1]/android.view.View/android.widget.Image[@text='Bancolombia_Resources.CalendarIcon']");
     public static final Locator LST_FRECUENCIA_PERIODICAD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Selecciona la frecuencia del pago')]/../..//span[contains(text(),'{0}')]/../button");
     public static final Locator BTN_MODIFICAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Modificar']");
@@ -43,6 +44,10 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LBL_VALOR_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[1]/div[2]//div[3]/span");
     public static final Locator OPT_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Programadas')]/..");
     public static final Locator CHk_SELECCIONAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../../preceding-sibling::div//span[contains(text(),'{1}')]/../../../preceding-sibling::div//span[contains(text(),'{2}')]/../../../../../..//input");
+    public static final Locator LBL_PAGO_EXITOSO_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Pago exitoso!')]");
+    public static final Locator LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR = locator().withAndroid("xpath$//div[./span[contains(text(),'Nuevo saldo disponible')]]/div/span");
+    public static final Locator LBL_VALOR_PAGAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor a pagar']/../following-sibling::div//span[contains(text(),'{0}')]");
+    public static final Locator LBL_PRODUCTO_PAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[contains(text(),'{0}')]");
 
     private ProgramarPagarFacturasLocator(){
         throw new IllegalStateException(CLASE_LOCATOR);

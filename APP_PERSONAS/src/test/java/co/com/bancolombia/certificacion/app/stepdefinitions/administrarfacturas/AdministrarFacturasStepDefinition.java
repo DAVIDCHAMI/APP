@@ -65,7 +65,7 @@ public class AdministrarFacturasStepDefinition {
     }
 
     @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
-    public void elActorModificaSusFacturasProgramadas(String opcion,List<Map<String, String>> datos) {
+    public void elActorModificaSusFacturasProgramadas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
                         .conFechaFactura(datos)
@@ -75,23 +75,10 @@ public class AdministrarFacturasStepDefinition {
                         .conProducto(datos)
                         .conNumeroIntento(datos)
                         .conPeriodicidad(datos)
-                    .conMesProgramacion(datos),
+                        .conMesProgramacion(datos),
                 opcion
         ));
     }
-
-    @Cuando("el actor realizar el pago de sus facturas programadas$")
-    public void elActorPagaSusFacturasProgramadas(List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionPagar(
-                factura().conValor(datos)
-                        .conEmpresaServicio(datos)
-                        .conProducto(datos)
-                        .conFrecuenciaPago(datos)
-                        .conPeriodicidad(datos)
-        )
-        );
-    }
-
 
     @Entonces("deberia ver el mensaje de modificacion exitosa$")
     public void deberiaVerMensajeModificacionExitosa() {

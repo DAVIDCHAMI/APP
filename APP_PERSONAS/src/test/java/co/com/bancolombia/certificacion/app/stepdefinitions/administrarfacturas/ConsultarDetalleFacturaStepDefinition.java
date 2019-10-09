@@ -46,20 +46,6 @@ public class ConsultarDetalleFacturaStepDefinition {
                 );
     }
 
-    @Cuando("el actor realizar el pago de sus facturas programadas con opcion (.*)$")
-    public void  realizaPagoDeSuFacturaProgramadaInformacion(String opcion,List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(
-                AdministrarFactura.conOpcionPagar(
-                        factura().conEmpresaServicio(datos)
-                                .conValor(datos)
-                                .conFechaFactura(datos)
-                                .conEmpresaServicio(datos),
-
-                        opcion
-                )
-                );
-    }
-
     @Entonces("deberia ver el detalle de su factura programada$")
     public void deberiaVerDetalleFacturaProgramada() {
         theActorInTheSpotlight().should(seeThat(VerificarConsultaDetalleFacturaProgramada.exitoso()).orComplainWith(NoConsultaDetalleFacturaException.class, NO_CONSULTA_DETALLE_FACTURAS));

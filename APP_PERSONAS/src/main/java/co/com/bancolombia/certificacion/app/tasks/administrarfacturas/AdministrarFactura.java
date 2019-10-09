@@ -23,7 +23,7 @@ public class AdministrarFactura {
         return instrumented(ConsultarDetalleFacturaInscrita.class, programarFacturasBuilder.build());
     }
 
- public static Performable conOpcionConsultarDetalleFacturasProgramadas(FacturaBuilder programarFacturasBuilder) {
+    public static Performable conOpcionConsultarDetalleFacturasProgramadas(FacturaBuilder programarFacturasBuilder) {
         return instrumented(ConsultarDetalleFacturaProgramada.class, programarFacturasBuilder.build());
     }
 
@@ -31,10 +31,13 @@ public class AdministrarFactura {
         return instrumented(HistoricoPago.class);
     }
 
-    public static Performable conOpcionPagar(FacturaBuilder programarFacturasBuilder, String opcion) {
-        return instrumented(PagarFacturacaProgramada.class, programarFacturasBuilder.build(), opcion);
+    public static Performable conOpcionPagarProgramadas(String opcion, FacturaBuilder opcionFacturaBuilder) {
+        return instrumented(PagarFacturaProgramada.class, opcion, opcionFacturaBuilder.build());
     }
 
+    public static Performable conOpcionPagarInscritas( FacturaBuilder opcionFacturaBuilder) {
+        return instrumented(PagarFacturaInscrita.class,opcionFacturaBuilder.build());
+    }
 
     private AdministrarFactura() {
     }
