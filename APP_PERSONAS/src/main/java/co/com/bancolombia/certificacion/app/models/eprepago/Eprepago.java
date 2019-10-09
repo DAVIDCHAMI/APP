@@ -8,7 +8,7 @@ public class Eprepago extends Producto {
     private String cvc;
 
     public Eprepago(EprepagoBuilder eprepagoBuilder) {
-        super(eprepagoBuilder.getNumeroTarjeta(), eprepagoBuilder.getTipoCuenta(), eprepagoBuilder.getSaldoDisponible());
+        super(eprepagoBuilder.getNumeroTarjeta(), eprepagoBuilder.getTipoCuenta(), eprepagoBuilder.getSaldo());
         this.fechaVencimiento = eprepagoBuilder.getFechaVencimiento();
         this.cvc = eprepagoBuilder.getCvc();
     }

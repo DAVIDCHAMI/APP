@@ -18,7 +18,7 @@ public class VerificarDetalleEprepago implements Question<Boolean> {
                 eprepago.getCvc() != null;
     }
 
-    public static VerificarDetalleProductoDeposito esExitoso() {
-        return new VerificarDetalleProductoDeposito();
+    public static VerificarDetalleEprepago esExitoso() {
+        return new VerificarDetalleEprepago();
     }
 }

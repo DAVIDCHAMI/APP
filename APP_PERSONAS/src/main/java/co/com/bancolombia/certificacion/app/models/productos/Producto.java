@@ -32,10 +32,10 @@ public class Producto {
         this.tipo = tipoProducto;
     }
 
-    protected Producto(String numero, String tipoProducto, String saldo) {
+    protected Producto(String numero, String tipoProducto, Saldo saldo) {
         this.numero = numero;
         this.tipo = tipoProducto;
-        this.saldo = saldo().conSaldoDisponible(saldo).build();
+        this.saldo = saldo;
     }
 
     public Producto(ProductoBuilder productoBuilder){
