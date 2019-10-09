@@ -12,6 +12,7 @@ public class CargarTarjetaVirtualEprepagoLocator {
     public static final Locator LNK_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Recargar']").withIos("xpath$q");
     public static final Locator LBL_RECARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Recarga exitosa!']").withIos("xpath$q");
     public static final Locator LBL_PRODUCTO_ORIGEN_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Producto origen']").withIos("xpath$q");
+    public static final Locator LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR = locator().withAndroid("xpath$//span[@id='AlertAnimation2']/descendant::span").withIos("xpath$q");
 
     private CargarTarjetaVirtualEprepagoLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }
