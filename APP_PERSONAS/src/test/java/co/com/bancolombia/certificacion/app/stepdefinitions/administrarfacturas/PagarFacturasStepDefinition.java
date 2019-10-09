@@ -27,10 +27,20 @@ public class PagarFacturasStepDefinition {
                 )
         );
     }
-    @Entonces("^deberia ver el pago de su factura programada$")
-    public void deberiaVerHPagoFacturaProgramada() {
-        theActorInTheSpotlight().should(
-                //   seeThat().orComplainWith()
+
+    @Cuando("el actor realizar el pago de sus facturas inscritas con opcion (.*)$")
+    public void elActorPagaSusFacturasInscritaConOpcion(String opcion, List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionPagarVariasInscritas(
+                opcion,
+                factura().conValor(datos)
+                        .conEmpresaServicio(datos)
+                        .conProducto(datos)
+                        .conFechaFactura(datos)
+                        .conReferencia(datos)
+                        .conFechaVencimiento(datos)
+                        .conValorFacturaReferencia(datos)
+
+                )
         );
     }
 
@@ -47,10 +57,26 @@ public class PagarFacturasStepDefinition {
         );
     }
 
-    @Entonces("^deberia ver el pago de su factura inscrita$")
-    public void deberiaVerHPagoFacturaInscrita() {
-        theActorInTheSpotlight().should(
-                //   seeThat().orComplainWith()
+    @Cuando("el actor realizar el pago de sus factura redeban$")
+    public void elActorPagaSusFacturasRedeban(List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.pagoRedeban(
+                factura().conValor(datos)
+                        .conEmpresaServicio(datos)
+                        .conProducto(datos)
+                        .conFechaFactura(datos)
+
+                )
         );
     }
+
+    @Entonces("^deberia ver el pago de su factura programada$")
+    public void deberiaVerHPagoFacturaProgramada() {
+
+    }
+
+    @Entonces("^deberia ver el pago de su factura inscrita$")
+    public void deberiaVerHPagoFacturaInscrita() {
+
+    }
+
 }

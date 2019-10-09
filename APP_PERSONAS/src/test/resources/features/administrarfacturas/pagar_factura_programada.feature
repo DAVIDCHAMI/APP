@@ -4,7 +4,7 @@ Característica:Pagar facturas programadas
   Como usuario de Bancolombia
   Quiero pagar mi factura programada
 
-  Esquema del escenario: Pagar todas las facturas asociadas programadas
+  Esquema del escenario: Pagar facturas programadas con mas facturas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
@@ -15,10 +15,10 @@ Característica:Pagar facturas programadas
     Entonces deberia ver el pago de su factura programada
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura        | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta | fechaVencimiento | referencia | valorFacturaReferenciaPagar | opcion    |
-   ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFactura.xlsx@Datos@2
+   ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaProgramada.xlsx@Datos@2
    |2   |48646663   |1   |recaudosnatik66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Disponible al pagar   |65404   |No disponible   |406-158990-01   |Corriente   |no   |no   |no   |Seleccionar todas|
 
-  Esquema del escenario: Pagar todas las factura programadas con una referencia
+  Esquema del escenario: Pagar factura programadas con una referencia
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
@@ -30,5 +30,5 @@ Característica:Pagar facturas programadas
 
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura        | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta | fechaVencimiento | referencia | valorFacturaReferenciaPagar | opcion            |
-   ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFactura.xlsx@Datos@1
+   ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaProgramada.xlsx@Datos@1
    |1   |48646663   |1   |recaudosnatik66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Disponible al pagar   |65404   |No disponible   |406-158990-01   |Corriente   |26 Jul 2020   |1038988708   |10,00   |Referecia|

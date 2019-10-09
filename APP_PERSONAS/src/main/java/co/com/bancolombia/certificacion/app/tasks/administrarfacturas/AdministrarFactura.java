@@ -39,6 +39,14 @@ public class AdministrarFactura {
         return instrumented(PagarFacturaInscrita.class,opcionFacturaBuilder.build());
     }
 
+ public static Performable conOpcionPagarVariasInscritas(String opcion, FacturaBuilder opcionFacturaBuilder) {
+        return instrumented(PagarVariasFacturasInscritas.class,opcion,opcionFacturaBuilder.build());
+    }
+
+    public static Performable pagoRedeban( FacturaBuilder opcionFacturaBuilder) {
+        return instrumented(PagarRedeban.class,opcionFacturaBuilder.build());
+    }
+
     private AdministrarFactura() {
     }
 }
