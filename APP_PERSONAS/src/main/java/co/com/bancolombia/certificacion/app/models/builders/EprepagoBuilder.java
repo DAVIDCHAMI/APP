@@ -8,12 +8,14 @@ public class EprepagoBuilder implements Builder<Eprepago> {
     private String numeroTarjeta;
     private String fechaVencimiento;
     private String cvc;
+    private String tipoCuenta;
 
     private EprepagoBuilder() {
         this.saldoDisponible = "";
         this.numeroTarjeta = "";
         this.fechaVencimiento = "";
         this.cvc = "";
+        this.tipoCuenta = "";
     }
 
     public static EprepagoBuilder eprepago() {
@@ -32,6 +34,11 @@ public class EprepagoBuilder implements Builder<Eprepago> {
 
     public EprepagoBuilder conFechaVencimiento(String fechaVencimiento) {
         this.saldoDisponible = fechaVencimiento;
+        return this;
+    }
+
+    public EprepagoBuilder conTipoCuenta(String tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
         return this;
     }
 
@@ -54,6 +61,10 @@ public class EprepagoBuilder implements Builder<Eprepago> {
 
     public String getCvc() {
         return cvc;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
     }
 
     @Override

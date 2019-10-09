@@ -1,26 +1,16 @@
 package co.com.bancolombia.certificacion.app.models.eprepago;
 
 import co.com.bancolombia.certificacion.app.models.builders.EprepagoBuilder;
+import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
-public class Eprepago {
-    private String saldoDisponible;
-    private String numeroTarjeta;
+public class Eprepago extends Producto {
     private String fechaVencimiento;
     private String cvc;
 
     public Eprepago(EprepagoBuilder eprepagoBuilder) {
-        this.saldoDisponible = eprepagoBuilder.getSaldoDisponible();
-        this.numeroTarjeta = eprepagoBuilder.getNumeroTarjeta();
+        super(eprepagoBuilder.getNumeroTarjeta(), eprepagoBuilder.getTipoCuenta(), eprepagoBuilder.getSaldoDisponible());
         this.fechaVencimiento = eprepagoBuilder.getFechaVencimiento();
         this.cvc = eprepagoBuilder.getCvc();
-    }
-
-    public String getSaldoDisponible() {
-        return saldoDisponible;
-    }
-
-    public String getNumeroTarjeta() {
-        return numeroTarjeta;
     }
 
     public String getFechaVencimiento() {

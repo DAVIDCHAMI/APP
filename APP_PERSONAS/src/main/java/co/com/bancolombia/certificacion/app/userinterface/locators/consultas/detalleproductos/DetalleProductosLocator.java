@@ -72,6 +72,18 @@ public static final Locator LBL_DISPONIBLE_AVACE_PESOS_LOCATOR = locator()
     public static final Locator LBL_CUPO_DISPONIBLE_LOCATOR = locator()
             .withAndroid("xpath$//div[./span[text()='Cupo disponible']]/following-sibling::div/div/span")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo disponible']/../../following-sibling::XCUIElementTypeOther[2]/XCUIElementTypeStaticText");
+    public static final Locator LBL_SALDO_DISPONIBLE_E_PREPAGO_LOCATOR = locator()
+            .withAndroid("xpath$test")
+            .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Saldo disponible']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_FECHA_VENCIMIENTO_LOCATOR = locator()
+            .withAndroid("xpath$test")
+            .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Fecha de vencimiento']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_CVC_LOCATOR = locator()
+            .withAndroid("xpath$test")
+            .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[contains(@name,'Código de seguridad')]]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_NUMERO_TARJETA_LOCATOR = locator()
+            .withAndroid("xpath$test")
+            .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[contains(@name,'Tarjeta')]]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
 
     private DetalleProductosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
