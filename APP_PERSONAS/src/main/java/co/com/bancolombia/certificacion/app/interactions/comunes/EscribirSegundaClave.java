@@ -25,6 +25,8 @@ public class EscribirSegundaClave implements Interaction {
         String platform= ElementFinder.getPlatformCapability();
 
         if(("Android").equalsIgnoreCase(platform)){
+
+            TXT_SEGUNDA_CLAVE.resolveFor(actor).click();
             AndroidDriver driver = getProxiedDriver();
             for (int i = 0; i < cadena.length(); i++) {
                 char letra = cadena.charAt(i);

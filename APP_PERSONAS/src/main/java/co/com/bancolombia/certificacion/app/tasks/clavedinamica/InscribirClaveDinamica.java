@@ -4,10 +4,13 @@ import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.EscribirSegundaClave;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.TXT_FOCO_NOMBRE_PERSONALIZADO_LOCATOR;
@@ -16,8 +19,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.autentica
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_SEGUNDA_CLAVE_DIGITOS;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class InscribirClaveDinamica implements Task {
     private Usuario usuario;
@@ -31,7 +33,9 @@ public class InscribirClaveDinamica implements Task {
         actor.attemptsTo(
                 Click.on(BTN_INSCRIBIR_CLAVE),
                 Saltar.onBoarding(),
-                EscribirSegundaClave.enLaApp(usuario.getSegundaClave()),
+                EscribirSegundaClave.enLaApp(usuario.getSegundaClave())
+        );
+              actor.attemptsTo(
                 WaitUntil.the(BTN_CONTINUAR_SEGUNDA_CLAVE, isEnabled()),
                 Click.on(BTN_CONTINUAR_SEGUNDA_CLAVE),
                 Enter.theValue(usuario.getNombrePersonalizado()).into(TXT_NOMBRE_PERSONALIZADO),
@@ -43,6 +47,7 @@ public class InscribirClaveDinamica implements Task {
         actor.attemptsTo(
                 Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO),
+                WaitUntil.the(CHK_FOCO_ACEPTO, isPresent()),
                 Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
                 Click.on(LNK_SIGUIENTE)
