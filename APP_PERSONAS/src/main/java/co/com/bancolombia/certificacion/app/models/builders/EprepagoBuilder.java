@@ -1,27 +1,29 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.eprepago.Eprepago;
+import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
 
 public class EprepagoBuilder implements Builder<Eprepago> {
-    private String saldoDisponible;
+    private Saldo saldo = new Saldo();
     private String numeroTarjeta;
     private String fechaVencimiento;
     private String cvc;
+    private String tipoCuenta;
 
     private EprepagoBuilder() {
-        this.saldoDisponible = "";
         this.numeroTarjeta = "";
         this.fechaVencimiento = "";
         this.cvc = "";
+        this.tipoCuenta = "";
     }
 
     public static EprepagoBuilder eprepago() {
         return new EprepagoBuilder();
     }
 
-    public EprepagoBuilder conSaldoDisponible(String saldoDisponible) {
-        this.saldoDisponible = saldoDisponible;
+    public EprepagoBuilder conSaldoDisponible(Saldo saldoDisponible) {
+        this.saldo = saldoDisponible;
         return this;
     }
 
@@ -31,7 +33,12 @@ public class EprepagoBuilder implements Builder<Eprepago> {
     }
 
     public EprepagoBuilder conFechaVencimiento(String fechaVencimiento) {
-        this.saldoDisponible = fechaVencimiento;
+        this.fechaVencimiento = fechaVencimiento;
+        return this;
+    }
+
+    public EprepagoBuilder conTipoCuenta(String tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
         return this;
     }
 
@@ -40,8 +47,8 @@ public class EprepagoBuilder implements Builder<Eprepago> {
         return this;
     }
 
-    public String getSaldoDisponible() {
-        return saldoDisponible;
+    public Saldo getSaldo() {
+        return saldo;
     }
 
     public String getNumeroTarjeta() {
@@ -54,6 +61,10 @@ public class EprepagoBuilder implements Builder<Eprepago> {
 
     public String getCvc() {
         return cvc;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
     }
 
     @Override
