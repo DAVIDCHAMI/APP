@@ -13,21 +13,26 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_CUENTAS_DEPOSITO;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.getPlatformCapability;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class GuardarDatos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        int iterador = 0;
+        int iterador;
         List<Producto> listaProductos = new ArrayList<>();
-        while (Verificar.elementoPresente(actor, CONTENEDOR_INFORMACION_PRODUCTO.of(String.valueOf(iterador)))){
+        if ("Android".equalsIgnoreCase(getPlatformCapability()))
+            iterador = 0;
+        else
+            iterador = 1;
+        while (Verificar.elementoPresente(actor, CONTENEDOR_INFORMACION_PRODUCTO.of(String.valueOf(iterador)))) {
             listaProductos.add(elProducto()
                     .conTipoCuenta(LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conNumero(LBL_NUMERO_CUENTA_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conSaldo(
                             saldo()
-                            .conSaldoDisponible(LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText()).build())
+                                    .conSaldoDisponible(LBL_SALDO_DISPONIBLE_SALDOS_MOVIMIENTOS.of(String.valueOf(iterador)).resolveFor(actor).getText()).build())
                     .build());
             iterador++;
         }

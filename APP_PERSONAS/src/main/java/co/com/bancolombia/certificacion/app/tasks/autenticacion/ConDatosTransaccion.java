@@ -1,7 +1,9 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.CancelarActivacion;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -38,7 +40,8 @@ public class ConDatosTransaccion implements Task {
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
+                Click.on(BTN_CONTINUAR),
+                CancelarActivacion.deHuella()
         );
     }
 }

@@ -1,14 +1,14 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.detalleproductos;
 
+import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ConsultaCrediagilNoEsCorrectaException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException;
-import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoCreditos;
-import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoDeposito;
-import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarDetalleProductoTarjetas;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.*;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
+import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ConsultaCrediagilNoEsCorrectaException.CONSULTA_CREDIAGIL_NO_ES_CORRECTA;
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException.MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -22,10 +22,24 @@ public class ConsultaDetalleProductosStepDefinition {
         );
     }
 
+    @Y("^consulto en (.*) el detalle de mi tarjeta (.*) numero (.*)$")
+    public void consultoDetalleEprepago(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deEprepago(opcionCategoria, tipoCuenta, numeroCuenta)
+        );
+    }
+
     @Cuando("^consulto el detalle de tarjeta de credito (.*) numero (.*)$")
-    public void consultoDetalleDeTarjetaCredito( String tipoCuenta, String numeroCuenta) {
+    public void consultoDetalleDeTarjetaCredito(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarDetalle.deProductoTarjetas(tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^consulto en el detalle de (.*)$")
+    public void consultoDetalleCrediagil(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deCrediagil(opcionCategoria)
         );
     }
 
@@ -40,6 +54,12 @@ public class ConsultaDetalleProductosStepDefinition {
 
     @Entonces("^deberia de ver el detalle de mi tarjeta eprepago$")
     public void verificoElResultadoDeLaConsultaDeEprepago() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleEprepago.esExitoso()
+                ).orComplainWith(
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
+
     }
 
     @Entonces("^deberia de ver el detalle de mi tarjeta de credito$")
@@ -65,6 +85,15 @@ public class ConsultaDetalleProductosStepDefinition {
                 VerificarDetalleProductoCreditos.esExitoso()
                 ).orComplainWith(
                 DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
+    }
+
+    @Y("^deberia de ver el detalle del crediagil$")
+    public void deberiaDeVerElDetalleDeMiCrediagil() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleCrediagil.exitoso()
+                ).orComplainWith(
+                ConsultaCrediagilNoEsCorrectaException.class, CONSULTA_CREDIAGIL_NO_ES_CORRECTA)
         );
     }
 }

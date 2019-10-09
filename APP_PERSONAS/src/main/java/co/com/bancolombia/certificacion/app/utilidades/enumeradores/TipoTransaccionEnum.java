@@ -12,6 +12,7 @@ public enum TipoTransaccionEnum {
     PAGAR_TARJETAS_DE_CREDITO_PROPIAS(MIS_PRODUCTOS, "Pagar tarjetas de crédito","Pagar tarjetas propias"),
     REALIZAR_AVANCES_DESEMBOLSOS(MIS_PRODUCTOS, "Realizar avances y desembolsos",""),
     PROGRAMAR_PAGAR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
+    CONSULTAR_DETALLE_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     ELIMINAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     INSCRIBIR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Inscribir facturas"),
     VER_HISTORICO_PAGOS(MIS_PRODUCTOS, "Pagar y administrar facturas","Ver histórico de pagos"),

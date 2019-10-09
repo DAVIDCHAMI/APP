@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/tarjetacredito/pago_tc_propias.feature"},
+        features = {"src/test/resources/features/pagos/pago_tc_propias.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
 public class PagoTarjetaCreditoPropiaRunner {
@@ -24,6 +24,6 @@ public class PagoTarjetaCreditoPropiaRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/tarjetacredito/pago_tc_propias.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/pagos/pago_tc_propias.feature");
     }
 }

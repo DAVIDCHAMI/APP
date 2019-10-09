@@ -1,12 +1,12 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
@@ -26,13 +26,12 @@ public class EliminarFactura implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Saltar.onBoarding(),
-                Check.whether(INSCRITAS.equals(opcion.toUpperCase()))
-                        .andIfSo(
-                                SeleccionarOpcionFactura.conInformacion(OPT_VER_DETALLE_FACTURA, programarFacturas)
-                        ),
-                Scroll.to(OPT_ELIMINAR_FACTURA),
-                Click.on(OPT_ELIMINAR_FACTURA),
-                Click.on(BTN_CONFIRMAR_ELIMINACION)
+                Check.whether(!INSCRITAS.equalsIgnoreCase(opcion.toUpperCase())).andIfSo(
+                        Click.on(OPT_PROGRAMADAS)
+                ),
+                SeleccionarOpcionFactura.conInformacion(OPT_ELIMINAR_FACTURA, programarFacturas),
+                Click.on(BTN_CONFIRMAR_ELIMINACION),
+                Validar.carga()
         );
         actor.remember(SERVICIO, programarFacturas.getEmpresaServicio());
     }
