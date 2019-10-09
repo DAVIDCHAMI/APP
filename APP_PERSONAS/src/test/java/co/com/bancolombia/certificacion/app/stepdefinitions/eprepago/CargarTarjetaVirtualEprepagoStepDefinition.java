@@ -28,7 +28,7 @@ public class CargarTarjetaVirtualEprepagoStepDefinition {
 
     @Cuando("^quiere cargar una tarjeta virtual ePrepago sobre el valor maximo$")
     public void cargarTarjetaVirtualEPrepagoSobreElValorMaximo(List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(CargarValor.sobreMaximo(datos));
+        theActorInTheSpotlight().attemptsTo(CargarValor.sobreElValorMaximo(datos));
     }
 
     @Entonces("^el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa$")

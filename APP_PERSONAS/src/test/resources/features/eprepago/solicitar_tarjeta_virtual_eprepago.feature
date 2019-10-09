@@ -1,11 +1,11 @@
 #language: es
 
-Característica: Solicitud eprepago en la app OSP Bancolombia
+Característica: Solicitar tarjeta virtual eprepago en la app OSP Bancolombia
   Como usuario de Bancolombia
-  Quiero solicitar una tarjeta eprepago
+  Quiero solicitar una tarjeta virtual eprepago
   Para realizar compras
 
-  Esquema del escenario: Solicitud de una tarjeta eprepago desde la app de Bancolombia OSP por diferentes opciones
+  Esquema del escenario: Solicitud de una tarjeta virtual eprepago desde la app de Bancolombia OSP por diferentes opciones
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |

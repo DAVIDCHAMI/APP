@@ -17,25 +17,25 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class DescargarEprepago implements Task {
+public class DescargarSaldoTotalEprepago implements Task {
     private List<Map<String, String>> datos;
 
-    public DescargarEprepago(List<Map<String, String>> datos){this.datos = datos;}
+    public DescargarSaldoTotalEprepago(List<Map<String, String>> datos){this.datos = datos;}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String ePrepago = LBL_EPREPAGO.resolveFor(actor).getText();
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(LBL_EPREPAGO.resolveFor(actor).getText()),
+                SeleccionarCategoria.deSaldosMovimientos(ePrepago),
                 SeleccionarOpcion.deSubmenu(datos.get(0).get("opcionSubmenu")),
                 WaitUntil.the(CHK_DESCARGA_TOTAL_EPREPAGO, isEnabled()),
                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(LNK_DESCARGAR_EPREPAGO)
-        );
+                Click.on(LNK_DESCARGAR_EPREPAGO));
     }
 
-    public static DescargarEprepago enLaAppBancolombia(List<Map<String, String>> datos){
-        return instrumented(DescargarEprepago.class, datos);
+    public static DescargarSaldoTotalEprepago enLaAppBancolombia(List<Map<String, String>> datos){
+        return instrumented(DescargarSaldoTotalEprepago.class, datos);
     }
 }

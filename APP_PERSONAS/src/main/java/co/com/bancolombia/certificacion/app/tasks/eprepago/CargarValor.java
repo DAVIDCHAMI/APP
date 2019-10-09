@@ -43,7 +43,7 @@ public class CargarValor implements Task {
         );
     }
 
-    public static CargarValor sobreMaximo(List<Map<String, String>> datos){
+    public static CargarValor sobreElValorMaximo(List<Map<String, String>> datos){
         return instrumented(CargarValor.class, datos);
     }
 }
