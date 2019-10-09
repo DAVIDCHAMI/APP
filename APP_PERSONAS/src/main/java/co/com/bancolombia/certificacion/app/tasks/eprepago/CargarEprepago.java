@@ -24,16 +24,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 public class CargarEprepago implements Task {
     private Producto producto;
     private String valorCarga;
+    private String opcionMenu;
 
-    public CargarEprepago(Producto producto, String valorCarga) {
+    public CargarEprepago(Producto producto, String valorCarga, String opcionMenu) {
         this.producto = producto;
         this.valorCarga = valorCarga;
+        this.opcionMenu = opcionMenu;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(LBL_EPREPAGO.resolveFor(actor).getText()),
+                SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
                 SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO),
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO))
                         .andIfSo(
@@ -47,7 +49,7 @@ public class CargarEprepago implements Task {
         );
     }
 
-    public static CargarEprepago con(ProductoBuilder producto, String valorCarga){
-        return instrumented(CargarEprepago.class, producto.build(), valorCarga);
+    public static CargarEprepago con(ProductoBuilder producto, String valorCarga, String opcionMenu){
+        return instrumented(CargarEprepago.class, producto.build(), valorCarga, opcionMenu);
     }
 }

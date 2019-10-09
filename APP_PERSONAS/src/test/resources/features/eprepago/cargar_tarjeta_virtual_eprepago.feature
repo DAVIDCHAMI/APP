@@ -7,8 +7,8 @@ Característica: Cargar tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CARGAR_EPREPAGO
-    Y quiere cargar una tarjeta virtual ePrepago activa por valor de <valorRecarga>
+    Cuando el actor quiere CONSULTAR_PRODUCTO
+    Y cargar una tarjeta virtual e-Prepago activa por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
@@ -16,7 +16,7 @@ Característica: Cargar tarjeta virtual ePrepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
   ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-      | 1  | 93221452        | 1             | autotest27 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 10000        | Ahorros    | 406-739740-05 |
+   |1   |93221452   |1   |autotest27   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10000   |Ahorros   |406-739740-05|
 
   @manual
   Esquema del escenario: Carga a tarjeta virtual ePrepago inactiva
@@ -30,9 +30,9 @@ Característica: Cargar tarjeta virtual ePrepago
     Entonces el deberia ver un mensaje carga no realizada
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | opcionSubmenu | tipoCuenta | numeroCuenta  |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@2
-      | 1  | 93221450        | 1             | autotest25 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 3000000      | Recargar      | Ahorros    | 406-739740-05 |
+   |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|
 
   @manual
   Esquema del escenario: Carga a tarjeta virtual ePrepago sobre el valor maximo permitido
@@ -45,6 +45,6 @@ Característica: Cargar tarjeta virtual ePrepago
       | <valorRecarga> | <opcionSubmenu> | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia ver un mensaje de monto para cargar no permitido
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | opcionSubmenu | tipoCuenta | numeroCuenta  |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@2
-      | 1  | 93221450        | 1             | autotest25 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 3000000      | Recargar      | Ahorros    | 406-739740-05 |
+   |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|
