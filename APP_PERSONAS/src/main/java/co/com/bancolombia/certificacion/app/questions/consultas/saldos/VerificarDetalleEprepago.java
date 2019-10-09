@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.questions.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.models.eprepago.Eprepago;
+import co.com.bancolombia.certificacion.app.models.productos.Eprepago;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 

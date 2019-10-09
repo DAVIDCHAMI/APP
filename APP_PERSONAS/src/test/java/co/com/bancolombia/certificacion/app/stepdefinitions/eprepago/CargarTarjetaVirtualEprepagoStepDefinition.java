@@ -14,15 +14,16 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeIngresoElValorCorrectamenteException.MENSAJE_VALOR_DE_RECARGA_NO_INGRESADO;
 import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoRecargaEprepagoException.MENSAJE_RECARGA_EPREPAGO_NO_REALIZADA;
+import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CargarTarjetaVirtualEprepagoStepDefinition {
 
-    @Cuando("^quiere cargar una tarjeta virtual ePrepago activa$")
-    public void cargarTarjetaVirtualEprepagoActiva(List<Map<String, String>> datos) {
+    @Cuando("^quiere cargar una tarjeta virtual ePrepago activa por valor de (.*)$")
+    public void cargarTarjetaVirtualEprepagoActiva(List<Map<String, String>> datos, String valorRecarga) {
         theActorInTheSpotlight().attemptsTo(
-                CargarEprepago.enLaAppBancolombia(datos)
+                CargarEprepago.con(elProducto().conProductoDebitar(datos), valorRecarga)
         );
     }
 
