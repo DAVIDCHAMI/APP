@@ -10,7 +10,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.EprepagoBuilder.eprepago;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.ActivacionInactivacionEprepagoPage.TXT_CAMPOS_ACTIVACION_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_ACTIVACION_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_EPREPAGO;
 
 public class GuardarCamposEprepago implements Interaction {
 
@@ -25,7 +25,7 @@ public class GuardarCamposEprepago implements Interaction {
                         .conFechaVencimiento(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(FECHAVENCIMIENTO).resolveFor(actor).getText())
                         .conCvc(TXT_CAMPOS_ACTIVACION_EPREPAGO.of(CODIGOSEGURIDAD).resolveFor(actor).getText()).build()
         );
-        actor.remember(MODELO_ACTIVACION_EPREPAGO, listaCamposEprepago);
+        actor.remember(MODELO_EPREPAGO, listaCamposEprepago);
     }
 
     public static GuardarCamposEprepago esExitoso() {

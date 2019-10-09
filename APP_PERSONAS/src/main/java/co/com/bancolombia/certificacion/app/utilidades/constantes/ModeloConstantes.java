@@ -15,7 +15,6 @@ public class ModeloConstantes {
     public static final String MODELO_DATOS_TRANSACCION = "MODELO DATOS TRANSACCION";
     public static final String MODELO_FACTURA = "MODELO FACTURA";
     public static final String MODELO_DATOS_AUTENTICACION = "MODELO DATOS AUTENTICACION";
-    public static final String MODELO_ACTIVACION_EPREPAGO = "MODELO ACTIVACION EPREPAGO";
     public static final String MODELO_TRANSFERENCIA = "MODELO TRANSFERENCIA";
     public static final String MODELO_CHEQUE = "MODELO_CHEQUE";
     public static final String MODELO_HISTORICO_FACTURA = "MODELO HISTORICO FACTURA";
