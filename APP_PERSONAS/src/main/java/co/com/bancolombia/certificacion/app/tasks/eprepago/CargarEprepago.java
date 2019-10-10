@@ -17,6 +17,8 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.RECARGA_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.RECARGAR_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
@@ -41,11 +43,14 @@ public class CargarEprepago implements Task {
                                 RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         ),
-                Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA),
+                Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(LNK_RECARGAR_EPREPAGO)
         );
+
+        actor.remember(MODELO_PRODUCTO, producto);
+        actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }
 
     public static CargarEprepago con(ProductoBuilder producto, String valorCarga, String opcionMenu){
