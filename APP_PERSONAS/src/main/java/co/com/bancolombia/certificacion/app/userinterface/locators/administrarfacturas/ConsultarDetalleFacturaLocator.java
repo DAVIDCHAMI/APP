@@ -23,7 +23,6 @@ public class ConsultarDetalleFacturaLocator {
     public static final Locator LBL_DETALLE_FECHA_FIN_LOCATOR = locator().withAndroid("xpath$//span[text()='Fecha fin de la programación']/../following-sibling::div/span").withIos("xpath$");
     public static final Locator LBL_PERIODICIDAD_FECHA_FIN_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Duración del pago')]/../following-sibling::div//span)[2]").withIos("xpath$");
     public static final Locator LBL_PERIODICIDAD_FECHA_INICIO_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Duración del pago')]/../following-sibling::div//span)[1]").withIos("xpath$");
-    public static final Locator CONTENEDOR_FACTURAS_LOCATOR = locator().withAndroid("xpath$//div[@id='l1-{0}-AccountDataContainer']").withIos("xpath$");
     public static final Locator LBL_DESCRIPCION_FACTURA_LOCATOR = locator().withAndroid("xpath$(//div[@id='l1-{0}-AccountDataContainer']//span)[1]").withIos("xpath$");
     public static final Locator LBL_EMPRESA_CONVENIO_LOCATOR = locator().withAndroid("xpath$(//div[@id='l1-{0}-AccountDataContainer']//span)[2]").withIos("xpath$");
     public static final Locator LBL_FECHA_LOCATOR = locator().withAndroid("xpath$(//div[@id='l1-{0}-AccountDataContainer']//span)[3]").withIos("xpath$");
