@@ -6,7 +6,6 @@ import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -15,7 +14,6 @@ import java.util.List;
 
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.INSCRITAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SELECCIONAR_TODAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_HISTORICO_FACTURA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
