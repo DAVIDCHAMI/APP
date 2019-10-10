@@ -78,5 +78,4 @@ public class PagarFacturasStepDefinition {
     public void deberiaVerHPagoFacturaInscrita() {
 
     }
-
 }
