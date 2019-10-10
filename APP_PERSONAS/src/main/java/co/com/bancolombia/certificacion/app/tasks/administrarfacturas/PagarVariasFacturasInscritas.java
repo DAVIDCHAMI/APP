@@ -19,7 +19,7 @@ public class PagarVariasFacturasInscritas implements Task {
     private Factura factura;
     private String opcion;
 
-    public PagarVariasFacturasInscritas(Factura factura, String opcion) {
+    public PagarVariasFacturasInscritas(String opcion,Factura factura) {
         this.factura = factura;
         this.opcion = opcion;
     }

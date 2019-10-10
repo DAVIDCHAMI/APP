@@ -17,6 +17,7 @@ public class PagarRedeban implements Task {
     public PagarRedeban(Factura factura){
         this.factura=factura;
     }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
