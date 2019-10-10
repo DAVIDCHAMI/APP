@@ -25,8 +25,15 @@ public class ConsultaDetalleFacturaPage {
     public static final Target OPT_PAGAR_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_PAGAR_PROGRAMADA_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_INICIO = Target.the("Label verificacion fecha inicio").located(theElementBy(LBL_DETALLE_FECHA_INICIO_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_FIN = Target.the("Label verificacion fecha fin").located(theElementBy(LBL_DETALLE_FECHA_FIN_LOCATOR));
-    public static final Target LBL_PERIODICIDAD_FECHA_FIN = Target.the("Label verificacion  periodicidad fecha fin").located(theElementBy(LBL_PERIODICIDAD_FECHA_FIN_LOCATOR));
-    public static final Target LBL_PERIODICIDAD_FECHA_INICIO = Target.the("Label verificacion periodicidad fecha inicio").located(theElementBy(LBL_PERIODICIDAD_FECHA_INICIO_LOCATOR));
+   // public static final Target CONTENEDOR_FACTURAS = Target.the("Label verificacion  periodicidad fecha fin").locatedBy(dynamicElement(CONTENEDOR_FACTURAS_LOCATOR));
+    public static final Target LBL_DESCRIPCION_FACTURA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_DESCRIPCION_FACTURA_LOCATOR));
+    public static final Target LBL_EMPRESA_CONVENIO = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_EMPRESA_CONVENIO_LOCATOR));
+    public static final Target LBL_FECHA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_FECHA_LOCATOR));
+    public static final Target LBL_VALOR_FACTURA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_VALOR_FACTURA_LOCATOR));
+    public static final Target LBL_DESCRIPCION_PROGRAMADA_FACTURA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_DESCRIPCION_FACTURA_PROGRAMADA_LOCATOR));
+    public static final Target LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA= Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA_LOCATOR));
+    public static final Target LBL_FECHA_FACTURA_PROGRAMADA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_FECHA_FACTURA_PROGRAMADA_LOCATOR));
+    public static final Target LBL_VALOR_FACTURA_PROGRAMADA = Target.the("Label verificacion periodicidad fecha inicio").locatedBy(dynamicElement(LBL_VALOR_FACTURA_PROGRAMADA_LOCATOR));
 
     public ConsultaDetalleFacturaPage(){
             throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
