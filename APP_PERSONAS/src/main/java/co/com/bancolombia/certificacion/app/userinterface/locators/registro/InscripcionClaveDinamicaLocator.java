@@ -16,7 +16,7 @@ public class InscripcionClaveDinamicaLocator {
     public static final Locator TXT_SEGUNDA_CLAVE_LOCATOR= locator().withAndroid("xpath$//div[@class='col OSInline' and @id='b12-Column2']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa la segunda clave']/..//following-sibling::XCUIElementTypeOther[1]");
     public static final Locator BTN_INSCRIBIR_CLAVE_DINAMICA_LOCATOR= locator().withAndroid("xpath$//android.view.View[@resource-id='Link_LemonEnroll_GetDK2']").withIos("xpath$test");
     public static final Locator BTN_CONTINUAR_SEGUNDA_CLAVE_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Continuar']").withIos("xpath$//XCUIElementTypeButton[@name='CONTINUAR']");
-    public static final Locator LBL_COMPROBANTE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$test");
+    public static final Locator LBL_COMPROBANTE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Comprobante')]");
     public static final Locator LBL_ACTUALIZACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Actualización exitosa!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Actualización exitosa!']");
     public static final Locator LNK_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='Eliminar']").withIos("xpath$test");
     public static final Locator BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//button[text()='ELIMINAR']").withIos("xpath$test");
