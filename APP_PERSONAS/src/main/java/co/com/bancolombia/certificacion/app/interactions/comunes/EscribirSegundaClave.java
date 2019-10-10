@@ -1,26 +1,21 @@
 package co.com.bancolombia.certificacion.app.interactions.comunes;
 
-import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyMetastate;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
-
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TAB;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.TXT_SEGUNDA_CLAVE;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
-public class Escribir implements Interaction {
+public class EscribirSegundaClave implements Interaction {
     private String cadena;
 
-    public Escribir(String cadena) {
+    public EscribirSegundaClave(String cadena) {
         this.cadena = cadena;
     }
 
@@ -29,6 +24,7 @@ public class Escribir implements Interaction {
         String platform= ElementFinder.getPlatformCapability();
 
         if(("Android").equalsIgnoreCase(platform)){
+            TXT_SEGUNDA_CLAVE.resolveFor(actor).click();
             AndroidDriver driver = getProxiedDriver();
             for (int i = 0; i < cadena.length(); i++) {
                 char letra = cadena.charAt(i);
@@ -53,14 +49,15 @@ public class Escribir implements Interaction {
             }
         }
         else {
+            AppiumDriver driver = getProxiedDriver();
+            (new TouchAction(driver)).tap(PointOption.point(122, 350)).perform();
             actor.attemptsTo(
-                    Click.on(TAB),
-                    Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
+                    Type.theValue(cadena).into(TXT_SEGUNDA_CLAVE)
             );
         }
-
     }
-    public static Escribir enCampoTexto(String cadena) {
-        return instrumented(Escribir.class, cadena);
+
+    public static EscribirSegundaClave enLaApp(String cadena){
+        return new EscribirSegundaClave(cadena);
     }
 }
