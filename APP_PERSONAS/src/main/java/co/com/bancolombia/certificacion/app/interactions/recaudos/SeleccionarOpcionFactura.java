@@ -38,7 +38,8 @@ public class SeleccionarOpcionFactura implements Interaction {
                 Click.on(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
-                        factura.getEmpresaServicio())),
+                        factura.getEmpresaServicio())));
+        actor.attemptsTo(
                 WaitUntil.the(target, isVisible()),
                 Click.on(target)
         );

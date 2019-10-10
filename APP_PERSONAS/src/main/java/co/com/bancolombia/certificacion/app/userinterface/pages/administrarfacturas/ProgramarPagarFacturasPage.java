@@ -30,6 +30,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target OPT_MODIFICAR_PROGRAMACION= Target.the("Clic para seleccionar la opción modificar programación").located(theElementBy(OPT_MODIFICAR_PROGRAMACION_LOCATOR));
     public static final Target OPT_ELIMINAR_FACTURA= Target.the("Clic para seleccionar la opción eliminar factura").located(theElementBy(OPT_ELIMINAR_FACTURA_LOCATOR));
     public static final Target OPT_VER_DETALLE_FACTURA= Target.the("Clic para seleccionar la opción ver detalle factura").located(theElementBy(OPT_VER_DETALLE_LOCATOR));
+    public static final Target OPT_VER_HISTORICO_FACTURA= Target.the("Clic para seleccionar la opción historico factura").located(theElementBy(OPT_HISTORICO_LOCATOR));
     public static final Target LNK_CAMBIAR_PRODUCTO= Target.the("link para cambiar").located(theElementBy(LNK_CAMBIAR_PRODUCTO_LOCATOR));
     public static final Target LNK_CAMBIAR_PERIODICIDAD= Target.the("link para cambiar periodicidad").located(theElementBy(LNK_CAMBIAR_PERIODICIDAD_LOCATOR));
     public static final Target LNK_SIGUIENTE= Target.the("link para siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));

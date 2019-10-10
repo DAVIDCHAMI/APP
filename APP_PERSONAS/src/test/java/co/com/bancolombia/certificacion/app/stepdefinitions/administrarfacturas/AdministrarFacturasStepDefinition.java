@@ -48,9 +48,15 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("^el actor ingresa al historico de pagos$")
-    public void elActorIngresaHistoricoPagos() {
-        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago());
+    @Cuando("el actor revisa el historico de pagos de (.*) facturas$")
+    public void revisaelHistoricoDeSuFacturasInscritas(String opcion,List<Map<String, String>>datos) {
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago(
+                opcion,
+                factura().conValor(datos)
+                        .conFechaFactura(datos)
+                        .conEmpresaServicio(datos)
+                )
+        );
     }
 
     @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
