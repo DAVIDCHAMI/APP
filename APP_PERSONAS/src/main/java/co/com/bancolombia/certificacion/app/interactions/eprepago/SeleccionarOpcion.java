@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.BTN_SELECCIONAR_OPCION;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.BTN_SUB_MENU_EPREPAGO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SeleccionarOpcion implements Task {
@@ -19,7 +20,7 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(BTN_SUB_MENU_EPREPAGO, isVisible()),
+                WaitUntil.the(BTN_SUB_MENU_EPREPAGO, isPresent()),
                 RealizarScroll.hastaPosicionDeTarget(BTN_SUB_MENU_EPREPAGO),
                 Click.on(BTN_SUB_MENU_EPREPAGO),
                 Click.on(BTN_SELECCIONAR_OPCION.of(opcion))
