@@ -37,7 +37,6 @@ public class ConDatosTransaccion implements Task {
                 Click.on(LBL_HOLA_PROVISIONAL),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
-              //  Click.on(TXT_CLAVE_DIGITOS),
                 Type.theValue(usuario.getUsuario().getClave()).into(TXT_CLAVE_DIGITOS),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
