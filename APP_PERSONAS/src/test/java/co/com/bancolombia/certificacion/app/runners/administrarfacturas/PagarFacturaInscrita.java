@@ -14,17 +14,17 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/administrarfacturas/editar_programacion_factura.feature"},
+        features = {"src/test/resources/features/administrarfacturas/pagar_factura_inscrita.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class EditarProgramacionRunner {
-    private EditarProgramacionRunner() {
+public class PagarFacturaInscrita {
+    private PagarFacturaInscrita() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/administrarfacturas/editar_programacion_factura.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/administrarfacturas/pagar_factura_inscrita.feature");
     }
 }

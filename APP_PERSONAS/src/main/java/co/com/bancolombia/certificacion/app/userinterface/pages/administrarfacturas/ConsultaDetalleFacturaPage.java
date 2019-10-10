@@ -21,9 +21,12 @@ public class ConsultaDetalleFacturaPage {
     public static final Target LBL_DETALLE_CANAL_INSCRIPCION_FACTURA = Target.the("Label de verificación canal de inscripcion").located(theElementBy(LBL_DETALLE_CANAL_INSCRIPCION_LOCATOR));
     public static final Target LBL_DETALLE_TIPO_CUENTA = Target.the("Label de verificación tipo de cuenta factura").located(theElementBy(LBL_DETALLE_TIPO_CUENTA_LOCATOR));
     public static final Target LBL_DETALLE_NUMERO_CUENTA = Target.the("Label de verificación tipo de numero cuenta factura").located(theElementBy(LBL_DETALLE_NUMERO_CUENTA_LOCATOR));
-    public static final Target OPT_VER_DETALLE_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_VER_DETALLE_FACTURA_PROGRAMADA_LOCATOR));
+    public static final Target OPT_VER_DETALLE_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_VER_DETALLE_FAClTURA_PROGRAMADA_LOCATOR));
+    public static final Target OPT_PAGAR_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_PAGAR_PROGRAMADA_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_INICIO = Target.the("Label verificacion fecha inicio").located(theElementBy(LBL_DETALLE_FECHA_INICIO_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_FIN = Target.the("Label verificacion fecha fin").located(theElementBy(LBL_DETALLE_FECHA_FIN_LOCATOR));
+    public static final Target LBL_PERIODICIDAD_FECHA_FIN = Target.the("Label verificacion  periodicidad fecha fin").located(theElementBy(LBL_PERIODICIDAD_FECHA_FIN_LOCATOR));
+    public static final Target LBL_PERIODICIDAD_FECHA_INICIO = Target.the("Label verificacion periodicidad fecha inicio").located(theElementBy(LBL_PERIODICIDAD_FECHA_INICIO_LOCATOR));
 
     public ConsultaDetalleFacturaPage(){
             throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

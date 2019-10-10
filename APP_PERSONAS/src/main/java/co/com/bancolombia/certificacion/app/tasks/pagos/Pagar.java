@@ -21,6 +21,10 @@ public class Pagar {
         return instrumented(Creditos.class, credito.build(), productoDebitar.build());
     }
 
+    public static Performable tarjetaCreditoPropiaMayorDeuda(TarjetaCreditoBuilder tarjetaCredito){
+        return instrumented(PropiaMayorDeuda.class, tarjetaCredito.build());
+    }
+
     private Pagar() {
         throw new IllegalStateException(CLASE_TASK);
     }
