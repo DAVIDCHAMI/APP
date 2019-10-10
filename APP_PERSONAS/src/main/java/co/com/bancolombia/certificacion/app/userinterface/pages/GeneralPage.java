@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages;
 
 import net.serenitybdd.screenplay.targets.Target;
-
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;

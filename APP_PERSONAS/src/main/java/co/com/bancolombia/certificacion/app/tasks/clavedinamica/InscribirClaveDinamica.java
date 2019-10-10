@@ -1,23 +1,18 @@
 package co.com.bancolombia.certificacion.app.tasks.clavedinamica;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.interactions.comunes.EscribirSegundaClave;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.*;
-import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.TXT_FOCO_NOMBRE_PERSONALIZADO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_SEGUNDA_CLAVE_DIGITOS;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class InscribirClaveDinamica implements Task {
     private Usuario usuario;
@@ -43,16 +38,18 @@ public class InscribirClaveDinamica implements Task {
         actor.attemptsTo(
                 Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getCorreo()).into(TXT_CORREO),
+                WaitUntil.the(CHK_FOCO_ACEPTO, isPresent()),
                 Click.on(CHK_FOCO_ACEPTO),
                 Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),
-                Click.on(LNK_SIGUIENTE)
+                Click.on(LNK_SIGUIENTE),
+                WaitUntil.the(TXT_NUMERO_CELULAR, isPresent())
         );
         TXT_NUMERO_CELULAR.resolveFor(actor).clear();
         actor.attemptsTo(
                 Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
-                Click.on(CHK_ACEPTO_TERMINOS)
-                //Click.on(BTN_INSCRIBIR_CLAVE)
+                Click.on(CHK_ACEPTO_TERMINOS),
+                Click.on(BTN_INSCRIBIR_CLAVE)
         );
         actor.remember(NOMBRE_PERSONALIZADO_CLAVE_DINAMICA, usuario.getNombrePersonalizado());
         actor.remember(CORREO_CLAVE_DINAMICA, usuario.getCorreo());

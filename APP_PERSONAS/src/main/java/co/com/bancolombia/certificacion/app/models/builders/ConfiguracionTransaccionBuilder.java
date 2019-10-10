@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.models.builders;
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import co.com.bancolombia.certificacion.app.utilidades.Builder;
-
 import java.util.List;
 import java.util.Map;
 
