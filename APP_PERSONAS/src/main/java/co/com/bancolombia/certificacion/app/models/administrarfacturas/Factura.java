@@ -2,7 +2,6 @@ package co.com.bancolombia.certificacion.app.models.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
-import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 
 public class Factura {
     private String valorFactura;
@@ -13,7 +12,6 @@ public class Factura {
     private String fechaInicio;
     private String fechaFin;
     private Producto producto;
-    private Usuario usuario;
     private String convenio;
     private String referencia;
     private String frecuenciaPago;
@@ -25,6 +23,8 @@ public class Factura {
     private String negocio;
     private String numeroFactura;
     private String canalInscripcionFactura;
+    private String fechaVencimiento;
+    private String valorFacturaReferenciaPago;
 
     public Factura(FacturaBuilder programarFacturaBuilder) {
         this.valorFactura = programarFacturaBuilder.getValorFactura();
@@ -46,6 +46,16 @@ public class Factura {
         this.negocio=programarFacturaBuilder.getNegocio();
         this.numeroFactura=programarFacturaBuilder.getNumeroFactura();
         this.canalInscripcionFactura=programarFacturaBuilder.getCanalInscripcionFactura();
+        this.fechaVencimiento=programarFacturaBuilder.getFechaVencimiento();
+        this.valorFacturaReferenciaPago =programarFacturaBuilder.getValorFacturaReferenciaPagar();
+    }
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(String fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
     }
 
     public String getFechaInicio() {
@@ -148,6 +158,14 @@ public class Factura {
         this.duracionProgramacion = duracionProgramacion;
     }
 
+    public String getValorFacturaReferenciaPago() {
+        return valorFacturaReferenciaPago;
+    }
+
+    public void setValorFacturaReferenciaPago(String valorFacturaReferenciaPago) {
+        this.valorFacturaReferenciaPago = valorFacturaReferenciaPago;
+    }
+
     public String getDescripcionFactura() {
         return descripcionFactura;
     }
@@ -198,13 +216,5 @@ public class Factura {
 
     public String getReferencia() {
         return referencia;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 }
