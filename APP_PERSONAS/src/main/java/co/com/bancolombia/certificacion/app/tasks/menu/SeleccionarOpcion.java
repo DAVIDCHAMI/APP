@@ -25,9 +25,7 @@ public class SeleccionarOpcion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Esperar.unTiempo(20000),
-                Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()))
-        );
-        actor.attemptsTo(
+                Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         Esperar.unTiempo(3000),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))

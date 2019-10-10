@@ -16,9 +16,6 @@ public class RegistroLocator {
     public static final Locator LBL_VALIDACION_REGISTRO_OK_LOCATOR = locator().withAndroid("xpath$//*[contains(.,'¡Registro exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Registro exitoso!']");
     public static final Locator LBL_INICIA_REGISTRO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Inicia el registro')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Inicia el registro')]");
 
-
-
-
     private RegistroLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
