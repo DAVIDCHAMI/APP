@@ -22,6 +22,7 @@ public class PagosPage {
     public static final Target FOCO_PAGO_PROPIAS = Target.the("Foco").locatedBy(dynamicElement(FOCO_PAGO_PROPIAS_LOCATOR));
     public static final Target TXT_TARJETAS = Target.the("Label tarjetas").located(theElementBy(TXT_TARJETAS_LOCATOR));
     public static final Target OPT_PRODUCTO_ORIGEN = Target.the("Producto origen").locatedBy(dynamicElement(OPT_PRODUCTO_ORIGEN_LOCATOR));
+    public static final Target TXT_MAYOR_DEUDA = Target.the("Mensaje valor supera la deuda").located(theElementBy(TXT_MAYOR_DEUDA_LOCATOR));
 
     private PagosPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

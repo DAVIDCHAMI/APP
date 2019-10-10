@@ -9,10 +9,10 @@ public class SaldosMovimientosLocator {
     public static final Locator OPT_CUENTA_PRODUCTO_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='{0}']/../following-sibling::div//span[contains(text(),'{1}')]").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
     public static final Locator OPT_CUENTA_TAJETA_CREDITO_LOCATOR = locator()
-            .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']").withIos("xpath$(//XCUIElementTypeStaticText[@name='{0}'])[1]/../following-sibling:: XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
-    public static final Locator OPCION_CATEGORIA_PRODUCTOS_LOCATOR = locator()
-            .withAndroid("xpath$(//div[contains(@id,'Expandable')])[{0}]//div[contains(@id,'Title')]//span")
-            .withIos("xpath$b");
+            .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']").withIos("xpath$(//XCUIElementTypeStaticText[@name='{0}'])[1]/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
+    public static final Locator OPT_CUENTA_EPREPAGO_LOCATOR = locator()
+            .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']")
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
     public static final Locator OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='{0}']")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']");

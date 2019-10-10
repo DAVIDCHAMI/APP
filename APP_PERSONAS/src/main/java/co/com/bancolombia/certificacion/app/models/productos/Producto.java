@@ -1,11 +1,14 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
+import co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
 
 import java.util.List;
+
+import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 
 public class Producto {
 
@@ -27,6 +30,12 @@ public class Producto {
     protected Producto(String numero, String tipoProducto) {
         this.numero = numero;
         this.tipo = tipoProducto;
+    }
+
+    protected Producto(String numero, String tipoProducto, Saldo saldo) {
+        this.numero = numero;
+        this.tipo = tipoProducto;
+        this.saldo = saldo;
     }
 
     public Producto(ProductoBuilder productoBuilder){
