@@ -36,6 +36,7 @@ public class Constantes {
     public static final String FECHAVENCIMIENTO = "Fecha de Vencimiento";
     public static final String CODIGOSEGURIDAD = "Codigo de Seguridad (CVC2)";
     public static final String RECARGA_EPREPAGO = "Recargar";
+    public static final String DESCARGA_EPREPAGO = "Descargar";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

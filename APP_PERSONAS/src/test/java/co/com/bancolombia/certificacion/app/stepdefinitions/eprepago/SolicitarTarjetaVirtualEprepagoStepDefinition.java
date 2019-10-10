@@ -13,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeReali
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class SolicitarEprepagoStepDefinition {
+public class SolicitarTarjetaVirtualEprepagoStepDefinition {
 
     @Cuando("^quiero solicitar una tarjeta e-prepago$")
     public void quieroSolicitarUnaTarjetaEprepago(){

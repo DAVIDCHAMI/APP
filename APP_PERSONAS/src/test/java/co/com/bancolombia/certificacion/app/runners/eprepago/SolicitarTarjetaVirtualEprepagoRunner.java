@@ -15,9 +15,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         features = {"src/test/resources/features/eprepago/solicitar_tarjeta_virtual_eprepago.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE)
-public class SolicitarEprepagoRunner {
+public class SolicitarTarjetaVirtualEprepagoRunner {
 
-    public SolicitarEprepagoRunner() {
+    public SolicitarTarjetaVirtualEprepagoRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
