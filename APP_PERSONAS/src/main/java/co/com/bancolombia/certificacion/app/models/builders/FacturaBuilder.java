@@ -39,7 +39,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.periodicidad = "";
         this.numeroIntento = "";
         this.fechaInicio = "";
-        this.fechaFin= "";
+        this.fechaFin = "";
         this.convenio = "";
         this.referencia = "";
         this.frecuenciaPago = "";
@@ -52,7 +52,7 @@ public class FacturaBuilder implements Builder<Factura> {
         this.negocio = "";
         this.numeroFactura = "";
         this.canalInscripcionFactura = "";
-        this.fechaVencimiento="";
+        this.fechaVencimiento = "";
     }
 
     public static FacturaBuilder factura() {
@@ -196,6 +196,11 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
+    public FacturaBuilder conDescripcionFactura(String datos) {
+        this.descripcionFactura = datos;
+        return this;
+    }
+
     public FacturaBuilder conDuracionProgramacion(List<Map<String, String>> datos) {
         this.duracionProgramacion = datos.get(0).get("duracionProgramacion");
         return this;
@@ -206,7 +211,7 @@ public class FacturaBuilder implements Builder<Factura> {
         return this;
     }
 
- public FacturaBuilder conValorFacturaReferencia(List<Map<String, String>> datos) {
+    public FacturaBuilder conValorFacturaReferencia(List<Map<String, String>> datos) {
         this.valorFacturaReferenciaPagar = datos.get(0).get("valorFacturaReferenciaPagar");
         return this;
     }
