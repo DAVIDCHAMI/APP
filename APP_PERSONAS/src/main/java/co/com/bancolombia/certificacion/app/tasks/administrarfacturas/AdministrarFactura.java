@@ -27,8 +27,8 @@ public class AdministrarFactura {
         return instrumented(ConsultarDetalleFacturaProgramada.class, programarFacturasBuilder.build());
     }
 
-    public static Performable conHistoricoPago() {
-        return instrumented(HistoricoPago.class);
+    public static Performable conHistoricoPago(String opcion,FacturaBuilder programarFacturasBuilder) {
+        return instrumented(HistoricoPago.class,opcion,programarFacturasBuilder.build());
     }
 
     public static Performable conOpcionPagarProgramadas(String opcion, FacturaBuilder opcionFacturaBuilder) {
