@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.eprepago;
 
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaConsultaException;
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoSolicitudEprepagoException;
-import co.com.bancolombia.certificacion.app.questions.eprepago.SolicitudEprepago;
+import co.com.bancolombia.certificacion.app.questions.eprepago.SolicitudTarjetaVirtualEprepago;
 import co.com.bancolombia.certificacion.app.questions.eprepago.UsuarioConEprepago;
 import co.com.bancolombia.certificacion.app.tasks.eprepago.SolicitarEprepago;
 import cucumber.api.java.es.Cuando;
@@ -22,7 +22,7 @@ public class SolicitarTarjetaVirtualEprepagoStepDefinition {
 
     @Entonces("^Debo ver el mensaje de solicitud exitosa$")
     public void deboVerElMensajeDeSolicitudExitosa() {
-        theActorInTheSpotlight().should(seeThat(SolicitudEprepago.esExitosa())
+        theActorInTheSpotlight().should(seeThat(SolicitudTarjetaVirtualEprepago.esExitosa())
                 .orComplainWith(NoSeRealizoSolicitudEprepagoException.class, MENSAJE_E_PREPAGO_NO_SOLICITADA));
     }
 

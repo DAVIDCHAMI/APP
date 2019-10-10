@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarTarjetaVirtualEprepagoPage.*;
 
-public class SolicitudEprepago implements Question<Boolean> {
+public class SolicitudTarjetaVirtualEprepago implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -17,7 +17,7 @@ public class SolicitudEprepago implements Question<Boolean> {
                 LBL_CODIGO_CVC_EPREPAGO.resolveFor(actor).waitUntilVisible().isVisible();
     }
 
-    public static SolicitudEprepago esExitosa(){
-        return new SolicitudEprepago();
+    public static SolicitudTarjetaVirtualEprepago esExitosa(){
+        return new SolicitudTarjetaVirtualEprepago();
     }
 }
