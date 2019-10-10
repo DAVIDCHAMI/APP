@@ -9,7 +9,6 @@ import io.appium.java_client.touch.offset.PointOption;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.type.Type;
-
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.TXT_SEGUNDA_CLAVE;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -25,7 +24,6 @@ public class EscribirSegundaClave implements Interaction {
         String platform= ElementFinder.getPlatformCapability();
 
         if(("Android").equalsIgnoreCase(platform)){
-
             TXT_SEGUNDA_CLAVE.resolveFor(actor).click();
             AndroidDriver driver = getProxiedDriver();
             for (int i = 0; i < cadena.length(); i++) {
