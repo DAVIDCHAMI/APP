@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;

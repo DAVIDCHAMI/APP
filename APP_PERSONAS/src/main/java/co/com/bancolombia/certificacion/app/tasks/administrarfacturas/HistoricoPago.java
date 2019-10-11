@@ -1,9 +1,12 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.ArrayList;
@@ -11,13 +14,27 @@ import java.util.List;
 
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SELECCIONAR_TODAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_HISTORICO_FACTURA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class HistoricoPago implements Task {
+    private Factura factura;
+    private String opcion;
+
+    public HistoricoPago(String opcion,Factura factura) {
+        this.factura = factura;
+        this.opcion = opcion;
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Saltar.onBoarding(),
+                Check.whether(!opcion.equalsIgnoreCase(SELECCIONAR_TODAS)).andIfSo(
+                        SeleccionarOpcionFactura.conInformacion(OPT_VER_HISTORICO_FACTURA, factura)
+                )
+        );
         int iterador = 1;
         List<Factura> listaHistoricoPago = new ArrayList<>();
         actor.attemptsTo(
@@ -33,6 +50,6 @@ public class HistoricoPago implements Task {
             );
             iterador++;
         }
-        actor.remember(MODELO_HISTORICO_FACTURA,listaHistoricoPago );
+        actor.remember(MODELO_HISTORICO_FACTURA, listaHistoricoPago);
     }
 }

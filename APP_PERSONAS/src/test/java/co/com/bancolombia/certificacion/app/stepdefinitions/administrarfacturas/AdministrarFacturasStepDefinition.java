@@ -12,7 +12,6 @@ import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.Administra
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.Inscribir;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.GivenWhenThen;
 
 import java.util.List;
 import java.util.Map;
@@ -49,9 +48,15 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("^el actor ingresa al historico de pagos$")
-    public void elActorIngresaHistoricoPagos() {
-        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago());
+    @Cuando("el actor revisa el historico de pagos de (.*) facturas$")
+    public void revisaelHistoricoDeSuFacturasInscritas(String opcion,List<Map<String, String>>datos) {
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago(
+                opcion,
+                factura().conValor(datos)
+                        .conFechaFactura(datos)
+                        .conEmpresaServicio(datos)
+                )
+        );
     }
 
     @Cuando("el actor elimina su factura con opcion (.*) e informacion$")
@@ -66,7 +71,7 @@ public class AdministrarFacturasStepDefinition {
     }
 
     @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
-    public void elActorModificaSusFacturasProgramadas(String opcion,List<Map<String, String>> datos) {
+    public void elActorModificaSusFacturasProgramadas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)
                         .conFechaFactura(datos)
@@ -76,7 +81,7 @@ public class AdministrarFacturasStepDefinition {
                         .conProducto(datos)
                         .conNumeroIntento(datos)
                         .conPeriodicidad(datos)
-                    .conMesProgramacion(datos),
+                        .conMesProgramacion(datos),
                 opcion
         ));
     }
