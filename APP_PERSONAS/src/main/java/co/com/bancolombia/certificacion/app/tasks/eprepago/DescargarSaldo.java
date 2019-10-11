@@ -10,11 +10,13 @@ import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PRODUCTO_ORIGEN;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.TXT_VALOR_RECARGA_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.DESCARGA_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
@@ -24,10 +26,12 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 public class DescargarSaldo implements Task {
     private String opcionMenu;
     private Producto producto;
+    private String valorDescarga;
 
-    public DescargarSaldo(Producto producto, String opcionMenu) {
+    public DescargarSaldo(Producto producto, String opcionMenu, String valorDescarga) {
         this.opcionMenu = opcionMenu;
         this.producto = producto;
+        this.valorDescarga = valorDescarga;
     }
 
     @Override
@@ -44,7 +48,13 @@ public class DescargarSaldo implements Task {
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         ),
                 Validar.carga(),
-                Click.on(CHK_DESCARGA_TOTAL_EPREPAGO),
+                Check.whether(valorDescarga.equals("Total"))
+                        .andIfSo(
+                                Click.on(CHK_DESCARGA_TOTAL_EPREPAGO)
+                        ),
+                Click.on(CHK_DESCARGA_OTRO_VALOR_EPREPAGO),
+                WaitUntil.the(TXT_VALOR_RECARGA_EPREPAGO, isEnabled()),
+                Enter.theValue(valorDescarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
@@ -55,7 +65,7 @@ public class DescargarSaldo implements Task {
         actor.remember(MODELO_PRODUCTO, producto);
     }
 
-    public static DescargarSaldo totalDeLaTarjetaCon(ProductoBuilder producto, String opcionMenu) {
-        return instrumented(DescargarSaldo.class, producto.build(), opcionMenu);
+    public static DescargarSaldo deLaTarjetaCon(ProductoBuilder producto, String opcionMenu, String valorDescarga) {
+        return instrumented(DescargarSaldo.class, producto.build(), opcionMenu, valorDescarga);
     }
 }
