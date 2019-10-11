@@ -7,27 +7,25 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import java.util.List;
-import java.util.Map;
-
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.CHK_DESCARGA_TOTAL_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.LNK_DESCARGAR_EPREPAGO;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarTarjetaVirtualEprepagoPage.LBL_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.DESCARGA_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class DescargarSaldoTotalEprepago implements Task {
-    private List<Map<String, String>> datos;
+public class DescargarSaldo implements Task {
+    private String opcionMenu;
 
-    public DescargarSaldoTotalEprepago(List<Map<String, String>> datos){this.datos = datos;}
+    public DescargarSaldo(String opcionMenu){
+        this.opcionMenu = opcionMenu;
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String ePrepago = LBL_EPREPAGO.resolveFor(actor).getText();
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(ePrepago),
-                SeleccionarOpcion.deSubmenu(datos.get(0).get("opcionSubmenu")),
+                SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
+                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO),
                 WaitUntil.the(CHK_DESCARGA_TOTAL_EPREPAGO, isEnabled()),
                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
@@ -35,7 +33,7 @@ public class DescargarSaldoTotalEprepago implements Task {
                 Click.on(LNK_DESCARGAR_EPREPAGO));
     }
 
-    public static DescargarSaldoTotalEprepago enLaAppBancolombia(List<Map<String, String>> datos){
-        return instrumented(DescargarSaldoTotalEprepago.class, datos);
+    public static DescargarSaldo totalDeLaTarjeta(String opcionMenu){
+        return instrumented(DescargarSaldo.class, opcionMenu);
     }
 }
