@@ -43,7 +43,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LBL_FECHA_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[1]/div[2]/div/div/div/span");
     public static final Locator LBL_REFERENCIA_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[{0}]/div[1]/span");
     public static final Locator LBL_VALOR_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[1]/div[2]//div[3]/span");
-    public static final Locator OPT_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Programadas')]/..");
+    public static final Locator OPT_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Programadas')]/..").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Programadas')]");
     public static final Locator CHk_SELECCIONAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../../preceding-sibling::div//span[contains(text(),'{1}')]/../../../preceding-sibling::div//span[contains(text(),'{2}')]/../../../../../..//input");
     public static final Locator LBL_PAGO_EXITOSO_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Pago exitoso!')]");
     public static final Locator LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR = locator().withAndroid("xpath$//div[./span[contains(text(),'Nuevo saldo disponible')]]/div/span");
