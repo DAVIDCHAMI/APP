@@ -6,10 +6,13 @@ import net.serenitybdd.screenplay.Question;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.LBL_VALOR_RECARGA_NO_PERMITIDO;
 
 public class ValorRecarga implements Question<Boolean> {
+
     @Override
     public Boolean answeredBy(Actor actor) {
         return LBL_VALOR_RECARGA_NO_PERMITIDO.resolveFor(actor).isVisible();
     }
 
-    public static ValorRecarga noPermitido(){return new ValorRecarga();}
+    public static ValorRecarga noPermitido(){
+        return new ValorRecarga();
+    }
 }
