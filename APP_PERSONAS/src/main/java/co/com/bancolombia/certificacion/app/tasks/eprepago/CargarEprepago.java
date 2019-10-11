@@ -51,8 +51,8 @@ public class CargarEprepago implements Task {
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
                 Click.on(LNK_RECARGAR_EPREPAGO),
-                Validar.carga());
-
+                Validar.carga()
+        );
         actor.remember(MODELO_PRODUCTO, producto);
         actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }
