@@ -19,7 +19,9 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.TXT_VALOR_RECARGA_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.DESCARGA_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TOTAL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.DESCARGAR_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
@@ -48,21 +50,22 @@ public class DescargarSaldo implements Task {
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         ),
                 Validar.carga(),
-                Check.whether(valorDescarga.equals("Total"))
+                Check.whether(TOTAL.equals(valorDescarga))
                         .andIfSo(
-                                Click.on(CHK_DESCARGA_TOTAL_EPREPAGO)
-                        ),
-                Click.on(CHK_DESCARGA_OTRO_VALOR_EPREPAGO),
-                WaitUntil.the(TXT_VALOR_RECARGA_EPREPAGO, isEnabled()),
-                Enter.theValue(valorDescarga).into(TXT_VALOR_RECARGA_EPREPAGO),
+                                Click.on(CHK_DESCARGA_TOTAL_EPREPAGO))
+                        .otherwise(
+                                Click.on(CHK_DESCARGA_OTRO_VALOR_EPREPAGO),
+                                WaitUntil.the(TXT_VALOR_RECARGA_EPREPAGO, isEnabled()),
+                                Enter.theValue(valorDescarga).into(TXT_VALOR_RECARGA_EPREPAGO)
+                ),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
                 Click.on(LNK_DESCARGAR_EPREPAGO),
                 Validar.carga()
         );
-
         actor.remember(MODELO_PRODUCTO, producto);
+        actor.remember(DESCARGAR_EPREPAGO, valorDescarga);
     }
 
     public static DescargarSaldo deLaTarjetaCon(ProductoBuilder producto, String opcionMenu, String valorDescarga) {
