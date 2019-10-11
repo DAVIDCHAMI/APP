@@ -13,7 +13,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.DESCARGAR_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 
-public class DescargaTarjetaVirtuaEprepago implements Question<Boolean> {
+public class DescargaTarjetaVirtualEprepago implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -25,7 +25,7 @@ public class DescargaTarjetaVirtuaEprepago implements Question<Boolean> {
                 LBL_CUENTA_ASOCIADA.of(producto.getTipo(), producto.getNumero()).resolveFor(actor).waitUntilVisible().isVisible();
     }
 
-    public static DescargaTarjetaVirtuaEprepago esExitosa(){
-        return new DescargaTarjetaVirtuaEprepago();
+    public static DescargaTarjetaVirtualEprepago esExitosa(){
+        return new DescargaTarjetaVirtualEprepago();
     }
 }

@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.eprepago;
 
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaDescargaExitosaException;
-import co.com.bancolombia.certificacion.app.questions.eprepago.DescargaTarjetaVirtuaEprepago;
+import co.com.bancolombia.certificacion.app.questions.eprepago.DescargaTarjetaVirtualEprepago;
 import co.com.bancolombia.certificacion.app.tasks.eprepago.DescargarSaldo;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
@@ -25,7 +25,7 @@ public class DescargarTarjetaVirtualEprepagoStepDefinition {
 
     @Entonces("^el deberia de ver un mensaje descarga ePrepago exitosa$")
     public void deberiaVerMensajeDescargaTarjetaVritualEPrepagoExitosa() {
-        theActorInTheSpotlight().should(seeThat(DescargaTarjetaVirtuaEprepago.esExitosa())
+        theActorInTheSpotlight().should(seeThat(DescargaTarjetaVirtualEprepago.esExitosa())
                 .orComplainWith(NoSeRealizoLaDescargaExitosaException.class, MENSAJE_DESCARGA_EPREPAGO_NO_EXITOSA));
     }
 }
