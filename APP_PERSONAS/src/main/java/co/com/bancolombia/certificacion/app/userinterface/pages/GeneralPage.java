@@ -34,6 +34,7 @@ public class GeneralPage {
     public static final Target LNK_SOLICITAR = Target.the("Link Solicitar").located(theElementBy(LNK_SOLICITAR_LOCATOR));
     public static final Target LNK_CANCELAR = Target.the("Botón cancelar activar huella").located(theElementBy(LNK_CANCELAR_LOCATOR));
     public static final Target BTN_SI = Target.the("Botón confirmación cancelar verificación por huella").located(theElementBy(BTN_SI_LOCATOR));
+    public static final Target LBL_CUENTA_SIN_SALDO = Target.the("Mensaje cuenta sin saldo").located(theElementBy(LBL_CUENTA_SIN_SALDO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
