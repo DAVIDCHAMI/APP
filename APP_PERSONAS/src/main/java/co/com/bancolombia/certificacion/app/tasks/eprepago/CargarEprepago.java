@@ -6,7 +6,7 @@ import co.com.bancolombia.certificacion.app.interactions.eprepago.SeleccionarOpc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
-import co.com.bancolombia.certificacion.app.questions.eprepago.Verificar;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -39,7 +39,10 @@ public class CargarEprepago implements Task {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
                 SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO),
-                Check.whether(Verificar.elementoVisible()).andIfSo(
+                Validar.carga()
+        );
+        actor.attemptsTo(
+                Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                 ),

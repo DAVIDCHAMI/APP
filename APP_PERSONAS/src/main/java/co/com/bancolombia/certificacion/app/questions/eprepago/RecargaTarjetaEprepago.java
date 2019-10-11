@@ -9,6 +9,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.LBL_VALOR_RECARGADO_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.RECARGAR_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 
 public class RecargaTarjetaEprepago implements Question<Boolean> {
     @Override
@@ -18,7 +19,7 @@ public class RecargaTarjetaEprepago implements Question<Boolean> {
 
         return LBL_RECARGA_EXITOSA_EPREPAGO.resolveFor(actor).isVisible() &&
                 LBL_CUENTA_ASOCIADA.of(producto.getTipo(),producto.getNumero()).resolveFor(actor).waitUntilVisible().isVisible() &&
-                LBL_VALOR_RECARGADO_EPREPAGO.of(valorCargado).resolveFor(actor).waitUntilVisible().isVisible();
+                LBL_VALOR_RECARGADO_EPREPAGO.of(darFormato(valorCargado)).resolveFor(actor).waitUntilVisible().isVisible();
     }
 
     public static RecargaTarjetaEprepago exitosa(){return new RecargaTarjetaEprepago();}

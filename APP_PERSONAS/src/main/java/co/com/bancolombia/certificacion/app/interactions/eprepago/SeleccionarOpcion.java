@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.BTN_SELECCIONAR_OPCION;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.BTN_SUB_MENU_EPREPAGO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SeleccionarOpcion implements Task {
     private String opcion;
