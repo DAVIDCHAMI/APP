@@ -17,6 +17,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.DESCARGA_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
@@ -33,7 +34,8 @@ public class DescargarSaldo implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
-                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO)
+                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO),
+                Validar.carga()
         );
         actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_DESTINO_EPREPAGO))
@@ -41,13 +43,16 @@ public class DescargarSaldo implements Task {
                                 RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         ),
-                WaitUntil.the(CHK_DESCARGA_TOTAL_EPREPAGO, isEnabled()),
+                Validar.carga(),
                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
+                Validar.carga(),
                 Click.on(LNK_DESCARGAR_EPREPAGO),
                 Validar.carga()
         );
+
+        actor.remember(MODELO_PRODUCTO, producto);
     }
 
     public static DescargarSaldo totalDeLaTarjetaCon(ProductoBuilder producto, String opcionMenu) {
