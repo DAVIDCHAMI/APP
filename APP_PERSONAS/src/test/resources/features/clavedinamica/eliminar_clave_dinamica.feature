@@ -12,4 +12,4 @@
       Y cierra sesion en la app
       Ejemplos:
         | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado |
-   ##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xlsx@Eliminar@1
+        ##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xls@Eliminar@1
