@@ -14,6 +14,5 @@ public class DescargarTarjetaVirtualEprepagoLocator {
     public static final Locator LBL_DESCARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Descarga exitosa!']").withIos("xpath$q");
     public static final Locator LBL_VALOR_DESCARGA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$q");
 
-
     private DescargarTarjetaVirtualEprepagoLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }
