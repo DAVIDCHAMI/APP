@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.eprepago.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
@@ -32,7 +33,8 @@ public class DescargarSaldo implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
-                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO));
+                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO)
+        );
         actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_DESTINO_EPREPAGO))
                         .andIfSo(
@@ -43,7 +45,9 @@ public class DescargarSaldo implements Task {
                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(LNK_DESCARGAR_EPREPAGO));
+                Click.on(LNK_DESCARGAR_EPREPAGO),
+                Validar.carga()
+        );
     }
 
     public static DescargarSaldo totalDeLaTarjetaCon(ProductoBuilder producto, String opcionMenu) {
