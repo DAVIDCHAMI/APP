@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class Verificar {
-
+    // @UKA_GENERATION_START@
     public static boolean elementoHabilitado(Actor actor, Target target) {
         try {
             return target.resolveFor(actor).isEnabled();
@@ -28,4 +28,5 @@ public class Verificar {
             return false;
         }
     }
+    // @UKA_GENERATION_END@
 }
