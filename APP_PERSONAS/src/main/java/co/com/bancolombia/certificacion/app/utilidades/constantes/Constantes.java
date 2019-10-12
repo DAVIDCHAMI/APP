@@ -38,6 +38,7 @@ public class Constantes {
     public static final String SELECCIONAR_TODAS = "todas";
     public static final String RECARGA_EPREPAGO = "Recargar";
     public static final String DESCARGA_EPREPAGO = "Descargar";
+    public static final String TOTAL = "Total";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

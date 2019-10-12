@@ -38,22 +38,21 @@ public class CargarEprepago implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
-                SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO),
-                Validar.carga()
+                SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO)
         );
         actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                ),
+                ));
+        actor.attemptsTo(
                 Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
-                WaitUntil.the(LNK_RECARGAR_EPREPAGO, isEnabled()),
+                Validar.carga(),
                 Click.on(LNK_RECARGAR_EPREPAGO),
                 Validar.carga()
         );
-
         actor.remember(MODELO_PRODUCTO, producto);
         actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }
