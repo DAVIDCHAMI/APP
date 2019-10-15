@@ -8,8 +8,6 @@ import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
@@ -28,7 +26,7 @@ public class ProgramarFactura implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Saltar.onBoarding(),
-                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR,factura),
+                SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura),
                 Click.on(OPT_MIS_PRODUCTOS),
                 Click.on(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
                         getTipo(), factura.getProducto().getNumero())),
@@ -47,16 +45,22 @@ public class ProgramarFactura implements Task {
             }
             String valorMes = LBL_VALOR_MES.of(factura.getMesProgramacion()).resolveFor(actor).getValue();
             actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(factura.getFechaInicio(), valorMes)),
-                    Click.on(LST_RANGO_FECHA.of(factura.getFechaFin(), valorMes)),
-                    Click.on(BTN_SELECCIONAR),
-                    Click.on(LNK_SIGUIENTE)
-        }else {
+                    Click.on(LST_RANGO_FECHA.of(factura.getFechaFin(), valorMes)));
+        } else {
             actor.attemptsTo(
-                    Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getDuracionProgramacion())));
+                    Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getDuracionProgramacion())),
+                    RealizarScroll.hastaPosicionDeTarget(TXT_FECHA_INICIO_FIN),
+                    Click.on(TXT_FECHA_INICIO_FIN)
+            );
+            while (!Verificar.elementoVisible(actor, LBL_MES.of(factura.getMesProgramacion()))) {
+                actor.attemptsTo(Click.on(BTN_FLECHA_MES_SIGUIENTE));
+                String valor = LBL_VALOR_MES.of(factura.getMesProgramacion()).resolveFor(actor).getValue();
+                actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(factura.getFechaInicio(), valor)));
+            }
         }
         actor.attemptsTo(
                 Click.on(BTN_SIGUIENTE),
-                Scroll.to(CHK_ACEPTO_TERMINOS),
+                RealizarScroll.hastaPosicionDeTarget(CHK_ACEPTO_TERMINOS),
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_PROGRAMAR)
         );
