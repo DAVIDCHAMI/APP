@@ -19,10 +19,10 @@ public class InscripcionClaveDinamicaLocator {
     public static final Locator BTN_CONTINUAR_SEGUNDA_CLAVE_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Continuar']").withIos("xpath$//XCUIElementTypeButton[@name='CONTINUAR']");
     public static final Locator LBL_COMPROBANTE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Comprobante')]");
     public static final Locator LBL_ACTUALIZACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Actualización exitosa!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Actualización exitosa!']");
-    public static final Locator LNK_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='Eliminar']").withIos("xpath$test");
-    public static final Locator BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//button[text()='ELIMINAR']").withIos("xpath$test");
-    public static final Locator LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='Clave dinámica eliminada']/../following-sibling::div//span[text()='{0}']").withIos("xpath$test");
-    public static final Locator LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Eliminación exitosa!']").withIos("xpath$test");
+    public static final Locator LNK_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='Eliminar']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/..//following-sibling::XCUIElementTypeLink[1]");
+    public static final Locator BTN_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//button[text()='ELIMINAR']").withIos("xpath$//XCUIElementTypeButton[@name='ELIMINAR']");
+    public static final Locator LBL_VERIFICACION_ELIMINAR_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='Clave dinámica eliminada']/../following-sibling::div//span[text()='{0}']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/..//preceding-sibling::XCUIElementTypeOther[1]//XCUIElementTypeStaticText");
+    public static final Locator LBL_VERIFICACION_MENSAJE_CLAVE_DINAMICA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Eliminación exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Eliminación exitosa!']");
     public static final Locator FOCO_INSCRIPCION_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'INSCRIBIR')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'INSCRIBIR')]");
 
     private InscripcionClaveDinamicaLocator() {
