@@ -47,6 +47,7 @@ public class CargarEprepago implements Task {
                 ));
         actor.attemptsTo(
                 Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
+                Click.on(FOCO_E_PREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),

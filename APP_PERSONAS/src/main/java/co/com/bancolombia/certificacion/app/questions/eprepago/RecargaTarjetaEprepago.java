@@ -16,7 +16,6 @@ public class RecargaTarjetaEprepago implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         Producto producto = actor.recall(MODELO_PRODUCTO);
         String valorCargado = actor.recall(RECARGAR_EPREPAGO);
-
         return LBL_RECARGA_EXITOSA_EPREPAGO.resolveFor(actor).waitUntilVisible().isVisible() &&
                 LBL_COMPROBATE_EPREPAGO.resolveFor(actor).waitUntilVisible().isVisible() &&
                 LBL_CUENTA_ASOCIADA.of(producto.getTipo(), producto.getNumero()).resolveFor(actor).waitUntilVisible().isVisible() &&
