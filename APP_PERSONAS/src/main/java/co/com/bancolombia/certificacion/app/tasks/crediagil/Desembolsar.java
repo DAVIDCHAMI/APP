@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.crediagil;
 
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
@@ -28,6 +29,7 @@ public class Desembolsar implements Task {
     public <T extends Actor> void performAs(T actor) {
         if (Verificar.elementoVisible(actor, LBL_VERIFICACION.of(CUENTAS))) {
             actor.attemptsTo(
+                    RealizarScroll.hastaTargetVisible(OPT_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero())),
                     Click.on(OPT_PRODUCTO_ORIGEN.of(productoDebitar.getTipo(), productoDebitar.getNumero()))
             );
         }
