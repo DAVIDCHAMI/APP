@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.menu;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.utilidades.enumeradores.TipoTransaccionEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -28,14 +29,16 @@ public class SeleccionarOpcion implements Task {
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu())),
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         Esperar.unTiempo(3000),
+                        RealizarScroll.hastaPosicionDeTarget(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 )
         );
         actor.attemptsTo(
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
                         Esperar.unTiempo(3000),
+                        RealizarScroll.hastaPosicionDeTarget(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
-                                Esperar.unTiempo(3000)
+                        Esperar.unTiempo(3000)
                 )
         );
     }
