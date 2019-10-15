@@ -37,15 +37,21 @@ public class CargarEprepago implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Validar.carga(),
+                RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
+                Click.on(BTN_RECARGAR_EPREPAGO)
+        );
+        /*actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
                 SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO)
         );
+        */
+
         actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                ));
-        actor.attemptsTo(
+                ),
                 Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 Click.on(FOCO_E_PREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),

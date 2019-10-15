@@ -47,10 +47,6 @@ public class CargarTarjetaVirtualEprepagoStepDefinition {
                 .orComplainWith(NoSeRealizoRecargaEprepagoException.class, MENSAJE_RECARGA_EPREPAGO_NO_REALIZADA));
     }
 
-    @Entonces("^el deberia ver un mensaje carga no realizada$")
-    public void deberiaVerMensajeCargaNoRealizada() {
-    }
-
     @Entonces("^el deberia ver un mensaje de monto para cargar no permitido$")
     public void deberiaVerMensajeMontoParaCargarNoPermitido() {
         theActorInTheSpotlight().should(seeThat(ValorRecarga.noPermitido())

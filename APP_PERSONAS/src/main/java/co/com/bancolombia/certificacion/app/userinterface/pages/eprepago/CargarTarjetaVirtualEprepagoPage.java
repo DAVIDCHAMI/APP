@@ -16,7 +16,7 @@ public class CargarTarjetaVirtualEprepagoPage {
     public static final Target LBL_PRODUCTO_ORIGEN_EPREPAGO = Target.the("Foco para identificar cunado un cliente cuenta con mas de una cuenta").located(theElementBy(LBL_PRODUCTO_ORIGEN_EPREPAGO_LOCATOR));
     public static final Target LBL_VALOR_RECARGA_NO_PERMITIDO = Target.the("Label que muestra mensaje sobre el valor permitido al cargar ePrepago").located(theElementBy(LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR));
     public static final Target LBL_VALOR_RECARGADO_EPREPAGO = Target.the("Label en el que aparece el valor recargado a la tarjeta virtual ePrepago").locatedBy(dynamicElement(LBL_VALOR_RECARGADO_EPREPAGO_LOCATOR));
-    public static final Target BTN_RECARGAR_EPREPAGO = Target.the("Botón para recargar e-Prepgo").located(theElementBy(BTN_RECARGAR_EPREPAGO_LOCATOR));
+    public static final Target BTN_RECARGAR_EPREPAGO = Target.the("Botón para recargar desde opción detalle").located(theElementBy(BTN_RECARGAR_EPREPAGO_LOCATOR));
     public static final Target LBL_COMPROBATE_EPREPAGO = Target.the("Comprobate operación ePrepago").located(theElementBy(LBL_COMPROBATE_EPREPAGO_LOCATOR));
     public static final Target FOCO_E_PREPAGO = Target.the("Foco e-prepago").located(theElementBy(FOCO_E_PREPGAGO_LOCATOR));
 
