@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.clavedinamica;
+package co.com.bancolombia.certificacion.app.runners.crediagil;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -10,22 +10,17 @@ import org.junit.runner.RunWith;
 
 import java.io.IOException;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
-
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature"},
+        features = {"src/test/resources/features/crediagil/desembolso_crediagil.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class EliminarClaveDinamicaRunner {
+public class DesembolsarCrediagilRunner {
 
-    private EliminarClaveDinamicaRunner() {
-        throw new IllegalStateException(CLASE_RUNNER);
-    }
-
+    private DesembolsarCrediagilRunner(){}
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/crediagil/desembolso_crediagil.feature");
     }
 }
