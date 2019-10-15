@@ -24,8 +24,8 @@ public class EliminarClaveDinamicaStepDefinition {
                 ));
     }
 
-    @Entonces("Yo mensaje exitoso de eliminación clave dinamica$")
-    public void deberiaVerClaveDinamExitosa() {
+    @Entonces("Deberia de ver el mensaje de eliminación exitosa$")
+    public void deberiaDeVerElMensajeDeEliminacionExitosa() {
         theActorInTheSpotlight().should(seeThat(VerificarEliminacionClaveDinamica.exitosa()).orComplainWith(
                 ClaveNoEliminaClaveDinamicaException.class, NO_ELIMINA_CLAVE_DINAMICA
         ));

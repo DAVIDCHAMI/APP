@@ -8,7 +8,7 @@ Característica: Eliminar clave dinamica
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere GESTIONAR_CLAVE_DINAMICA
     Y quiere eliminar su clave dinamica con nombre personalizado <nombrePersonalizado>
-    Entonces Yo mensaje exitoso de eliminación clave dinamica
+    Entonces Deberia de ver el mensaje de eliminación exitosa
     Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado |
