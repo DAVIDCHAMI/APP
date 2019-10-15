@@ -35,6 +35,10 @@ public class Constantes {
     public static final String TARJETA_MASTERCARD = "Tarjeta MasterCard";
     public static final String FECHAVENCIMIENTO = "Fecha de Vencimiento";
     public static final String CODIGOSEGURIDAD = "Codigo de Seguridad (CVC2)";
+    public static final String SELECCIONAR_TODAS = "todas";
+    public static final String RECARGA_EPREPAGO = "Recargar";
+    public static final String DESCARGA_EPREPAGO = "Descargar";
+    public static final String TOTAL = "Total";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

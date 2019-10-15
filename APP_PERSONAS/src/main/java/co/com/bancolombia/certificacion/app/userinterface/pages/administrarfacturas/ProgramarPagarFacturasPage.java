@@ -30,18 +30,18 @@ public class ProgramarPagarFacturasPage {
     public static final Target OPT_MODIFICAR_PROGRAMACION= Target.the("Clic para seleccionar la opción modificar programación").located(theElementBy(OPT_MODIFICAR_PROGRAMACION_LOCATOR));
     public static final Target OPT_ELIMINAR_FACTURA= Target.the("Clic para seleccionar la opción eliminar factura").located(theElementBy(OPT_ELIMINAR_FACTURA_LOCATOR));
     public static final Target OPT_VER_DETALLE_FACTURA= Target.the("Clic para seleccionar la opción ver detalle factura").located(theElementBy(OPT_VER_DETALLE_LOCATOR));
+    public static final Target OPT_VER_HISTORICO_FACTURA= Target.the("Clic para seleccionar la opción historico factura").located(theElementBy(OPT_HISTORICO_LOCATOR));
     public static final Target LNK_CAMBIAR_PRODUCTO= Target.the("link para cambiar").located(theElementBy(LNK_CAMBIAR_PRODUCTO_LOCATOR));
     public static final Target LNK_CAMBIAR_PERIODICIDAD= Target.the("link para cambiar periodicidad").located(theElementBy(LNK_CAMBIAR_PERIODICIDAD_LOCATOR));
     public static final Target LNK_SIGUIENTE= Target.the("link para siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
-    public static final Target TXT_VALOR= Target.the("Campo de texto para ingresar valor").locatedBy(dynamicElement(TXT_VALOR_LOCATOR));
-    public static final Target IMG_PERIODICIDAD = Target.the("Clic en el foco periodicidad").located(theElementBy(IMG_PERIODICIDAD_LOCATOR));
+    public static final Target OPT_PAGAR_FACTURA= Target.the("Selecciona la opcion pagar factura").located(theElementBy(OPT_PAGAR_FACTURA_LOCATOR));
     public static final Target FOCO = Target.the("Clic en el foco").located(theElementBy(FOCO_LOCATOR));
     public static final Target LST_FRECUENCIA_PERIODICAD = Target.the("Opcion frecuencia del pago").locatedBy(dynamicElement(LST_FRECUENCIA_PERIODICAD_LOCATOR));
     public static final Target BTN_MODIFICAR = Target.the("Clic en botón modificar").located(theElementBy(BTN_MODIFICAR_LOCATOR));
     public static final Target BTN_CONFIRMAR_ELIMINACION = Target.the("Clic en botón para confirmar la eliminación").located(theElementBy(BTN_CONFIRMAR_ELIMINACION_LOCATOR));
     public static final Target LBL_MENSAJE_MODIFICACION = Target.the("Mensaje modificación exitosa").located(theElementBy(LBL_MENSAJE_MODIFICACION_LOCATOR));
     public static final Target LBL_ELIMINACION_EXITOSA = Target.the("Mensaje eliminación exitosa").located(theElementBy(LBL_ELIMINACION_EXITOSA_LOCATOR));
-    public static final Target LBL_COMPROBANTE_ELIMINACION_EXITOSA = Target.the("Comprobante eliminación ").located(theElementBy(LBL_COMPROBANTE_ELIMINACION_EXITOSA_LOCATOR));
+    public static final Target LBL_COMPROBANTE_EXITOSA = Target.the("Comprobante eliminación ").located(theElementBy(LBL_COMPROBANTE_ELIMINACION_EXITOSA_LOCATOR));
     public static final Target LBL_EMPRESA_SERIVICIO = Target.the("Label de verificación empresa servicio").locatedBy(dynamicElement(LBL_EMPRESA_SERIVICIO_LOCATOR));
     public static final Target LBL_ESTADO_HISTORICO_PAGO = Target.the("Label de verifica el estado del historico de pago").locatedBy(dynamicElement(LBL_ESTADO_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_FECHA_HISTORICO_PAGO = Target.the("Label de verifica la fecha del historico de pago").locatedBy(dynamicElement(LBL_FECHA_HISTORICO_PAGO_LOCATOR));
@@ -49,6 +49,13 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_VALOR_HISTORICO_PAGO = Target.the("Label de verifica el valor del historico de pago").locatedBy(dynamicElement(LBL_VALOR_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_CONTENEDOR_HISTORICO_PAGO = Target.the("Contenedor detalle historico de pago").locatedBy(dynamicElement(LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR));
     public static final Target OPT_PROGRAMADAS = Target.the("Opcion programadas").located(theElementBy(OPT_PROGRAMADAS_LOCATOR));
+    public static final Target CHK_SELECCIONAR_TODAS_FACTURAS = Target.the("Pagar todas las facturas").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
+    public static final Target CHk_SELECCIONAR_FACTURA = Target.the("Selecciona facturas a pagar").locatedBy(dynamicElement(CHk_SELECCIONAR_FACTURA_LOCATOR));
+    public static final Target LBL_PAGO_EXITOSO_FACTURA = Target.the("Pago de una factura sin mas facturas inscrita exito").located(theElementBy(LBL_PAGO_EXITOSO_FACTURA_LOCATOR));
+    public static final Target LBL_NUEVO_SALDO_DISPONIBLE = Target.the("Label nuevo saldo disponible").located(theElementBy(LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR));
+    public static final Target LBL_VALOR_PAGADO = Target.the("Campo de texto valor pagado").locatedBy(dynamicElement(LBL_VALOR_PAGAR_LOCATOR));
+    public static final Target LBL_PRODUCTO_PAGO = Target.the("Campo de producto debitado").locatedBy(dynamicElement(LBL_PRODUCTO_PAGO_LOCATOR));
+    public static final Target TXT_VALOR = Target.the("Campo ingresar valor a pagar").located(theElementBy(TXT_VALOR_LOCATOR));
 
     private ProgramarPagarFacturasPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

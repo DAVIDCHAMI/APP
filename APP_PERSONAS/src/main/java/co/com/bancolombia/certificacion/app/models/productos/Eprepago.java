@@ -1,7 +1,6 @@
-package co.com.bancolombia.certificacion.app.models.eprepago;
+package co.com.bancolombia.certificacion.app.models.productos;
 
 import co.com.bancolombia.certificacion.app.models.builders.EprepagoBuilder;
-import co.com.bancolombia.certificacion.app.models.productos.Producto;
 
 public class Eprepago extends Producto {
     private String fechaVencimiento;
