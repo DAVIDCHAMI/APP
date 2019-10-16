@@ -15,6 +15,8 @@ public class DescargarTarjetaVirtualEprepagoPage {
     public static final Target LBL_PRODUCTO_DESTINO_EPREPAGO = Target.the("Label que identifica las cuentas destino para la descarga de e-Prepago").located(theElementBy(LBL_PRODUCTO_DESTINO_EPREPAGO_LOCATOR));
     public static final Target LBL_DESCARGA_EXITOSA_EPREPAGO = Target.the("Label que muestra mensaje de descarga exitosa ePrepago").located(theElementBy(LBL_DESCARGA_EXITOSA_EPREPAGO_LOCATOR));
     public static final Target LBL_VALOR_DESCARGA = Target.the("Label valor de descarga").locatedBy(dynamicElement(LBL_VALOR_DESCARGA_LOCATOR));
+    public static final Target TXT_VALOR_DESCARGA_EPREPAGO = Target.the("Campo de texto valor de descarga").locatedBy(dynamicElement(TXT_VALOR_DESCARGA_EPREPAGO_LOCATOR));
+    public static final Target FOCO = Target.the("Foco eprepago").located(theElementBy(FOCO_LOCATOR));
 
     private DescargarTarjetaVirtualEprepagoPage(){throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }
