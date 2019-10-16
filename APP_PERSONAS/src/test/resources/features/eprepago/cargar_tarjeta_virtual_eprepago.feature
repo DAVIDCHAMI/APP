@@ -7,8 +7,8 @@ Característica: Cargar tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y cargar una tarjeta virtual e-Prepago activa por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
@@ -16,35 +16,47 @@ Característica: Cargar tarjeta virtual ePrepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
   ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-   |1   |333333304   |1   |autotest32   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |1000000   |Ahorros   |406-733040-20|
+   |1   |333333304   |1   |autotest30   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |30000   |Ahorros   |406-733020-15|
 
-  @Manual:Passed
   Esquema del escenario: Carga a tarjeta virtual ePrepago inactiva
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere cargar una tarjeta virtual e-Prepago inactiva por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
-    Entonces el deberia ver un mensaje carga no realizada
+    Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
     Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@2
-   |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|
+   |2   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |30000   |Ahorros   |406-739740-05|
 
-    @Manual:Passed
   Esquema del escenario: Carga a tarjeta virtual ePrepago sobre el valor maximo permitido
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere cargar una tarjeta virtual e-Prepago sobre el valor maximo por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga sobre el valor maximo por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia ver un mensaje de monto para cargar no permitido
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@2
-   |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|
+   |2   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |30000   |Ahorros   |406-739740-05|
+
+  Esquema del escenario: Carga a tarjeta virtual ePrepago con cuenta sin saldo
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga por valor de <valorRecarga>
+      | tipoCuenta   | numeroCuenta   |
+      | <tipoCuenta> | <numeroCuenta> |
+    Entonces deberia ver el mensaje de error: cuenta origen sin saldo
+    Ejemplos:
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
+    ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@3
+   |3   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |30000   |Ahorros   |406-714530-16|
