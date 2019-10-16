@@ -5,8 +5,10 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyMetastate;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
 
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TAB;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
@@ -48,6 +50,7 @@ public class Escribir implements Interaction {
         }
         else {
             actor.attemptsTo(
+                    Click.on(TAB),
                     Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
             );
         }

@@ -7,8 +7,8 @@ Característica: Descarga monto tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere descargar una tarjeta virtual e-Prepago activa por valor de <valorDescarga>
+    Cuando el actor quiere DESCARGAR_EPREPAGO
+    Y realiza la descarga por valor de <valorDescarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje descarga ePrepago exitosa
@@ -16,4 +16,4 @@ Característica: Descarga monto tarjeta virtual ePrepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorDescarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/e-prepago/descargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-   |1   |333333304   |1   |autotest32   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |100000   |Ahorros   |406-733040-20|
+   |1   |333333304   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |1000   |Ahorros   |406-714500-19|

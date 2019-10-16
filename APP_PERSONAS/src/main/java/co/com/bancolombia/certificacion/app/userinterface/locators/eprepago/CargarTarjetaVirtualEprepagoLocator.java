@@ -15,7 +15,7 @@ public class CargarTarjetaVirtualEprepagoLocator {
     public static final Locator LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR = locator().withAndroid("xpath$//span[@id='AlertAnimation2']/descendant::span").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Ingresa un valor entre')]");
     public static final Locator LBL_VALOR_RECARGADO_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor recargado']/../../child::span[contains(text(),'{0}')]").withIos("xpath$//*[contains(@name,'{0}')]");
     public static final Locator BTN_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[@name='Recargar']/..");
-    public static final Locator LBL_COMPROBATE_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//*[contains(@name,'Comprobante')]");
+    public static final Locator LBL_COMPROBATE_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Comprobante')]");
     public static final Locator FOCO_E_PREPGAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'e-Prepago')]").withIos("xpath$//XCUIElementTypeStaticText[@name='e-Prepago']");
 
     private CargarTarjetaVirtualEprepagoLocator(){throw new IllegalStateException(CLASE_LOCATOR);}

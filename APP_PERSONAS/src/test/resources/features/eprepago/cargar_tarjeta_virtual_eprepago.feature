@@ -8,7 +8,7 @@ Característica: Cargar tarjeta virtual ePrepago
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere RECARGAR_EPREPAGO
-    Y cargar una tarjeta virtual e-Prepago activa por valor de <valorRecarga>
+    Y realiza la carga por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
@@ -22,8 +22,8 @@ Característica: Cargar tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere cargar una tarjeta virtual e-Prepago inactiva por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa
@@ -37,8 +37,8 @@ Característica: Cargar tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere cargar una tarjeta virtual e-Prepago sobre el valor maximo por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga sobre el valor maximo por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces el deberia ver un mensaje de monto para cargar no permitido
@@ -51,12 +51,12 @@ Característica: Cargar tarjeta virtual ePrepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando el actor quiere CONSULTAR_PRODUCTO
-    Y quiere cargar una tarjeta virtual e-Prepago sobre el valor maximo por valor de <valorRecarga>
+    Cuando el actor quiere RECARGAR_EPREPAGO
+    Y realiza la carga por valor de <valorRecarga>
       | tipoCuenta   | numeroCuenta   |
       | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia ver el mensaje de error: cuenta origen sin saldo
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
-    ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@2
-      |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|
+    ##@externaldata@./src/test/resources/datadriven/e-prepago/cargar_tarjeta_virtual_eprepago.xlsx@Datos@3
+   |1   |93221450   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |3000000   |Ahorros   |406-739740-05|

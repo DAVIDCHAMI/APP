@@ -1,8 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
-import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
-import co.com.bancolombia.certificacion.app.interactions.eprepago.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
@@ -16,9 +14,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PRODUCTO_ORIGEN;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.TXT_VALOR_RECARGA_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.DESCARGA_EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TOTAL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.DESCARGAR_EPREPAGO;
@@ -26,12 +22,10 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class DescargarSaldo implements Task {
-    private String opcionMenu;
     private Producto producto;
     private String valorDescarga;
 
-    public DescargarSaldo(Producto producto, String opcionMenu, String valorDescarga) {
-        this.opcionMenu = opcionMenu;
+    public DescargarSaldo(Producto producto, String valorDescarga) {
         this.producto = producto;
         this.valorDescarga = valorDescarga;
     }
@@ -39,11 +33,8 @@ public class DescargarSaldo implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
-                SeleccionarOpcion.deSubmenu(DESCARGA_EPREPAGO),
-                Validar.carga()
-        );
-        actor.attemptsTo(
+                Click.on(BTN_DESCARGAR_EPREPAGO),
+                Validar.carga(),
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_DESTINO_EPREPAGO))
                         .andIfSo(
                                 RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
@@ -55,8 +46,8 @@ public class DescargarSaldo implements Task {
                                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO))
                         .otherwise(
                                 Click.on(CHK_DESCARGA_OTRO_VALOR_EPREPAGO),
-                                WaitUntil.the(TXT_VALOR_RECARGA_EPREPAGO, isEnabled()),
-                                Enter.theValue(valorDescarga).into(TXT_VALOR_RECARGA_EPREPAGO)
+                                WaitUntil.the(TXT_VALOR_DESCARGA_EPREPAGO, isEnabled()),
+                                Enter.theValue(valorDescarga).into(TXT_VALOR_DESCARGA_EPREPAGO)
                 ),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
@@ -68,7 +59,7 @@ public class DescargarSaldo implements Task {
         actor.remember(DESCARGAR_EPREPAGO, valorDescarga);
     }
 
-    public static DescargarSaldo deLaTarjetaCon(ProductoBuilder producto, String opcionMenu, String valorDescarga) {
-        return instrumented(DescargarSaldo.class, producto.build(), opcionMenu, valorDescarga);
+    public static DescargarSaldo deLaTarjetaCon(ProductoBuilder producto, String valorDescarga) {
+        return instrumented(DescargarSaldo.class, producto.build(), valorDescarga);
     }
 }

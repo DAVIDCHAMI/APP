@@ -26,12 +26,10 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 public class CargarEprepago implements Task {
     private Producto producto;
     private String valorCarga;
-    private String opcionMenu;
 
-    public CargarEprepago(Producto producto, String valorCarga, String opcionMenu) {
+    public CargarEprepago(Producto producto, String valorCarga) {
         this.producto = producto;
         this.valorCarga = valorCarga;
-        this.opcionMenu = opcionMenu;
     }
 
     @Override
@@ -39,15 +37,7 @@ public class CargarEprepago implements Task {
         actor.attemptsTo(
                 Validar.carga(),
                 RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
-                Click.on(BTN_RECARGAR_EPREPAGO)
-        );
-        /*actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(opcionMenu),
-                SeleccionarOpcion.deSubmenu(RECARGA_EPREPAGO)
-        );
-        */
-
-        actor.attemptsTo(
+                Click.on(BTN_RECARGAR_EPREPAGO),
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
@@ -64,7 +54,7 @@ public class CargarEprepago implements Task {
         actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }
 
-    public static CargarEprepago con(ProductoBuilder producto, String valorCarga, String opcionMenu){
-        return instrumented(CargarEprepago.class, producto.build(), valorCarga, opcionMenu);
+    public static CargarEprepago con(ProductoBuilder producto, String valorCarga){
+        return instrumented(CargarEprepago.class, producto.build(), valorCarga);
     }
 }

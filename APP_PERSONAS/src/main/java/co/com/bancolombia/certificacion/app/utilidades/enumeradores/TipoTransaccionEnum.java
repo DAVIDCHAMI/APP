@@ -31,7 +31,8 @@ public enum TipoTransaccionEnum {
     BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
     CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques"),
     ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad"),
-    RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
+    RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
 
     private String menu;
     private String subMenu;
