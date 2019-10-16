@@ -20,6 +20,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target CHK_FECHA_VENCIMIENTO = Target.the("Seleccionar la opción de fecha vencimiento").locatedBy(dynamicElement(CHK_TIPO_CORREO_LOCATOR));
     public static final Target CHK_RANGO_FECHAS = Target.the("Seleccionar la opción de fecha vencimiento").located(theElementBy(CHK_RANGO_LOCATOR));
     public static final Target LST_INTENTOS_PAGO = Target.the("Seleccionar el número de intentos de pago").locatedBy(dynamicElement(LST_INTENTOS_PAGO_LOCATOR));
+    public static final Target LST_INTENTOS_PAGO_PROGRAMAR = Target.the("Seleccionar el número de intentos para programar factura").locatedBy(dynamicElement(LST_INTENTOS_PAGO_PROGRAMAR_LOCATOR));
     public static final Target CHK_ACEPTO_TERMINOS = Target.the("Click en el check Acepto terminos y condiciones").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
     public static final Target LST_RANGO_FECHA = Target.the("Seleccionar rago de fecha inicio y fecha fin").locatedBy(dynamicElement(LST_RANGO_FECHA_LOCATOR));
     public static final Target BTN_FLECHA_MES_SIGUIENTE = Target.the("flecha para seleeccionar mes próximo").located(theElementBy(LST_FLECHA_MES_SIGUIENTE_LOCATOR));

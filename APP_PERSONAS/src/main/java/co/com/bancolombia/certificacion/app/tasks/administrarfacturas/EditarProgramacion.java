@@ -69,7 +69,8 @@ public class EditarProgramacion implements Task {
                 actor.attemptsTo(Click.on(BTN_FLECHA_MES_SIGUIENTE));
             }
             String valorMes = LBL_VALOR_MES.of(programarFacturas.getMesProgramacion()).resolveFor(actor).getValue();
-            actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaInicio(), valorMes)),
+            actor.attemptsTo(
+                    Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaInicio(), valorMes)),
                     Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaFin(), valorMes)),
                     Click.on(BTN_SELECCIONAR),
                     Click.on(LNK_SIGUIENTE)

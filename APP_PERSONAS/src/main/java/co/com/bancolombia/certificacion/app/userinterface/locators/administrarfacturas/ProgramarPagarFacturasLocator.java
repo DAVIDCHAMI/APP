@@ -21,6 +21,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LBL_MES_LOCATOR = locator().withAndroid("xpath$//div[text()='{0}']");
     public static final Locator LBL__VALOR_MES_LOCATOR = locator().withAndroid("xpath$//option[text()='{0}']");
     public static final Locator LST_INTENTOS_PAGO_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[1]");
+    public static final Locator LST_INTENTOS_PAGO_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[2]");
     public static final Locator CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//input[@id='Checkbox1']");
     public static final Locator OPT_MODIFICAR_PROGRAMACION_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Modificar programación')]");
     public static final Locator OPT_PAGAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Pagar')]");
