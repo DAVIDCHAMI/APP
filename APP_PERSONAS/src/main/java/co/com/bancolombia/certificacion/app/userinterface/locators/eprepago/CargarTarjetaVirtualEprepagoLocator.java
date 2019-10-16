@@ -12,7 +12,7 @@ public class CargarTarjetaVirtualEprepagoLocator {
     public static final Locator LNK_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Recargar']/../following-sibling::div/i").withIos("xpath$q");
     public static final Locator LBL_RECARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Recarga exitosa!']").withIos("xpath$q");
     public static final Locator LBL_PRODUCTO_ORIGEN_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Producto origen']").withIos("xpath$q");
-    public static final Locator LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR = locator().withAndroid("xpath$//span[@id='AlertAnimation2']/descendant::span").withIos("xpath$q");
+    public static final Locator LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Ingresa un valor entre')]").withIos("xpath$q");
     public static final Locator LBL_VALOR_RECARGADO_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor recargado']/../../child::span[contains(text(),'{0}')]").withIos("xpath$q");
     public static final Locator BTN_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='RECARGAR']").withIos("xpath$q");
     public static final Locator LBL_COMPROBATE_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$q");
