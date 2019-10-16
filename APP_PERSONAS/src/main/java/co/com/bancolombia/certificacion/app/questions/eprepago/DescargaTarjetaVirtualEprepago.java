@@ -19,7 +19,7 @@ public class DescargaTarjetaVirtualEprepago implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         Producto producto = actor.recall(MODELO_PRODUCTO);
         String valorDescarga = actor.recall(DESCARGAR_EPREPAGO);
-        return  (TOTAL.equals(valorDescarga))?true:LBL_VALOR_DESCARGA.of(darFormato(valorDescarga)).resolveFor(actor).isPresent() &&
+        return  ((TOTAL.equals(valorDescarga))?true:LBL_VALOR_DESCARGA.of(darFormato(valorDescarga)).resolveFor(actor).isPresent()) &&
                 LBL_DESCARGA_EXITOSA_EPREPAGO.resolveFor(actor).isPresent() &&
                 LBL_COMPROBATE_EPREPAGO.resolveFor(actor).isPresent() &&
                 LBL_CUENTA_ASOCIADA.of(producto.getTipo(), producto.getNumero()).resolveFor(actor).isPresent();
