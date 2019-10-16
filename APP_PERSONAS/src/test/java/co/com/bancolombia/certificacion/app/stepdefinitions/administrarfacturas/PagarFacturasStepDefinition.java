@@ -1,5 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.administrarfacturas;
 
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoFacturaInscritaException;
+import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarPagoFacturaInscrita;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
@@ -7,7 +9,9 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoFacturaInscritaException.NO_SE_PAGO_FACTURA_INSCRITA;
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PagarFacturasStepDefinition {
@@ -76,6 +80,6 @@ public class PagarFacturasStepDefinition {
 
     @Entonces("^deberia ver el pago de su factura inscrita$")
     public void deberiaVerHPagoFacturaInscrita() {
-
+        theActorInTheSpotlight().should(seeThat(VerificarPagoFacturaInscrita.factura()).orComplainWith(PagoFacturaInscritaException.class,NO_SE_PAGO_FACTURA_INSCRITA));
     }
 }
