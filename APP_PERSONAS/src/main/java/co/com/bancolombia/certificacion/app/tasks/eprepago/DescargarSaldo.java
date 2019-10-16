@@ -33,6 +33,7 @@ public class DescargarSaldo implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Validar.carga(),
                 Click.on(BTN_DESCARGAR_EPREPAGO),
                 Validar.carga(),
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_DESTINO_EPREPAGO))
@@ -41,13 +42,14 @@ public class DescargarSaldo implements Task {
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         ),
                 Validar.carga(),
-                Check.whether(TOTAL.equals(valorDescarga))
+                Check.whether(TOTAL.equalsIgnoreCase(valorDescarga))
                         .andIfSo(
                                 Click.on(CHK_DESCARGA_TOTAL_EPREPAGO))
                         .otherwise(
                                 Click.on(CHK_DESCARGA_OTRO_VALOR_EPREPAGO),
                                 WaitUntil.the(TXT_VALOR_DESCARGA_EPREPAGO, isEnabled()),
-                                Enter.theValue(valorDescarga).into(TXT_VALOR_DESCARGA_EPREPAGO)
+                                Enter.theValue(valorDescarga).into(TXT_VALOR_DESCARGA_EPREPAGO),
+                                Click.on(FOCO)
                 ),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),

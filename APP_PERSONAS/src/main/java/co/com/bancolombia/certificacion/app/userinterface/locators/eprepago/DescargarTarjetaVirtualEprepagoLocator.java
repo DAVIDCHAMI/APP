@@ -14,6 +14,7 @@ public class DescargarTarjetaVirtualEprepagoLocator {
     public static final Locator LBL_DESCARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Descarga exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Descarga exitosa!']");
     public static final Locator LBL_VALOR_DESCARGA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']");
     public static final Locator TXT_VALOR_DESCARGA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//div[contains(@id,'MaskedContent')]/descendant::input").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Ingresa el valor a descargar']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeTextField");
+    public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$//*[text()='Selecciona el valor']").withIos("xpath$//XCUIElementTypeStaticText[@name='Selecciona el valor']");
 
     private DescargarTarjetaVirtualEprepagoLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }
