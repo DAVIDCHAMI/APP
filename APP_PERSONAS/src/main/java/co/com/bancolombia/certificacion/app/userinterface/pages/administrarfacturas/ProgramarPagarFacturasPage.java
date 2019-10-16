@@ -18,6 +18,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target BTN_PROGRAMAR= Target.the("Botón programar").located(theElementBy(BTN_PROGRAMAR_LOCATOR));
     public static final Target OPT_CUENTA_PRODUCTO = Target.the("Seleccionar la cuenta a programar").locatedBy(dynamicElement(OPT_CUENTA_PRODUCTO_FACTURA_LOCATOR));
     public static final Target CHK_FECHA_VENCIMIENTO = Target.the("Seleccionar la opción de fecha vencimiento").locatedBy(dynamicElement(CHK_TIPO_CORREO_LOCATOR));
+    public static final Target CHK_RANGO_FECHAS = Target.the("Seleccionar la opción de fecha vencimiento").located(theElementBy(CHK_RANGO_LOCATOR));
     public static final Target LST_INTENTOS_PAGO = Target.the("Seleccionar el número de intentos de pago").locatedBy(dynamicElement(LST_INTENTOS_PAGO_LOCATOR));
     public static final Target CHK_ACEPTO_TERMINOS = Target.the("Click en el check Acepto terminos y condiciones").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
     public static final Target LST_RANGO_FECHA = Target.the("Seleccionar rago de fecha inicio y fecha fin").locatedBy(dynamicElement(LST_RANGO_FECHA_LOCATOR));
@@ -56,6 +57,9 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_VALOR_PAGADO = Target.the("Campo de texto valor pagado").locatedBy(dynamicElement(LBL_VALOR_PAGAR_LOCATOR));
     public static final Target LBL_PRODUCTO_PAGO = Target.the("Campo de producto debitado").locatedBy(dynamicElement(LBL_PRODUCTO_PAGO_LOCATOR));
     public static final Target TXT_VALOR = Target.the("Campo ingresar valor a pagar").located(theElementBy(TXT_VALOR_LOCATOR));
+    public static final Target OPT_MODIFICAR_DESCRIPCION = Target.the("Selecciona la opcion modificar descrpcion").located(theElementBy(OPT_MODIFICAR_DESCRIPCION_LOCATOR));
+    public static final Target TXT_DESCRIPCION_FACTURA = Target.the("Campo de texto para ingresar descrpcion").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
+    public static final Target LBL_VERIFICACION_MODIFICACION_INSCRITA = Target.the("Label verificacion descrpción exitosa").locatedBy(dynamicElement(LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR));
 
     private ProgramarPagarFacturasPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

@@ -5,7 +5,6 @@ Característica: Programar Facturas
   Quiero programar una factura
   Para que se pague de forma automatica
 
-  @Manual:Failed
   Esquema del escenario: Programar facturas inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
