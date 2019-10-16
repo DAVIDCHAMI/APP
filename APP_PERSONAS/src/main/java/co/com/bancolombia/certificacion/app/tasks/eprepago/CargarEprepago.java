@@ -47,7 +47,7 @@ public class CargarEprepago implements Task {
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
-                //Click.on(LNK_RECARGAR_EPREPAGO),
+                Click.on(LNK_RECARGAR_EPREPAGO),
                 Validar.carga()
         );
         actor.remember(MODELO_PRODUCTO, producto);
