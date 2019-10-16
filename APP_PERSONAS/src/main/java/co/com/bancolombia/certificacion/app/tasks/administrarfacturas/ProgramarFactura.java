@@ -50,6 +50,7 @@ public class ProgramarFactura implements Task {
                     Click.on(LST_RANGO_FECHA.of(factura.getFechaFin(), valorMes)),
                     Click.on(BTN_SELECCIONAR),
                     Click.on(LNK_SIGUIENTE)
+            );
         }else {
             actor.attemptsTo(
                     Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getDuracionProgramacion())));
