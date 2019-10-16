@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class DescargarTarjetaVirtualEprepagoLocator {
-    public static final Locator BTN_DESCARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeStaticText[@name='Descargar']/..");
+    public static final Locator BTN_DESCARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Descargar']").withIos("xpath$//XCUIElementTypeStaticText[@name='Descargar']/..");
     public static final Locator LNK_DESCARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Descargar']").withIos("xpath$//XCUIElementTypeButton[@name='DESCARGAR']");
     public static final Locator CHK_DESCARGA_TOTAL_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Total']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Total']]/preceding-sibling::XCUIElementTypeButton[1]");
     public static final Locator CHK_DESCARGA_OTRO_VALOR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Otro valor']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Otro valor']]/preceding-sibling::XCUIElementTypeButton[1]");
