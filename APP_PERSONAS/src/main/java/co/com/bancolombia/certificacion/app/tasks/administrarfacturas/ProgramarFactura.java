@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
@@ -14,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.RANGO_FECHAS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ProgramarFactura implements Task {
     private Factura factura;
@@ -27,10 +29,14 @@ public class ProgramarFactura implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 SeleccionarOpcionFactura.conInformacion(OPT_PROGRAMAR, factura),
+                Validar.carga(),
                 Click.on(OPT_MIS_PRODUCTOS),
+                Validar.carga(),
                 Click.on(OPT_CUENTA_PRODUCTO.of(factura.getProducto().
                         getTipo(), factura.getProducto().getNumero())),
                 Click.on(CHK_FECHA_VENCIMIENTO.of(factura.getPeriodicidad())),
+                WaitUntil.the(LST_NUMERO_INTENTOS_PROGRAMAR, isVisible()),
+                Click.on(LST_NUMERO_INTENTOS_PROGRAMAR),
                 WaitUntil.the(LST_INTENTOS_PAGO.of(factura.getNumeroIntento()), isEnabled()),
                 Click.on(LST_INTENTOS_PAGO.of(factura.getNumeroIntento())),
                 Click.on(BTN_CERRAR_NUMERO_INTENTOS));

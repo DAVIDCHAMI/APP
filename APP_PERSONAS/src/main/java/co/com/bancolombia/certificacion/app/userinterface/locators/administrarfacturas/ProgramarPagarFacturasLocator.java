@@ -11,6 +11,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator OPT_MIS_PRODUCTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Mis productos']");
     public static final Locator TXT_FECHA_INICIO_FIN_LOCATOR = locator().withAndroid("xpath$//img[@src='/Personas/img/Bancolombia_Resources.CalendarIcon.png?uRy3B8C5ZLo++3O61PHZIQ']");
     public static final Locator LST_NUMERO_INTENTOS_LOCATOR = locator().withAndroid("xpath$//div[text()='Ingresa los intentos de pago']/following-sibling::div/div[1]");
+    public static final Locator LST_NUMERO_INTENTOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Ingresa los intentos de pago']/..");
     public static final Locator BTN_CERRAR_NUMERO_INTENTOS_LOCATOR = locator().withAndroid("xpath$//div[./div/span[contains(text(),'Selecciona los intentos del pago')]]/following-sibling::div//span[text()='CERRAR']/..");
     public static final Locator BTN_SELECCIONAR_LOCATOR = locator().withAndroid("xpath$//div[text()='SELECCIONAR']/..");
     public static final Locator BTN_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//button[@id='btn']");

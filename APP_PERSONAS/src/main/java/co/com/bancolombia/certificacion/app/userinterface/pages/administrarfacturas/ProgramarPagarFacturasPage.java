@@ -26,6 +26,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_MES = Target.the("Label para visualizar mes").locatedBy(dynamicElement(LBL_MES_LOCATOR));
     public static final Target LBL_VALOR_MES = Target.the("Label para visualizar número del mes").locatedBy(dynamicElement(LBL__VALOR_MES_LOCATOR));
     public static final Target LST_NUMERO_INTENTOS = Target.the("Clic para seleccionar numero de intentos").located(theElementBy(LST_NUMERO_INTENTOS_LOCATOR));
+    public static final Target LST_NUMERO_INTENTOS_PROGRAMAR = Target.the("Clic para seleccionar numero de intentos en programacion de factura").located(theElementBy(LST_NUMERO_INTENTOS_PROGRAMAR_LOCATOR));
     public static final Target BTN_CERRAR_NUMERO_INTENTOS = Target.the("Clic para cerrar numero de intentos").located(theElementBy(BTN_CERRAR_NUMERO_INTENTOS_LOCATOR));
     public static final Target BTN_SELECCIONAR= Target.the("Clic para seleccionar numero de intentos").located(theElementBy(BTN_SELECCIONAR_LOCATOR));
     public static final Target OPT_MODIFICAR_PROGRAMACION= Target.the("Clic para seleccionar la opción modificar programación").located(theElementBy(OPT_MODIFICAR_PROGRAMACION_LOCATOR));
