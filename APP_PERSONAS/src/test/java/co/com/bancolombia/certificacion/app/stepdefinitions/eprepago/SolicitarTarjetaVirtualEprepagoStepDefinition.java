@@ -1,19 +1,19 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.eprepago;
 
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaConsultaException;
-import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaSolicitudEprepagoException;
-import co.com.bancolombia.certificacion.app.questions.eprepago.SolicitudEprepago;
+import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoSolicitudEprepagoException;
+import co.com.bancolombia.certificacion.app.questions.eprepago.SolicitudTarjetaVirtualEprepago;
 import co.com.bancolombia.certificacion.app.questions.eprepago.UsuarioConEprepago;
 import co.com.bancolombia.certificacion.app.tasks.eprepago.SolicitarEprepago;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaConsultaException.MENSAJE_CONSULTA_NO_REALIZADA;
-import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoLaSolicitudEprepagoException.MENSAJE_E_PREPAGO_NO_SOLICITADA;
+import static co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoSolicitudEprepagoException.MENSAJE_E_PREPAGO_NO_SOLICITADA;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class SolicitarEprepagoStepDefinition {
+public class SolicitarTarjetaVirtualEprepagoStepDefinition {
 
     @Cuando("^quiero solicitar una tarjeta e-prepago$")
     public void quieroSolicitarUnaTarjetaEprepago(){
@@ -22,8 +22,8 @@ public class SolicitarEprepagoStepDefinition {
 
     @Entonces("^Debo ver el mensaje de solicitud exitosa$")
     public void deboVerElMensajeDeSolicitudExitosa() {
-        theActorInTheSpotlight().should(seeThat(SolicitudEprepago.esExitosa())
-                .orComplainWith(NoSeRealizoLaSolicitudEprepagoException.class, MENSAJE_E_PREPAGO_NO_SOLICITADA));
+        theActorInTheSpotlight().should(seeThat(SolicitudTarjetaVirtualEprepago.esExitosa())
+                .orComplainWith(NoSeRealizoSolicitudEprepagoException.class, MENSAJE_E_PREPAGO_NO_SOLICITADA));
     }
 
     @Entonces("^Debo ver el mensaje respectivo para el usuario$")

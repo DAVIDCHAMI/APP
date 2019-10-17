@@ -6,9 +6,11 @@ import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
+import io.restassured.response.ValidatableResponse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -16,6 +18,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.administr
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PERIODICIDAD;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PRODUCTO_ORIGEN;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class EditarProgramacion implements Task {
     private Factura programarFacturas;
@@ -32,9 +35,9 @@ public class EditarProgramacion implements Task {
                 Saltar.onBoarding(),
                 Click.on(OPT_PROGRAMADAS),
                 SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
+                Validar.carga(),
+                Click.on(FOCO),
                 Check.whether(PRODUCTO_ORIGEN.equals(opcion)).andIfSo(
-                        Validar.carga(),
-                        Click.on(FOCO),
                         RealizarScroll.hastaPosicionDeTarget(LNK_CAMBIAR_PRODUCTO),
                         Click.on(LNK_CAMBIAR_PRODUCTO),
                         Validar.carga(),
@@ -44,25 +47,32 @@ public class EditarProgramacion implements Task {
                 )
         );
         if (PERIODICIDAD.equals(opcion)) {
-            actor.attemptsTo(Click.on(LNK_CAMBIAR_PERIODICIDAD),
-                    Validar.carga(),
-                    Click.on(FOCO),
+            actor.attemptsTo(
                     RealizarScroll.hastaPosicionDeTarget(LNK_CAMBIAR_PERIODICIDAD),
                     Click.on(LNK_CAMBIAR_PERIODICIDAD),
-                    Click.on(LST_NUMERO_INTENTOS));
+                    Validar.carga()
+            );
             actor.attemptsTo(
-                    WaitUntil.the(LST_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento()),isEnabled()),
+                    WaitUntil.the(LST_NUMERO_INTENTOS, isVisible()),
+                    Click.on(LST_NUMERO_INTENTOS)
+            );
+            actor.attemptsTo(
+                    WaitUntil.the(LST_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento()), isEnabled()),
                     Click.on(LST_INTENTOS_PAGO.of(programarFacturas.getNumeroIntento())),
-                   Click.on(BTN_CERRAR_NUMERO_INTENTOS),
-                   Click.on(TXT_FECHA_INICIO_FIN)
+                    Click.on(BTN_CERRAR_NUMERO_INTENTOS),
+                    RealizarScroll.hastaPosicionDeTarget(CHK_RANGO_FECHAS),
+                    Click.on(CHK_RANGO_FECHAS),
+                    RealizarScroll.hastaPosicionDeTarget(TXT_FECHA_INICIO_FIN),
+                    Click.on(TXT_FECHA_INICIO_FIN)
             );
             while (!Verificar.elementoVisible(actor, LBL_MES.of(programarFacturas.getMesProgramacion()))) {
                 actor.attemptsTo(Click.on(BTN_FLECHA_MES_SIGUIENTE));
             }
             String valorMes = LBL_VALOR_MES.of(programarFacturas.getMesProgramacion()).resolveFor(actor).getValue();
-            actor.attemptsTo(Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaInicio(), valorMes)),
+            actor.attemptsTo(
+                    Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaInicio(), valorMes)),
                     Click.on(LST_RANGO_FECHA.of(programarFacturas.getFechaFin(), valorMes)),
-                   Click.on(BTN_SELECCIONAR),
+                    Click.on(BTN_SELECCIONAR),
                     Click.on(LNK_SIGUIENTE)
             );
         }

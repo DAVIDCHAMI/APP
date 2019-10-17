@@ -4,10 +4,7 @@ import co.com.bancolombia.certificacion.app.exceptions.EliminacionFacturasExcept
 import co.com.bancolombia.certificacion.app.exceptions.ModificacionProgramacionException;
 import co.com.bancolombia.certificacion.app.exceptions.VerificarInscripcionFactura;
 import co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException;
-import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarEliminacionFactura;
-import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarHistoricoPago;
-import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarInscripcion;
-import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarModificacionFacturas;
+import co.com.bancolombia.certificacion.app.questions.administrarfacturas.*;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.Inscribir;
 import cucumber.api.java.es.Cuando;
@@ -38,6 +35,8 @@ public class AdministrarFacturasStepDefinition {
                         .conNumeroIntento(datos)
                         .conMesProgramacion(datos)
                         .conDuracionProgramacion(datos)
+                        .conFechaInicio(datos)
+                        .conFechaFin(datos)
         ));
     }
 
@@ -49,12 +48,23 @@ public class AdministrarFacturasStepDefinition {
     }
 
     @Cuando("el actor revisa el historico de pagos de (.*) facturas$")
-    public void revisaelHistoricoDeSuFacturasInscritas(String opcion,List<Map<String, String>>datos) {
+    public void revisaelHistoricoDeSuFacturasInscritas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conHistoricoPago(
                 opcion,
                 factura().conValor(datos)
                         .conFechaFactura(datos)
                         .conEmpresaServicio(datos)
+                )
+        );
+    }
+
+    @Cuando("el actor modifica descripcion de su factura inscrita$")
+    public void modifcaDescripcionFacturasInscritas(List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditarFacturaInscrita(
+                factura().conValor(datos)
+                        .conFechaFactura(datos)
+                        .conEmpresaServicio(datos)
+                        .conDescripcionFactura(datos)
                 )
         );
     }
@@ -86,9 +96,15 @@ public class AdministrarFacturasStepDefinition {
         ));
     }
 
+    @Entonces("deberia ver modificacion descripcion exitosa$")
+    public void deberiaModificacionExitosa() {
+        theActorInTheSpotlight().should(seeThat(VerificarModificacionFacturaInscrita.exitoso())
+                .orComplainWith(ModificacionProgramacionException.class, MENSAJE_MODIFICACION));
+    }
+
     @Entonces("deberia ver el mensaje de modificacion exitosa$")
     public void deberiaVerMensajeModificacionExitosa() {
-        theActorInTheSpotlight().should(seeThat(VerificarModificacionFacturas.programadas())
+        theActorInTheSpotlight().should(seeThat(VerificarModificacionFacturaProgramadas.programadas())
                 .orComplainWith(ModificacionProgramacionException.class, MENSAJE_MODIFICACION));
     }
 

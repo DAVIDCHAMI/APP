@@ -20,6 +20,9 @@ public class VariablesSesionConstantes {
     public static final String CUENTA_ORIGEN_VERIFICACION = "CUENTA ORIGEN VERIFICACION";
     public static final String CUENTA_DESTINO_VERIFICACION = "CUENTA DESTINO VERIFICACION";
     public static final String TIPO_DESTINO_VERIFICACION = "TIPO DESTINO VERIFICACION";
+    public static final String VALOR_DESEMBOLSAR = "VALOR DESEMBOLSAR";
+    public static final String RECARGAR_EPREPAGO = "RECARGAR EPREPAGO";
+    public static final String DESCARGAR_EPREPAGO = "DESCARGAR EPREPAGO";
 
     private VariablesSesionConstantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

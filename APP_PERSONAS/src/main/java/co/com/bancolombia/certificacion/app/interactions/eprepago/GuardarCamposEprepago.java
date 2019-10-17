@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.interactions.eprepago;
 
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
-import co.com.bancolombia.certificacion.app.models.eprepago.Eprepago;
+import co.com.bancolombia.certificacion.app.models.productos.Eprepago;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 

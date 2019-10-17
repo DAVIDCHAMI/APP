@@ -18,6 +18,7 @@ public enum TipoTransaccionEnum {
     INSCRIBIR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Inscribir facturas"),
     VER_HISTORICO_PAGOS(MIS_PRODUCTOS, "Pagar y administrar facturas","Ver histórico de pagos"),
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, "Consultar Puntos Colombia",""),
+    DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
     EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
@@ -29,7 +30,9 @@ public enum TipoTransaccionEnum {
     BLOQUEAR_TARJETAS_CLAVE(PERFIL, "Bloqueos","Bloquear tarjetas y clave"),
     BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
     CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques"),
-    ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad");
+    ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad"),
+    RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
 
     private String menu;
     private String subMenu;
