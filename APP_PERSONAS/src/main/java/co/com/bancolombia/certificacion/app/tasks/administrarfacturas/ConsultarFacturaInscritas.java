@@ -23,7 +23,6 @@ public class ConsultarFacturaInscritas implements Task {
                     .conDescripcionFactura(LBL_DESCRIPCION_FACTURA.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conEmpresaServicio(LBL_EMPRESA_CONVENIO.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conFechaFactura(LBL_FECHA.of(String.valueOf(iterador)).resolveFor(actor).getText())
-                    .conFechaFactura(LBL_FECHA.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conValor(LBL_VALOR_FACTURA.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .build()
             );
