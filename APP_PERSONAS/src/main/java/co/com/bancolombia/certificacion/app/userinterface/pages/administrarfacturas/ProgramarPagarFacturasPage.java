@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.LNK_SIGUIENTE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ProgramarPagarFacturasLocator.*;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos.SaldosMovimientosLocator.OPT_CUENTA_PRODUCTO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.CHK_TIPO_CORREO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
@@ -61,6 +60,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target TXT_VALOR = Target.the("Campo ingresar valor a pagar").located(theElementBy(TXT_VALOR_LOCATOR));
     public static final Target OPT_MODIFICAR_DESCRIPCION = Target.the("Selecciona la opcion modificar descrpcion").located(theElementBy(OPT_MODIFICAR_DESCRIPCION_LOCATOR));
     public static final Target TXT_DESCRIPCION_FACTURA = Target.the("Campo de texto para ingresar descrpcion").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
+    public static final Target TXT_FOCO_MODIFICAR_DESCRIPCION = Target.the("Foco modificar descripción").located(theElementBy(TXT_FOCO_MODIFICAR_DESCRIPCION_LOCATOR));
     public static final Target LBL_VERIFICACION_MODIFICACION_INSCRITA = Target.the("Label verificacion descrpción exitosa").locatedBy(dynamicElement(LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR));
 
     private ProgramarPagarFacturasPage(){
