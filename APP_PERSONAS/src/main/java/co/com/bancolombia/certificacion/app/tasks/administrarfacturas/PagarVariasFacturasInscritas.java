@@ -40,8 +40,6 @@ public class PagarVariasFacturasInscritas implements Task {
                         RealizarScroll.hastaPosicionDeTarget(CHK_SELECCIONAR_TODAS_FACTURAS),
                         Click.on(CHK_SELECCIONAR_TODAS_FACTURAS)
                 ).otherwise(
-                        Validar.carga(),
-                        Esperar.unTiempo(3000),
                         RealizarScroll.hastaPosicionDeTarget(CHk_SELECCIONAR_FACTURA.of(
                                 factura.getValorFacturaReferenciaPago(),
                                 factura.getFechaVencimiento(),
@@ -54,7 +52,8 @@ public class PagarVariasFacturasInscritas implements Task {
                         )
                 ),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
     }
 }

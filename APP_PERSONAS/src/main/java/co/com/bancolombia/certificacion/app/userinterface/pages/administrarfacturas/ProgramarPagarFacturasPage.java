@@ -38,13 +38,11 @@ public class ProgramarPagarFacturasPage {
     public static final Target LNK_SIGUIENTE= Target.the("link para siguiente").located(theElementBy(LNK_SIGUIENTE_LOCATOR));
     public static final Target OPT_PAGAR_FACTURA= Target.the("Selecciona la opcion pagar factura").located(theElementBy(OPT_PAGAR_FACTURA_LOCATOR));
     public static final Target FOCO = Target.the("Clic en el foco").located(theElementBy(FOCO_LOCATOR));
-    public static final Target LST_FRECUENCIA_PERIODICAD = Target.the("Opcion frecuencia del pago").locatedBy(dynamicElement(LST_FRECUENCIA_PERIODICAD_LOCATOR));
     public static final Target BTN_MODIFICAR = Target.the("Clic en botón modificar").located(theElementBy(BTN_MODIFICAR_LOCATOR));
     public static final Target BTN_CONFIRMAR_ELIMINACION = Target.the("Clic en botón para confirmar la eliminación").located(theElementBy(BTN_CONFIRMAR_ELIMINACION_LOCATOR));
     public static final Target LBL_MENSAJE_MODIFICACION = Target.the("Mensaje modificación exitosa").located(theElementBy(LBL_MENSAJE_MODIFICACION_LOCATOR));
     public static final Target LBL_ELIMINACION_EXITOSA = Target.the("Mensaje eliminación exitosa").located(theElementBy(LBL_ELIMINACION_EXITOSA_LOCATOR));
     public static final Target LBL_COMPROBANTE_EXITOSA = Target.the("Comprobante eliminación ").located(theElementBy(LBL_COMPROBANTE_ELIMINACION_EXITOSA_LOCATOR));
-    public static final Target LBL_EMPRESA_SERIVICIO = Target.the("Label de verificación empresa servicio").locatedBy(dynamicElement(LBL_EMPRESA_SERIVICIO_LOCATOR));
     public static final Target LBL_ESTADO_HISTORICO_PAGO = Target.the("Label de verifica el estado del historico de pago").locatedBy(dynamicElement(LBL_ESTADO_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_FECHA_HISTORICO_PAGO = Target.the("Label de verifica la fecha del historico de pago").locatedBy(dynamicElement(LBL_FECHA_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_REFERENCIA_HISTORICO_PAGO = Target.the("Label de verifica la referencia del historico de pago").locatedBy(dynamicElement(LBL_REFERENCIA_HISTORICO_PAGO_LOCATOR));
