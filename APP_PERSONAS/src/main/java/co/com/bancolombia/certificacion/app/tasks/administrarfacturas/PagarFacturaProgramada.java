@@ -31,11 +31,11 @@ public class PagarFacturaProgramada implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 Click.on(OPT_PROGRAMADAS),
-                WaitUntil.the( OPT_PAGAR_FACTURA_PROGRAMADA.of(
+                WaitUntil.the(OPT_PAGAR_FACTURA_PROGRAMADA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
-                        factura.getEmpresaServicio()),isPresent()),
-              RealizarScroll.hastaPosicionDeTarget(
+                        factura.getEmpresaServicio()), isPresent()),
+                RealizarScroll.hastaPosicionDeTarget(
                         OPT_PAGAR_FACTURA_PROGRAMADA.of(
                                 factura.getValorFactura(),
                                 factura.getFechaFactura(),
