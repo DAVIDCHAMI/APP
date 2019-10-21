@@ -9,13 +9,18 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ActivarEprepagoStepDefinition {
 
-    @Cuando("^quiero activar una tarjeta (.*)$")
-    public void quieroActivarUnaTarjetaEprepago(String opcionCategoria){
+    @Cuando("^quiere activar una tarjeta (.*)$")
+    public void quiereActivarUnaTarjetaEprepago(String opcionCategoria){
         theActorInTheSpotlight().attemptsTo(ActivarEprepago.enLaAppBancolombia(opcionCategoria));
     }
 
     @Entonces("^el deberia de ver un mensaje de activación exitosa para su eprepago$")
     public void elDeberiaDeVerUnMensajeDeActivacionExitosaParaSuEprepago(){
         theActorInTheSpotlight().should(seeThat(ActivacionEprepago.esExitosa()));
+    }
+
+    @Entonces("^el deberia de ver la opcion de numero maximo de activaciones$")
+    public void elDeberiaDeVerLaOpcionDeNumeroMaximoDeActivaciones(){
+      //  theActorInTheSpotlight().should(seeThat());
     }
 }

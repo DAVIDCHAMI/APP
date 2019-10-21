@@ -11,7 +11,7 @@ Característica: Activacion eprepago en la app OSP Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere <opcionAutenticacion>
-    Y quiero activar una tarjeta e-Prepago
+    Y quiere activar una tarjeta e-Prepago
     Entonces el deberia de ver un mensaje de activación exitosa para su eprepago
 
     Ejemplos:
@@ -31,3 +31,16 @@ Característica: Activacion eprepago en la app OSP Bancolombia
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/activacion_eprepago.xlsx@Datos@2
    |2   |700100   |1   |pruebasregistro48   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+
+  Esquema del escenario: Maximo numero de activaciones de una tarjeta eprepago desde la app de Bancolombia OSP por mis productos
+    Dado que el Actor se autentica en la app
+      | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
+      | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
+    Cuando el actor quiere <opcionAutenticacion>
+    Y quiere activar una tarjeta e-Prepago
+    Entonces el deberia de ver la opcion de numero maximo de activaciones
+
+    Ejemplos:
+      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
+   ##@externaldata@./src/test/resources/datadriven/e-prepago/activacion_eprepago.xlsx@Datos@2
+      |2   |700100   |1   |pruebasregistro48   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
