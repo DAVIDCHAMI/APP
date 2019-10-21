@@ -34,19 +34,20 @@ public class CargarEprepago implements Task {
         actor.attemptsTo(
                 Validar.carga(),
                 RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
-                Click.on(BTN_RECARGAR_EPREPAGO),
+                Click.on(BTN_RECARGAR_EPREPAGO));
+        actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                ),
+                ));
+        actor.attemptsTo(
                 Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 Click.on(FOCO_E_PREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
                 Click.on(LNK_RECARGAR_EPREPAGO),
-                Validar.carga()
-        );
+                Validar.carga());
         actor.remember(MODELO_PRODUCTO, producto);
         actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }
