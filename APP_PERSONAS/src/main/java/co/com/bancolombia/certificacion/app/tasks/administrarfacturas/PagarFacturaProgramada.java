@@ -19,8 +19,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class PagarFacturaProgramada implements Task {
-    Factura factura;
-    String opcion;
+    private Factura factura;
+    private String opcion;
 
     public PagarFacturaProgramada(String opcion, Factura factura) {
         this.factura = factura;
@@ -74,6 +74,5 @@ public class PagarFacturaProgramada implements Task {
                 Validar.carga()
         );
         actor.remember(MODELO_FACTURA,factura);
-
     }
 }

@@ -24,7 +24,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target LST_RANGO_FECHA = Target.the("Seleccionar rago de fecha inicio y fecha fin").locatedBy(dynamicElement(LST_RANGO_FECHA_LOCATOR));
     public static final Target BTN_FLECHA_MES_SIGUIENTE = Target.the("flecha para seleeccionar mes próximo").located(theElementBy(LST_FLECHA_MES_SIGUIENTE_LOCATOR));
     public static final Target LBL_MES = Target.the("Label para visualizar mes").locatedBy(dynamicElement(LBL_MES_LOCATOR));
-    public static final Target LBL_VALOR_MES = Target.the("Label para visualizar número del mes").locatedBy(dynamicElement(LBL__VALOR_MES_LOCATOR));
+    public static final Target LBL_VALOR_MES = Target.the("Label para visualizar número del mes").locatedBy(dynamicElement(LBL_VALOR_MES_LOCATOR));
     public static final Target LST_NUMERO_INTENTOS = Target.the("Clic para seleccionar numero de intentos").located(theElementBy(LST_NUMERO_INTENTOS_LOCATOR));
     public static final Target LST_NUMERO_INTENTOS_PROGRAMAR = Target.the("Clic para seleccionar numero de intentos en programacion de factura").located(theElementBy(LST_NUMERO_INTENTOS_PROGRAMAR_LOCATOR));
     public static final Target BTN_CERRAR_NUMERO_INTENTOS = Target.the("Clic para cerrar numero de intentos").located(theElementBy(BTN_CERRAR_NUMERO_INTENTOS_LOCATOR));
@@ -50,7 +50,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_CONTENEDOR_HISTORICO_PAGO = Target.the("Contenedor detalle historico de pago").locatedBy(dynamicElement(LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR));
     public static final Target OPT_PROGRAMADAS = Target.the("Opcion programadas").located(theElementBy(OPT_PROGRAMADAS_LOCATOR));
     public static final Target CHK_SELECCIONAR_TODAS_FACTURAS = Target.the("Pagar todas las facturas").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
-    public static final Target CHk_SELECCIONAR_FACTURA = Target.the("Selecciona facturas a pagar").locatedBy(dynamicElement(CHk_SELECCIONAR_FACTURA_LOCATOR));
+    public static final Target CHk_SELECCIONAR_FACTURA = Target.the("Selecciona facturas a pagar").locatedBy(dynamicElement(CHK_SELECCIONAR_FACTURA_LOCATOR));
     public static final Target LBL_PAGO_EXITOSO_FACTURA = Target.the("Pago de una factura sin mas facturas inscrita exito").located(theElementBy(LBL_PAGO_EXITOSO_FACTURA_LOCATOR));
     public static final Target LBL_NUEVO_SALDO_DISPONIBLE = Target.the("Label nuevo saldo disponible").located(theElementBy(LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR));
     public static final Target LBL_VALOR_PAGADO = Target.the("Campo de texto valor pagado").locatedBy(dynamicElement(LBL_VALOR_PAGAR_LOCATOR));
