@@ -12,7 +12,6 @@ Característica: Activacion eprepago en la app OSP Bancolombia
     Cuando el actor quiere ACTIVAR_EPREPAGO
     Y quiero activar una tarjeta e-prepago
     Entonces el deberia de ver un mensaje de activación exitosa para su eprepago
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/activacion_eprepago.xlsx@Datos@1
@@ -24,8 +23,7 @@ Característica: Activacion eprepago en la app OSP Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere ACTIVAR_EPREPAGO
     Y cancelo la activación de una tarjeta e-prepago
-    Entonces el deberia ver un mensaje de cancelacion
-
+    Entonces no se deberia realizar la accion
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/e-prepago/activacion_eprepago.xlsx@Datos@2
