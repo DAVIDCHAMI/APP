@@ -18,7 +18,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class CargarTarjetaVirtualEprepagoStepDefinition {
+public class RecargarTarjetaVirtualEprepagoStepDefinition {
 
     @Cuando("^realiza la carga por valor de (.*)$")
     public void cargarTarjetaVirtualEprepagoActiva(String valorRecarga, List<Map<String, String>> datos) {
