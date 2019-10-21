@@ -50,8 +50,8 @@ Característica: Cargar tarjeta virtual ePrepago
     ##@externaldata@./src/test/resources/datadriven/eprepago/recargar_tarjeta_virtual_eprepago.xlsx@Datos@2
    |1   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10000   |Ahorros   |406-714530-16|
 
-  Esquema del escenario: Carga a tarjeta virtual ePrepago con cuenta sin saldo
-    Dado que el Actor se autentica en la app
+  Esquema del escenario: Cargar tarjeta virtual ePrepago con cuenta sin saldo
+    Dado Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere RECARGAR_EPREPAGO
