@@ -25,6 +25,7 @@ public class PagarFacturaInscrita implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 SeleccionarOpcionFactura.conInformacion(OPT_PAGAR_FACTURA, factura),
+                Click.on(LNK_SIGUIENTE),
                 Click.on(OPT_CUENTA_PRODUCTO.of(
                         factura.getProducto().getTipo(),
                         factura.getProducto().getNumero())

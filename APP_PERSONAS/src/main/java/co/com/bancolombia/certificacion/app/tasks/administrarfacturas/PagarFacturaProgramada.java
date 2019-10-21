@@ -46,6 +46,7 @@ public class PagarFacturaProgramada implements Task {
                         factura.getFechaFactura(),
                         factura.getEmpresaServicio())
                 ),
+                Click.on(LNK_SIGUIENTE),
                 Click.on(OPT_CUENTA_PRODUCTO.of(
                         factura.getProducto().getTipo(),
                         factura.getProducto().getNumero())

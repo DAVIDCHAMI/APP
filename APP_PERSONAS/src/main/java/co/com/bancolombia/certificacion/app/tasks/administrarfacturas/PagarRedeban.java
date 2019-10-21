@@ -28,7 +28,8 @@ public class PagarRedeban implements Task {
                         factura.getProducto().getNumero())
                 ),
                 Validar.carga(),
-                Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
     }
 }
