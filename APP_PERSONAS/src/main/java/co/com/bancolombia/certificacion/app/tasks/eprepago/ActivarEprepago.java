@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.eprepago.GuardarCamposEprepago;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
@@ -14,11 +13,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ActivarEprepago implements Task {
-    private String opcionCategoria;
-
-    public ActivarEprepago(String opcionCategoria) {
-        this.opcionCategoria = opcionCategoria;
-    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -33,7 +27,7 @@ public class ActivarEprepago implements Task {
         );
     }
 
-    public static ActivarEprepago enLaAppBancolombia(String opcionCategoria) {
-        return Tasks.instrumented(ActivarEprepago.class, opcionCategoria);
+    public static ActivarEprepago enLaAppBancolombia() {
+        return Tasks.instrumented(ActivarEprepago.class);
     }
 }

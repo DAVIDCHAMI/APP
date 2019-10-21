@@ -9,7 +9,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class ActivacionInactivacionEprepagoPage {
 
-    public static final Target BTN_MAS_OPCIONES_EPREPAGO = Target.the("Boton mas opciones eprepago").located(theElementBy(BTN_MAS_OPCIONES_EPREPAGO_LOCATOR));
     public static final Target OPT_EPREPAGO = Target.the("opciones eprepago").locatedBy(dynamicElement(OPT_EPREPAGO_LOCATOR));
     public static final Target BTN_GENERAR_EPREPAGO = Target.the("boton generar eprepago").located(theElementBy(BTN_GENERAR_EPREPAGO_LOCATOR));
     public static final Target LBL_GENERARACION_EXITOSA = Target.the("label generacion exitosa eprepago").located(theElementBy(LBL_GENERARACION_EXITOSA_LOCATOR));

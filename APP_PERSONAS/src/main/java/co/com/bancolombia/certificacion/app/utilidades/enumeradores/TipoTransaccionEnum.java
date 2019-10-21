@@ -21,7 +21,7 @@ public enum TipoTransaccionEnum {
     DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
-    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    ACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
     GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
