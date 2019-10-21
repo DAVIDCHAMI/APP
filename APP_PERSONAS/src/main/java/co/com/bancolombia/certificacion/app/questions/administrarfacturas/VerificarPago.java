@@ -11,7 +11,7 @@ public class VerificarPago implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return elementoPresente(actor, TXT_MENSAJE_PAGO_EXITOSO) &&
+        return elementoPresente(actor, TXT_PAGO_REDEBAN_EXITOSO) &&
                 elementoPresente(actor, LBL_COMPROBANTE_EXITOSA);
     }
 
