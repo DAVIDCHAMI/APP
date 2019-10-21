@@ -1,8 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.eprepago;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
-import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
-import co.com.bancolombia.certificacion.app.interactions.eprepago.SeleccionarOpcion;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
@@ -16,8 +14,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PRODUCTO_ORIGEN;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.RECARGA_EPREPAGO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.RecargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.RECARGAR_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -37,19 +34,20 @@ public class CargarEprepago implements Task {
         actor.attemptsTo(
                 Validar.carga(),
                 RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
-                Click.on(BTN_RECARGAR_EPREPAGO),
+                Click.on(BTN_RECARGAR_EPREPAGO));
+        actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
                         RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                ),
+                ));
+        actor.attemptsTo(
                 Enter.theValue(valorCarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 Click.on(FOCO_E_PREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
                 Click.on(LNK_RECARGAR_EPREPAGO),
-                Validar.carga()
-        );
+                Validar.carga());
         actor.remember(MODELO_PRODUCTO, producto);
         actor.remember(RECARGAR_EPREPAGO, valorCarga);
     }

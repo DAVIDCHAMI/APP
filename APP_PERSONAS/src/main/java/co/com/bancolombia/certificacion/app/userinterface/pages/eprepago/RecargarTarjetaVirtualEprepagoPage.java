@@ -2,12 +2,12 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.eprepago;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.eprepago.CargarTarjetaVirtualEprepagoLocator.*;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.eprepago.RecargarTarjetaVirtualEprepagoLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
-public class CargarTarjetaVirtualEprepagoPage {
+public class RecargarTarjetaVirtualEprepagoPage {
     public static final Target BTN_SUB_MENU_EPREPAGO = Target.the("Submenu ePrepago").located(theElementBy(BTN_SUB_MENU_EPREPAGO_LOCATOR));
     public static final Target BTN_SELECCIONAR_OPCION = Target.the("Selecciona la opción del subMenu de ePrepago con el que se desea interactuar").locatedBy(dynamicElement(BTN_SELECCIONAR_OPCION_LOCATOR));
     public static final Target TXT_VALOR_RECARGA_EPREPAGO = Target.the("Input que recibe el valor de recarga").located(theElementBy(TXT_VALOR_RECARGA_EPREPAGO_LOCATOR));
@@ -18,7 +18,7 @@ public class CargarTarjetaVirtualEprepagoPage {
     public static final Target LBL_VALOR_RECARGADO_EPREPAGO = Target.the("Label en el que aparece el valor recargado a la tarjeta virtual ePrepago").locatedBy(dynamicElement(LBL_VALOR_RECARGADO_EPREPAGO_LOCATOR));
     public static final Target BTN_RECARGAR_EPREPAGO = Target.the("Botón para recargar desde opción detalle").located(theElementBy(BTN_RECARGAR_EPREPAGO_LOCATOR));
     public static final Target LBL_COMPROBATE_EPREPAGO = Target.the("Comprobate operación ePrepago").located(theElementBy(LBL_COMPROBATE_EPREPAGO_LOCATOR));
-    public static final Target FOCO_E_PREPAGO = Target.the("Foco e-prepago").located(theElementBy(FOCO_E_PREPGAGO_LOCATOR));
+    public static final Target FOCO_E_PREPAGO = Target.the("Foco eprepago").located(theElementBy(FOCO_E_PREPGAGO_LOCATOR));
 
-    private CargarTarjetaVirtualEprepagoPage(){throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
+    private RecargarTarjetaVirtualEprepagoPage(){throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }

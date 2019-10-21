@@ -29,7 +29,7 @@ public class DetalleProductosPage {
     public static final Target LBL_MAXIMO_DESEMBOLSAR = Target.the("Valor máximo a desembolsar").located(theElementBy(LBL_MAXIMO_DESEMBOLSAR_LOCATOR));
     public static final Target LBL_MINIMO_DESEMBOLSAR = Target.the("Valor mínimo a desembolsar").located(theElementBy(LBL_MINIMO_DESEMBOLSAR_LOCATOR));
     public static final Target LBL_CUPO_DISPONIBLE = Target.the("Cupo disponible").located(theElementBy(LBL_CUPO_DISPONIBLE_LOCATOR));
-    public static final Target LBL_SALDO_DISPONIBLE_E_PREPAGO = Target.the("Saldo disponible e-prepago").located(theElementBy(LBL_SALDO_DISPONIBLE_E_PREPAGO_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_E_PREPAGO = Target.the("Saldo disponible eprepago").located(theElementBy(LBL_SALDO_DISPONIBLE_E_PREPAGO_LOCATOR));
     public static final Target LBL_FECHA_VENCIMIENTO = Target.the("Fecha de vencimiento").located(theElementBy(LBL_FECHA_VENCIMIENTO_LOCATOR));
     public static final Target LBL_CVC = Target.the("Código de seguridad").located(theElementBy(LBL_CVC_LOCATOR));
     public static final Target LBL_NUMERO_TARJETA = Target.the("Número de tarjeta").located(theElementBy(LBL_NUMERO_TARJETA_LOCATOR));

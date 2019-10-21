@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.questions.eprepago;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.CargarTarjetaVirtualEprepagoPage.LBL_VALOR_RECARGA_NO_PERMITIDO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.RecargarTarjetaVirtualEprepagoPage.LBL_VALOR_RECARGA_NO_PERMITIDO;
 
 public class ValorRecarga implements Question<Boolean> {
 
