@@ -61,6 +61,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target TXT_FOCO_MODIFICAR_DESCRIPCION = Target.the("Foco modificar descripción").located(theElementBy(TXT_FOCO_MODIFICAR_DESCRIPCION_LOCATOR));
     public static final Target LBL_VERIFICACION_MODIFICACION_INSCRITA = Target.the("Label verificacion descrpción exitosa").locatedBy(dynamicElement(LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR));
     public static final Target TXT_MENSAJE_PROGRAMACION_EXITOSA = Target.the("Mensaje de programación exitosa").located(theElementBy(TXT_MENSAJE_PROGRAMACION_EXITOSA_LOCATOR));
+    public static final Target TXT_MENSAJE_PAGO_EXITOSO = Target.the("Mensaje de pago exitoso").located(theElementBy(TXT_MENSAJE_PAGO_EXITOSO_LOCATOR));
     public static final Target TXT_PAGO_REDEBAN_EXITOSO = Target.the("Mensaje de pago redeban exitoso").located(theElementBy(TXT_PAGO_REDEBAN_EXITOSO_LOCATOR));
 
     private ProgramarPagarFacturasPage(){

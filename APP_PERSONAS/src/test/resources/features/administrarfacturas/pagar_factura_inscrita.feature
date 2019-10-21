@@ -26,7 +26,7 @@ Característica:Pagar facturas inscritas
     Cuando el actor realizar el pago de sus facturas inscritas con opcion <opcion>
       | empresaServicio   | fechaFactura   | valorFactura   | numeroCuenta   | tipoCuenta   | fechaVencimiento   | referencia   | valorFacturaReferenciaPagar   |
       | <empresaServicio> | <fechaFactura> | <valorFactura> | <numeroCuenta> | <tipoCuenta> | <fechaVencimiento> | <referencia> | <valorFacturaReferenciaPagar> |
-    Entonces deberia ver el pago de su factura programada
+    Entonces deberia ver el pago de su factura inscrita
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura        | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta | fechaVencimiento | referencia | valorFacturaReferenciaPagar | opcion            |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaVariasInscritas.xlsx@Datos@2
@@ -40,7 +40,7 @@ Característica:Pagar facturas inscritas
     Cuando el actor realizar el pago de sus facturas inscritas con opcion <opcion>
       | empresaServicio   | fechaFactura   | valorFactura   | numeroCuenta   | tipoCuenta   | fechaVencimiento   | referencia   | valorFacturaReferenciaPagar   |
       | <empresaServicio> | <fechaFactura> | <valorFactura> | <numeroCuenta> | <tipoCuenta> | <fechaVencimiento> | <referencia> | <valorFacturaReferenciaPagar> |
-    Entonces deberia ver el pago de su factura programada
+    Entonces deberia ver el pago de su factura inscrita
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura        | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta | fechaVencimiento | referencia | valorFacturaReferenciaPagar | opcion    |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaVariasInscritas.xlsx@Datos@1

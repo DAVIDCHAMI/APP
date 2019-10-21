@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ConsultaDetalleFacturaPage.OPT_PAGAR_FACTURA_PROGRAMADA;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SELECCIONAR_TODAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_FACTURA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class PagarFacturaProgramada implements Task {
@@ -46,7 +47,6 @@ public class PagarFacturaProgramada implements Task {
                         factura.getFechaFactura(),
                         factura.getEmpresaServicio())
                 ),
-                Click.on(LNK_SIGUIENTE),
                 Click.on(OPT_CUENTA_PRODUCTO.of(
                         factura.getProducto().getTipo(),
                         factura.getProducto().getNumero())
@@ -70,7 +70,10 @@ public class PagarFacturaProgramada implements Task {
                         ))
                 ),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
+        actor.remember(MODELO_FACTURA,factura);
+
     }
 }

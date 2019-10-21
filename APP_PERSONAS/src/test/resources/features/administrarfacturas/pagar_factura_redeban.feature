@@ -12,7 +12,7 @@ Característica:Pagar facturas redeban
     Cuando el actor realizar el pago de sus factura redeban
       | empresaServicio   | fechaFactura   | valorFactura   | numeroCuenta   | tipoCuenta   |
       | <empresaServicio> | <fechaFactura> | <valorFactura> | <numeroCuenta> | <tipoCuenta> |
-    Entonces deberia ver el pago de reban exitoso
+    Entonces deberia ver el pago de redeban exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaRedeban.xlsx@Datos@1
