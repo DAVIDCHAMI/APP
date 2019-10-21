@@ -5,7 +5,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SolicitarTarjetaVirtualEprepagoLocator {
-    public static final Locator CHK_TYC_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Acepto']]/preceding-sibling:: XCUIElementTypeSwitch");
+    public static final Locator CHK_TYC_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Acepto']]/preceding-sibling::XCUIElementTypeSwitch");
     public static final Locator LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Solicitud exitosa!']").withIos("xpath$//*[@name='¡Solicitud exitosa!']");
     public static final Locator LBL_COMPROBANTE_SOLICITUD_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//*[contains(@name,'Comprobante')]");
     public static final Locator LBL_SALDO_DISPONIBLE_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Saldo disponible']").withIos("xpath$//*[@name='Saldo disponible']");
