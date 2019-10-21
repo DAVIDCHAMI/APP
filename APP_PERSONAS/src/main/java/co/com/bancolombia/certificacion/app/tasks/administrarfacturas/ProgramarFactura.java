@@ -74,7 +74,8 @@ public class ProgramarFactura implements Task {
                 Click.on(BTN_SIGUIENTE),
                 RealizarScroll.hastaPosicionDeTarget(CHK_ACEPTO_TERMINOS),
                 Click.on(CHK_ACEPTO_TERMINOS),
-                Click.on(BTN_PROGRAMAR)
+                Click.on(BTN_PROGRAMAR),
+                Validar.carga()
         );
     }
 }

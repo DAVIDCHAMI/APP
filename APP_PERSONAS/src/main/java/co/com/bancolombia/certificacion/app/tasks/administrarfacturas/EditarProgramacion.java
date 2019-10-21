@@ -6,11 +6,9 @@ import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
-import io.restassured.response.ValidatableResponse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -43,6 +41,7 @@ public class EditarProgramacion implements Task {
                         Validar.carga(),
                         Click.on(OPT_MIS_PRODUCTOS),
                         Validar.carga(),
+                        RealizarScroll.hastaPosicionDeTarget(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().getTipo(), programarFacturas.getProducto().getNumero())),
                         Click.on(OPT_CUENTA_PRODUCTO.of(programarFacturas.getProducto().getTipo(), programarFacturas.getProducto().getNumero()))
                 )
         );

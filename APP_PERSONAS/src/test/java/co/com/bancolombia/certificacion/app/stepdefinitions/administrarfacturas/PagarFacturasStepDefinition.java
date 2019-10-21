@@ -1,6 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoFacturaInscritaException;
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoRedebanNoRealizadoException;
+import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarPago;
+import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarPagoFactura;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.VerificarPagoFacturaInscrita;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
 import cucumber.api.java.es.Cuando;
@@ -10,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoFacturaInscritaException.NO_SE_PAGO_FACTURA_INSCRITA;
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.PagoRedebanNoRealizadoException.PAGO_REDEBAN_NO_REALIZADO;
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -27,7 +31,6 @@ public class PagarFacturasStepDefinition {
                         .conReferencia(datos)
                         .conFechaVencimiento(datos)
                         .conValorFacturaReferencia(datos)
-
                 )
         );
     }
@@ -43,7 +46,6 @@ public class PagarFacturasStepDefinition {
                         .conReferencia(datos)
                         .conFechaVencimiento(datos)
                         .conValorFacturaReferencia(datos)
-
                 )
         );
     }
@@ -56,7 +58,6 @@ public class PagarFacturasStepDefinition {
                         .conProducto(datos)
                         .conFechaFactura(datos)
                         .conValorFacturaReferencia(datos)
-
                 )
         );
     }
@@ -68,14 +69,18 @@ public class PagarFacturasStepDefinition {
                         .conEmpresaServicio(datos)
                         .conProducto(datos)
                         .conFechaFactura(datos)
-
                 )
         );
     }
 
-    @Entonces("^deberia ver el pago de su factura programada$")
-    public void deberiaVerHPagoFacturaProgramada() {
+    @Entonces("^deberia ver el pago de redeban exitoso$")
+    public void deberiaVerPagoRedeban() {
+        theActorInTheSpotlight().should(seeThat(VerificarPago.redeban()).orComplainWith(PagoRedebanNoRealizadoException.class,PAGO_REDEBAN_NO_REALIZADO));
+    }
 
+    @Entonces("^deberia ver el pago de su factura programada$")
+    public void deberiaVerPagoDeFacturaProgramada() {
+        theActorInTheSpotlight().should(seeThat(VerificarPagoFactura.programada()).orComplainWith(PagoRedebanNoRealizadoException.class,PAGO_REDEBAN_NO_REALIZADO));
     }
 
     @Entonces("^deberia ver el pago de su factura inscrita$")
