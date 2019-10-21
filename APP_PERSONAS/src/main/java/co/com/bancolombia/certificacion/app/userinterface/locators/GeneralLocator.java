@@ -29,7 +29,7 @@ public class GeneralLocator {
     public static final Locator BTN_PERMISO_LOCATOR = locator().withAndroid("xpath$//span[text()='PERMITIR']").withIos("xpath$q");
     public static final Locator LBL_MENSAJE_CARGA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Cargando') or contains(text(),'Validando Clave')]").withIos("xpath$//*[contains(@name,'Cargando') or contains(@name,'Validando Clave')]");
     public static final Locator IMG_CARGA_LOCATOR = locator().withAndroid("xpath$//*[@class='spinner-container']").withIos("xpath$q");
-    public static final Locator LNK_SOLICITAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Solicitar']").withIos("xpath$q");
+    public static final Locator LNK_SOLICITAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Solicitar']").withIos("xpath$//XCUIElementTypeButton[@name='SOLICITAR']");
     public static final Locator LNK_CANCELAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cancelar']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Cancelar')]");
     public static final Locator BTN_SI_LOCATOR = locator().withAndroid("xpath$//button[text()='SI']").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
     public static final Locator LBL_CUENTA_SIN_SALDO_LOCATOR = locator().withAndroid("xpath$//span[text()='Saldo insuficiente en el producto a debitar.']").withIos("xpath$//*[contains(@name,'insuficiente')]");
