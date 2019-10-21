@@ -15,11 +15,12 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPa
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ConsultaDetalleFacturaPage.OPT_PAGAR_FACTURA_PROGRAMADA;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SELECCIONAR_TODAS;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_FACTURA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class PagarFacturaProgramada implements Task {
-    Factura factura;
-    String opcion;
+    private Factura factura;
+    private String opcion;
 
     public PagarFacturaProgramada(String opcion, Factura factura) {
         this.factura = factura;
@@ -31,11 +32,11 @@ public class PagarFacturaProgramada implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 Click.on(OPT_PROGRAMADAS),
-                WaitUntil.the( OPT_PAGAR_FACTURA_PROGRAMADA.of(
+                WaitUntil.the(OPT_PAGAR_FACTURA_PROGRAMADA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),
-                        factura.getEmpresaServicio()),isPresent()),
-              RealizarScroll.hastaPosicionDeTarget(
+                        factura.getEmpresaServicio()), isPresent()),
+                RealizarScroll.hastaPosicionDeTarget(
                         OPT_PAGAR_FACTURA_PROGRAMADA.of(
                                 factura.getValorFactura(),
                                 factura.getFechaFactura(),
@@ -69,7 +70,9 @@ public class PagarFacturaProgramada implements Task {
                         ))
                 ),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
+        actor.remember(MODELO_FACTURA,factura);
     }
 }

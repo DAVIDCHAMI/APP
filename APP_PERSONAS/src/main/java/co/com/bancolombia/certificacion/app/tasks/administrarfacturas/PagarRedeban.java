@@ -14,8 +14,8 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.administr
 public class PagarRedeban implements Task {
     private Factura factura;
 
-    public PagarRedeban(Factura factura){
-        this.factura=factura;
+    public PagarRedeban(Factura factura) {
+        this.factura = factura;
     }
 
     @Override
@@ -28,7 +28,8 @@ public class PagarRedeban implements Task {
                         factura.getProducto().getNumero())
                 ),
                 Validar.carga(),
-               Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
     }
 }

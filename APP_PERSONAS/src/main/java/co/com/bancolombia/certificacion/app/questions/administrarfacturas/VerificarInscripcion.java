@@ -13,10 +13,10 @@ public class VerificarInscripcion implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         Factura factura = actor.recall(MODELO_FACTURA);
-        return LBL_INSCRIPCION_EXITOSA.resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(factura.getConvenio()).resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(factura.getDescripcionFactura()).resolveFor(actor).isVisible() &&
-                LBL_VERIFICACION.of(factura.getReferencia()).resolveFor(actor).isVisible();
+        return LBL_INSCRIPCION_EXITOSA.resolveFor(actor).isPresent() &&
+                LBL_VERIFICACION.of(factura.getConvenio()).resolveFor(actor).isPresent() &&
+                LBL_VERIFICACION.of(factura.getDescripcionFactura()).resolveFor(actor).isPresent() &&
+                LBL_VERIFICACION.of(factura.getReferencia()).resolveFor(actor).isPresent();
     }
 
     public static VerificarInscripcion factura(){
