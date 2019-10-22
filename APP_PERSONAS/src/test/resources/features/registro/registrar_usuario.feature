@@ -5,7 +5,7 @@ Característica: Registro en la APP personas bancolombia OSP
   Quiero realizar el registro de un usuario
   Para realizar la autenticacion en la app
 
-  @Manual:Passed
+
   Esquema del escenario: Registrar un usuario y su nickname es el numero de identificacion
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -16,7 +16,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser | correoUsuario | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |700102   |1   |87576487   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |autouser20   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
+   |1   |30001021   |1   |30001021   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |autouser20   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   @Manual:Passed
   Esquema del escenario: Registrar usuario con documento de identidad desde mis Productos
@@ -29,7 +29,7 @@ Característica: Registro en la APP personas bancolombia OSP
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
-   |1   |700102   |1   |87576487   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |autouser20   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
+   |1   |30001021   |1   |30001021   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |autouser20   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
   @Manual:Passed
   Esquema del escenario:Registrar usuario con documento de identidad desde otra opcion

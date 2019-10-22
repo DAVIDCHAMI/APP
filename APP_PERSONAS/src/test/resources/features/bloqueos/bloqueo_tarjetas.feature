@@ -5,7 +5,6 @@ Característica: Bloqueo de tarjetas
   Quiero bloquear una tarjeta
   Por motivos de seguridad
 
-  @Manual:Passed
   Esquema del escenario: Bloqueo de tarjetas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -17,4 +16,4 @@ Característica: Bloqueo de tarjetas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta     |
    ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@3
-   |3   |22483228   |1   |invictus10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa   |*4895|
+   |3   |22483228   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Maestro   |*1453|
