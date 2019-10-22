@@ -7,7 +7,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class SolicitarTarjetaVirtualEprepagoPage {
     public static final Target CHK_TYC_EPREPAGO = Target.the("check terminos y condiciones").located(theElementBy(CHK_TYC_EPREPAGO_LOCATOR));
-    public static final Target BTN_SOLICITAR_EPREPAGO = Target.the("boton solicitar eprepago").located(theElementBy(BTN_SOLICITAR_EPREPAGO_LOCATOR));
     public static final Target LBL_SOLICITUD_EPREPAGO_EXITOSA = Target.the("solicitud eprepago exitosa").located(theElementBy(LBL_SOLICITUD_EPREPAGO_EXITOSA_LOCATOR));
     public static final Target LBL_COMPROBANTE_SOLICITUD_EPREPAGO = Target.the("Label que presenta el comprobante y número de solicitud").located(theElementBy(LBL_COMPROBANTE_SOLICITUD_EPREPAGO_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_EPREPAGO = Target.the("Label que muestra el saldo de la tarjeta solicitada").located(theElementBy(LBL_SALDO_DISPONIBLE_EPREPAGO_LOCATOR));

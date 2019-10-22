@@ -14,6 +14,7 @@ public enum TipoTransaccionEnum {
     PROGRAMAR_PAGAR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     CONSULTAR_DETALLE_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     ELIMINAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
+    SOLICITAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     PAGAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     INSCRIBIR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Inscribir facturas"),
     VER_HISTORICO_PAGOS(MIS_PRODUCTOS, "Pagar y administrar facturas","Ver histórico de pagos"),

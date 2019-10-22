@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.exceptions.EliminacionFacturasExcept
 import co.com.bancolombia.certificacion.app.exceptions.ModificacionProgramacionException;
 import co.com.bancolombia.certificacion.app.exceptions.VerificarInscripcionFactura;
 import co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException;
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.NoPresentaMensajeProgramacionExitosaException;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.*;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.Inscribir;
@@ -17,6 +18,7 @@ import static co.com.bancolombia.certificacion.app.exceptions.EliminacionFactura
 import static co.com.bancolombia.certificacion.app.exceptions.ModificacionProgramacionException.MENSAJE_MODIFICACION;
 import static co.com.bancolombia.certificacion.app.exceptions.VerificarInscripcionFactura.INSCRIPCION_FALLIDA;
 import static co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException.NO_TIENE_HISTORICO_DE_PAGOS;
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.NoPresentaMensajeProgramacionExitosaException.NO_PRESENTA_MENSAJE_PROGRAMACION_EXITOSA;
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -35,6 +37,8 @@ public class AdministrarFacturasStepDefinition {
                         .conNumeroIntento(datos)
                         .conMesProgramacion(datos)
                         .conDuracionProgramacion(datos)
+                        .conFechaInicio(datos)
+                        .conFechaFin(datos)
         ));
     }
 
@@ -122,6 +126,13 @@ public class AdministrarFacturasStepDefinition {
     public void deberiaVerHistoricoPago() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarHistoricoPago.enFacturas()).orComplainWith(HistoricoPagoException.class, NO_TIENE_HISTORICO_DE_PAGOS)
+        );
+    }
+
+    @Entonces("^el deberia ver el mensaje de programación exitosa$")
+    public void deberiaVerMensajeProgramacionExitosa() {
+        theActorInTheSpotlight().should(
+                seeThat(VerificarProgramacion.deFactura()).orComplainWith(NoPresentaMensajeProgramacionExitosaException.class, NO_PRESENTA_MENSAJE_PROGRAMACION_EXITOSA)
         );
     }
 }

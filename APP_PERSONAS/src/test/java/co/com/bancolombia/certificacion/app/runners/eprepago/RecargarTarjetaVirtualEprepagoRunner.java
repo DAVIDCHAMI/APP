@@ -14,15 +14,15 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/eprepago/cargar_tarjeta_virtual_eprepago.feature"},
+        features = {"src/test/resources/features/eprepago/recargar_tarjeta_virtual_eprepago.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class CargarTarjetaVirtualEprepagoRunner {
-    public CargarTarjetaVirtualEprepagoRunner(){throw new IllegalStateException(CLASE_RUNNER);}
+public class RecargarTarjetaVirtualEprepagoRunner {
+    public RecargarTarjetaVirtualEprepagoRunner(){throw new IllegalStateException(CLASE_RUNNER);}
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/eprepago/cargar_tarjeta_virtual_eprepago.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/eprepago/recargar_tarjeta_virtual_eprepago.feature");
     }
 }

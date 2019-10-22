@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import net.serenitybdd.screenplay.Actor;
@@ -29,7 +30,8 @@ public class ConsultarDetalleFacturaProgramada implements Task {
                         factura.getEmpresaServicio())),
                 Click.on(OPT_VER_DETALLE_FACTURA_PROGRAMADA.of(factura.getValorFactura(),
                         factura.getFechaFactura(),
-                        factura.getEmpresaServicio()))
+                        factura.getEmpresaServicio())),
+                        Validar.carga()
         );
         actor.remember(MODELO_CONSULTA_DETALLE_FACTURA,
                 factura()

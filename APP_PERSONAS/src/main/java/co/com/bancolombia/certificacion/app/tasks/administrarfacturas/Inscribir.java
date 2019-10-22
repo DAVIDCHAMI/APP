@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder;
 import net.serenitybdd.screenplay.Actor;
@@ -32,10 +33,13 @@ public class Inscribir implements Task {
                 Click.on(TXT_EMPRESA_SERVICIO_POP_UP.of(factura.getConvenio())),
                 Click.on(LNK_SIGUIENTE),
                 Enter.theValue(factura.getDescripcionFactura()).into(TXT_DESCRIPCION),
+                Click.on(TXT_FOCO),
                 Click.on(LNK_SIGUIENTE),
                 Enter.theValue(factura.getReferencia()).into(TXT_REFERENCIA),
+                Click.on(TXT_FOCO),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(LNK_INSCRIBIR)
+                Click.on(LNK_INSCRIBIR),
+                Validar.carga()
         );
         actor.remember(MODELO_FACTURA, factura);
     }
