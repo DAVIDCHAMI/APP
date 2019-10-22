@@ -22,7 +22,7 @@ public enum TipoTransaccionEnum {
     DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
-    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    ACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
     GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
@@ -33,7 +33,8 @@ public enum TipoTransaccionEnum {
     CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques"),
     ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad"),
     RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
-    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
+    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    INACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
 
     private String menu;
     private String subMenu;
