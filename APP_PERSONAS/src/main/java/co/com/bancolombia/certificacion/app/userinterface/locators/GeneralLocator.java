@@ -32,7 +32,7 @@ public class GeneralLocator {
     public static final Locator LNK_SOLICITAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Solicitar']").withIos("xpath$q");
     public static final Locator LNK_CANCELAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Cancelar']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Cancelar')]");
     public static final Locator BTN_SI_LOCATOR = locator().withAndroid("xpath$//button[text()='SI']").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
-    public static final Locator LBL_CUENTA_SIN_SALDO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'insuficiente')]").withIos("xpath$//*[contains(@name,'insuficiente')]");
+    public static final Locator LBL_CUENTA_SIN_SALDO_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Saldo insuficiente en el producto a debitar')]").withIos("xpath$//*[contains(@name,'Saldo insuficiente en el producto a debitar')]");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
