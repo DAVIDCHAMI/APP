@@ -64,6 +64,6 @@ public class UtileriaString {
         if ("Android".equalsIgnoreCase(nombrePlataforma))
             return iterador;
         else
-            return iterador + 1;
+            return iterador + iterador -1;
     }
 }
