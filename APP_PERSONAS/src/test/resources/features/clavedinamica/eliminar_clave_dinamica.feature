@@ -1,6 +1,9 @@
 #language: es
 
 Característica: Eliminar clave dinamica
+  Yo como usuario Bancolombia
+  Quiero eliminar mi clave dinamica
+  Para inscribir otra clave dinamica
 
   Esquema del escenario: Eliminación clave dinamica exitoso
     Dado que el Actor se autentica en la app
@@ -11,6 +14,5 @@ Característica: Eliminar clave dinamica
     Entonces Deberia de ver el mensaje de eliminación exitosa
     Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado |
-      | 1  | 700100          | 1             | pruebasregistro48 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Jham                |
-##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xls@Eliminar@1
+      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado |
+      ##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xls@Eliminar@1

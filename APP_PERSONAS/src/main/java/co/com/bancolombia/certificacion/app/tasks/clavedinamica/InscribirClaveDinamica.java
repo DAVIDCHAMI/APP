@@ -48,6 +48,7 @@ public class InscribirClaveDinamica implements Task {
         actor.attemptsTo(
                 Click.on(FOCO_INSCRIPCION),
                 Enter.theValue(usuario.getNumeroCelular()).into(TXT_NUMERO_CELULAR),
+                Click.on(FOCO_INSCRIPCION),
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_INSCRIBIR_CLAVE)
         );
