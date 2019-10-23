@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature"},
+        features = {"src/test/resources/features/clavedinamica/eliminacion.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
@@ -26,6 +26,6 @@ public class EliminarClaveDinamicaRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/eliminacion.feature");
     }
 }
