@@ -13,6 +13,7 @@ public class CrediagilPage {
     public static final Target TXT_PRODUCTO_DESTINO = Target.the("Texto producto destino").located(theElementBy(TXT_PRODUCTO_DESTINO_LOCATOR));
     public static final Target TXT_VALOR_DESEMBOLSADOR = Target.the("Texto valor desembolsar").located(theElementBy(TXT_VALOR_DESEMBOLSADOR_LOCATOR));
     public static final Target TXT_DESEMBOLSO_EXITOSO = Target.the("Mensaje desembolso exitoso").located(theElementBy(TXT_DESEMBOLSO_EXITOSO_LOCATOR));
+    public static final Target TXT_FUERA_RANGO = Target.the("Mensaje desembolso fuera de rango").located(theElementBy(TXT_FUERA_RANGO_LOCATOR));
 
     private CrediagilPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
