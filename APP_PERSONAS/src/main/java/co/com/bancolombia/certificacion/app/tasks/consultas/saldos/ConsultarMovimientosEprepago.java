@@ -19,6 +19,7 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.EPREPAGO;
 import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.TARJETAS_CREDITO;
+import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.obtenerIteradorEprepago;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosEprepago implements Task {
@@ -41,11 +42,11 @@ public class ConsultarMovimientosEprepago implements Task {
         );
         List<Movimiento> listaMovimiento = new ArrayList<>();
         int iterador = 1;
-        while (Verificar.elementoPresente(actor, CONTENEDOR_MOVIMIENTOS_EPREPAGO.of(String.valueOf(iterador)))) {
+        while (Verificar.elementoPresente(actor, CONTENEDOR_MOVIMIENTOS_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))))) {
             listaMovimiento.add(movimiento().
-                    conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(iterador)).resolveFor(actor).getText())
-                    .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO.of(String.valueOf(iterador)).resolveFor(actor).getText())
-                    .conValorMovimiento(LBL_SALDO_MOVIMIENTO_EPREPAGO.of(String.valueOf(iterador)).resolveFor(actor).getText()).build()
+                    conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
+                    .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
+                    .conValorMovimiento(LBL_SALDO_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText()).build()
             );
             iterador++;
         }
