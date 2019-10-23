@@ -24,8 +24,6 @@ public class SeleccionarProducto implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        Verificar.elementoVisible(actor,target.of(tipoCuenta, numeroCuenta));
         actor.attemptsTo(
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
                 RealizarScroll.hastaPosicionDeTarget(target.of(tipoCuenta, numeroCuenta)),
