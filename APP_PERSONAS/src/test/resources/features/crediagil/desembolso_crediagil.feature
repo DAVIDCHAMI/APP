@@ -24,4 +24,5 @@ Característica: Desembolso de crediagil
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | valorDesembolso |
    ##@externaldata@./src/test/resources/datadriven/crediagil/DesembolsoCrediagil.xlsx@FueraRango@
-      |1   |43024987   |1   |pruebauser01   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-182800-02   |12000|
+   |1   |43024987   |1   |pruebauser01   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-182800-02   |9000|
+   |2   |43024987   |1   |pruebauser01   |6789   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-182800-02   |600000000|
