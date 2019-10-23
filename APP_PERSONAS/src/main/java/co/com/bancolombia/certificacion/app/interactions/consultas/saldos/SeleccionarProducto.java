@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -23,6 +24,8 @@ public class SeleccionarProducto implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+        Verificar.elementoVisible(actor,target.of(tipoCuenta, numeroCuenta));
         actor.attemptsTo(
                 WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
                 RealizarScroll.hastaPosicionDeTarget(target.of(tipoCuenta, numeroCuenta)),
