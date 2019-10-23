@@ -15,18 +15,18 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class SolicitarTarjetaVirtualEprepagoStepDefinition {
 
-    @Cuando("^quiero solicitar una tarjeta e-prepago$")
+    @Cuando("^acepta los terminos y cndiciones de solicitud$")
     public void quieroSolicitarUnaTarjetaEprepago(){
         theActorInTheSpotlight().attemptsTo(SolicitarEprepago.enLaAppBancolombia());
     }
 
-    @Entonces("^Debo ver el mensaje de solicitud exitosa$")
+    @Entonces("^el debe ver el mensaje de solicitud exitosa$")
     public void deboVerElMensajeDeSolicitudExitosa() {
         theActorInTheSpotlight().should(seeThat(SolicitudTarjetaVirtualEprepago.esExitosa())
                 .orComplainWith(NoSeRealizoSolicitudEprepagoException.class, MENSAJE_E_PREPAGO_NO_SOLICITADA));
     }
 
-    @Entonces("^Debo ver el mensaje respectivo para el usuario$")
+    @Entonces("^el deberia ver el detalle de la e-prepago$")
     public void deboVerElMensajeRespectivoParaElUsuario() {
         theActorInTheSpotlight().should(seeThat(UsuarioConEprepago.enLaApp()).
                 orComplainWith(NoSeRealizoLaConsultaException.class, MENSAJE_CONSULTA_NO_REALIZADA));

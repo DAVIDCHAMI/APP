@@ -16,10 +16,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class DescargarTarjetaVirtualEprepagoStepDefinition {
 
-    @Cuando("^quiere descargar una tarjeta virtual (.*) activa por valor de (.*)$")
-    public void descargarTarjetaVirtualEPrepagoActiva(String eprepago, String valorDescarga, List<Map<String, String>>productoDestino) {
+    @Cuando("^realiza la descarga por valor de (.*)$")
+    public void descargarTarjetaVirtualEPrepago(String valorDescarga, List<Map<String, String>>productoDestino) {
         theActorInTheSpotlight().attemptsTo(
-                DescargarSaldo.deLaTarjetaCon(elProducto().conProductoDebitar(productoDestino), eprepago, valorDescarga)
+                DescargarSaldo.deLaTarjetaCon(elProducto().conProductoDebitar(productoDestino), valorDescarga)
         );
     }
 

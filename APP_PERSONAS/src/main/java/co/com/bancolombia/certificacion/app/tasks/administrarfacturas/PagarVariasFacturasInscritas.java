@@ -29,6 +29,7 @@ public class PagarVariasFacturasInscritas implements Task {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 SeleccionarOpcionFactura.conInformacion(OPT_PAGAR_FACTURA, factura),
+                Click.on(LNK_SIGUIENTE),
                 Click.on(OPT_CUENTA_PRODUCTO.of(
                         factura.getProducto().getTipo(),
                         factura.getProducto().getNumero()
@@ -40,8 +41,6 @@ public class PagarVariasFacturasInscritas implements Task {
                         RealizarScroll.hastaPosicionDeTarget(CHK_SELECCIONAR_TODAS_FACTURAS),
                         Click.on(CHK_SELECCIONAR_TODAS_FACTURAS)
                 ).otherwise(
-                        Validar.carga(),
-                        Esperar.unTiempo(3000),
                         RealizarScroll.hastaPosicionDeTarget(CHk_SELECCIONAR_FACTURA.of(
                                 factura.getValorFacturaReferenciaPago(),
                                 factura.getFechaVencimiento(),
@@ -54,7 +53,8 @@ public class PagarVariasFacturasInscritas implements Task {
                         )
                 ),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_PAGAR)
+                Click.on(BTN_PAGAR),
+                Validar.carga()
         );
     }
 }

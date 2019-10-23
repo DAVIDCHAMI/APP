@@ -9,7 +9,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
 
 public class ConsultaDetalleFacturaPage {
-    public static final Target LBL_CONTENEDOR_FACTURA = Target.the("Contenedor de factura").locatedBy(dynamicElement(LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_DETALLE_INSCRITAS = Target.the("Seleccion de factura").locatedBy(dynamicElement(LBL_DETALLE_INSCRITAS_LOCATOR));
     public static final Target LBL_DETALLE_EMPRESA_SERVICIO = Target.the("Label de verificación empresa o servicio").locatedBy(dynamicElement(LBL_DETALLE_EMPRESA_SERVICIO_LOCATOR));
     public static final Target LBL_DETALLE_ESTADO = Target.the("Label de verificación estado").located(theElementBy(LBL_DETALLE_ESTADO_LOCATOR));

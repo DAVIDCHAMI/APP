@@ -14,6 +14,7 @@ public enum TipoTransaccionEnum {
     PROGRAMAR_PAGAR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     CONSULTAR_DETALLE_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     ELIMINAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
+    SOLICITAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     PAGAR_FACTURA(MIS_PRODUCTOS, "Pagar y administrar facturas","Programar y pagar facturas"),
     INSCRIBIR_FACTURAS(MIS_PRODUCTOS, "Pagar y administrar facturas","Inscribir facturas"),
     VER_HISTORICO_PAGOS(MIS_PRODUCTOS, "Pagar y administrar facturas","Ver histórico de pagos"),
@@ -21,7 +22,7 @@ public enum TipoTransaccionEnum {
     DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
-    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    ACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
     GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
@@ -30,7 +31,10 @@ public enum TipoTransaccionEnum {
     BLOQUEAR_TARJETAS_CLAVE(PERFIL, "Bloqueos","Bloquear tarjetas y clave"),
     BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
     CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques"),
-    ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad");
+    ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad"),
+    RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    INACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
 
     private String menu;
     private String subMenu;
