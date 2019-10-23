@@ -12,7 +12,6 @@ public class DesembolsoCrediagilFuera implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-
         return elementoVisible(actor, TXT_FUERA_RANGO) &&
                 !elementoHabilitado(actor, BTN_SIGUIENTE);
     }
