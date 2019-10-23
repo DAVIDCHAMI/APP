@@ -13,4 +13,8 @@ public class ConsultarMovimientos {
     public static Performable deTarjetasCredito(String tipoCuenta, String numeroCuenta){
         return instrumented(ConsultarMovimientosTarjetas.class, tipoCuenta, numeroCuenta);
     }
+
+    public static Performable deEprepago(String tipoCuenta, String numeroCuenta){
+        return instrumented(ConsultarMovimientosEprepago.class, tipoCuenta, numeroCuenta);
+    }
 }

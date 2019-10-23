@@ -45,6 +45,13 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
+    @Cuando("^quiero revisar mis movimientos de eprepago en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void revisarMisMovimientosEprepago(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.deEprepago(tipoCuenta, numeroCuenta)
+        );
+    }
+
     @Y("el ingresa a sus productos$")
     public void ingresaSusProductos() {
         theActorInTheSpotlight().attemptsTo(
