@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.registro;
 import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveBloqueadaNoVisualizadoException;
 import co.com.bancolombia.certificacion.app.exceptions.autenticacion.MensajeClaveInvalidoNoVisualizadoException;
 import co.com.bancolombia.certificacion.app.exceptions.registro.PantallaRegistroNoPresenteException;
-import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeClaveInvalida;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeDeClaveBloqueada;
 import co.com.bancolombia.certificacion.app.questions.autenticacion.MensajeUsuarioYaRegistrado;
 import co.com.bancolombia.certificacion.app.questions.registro.MensajeRegistro;
