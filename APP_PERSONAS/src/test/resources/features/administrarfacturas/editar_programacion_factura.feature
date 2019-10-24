@@ -17,7 +17,7 @@
      Ejemplos:
        | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura | numeroCuenta  | tipoCuenta | periodicidad               | numeroIntento | fechaInicio | fechaFin | mesProgramacion | opcionModificacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EditarProgramacion.xlsx@Datos@1
-       | 1  | 48646663        | 1             | recaudosnatik66 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 55.500,05    | 65401           | 05 Abr 2020  | 406-158990-01 | Corriente  | En la fecha de vencimiento | 2             | 16          | 18       | Octubre         | Producto origen    |
+   |1   |48646663   |1   |recaudosnatik66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |55.500,05   |65401   |05 Abr 2020   |406-158990-01   |Corriente   |En la fecha de vencimiento   |2   |16   |18   |Octubre   |Producto origen|
 
    Esquema del escenario: Modificar facturas programadas
      Dado que el Actor se autentica en la app
@@ -31,4 +31,4 @@
      Ejemplos:
        | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura | numeroCuenta  | tipoCuenta | periodicidad               | numeroIntento | fechaInicio | fechaFin | mesProgramacion | opcionModificacion |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EditarProgramacion.xlsx@Datos@2
-       | 2  | 48646663        | 1             | recaudosnatik66 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 55.800,08    | 65401           | 05 Abr 2020  | 406-158990-01 | Corriente  | En la fecha de vencimiento | 3             | 16          | 18       | Octubre         | Periodicidad       |
+   |2   |48646663   |1   |recaudosnatik66   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |55.800,08   |65401   |05 Abr 2020   |406-158990-01   |Corriente   |En la fecha de vencimiento   |3   |16   |18   |Octubre   |Periodicidad|

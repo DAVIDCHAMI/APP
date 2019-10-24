@@ -5,7 +5,6 @@ Característica: Bloqueo de primera clave
   Quiero bloquear mi primera clave
   Por motivos de seguridad
 
-  @Manual:Passed
   Esquema del escenario: Bloqueo de clave
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -17,5 +16,5 @@ Característica: Bloqueo de primera clave
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario  | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta     |
    ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@2
-   |2   |22483228   |1   |autotest13   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |   ||
+   |2   |22483228   |1   |autotest27   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |   ||
 
