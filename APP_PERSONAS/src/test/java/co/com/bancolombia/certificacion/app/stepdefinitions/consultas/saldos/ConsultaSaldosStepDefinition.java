@@ -4,14 +4,12 @@ import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.Producto
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarSaldos;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
 import java.util.List;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException.MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS;
-import static co.com.bancolombia.certificacion.app.models.builders.CrediagilBuilder.crediagil;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -39,5 +37,4 @@ public class ConsultaSaldosStepDefinition {
         theActorInTheSpotlight().should(seeThat(VerificarProductosElegidos.pertenecenAlUsuario())
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
     }
-
 }

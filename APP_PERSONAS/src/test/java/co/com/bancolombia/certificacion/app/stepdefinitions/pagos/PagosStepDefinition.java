@@ -22,21 +22,21 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PagosStepDefinition {
 
-    @Cuando("^quiere pagar la tarjeta de crédito no propia$")
+    @Cuando("^quiere pagar la tarjeta de credito no propia$")
     public void pagoTarjetaCreditoNoPropia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 Pagar.tarjetaCreditoNoPropia(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos), elProducto().conProductoDebitar(datos))
         );
     }
 
-    @Cuando("^quiere pagar la tarjeta de crédito propia$")
+    @Cuando("^quiere pagar la tarjeta de credito propia$")
     public void pagoTarjetaCreditoPropia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 Pagar.tarjetaCreditoPropia(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos), elProducto().conProductoDebitar(datos))
         );
     }
 
-    @Cuando("^quiere pagar la tarjeta de crédito propia mayor a la deuda$")
+    @Cuando("^quiere pagar la tarjeta de credito propia mayor a la deuda$")
     public void pagoTarjetaCreditoPropiaMayorDeuda(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 Pagar.tarjetaCreditoPropiaMayorDeuda(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos))
@@ -50,7 +50,7 @@ public class PagosStepDefinition {
         );
     }
 
-    @Entonces("^deberia de ver el mensaje de confirmación y la información de su pago$")
+    @Entonces("^deberia de ver el mensaje de confirmacion y la informacion de su pago$")
     public void verMensajeConfirmacionInformacionPago() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarPago.exitoso()).orComplainWith(PagoNoRealizadoException.class, PAGO_NO_REALIZADO)
@@ -64,7 +64,7 @@ public class PagosStepDefinition {
         );
     }
 
-    @Entonces("^deberia de ver el mensaje de confirmación y la información del pago de su credito$")
+    @Entonces("^deberia de ver el mensaje de confirmacion y la informacion del pago de su credito$")
     public void verMensajeConfirmacionInformacionPagoCredito() {
         theActorInTheSpotlight().should(
                 seeThat(VerificarPagoCredito.exitoso()).orComplainWith(PagoNoRealizadoException.class, PAGO_NO_REALIZADO)

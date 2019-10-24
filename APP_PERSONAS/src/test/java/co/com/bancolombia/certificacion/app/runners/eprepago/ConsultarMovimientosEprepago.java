@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.clavedinamica;
+package co.com.bancolombia.certificacion.app.runners.eprepago;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,18 +14,15 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature"},
+        features = {"src/test/resources/features/eprepago/consultar_movimientos_eprepago.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class EliminarClaveDinamicaRunner {
-
-    private EliminarClaveDinamicaRunner() {
-        throw new IllegalStateException(CLASE_RUNNER);
-    }
+public class ConsultarMovimientosEprepago {
+    public ConsultarMovimientosEprepago(){throw new IllegalStateException(CLASE_RUNNER);}
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/eliminar_clave_dinamica.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/eprepago/consultar_movimientos_eprepago.feature");
     }
 }
