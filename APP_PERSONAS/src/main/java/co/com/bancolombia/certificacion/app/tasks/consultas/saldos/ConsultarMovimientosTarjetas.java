@@ -22,16 +22,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class ConsultarMovimientosTarjetas implements Task {
     private String tipoCuenta;
     private String numeroCuenta;
+    private String opcionCategoria;
 
-    public ConsultarMovimientosTarjetas(String tipoCuenta, String numeroCuenta) {
+    public ConsultarMovimientosTarjetas(String tipoCuenta, String numeroCuenta, String opcionCategoria) {
         this.tipoCuenta = tipoCuenta;
         this.numeroCuenta = numeroCuenta;
+        this.opcionCategoria = opcionCategoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO.getCategoria()),
+                SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO),
                 WaitUntil.the(BTN_MOVIMIENTO, isVisible()),
                 Click.on(BTN_MOVIMIENTO)
