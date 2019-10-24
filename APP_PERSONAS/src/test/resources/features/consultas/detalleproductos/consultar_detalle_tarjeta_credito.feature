@@ -1,6 +1,6 @@
 #language: es
 
-Característica: Consulta de detalle cuentas deposito ahorro y corriente
+Característica: Consulta de detalle de tarjetas de credito
   Como usuario de Bancolombia
   Quiero consultar el detalle de mis tarjetas de credito
   Para visualizar el detalle de mis tarjetas
