@@ -17,6 +17,6 @@ Característica: Consulta de saldos de e prepago app Bancolombia
     #Y Verifico los resultados en los archivos de iseries
      # | Logcanal-COMFFLGWWW | consultar tarjeta ePrepago-CABFFTARJ_EPREPAGO|
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta     |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Eprepago@1
-   |1   |1006061976   |1   |invictus10   |1234   |4321   |Acierto   |000   |1228   |TRANSACCION EXITOSA   |bolp   |ACTIVO   |MasterCard   |****9344|
+   |1   |1006061976   |1   |invictus10   |1234   |4321   |Acierto   |000   |1228   |TRANSACCION EXITOSA   |bolp   |ACTIVO   |MasterCard   |*9344|

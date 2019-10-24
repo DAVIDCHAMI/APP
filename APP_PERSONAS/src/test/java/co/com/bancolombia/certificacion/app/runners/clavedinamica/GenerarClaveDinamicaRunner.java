@@ -18,9 +18,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class GenerarClaveDinamica {
+public class GenerarClaveDinamicaRunner {
 
-    private GenerarClaveDinamica() {
+    private GenerarClaveDinamicaRunner() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
