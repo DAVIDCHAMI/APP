@@ -13,10 +13,14 @@ public class ConsultarMovimientos {
     }
 
     public static Performable deTarjetasCredito(String tipoCuenta, String numeroCuenta){
-        return instrumented(ConsultarMovimientosTarjetas.class, tipoCuenta, numeroCuenta, TARJETAS_CREDITO.getCategoria());
+        return instrumented(ConsultarMovimientosTarjetasInversiones.class, tipoCuenta, numeroCuenta, TARJETAS_CREDITO.getCategoria());
     }
 
     public static Performable deInversiones(String tipoCuenta, String numeroCuenta){
-        return instrumented(ConsultarMovimientosTarjetas.class, tipoCuenta, numeroCuenta, INVERSIONES.getCategoria());
+        return instrumented(ConsultarMovimientosTarjetasInversiones.class, tipoCuenta, numeroCuenta, INVERSIONES.getCategoria());
+    }
+
+    public static Performable deEprepago(String tipoCuenta, String numeroCuenta){
+        return instrumented(ConsultarMovimientosEprepago.class, tipoCuenta, numeroCuenta);
     }
 }
