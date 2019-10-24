@@ -19,19 +19,21 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloC
 import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.TARJETAS_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ConsultarMovimientosTarjetas implements Task {
+public class ConsultarMovimientosTarjetasInversiones implements Task {
     private String tipoCuenta;
     private String numeroCuenta;
+    private String opcionCategoria;
 
-    public ConsultarMovimientosTarjetas(String tipoCuenta, String numeroCuenta) {
+    public ConsultarMovimientosTarjetasInversiones(String tipoCuenta, String numeroCuenta, String opcionCategoria) {
         this.tipoCuenta = tipoCuenta;
         this.numeroCuenta = numeroCuenta;
+        this.opcionCategoria = opcionCategoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO.getCategoria()),
+                SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO),
                 WaitUntil.the(BTN_MOVIMIENTO, isVisible()),
                 Click.on(BTN_MOVIMIENTO)
