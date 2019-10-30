@@ -6,7 +6,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class ProgramarPagarFacturasLocator {
-    public static final Locator OPT_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../div[2]/div)[1]")
+   public static final Locator OPT_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../div[2]/div)[1]")
             .withIos("xpath$(//XCUIElementTypeOther[./XCUIElementTypeStaticText[contains(@name,'{0}')]]/preceding-sibling::XCUIElementTypeOther[2][./XCUIElementTypeStaticText[contains(@name,'{1}')]]/preceding-sibling::XCUIElementTypeOther[1][./XCUIElementTypeStaticText[contains(@name,'{2}')]]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText)[1]");
     public static final Locator OPT_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Programar']").withIos("xpath$//*[@name='Programar']");
     public static final Locator OPT_MIS_PRODUCTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Mis productos']").withIos("xpath$//XCUIElementTypeStaticText[@name='Mis productos']");
@@ -24,7 +24,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LST_INTENTOS_PAGO_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[1]").withIos("xpath$(//XCUIElementTypeStaticText[@name='{0}'])[1]");
     public static final Locator LST_INTENTOS_PAGO_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[2]").withIos("xpath$(//XCUIElementTypeStaticText[@name='{0}'])[2]");
     public static final Locator CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//input[@id='Checkbox1']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Seleccionar todas las facturas']]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeSwitch");
-    public static final Locator OPT_MODIFICAR_PROGRAMACION_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Modificar programación')]").withIos("xpath$//*[@name='Modificar programación']");
+    public static final Locator OPT_MODIFICAR_PROGRAMACION_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Modificar programación')])[1]").withIos("xpath$//*[@name='Modificar programación']");
     public static final Locator OPT_PAGAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Pagar')]").withIos("xpath$//*[@name='Pagar']");
     public static final Locator OPT_ELIMINAR_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[text()='Eliminar factura'])[1]").withIos("xpath$//*[@name='Eliminar factura']");
     public static final Locator OPT_VER_DETALLE_LOCATOR = locator().withAndroid("xpath$//span[text()='Ver detalle']/..").withIos("xpath$//*[@name='Ver detalle']");
@@ -52,11 +52,11 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LBL_REFERENCIA_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[{0}]/div[1]/span").withIos("xpath$(//XCUIElementTypeStaticText[@name='Valor pagado'])[{0}]/../preceding-sibling::XCUIElementTypeOther[4]/XCUIElementTypeStaticText");
     public static final Locator CHK_RANGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Rango de fechas']/preceding-sibling::button").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Rango de fechas']]/preceding-sibling::XCUIElementTypeButton");
     public static final Locator LBL_VALOR_HISTORICO_PAGO_LOCATOR = locator().withAndroid("xpath$//div[@class='list list-group OSFillParent']/div[1]/div[2]//div[3]/span").withIos("xpath$(//XCUIElementTypeStaticText[@name='Valor pagado'])[{0}]/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
-    public static final Locator OPT_MODIFICAR_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Modificar descripción')])[2]").withIos("xpath$//*[@name='Modificar descripción']");
+    public static final Locator OPT_MODIFICAR_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Modificar descripción')])[1]").withIos("xpath$//*[@name='Modificar descripción']");
     public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Description']").withIos("xpath$//XCUIElementTypeOther/XCUIElementTypeTextField");
-    public static final Locator TXT_FOCO_MODIFICAR_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//*[CONTAINS(text(),'MODIFICAR DESCRIPCIÓN')]").withIos("xpath$//XCUIElementTypeStaticText[@name=MODIFICAR DESCRIPCIÓN']");
-    public static final Locator TXT_MENSAJE_PROGRAMACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//*[text()=‘¡Programación exitosa!’]").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Programación exitosa!’]");
-    public static final Locator TXT_MENSAJE_PAGO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//*[text()=‘¡Pago exitoso!’]").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Pago exitoso!’]");
+    public static final Locator TXT_FOCO_MODIFICAR_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'MODIFICAR DESCRIPCIÓN')]").withIos("xpath$//XCUIElementTypeStaticText[@name=MODIFICAR DESCRIPCIÓN']");
+    public static final Locator TXT_MENSAJE_PROGRAMACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//*[text()='¡Programación exitosa!']").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Programación exitosa!’]");
+    public static final Locator TXT_MENSAJE_PAGO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//*[text()='¡Pago exitoso!']").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Pago exitoso!’]");
     public static final Locator LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../div/span[contains(text(),'{3}')]")
             .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='{0}']]/preceding-sibling::XCUIElementTypeOther[2][./XCUIElementTypeStaticText[@name='{1}']]/preceding-sibling::XCUIElementTypeOther[1][./XCUIElementTypeStaticText[contains(@name,'{2}')]]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeStaticText[contains(@name,'{3}')]");
 

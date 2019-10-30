@@ -57,6 +57,6 @@ Característica: Cargar tarjeta virtual ePrepago
       | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia ver el mensaje de error: cuenta origen sin saldo
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/eprepago/recargar_tarjeta_virtual_eprepago.xlsx@Datos@2
    |2   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |10000   |Ahorros   |406-714530-16|
