@@ -40,7 +40,7 @@ public class ConsultarMovimientosCuentas implements Task {
         actor.attemptsTo(
                 WaitUntil.the(CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)), isVisible())
         );
-        while (Verificar.elementoVisible(actor, CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)))) {
+        while (Verificar.elementoPresente(actor, CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)))) {
             listaMovimiento.add(movimiento().
                     conFecha(LBL_FECHA_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
                     .conDescripcion(LBL_DESCRIPCION_CUENTA_MOVIMIENTO.of(String.valueOf(iterador)).resolveFor(actor).getText())
