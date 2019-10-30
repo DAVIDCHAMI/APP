@@ -7,22 +7,22 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
+
 import java.io.IOException;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/eprepago/inactivacion_eprepago.feature"},
+        features = {"src/test/resources/features/eprepago/consultar_movimientos_eprepago.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
-        snippets = SnippetType.CAMELCASE)
-public class InactivarEprepago {
+        snippets = SnippetType.CAMELCASE
+)
+public class ConsultarMovimientosEprepagoRunner {
+    public ConsultarMovimientosEprepagoRunner(){throw new IllegalStateException(CLASE_RUNNER);}
+
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/eprepago/inactivacion_eprepago.feature");
-    }
-
-    public InactivarEprepago() {
-        throw new IllegalStateException(CLASE_RUNNER);
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/eprepago/consultar_movimientos_eprepago.feature");
     }
 }

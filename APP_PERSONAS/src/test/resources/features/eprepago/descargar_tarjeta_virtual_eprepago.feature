@@ -15,5 +15,5 @@ Característica: Descarga monto tarjeta virtual ePrepago
     Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorDescarga | tipoCuenta | numeroCuenta  |
-    ##@externaldata@./src/test/resources/datadriven/e-prepago/descargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-   |1   |333333304   |1   |autotest25   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |1000   |Ahorros   |406-714500-19|
+    ##@externaldata@./src/test/resources/datadriven/eprepago/descargar_tarjeta_virtual_eprepago.xlsx@Datos@1
+   |1   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |1000   |Ahorros   |406-714530-17|
