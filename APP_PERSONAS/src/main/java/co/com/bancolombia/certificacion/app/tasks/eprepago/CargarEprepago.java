@@ -33,11 +33,11 @@ public class CargarEprepago implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Validar.carga(),
-                RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
+                RealizarScroll.hastaPosicionDeTarget(BTN_RECARGAR_EPREPAGO),
                 Click.on(BTN_RECARGAR_EPREPAGO));
         actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO)).andIfSo(
-                        RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
+                        RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
                         Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                 ));
         actor.attemptsTo(

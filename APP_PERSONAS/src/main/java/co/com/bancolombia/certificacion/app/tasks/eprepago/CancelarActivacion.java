@@ -17,7 +17,7 @@ public class CancelarActivacion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Validar.carga(),
-                RealizarScroll.hastaTargetVisible(BTN_ACTIVAR_EPREPAGO),
+                RealizarScroll.hastaPosicionDeTarget(BTN_ACTIVAR_EPREPAGO),
                 Click.on(BTN_ACTIVAR_EPREPAGO),
                 WaitUntil.the(BTN_CANCELAR_ACCION_EPREPAGO, isEnabled()),
                 Click.on(BTN_CANCELAR_ACCION_EPREPAGO)

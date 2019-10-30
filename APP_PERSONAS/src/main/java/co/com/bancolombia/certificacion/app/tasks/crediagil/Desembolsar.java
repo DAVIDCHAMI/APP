@@ -34,7 +34,7 @@ public class Desembolsar implements Task {
     public <T extends Actor> void performAs(T actor) {
         if (Verificar.elementoVisible(actor, LBL_VERIFICACION.of(CUENTAS))) {
             actor.attemptsTo(
-                    RealizarScroll.hastaTargetVisible(OPT_PRODUCTO_ORIGEN.of(productoDesembolso.getTipo(), productoDesembolso.getNumero())),
+                    RealizarScroll.hastaPosicionDeTarget(OPT_PRODUCTO_ORIGEN.of(productoDesembolso.getTipo(), productoDesembolso.getNumero())),
                     Click.on(OPT_PRODUCTO_ORIGEN.of(productoDesembolso.getTipo(), productoDesembolso.getNumero()))
             );
         }

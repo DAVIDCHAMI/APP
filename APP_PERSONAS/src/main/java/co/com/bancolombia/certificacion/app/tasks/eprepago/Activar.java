@@ -18,7 +18,7 @@ public class Activar implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Validar.carga(),
-                RealizarScroll.hastaTargetVisible(BTN_ACTIVAR_EPREPAGO),
+                RealizarScroll.hastaPosicionDeTarget(BTN_ACTIVAR_EPREPAGO),
                 Click.on(BTN_ACTIVAR_EPREPAGO),
                 WaitUntil.the(BTN_GENERAR_EPREPAGO, isEnabled()),
                 Click.on(BTN_GENERAR_EPREPAGO),
