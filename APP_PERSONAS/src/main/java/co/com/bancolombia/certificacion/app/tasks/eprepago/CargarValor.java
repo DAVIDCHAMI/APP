@@ -29,7 +29,7 @@ public class CargarValor implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                RealizarScroll.hastaTargetVisible(BTN_RECARGAR_EPREPAGO),
+                RealizarScroll.hastaPosicionDeTarget(BTN_RECARGAR_EPREPAGO),
                 Click.on(BTN_RECARGAR_EPREPAGO),
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO))
                         .andIfSo(

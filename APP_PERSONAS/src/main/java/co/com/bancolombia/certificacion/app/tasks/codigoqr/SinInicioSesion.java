@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.codigoqr;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.builders.TransferenciaBuilder;
 import co.com.bancolombia.certificacion.app.models.transaccion.Transferencia;
@@ -28,6 +29,7 @@ public class SinInicioSesion extends GenerarQR {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(5000),
                 WaitUntil.the(IMG_CODIGO_QR_PANTALLA_INICIO, isVisible()),
                 Click.on(IMG_CODIGO_QR_PANTALLA_INICIO),
                 Click.on(IMG_CODIGO_QR_FLOTANTE),

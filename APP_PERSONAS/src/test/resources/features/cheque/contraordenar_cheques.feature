@@ -2,7 +2,6 @@
 
 Característica: Contraordenar cheques como usario Bancolombia
 
-
   Esquema del escenario: Contraordenar cheques
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

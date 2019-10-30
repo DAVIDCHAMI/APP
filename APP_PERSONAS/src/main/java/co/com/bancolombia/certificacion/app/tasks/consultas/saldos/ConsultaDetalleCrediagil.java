@@ -23,7 +23,7 @@ public class ConsultaDetalleCrediagil implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
-                RealizarScroll.hastaTargetVisible(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
+                RealizarScroll.hastaPosicionDeTarget(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
                 Click.on(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
                 Esperar.unTiempo(4000)
         );

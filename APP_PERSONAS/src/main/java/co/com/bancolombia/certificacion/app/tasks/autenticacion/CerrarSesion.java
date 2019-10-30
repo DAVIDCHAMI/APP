@@ -32,12 +32,12 @@ public class CerrarSesion implements Task {
                 Esperar.unTiempo(5000),
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
                 Esperar.unTiempo(5000),
-                Click.on(BTN_CERRAR_SESION),
-                Check.whether(Verificar.elementoVisible(actor, BTN_SI_CERRAR_SESION)).andIfSo(
+                Click.on(BTN_CERRAR_SESION)
+        );
+        actor.attemptsTo(
+Click.on(BTN_SI_CERRAR_SESION),
                         Click.on(BTN_SI_CERRAR_SESION)
-                ).otherwise(
-                        Click.on(BTN_SI_CERRAR_SESION)
-                )
+
         );
     }
 }
