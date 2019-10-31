@@ -4,6 +4,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.MenuCon
 
 public enum TipoTransaccionEnum {
     CONSULTAR_PRODUCTO(MIS_PRODUCTOS, "Consultar mis productos",""),
+    REALIZAR_AVANCE(MIS_PRODUCTOS, "Realizar avances y desembolsos",""),
     TRANSFERIR_DINERO(MIS_PRODUCTOS, "Transferir dinero","Transferir dinero"),
     INSCRIBIR_PRODUCTOS(MIS_PRODUCTOS, "Inscribir productos",""),
     GENERAR_CODIGO_QR(MIS_PRODUCTOS, "Recibir dinero","Generar código QR"),
