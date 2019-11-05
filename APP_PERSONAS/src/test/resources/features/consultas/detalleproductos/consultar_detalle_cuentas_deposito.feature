@@ -14,8 +14,6 @@ Característica: Consulta de detalle cuentas deposito ahorro y corriente
     Y consulto en Cuentas el detalle de mi Cuenta <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi cuenta de ahorro
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-     # | LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductosDepositos.xlsx@Depositos@1

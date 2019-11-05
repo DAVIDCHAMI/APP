@@ -14,8 +14,6 @@ Característica: Consulta de detalle de tarjetas de credito
     Y consulto el detalle de tarjeta de credito <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi tarjeta de credito
     Y cierra sesion en la app
-   # Y Verifico los resultados en los archivos de iseries
-     # | LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta         | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@TarjetasCredito@1

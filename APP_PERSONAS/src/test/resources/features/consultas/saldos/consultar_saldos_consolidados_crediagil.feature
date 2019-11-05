@@ -14,8 +14,6 @@ Característica: Consulta de saldos crediagil app Bancolombia
     Cuando consulto el saldo de mi producto Crediágil
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesion en la app
-#    Y Verifico el resultado de los siguientes archivos de iSeries
-#    | Logcanal- COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |tipoCuenta|numeroCuenta|
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Crediagil@1

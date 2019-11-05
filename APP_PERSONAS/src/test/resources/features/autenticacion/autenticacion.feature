@@ -11,8 +11,6 @@ Característica: Autenticacion app Bancolombia
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser exitosa
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
@@ -26,8 +24,6 @@ Característica: Autenticacion app Bancolombia
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser exitosa
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@4
@@ -39,8 +35,6 @@ Característica: Autenticacion app Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser fallida por clave invalida
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
@@ -52,8 +46,6 @@ Característica: Autenticacion app Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
     Entonces la autenticacion deberia de ser fallida por usuario bloqueado
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@6

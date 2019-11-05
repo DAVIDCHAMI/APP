@@ -15,8 +15,6 @@ Característica: Consulta de saldos de creditos app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-     # | LOGCANAL-COMFFLGWWW | Saldo consolidados Creditos-CXREF_CNAME_LMBAL_SALDO_CREDITOS |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                | numeroCuenta            |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Creditos@1

@@ -13,8 +13,6 @@ Característica: Contraordenar cheques como usario Bancolombia
       | <tipoCuenta> | <numeroCuenta> | <tipoContraordenacion> | <numeroCheque> | <rangoDesde> | <rangoHasta> |
     Entonces El deberia ver contraordenacion de su cheque exitoso
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@1
@@ -31,8 +29,6 @@ Característica: Contraordenar cheques como usario Bancolombia
       | <tipoCuenta> | <numeroCuenta> | <tipoContraordenacion> | <numeroCheque> | <rangoDesde> | <rangoHasta> |
     Entonces El deberia ver contraordenacion de su cheque con rango exitoso
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@2

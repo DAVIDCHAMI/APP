@@ -1,6 +1,6 @@
 #language: es
 
-Característica: Sección de ayuda
+Característica: Seccion de ayuda
 
   @Manual:Passed
   Esquema del escenario: Conoce nuestra app

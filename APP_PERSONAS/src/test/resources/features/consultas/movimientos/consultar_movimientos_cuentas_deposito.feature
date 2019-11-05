@@ -15,8 +15,6 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Y quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver los movimientos asociados a su cuenta
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@1
@@ -30,8 +28,6 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Y quiero revisar mis movimientos de cuenta deposito en la app con tipo de cuenta <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver los movimientos asociados a su cuenta
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@3
@@ -45,8 +41,6 @@ Característica: Consulta de productos Cuentas Deposito de un cliente en app Ban
     Y consulto en CUENTAS los movimientos con tipo <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver el mensaje La cuenta no tiene movimientos
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Depositos@2

@@ -15,8 +15,6 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-     # | Logcanal-COMFFLGWWW | Saldos TDC-PCCFFLOGTF_TDCCONSOLIDADO | Pertenencia TDC-CXREF_CNAME_CONSOLIDADOTDC |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                              | numeroCuenta                        |
          ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1

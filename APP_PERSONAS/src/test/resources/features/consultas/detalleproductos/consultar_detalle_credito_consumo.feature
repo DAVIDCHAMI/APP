@@ -14,8 +14,6 @@ Característica: Consulta de detalle credito de consumo
     Y consulto en Créditos el detalle de mi credito de consumo con <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi credito de consumo
     Y cierra sesion en la app
-    #Y Verifico los resultados en los archivos de iseries
-      #| LOG CANAL-COMFFLGWWW | Saldo Depositos Detalle-SCIFFSALDO_DETALLE |
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@Creditos@1
