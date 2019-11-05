@@ -1,5 +1,4 @@
 #language: es
-
 Característica: Autentificacion en  App
   Como usuario  Bancolombia
   Quiero realizar un avance de tarjeta de credito
@@ -9,9 +8,13 @@ Característica: Autentificacion en  App
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y realizar avace Tarjeta
+    Y selecciona la tarjeta de credito
       | nuemeroTarjeta  | codigoSeguridad |
       | <nuemeroTarjeta> | <codigoSeguridad> |
+    #Cuando se ingresan los datos de complementarios del avance
+    #     # | monto  |
+    #      #| <monto> |
+    #    #Entonces se valida el avance exito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuemeroTarjeta | codigoSeguridad |
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@1
@@ -23,9 +26,13 @@ Característica: Autentificacion en  App
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y realizar avace Tarjeta
+    Y selecciona la tarjeta de credito
       | nuemeroTarjeta  | codigoSeguridad |
       | <nuemeroTarjeta> | <codigoSeguridad> |
+    #Cuando se ingresan los datos de complementarios del avance
+     # | monto  |
+      #| <monto> |
+    #Entonces se valida el avance exito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuemeroTarjeta | codigoSeguridad |
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@2

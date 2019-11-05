@@ -23,6 +23,8 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     private String tipoPago;
     private String valorPago;
     private String moneda;
+    private String numeroTarjeta;
+    private String codigoScurity;
 
     private TarjetaCreditoBuilder() {
         this.tipoCuenta = "";
@@ -41,10 +43,22 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         this.tipoPago = "";
         this.valorPago = "";
         this.moneda = "";
+        this.numeroTarjeta="";
+        this.codigoScurity="";
     }
 
     public static TarjetaCreditoBuilder tarjetaCredito(){
         return new TarjetaCreditoBuilder();
+    }
+
+    public TarjetaCreditoBuilder conDatosDeTarjeta(List<Map<String, String>> datos)
+    {
+        System.out.println("valor"+datos.get(0).get("nuemeroTarjeta"));
+        System.out.println("valor"+datos.get(0).get("codigoSeguridad"));
+        ///
+        this.numeroTarjeta= datos.get(0).get("nuemeroTarjeta");
+        this.codigoScurity= datos.get(0).get("codigoSeguridad");
+        return this;
     }
 
     public TarjetaCreditoBuilder conTipoPago(List<Map<String, String>> datos){
@@ -150,8 +164,14 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return moneda;
     }
 
+    public String getNumeroTarjeta() {return numeroTarjeta;}
+
+    public String getCodigoScurity() {return codigoScurity;}
+
     @Override
     public TarjetaCredito build() {
         return new TarjetaCredito(this);
     }
+
+
 }

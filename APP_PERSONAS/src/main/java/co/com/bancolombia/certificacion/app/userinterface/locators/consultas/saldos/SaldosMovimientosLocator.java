@@ -1,7 +1,6 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
-
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 

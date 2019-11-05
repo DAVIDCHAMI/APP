@@ -25,6 +25,7 @@ public class PagosStepDefinition {
     @Cuando("^quiere pagar la tarjeta de crédito no propia$")
     public void pagoTarjetaCreditoNoPropia(List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
+
                 Pagar.tarjetaCreditoNoPropia(tarjetaCredito().conTarjeta(datos).conTipoPago(datos).conMoneda(datos).conValor(datos), elProducto().conProductoDebitar(datos))
         );
     }
