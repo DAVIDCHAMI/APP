@@ -12,7 +12,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.codigoqr.GenerarCodigoQrPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SIN_VALOR;

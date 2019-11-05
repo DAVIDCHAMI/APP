@@ -5,6 +5,7 @@
    Quiero modificar una factura
    Para tener un control de pagos posteriores
 
+   @RutaCritica
    Esquema del escenario: Modificar facturas inscrita
      Dado que el Actor se autentica en la app
        | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

@@ -5,6 +5,7 @@ Característica: Generar clave dinamica
   Quiero generar mi clave dinamica
   Para poder consultarla para realizar transacciones
 
+  @RutaCritica
   Esquema del escenario: Generación clave dinamica
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

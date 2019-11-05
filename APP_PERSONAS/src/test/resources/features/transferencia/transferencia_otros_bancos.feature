@@ -2,6 +2,7 @@
 
 Característica: Realizar una transferencia a otros bancos
 
+  @RutaCritica
   Esquema del escenario: Transferencia desde una cuenta deposito a inscritas de otros bancos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

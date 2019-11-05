@@ -4,6 +4,7 @@ Característica:Pagar facturas programadas
   Como usuario de Bancolombia
   Quiero pagar mi factura programada
 
+  @RutaCritica
   Esquema del escenario: Pagar facturas programadas con mas facturas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

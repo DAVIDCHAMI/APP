@@ -3,6 +3,7 @@
 Característica: Cargar tarjeta virtual ePrepago
   Yo como usuario de la app Personas Bancolombia quiero cargar mi tarjeta virtual ePrepago para tener saldo
 
+  @RutaCritica
   Esquema del escenario: Carga exitosa a tarjeta virtual ePrepago activa
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

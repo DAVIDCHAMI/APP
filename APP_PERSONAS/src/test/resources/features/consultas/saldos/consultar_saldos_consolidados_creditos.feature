@@ -5,6 +5,7 @@ Característica: Consulta de saldos de creditos app Bancolombia
   Quiero consultar mis creditos
   Para visualizar el saldo de mis creditos
 
+  @RutaCritica
   Esquema del escenario: Consulta de productos credito desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

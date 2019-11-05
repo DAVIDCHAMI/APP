@@ -5,6 +5,7 @@ Característica: Actualizar datos seguridad
   Quiero inscribir mi clave dinamica
   Para poder realizar transacciones
 
+  @RutaCritica
   Esquema del escenario: actualiza datos de seguridad
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

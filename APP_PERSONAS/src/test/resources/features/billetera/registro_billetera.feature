@@ -4,7 +4,8 @@ Característica: Registro en billetera App
   Como usuario de Bancolombia
   Quiero realizar el registro en Billetera
   Para realizar transacciones
-  
+
+  @RutaCritica
   Esquema del escenario: Registro exitoso en billetera App
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

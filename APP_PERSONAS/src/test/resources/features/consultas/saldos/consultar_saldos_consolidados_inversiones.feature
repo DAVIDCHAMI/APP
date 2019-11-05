@@ -5,6 +5,7 @@ Característica: Consulta de saldos de inversiones app Bancolombia
   Quiero consultar mis inversiones
   Para visualizar el saldo de mis inversiones
 
+  @RutaCritica
   Esquema del escenario: Consulta de productos inversiones desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

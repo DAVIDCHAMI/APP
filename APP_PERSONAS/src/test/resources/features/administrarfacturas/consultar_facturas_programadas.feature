@@ -4,6 +4,7 @@ Característica:Consulta facturas programadas
   Como usuario de Bancolombia
   Quiero ver el detalle de mis facturas programadas
 
+  @RutaCritica
   Esquema del escenario: Consulta facturas programadas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

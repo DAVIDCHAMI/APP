@@ -5,7 +5,8 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
   Quiero consultar mis productos
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos de su tarjeta de credito
-  
+
+  @RutaCritica
   Esquema del escenario: Consultar cuenta Corriente con movimientos en la app con tarjetas de credito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

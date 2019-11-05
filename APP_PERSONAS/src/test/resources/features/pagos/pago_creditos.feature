@@ -5,6 +5,7 @@ Característica: Pago de creditos
   Quiero realizar el pago de mis creditos
   Para estar a paz y salvo
 
+  @RutaCritica
   Esquema del escenario: Pago de creditos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

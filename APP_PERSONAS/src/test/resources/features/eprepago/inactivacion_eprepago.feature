@@ -5,6 +5,7 @@ Característica: Inactivacion eprepago en la app OSP Bancolombia
   Quiero inactivar una tarjeta eprepago
   Para realizar compras
 
+  @RutaCritica
   Esquema del escenario: Inactivacion de tarjeta eprepago desde la app de Bancolombia OSP por mis productos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

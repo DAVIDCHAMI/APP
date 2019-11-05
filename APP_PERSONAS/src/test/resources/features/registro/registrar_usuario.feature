@@ -17,6 +17,7 @@ Característica: Registro en la APP personas bancolombia OSP
    ##@externaldata@./src/test/resources/datadriven/registro/RegistroUsuario.xlsx@Datos@1
    |1   |30001024   |1   |30001023   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |userauto50   |jalzate@todo1.net   |CONSULTAR_PRODUCTO|
 
+  @RutaCritica
   Esquema del escenario: Registrar usuario con documento de identidad desde mis Productos
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

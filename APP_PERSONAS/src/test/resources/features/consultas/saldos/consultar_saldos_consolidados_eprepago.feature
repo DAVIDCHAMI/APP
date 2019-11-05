@@ -5,6 +5,7 @@ Característica: Consulta de saldos de e prepago app Bancolombia
   Quiero consultar mi tarjeta e prepago
   Para visualizar el saldo de esta
 
+  @RutaCritica
   Esquema del escenario: Consulta de productos e-Prepago desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

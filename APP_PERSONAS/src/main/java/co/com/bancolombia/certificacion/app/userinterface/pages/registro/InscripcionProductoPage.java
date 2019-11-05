@@ -2,8 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.registro;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.BTN_SIGUIENTE_LOCATOR;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.GeneralLocator.LNK_SIGUIENTE_LOCATOR;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.comunes.GeneralLocator.BTN_SIGUIENTE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionProductoLocator.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;

@@ -5,6 +5,7 @@ Característica: Consulta de detalle cuentas deposito ahorro y corriente
   Quiero consultar el detalle de mis cuentas depositos
   Para visualizar el detalle de mis cuentas
 
+  @RutaCritica
   Esquema del escenario: Consulta de detalle de cuenta deposito
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

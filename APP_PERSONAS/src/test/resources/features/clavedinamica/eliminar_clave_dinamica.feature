@@ -5,6 +5,7 @@ Característica: Eliminar clave dinamica
   Quiero eliminar mi clave dinamica
   Para inscribir otra clave
 
+  @RutaCritica
   Esquema del escenario: Eliminacion clave dinamica exitoso
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

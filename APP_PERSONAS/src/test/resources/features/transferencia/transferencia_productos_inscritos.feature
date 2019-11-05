@@ -2,6 +2,7 @@
 
 Característica: Realizar una transferencia a productos inscritos
 
+  @RutaCritica
   Esquema del escenario: Transferencia a productos inscritos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

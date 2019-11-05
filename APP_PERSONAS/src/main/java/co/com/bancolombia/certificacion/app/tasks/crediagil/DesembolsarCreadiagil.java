@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LBL_VERIFICACION;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LBL_VERIFICACION;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.crediagil.CrediagilPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.OPT_PRODUCTO_ORIGEN;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;

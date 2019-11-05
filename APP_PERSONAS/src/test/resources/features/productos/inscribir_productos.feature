@@ -4,6 +4,7 @@ Característica: Inscripcion de productos en la APP personas bancolombia OSP
   Como usuario de Bancolombia
   Quiero realizar la inscripcion de un producto bancolombia
 
+  @RutaCritica
   Esquema del escenario:  Inscripcion de productos de cuentas Bancolombia
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

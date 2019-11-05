@@ -5,6 +5,7 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
   Quiero consultar mis tarjetas de credito
   Para visualizar el saldo de estas
 
+  @RutaCritica
   Esquema del escenario: Consulta de productos tarjetas de credito desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

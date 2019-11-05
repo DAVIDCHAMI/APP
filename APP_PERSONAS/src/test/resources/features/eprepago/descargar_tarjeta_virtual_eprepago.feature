@@ -3,6 +3,7 @@
 Característica: Descarga monto tarjeta virtual ePrepago
   Yo como usuario de la app Personas Bancolombia quiero descargar mi tarjeta virtual ePrepago para tener mas saldo
 
+  @RutaCritica
   Esquema del escenario: Descarga exitosa tarjeta virtual ePrepago activa
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

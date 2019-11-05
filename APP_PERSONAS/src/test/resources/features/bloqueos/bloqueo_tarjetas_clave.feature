@@ -5,6 +5,7 @@ Característica: Bloqueo de primera clave y tarjetas
   Quiero bloquear mi primera clave y tarjetas
   Por motivos de seguridad
 
+  @RutaCritica
   Esquema del escenario: Bloqueo de clave y tarjetas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

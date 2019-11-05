@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.questions.crediagil;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.crediagil.CrediagilPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoHabilitado;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;

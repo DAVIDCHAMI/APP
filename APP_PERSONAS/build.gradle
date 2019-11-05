@@ -62,14 +62,6 @@ dependencies {
     testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
 }
 
-/*tasks.withType(Test){
-    systemProperty 'properties', System.getProperty('properties')
-    systemProperty 'serenity.outputDirectory', System.getProperty('serenity.outputDirectory')
-    systemProperty 'binResultsDir', System.getProperty('binResultsDir')
-    systemProperties = System.properties
-    maxParallelForks = Runtime.runtime.availableProcessors()
-}*/
-
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
 }

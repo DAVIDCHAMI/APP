@@ -5,6 +5,7 @@ Característica: Consulta de movimientos de E prepago de un cliente en app Banco
   Quiero Ingresar a saldos y movimientos
   Para conocer sus movimientos de mi E prepago
 
+  @RutaCritica
   Esquema del escenario: Consultar Movimientos de una E-prepago
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

@@ -2,6 +2,7 @@
 
 Característica: Contraordenar cheques como usario Bancolombia
 
+  @RutaCritica
   Esquema del escenario: Contraordenar cheques
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -19,6 +20,7 @@ Característica: Contraordenar cheques como usario Bancolombia
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@1
    |1   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Cheque   |65765   |   ||
 
+  @RutaCritica
   Esquema del escenario: Contraordenar cheques con rango
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

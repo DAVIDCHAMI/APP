@@ -6,6 +6,7 @@ Característica: Consulta de productos de inversiones de un cliente en app Banco
   Desde la opción saldos y movimientos
   El deberia de ver los movimientos de sus cuenta de inversion
 
+  @RutaCritica
   Esquema del escenario: Consultar inversiones con movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

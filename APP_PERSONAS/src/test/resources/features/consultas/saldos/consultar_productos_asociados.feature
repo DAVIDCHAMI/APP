@@ -5,6 +5,7 @@ Característica: Consulta de productos asociados a un cliente en app Bancolombia
   Quiero consultar mis productos
   Desde la opción saldos y movimientos
 
+  @RutaCritica
   Esquema del escenario: Consulta de cuentas deposito del usuario
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

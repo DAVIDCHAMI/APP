@@ -5,6 +5,7 @@ Característica: Consulta de detalle de crediagil
   Quiero consultar el detalle de mi crediagil
   Para visualizar el detalle de mi crediagil
 
+  @RutaCritica
   Esquema del escenario: Consulta de detalle de crediagil
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

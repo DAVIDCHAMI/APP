@@ -4,8 +4,7 @@ Característica: Autenticacion app Bancolombia
   Como usuario de Bancolombia
   Quiero ingresar usuario y contrasena
   Para autenticarme en la aplicación
-
-  @Manual:Passed
+  
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
     Dado que el Actor carga los datos para la prueba
       | <ID> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <tipoDocumento> | <numeroDocumento> | <segundaClave> | <primeraPregunta> | <validarClave> |
@@ -19,6 +18,7 @@ Característica: Autenticacion app Bancolombia
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
    |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
 
+  @RutaCritica
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

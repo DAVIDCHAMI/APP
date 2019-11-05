@@ -5,6 +5,7 @@ Característica: Bloqueo de primera clave
   Quiero bloquear mi primera clave
   Por motivos de seguridad
 
+  @RutaCritica
   Esquema del escenario: Bloqueo de clave
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

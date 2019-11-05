@@ -5,6 +5,7 @@ Característica: Consulta de detalle credito de consumo
   Quiero consultar el detalle de mi credito de consumo
   Para visualizar el detalle de mi credito
 
+  @RutaCritica
   Esquema del escenario: Consulta de detalle de credito de consumo
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

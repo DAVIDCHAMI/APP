@@ -4,6 +4,7 @@ Característica:Consulta facturas inscritas
   Como usuario de Bancolombia
   Quiero ver el detalle de mis facturas inscritas
 
+  @RutaCritica
   Esquema del escenario: Consulta facturas inscritas
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

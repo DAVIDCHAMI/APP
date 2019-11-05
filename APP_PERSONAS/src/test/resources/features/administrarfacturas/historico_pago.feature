@@ -5,6 +5,7 @@
    Quiero ver mi historial de pagos
    Para tener un control de pagos posteriores
 
+   @RutaCritica
    Esquema del escenario: ver historico de pagos de todas las facturas
      Dado que el Actor se autentica en la app
        | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

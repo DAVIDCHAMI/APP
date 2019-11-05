@@ -2,6 +2,7 @@
 
 Característica: Pago de tarjetas de credito propias
 
+  @RutaCritica
   Esquema del escenario: Pago de tarjetas de credito propias
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

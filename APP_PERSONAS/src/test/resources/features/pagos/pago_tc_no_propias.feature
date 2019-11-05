@@ -5,15 +5,16 @@ Característica: Pago de tarjetas de credito no propias
   Quiero realizar el pago de una tarjeta de credito no propia
   Para saldar las deudas externas
 
+  @RutaCritica
   Esquema del escenario: Pago de tarjetas de credito no propias
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere PAGAR_TARJETAS_DE_CREDITO_NO_PROPIAS
-    Y quiere pagar la tarjeta de crédito no propia
+    Y quiere pagar la tarjeta de credito no propia
       | numeroTarjeta   | tipoPago   | valorPago   | moneda   | tipoCuenta   | numeroCuenta   |
       | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
-    Entonces deberia de ver el mensaje de confirmación y la información de su pago
+    Entonces deberia de ver el mensaje de confirmacion y la informacion de su pago
     Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | numeroTarjeta   | tipoPago   | valorPago | moneda  | tipoCuenta | numeroCuenta  |
@@ -25,7 +26,7 @@ Característica: Pago de tarjetas de credito no propias
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere PAGAR_TARJETAS_DE_CREDITO_NO_PROPIAS
-    Y quiere pagar la tarjeta de crédito no propia
+    Y quiere pagar la tarjeta de credito no propia
       | numeroTarjeta   | tipoPago   | valorPago   | moneda   | tipoCuenta   | numeroCuenta   |
       | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia ver el mensaje de error: cuenta origen sin saldo

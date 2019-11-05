@@ -5,6 +5,7 @@ Característica: Bloqueo de clave dinamica
   Quiero bloquear mi clave dinamica
   Para no realizar transacciones
 
+  @RutaCritica
   Esquema del escenario: Bloqueo de clave dinamica
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

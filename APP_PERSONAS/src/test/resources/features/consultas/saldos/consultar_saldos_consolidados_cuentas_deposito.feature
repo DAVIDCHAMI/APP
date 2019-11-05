@@ -5,6 +5,7 @@ Característica: Consulta de saldos cuenta depositos app Bancolombia
   Quiero consultar mis cuentas depositos
   Para visualizar el saldo de mis cuentas
 
+  @RutaCritica
   Esquema del escenario: Consulta de productos cuentas deposito desde saldos y movimientos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
