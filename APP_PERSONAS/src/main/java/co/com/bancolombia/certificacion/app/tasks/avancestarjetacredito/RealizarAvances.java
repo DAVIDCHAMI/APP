@@ -43,14 +43,14 @@ public class RealizarAvances implements Task {
             }
             else {
                 actor.attemptsTo(Click.on(BTN_REALIZAR_AVANCES));
-                cantidadTarjetas= LIST_CREDIT_CARDS.resolveAllFor(actor).size();
+                cantidadTarjetas= LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).size();
                 for (int i = 0; i < cantidadTarjetas ; i++)
                 {
-                    if(!"".equals(LIST_CREDIT_CARDS.resolveAllFor(actor).get(i).getText()))
+                    if(!"".equals(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText()))
                     {
-                        if(LIST_CREDIT_CARDS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim()))
+                        if(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim()))
                         {
-                            LIST_CREDIT_CARDS.resolveAllFor(actor).get(i).click();
+                            LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).click();
                             break;
                         }
                     }

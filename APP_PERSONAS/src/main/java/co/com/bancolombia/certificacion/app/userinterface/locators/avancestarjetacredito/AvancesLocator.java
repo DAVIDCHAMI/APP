@@ -11,7 +11,7 @@ public class AvancesLocator {
     public static final Locator LST_CAMPO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_TextVar']").withIos("xpath$f");
     public static final Locator BTN_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='b12-Tab2']").withIos("xpath$f");
     public static final Locator SESSION_AVANCES = locator().withAndroid("xpath$(//span[contains(text(),'Realizar avances')])[2]").withIos("xpath$d");
-    public static final Locator LIST_CARDS = locator().withAndroid("xpath$//div[@id='ListCards']//div").withIos("xpath$d");
+    public static final Locator LISTADO_TARJETAS = locator().withAndroid("xpath$//div[@id='ListCards']//div").withIos("xpath$d");
 
     private AvancesLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }

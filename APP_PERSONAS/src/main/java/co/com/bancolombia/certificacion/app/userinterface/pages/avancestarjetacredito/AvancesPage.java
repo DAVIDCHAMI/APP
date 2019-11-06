@@ -13,7 +13,7 @@ public class AvancesPage
     public static final Target LST_CONTENEDOR_TARJETAS = Target.the("Boton de continuar billatera").located(theElementBy(LST_TARJETAS_CREDITO_LOCATOR));
     public static final Target TXT_CODIGO_SEGURIDAD = Target.the("CAMPO CODIGO").located(theElementBy(LST_CAMPO_CLAVE_LOCATOR));
     public static final Target BTN_REALIZAR_AVANCES = Target.the("session para avances").located(theElementBy(SESSION_AVANCES));
-    public static final Target LIST_CREDIT_CARDS = Target.the("session para avances").located(theElementBy(LIST_CARDS));
+    public static final Target LISTADO_TARJETAS_CREDITO = Target.the("session para avances").located(theElementBy(LISTADO_TARJETAS));
 
     private AvancesPage(){throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);}
 }
