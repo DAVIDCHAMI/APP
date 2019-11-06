@@ -5,7 +5,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.administradores.Ad
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaCreditoEnNumero;
 
 public class TarjetaCredito extends Producto {
-
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
     private String fechaLimitePago;
@@ -21,7 +20,7 @@ public class TarjetaCredito extends Producto {
     private String valorPago;
     private String moneda;
     private String numeroTarjeta;
-    private String codeSecurity;
+    private String codigoSeguridad;
 
     public TarjetaCredito(TarjetaCreditoBuilder builder) {
         super(builder.getNumeroCuenta(), builder.getTipoCuenta());
@@ -40,7 +39,7 @@ public class TarjetaCredito extends Producto {
         this.valorPago = builder.getValorPago();
         this.moneda = builder.getMoneda();
         this.numeroTarjeta = builder.getNumeroTarjeta();
-        this.codeSecurity = builder.getCodigoScurity();
+        this.codigoSeguridad = builder.getCodigoSeguridad();
     }
     public TarjetaCredito(){}
 
@@ -162,5 +161,5 @@ public class TarjetaCredito extends Producto {
 
     public String getNumeroTarjeta() {return numeroTarjeta;}
 
-    public String getCodeSecurity() {return codeSecurity;}
+    public String getCodigoSeguridad() {return codigoSeguridad;}
 }

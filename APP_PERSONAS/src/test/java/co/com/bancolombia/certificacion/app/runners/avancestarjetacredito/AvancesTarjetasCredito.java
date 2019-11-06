@@ -16,9 +16,9 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class FlujoAvancesDesembolsosRunner
+public class AvancesTarjetasCredito
 {
-    private FlujoAvancesDesembolsosRunner() {throw new IllegalStateException(CLASE_RUNNER);}
+    private AvancesTarjetasCredito() {throw new IllegalStateException(CLASE_RUNNER);}
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
