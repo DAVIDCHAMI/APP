@@ -34,5 +34,5 @@ public class RealizarAvance implements Task {
             actor.attemptsTo(Enter.theValue(ingresarDatos.getCodeSecurity()).into(SECURITY_CODE));
             actor.attemptsTo(Click.on(BUTTON_SIGUEINTE));
     }
-    public static Performable realizar_avances(TarjetaCreditoBuilder datos) {return instrumented(RealizarAvance.class, datos.build());}
+    public static Performable realizar_avances(TarjetaCreditoBuilder datosExcel) {return instrumented(RealizarAvance.class, datosExcel.build());}
 }

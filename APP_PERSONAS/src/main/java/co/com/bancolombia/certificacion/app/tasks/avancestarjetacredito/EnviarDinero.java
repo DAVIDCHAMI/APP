@@ -7,14 +7,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EnviarDinero implements Task {
-    public static List<String> data = new ArrayList<>();
     public  EnviarDinero(TarjetaCredito dtos){this.ingresarDatos =dtos;}
     private TarjetaCredito ingresarDatos;
 
@@ -43,8 +40,8 @@ public class EnviarDinero implements Task {
                 Click.on(BUTTON_SIGUEINTE)
         );
     }
-    public static EnviarDinero medianteOpcionEnviarDinero(TarjetaCreditoBuilder datoss)
+    public static EnviarDinero SeleccionaProductoOrigen(TarjetaCreditoBuilder datosExcel)
     {
-        return instrumented(EnviarDinero.class,datoss.build());
+        return instrumented(EnviarDinero.class,datosExcel.build());
     }
 }
