@@ -16,4 +16,4 @@ Característica:Consulta facturas programadas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcion|
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ConsultarFacturas.xlsx@Datos@2
-   |2   |22493944   |1   |recaudosnatik66   |1234   |4321   |Alterno   |607   |0369   |NO ERROR   |bolp   |ACTIVO   |Programadas|
+      |2|22493944|1|recaudosnatik66|1234|4321|Alterno|607|0369|NO ERROR|bolp|ACTIVO|Programadas|

@@ -17,4 +17,4 @@ Característica: Descarga monto tarjeta virtual ePrepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorDescarga | tipoCuenta | numeroCuenta  |
     ##@externaldata@./src/test/resources/datadriven/eprepago/descargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-   |1   |93221453   |1   |autotest28   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |1000   |Ahorros   |406-714530-17|
+      |1|93221453|1|autotest28|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|1000|Ahorros|406-714530-17|

@@ -13,7 +13,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Visitanos
@@ -25,7 +25,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Chatea con nosotros
@@ -37,7 +37,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Llamanos
@@ -49,7 +49,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Te llamamos
@@ -61,7 +61,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Tips de seguridad
@@ -73,7 +73,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Actualidad economica
@@ -85,7 +85,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Defensor financiero del consumidor
@@ -97,7 +97,7 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
 
   @Manual:Passed
   Esquema del escenario: Informacion de interes
@@ -109,4 +109,4 @@ Característica: Seccion de ayuda
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-   |1   |43024987   |1   |automata87   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |CONSULTAR_PRODUCTO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|

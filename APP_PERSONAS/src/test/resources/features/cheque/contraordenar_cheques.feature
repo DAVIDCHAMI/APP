@@ -16,7 +16,7 @@ Característica: Contraordenar cheques como usario Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@1
-   |1   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Cheque   |65765   |   ||
+      |1|664775789|Cédula de ciudadanía|usercheques01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|Corriente|406-157890-08|Cheque|65805|||
 
   @RutaCritica
   Esquema del escenario: Contraordenar cheques con rango
@@ -32,4 +32,4 @@ Característica: Contraordenar cheques como usario Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | tipoContraordenacion | numeroCheque | rangoDesde | rangoHasta |
    ##@externaldata@./src/test/resources/datadriven/cheque/contraordenarcheque.xlsx@Datos@2
-   |2   |664775789   |Cédula de ciudadanía   |usercheques01   |1234   |4321   |Alterno   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Corriente   |406-157890-08   |Rango de cheques    |   |65762   |65763|
+      |2|664775789|Cédula de ciudadanía|usercheques01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|Corriente|406-157890-08|Rango de cheques ||65806|65807|
