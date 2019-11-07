@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.productos.Crediagil;
-import co.com.bancolombia.certificacion.app.utilidades.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
 
 public class CrediagilBuilder implements Builder<Crediagil> {
     private String tipoProducto;

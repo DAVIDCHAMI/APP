@@ -2,6 +2,7 @@
 
 Característica: Desembolso de crediagil
 
+  @RutaCritica
   Esquema del escenario: Desembolso de crediagil
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SeleccionarOpcion implements Task {

@@ -6,7 +6,7 @@ import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LBL_VERIFICACION;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LBL_VERIFICACION;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.PAGO_EXITOSO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;

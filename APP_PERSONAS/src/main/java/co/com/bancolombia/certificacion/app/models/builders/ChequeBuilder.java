@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.cheque.Cheque;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
-import co.com.bancolombia.certificacion.app.utilidades.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
 
 import java.util.List;
 import java.util.Map;

@@ -5,7 +5,7 @@ Característica: Inscribir clave dinamica
   Quiero inscribir mi clave dinamica
   Para poder realizar transacciones
 
-  @Manual:Passed
+  @RutaCritica
   Esquema del escenario: Inscripcion clave dinamica exitoso
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -19,4 +19,4 @@ Característica: Inscribir clave dinamica
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo         | tipoCorreo | numeroCelular |
    ##@externaldata@./src/test/resources/datadriven/clavedinamica/InscribirClaveDinamica.xlsx@Datos@1
-   |1   |87576483       |1   |autotest13   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Autotesttrece   |jrua@todo1.net   |Laboral   |3145678956|
+      |1|333333302|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|testtreinta|jfernandez@todo1.net|Laboral|3145678956|

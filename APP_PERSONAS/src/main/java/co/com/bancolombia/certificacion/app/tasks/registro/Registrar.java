@@ -8,9 +8,9 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_CANCELAR_TRANSACCION;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_SI_CANCELAR_REGISTRO;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.MenuPage.OPT_MENU_PRINCIPAL;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_CANCELAR_TRANSACCION;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_SI_CANCELAR_REGISTRO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.MenuPage.OPT_MENU_PRINCIPAL;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.RegistroPage.LBL_INICIA_REGISTRO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.MenuConstantes.INICIO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DATOS_TRANSACCION;

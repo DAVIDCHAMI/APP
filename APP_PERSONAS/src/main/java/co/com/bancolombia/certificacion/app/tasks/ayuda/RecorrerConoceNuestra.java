@@ -4,8 +4,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_COMENZAR;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_COMENZAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.NUMERO_PANTALLAS_ONBOARDING;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
