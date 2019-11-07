@@ -3,7 +3,7 @@
 Característica: Consulta de productos Tarjeta de credito de un cliente en app Bancolombia
   Como usuario de Bancolombia
   Quiero consultar mis productos
-  Desde la opción saldos y movimientos
+  Desde la opcion saldos y movimientos
   El deberia de ver los movimientos de su tarjeta de credito
 
   @RutaCritica
