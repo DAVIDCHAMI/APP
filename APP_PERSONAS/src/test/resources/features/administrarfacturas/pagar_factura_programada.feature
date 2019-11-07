@@ -28,7 +28,6 @@ Característica:Pagar facturas programadas
       | empresaServicio   | fechaFactura   | valorFactura   | referencia   | fechaVencimiento   | valorFacturaReferenciaPagar   | numeroCuenta   | tipoCuenta   |
       | <empresaServicio> | <fechaFactura> | <valorFactura> | <referencia> | <fechaVencimiento> | <valorFacturaReferenciaPagar> | <numeroCuenta> | <tipoCuenta> |
     Entonces deberia ver el pago de su factura programada
-
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura        | empresaServicio | fechaFactura  | numeroCuenta  | tipoCuenta | fechaVencimiento | referencia | valorFacturaReferenciaPagar | opcion    |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/PagarFacturaProgramada.xlsx@Datos@1
