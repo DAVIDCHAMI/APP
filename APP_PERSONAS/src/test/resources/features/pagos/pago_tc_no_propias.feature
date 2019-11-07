@@ -15,7 +15,6 @@ Característica: Pago de tarjetas de credito no propias
       | numeroTarjeta   | tipoPago   | valorPago   | moneda   | tipoCuenta   | numeroCuenta   |
       | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia de ver el mensaje de confirmacion y la informacion de su pago
-    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | numeroTarjeta   | tipoPago   | valorPago | moneda  | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoNoPropia.xlsx@Datos@2
@@ -30,7 +29,6 @@ Característica: Pago de tarjetas de credito no propias
       | numeroTarjeta   | tipoPago   | valorPago   | moneda   | tipoCuenta   | numeroCuenta   |
       | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia ver el mensaje de error: cuenta origen sin saldo
-    Y cierra sesion en la app
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | numeroTarjeta    | tipoPago             | valorPago | moneda | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoNoPropia.xlsx@Datos@5

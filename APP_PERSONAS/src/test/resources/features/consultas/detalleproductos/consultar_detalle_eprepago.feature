@@ -13,8 +13,7 @@ Característica: Consulta de detalle de E-prepago
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Cuando consulto en e-Prepago el detalle de mi tarjeta <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi tarjeta eprepago
-    Y cierra sesion en la app
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@Eprepago@1
-      |1|1037655531|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|
+      | 1  | 1037655531      | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | MasterCard | *9344        |
