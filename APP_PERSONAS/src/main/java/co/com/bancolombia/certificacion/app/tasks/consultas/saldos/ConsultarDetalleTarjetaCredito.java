@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
@@ -32,8 +31,7 @@ public class ConsultarDetalleTarjetaCredito implements Task {
                 SeleccionarCategoria.deSaldosMovimientos(TARJETAS_CREDITO.getCategoria()),
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_TARJETA_CREDITO),
                 WaitUntil.the(BTN_DETALLE_PRODUCTO, isVisible()),
-                Click.on(BTN_DETALLE_PRODUCTO),
-                Esperar.unTiempo(2000));
+                Click.on(BTN_DETALLE_PRODUCTO));
         actor.remember(MODELO_DETALLE_PRODUCTO, elProducto()
                 .conNumero(numeroCuenta)
                 .conTipoCuenta(tipoCuenta)
