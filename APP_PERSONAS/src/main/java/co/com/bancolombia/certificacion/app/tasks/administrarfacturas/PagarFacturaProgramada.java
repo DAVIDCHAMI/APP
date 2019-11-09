@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
@@ -52,13 +51,11 @@ public class PagarFacturaProgramada implements Task {
                         factura.getProducto().getNumero())
                 ),
                 Validar.carga(),
-                Esperar.unTiempo(3000),
                 Check.whether(opcion.contains(SELECCIONAR_TODAS)).andIfSo(
                         RealizarScroll.hastaPosicionDeTarget(CHK_SELECCIONAR_TODAS_FACTURAS),
                         Click.on(CHK_SELECCIONAR_TODAS_FACTURAS)
                 ).otherwise(
                         Validar.carga(),
-                        Esperar.unTiempo(3000),
                         RealizarScroll.hastaPosicionDeTarget(CHk_SELECCIONAR_FACTURA.of(
                                 factura.getValorFacturaReferenciaPago(),
                                 factura.getFechaVencimiento(),

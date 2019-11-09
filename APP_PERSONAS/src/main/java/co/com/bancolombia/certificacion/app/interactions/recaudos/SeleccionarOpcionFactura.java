@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.interactions.recaudos;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
@@ -38,7 +37,6 @@ public class SeleccionarOpcionFactura implements Interaction {
                         factura.getEmpresaServicio())
                 ));
         actor.attemptsTo(
-
                 Click.on(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),

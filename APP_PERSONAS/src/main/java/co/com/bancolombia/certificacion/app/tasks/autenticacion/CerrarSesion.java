@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -28,9 +27,7 @@ public class CerrarSesion implements Task {
                 ).otherwise(
                         Check.whether(!elementoVisible(actor, OPT_MENU_PRINCIPAL.of(PERFIL))).andIfSo
                                 (Click.on(LNK_CERRAR))),
-                Esperar.unTiempo(5000),
                 Click.on(OPT_MENU_PRINCIPAL.of(PERFIL)),
-                Esperar.unTiempo(5000),
                 Click.on(BTN_CERRAR_SESION)
         );
         actor.attemptsTo(

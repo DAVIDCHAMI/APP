@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.CancelarActivacion;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+
 import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTransaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,6 +18,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 
 public class ConDatosTransaccion implements Task {
     private static final Logger LOGGER = LogManager.getLogger(ConfiguracionTransaccion.class);
+
     private ConfiguracionTransaccion usuario;
 
     public ConDatosTransaccion(ConfiguracionTransaccion usuario) {
@@ -28,7 +29,6 @@ public class ConDatosTransaccion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
         actor.attemptsTo(
-                Esperar.unTiempo(3000),
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),

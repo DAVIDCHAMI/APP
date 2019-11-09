@@ -18,7 +18,7 @@ Característica: Generacion de codigo QR sin valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 0           | 369               | NO ERROR          | bolp            | ACTIVO       | sinValor            | Ahorros    | 406-733020-16 |       | qr automatizado |
+      |1|333333302|1|autotest30|1234|4321|Acierto|0|369|NO ERROR|bolp|ACTIVO|sinValor|Ahorros|406-733020-16||qr automatizado|
 
   Esquema del escenario: Generacion de codigo QR sin inicio de sesion sin valor
     Dado que el Actor carga los datos para la prueba
@@ -31,4 +31,4 @@ Característica: Generacion de codigo QR sin valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@4
-      | 4  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 0           | 369               | NO ERROR          | bolp            | ACTIVO       | sinValor            | Ahorros    | 406-733020-16 |       | qr automatizado |
+      |4|333333302|1|autotest30|1234|4321|Acierto|0|369|NO ERROR|bolp|ACTIVO|sinValor|Ahorros|406-733020-16||qr automatizado|
