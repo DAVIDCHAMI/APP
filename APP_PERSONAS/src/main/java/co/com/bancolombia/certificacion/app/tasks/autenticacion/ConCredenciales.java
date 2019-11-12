@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.CancelarActivacion;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
@@ -30,7 +31,8 @@ public class ConCredenciales implements Task {
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getClave()),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
+                Click.on(BTN_CONTINUAR),
+                CancelarActivacion.deHuella()
         );
     }
 }
