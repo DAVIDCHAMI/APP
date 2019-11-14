@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.avancestarjetacredito;
+package co.com.bancolombia.certificacion.app.runners.rutacritica.avancestarjetacredito;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -7,13 +7,16 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
+
 import java.io.IOException;
+
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/avancestarjetacredito/realizar_avances_y_desembolsos.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
+        tags="@RutaCritica",
         snippets = SnippetType.CAMELCASE
 )
 public class AvancesTarjetasCredito
