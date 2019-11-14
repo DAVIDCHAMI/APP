@@ -59,7 +59,8 @@ public class RealizarAvances implements Task {
         actor.attemptsTo(
                 Scroll.to(TXT_CODIGO_SEGURIDAD),
                 Enter.theValue(tarjetaCredito.getCodigoSeguridad()).into(TXT_CODIGO_SEGURIDAD),
-                Click.on(BTN_SIGUIENTE)
+                Click.on(BTN_SIGUIENTE), Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
+                Click.on(BOTON_SIGUIENTE_AVANCE)
         );
     }
     public static RealizarAvances deTarjetasCredito(TarjetaCreditoBuilder datosExcel, String tipoAvance){

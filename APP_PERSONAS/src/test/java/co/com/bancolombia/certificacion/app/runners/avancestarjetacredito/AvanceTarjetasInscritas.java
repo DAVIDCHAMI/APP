@@ -8,20 +8,21 @@ import cucumber.api.SnippetType;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
 import java.io.IOException;
+
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/avancestarjetacredito/realizar_avances_y_desembolsos.feature"},
+        features = {"src/test/resources/features/avancestarjetacredito/avances_enviar_dinero_cuentas_inscritas.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class AvancesTarjetasCredito
+public class AvanceTarjetasInscritas
 {
-    private AvancesTarjetasCredito() {throw new IllegalStateException(CLASE_RUNNER); }
+    private AvanceTarjetasInscritas() {throw new IllegalStateException(CLASE_RUNNER);}
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/avancestarjetacredito/realizar_avances_y_desembolsos.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/avancestarjetacredito/avances_enviar_dinero_cuentas_inscritas.feature");
     }
 }
