@@ -4,8 +4,8 @@ import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeIngresoElVal
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoRecargaEprepagoException;
 import co.com.bancolombia.certificacion.app.questions.eprepago.RecargaTarjetaEprepago;
 import co.com.bancolombia.certificacion.app.questions.eprepago.ValorRecarga;
-import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago;
-import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarValor;
+import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago.CargarEprepago;
+import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago.CargarValor;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -31,6 +31,13 @@ public class RecargarTarjetaVirtualEprepagoStepDefinition {
     public void cargarTarjetaVirtualEPrepagoSobreElValorMaximo(String valorRecarga, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
                 CargarValor.sobreElValorMaximoCon(elProducto().conProductoDebitar(datos), valorRecarga)
+        );
+    }
+
+    @Cuando("^realiza la carga sobre el valor minimo por valor de (.*)$")
+    public void cargarTarjetaVirtualEPrepagoSobreElValorMinimo(String valorRecarga, List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(
+                CargarValor.SobreElValorMinimoCon(elProducto().conProductoDebitar(datos), valorRecarga)
         );
     }
 

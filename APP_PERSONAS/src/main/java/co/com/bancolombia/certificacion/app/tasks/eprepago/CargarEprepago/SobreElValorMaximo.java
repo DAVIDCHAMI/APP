@@ -1,7 +1,8 @@
-package co.com.bancolombia.certificacion.app.tasks.eprepago;
+package co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
-import co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
@@ -14,14 +15,17 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_PRODUCTO_ORIGEN;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.RecargarTarjetaVirtualEprepagoPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.RecargarTarjetaVirtualEprepagoPage.FOCO_E_PREPAGO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.RECARGAR_EPREPAGO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class CargarValor implements Task {
+public class SobreElValorMaximo implements Task {
+
     private Producto producto;
     private String valorRecarga;
 
-    public CargarValor(Producto producto, String valorRecarga){
+    public SobreElValorMaximo(Producto producto, String valorRecarga) {
         this.producto = producto;
         this.valorRecarga = valorRecarga;
     }
@@ -34,16 +38,19 @@ public class CargarValor implements Task {
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO))
                         .andIfSo(
                                 RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
+                                Esperar.unTiempo(5000),
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                        ),
+                        )
+        );
+        actor.attemptsTo(
                 Enter.theValue(valorRecarga).into(TXT_VALOR_RECARGA_EPREPAGO),
                 Click.on(FOCO_E_PREPAGO),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
-                Click.on(LNK_SIGUIENTE)
+                Click.on(LNK_SIGUIENTE),
+                Click.on(LNK_RECARGAR_EPREPAGO),
+                Validar.carga()
         );
-    }
-
-    public static CargarValor sobreElValorMaximoCon(ProductoBuilder producto, String valorRecarga){
-        return instrumented(CargarValor.class, producto.build(), valorRecarga);
+        actor.remember(MODELO_PRODUCTO, producto);
+        actor.remember(RECARGAR_EPREPAGO, valorRecarga);
     }
 }

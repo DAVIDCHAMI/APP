@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/eprepago/recargar_tarjeta_virtual_eprepago.feature"},
+        tags = {"@recargaconcuentaenceros"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
