@@ -18,8 +18,8 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class DetalleEprepago {
-    private DetalleEprepago() {
+public class DetalleEprepagoCorreo {
+    private DetalleEprepagoCorreo() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 

@@ -12,15 +12,22 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class SeleccionarApp implements Interaction {
+    private String nombreApp;
+    private String xpathApp = "//android.widget.TextView[contains(@text,'REEMPLAZAR')]";
 
-    public static Performable desdeRecientes(){
-        return instrumented(SeleccionarApp.class);
+    public SeleccionarApp(String nombreApp){
+        this.nombreApp = nombreApp;
+    }
+
+    public static Performable desdeRecientes(String nombreApp){
+        return instrumented(SeleccionarApp.class, nombreApp);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        xpathApp = xpathApp.replace("REEMPLAZAR", nombreApp);
         AndroidDriver driver = getProxiedDriver();
         driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));
-        driver.findElement(By.xpath("//android.widget.TextView[contains(@text,'Personas')]")).click();
+        driver.findElement(By.xpath(xpathApp)).click();
     }
 }

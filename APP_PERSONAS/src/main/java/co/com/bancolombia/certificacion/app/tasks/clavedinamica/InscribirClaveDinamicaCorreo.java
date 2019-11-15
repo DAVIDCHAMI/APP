@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.tasks.clavedinamica;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.*;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
+import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -11,9 +12,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CLAVE_DINAMICA_DESDE_CORREO;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class InscribirClaveDinamicaCorreo implements Task {
     private Usuario usuario;
@@ -24,33 +24,26 @@ public class InscribirClaveDinamicaCorreo implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String claveDinamica;
         actor.attemptsTo(
+                WaitUntil.the(BTN_INSCRIBIR_CLAVE, isEnabled()),
                 Click.on(BTN_INSCRIBIR_CLAVE),
                 Saltar.onBoarding(),
                 Click.on(BTN_CONFIRMAR),
-                WaitUntil.the(LBL_CONFIRMACION_ENVIO_CORREO, isVisible())
+                WaitUntil.the(LBL_CONFIRMACION_ENVIO_CORREO, isVisible()),
+                ObtenerClaveDinamica.desdeCorreo()
         );
+        claveDinamica = actor.recall(CLAVE_DINAMICA_DESDE_CORREO);
         actor.attemptsTo(
-                AbrirAplicacion.deCorreoElectronico(),
-                LeerClaveDinamica.desdeCorreo(),
-                SeleccionarApp.desdeRecientes()
-        );
-        String claveDinamicaCorreo = actor.recall(CLAVE_DINAMICA_DESDE_CORREO);
-        actor.attemptsTo(
-                Enter.theValue(claveDinamicaCorreo).into(TXT_CODIGO_SEGURIDAD),
-                Click.on(BTN_ENVIAR)
-        );
-        actor.attemptsTo(
+                Escribir.enCampoTexto(claveDinamica),
+                Click.on(BTN_ENVIAR),
                 Enter.theValue(usuario.getNombrePersonalizado()).into(TXT_NOMBRE_PERSONALIZADO),
                 Click.on(TXT_FOCO_NOMBRE_PERSONALIZADO),
                 Click.on(LNK_SIGUIENTE),
                 Click.on(LNK_SIGUIENTE),
-                WaitUntil.the(CHK_FOCO_ACEPTO, isPresent()),
-                Click.on(CHK_FOCO_ACEPTO),
-                Click.on(LNK_SIGUIENTE)
+                WaitUntil.the(CHK_ACEPTO_TERMINOS, isEnabled()),
+                Click.on(CHK_ACEPTO_TERMINOS),
+                Click.on(BTN_INSCRIBIR_CLAVE)
         );
-        actor.remember(NOMBRE_PERSONALIZADO_CLAVE_DINAMICA, usuario.getNombrePersonalizado());
-        actor.remember(CORREO_CLAVE_DINAMICA, usuario.getCorreo());
-        actor.remember(TIPO_CORREO_CLAVE_DINAMICA, usuario.getTipoCorreo());
     }
 }

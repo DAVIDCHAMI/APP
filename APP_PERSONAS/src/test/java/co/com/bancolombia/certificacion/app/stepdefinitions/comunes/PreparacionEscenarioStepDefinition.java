@@ -33,7 +33,7 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Before("@ClaveDinamica")
-    public void registrarClaveDinamicaCorreo(){
+    public void registrarClaveDinamicaCorreo() {
         theActorCalled("Juan").attemptsTo(
 
         );
@@ -55,12 +55,12 @@ public class PreparacionEscenarioStepDefinition {
                         .deTransaccion(datos)
                 ),
                 SeleccionarOpcion.delMenu("GESTIONAR_CLAVE_DINAMICA"),
-                GestionarClaveDinamica.conDatosInscripcionCorreo(usuario()
+                GestionarClaveDinamica.conDatosInscripcionDesdeCorreo(usuario()
                         .conNombrePersonalizado(datos)
                         .conCorreo(datos)
                         .conTipoCorreo(datos)
-                        .conNumeroCelular(datos).
-                                conSegundaClave(datos))
+                        .conNumeroCelular(datos)
+                        .conSegundaClave(datos))
         );
     }
 

@@ -7,13 +7,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Verificar {
-
     private static final Logger LOGGER = LogManager.getLogger("Verificar");
 
     private Verificar() {
         throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
     }
-
 
     public static boolean elementoHabilitado(Actor actor, Target target) {
         boolean result = false;
@@ -30,7 +28,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isVisible();
         } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
+           LOGGER.error(e.getMessage(), e);
         }
         return result;
     }
@@ -43,6 +41,5 @@ public class Verificar {
             LOGGER.error(e.getMessage(), e);
         }
         return result;
-
     }
 }
