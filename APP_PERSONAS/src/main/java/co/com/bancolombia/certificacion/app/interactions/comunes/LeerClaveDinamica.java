@@ -21,6 +21,7 @@ public class LeerClaveDinamica implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                RecibirCorreo.AlertasNotificacioes(),
                 Click.on(ITEM_CORREO_RECIBIDO),
                 WaitUntil.the(TXT_CUERPO_MENSAJE, isVisible())
         );

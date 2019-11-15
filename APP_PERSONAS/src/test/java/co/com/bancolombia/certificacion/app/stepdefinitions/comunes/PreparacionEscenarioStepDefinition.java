@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
 import co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIseriesFallido;
+import co.com.bancolombia.certificacion.app.interactions.comunes.AbrirAplicacion;
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal.VerificarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
@@ -11,6 +12,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Y;
+import io.appium.java_client.AppiumDriver;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -21,22 +23,17 @@ import static co.com.bancolombia.certificacion.app.exceptions.transversales.Arch
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorDriver.cambiarContextoDriverWeb;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class PreparacionEscenarioStepDefinition {
 
     @Before
     public void configuracionInicial() {
         OnStage.setTheStage(new OnlineCast());
-    }
-
-    @Before("@ClaveDinamica")
-    public void registrarClaveDinamicaCorreo() {
-        theActorCalled("Juan").attemptsTo(
-
-        );
     }
 
     @Dado("^que el (.*) se autentica en la app$")

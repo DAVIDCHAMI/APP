@@ -12,8 +12,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CLAVE_DINAMICA_DESDE_CORREO;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class InscribirClaveDinamicaCorreo implements Task {
     private Usuario usuario;
@@ -40,8 +39,9 @@ public class InscribirClaveDinamicaCorreo implements Task {
                 Enter.theValue(usuario.getNombrePersonalizado()).into(TXT_NOMBRE_PERSONALIZADO),
                 Click.on(TXT_FOCO_NOMBRE_PERSONALIZADO),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(LNK_SIGUIENTE),
-                WaitUntil.the(CHK_ACEPTO_TERMINOS, isEnabled()),
+                WaitUntil.the(BTN_SIGUIENTE, isVisible()),
+                Click.on(BTN_SIGUIENTE),
+                WaitUntil.the(CHK_ACEPTO_TERMINOS, isPresent()),
                 Click.on(CHK_ACEPTO_TERMINOS),
                 Click.on(BTN_INSCRIBIR_CLAVE)
         );

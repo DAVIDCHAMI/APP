@@ -40,6 +40,7 @@ public class GeneralLocator {
     public static final Locator LBL_CONFIRMACION_ENVIO_CORREO_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'El código de seguridad fue enviado.')]").withIos("xpath$q");
     public static final Locator TXT_CODIGO_SEGURIDAD_LOCATOR= locator().withAndroid("xpath$(//div[contains(@id,'Column1')])[1]").withIos("xpath$q");
     public static final Locator BTN_ENVIAR_LOCATOR= locator().withAndroid("id$Button_Send_ValidateSecurityCodeDK").withIos("xpath$q");
+    public static final Locator IMG_CORREO_VACIO_LOCATOR= locator().withAndroid("id$com.google.android.gm:id/empty_icon").withIos("xpath$q");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

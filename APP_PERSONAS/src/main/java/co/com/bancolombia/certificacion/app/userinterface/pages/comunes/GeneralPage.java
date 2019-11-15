@@ -42,6 +42,7 @@ public class GeneralPage {
     public static final Target LBL_CONFIRMACION_ENVIO_CORREO = Target.the("Mensaje Confirmacion envio correo").located(theElementBy(LBL_CONFIRMACION_ENVIO_CORREO_LOCATOR));
     public static final Target TXT_CODIGO_SEGURIDAD = Target.the("Campo código seguridad").located(theElementBy(TXT_CODIGO_SEGURIDAD_LOCATOR));
     public static final Target BTN_ENVIAR = Target.the("Boton Enviar Clave Dinamica").located(theElementBy(BTN_ENVIAR_LOCATOR));
+    public static final Target IMG_CORREO_VACIO = Target.the("Imagen correo vacio").located(theElementBy(IMG_CORREO_VACIO_LOCATOR));
 
     private GeneralPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
