@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.tasks.eprepago;
+package co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago;
 
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
