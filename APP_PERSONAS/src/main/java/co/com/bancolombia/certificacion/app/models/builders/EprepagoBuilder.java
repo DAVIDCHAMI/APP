@@ -2,10 +2,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.productos.Eprepago;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
-import co.com.bancolombia.certificacion.app.utilidades.Builder;
-
-import java.util.List;
-import java.util.Map;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
 
 public class EprepagoBuilder implements Builder<Eprepago> {
     private Saldo saldo = new Saldo();

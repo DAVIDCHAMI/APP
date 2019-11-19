@@ -10,10 +10,6 @@ public class RealizarScroll {
         return instrumented(HastaElTarget.class, elemento);
     }
 
-    public static Performable hastaTargetVisible(Target elemento) {
-        return instrumented(ScrollVisible.class, elemento);
-    }
-
     public static Performable adicional(Target elemento) {
         return instrumented(ScrollAdicional.class, elemento);
     }

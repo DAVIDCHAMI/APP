@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
-import co.com.bancolombia.certificacion.app.utilidades.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
 
 
 public class MovimientoBuilder implements Builder<Movimiento> {

@@ -30,7 +30,7 @@ public class ConsultarProductos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcion.getCategoria()),
-                Check.whether(CUENTAS.equals(opcion.getCategoria())||OPCION_INVERSIONES.equals(opcion.getCategoria()))
+                Check.whether(CUENTAS.equals(opcion.getCategoria()))
                         .andIfSo(
                                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
                         ).otherwise(

@@ -10,10 +10,10 @@ public class ActivacionEprepago implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return Verificar.elementoVisible(actor, LBL_GENERARACION_EXITOSA );
+        return Verificar.elementoVisible(actor, LBL_GENERARACION_EXITOSA);
     }
 
-    public static ActivacionEprepago esExitosa(){
+    public static ActivacionEprepago esExitosa() {
         return new ActivacionEprepago();
     }
 }

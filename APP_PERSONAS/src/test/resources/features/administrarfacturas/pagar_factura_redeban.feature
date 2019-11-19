@@ -4,6 +4,7 @@ Característica:Pagar facturas redeban
   Como usuario de Bancolombia
   Quiero pagar mi factura redeban
 
+  @RutaCritica
   Esquema del escenario: Pagar todas las facturas redeban
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

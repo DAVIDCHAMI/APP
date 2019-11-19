@@ -5,8 +5,8 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_COMENZAR;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SALTAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_COMENZAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SALTAR;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

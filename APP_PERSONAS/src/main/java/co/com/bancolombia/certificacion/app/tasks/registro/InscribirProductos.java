@@ -28,11 +28,13 @@ public class InscribirProductos implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(TXT_NUMERO_PRODUCTO, isVisible()),
+                Enter.theValue(inscripcion.getProducto().getNumero()).into(TXT_NUMERO_PRODUCTO),
                 Click.on(TXT_BANCO),
+                WaitUntil.the(TXT_BUSCAR_NOMBRE_BANCO, isVisible()),
                 Type.theValue(inscripcion.getNombreBanco()).into(TXT_BUSCAR_NOMBRE_BANCO),
                 RealizarScroll.hastaPosicionDeTarget(ITEM_NOMBRE_BANCO),
                 Click.on(ITEM_NOMBRE_BANCO),
-                Enter.theValue(inscripcion.getProducto().getNumero()).into(TXT_NUMERO_PRODUCTO),
+                Click.on(BTN_CERRAR_SELECCION_BANCO),
                 Click.on(FOCO),
                 Click.on(CHK_TIPO_CUENTA.of(inscripcion.getProducto().getTipo())),
                 WaitUntil.the(BTN_SIGUIENTE, isEnabled()),
@@ -41,6 +43,7 @@ public class InscribirProductos implements Task {
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),
                 Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUMENTO),
                 Click.on(FOCO),
+                WaitUntil.the(BTN_SIGUIENTE, isEnabled()),
                 Click.on(BTN_SIGUIENTE),
                 Click.on(BTN_INSCRIBIR),
                 Validar.carga()

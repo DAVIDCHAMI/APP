@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.registro;
 
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -7,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.RegistroPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
@@ -30,7 +31,7 @@ public class Registrarse implements Task {
                 Click.on(LNK_SIGUIENTE),
                 WaitUntil.the(TXT_CORREO, isEnabled()),
                 Type.theValue(correoUser).into(TXT_CORREO));
-        if(LBL_TIPO_CORREO.resolveFor(actor).isVisible()){
+        if(Verificar.elementoVisible(actor, LBL_TIPO_CORREO)){
             actor.attemptsTo(
                     Click.on(LBL_TIPO_CORREO),
                     WaitUntil.the(CHECK_TIPO_CORREO, isEnabled()),

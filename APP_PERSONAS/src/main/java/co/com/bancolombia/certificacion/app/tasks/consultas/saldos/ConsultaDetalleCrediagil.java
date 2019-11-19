@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import net.serenitybdd.screenplay.Actor;
@@ -23,9 +22,8 @@ public class ConsultaDetalleCrediagil implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarCategoria.deSaldosMovimientos(opcionCategoria),
-                RealizarScroll.hastaTargetVisible(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
-                Click.on(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
-                Esperar.unTiempo(4000)
+                RealizarScroll.hastaPosicionDeTarget(LBL_SALDO_CREDIAGIL_MOVIMIENTOS),
+                Click.on(LBL_SALDO_CREDIAGIL_MOVIMIENTOS)
         );
         actor.remember(MODELO_CREDIAGIL, crediagil()
                 .deTipo(opcionCategoria)

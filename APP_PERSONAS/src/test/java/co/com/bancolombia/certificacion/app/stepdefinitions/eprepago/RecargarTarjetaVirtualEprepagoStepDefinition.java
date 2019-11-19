@@ -3,9 +3,10 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.eprepago;
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeIngresoElValorCorrectamenteException;
 import co.com.bancolombia.certificacion.app.exceptions.eprepago.NoSeRealizoRecargaEprepagoException;
 import co.com.bancolombia.certificacion.app.questions.eprepago.RecargaTarjetaEprepago;
+import co.com.bancolombia.certificacion.app.questions.eprepago.SaldoInsuficiente;
 import co.com.bancolombia.certificacion.app.questions.eprepago.ValorRecarga;
-import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago;
-import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarValor;
+import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago.CargarEprepago;
+import co.com.bancolombia.certificacion.app.tasks.eprepago.CargarEprepago.CargarValor;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -34,6 +35,13 @@ public class RecargarTarjetaVirtualEprepagoStepDefinition {
         );
     }
 
+    @Cuando("^realiza la carga sobre el valor minimo por valor de (.*)$")
+    public void cargarTarjetaVirtualEPrepagoSobreElValorMinimo(String valorRecarga, List<Map<String, String>> datos) {
+        theActorInTheSpotlight().attemptsTo(
+                CargarValor.SobreElValorMinimoCon(elProducto().conProductoDebitar(datos), valorRecarga)
+        );
+    }
+
     @Entonces("^el deberia de ver un mensaje de carga de tarjeta virtual ePrepago exitosa$")
     public void deberiaVerMensajeCargaTarjetaVirtualEprepagoExitosa() {
         theActorInTheSpotlight().should(seeThat(RecargaTarjetaEprepago.exitosa())
@@ -44,5 +52,11 @@ public class RecargarTarjetaVirtualEprepagoStepDefinition {
     public void deberiaVerMensajeMontoParaCargarNoPermitido() {
         theActorInTheSpotlight().should(seeThat(ValorRecarga.noPermitido())
                 .orComplainWith(NoSeIngresoElValorCorrectamenteException.class, MENSAJE_VALOR_DE_RECARGA_NO_INGRESADO));
+    }
+
+    @Entonces("^deberia ver un mensaje de fondos insuficientes$")
+    public void deberiaVerUnMensajeDeFondosInsuficientes() {
+        theActorInTheSpotlight().should(seeThat(SaldoInsuficiente.enProductoADebitar())
+                .orComplainWith(NoSeRealizoRecargaEprepagoException.class, MENSAJE_RECARGA_EPREPAGO_NO_REALIZADA));
     }
 }

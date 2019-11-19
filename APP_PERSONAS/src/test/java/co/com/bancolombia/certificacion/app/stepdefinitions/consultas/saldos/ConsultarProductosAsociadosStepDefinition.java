@@ -38,10 +38,24 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
+    @Cuando("^quiero revisar mis movimientos de inversiones con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void revisarMisMovimientosInversiones(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.deInversiones(tipoCuenta, numeroCuenta)
+        );
+    }
+
     @Cuando("^quiero revisar mis movimientos de tarjeta de credito en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
     public void revisarMisMovimientosTarjetaEnlaApps(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarMovimientos.deTarjetasCredito(tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^quiero revisar mis movimientos de eprepago en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void revisarMisMovimientosEprepago(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.deEprepago(tipoCuenta, numeroCuenta)
         );
     }
 

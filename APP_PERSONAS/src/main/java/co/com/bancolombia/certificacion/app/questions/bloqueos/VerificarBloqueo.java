@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.questions.bloqueos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LBL_BLOQUEO_EXITOSO;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LBL_BLOQUEO_EXITOSO;
 
 public class VerificarBloqueo implements Question<Boolean> {
 

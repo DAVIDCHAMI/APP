@@ -1,7 +1,7 @@
 package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
-import co.com.bancolombia.certificacion.app.utilidades.Builder;
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
 
 import java.util.List;
 import java.util.Map;
@@ -23,6 +23,8 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     private String tipoPago;
     private String valorPago;
     private String moneda;
+    private String numeroTarjeta;
+    private String codigoSeguridad;
 
     private TarjetaCreditoBuilder() {
         this.tipoCuenta = "";
@@ -41,10 +43,18 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         this.tipoPago = "";
         this.valorPago = "";
         this.moneda = "";
+        this.numeroTarjeta="";
+        this.codigoSeguridad ="";
     }
 
     public static TarjetaCreditoBuilder tarjetaCredito(){
         return new TarjetaCreditoBuilder();
+    }
+
+    public TarjetaCreditoBuilder conDatosDeTarjeta(List<Map<String, String>> datos) {
+        this.numeroTarjeta= datos.get(0).get("numeroTarjeta");
+        this.codigoSeguridad = datos.get(0).get("codigoSeguridad");
+        return this;
     }
 
     public TarjetaCreditoBuilder conTipoPago(List<Map<String, String>> datos){
@@ -149,6 +159,10 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     public String getMoneda() {
         return moneda;
     }
+
+    public String getNumeroTarjeta() {return numeroTarjeta;}
+
+    public String getCodigoSeguridad() {return codigoSeguridad;}
 
     @Override
     public TarjetaCredito build() {

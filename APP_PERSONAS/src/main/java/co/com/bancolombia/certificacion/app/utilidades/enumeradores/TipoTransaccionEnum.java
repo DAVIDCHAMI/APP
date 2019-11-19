@@ -4,6 +4,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.MenuCon
 
 public enum TipoTransaccionEnum {
     CONSULTAR_PRODUCTO(MIS_PRODUCTOS, "Consultar mis productos",""),
+    REALIZAR_AVANCE(MIS_PRODUCTOS, "Realizar avances y desembolsos",""),
     TRANSFERIR_DINERO(MIS_PRODUCTOS, "Transferir dinero","Transferir dinero"),
     INSCRIBIR_PRODUCTOS(MIS_PRODUCTOS, "Inscribir productos",""),
     GENERAR_CODIGO_QR(MIS_PRODUCTOS, "Recibir dinero","Generar código QR"),
@@ -22,7 +23,7 @@ public enum TipoTransaccionEnum {
     DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
     OPCION_BILLETERA(BILLETERA, "",""),
-    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    ACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
     GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
     GESTIONAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
@@ -32,8 +33,10 @@ public enum TipoTransaccionEnum {
     BLOQUEAR_CLAVE_DINAMICA(PERFIL, "Bloqueos","Bloquear clave dinámica"),
     CONTRAORDENAR_CHEQUE(PERFIL, "Seguridad","Contraordenar cheques"),
     ACTUALIZAR_DATOS_SEGURIDAD(PERFIL, "Seguridad","Actualizar datos de seguridad"),
+    EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     RECARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
-    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
+    DESCARGAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
+    INACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago","");
 
     private String menu;
     private String subMenu;
