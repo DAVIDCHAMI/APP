@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
@@ -11,7 +10,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PAGAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_PAGAR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.administrarfacturas.ProgramarPagarFacturasPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.SELECCIONAR_TODAS;
 
@@ -36,7 +35,6 @@ public class PagarVariasFacturasInscritas implements Task {
                         )
                 ),
                 Validar.carga(),
-                Esperar.unTiempo(3000),
                 Check.whether(opcion.contains(SELECCIONAR_TODAS)).andIfSo(
                         RealizarScroll.hastaPosicionDeTarget(CHK_SELECCIONAR_TODAS_FACTURAS),
                         Click.on(CHK_SELECCIONAR_TODAS_FACTURAS)

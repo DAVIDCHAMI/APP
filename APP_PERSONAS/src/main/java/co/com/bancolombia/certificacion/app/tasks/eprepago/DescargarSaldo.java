@@ -12,8 +12,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.BTN_PRODUCTO_ORIGEN;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_PRODUCTO_ORIGEN;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.DescargarTarjetaVirtualEprepagoPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.TOTAL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO;
@@ -35,12 +35,14 @@ public class DescargarSaldo implements Task {
         actor.attemptsTo(
                 Validar.carga(),
                 Click.on(BTN_DESCARGAR_EPREPAGO),
-                Validar.carga(),
+                Validar.carga());
+        actor.attemptsTo(
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_DESTINO_EPREPAGO))
-                        .andIfSo(
-                                RealizarScroll.hastaTargetVisible(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
-                                Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
-                        ),
+                .andIfSo(
+                        RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
+                        Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
+                ));
+        actor.attemptsTo(
                 Validar.carga(),
                 Check.whether(TOTAL.equalsIgnoreCase(valorDescarga))
                         .andIfSo(
@@ -50,13 +52,14 @@ public class DescargarSaldo implements Task {
                                 WaitUntil.the(TXT_VALOR_DESCARGA_EPREPAGO, isEnabled()),
                                 Enter.theValue(valorDescarga).into(TXT_VALOR_DESCARGA_EPREPAGO),
                                 Click.on(FOCO)
-                ),
+                        ));
+        actor.attemptsTo(
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE),
                 Validar.carga(),
                 Click.on(LNK_DESCARGAR_EPREPAGO),
-                Validar.carga()
-        );
+                Validar.carga());
+
         actor.remember(MODELO_PRODUCTO, producto);
         actor.remember(DESCARGAR_EPREPAGO, valorDescarga);
     }

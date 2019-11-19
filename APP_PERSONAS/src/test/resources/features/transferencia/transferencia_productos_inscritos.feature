@@ -2,6 +2,7 @@
 
 Característica: Realizar una transferencia a productos inscritos
 
+  @RutaCritica
   Esquema del escenario: Transferencia a productos inscritos
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -28,4 +29,4 @@ Característica: Realizar una transferencia a productos inscritos
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@9
-      | 3  | 1010111         | Cédula de ciudadanía | testing10 | 1234  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 406-139740-01  | Corriente          | 1000  | Productos propios e inscritos Bancolombia | 7001000033569   |                     | Mis productos        | Inscritos             |
+      | 9  | 1010111         | Cédula de ciudadanía | testing10 | 1234  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 406-139740-01  | Corriente          | 1000  | Productos propios e inscritos Bancolombia | 7001000033569   |                     | Mis productos        | Inscritos             |

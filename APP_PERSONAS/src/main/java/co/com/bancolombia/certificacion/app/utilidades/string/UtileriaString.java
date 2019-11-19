@@ -6,6 +6,7 @@ import java.text.Normalizer;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.getPlatformCapability;
 
 public class UtileriaString {
 
@@ -49,12 +50,20 @@ public class UtileriaString {
         return palabra.toUpperCase();
     }
 
-    public static String eliminarCaracter(String palabra, String caracter){
+    public static String eliminarCaracter(String palabra, String caracter) {
         String resultado = eliminarTildes(palabra);
-        if(resultado.contains(caracter)){
+        if (resultado.contains(caracter)) {
             return resultado.replace(caracter, "");
-        }else{
+        } else {
             return resultado;
         }
+    }
+
+    public static int obtenerIteradorEprepago(int iterador) {
+        String nombrePlataforma = getPlatformCapability();
+        if ("Android".equalsIgnoreCase(nombrePlataforma))
+            return iterador;
+        else
+            return iterador + iterador -1;
     }
 }

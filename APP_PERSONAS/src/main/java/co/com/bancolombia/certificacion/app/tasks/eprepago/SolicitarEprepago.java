@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SOLICITAR;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SOLICITAR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.eprepago.SolicitarTarjetaVirtualEprepagoPage.CHK_TYC_EPREPAGO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;

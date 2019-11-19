@@ -19,7 +19,7 @@ public class Inactivar implements Task {
         actor.attemptsTo(
                 Validar.carga(),
                 WaitUntil.the(BTN_INACTIVAR_NUMERO, isEnabled()),
-                RealizarScroll.hastaTargetVisible(BTN_INACTIVAR_NUMERO),
+                RealizarScroll.hastaPosicionDeTarget(BTN_INACTIVAR_NUMERO),
                 Click.on(BTN_INACTIVAR_NUMERO),
                 WaitUntil.the(BTN_INACTIVAR_EPREPAGO, isEnabled()),
                 Click.on(BTN_INACTIVAR_EPREPAGO)

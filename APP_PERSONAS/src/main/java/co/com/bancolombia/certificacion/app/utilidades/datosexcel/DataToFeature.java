@@ -1,8 +1,5 @@
 package co.com.bancolombia.certificacion.app.utilidades.datosexcel;
 
-import co.com.bancolombia.certificacion.app.exceptions.comunes.PropertiesDoesNotLoadException;
-import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,126 +8,43 @@ import java.util.Map.Entry;
 
 public class DataToFeature {
 
+	protected static String data;
+	protected static boolean foundHashTag = false;
+	protected static boolean featureData = false;
+
+	protected static String sheetName;
+	protected static String excelFilePath;
+	protected static String caso;
+
+
 	private DataToFeature() {
-		throw new IllegalStateException(TipoClaseConstante.CLASE_UTILIDAD);
 	}
 
 	private static List<String> setExcelDataToFeature(File featureFile) throws IOException {
 		List<String> fileData = new ArrayList<>();
 		try (BufferedReader buffReader = new BufferedReader(
 				new InputStreamReader(new BufferedInputStream(new FileInputStream(featureFile)), "UTF-8"))) {
-			String data;
-			List<Map<String, String>> excelData = null;
-			boolean foundHashTag = false;
-			boolean featureData = false;
-			boolean esUnRango = false;
-			boolean esMultiple = false;
-			boolean esRangoDefinido = false;
+			foundHashTag = false;
+			featureData = false;
 
 			while ((data = buffReader.readLine()) != null) {
-				String[] dataVector = null;
-				String[] dataVectorRango = null;
-				String sheetName = null;
-				String excelFilePath = null;
-				int filaSeleccionada = 0;
-				int pos = 0;
+				sheetName = null;
+				excelFilePath = null;
 
 				if (data.trim().contains("##@externaldata")) {
-					dataVector = data.trim().split("@");
-					excelFilePath = dataVector[2];
-					sheetName = dataVector[3];
-
-					if (dataVector.length == 4) {
-						esUnRango = true;
-					}
-
-					if (dataVector.length == 5) {
-						if (dataVector[4].contains("-")) {
-							dataVectorRango = dataVector[4].trim().split("-");
-							esRangoDefinido = true;
-							filaSeleccionada = Integer.parseInt(dataVectorRango[pos]) - 1;
-						} else if (dataVector[4].contains(",")) {
-							dataVectorRango = dataVector[4].trim().split(",");
-							esUnRango = true;
-							esMultiple = true;
-							filaSeleccionada = Integer.parseInt(dataVectorRango[pos]) - 1;
-						} else {
-							filaSeleccionada = Integer.parseInt(dataVector[4]) - 1;
-						}
-					}
-
 					foundHashTag = true;
-					fileData.add(data);
+					fileData = getDataExcel(fileData);
 				}
-
 				if (foundHashTag) {
-					try {
-						excelData = new LectorExcel().getData(excelFilePath, sheetName);
-					} catch (Exception e) {
-						throw new PropertiesDoesNotLoadException(e);
-					}
-
-					for (int rowNumber = filaSeleccionada; rowNumber < excelData.size() - 1; rowNumber++) {
-						StringBuilder allCellData = new StringBuilder();
-						String cellData = "";
-						for (Entry<String, String> mapData : excelData.get(rowNumber).entrySet()) {
-							if (dataVectorRango == null) {
-								allCellData.append("   |" + mapData.getValue());
-							} else {
-								if (esRangoDefinido) {
-									if (rowNumber < Integer.parseInt(dataVectorRango[1])) {
-										allCellData.append("   |" + mapData.getValue());
-									}
-								} else {
-									if (rowNumber + 1 == Integer.parseInt(dataVectorRango[pos]) && esUnRango) {
-										allCellData.append("   |" + mapData.getValue());
-									}
-
-								}
-							}
-						}
-						cellData = allCellData.toString();
-						fileData.add(cellData + "|");
-						if (!esUnRango && !esRangoDefinido) {
-							rowNumber = excelData.size();
-						}
-						if (esMultiple) {
-							if (pos + 1 < dataVectorRango.length) {
-								filaSeleccionada = Integer.parseInt(dataVectorRango[pos + 1]) - 1;
-								rowNumber = filaSeleccionada - 1;
-								pos++;
-							} else {
-								rowNumber = excelData.size() - 1;
-							}
-
-						}
-						if (esRangoDefinido) {
-							if (rowNumber + 1 == Integer.parseInt(dataVectorRango[1])) {
-								rowNumber = excelData.size() - 1;
-								pos++;
-							} else {
-								pos++;
-							}
-
-						}
-
-					}
 					foundHashTag = false;
 					featureData = true;
-					continue;
-				}
-
-				if (data.startsWith("|") || data.endsWith("|")) {
-					if (featureData) {
-						continue;
-					} else {
-						fileData.add(data);
+				} else {
+					if ((data.startsWith("|") || data.endsWith("|")) && featureData) {
 						continue;
 					}
-				} else {
 					featureData = false;
+					fileData.add(data);
 				}
-				fileData.add(data);
 			}
 		}
 		return fileData;
@@ -169,4 +83,24 @@ public class DataToFeature {
 		}
 	}
 
+	private static List<String> getDataExcel(List<String> fileData) {
+		List<Map<String, String>> excelData = null;
+		String[] dataVector = null;
+		dataVector = data.trim().split("@");
+		excelFilePath = dataVector[2];
+		sheetName = dataVector[3];
+		caso = dataVector[4];
+		fileData.add(data);
+		excelData = new LectorExcel().getData( excelFilePath, sheetName);
+		for (int rowNumber = Integer.parseInt(caso)-1; rowNumber < Integer.parseInt(caso); rowNumber++) {
+			StringBuilder cellData = new StringBuilder();
+			cellData.append("      ");
+			for (Entry<String, String> mapData : excelData.get(rowNumber).entrySet()) {
+				cellData.append("|" + mapData.getValue());
+			}
+			cellData.append("|");
+			fileData.add(cellData.toString());
+		}
+		return fileData;
+	}
 }

@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OTRO_VALOR;

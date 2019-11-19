@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.cheque;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.builders.ChequeBuilder;
 import co.com.bancolombia.certificacion.app.models.cheque.Cheque;
@@ -11,7 +12,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.GeneralPage.LNK_SIGUIENTE;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.cheque.ChequePage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_CHEQUE;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
@@ -33,6 +34,7 @@ public class ContraordenarCheque implements Task {
                         .andIfSo(
                                 Click.on(CHK_CHEQUE.of(cheque.getTipoContraordenacion())),
                                 Enter.theValue(cheque.getRangoDesde()).into(TXT_DESDE),
+                                Click.on(LBL_FOCO),
                                 Enter.theValue(cheque.getRangoHasta()).into(TXT_HASTA)
                         ).otherwise(
                         Click.on(CHK_CHEQUE.of(cheque.getTipoContraordenacion())),
@@ -40,7 +42,8 @@ public class ContraordenarCheque implements Task {
                 ),
                 Click.on(LBL_FOCO),
                 Click.on(LNK_SIGUIENTE),
-                Click.on(BTN_CONTRAORDENAR)
+                Click.on(BTN_CONTRAORDENAR),
+                Validar.carga()
         );
         actor.remember(MODELO_CHEQUE,cheque);
     }
