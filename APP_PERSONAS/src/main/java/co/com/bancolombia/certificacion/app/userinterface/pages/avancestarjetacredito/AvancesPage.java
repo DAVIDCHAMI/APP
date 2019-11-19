@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito;
 
+import co.com.bancolombia.certificacion.app.userinterface.locators.avancestarjetacredito.AvancesLocator;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.avancestarjetacredito.AvancesLocator.*;

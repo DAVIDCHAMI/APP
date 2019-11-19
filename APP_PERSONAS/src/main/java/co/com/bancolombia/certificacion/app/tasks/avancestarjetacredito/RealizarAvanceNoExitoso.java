@@ -7,11 +7,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RealizarAvanceNoExitoso implements Task {
     private String tipoAvance;
@@ -26,8 +24,7 @@ public class RealizarAvanceNoExitoso implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         if(tipoAvance.equals("envia dinero")){
-            actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO),
-                    WaitUntil.the(LST_CONTENEDOR_TARJETAS, isVisible()));
+            actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO));
             cantidadTarjetas= LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).size();
             for (int i = 0; i < cantidadTarjetas ; i++)
             {

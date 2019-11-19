@@ -15,7 +15,7 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@1
-   |1   |48349402   |1   |TUTAINABANCOLOMBIA10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |American Express Blu   |1234   |250000   |406-110100-01   |¡Avance exitoso!|  Cupo insuficiente|
+   |1   |48349402   |1   |avances14   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |*6889  |1234   |250000   |406-110100-01   |¡Avance exitoso!   |Cupo insuficiente|
 
   Esquema del escenario: Realizar avance exitoso con tarjeta de credito con codigo de seguridad de 3 digitos
     Dado que el Actor se autentica en la app
@@ -31,7 +31,7 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion |codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@2
-   |2   |48349402   |1   |TUTAINABANCOLOMBIA10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa Clásica   |123   |150000   |406-110100-01   |¡Avance exitoso!|  Cupo insuficiente|
+   |2   |48349402   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   | *6889    |123   |150000   |406-110100-01   |¡Avance exitoso!   |Cupo insuficiente|
 
   Esquema del escenario: Realizar avance exitoso con tarjeta de credito con valor minimo permitido
     Dado que el Actor se autentica en la app
@@ -47,7 +47,7 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@3
-   |3   |48349402   |1   |TUTAINABANCOLOMBIA10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |American Express Blu   |1234   |50000   |406-110100-01   |¡Avance exitoso!|  Cupo insuficiente|
+   |3   |48349402   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   | *6889  |1234   |50000   |406-110100-01   |¡Avance exitoso!   |Cupo insuficiente|
 
   Esquema del escenario: Realizar avance exitoso con tarjeta de credito con cupo total de la tarjeta
     Dado que el Actor se autentica en la app
@@ -63,7 +63,7 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@5
-   |5   |48349402   |1   |TUTAINABANCOLOMBIA10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa Clásica   |123   |3000000   |406-110100-01   |¡Avance exitoso!|  Cupo insuficiente|
+   |5   |48349402   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa Clásica   |123   |3000000   |406-110100-01   |¡Avance exitoso!   |Cupo insuficiente|
 
   Esquema del escenario: Realizar avance exitoso con tarjeta de credito con cupo intermedio de la tarjeta
     Dado que el Actor se autentica en la app
@@ -79,7 +79,7 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@6
-   |6   |48349402   |1   |TUTAINABANCOLOMBIA10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa Clásica   |123   |1500000   |406-110100-01   |¡Avance exitoso!|  Cupo insuficiente|
+   |6   |48349402   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |Visa Clásica   |123   |1500000   |406-110100-01   |¡Avance exitoso!   |Cupo insuficiente|
 
 
 

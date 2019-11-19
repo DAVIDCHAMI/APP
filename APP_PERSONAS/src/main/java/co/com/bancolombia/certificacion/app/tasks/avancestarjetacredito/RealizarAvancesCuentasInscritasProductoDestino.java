@@ -15,7 +15,7 @@ public class RealizarAvancesCuentasInscritasProductoDestino implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
     private int cantidadTarjetas;
-    private String nombreTarjeta;
+    private String numeroTarjeta = tarjetaCredito.getNumeroTarjetaDestino();
 
     public RealizarAvancesCuentasInscritasProductoDestino(TarjetaCredito tarjetaCredito, String tipoAvance){
         this.tipoAvance = tipoAvance;
@@ -25,16 +25,14 @@ public class RealizarAvancesCuentasInscritasProductoDestino implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         if(tipoAvance.equals("envia dinero")){
-            actor.attemptsTo(
-                    Click.on(BTN_CUENTAS_INSCRITAS),
-                    WaitUntil.the(LISTADO_TARJETAS_INSCRITAS_AVANCE, isVisible()));
-            nombreTarjeta = tarjetaCredito.getNumeroTarjetaDestino();
+                    actor.attemptsTo(Click.on(BTN_CUENTAS_INSCRITAS));
             cantidadTarjetas= LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).size();
             for (int i = 0; i < cantidadTarjetas ; i++)
             {
+                System.out.println("valor obtenido" + LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText());
                 if(!"".equals(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText()))
                 {
-                    if(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(nombreTarjeta.toUpperCase().trim()))
+                    if(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText().toUpperCase().trim().equals(numeroTarjeta.toUpperCase().trim()))
                     {
                         LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).click();
                         break;
@@ -43,13 +41,13 @@ public class RealizarAvancesCuentasInscritasProductoDestino implements Task {
             }
         }
         else {
-            actor.attemptsTo(Click.on(BTN_REALIZAR_AVANCES));
+            actor.attemptsTo(Click.on(BTN_CUENTAS_INSCRITAS));
             cantidadTarjetas= LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).size();
             for (int i = 0; i < cantidadTarjetas ; i++)
             {
                 if(!"".equals(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText()))
                 {
-                    if(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim()))
+                    if(LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(numeroTarjeta.toUpperCase().trim()))
                     {
                         LISTADO_TARJETAS_INSCRITAS_AVANCE.resolveAllFor(actor).get(i).click();
                         break;

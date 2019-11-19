@@ -6,16 +6,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RealizarAvances implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
+    private String numeroTarjeta= tarjetaCredito.getNumeroTarjeta();
     private int cantidadTarjetas;
 
     public RealizarAvances(TarjetaCredito tarjetaCredito, String tipoAvance){
@@ -26,14 +24,13 @@ public class RealizarAvances implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
             if(tipoAvance.equals("envia dinero")){
-                actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO),
-                        WaitUntil.the(LST_CONTENEDOR_TARJETAS, isVisible()));
+                actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO));
                 cantidadTarjetas= LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).size();
                 for (int i = 0; i < cantidadTarjetas ; i++)
                 {
                     if(!"".equals(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText()))
                     {
-                        if(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim()))
+                        if(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().equals(numeroTarjeta.toUpperCase().trim()))
                         {
                             LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).click();
                             break;
@@ -57,9 +54,9 @@ public class RealizarAvances implements Task {
                 }
             }
         actor.attemptsTo(
-                Scroll.to(TXT_CODIGO_SEGURIDAD),
                 Enter.theValue(tarjetaCredito.getCodigoSeguridad()).into(TXT_CODIGO_SEGURIDAD),
-                Click.on(BTN_SIGUIENTE), Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
+                Click.on(BTN_SIGUIENTE),
+                Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
     }

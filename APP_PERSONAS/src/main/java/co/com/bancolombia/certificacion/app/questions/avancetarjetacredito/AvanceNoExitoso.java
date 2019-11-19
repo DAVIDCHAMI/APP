@@ -29,6 +29,4 @@ public class AvanceNoExitoso implements Question<Boolean> {
     public static AvanceNoExitoso validarAvanceNoExitoso(TarjetaCreditoBuilder datosExcel ) {
         return new AvanceNoExitoso(datosExcel.build());
     }
-
-
 }
