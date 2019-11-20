@@ -23,4 +23,8 @@ public class ConsultarMovimientos {
     public static Performable deEprepago(String tipoCuenta, String numeroCuenta){
         return instrumented(ConsultarMovimientosEprepago.class, tipoCuenta, numeroCuenta);
     }
+
+    public static Performable porDescripcionDeEprepago(String descripcionMovimientos,String tipoCuenta, String numeroCuenta){
+        return instrumented(ConsultarMovimientosEprepagoPorDescripcion.class,descripcionMovimientos,tipoCuenta, numeroCuenta);
+    }
 }
