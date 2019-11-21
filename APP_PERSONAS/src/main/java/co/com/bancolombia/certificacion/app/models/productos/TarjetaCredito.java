@@ -50,8 +50,8 @@ public class TarjetaCredito extends Producto
         this.numeroTarjetaDestino = builder.getNumeroTarjetaDestino();
         this.mensajeConfirmacion = builder.getMensajeConfirmacion();
         this.mensajeAvanceNoExitoso= builder.getMensajeAvanceNoExitoso();
-
     }
+
     public TarjetaCredito(){}
 
     public TarjetaCredito(String numero, String tipoProducto) {
@@ -129,7 +129,6 @@ public class TarjetaCredito extends Producto
     public void setTotalDisponibleEnPesos(String totalDisponibleEnPesos) {
         this.totalDisponibleEnPesos = totalDisponibleEnPesos;
     }
-
 
     public String getPagoMinimoEnDolares() {
         return pagoMinimoEnDolares;

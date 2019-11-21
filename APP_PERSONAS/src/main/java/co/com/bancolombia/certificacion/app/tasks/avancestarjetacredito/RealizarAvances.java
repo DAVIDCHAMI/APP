@@ -14,7 +14,6 @@ public class RealizarAvances implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
     private String numeroTarjeta= tarjetaCredito.getNumeroTarjeta();
-    private int cantidadTarjetas;
 
     public RealizarAvances(TarjetaCredito tarjetaCredito, String tipoAvance){
         this.tipoAvance = tipoAvance;
@@ -23,33 +22,23 @@ public class RealizarAvances implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-            if(tipoAvance.equals("envia dinero")){
+        int cantidadTarjetas;
+            if("envia dinero".equals(tipoAvance)){
                 actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO));
                 cantidadTarjetas= LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).size();
-                for (int i = 0; i < cantidadTarjetas ; i++)
-                {
-                    if(!"".equals(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText()))
-                    {
-                        if(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().equals(numeroTarjeta.toUpperCase().trim()))
-                        {
+                for (int i = 0; i < cantidadTarjetas ; i++) {
+                    if(!"".equals(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText()) && LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().equals(numeroTarjeta.toUpperCase().trim())) {
                             LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).click();
                             break;
                         }
                     }
-                }
-            }
-            else {
+            } else {
                 actor.attemptsTo(Click.on(BTN_REALIZAR_AVANCES));
                 cantidadTarjetas= LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).size();
-                for (int i = 0; i < cantidadTarjetas ; i++)
-                {
-                    if(!"".equals(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText()))
-                    {
-                        if(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim()))
-                        {
+                for (int i = 0; i < cantidadTarjetas ; i++) {
+                    if(!"".equals(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText()) && LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim())) {
                             LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).click();
                             break;
-                        }
                     }
                 }
             }
@@ -60,6 +49,7 @@ public class RealizarAvances implements Task {
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
     }
+
     public static RealizarAvances deTarjetasCredito(TarjetaCreditoBuilder datosExcel, String tipoAvance){
         return instrumented(RealizarAvances.class,datosExcel.build(), tipoAvance);
     }

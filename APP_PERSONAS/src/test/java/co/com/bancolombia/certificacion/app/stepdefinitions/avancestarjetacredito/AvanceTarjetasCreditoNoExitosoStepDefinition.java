@@ -15,8 +15,7 @@ public class AvanceTarjetasCreditoNoExitosoStepDefinition {
 
     @Cuando("^el (.*) desde su tarjeta de credito con monto sobrecupo$")
     public void elEnviaDineroDesdeSuTarjetaDeCreditoConMontoSobrecupo(String tipoAvance, List<Map<String, String>> datos ) {
-        theActorInTheSpotlight().attemptsTo(RealizarAvanceNoExitoso.deTarjetasCredito(tarjetaCredito()
-        .conDatosDeTarjeta(datos), tipoAvance));
+        theActorInTheSpotlight().attemptsTo(RealizarAvanceNoExitoso.deTarjetasCredito(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance));
     }
 
     @Entonces("^se valida el avance no exitoso$")

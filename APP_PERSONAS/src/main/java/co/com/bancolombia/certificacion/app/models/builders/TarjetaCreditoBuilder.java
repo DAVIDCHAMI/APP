@@ -69,7 +69,6 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return this;
     }
 
-
     public TarjetaCreditoBuilder conDatosDeTarjeta(List<Map<String, String>> datos) {
         this.numeroTarjeta= datos.get(0).get("numeroTarjeta");
         this.codigoSeguridad = datos.get(0).get("codigoSeguridad");
