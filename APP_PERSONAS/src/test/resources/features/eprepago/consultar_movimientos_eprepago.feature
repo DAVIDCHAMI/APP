@@ -16,7 +16,7 @@ Característica: Consulta de movimientos de E prepago de un cliente en app Banco
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | descripcionMovimientos |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Eprepago@1
-      | 1  | 93221453        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | MasterCard | *9344        |                        |
+      |1|93221453|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344||
 
   @TestCase2
   Esquema del escenario: Consultar Movimientos de una E-prepago por descripcion
@@ -29,4 +29,4 @@ Característica: Consulta de movimientos de E prepago de un cliente en app Banco
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | descripcionMovimientos |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Eprepago@2
-      | 2  | 93221453        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | MasterCard | *9344        | AHO                    |
+      |2|93221453|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|AHO|

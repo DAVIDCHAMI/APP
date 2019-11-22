@@ -108,8 +108,8 @@ public class ConsultarProductosAsociadosStepDefinition {
 
     @Entonces("^El deberia de ver los movimientos segun el filtro de busqueda$")
     public void elDeberiaDeVerLosMovimientosSegunElFiltroDeBusqueda() {
-/*        theActorInTheSpotlight().should(seeThat(
-
-                ));*/
+        theActorInTheSpotlight().should(seeThat(VerificarMovimientos.productos())
+                        .orComplainWith(ProductoSinMovimientosException.class, SIN_MOVIMIENTOS)
+                );
     }
 }

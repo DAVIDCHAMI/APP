@@ -37,6 +37,7 @@ public class ConDatosTransaccion implements Task {
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
+                Click.on(LBL_FOCO_CLAVE),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 CancelarActivacion.deHuella()

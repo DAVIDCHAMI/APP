@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
-import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -23,7 +22,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class ConsultarMovimientosEprepagoPorDescripcion implements Task {
 
-    String descripcionMovimientos;
+    private String descripcionMovimientos;
     private String tipoCuenta;
     private String numeroCuenta;
 
@@ -49,16 +48,17 @@ public class ConsultarMovimientosEprepagoPorDescripcion implements Task {
                 Click.on(BTN_BUSCAR_MOVIMIENTO)
         );
         List<Movimiento> listaMovimiento = new ArrayList<>();
-        int iterador = 5;
-        while (Verificar.elementoPresente(actor, CONTENEDOR_MOVIMIENTOS_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))))) {
+
+        int cantidadMovimientos= CONTENEDOR_MOVIMIENTOS_EPREPAGO.resolveAllFor(actor).size();
+
+        for (int iterador = 1;iterador<=cantidadMovimientos;iterador++)
+        {
             listaMovimiento.add(movimiento().
                     conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
                     .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
                     .conValorMovimiento(LBL_SALDO_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText()).build()
             );
-            iterador++;
         }
-        System.out.println("y la cantidad de movimientos es: "+iterador);
         actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }
 }
