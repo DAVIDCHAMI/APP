@@ -25,6 +25,10 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     private String moneda;
     private String numeroTarjeta;
     private String codigoSeguridad;
+    private String montoAvance;
+    private String numeroTarjetaDestino;
+    private String mensajeConfirmacion;
+    private String mensajeAvanceNoExitoso;
 
     private TarjetaCreditoBuilder() {
         this.tipoCuenta = "";
@@ -45,15 +49,31 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         this.moneda = "";
         this.numeroTarjeta="";
         this.codigoSeguridad ="";
+        this.montoAvance="";
+        this.numeroTarjetaDestino="";
+        this.mensajeConfirmacion="";
+        this.mensajeAvanceNoExitoso="";
     }
 
     public static TarjetaCreditoBuilder tarjetaCredito(){
         return new TarjetaCreditoBuilder();
     }
 
+    public TarjetaCreditoBuilder conMensajeConfirmacion(List<Map<String, String>> datos){
+        this.mensajeConfirmacion= datos.get(0).get("mensajeConfirmacion");
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conMensajeDeRechazo(List<Map<String, String>> datos){
+        this.mensajeAvanceNoExitoso= datos.get(0).get("mensajeAvanceNoExitoso");
+        return this;
+    }
+
     public TarjetaCreditoBuilder conDatosDeTarjeta(List<Map<String, String>> datos) {
         this.numeroTarjeta= datos.get(0).get("numeroTarjeta");
         this.codigoSeguridad = datos.get(0).get("codigoSeguridad");
+        this.montoAvance = datos.get(0).get("montoAvance");
+        this.numeroTarjetaDestino= datos.get(0).get("numeroTarjetaDestino");
         return this;
     }
 
@@ -163,6 +183,14 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     public String getNumeroTarjeta() {return numeroTarjeta;}
 
     public String getCodigoSeguridad() {return codigoSeguridad;}
+
+    public String getMontoAvance() {return montoAvance;}
+
+    public String getNumeroTarjetaDestino() {return numeroTarjetaDestino;}
+
+    public String getMensajeConfirmacion() {return mensajeConfirmacion;}
+
+    public String getMensajeAvanceNoExitoso() {return  mensajeAvanceNoExitoso;}
 
     @Override
     public TarjetaCredito build() {
