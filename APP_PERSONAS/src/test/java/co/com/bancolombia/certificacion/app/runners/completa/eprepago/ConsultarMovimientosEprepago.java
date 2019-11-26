@@ -15,7 +15,6 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/eprepago/consultar_movimientos_eprepago.feature"},
-        tags = {"@TestCase2"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
