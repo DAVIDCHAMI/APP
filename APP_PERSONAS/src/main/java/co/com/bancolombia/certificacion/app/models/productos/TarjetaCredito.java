@@ -4,7 +4,8 @@ import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilde
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaCreditoEnNumero;
 
-public class TarjetaCredito extends Producto {
+public class TarjetaCredito extends Producto
+{
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
     private String fechaLimitePago;
@@ -21,8 +22,13 @@ public class TarjetaCredito extends Producto {
     private String moneda;
     private String numeroTarjeta;
     private String codigoSeguridad;
+    private String montoAvance;
+    private String numeroTarjetaDestino;
+    private String mensajeConfirmacion;
+    private String mensajeAvanceNoExitoso;
 
-    public TarjetaCredito(TarjetaCreditoBuilder builder) {
+    public TarjetaCredito(TarjetaCreditoBuilder builder)
+    {
         super(builder.getNumeroCuenta(), builder.getTipoCuenta());
         this.formatoTarjetaCredito = builder.getFormatoTarjetaCredito();
         this.tipoTarjetaCreditoEnNumero = builder.getTipoTarjetaCreditoEnNumero();
@@ -40,7 +46,12 @@ public class TarjetaCredito extends Producto {
         this.moneda = builder.getMoneda();
         this.numeroTarjeta = builder.getNumeroTarjeta();
         this.codigoSeguridad = builder.getCodigoSeguridad();
+        this.montoAvance= builder.getMontoAvance();
+        this.numeroTarjetaDestino = builder.getNumeroTarjetaDestino();
+        this.mensajeConfirmacion = builder.getMensajeConfirmacion();
+        this.mensajeAvanceNoExitoso= builder.getMensajeAvanceNoExitoso();
     }
+
     public TarjetaCredito(){}
 
     public TarjetaCredito(String numero, String tipoProducto) {
@@ -162,4 +173,12 @@ public class TarjetaCredito extends Producto {
     public String getNumeroTarjeta() {return numeroTarjeta;}
 
     public String getCodigoSeguridad() {return codigoSeguridad;}
+
+    public String getMontoAvance() {return montoAvance;}
+
+    public String getNumeroTarjetaDestino() {return numeroTarjetaDestino;}
+
+    public String getMensajeConfirmacion() {return mensajeConfirmacion;}
+
+    public String getMensajeAvanceNoExitoso() { return mensajeAvanceNoExitoso;}
 }
