@@ -35,6 +35,11 @@ public class SaldosMovimientosPage {
     public static final Target LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra saldo del movimiento de tarjeta de credito").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
     public static final Target LBL_SALDO_MOVIMIENTO_EPREPAGO = Target.the("Label que muestra saldo del movimiento de e prepago").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_EPREPAGO_LOCATOR));
     public static final Target LBL_SALDO_CREDIAGIL_MOVIMIENTOS = Target.the("Saldo disponible cuenta crediagil").locatedBy(dynamicElement(LBL_SALDO_CREDIAGIL_MOVIMIENTOS_LOCATOR));
+    public static final Target BTN_FILTRO_BUSQUEDA_MOVIMIENTO = Target.the("Boton para buscar un movimiento por descripcion o fecha").located(theElementBy(BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR));
+    public static final Target BTN_LIMPIAR_CAMPOS = Target.the("Boton para limpiar campos de busqueda").located(theElementBy(BTN_LIMPIAR_CAMPOS_LOCATOR));
+    public static final Target TXT_DESCRIPCION = Target.the("Campo de texto para filtrar por descripcion").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
+    public static final Target FOCO_MOVIMIENTOS = Target.the("Foco en busqueda de movimientos").located(theElementBy(FOCO_MOVIMIENTOS_LOCATOR));
+    public static final Target BTN_BUSCAR_MOVIMIENTO = Target.the("Boton para filtrar los movimientos").located(theElementBy(BTN_BUSCAR_MOVIMIENTO_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

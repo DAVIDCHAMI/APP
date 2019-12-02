@@ -11,6 +11,7 @@ public class InicioSesionPage {
     public static final Target TXT_USUARIO = Target.the("Campo ingresar usuario").located(theElementBy(TXT_USUARIO_LOCATOR));
     public static final Target LBL_HOLA_PROVISIONAL = Target.the("Label Hola para Continuar").located(theElementBy(LBL_HOLA_PROVIVIONAL_LOCATOR));
     public static final Target BTN_CONTINUAR = Target.the("Boton Continuar").located(theElementBy(BTN_CONTINUAR_LOCATOR));
+    public static final Target LBL_FOCO_CLAVE = Target.the("Foco clave").located(theElementBy(LBL_FOCO_CLAVE_LOCATOR));
     public static final Target TXT_CLAVE_DIGITOS = Target.the("Digito para clave").located(theElementBy(TXT_CLAVE_DIGITOS_LOCATOR));
     public static final Target TAB = Target.the("Tab para ingreso de clave").located(theElementBy(TAB_LOCATOR));
     public static final Target TXT_SEGUNDA_CLAVE_DIGITOS = Target.the("Digito para Segunda clave").located(theElementBy(TXT_SEGUNDA_CLAVE_DIGITOS_LOCATOR));
