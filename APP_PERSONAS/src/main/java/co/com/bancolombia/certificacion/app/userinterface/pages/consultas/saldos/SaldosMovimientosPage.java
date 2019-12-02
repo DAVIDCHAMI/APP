@@ -38,6 +38,7 @@ public class SaldosMovimientosPage {
     public static final Target BTN_FILTRO_BUSQUEDA_MOVIMIENTO = Target.the("Boton para buscar un movimiento por descripcion o fecha").located(theElementBy(BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR));
     public static final Target BTN_LIMPIAR_CAMPOS = Target.the("Boton para limpiar campos de busqueda").located(theElementBy(BTN_LIMPIAR_CAMPOS_LOCATOR));
     public static final Target TXT_DESCRIPCION = Target.the("Campo de texto para filtrar por descripcion").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
+    public static final Target TXT_RANGO_FECHAS = Target.the("Campo de texto para filtrar por rango de fechas").located(theElementBy(TXT_RANGO_FECHAS_LOCATOR));
     public static final Target FOCO_MOVIMIENTOS = Target.the("Foco en busqueda de movimientos").located(theElementBy(FOCO_MOVIMIENTOS_LOCATOR));
     public static final Target BTN_BUSCAR_MOVIMIENTO = Target.the("Boton para filtrar los movimientos").located(theElementBy(BTN_BUSCAR_MOVIMIENTO_LOCATOR));
 

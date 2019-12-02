@@ -55,6 +55,7 @@ public class SaldosMovimientosLocator {
     public static final Locator BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//img[@class='ThemeGrid_MarginGutter']").withIos("xpath$test");
     public static final Locator BTN_LIMPIAR_CAMPOS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Limpiar campos')]").withIos("xpath$test");
     public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//input[@id='Description2']").withIos("xpath$test");
+    public static final Locator TXT_RANGO_FECHAS_LOCATOR = locator().withAndroid("xpath$//input[@id='Date2']").withIos("xpath$test");
     public static final Locator FOCO_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Movimientos' and @class='font-family-nunito']").withIos("xpath$test");
     public static final Locator BTN_BUSCAR_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Search2']").withIos("xpath$test");
 
