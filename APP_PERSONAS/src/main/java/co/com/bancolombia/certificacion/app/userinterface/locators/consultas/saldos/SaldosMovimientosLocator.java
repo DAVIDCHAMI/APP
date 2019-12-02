@@ -52,11 +52,11 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO_LOCATOR = locator().withAndroid("xpath$(//span[@class='font-family-OpenSans-regular font-size-s black OSFillParent']/..)[{0}]").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Movimientos']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther[7][./XCUIElementTypeImage]/following-sibling::XCUIElementTypeOther[{0}]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
     public static final Locator LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$(//div[@class='datalist-col-2'])[{0}]//div[@class='datalist-date']/span[2]").withIos("xpath$(((//XCUIElementTypeStaticText[@name='Movimientos'])[1]/../following-sibling::XCUIElementTypeOther[1]//XCUIElementTypeImage)[2]/../following-sibling::XCUIElementTypeOther//XCUIElementTypeOther/XCUIElementTypeStaticText)[{0}]");
     public static final Locator LBL_SALDO_MOVIMIENTO_EPREPAGO_LOCATOR = locator().withAndroid("xpath$(//span[@class='datalist-movements-value ThemeGrid_MarginGutter'])[{0}]").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Movimientos']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther[7][./XCUIElementTypeImage]/following-sibling::XCUIElementTypeOther[{0}]/XCUIElementTypeOther/XCUIElementTypeStaticText");
-    public static final Locator BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//img[@class='ThemeGrid_MarginGutter']").withIos("xpath$test");
-    public static final Locator BTN_LIMPIAR_CAMPOS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Limpiar campos')]").withIos("xpath$test");
-    public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//input[@id='Description2']").withIos("xpath$test");
-    public static final Locator FOCO_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Movimientos' and @class='font-family-nunito']").withIos("xpath$test");
-    public static final Locator BTN_BUSCAR_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Search2']").withIos("xpath$test");
+    public static final Locator BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//img[@class='ThemeGrid_MarginGutter']").withIos("xpath$(//XCUIElementTypeImage[@visible='true'])[1]");
+    public static final Locator BTN_LIMPIAR_CAMPOS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Limpiar campos')]").withIos("xpath$//XCUIElementTypeStaticText[@name='Limpiar campos']");
+    public static final Locator TXT_DESCRIPCION_LOCATOR = locator().withAndroid("xpath$//input[@id='Description2']").withIos("xpath$(//XCUIElementTypeSearchField[@visible='true'])[1]");
+    public static final Locator FOCO_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Movimientos' and @class='font-family-nunito']").withIos("xpath$(//XCUIElementTypeStaticText[@name='Movimientos'])[2]");
+    public static final Locator BTN_BUSCAR_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Search2']").withIos("xpath$//XCUIElementTypeButton[contains(@name,'BUSCAR')]");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
