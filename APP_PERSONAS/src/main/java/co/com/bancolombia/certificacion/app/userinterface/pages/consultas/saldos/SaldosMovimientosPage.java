@@ -25,6 +25,8 @@ public class SaldosMovimientosPage {
     public static final Target CONTENEDOR_MOVIMIENTOS_CUENTA = Target.the("Contenedor con detalles de movimiento").locatedBy(dynamicElement(VER_MOVIMIENTOS_LOCATOR));
     public static final Target CONTENEDOR_MOVIMIENTOS_TARJETA = Target.the("Contenedor con detalles de movimiento de tarjetas de credito").locatedBy(dynamicElement(VER_MOVIMIENTOS_TARJETA_CREDITO_LOCATOR));
     public static final Target CONTENEDOR_MOVIMIENTOS_EPREPAGO = Target.the("Contenedor con detalles de movimiento de e prepago").locatedBy(dynamicElement(VER_MOVIMIENTOS_EPREPAGO_LOCATOR));
+    public static final Target MOVIMIENTOS_EPREPAGO_FECHA_VALOR = Target.the("Contenedor con detalles de movimiento de e prepago").locatedBy(dynamicElement(MOVIMIENTOS_EPREPAGO_FECHA_VALOR_LOCATOR));
+    public static final Target MOVIMIENTOS_EPREPAGO_DES = Target.the("Contenedor con detalles de movimiento de e prepago").locatedBy(dynamicElement(MOVIMIENTOS_EPREPAGO_DES_LOCATOR));
     public static final Target LBL_FECHA_CUENTA_MOVIMIENTO = Target.the("Label que muestra la fecha del movimiento").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_CUENTAS_LOCATOR));
     public static final Target LBL_DESCRIPCION_CUENTA_MOVIMIENTO = Target.the("Label que muestra la descripcion del movimiento").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_CUENTAS_LOCATOR));
     public static final Target LBL_SALDO_CUENTA_MOVIMIENTO = Target.the("Label que muestra saldo del movimiento").locatedBy(dynamicElement(LBL_SALDO_CUENTASLOCATOR));

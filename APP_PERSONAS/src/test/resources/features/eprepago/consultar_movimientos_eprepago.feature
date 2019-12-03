@@ -26,6 +26,6 @@ Característica: Consulta de movimientos de E prepago de un cliente en app Banco
     Y quiero filtrar mis movimientos de eprepago por descripcion <descripcionMovimientos> en la app con tipo de cuenta <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver los movimientos segun el filtro de busqueda
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | descripcionMovimientos |
-   ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Eprepago@2
-      |2|93221453|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|AHO|
+      | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | descripcionMovimientos |
+         ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Eprepago@2
+      | 2  | 700100          | 1             | pruebasregistro48 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | MasterCard | *6136        | AHO                    |
