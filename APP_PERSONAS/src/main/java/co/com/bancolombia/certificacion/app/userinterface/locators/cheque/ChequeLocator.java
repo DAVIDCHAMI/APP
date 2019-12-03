@@ -5,7 +5,7 @@ import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locato
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
-public class chequeLocator {
+public class ChequeLocator {
     public static final Locator BTN_CONTRAORDENAR_LOCATOR = locator().withAndroid("xpath$//span[text()='CONTRAORDENAR']/..").withIos("xpath$//XCUIElementTypeButton[@name='CONTRAORDENAR']");
     public static final Locator TXT_NUMERO_CHEQUE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_NumeroDelCheque']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa el número del cheque']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeTextField");
     public static final Locator TXT_DESDE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Desde']").withIos("xpath$(//XCUIElementTypeStaticText[@name='Desde']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeTextField)[1]");
@@ -20,7 +20,7 @@ public class chequeLocator {
     public static final Locator LBL_CUENTA_ASOCIADA_LOCATOR= locator().withAndroid("xpath$//span[text()='{0}']/../../descendant::span[text()='{1}']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
     public static final Locator LBL_FOCO_LOCATOR= locator().withAndroid("xpath$//span[text()='Cheques a contraordenar']").withIos("xpath$//XCUIElementTypeStaticText[@name='Cheques a contraordenar']");
 
-    private chequeLocator() {
+    private ChequeLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }
 }

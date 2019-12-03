@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.cheque;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.bancolombia.certificacion.app.userinterface.locators.cheque.chequeLocator.*;
+import static co.com.bancolombia.certificacion.app.userinterface.locators.cheque.ChequeLocator.*;
 import static co.com.bancolombia.certificacion.app.userinterface.locators.registro.InscripcionClaveDinamicaLocator.CHK_TIPO_CORREO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
