@@ -36,8 +36,8 @@ public class GuardarMovimientos implements Interaction {
 
             while (!MOVIMIENTOS_EPREPAGO_DES.of(String.valueOf(iterador3 + 1)).resolveFor(actor).getText().contains("No tienes")) {
                 listaMovimiento.add(movimiento()
-                        .conFecha(MOVIMIENTOS_EPREPAGO_PRUEBA.of(String.valueOf(iterador1), String.valueOf(iterador2)).resolveFor(actor).getText())
-                        .conValorMovimiento(MOVIMIENTOS_EPREPAGO_PRUEBA.of(String.valueOf(iterador1), String.valueOf(iterador2 + 1)).resolveFor(actor).getText())
+                        .conFecha(MOVIMIENTOS_EPREPAGO_FECHA_VALOR.of(String.valueOf(iterador1), String.valueOf(iterador2)).resolveFor(actor).getText())
+                        .conValorMovimiento(MOVIMIENTOS_EPREPAGO_FECHA_VALOR.of(String.valueOf(iterador1), String.valueOf(iterador2 + 1)).resolveFor(actor).getText())
                         .conDescripcion(MOVIMIENTOS_EPREPAGO_DES.of(String.valueOf(iterador3)).resolveFor(actor).getText()).build()
                 );
                 iterador1 = iterador1 + 3;

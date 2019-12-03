@@ -9,7 +9,7 @@ public class InicioSesionLocator {
     public static final Locator BTN_INGRESAR_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'INGRESAR')]").withIos("xpath$//XCUIElementTypeButton[contains(@name,'INGRESAR')]");
     public static final Locator TXT_USUARIO_LOCATOR = locator().withAndroid("id$Input_Username_UserAuth").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Hola!']/..//following-sibling::XCUIElementTypeOther[3]");
     public static final Locator BTN_CONTINUAR_LOCATOR = locator().withAndroid("id$Button_Continue_UserAuth").withIos("xpath$//XCUIElementTypeButton[@name='CONTINUAR']");
-    public static final Locator LBL_FOCO_CLAVE_LOCATOR = locator().withAndroid("xpath$//span[text()='Ingresa la clave']").withIos("xpath$test");
+    public static final Locator LBL_FOCO_CLAVE_LOCATOR = locator().withAndroid("xpath$//span[text()='Ingresa la clave']").withIos("xpath$//XCUIElementTypeStaticText[@name='Ingresa la clave']");
     public static final Locator LBL_HOLA_PROVIVIONAL_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'Hola')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Hola!']");
     public static final Locator TXT_CLAVE_DIGITOS_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_TextVar']").withIos("xpath$//XCUIElementTypeOther[@name='Ingreso de la clave']/XCUIElementTypeOther[9]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]");
     public static final Locator TAB_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$//XCUIElementTypeOther/XCUIElementTypeTextField");
