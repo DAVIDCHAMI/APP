@@ -11,6 +11,7 @@ public class AvancesLocator
     public static final Locator LST_TARJETAS_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='Screen_CreditCard_List2']//div").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'*')]");
     public static final Locator LST_CAMPO_CLAVE_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_TextVar']").withIos("xpath$//XCUIElementTypeOther[12]/XCUIElementTypeTextField");
     public static final Locator BTN_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//div[@id='b12-Tab2']").withIos("xpath$//XCUIElementTypeStaticText[@name='Tarjetas de créditos']");
+    public static final Locator BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("xpath$test");
     public static final Locator SESSION_AVANCES = locator().withAndroid("xpath$(//span[contains(text(),'Realizar avances')])[2]").withIos("xpath$d");
     public static final Locator LISTADO_TARJETAS = locator().withAndroid("xpath$//div[@id='ListCards']//div").withIos("xpath$//XCUIElementTypeStaticText[@name='Tarjetas de créditos']/../following-sibling::XCUIElementTypeOther[3]");
     public static final Locator TXT_VALOR_AVANCE = locator().withAndroid("xpath$//input[@id='Input_Valor']").withIos("xpath$//XCUIElementTypeApplication[@name='Personas']/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeWebView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[9]");

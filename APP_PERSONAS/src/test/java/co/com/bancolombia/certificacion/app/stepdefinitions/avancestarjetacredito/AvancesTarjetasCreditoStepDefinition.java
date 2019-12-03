@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.avancestarjetacredito;
 
+import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvance;
 import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvances;
 import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvancesProductoDestino;
 import cucumber.api.java.es.Cuando;
@@ -25,10 +26,17 @@ public class AvancesTarjetasCreditoStepDefinition {
 
     @Y("^el (.*) desde su tarjeta de credito$")
     public void ingresaALaOpcionTarjetaDeCredito(String tipoAvance, List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(
+
+        theActorInTheSpotlight().attemptsTo(HacerAvance.deTarjetasCredito(tipoAvance,
+                tarjetaCredito().conDatosDeTarjeta(datos)),
+                RealizarAvancesProductoDestino.deTarjetasCreditoProductoDestino(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance)
+
+        );
+
+/*        theActorInTheSpotlight().attemptsTo(
                 RealizarAvances.deTarjetasCredito(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance),
                 RealizarAvancesProductoDestino.deTarjetasCreditoProductoDestino(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance)
-        );
+        );*/
     }
 
     @Entonces("^se valida el avance exitoso$")
