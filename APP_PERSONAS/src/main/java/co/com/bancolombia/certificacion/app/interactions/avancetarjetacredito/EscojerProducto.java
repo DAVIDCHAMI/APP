@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EscojerProducto implements Interaction {
-    
+
     private String datos;
     private Target elemento;
 

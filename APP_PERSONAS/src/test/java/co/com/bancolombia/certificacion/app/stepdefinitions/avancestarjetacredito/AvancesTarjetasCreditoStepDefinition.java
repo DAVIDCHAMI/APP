@@ -1,12 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.avancestarjetacredito;
 
-import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvanceEnviarDinero;
-import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvances;
-import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvancesProductoDestino;
+import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvance;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
-
 import java.util.List;
 import java.util.Map;
 
@@ -19,8 +16,7 @@ public class AvancesTarjetasCreditoStepDefinition {
     @Cuando("^el (.*) de su tarjeta de credito$")
     public void seleccionaLaTarjetaDeCredito(String tipoAvance, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                RealizarAvances.deTarjetasCredito(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance),
-                RealizarAvancesProductoDestino.deTarjetasCreditoProductoDestino(tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance)
+                HacerAvance.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
         );
     }
 
@@ -28,7 +24,7 @@ public class AvancesTarjetasCreditoStepDefinition {
     public void ingresaALaOpcionTarjetaDeCredito(String tipoAvance, List<Map<String, String>> datos) {
 
         theActorInTheSpotlight().attemptsTo(
-                HacerAvanceEnviarDinero.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
+                HacerAvance.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
         );
     }
 
