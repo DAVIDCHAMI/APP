@@ -33,20 +33,26 @@ public class SeleccionarCategoriaCarrusel implements Interaction {
         Target carrusel = Target.the("").locatedBy("//img[@id='CarrouselIconInactiveImg']");
         Target target1 = Target.the("").locatedBy("//span[contains(text(),'Inversiones'])");
         Target targetRight = Target.the("").locatedBy("//div[@id='b31-Tab{0}']");
+        Target targetCuentasdeposito = Target.the("").locatedBy("//div[@id='l7-{0}-AccountDataContainer']");
+        Target targetTipoCuentasdeposito = Target.the("").locatedBy("(//div[@class='font-family-OpenSans-regular']//span[@class='font-family-OpenSans-regular'])[{0}]");
 
         int iterador =1;
         int cont=0;
 
         carrusel.resolveFor(actor).click();
 
-        while(targetRight.of(String.valueOf(iterador)).resolveFor(actor).isPresent()){
-            targetRight.of(String.valueOf(iterador)).resolveFor(actor).click();
-            System.out.println("contador de productos: "+cont);
-            cont = cont +1;
+        while(targetTipoCuentasdeposito.of(String.valueOf(iterador)).resolveFor(actor).isPresent()){
+
+
+            System.out.println("productos: "+iterador+" - ");
+            actor.attemptsTo(
+                    RealizarScroll.hastaPosicionDeTarget(targetTipoCuentasdeposito.of(String.valueOf(iterador)))
+            );
+
+            //targetTipoCuentasdeposito.of(String.valueOf(iterador)).resolveFor(actor).waitUntilPresent().click();
+
             iterador = iterador+1;
         }
-        System.out.println("contador de productos total : "+(cont));
-   //     target1.resolveFor(actor).waitUntilPresent().click();
     }
 
     public static SeleccionarCategoriaCarrusel deSaldosMovimientos() {
