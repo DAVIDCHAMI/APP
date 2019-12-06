@@ -45,6 +45,7 @@ public class SaldosMovimientosPage {
     public static final Target LBL_TIPO_CUENTA_VISTA_CARRUSEL = Target.the("Tipo de cuenta vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_NUMERO_CUENTA_VISTA_CARRUSEL = Target.the("Numero de cuenta vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL = Target.the("Saldo disponible vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR));
+    public static final Target CATEGORIA_PRODUCTOS_VISTA_CARRUSEL = Target.the("Categoria productos vista carrusel").locatedBy(dynamicElement(CATEGORIA_PRODUCTOS_VISTA_CARRUSEL_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

@@ -1,7 +1,8 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
-import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaCarrusel;
+import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaVistaCarrusel;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
@@ -27,10 +28,17 @@ public class ConsultaSaldosStepDefinition {
         );
     }
 
-    @Cuando("^consulto desde la vista carrusel el saldo de mis cuentas deposito$")
-    public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito() {
+    @Cuando("^Yo consulto el saldo de mis (.*)$")
+    public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
-                SeleccionarCategoriaCarrusel.deSaldosMovimientos()
+                SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
+        );
+    }
+
+    @Cuando("^consulto desde la vista carrusel el saldo de mis (.*) deposito$")
+    public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                RevisarProductosVistaCarrusel.deCuentasDeposito(opcionCategoria)
         );
     }
 

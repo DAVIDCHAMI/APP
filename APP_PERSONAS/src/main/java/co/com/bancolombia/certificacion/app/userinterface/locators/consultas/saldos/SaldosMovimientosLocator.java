@@ -63,6 +63,7 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_TIPO_CUENTA_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@class='font-family-OpenSans-regular']//span[@class='font-family-OpenSans-regular'])[{0}]").withIos("xpath$test");
     public static final Locator LBL_NUMERO_CUENTA_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//span[@class=' font-family-OpenSans-regular' and text()='Saldo disponible']//preceding::span[1])[{0}]").withIos("xpath$test");
     public static final Locator LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@class='text-right']//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
+    public static final Locator CATEGORIA_PRODUCTOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$test");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
