@@ -8,6 +8,7 @@ public class ModeloConstantes {
     public static final String MODELO_PRODUCTO = "PRODUCTO";
     public static final String MODELO_DETALLE_PRODUCTO = "Detalle Producto";
     public static final String MODELO_PRODUCTO_SALDOS_MOVIMIENTOS = "Detalle Producto";
+    public static final String MODELO_PRODUCTO_SALDOS_MOVIMIENTOS_VISTA_CARRUSEL = "Vistacarrusel";
     public static final String MODELO_INFO_CODIGO_QR = "INFO_CODIGO_QR";
     public static final String MODELO_TARJETA_CREDITO = "TARJETA CREDITO";
     public static final String MODELO_CREDITO = "CREDITO";

@@ -1,6 +1,7 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
+
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
@@ -58,6 +59,10 @@ public class SaldosMovimientosLocator {
     public static final Locator TXT_RANGO_FECHAS_LOCATOR = locator().withAndroid("xpath$//input[@id='Date2']").withIos("xpath$test");
     public static final Locator FOCO_MOVIMIENTOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Movimientos' and @class='font-family-nunito']").withIos("xpath$test");
     public static final Locator BTN_BUSCAR_MOVIMIENTO_LOCATOR = locator().withAndroid("xpath$//button[@id='Button_Search2']").withIos("xpath$test");
+    public static final Locator BTN_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//img[@id='CarrouselIconInactiveImg']").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@class='font-family-OpenSans-regular']//span[@class='font-family-OpenSans-regular'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_CUENTA_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//span[@class=' font-family-OpenSans-regular' and text()='Saldo disponible']//preceding::span[1])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@class='text-right']//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

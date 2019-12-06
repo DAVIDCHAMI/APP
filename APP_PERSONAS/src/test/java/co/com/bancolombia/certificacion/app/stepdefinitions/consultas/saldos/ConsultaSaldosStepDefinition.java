@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaCarrusel;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarSaldos;
@@ -26,8 +27,8 @@ public class ConsultaSaldosStepDefinition {
         );
     }
 
-    @Cuando("^consulto desde la vista carrusel el saldo de mis (.*)$")
-    public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito(String opcionCategoria, List<String> cuenta) {
+    @Cuando("^consulto desde la vista carrusel el saldo de mis cuentas deposito$")
+    public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito() {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarCategoriaCarrusel.deSaldosMovimientos()
         );
@@ -43,6 +44,12 @@ public class ConsultaSaldosStepDefinition {
     @Entonces("^Verifico el resultado de la consulta del saldo$")
     public void verificoElResultadoDeLaConsultaDelSaldo() {
         theActorInTheSpotlight().should(seeThat(VerificarProductosElegidos.pertenecenAlUsuario())
+                .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
+    }
+
+    @Entonces("^Verifico el resultado de la consulta del saldo desde vista carrusel (.*)$")
+    public void verificoElResultadoDeLaConsultaDelSaldoDesdeVistaCarrusel(String numeroProductos) {
+        theActorInTheSpotlight().should(seeThat(VerificarProductos.desdeVistaCarrusel(numeroProductos))
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
     }
 }
