@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito;
 
-import co.com.bancolombia.certificacion.app.interactions.avancetarjetacredito.EscojerProducto;
 import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import net.serenitybdd.screenplay.Actor;
@@ -33,7 +32,7 @@ public class HacerAvance implements Task {
                         Click.on(BTN_REALIZAR_AVANCES)
                 ),
                 WaitUntil.the(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta()), isPresent()),
-                EscojerProducto.deAvanceTarjetaCredito(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO, tarjetaCredito.getNumeroTarjeta()),
+                Click.on(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta())),
                 Enter.theValue(tarjetaCredito.getCodigoSeguridad()).into(TXT_CODIGO_SEGURIDAD),
                 Click.on(BTN_SIGUIENTE),
                 Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
@@ -41,7 +40,7 @@ public class HacerAvance implements Task {
         );
         actor.attemptsTo(
                 Click.on(BTN_MIS_PRODUCTOS),
-                EscojerProducto.deAvanceTarjetaCredito(LISTADO_TARJETAS_DESTINO_AVANCE,tarjetaCredito.getNumeroTarjetaDestino()),
+                Click.on(LISTADO_TARJETAS_DESTINO_AVANCE.of(tarjetaCredito.getNumeroTarjetaDestino())),
                 Click.on(BTN_REALIZAR_AVANCE));
     }
 
