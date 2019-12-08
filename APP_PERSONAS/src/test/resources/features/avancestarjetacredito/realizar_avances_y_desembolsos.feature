@@ -6,7 +6,7 @@ Característica: Realizar avances de tarjeta de credito
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y el realiza avance de su tarjeta de credito
+    Y el realiza avance desde su tarjeta de credito
       | numeroTarjeta  | codigoSeguridad |montoAvance| numeroTarjetaDestino |
       | <numeroTarjeta> | <codigoSeguridad> |<montoAvance>|<numeroTarjetaDestino> |
     Entonces se valida el avance exitoso
@@ -22,7 +22,7 @@ Característica: Realizar avances de tarjeta de credito
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y el realiza avance de su tarjeta de credito
+    Y el realiza avance desde su tarjeta de credito
       | numeroTarjeta  | codigoSeguridad |montoAvance|numeroTarjetaDestino |
       | <numeroTarjeta> | <codigoSeguridad> |<montoAvance>|<numeroTarjetaDestino> |
     Entonces se valida el avance exitoso
@@ -38,7 +38,7 @@ Característica: Realizar avances de tarjeta de credito
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y el realiza avance de su tarjeta de credito
+    Y el realiza avance desde su tarjeta de credito
       | numeroTarjeta  | codigoSeguridad | montoAvance | numeroTarjetaDestino |
       | <numeroTarjeta> | <codigoSeguridad> | <montoAvance> | <numeroTarjetaDestino> |
     Entonces se valida el avance exitoso
@@ -54,7 +54,7 @@ Característica: Realizar avances de tarjeta de credito
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y el realiza avance de su tarjeta de credito
+    Y el realiza avance desde su tarjeta de credito
       | numeroTarjeta  | codigoSeguridad | montoAvance | numeroTarjetaDestino |
       | <numeroTarjeta> | <codigoSeguridad> | <montoAvance> | <numeroTarjetaDestino> |
     Entonces se valida el avance exitoso
@@ -70,7 +70,7 @@ Característica: Realizar avances de tarjeta de credito
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere REALIZAR_AVANCE
-    Y el realiza avance de su tarjeta de credito
+    Y el realiza avance desde su tarjeta de credito
       | numeroTarjeta  | codigoSeguridad | montoAvance | numeroTarjetaDestino |
       | <numeroTarjeta> | <codigoSeguridad> | <montoAvance> | <numeroTarjetaDestino> |
     Entonces se valida el avance exitoso
@@ -80,5 +80,3 @@ Característica: Realizar avances de tarjeta de credito
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | numeroTarjetaDestino | mensajeConfirmacion |mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@Datos@6
       |6|48349402|1|testing10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|*8078|123|1500000|406-139740-01|¡Avance exitoso!|Cupo insuficiente|
-
-

@@ -1,6 +1,6 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.avancestarjetacredito;
 
-import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvanceCuentasInscritas;
+import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvance;
 import cucumber.api.java.es.Y;
 import java.util.List;
 import java.util.Map;
@@ -12,8 +12,8 @@ public class AvanceTarjetasCreditoCuentasInscritasStepDefinition {
 
     @Y("^el (.*) a una cuenta inscrita$")
     public void elEnviaDineroAUnaCuentaInscrita(String tipoAvance, List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(HacerAvanceCuentasInscritas.deTarjetasCredito
-                (tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance)
+        theActorInTheSpotlight().attemptsTo(
+                HacerAvance.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
         );
     }
 }
