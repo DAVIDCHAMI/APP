@@ -17,37 +17,48 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoPresente;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS_VISTA_CARRUSEL;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_TC_VISTA_CARRUSEL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_PRODUCTOS;
 
 public class DeTarjetasCredito implements Task {
     private static final Logger LOGGER = LogManager.getLogger(RevisarProductosVistaCarrusel.class);
     private String opcionCategoria;
 
-    public DeTarjetasCredito() {
+    public DeTarjetasCredito(String opcionCategoria) {
+        this.opcionCategoria = opcionCategoria;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         List<Producto> listaProductos = new ArrayList<>();
         int iterador = 0;
-        int contadorProductos = 0;
-        boolean tieneProducto = false;
+        int contadorProductosCredito = 0;
 
         actor.attemptsTo(
                 Click.on(BTN_VISTA_CARRUSEL),
-                SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos("Tarjetas de crédito")
+                SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
 
-        if (elementoPresente(actor, CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
-            while (elementoPresente(actor, CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
+        if (elementoPresente(actor, LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
+            while (elementoPresente(actor, LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
                 actor.attemptsTo(
-                        RealizarScroll.hastaPosicionDeTarget(CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL.of(String.valueOf(iterador)))
+                        RealizarScroll.hastaPosicionDeTarget(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)))
+                );
+                contadorProductosCredito = contadorProductosCredito+1;
+                listaProductos.add(elProducto()
+                        .conNumero(LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)).resolveFor(actor).getText())
+                        .conTipoCuenta(LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)).resolveFor(actor).getText())
+                        .conSaldo(saldo()
+                                .conSaldoDisponible(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL.of(String.valueOf(iterador)).resolveFor(actor).getText())
+                                .build())
+                        .build()
                 );
                 iterador = iterador + 1;
             }
         } else {
-            LOGGER.info("No posee productos depósito");
+            LOGGER.info("No posee productos tarjetas de credito");
         }
+        actor.remember(MODELO_PRODUCTO_SALDOS_TC_VISTA_CARRUSEL, listaProductos);
+        actor.remember(NUMERO_PRODUCTOS, contadorProductosCredito);
     }
 }

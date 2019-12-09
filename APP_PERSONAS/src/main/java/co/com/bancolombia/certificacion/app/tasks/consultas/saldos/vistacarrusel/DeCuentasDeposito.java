@@ -17,7 +17,7 @@ import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuild
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoPresente;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_MOVIMIENTOS_VISTA_CARRUSEL;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_DEPOSITOS_VISTA_CARRUSEL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_PRODUCTOS;
 
 public class DeCuentasDeposito implements Task {
@@ -33,7 +33,6 @@ public class DeCuentasDeposito implements Task {
         List<Producto> listaProductos = new ArrayList<>();
         int iterador = 1;
         int contadorProductos = 0;
-        boolean tieneProducto = false;
 
         actor.attemptsTo(
                 Click.on(BTN_VISTA_CARRUSEL),
@@ -59,7 +58,7 @@ public class DeCuentasDeposito implements Task {
         } else {
             LOGGER.info("No posee productos depósito");
         }
-        actor.remember(MODELO_PRODUCTO_SALDOS_MOVIMIENTOS_VISTA_CARRUSEL, listaProductos);
+        actor.remember(MODELO_PRODUCTO_SALDOS_DEPOSITOS_VISTA_CARRUSEL, listaProductos);
         actor.remember(NUMERO_PRODUCTOS, contadorProductos);
     }
 }
