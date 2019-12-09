@@ -13,11 +13,11 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
-public class HacerAvance implements Task {
+public class HacerAvanceCuentasInscritas implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
 
-    public HacerAvance(String tipoAvance, TarjetaCredito tarjetaCredito) {
+    public HacerAvanceCuentasInscritas(String tipoAvance, TarjetaCredito tarjetaCredito) {
         this.tipoAvance = tipoAvance;
         this.tarjetaCredito = tarjetaCredito;
     }
@@ -38,17 +38,14 @@ public class HacerAvance implements Task {
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
         actor.attemptsTo(
-                Check.whether(BTN_MIS_PRODUCTOS.resolveFor(actor).isVisible()).andIfSo(
-                        Click.on(BTN_MIS_PRODUCTOS)
-                ).otherwise(
-                        Click.on(BTN_CUENTAS_INSCRITAS)
-                ),
+                Click.on(BTN_CUENTAS_INSCRITAS),
                 Click.on(LISTADO_TARJETAS_DESTINO_AVANCE.of(tarjetaCredito.getNumeroTarjetaDestino())),
                 Click.on(BTN_REALIZAR_AVANCE)
         );
     }
 
-    public static HacerAvance deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {
-        return Tasks.instrumented(HacerAvance.class, tipoAvance, tarjetaCredito.build());
+    public static HacerAvanceCuentasInscritas deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {
+        return Tasks.instrumented(HacerAvanceCuentasInscritas.class, tipoAvance, tarjetaCredito.build());
     }
+
 }
