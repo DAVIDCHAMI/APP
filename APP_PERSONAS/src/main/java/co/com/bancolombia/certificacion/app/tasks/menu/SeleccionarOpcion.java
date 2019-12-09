@@ -25,6 +25,7 @@ public class SeleccionarOpcion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(5000),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()))
         );
         actor.attemptsTo(

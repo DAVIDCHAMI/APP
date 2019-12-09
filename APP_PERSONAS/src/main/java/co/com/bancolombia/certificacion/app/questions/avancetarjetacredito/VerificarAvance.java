@@ -7,10 +7,10 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
 
-public class AvanceExitoso implements Question<Boolean> {
+public class VerificarAvance implements Question<Boolean> {
     private TarjetaCredito tarjetaCredito;
 
-    public AvanceExitoso(TarjetaCredito tarjetacredito){
+    public VerificarAvance(TarjetaCredito tarjetacredito){
         this.tarjetaCredito= tarjetacredito;
     }
 
@@ -19,7 +19,7 @@ public class AvanceExitoso implements Question<Boolean> {
         return MENSAJE_EXISTOSO_AVANCE.resolveAllFor(actor).toString().trim().contains(tarjetaCredito.getMensajeConfirmacion());
     }
 
-    public static AvanceExitoso validarAvance(TarjetaCreditoBuilder datosExcel) {
-        return new AvanceExitoso(datosExcel.build());
+    public static VerificarAvance esExitosoCon(TarjetaCreditoBuilder datosExcel) {
+        return new VerificarAvance(datosExcel.build());
     }
 }

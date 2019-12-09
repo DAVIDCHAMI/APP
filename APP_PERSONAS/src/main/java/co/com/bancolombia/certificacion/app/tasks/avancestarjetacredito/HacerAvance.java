@@ -38,11 +38,7 @@ public class HacerAvance implements Task {
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
         actor.attemptsTo(
-                Check.whether(BTN_MIS_PRODUCTOS.resolveFor(actor).isVisible()).andIfSo(
-                        Click.on(BTN_MIS_PRODUCTOS)
-                ).otherwise(
-                        Click.on(BTN_CUENTAS_INSCRITAS)
-                ),
+                Click.on(BTN_MIS_PRODUCTOS),
                 Click.on(LISTADO_TARJETAS_DESTINO_AVANCE.of(tarjetaCredito.getNumeroTarjetaDestino())),
                 Click.on(BTN_REALIZAR_AVANCE)
         );
