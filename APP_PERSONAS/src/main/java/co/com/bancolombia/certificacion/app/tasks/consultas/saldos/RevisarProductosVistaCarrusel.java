@@ -12,7 +12,7 @@ public class RevisarProductosVistaCarrusel {
         return instrumented(DeCuentasDeposito.class, opcionCategoria);
     }
 
-    public static Performable DeTarjetasCredito(String opcionCategoria) {
-        return instrumented(DeTarjetasCredito.class, opcionCategoria);
+    public static Performable DeTarjetasCredito() {
+        return instrumented(DeTarjetasCredito.class);
     }
 }

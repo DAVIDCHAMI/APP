@@ -46,6 +46,10 @@ public class SaldosMovimientosPage {
     public static final Target LBL_NUMERO_CUENTA_VISTA_CARRUSEL = Target.the("Numero de cuenta vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL = Target.the("Saldo disponible vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR));
     public static final Target CATEGORIA_PRODUCTOS_VISTA_CARRUSEL = Target.the("Categoria productos vista carrusel").locatedBy(dynamicElement(CATEGORIA_PRODUCTOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL = Target.the("Categoria tarjetas credito vista carrusel").locatedBy(dynamicElement(CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Numero de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Tipo de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL = Target.the("Saldo disponible tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

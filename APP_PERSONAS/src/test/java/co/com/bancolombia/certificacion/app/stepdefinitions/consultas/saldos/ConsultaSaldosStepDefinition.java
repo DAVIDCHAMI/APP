@@ -31,7 +31,7 @@ public class ConsultaSaldosStepDefinition {
     @Cuando("^Yo consulto el saldo de mis (.*)$")
     public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
-                SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
+                RevisarProductosVistaCarrusel.DeTarjetasCredito()
         );
     }
 
