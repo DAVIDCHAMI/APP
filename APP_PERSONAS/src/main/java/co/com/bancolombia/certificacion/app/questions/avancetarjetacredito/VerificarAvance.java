@@ -16,7 +16,7 @@ public class VerificarAvance implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return MENSAJE_EXISTOSO_AVANCE.resolveAllFor(actor).toString().trim().contains(tarjetaCredito.getMensajeConfirmacion());
+        return LBL_AVANCE_EXISTOSO.resolveAllFor(actor).toString().trim().contains(tarjetaCredito.getMensajeConfirmacion());
     }
 
     public static VerificarAvance esExitosoCon(TarjetaCreditoBuilder datosExcel) {

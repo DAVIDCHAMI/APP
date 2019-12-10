@@ -17,9 +17,9 @@ public class AvancesLocator
     public static final Locator LST_PRODUCTO_DESTINO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']");
     public static final Locator BTN_REALIZA_AVANCE_LOCATOR = locator().withAndroid("xpath$//button[@id='RequestAdvanceButton']").withIos("xpath$//XCUIElementTypeButton[@name='REALIZAR AVANCE']");
     public static final Locator MIS_PRODUCTOS_AVANCE_LOCATOR = locator().withAndroid("xpath$//span[@id='Tab1Expression']").withIos("xpath$//XCUIElementTypeStaticText[@name='Mis Productos']");
-    public static final Locator MENSAJE_CUPO_INSUFICIENTE_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'Cupo insuficiente')]").withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo insuficiente']");
-    public static final Locator MENSAJE_AVANCE_EXITOSO_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'¡Avance exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Avance exitoso!']");
-    public static final Locator BTN_INSCRITOS_LOCATOR= locator().withAndroid("xpath$//span[@id='Tab2Expression']").withIos("xpath$//XCUIElementTypeStaticText[@name='Inscritos']");
+    public static final Locator LBL_CUPO_INSUFICIENTE_AVANCE_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Cupo insuficiente')]").withIos("xpath$//XCUIElementTypeStaticText[@name='Cupo insuficiente']");
+    public static final Locator LBL_AVANCE_EXISTOSO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Avance exitoso!')]").withIos("xpath$//XCUIElementTypeStaticText[@name='¡Avance exitoso!']");
+    public static final Locator BTN_CUENTAS_INSCRITAS_LOCATOR = locator().withAndroid("xpath$//span[@id='Tab2Expression']").withIos("xpath$//XCUIElementTypeStaticText[@name='Inscritos']");
 
     private AvancesLocator(){throw new IllegalStateException(CLASE_LOCATOR);}
 }

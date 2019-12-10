@@ -11,13 +11,14 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.ENVIA_DINERO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
-public class HacerAvance implements Task {
+public class RealizarAvance implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
 
-    public HacerAvance(String tipoAvance, TarjetaCredito tarjetaCredito) {
+    public RealizarAvance(String tipoAvance, TarjetaCredito tarjetaCredito) {
         this.tipoAvance = tipoAvance;
         this.tarjetaCredito = tarjetaCredito;
     }
@@ -25,7 +26,7 @@ public class HacerAvance implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Check.whether("envia dinero".equals(tipoAvance)).andIfSo(
+                Check.whether(ENVIA_DINERO.equals(tipoAvance)).andIfSo(
                         Click.on(BTN_TARJETA_CREDITO)
                 ).otherwise(
                         Click.on(BTN_REALIZAR_AVANCES)
@@ -44,7 +45,7 @@ public class HacerAvance implements Task {
         );
     }
 
-    public static HacerAvance deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {
-        return Tasks.instrumented(HacerAvance.class, tipoAvance, tarjetaCredito.build());
+    public static RealizarAvance deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {
+        return Tasks.instrumented(RealizarAvance.class, tipoAvance, tarjetaCredito.build());
     }
 }

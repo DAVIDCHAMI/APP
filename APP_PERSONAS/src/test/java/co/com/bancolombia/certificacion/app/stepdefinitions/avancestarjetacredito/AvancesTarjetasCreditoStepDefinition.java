@@ -2,7 +2,7 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.avancestarjetacredi
 
 import co.com.bancolombia.certificacion.app.exceptions.avancetarjetacredito.AvanceNoExitoso;
 import co.com.bancolombia.certificacion.app.questions.avancetarjetacredito.VerificarAvance;
-import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.HacerAvance;
+import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvance;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
@@ -19,7 +19,7 @@ public class AvancesTarjetasCreditoStepDefinition {
     @Y("^el (.*) desde su tarjeta de credito$")
     public void ingresaALaOpcionTarjetaDeCredito(String tipoAvance, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(
-                HacerAvance.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
+                RealizarAvance.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
         );
     }
 
