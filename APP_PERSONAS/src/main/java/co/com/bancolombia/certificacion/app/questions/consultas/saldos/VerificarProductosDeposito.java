@@ -5,10 +5,10 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_PRODUCTOS;
 
-public class VerificarProductos implements Question<Boolean> {
+public class VerificarProductosDeposito implements Question<Boolean> {
     private String numeroProductos;
 
-    public VerificarProductos(String numeroProductos) {
+    public VerificarProductosDeposito(String numeroProductos) {
         this.numeroProductos = numeroProductos;
     }
 
@@ -18,7 +18,7 @@ public class VerificarProductos implements Question<Boolean> {
         return numeroProductos.equals(Integer.toString(numeroProductosCarrusel));
     }
 
-    public static VerificarProductos desdeVistaCarrusel(String numeroProductos) {
-        return new VerificarProductos(numeroProductos);
+    public static VerificarProductosDeposito desdeVistaCarrusel(String numeroProductos) {
+        return new VerificarProductosDeposito(numeroProductos);
     }
 }

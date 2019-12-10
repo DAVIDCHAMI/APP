@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
-import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaVistaCarrusel;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosTarjetaCredito;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
-import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductos;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosDeposito;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarSaldos;
@@ -57,7 +57,13 @@ public class ConsultaSaldosStepDefinition {
 
     @Entonces("^Verifico el resultado de la consulta del saldo desde vista carrusel (.*)$")
     public void verificoElResultadoDeLaConsultaDelSaldoDesdeVistaCarrusel(String numeroProductos) {
-        theActorInTheSpotlight().should(seeThat(VerificarProductos.desdeVistaCarrusel(numeroProductos))
+        theActorInTheSpotlight().should(seeThat(VerificarProductosDeposito.desdeVistaCarrusel(numeroProductos))
+                .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
+    }
+
+    @Entonces("^Verifico el resultado de la consulta del saldo de TC desde vista carrusel (.*)$")
+    public void verificoElResultadoDeLaConsultaDelSaldoDeTCDesdeVistaCarrusel(String numeroProductos) {
+        theActorInTheSpotlight().should(seeThat(VerificarProductosTarjetaCredito.desdeVistaCarrusel(numeroProductos))
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
     }
 }
