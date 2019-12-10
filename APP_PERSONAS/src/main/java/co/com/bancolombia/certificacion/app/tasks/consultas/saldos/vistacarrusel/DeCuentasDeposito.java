@@ -4,6 +4,7 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.interactions.scroll.RealizarScroll;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
+import co.com.bancolombia.certificacion.app.utilidades.seleccionarproducto.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -39,7 +40,11 @@ public class DeCuentasDeposito implements Task {
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
 
-        if (elementoPresente(actor, LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
+        actor.attemptsTo(
+                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL,LBL_TIPO_CUENTA_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_VISTA_CARRUSEL)
+        );
+
+  /*      if (elementoPresente(actor, LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
             while (elementoPresente(actor, LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL.of(String.valueOf(iterador)))) {
                 actor.attemptsTo(
                         RealizarScroll.hastaPosicionDeTarget(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL.of(String.valueOf(iterador)))
@@ -57,8 +62,7 @@ public class DeCuentasDeposito implements Task {
             }
         } else {
             LOGGER.info("No posee productos depósito");
-        }
-        actor.remember(MODELO_PRODUCTO_SALDOS_DEPOSITOS_VISTA_CARRUSEL, listaProductos);
-        actor.remember(NUMERO_PRODUCTOS, contadorProductos);
+        }*/
+
     }
 }
