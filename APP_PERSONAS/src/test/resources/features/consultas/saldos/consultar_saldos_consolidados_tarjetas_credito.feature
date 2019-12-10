@@ -12,7 +12,7 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Cuando consulto el saldo de mis Tarjetas de crédito
-      | <tipoCuenta> | <numeroCuenta> |
+   | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                              | numeroCuenta                        |
@@ -25,8 +25,8 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
-    Cuando Yo consulto el saldo de mis Tarjetas de crédito
-  #  Entonces Verifico el resultado de la consulta del saldo
+    Cuando consulto el saldo de las Tarjetas de crédito desde la vista carrusel
+ #   Entonces Verifico el resultado de la consulta del saldo
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                              | numeroCuenta                        |
          ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1

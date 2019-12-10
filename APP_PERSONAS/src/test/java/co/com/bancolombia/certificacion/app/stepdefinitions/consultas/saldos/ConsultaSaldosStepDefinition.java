@@ -28,17 +28,17 @@ public class ConsultaSaldosStepDefinition {
         );
     }
 
-    @Cuando("^Yo consulto el saldo de mis (.*)$")
-    public void consultoElSaldoDeMisCuentasDeposito(String opcionCategoria) {
-        theActorInTheSpotlight().attemptsTo(
-                RevisarProductosVistaCarrusel.DeTarjetasCredito()
-        );
-    }
-
     @Cuando("^consulto desde la vista carrusel el saldo de mis (.*) deposito$")
     public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
                 RevisarProductosVistaCarrusel.deCuentasDeposito(opcionCategoria)
+        );
+    }
+
+    @Cuando("^consulto el saldo de las (.*) desde la vista carrusel$")
+    public void consultoDesdeVistaCarruselElSaldoDeMisTC(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                RevisarProductosVistaCarrusel.DeTarjetasCredito(opcionCategoria)
         );
     }
 
