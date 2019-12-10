@@ -12,8 +12,8 @@ public class AvanceTarjetasCreditoCuentasInscritasStepDefinition {
 
     @Y("^el (.*) a una cuenta inscrita$")
     public void elEnviaDineroAUnaCuentaInscrita(String tipoAvance, List<Map<String, String>> datos) {
-        theActorInTheSpotlight().attemptsTo(HacerAvanceCuentasInscritas.deTarjetasCredito
-                (tarjetaCredito().conDatosDeTarjeta(datos), tipoAvance)
+        theActorInTheSpotlight().attemptsTo(
+                HacerAvanceCuentasInscritas.deTarjetasCredito(tipoAvance,tarjetaCredito().conDatosDeTarjeta(datos))
         );
     }
 }

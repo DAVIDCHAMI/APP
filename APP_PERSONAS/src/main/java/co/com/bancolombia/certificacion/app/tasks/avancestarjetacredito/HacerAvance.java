@@ -14,7 +14,6 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.avancesta
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class HacerAvance implements Task {
-
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
 
@@ -41,7 +40,8 @@ public class HacerAvance implements Task {
         actor.attemptsTo(
                 Click.on(BTN_MIS_PRODUCTOS),
                 Click.on(LISTADO_TARJETAS_DESTINO_AVANCE.of(tarjetaCredito.getNumeroTarjetaDestino())),
-                Click.on(BTN_REALIZAR_AVANCE));
+                Click.on(BTN_REALIZAR_AVANCE)
+        );
     }
 
     public static HacerAvance deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {

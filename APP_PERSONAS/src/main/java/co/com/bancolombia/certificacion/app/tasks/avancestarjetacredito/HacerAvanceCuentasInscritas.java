@@ -4,22 +4,22 @@ import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilde
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
-public class RealizarAvanceNoExitoso implements Task {
+public class HacerAvanceCuentasInscritas implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
 
-    public RealizarAvanceNoExitoso(TarjetaCredito tarjetaCredito, String tipoAvance){
+    public HacerAvanceCuentasInscritas(String tipoAvance, TarjetaCredito tarjetaCredito) {
         this.tipoAvance = tipoAvance;
-        this.tarjetaCredito =tarjetaCredito;
+        this.tarjetaCredito = tarjetaCredito;
     }
 
     @Override
@@ -37,9 +37,15 @@ public class RealizarAvanceNoExitoso implements Task {
                 Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
+        actor.attemptsTo(
+                Click.on(BTN_CUENTAS_INSCRITAS),
+                Click.on(LISTADO_TARJETAS_DESTINO_AVANCE.of(tarjetaCredito.getNumeroTarjetaDestino())),
+                Click.on(BTN_REALIZAR_AVANCE)
+        );
     }
 
-    public static RealizarAvanceNoExitoso deTarjetasCredito(TarjetaCreditoBuilder datosExcel, String tipoAvance){
-        return instrumented(RealizarAvanceNoExitoso.class,datosExcel.build(), tipoAvance);
+    public static HacerAvanceCuentasInscritas deTarjetasCredito(String tipoAvance, TarjetaCreditoBuilder tarjetaCredito) {
+        return Tasks.instrumented(HacerAvanceCuentasInscritas.class, tipoAvance, tarjetaCredito.build());
     }
+
 }
