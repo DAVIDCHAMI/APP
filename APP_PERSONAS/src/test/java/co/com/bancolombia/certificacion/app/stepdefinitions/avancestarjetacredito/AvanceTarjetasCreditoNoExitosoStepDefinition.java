@@ -1,10 +1,12 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.avancestarjetacredito;
 
+import co.com.bancolombia.certificacion.app.exceptions.avancetarjetacredito.AvanceNoExitoso;
 import co.com.bancolombia.certificacion.app.tasks.avancestarjetacredito.RealizarAvanceNoExitoso;
 import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 import cucumber.api.java.es.Cuando;
+import static co.com.bancolombia.certificacion.app.exceptions.avancetarjetacredito.AvanceNoExitoso.MENSAJE_AVANCE_NO_EXITOSO;
 
 import static co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder.tarjetaCredito;
 import static co.com.bancolombia.certificacion.app.questions.avancetarjetacredito.AvanceNoExitoso.validarAvanceNoExitoso;
@@ -21,6 +23,7 @@ public class AvanceTarjetasCreditoNoExitosoStepDefinition {
     @Entonces("^se valida el avance no exitoso$")
     public void seValidaElAvanceNoExitoso(List<Map<String, String>> datos) {
         theActorInTheSpotlight().should(seeThat(validarAvanceNoExitoso(
-                tarjetaCredito().conMensajeDeRechazo(datos))));
+                tarjetaCredito().conMensajeDeRechazo(datos))).
+                orComplainWith(AvanceNoExitoso.class,MENSAJE_AVANCE_NO_EXITOSO));
     }
 }

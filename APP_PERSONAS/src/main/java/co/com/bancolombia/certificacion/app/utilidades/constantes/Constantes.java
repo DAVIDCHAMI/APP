@@ -40,6 +40,7 @@ public class Constantes {
     public static final String RECARGA_EPREPAGO = "Recargar";
     public static final String DESCARGA_EPREPAGO = "Descargar";
     public static final String TOTAL = "Total";
+    public static final String ENVIA_DINERO = "envia dinero";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);
