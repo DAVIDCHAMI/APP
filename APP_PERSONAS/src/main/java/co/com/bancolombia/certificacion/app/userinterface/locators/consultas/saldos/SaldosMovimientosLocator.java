@@ -1,8 +1,10 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
+import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
+import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
@@ -65,9 +67,19 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@class='text-right']//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
     public static final Locator CATEGORIA_PRODUCTOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]").withIos("xpath$test");
     public static final Locator CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//div[@id='l8-{0}-CreditCardDataContainer2']").withIos("xpath$test");
-    public static final Locator LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='l8-{0}-CreditCardDataContainer2']//span[@class=' font-family-OpenSans-regular'])[1]").withIos("xpath$test");
-    public static final Locator LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//div[@id='l8-{0}-CreditCardDataContainer2']//span[@class=' font-family-OpenSans-regular text-grey']").withIos("xpath$test");
-    public static final Locator LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$//div[@id='l8-{0}-CreditCardDataContainer2']//span[@class='font-family-nunito font-family-nunito-bold text-black']").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditCardDataContainer2')])[{0}]//span[@class=' font-family-OpenSans-regular']").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditCardDataContainer2')])[{0}]//span[@class=' font-family-OpenSans-regular text-grey']").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditCardDataContainer2')])[{0}]//span[@class='font-family-nunito font-family-nunito-bold text-black']").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class=' font-family-OpenSans-regular font-size-s']//following::div[2]//span").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class=' font-family-OpenSans-regular font-size-s']").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class='font-family-nunito font-family-nunito-bold text-black']").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$").withIos("xpath$test");
+
+    public static final Locator LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[contains(text(),'*')])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

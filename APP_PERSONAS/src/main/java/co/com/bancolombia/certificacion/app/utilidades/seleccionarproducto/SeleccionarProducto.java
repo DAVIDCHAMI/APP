@@ -15,7 +15,7 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static co.com.bancolombia.certificacion.app.models.builders.SaldoBuilder.saldo;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoPresente;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_SALDOS_DEPOSITOS_VISTA_CARRUSEL;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_PRODUCTO_VISTA_CARRUSEL;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.NUMERO_PRODUCTOS;
 
 public class SeleccionarProducto implements Interaction {
@@ -33,7 +33,6 @@ public class SeleccionarProducto implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         List<Producto> listaProductos = new ArrayList<>();
         int iterador = 1;
         int contadorProductos = 0;
@@ -57,7 +56,7 @@ public class SeleccionarProducto implements Interaction {
         } else {
             LOGGER.info("No posee productos depósito");
         }
-        actor.remember(MODELO_PRODUCTO_SALDOS_DEPOSITOS_VISTA_CARRUSEL, listaProductos);
+        actor.remember(MODELO_PRODUCTO_VISTA_CARRUSEL, listaProductos);
         actor.remember(NUMERO_PRODUCTOS, contadorProductos);
     }
 

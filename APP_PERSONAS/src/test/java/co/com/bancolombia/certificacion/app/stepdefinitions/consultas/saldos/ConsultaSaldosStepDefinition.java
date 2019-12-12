@@ -31,7 +31,14 @@ public class ConsultaSaldosStepDefinition {
     @Cuando("^consulto desde la vista carrusel el saldo de mis (.*) deposito$")
     public void consultoDesdeVistaCarruselElSaldoDeMisCuentasDeposito(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
-                RevisarProductosVistaCarrusel.deCuentasDeposito(opcionCategoria)
+                RevisarProductosVistaCarrusel.DeCuentasDeposito(opcionCategoria)
+        );
+    }
+
+    @Cuando("^consulto mis (.*) desde la vista carrusel$")
+    public void consultoMisCreditos(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                RevisarProductosVistaCarrusel.DeCreditos(opcionCategoria)
         );
     }
 
@@ -39,6 +46,20 @@ public class ConsultaSaldosStepDefinition {
     public void consultoDesdeVistaCarruselElSaldoDeMisTC(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
                 RevisarProductosVistaCarrusel.DeTarjetasCredito(opcionCategoria)
+        );
+    }
+
+    @Cuando("^consulto el saldo desde la vista carrusel de mis (.*)$")
+    public void consultoElSaldoDesdeLaVistaCarruselDeMis(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                //Inversiones
+        );
+    }
+
+    @Cuando("^consulto la (.*) desde la vista carrusel$")
+    public void consultoEprepagoDesdeCarrusel(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                RevisarProductosVistaCarrusel.DeEprepago(opcionCategoria)
         );
     }
 

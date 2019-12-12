@@ -15,6 +15,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
         features = {"src/test/resources/features/consultas/saldos/consultar_saldos_consolidados_creditos.feature"},
+        tags = {"@creditos"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )

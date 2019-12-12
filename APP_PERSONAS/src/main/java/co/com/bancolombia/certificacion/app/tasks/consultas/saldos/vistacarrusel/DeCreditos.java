@@ -1,19 +1,23 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos.vistacarrusel;
 
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaVistaCarrusel;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import co.com.bancolombia.certificacion.app.utilidades.seleccionarproducto.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 
-public class DeCuentasDeposito implements Task {
+public class DeCreditos implements Task {
     private String opcionCategoria;
 
-    public DeCuentasDeposito(String opcionCategoria) {
+    public DeCreditos(String opcionCategoria) {
         this.opcionCategoria = opcionCategoria;
     }
+
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -23,7 +27,7 @@ public class DeCuentasDeposito implements Task {
         );
 
         actor.attemptsTo(
-                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL,LBL_TIPO_CUENTA_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_VISTA_CARRUSEL)
+                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL, LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL, LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL)
         );
     }
 }
