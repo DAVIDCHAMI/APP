@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos.vistacarrusel;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaVistaCarrusel;
 import co.com.bancolombia.certificacion.app.utilidades.seleccionarproducto.SeleccionarProducto;
 import net.serenitybdd.screenplay.Actor;

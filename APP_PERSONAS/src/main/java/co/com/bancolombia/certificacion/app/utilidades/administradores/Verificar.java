@@ -20,7 +20,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isEnabled();
         } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
+            LOGGER.info(e.getMessage(), e);
         }
         return result;
     }
@@ -30,7 +30,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isVisible();
         } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
+            LOGGER.info(e.getMessage(), e);
         }
         return result;
     }
@@ -40,7 +40,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isPresent();
         } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
+            LOGGER.info(e.getMessage(), e);
         }
         return result;
 
