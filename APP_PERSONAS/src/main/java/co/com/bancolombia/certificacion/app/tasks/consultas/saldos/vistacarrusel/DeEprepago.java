@@ -24,7 +24,7 @@ public class DeEprepago implements Task {
         );
 
         actor.attemptsTo(
-                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL,LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL)
+         //       SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL,LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL)
         );
     }
 }
