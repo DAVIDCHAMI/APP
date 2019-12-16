@@ -57,9 +57,9 @@ public class SaldosMovimientosPage {
     public static final Target LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL = Target.the("Tipo de cuenta de inversiones vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL = Target.the("Saldo disponible de inversiones vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
 
- //   public static final Target LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Numero de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
-  //  public static final Target LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Tipo de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
-   // public static final Target LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL = Target.the("Saldo disponible de eprepago vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+   public static final Target LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Numero de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+   public static final Target LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Tipo de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+  public static final Target LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL = Target.the("Saldo disponible de eprepago vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
