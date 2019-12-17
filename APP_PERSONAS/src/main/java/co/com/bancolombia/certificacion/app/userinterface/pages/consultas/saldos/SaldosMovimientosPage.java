@@ -14,7 +14,7 @@ public class SaldosMovimientosPage {
     public static final Target OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS = Target.the("Categoria especifica en saldos y movimientos").locatedBy(dynamicElement(OPCION_SELECCIONAR_CATEGORIA_PRODUCTOS_LOCATOR));
     public static final Target LBL_SIN_MOVIMIENTOS = Target.the("label cuenta sin movimientos").locatedBy(dynamicElement(LBL_SIN_MOVIMIENTOS_LOCATOR));
     public static final Target BTN_DETALLE_PRODUCTO = Target.the("Boton detalles de producto").located(theElementBy(BTN_DETALLE_PRODUCTO_LOCATOR));
-    public static final Target BTN_MOVIMIENTO= Target.the("Boton movimientos").located(theElementBy(BTN_MOVIMIENTO_LOCATOR));
+    public static final Target BTN_MOVIMIENTO = Target.the("Boton movimientos").located(theElementBy(BTN_MOVIMIENTO_LOCATOR));
     public static final Target BTN_OCULTAR_BANNER = Target.the("Boton ocultar banner saldos movimientos").locatedBy(dynamicElement(BTN_OCULTAR_BANNER_LOCATOR));
     public static final Target CONTENEDOR_INFORMACION_PRODUCTO = Target.the("Contenedor Informacion producto").locatedBy(dynamicElement(CONTENEDOR_INFORMACION_PRODUCTO_LOCATOR));
     public static final Target LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS = Target.the("Tipo cuenta deposito").locatedBy(dynamicElement(LBL_TIPO_CUENTA_SALDOS_MOVIMIENTOS_LOCATOR));
@@ -40,8 +40,30 @@ public class SaldosMovimientosPage {
     public static final Target BTN_FILTRO_BUSQUEDA_MOVIMIENTO = Target.the("Boton para buscar un movimiento por descripcion o fecha").located(theElementBy(BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR));
     public static final Target BTN_LIMPIAR_CAMPOS = Target.the("Boton para limpiar campos de busqueda").located(theElementBy(BTN_LIMPIAR_CAMPOS_LOCATOR));
     public static final Target TXT_DESCRIPCION = Target.the("Campo de texto para filtrar por descripcion").located(theElementBy(TXT_DESCRIPCION_LOCATOR));
+    public static final Target TXT_RANGO_FECHAS = Target.the("Campo de texto para filtrar por rango de fechas").located(theElementBy(TXT_RANGO_FECHAS_LOCATOR));
     public static final Target FOCO_MOVIMIENTOS = Target.the("Foco en busqueda de movimientos").located(theElementBy(FOCO_MOVIMIENTOS_LOCATOR));
     public static final Target BTN_BUSCAR_MOVIMIENTO = Target.the("Boton para filtrar los movimientos").located(theElementBy(BTN_BUSCAR_MOVIMIENTO_LOCATOR));
+    public static final Target BTN_VISTA_CARRUSEL = Target.the("Boton para la vista carrusel").located(theElementBy(BTN_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_VISTA_CARRUSEL = Target.the("Tipo de cuenta vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_VISTA_CARRUSEL = Target.the("Numero de cuenta vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL = Target.the("Saldo disponible vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL_LOCATOR));
+    public static final Target CATEGORIA_PRODUCTOS_VISTA_CARRUSEL = Target.the("Categoria productos vista carrusel").locatedBy(dynamicElement(CATEGORIA_PRODUCTOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL = Target.the("Categoria tarjetas credito vista carrusel").locatedBy(dynamicElement(CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Numero de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Tipo de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL = Target.the("Saldo disponible tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL = Target.the("Numero de cuenta del credito vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL = Target.the("Tipo de cuenta del credito vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL = Target.the("Saldo disponible del credito vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL = Target.the("Numero de cuenta de inversiones vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL = Target.the("Tipo de cuenta de inversiones vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL = Target.the("Saldo disponible de inversiones vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Numero de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL = Target.the("Tipo de cuenta de eprepago vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL = Target.the("Saldo disponible de eprepago vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL = Target.the("Numero de cuenta de crediagil vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL = Target.the("Tipo de cuenta de crediagil vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL = Target.the("Saldo disponible de crediagil vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
