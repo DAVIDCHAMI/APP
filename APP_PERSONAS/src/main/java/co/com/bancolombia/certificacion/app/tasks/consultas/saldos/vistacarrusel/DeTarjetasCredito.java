@@ -25,7 +25,6 @@ public class DeTarjetasCredito implements Task {
                 Click.on(BTN_VISTA_CARRUSEL),
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
-
         actor.attemptsTo(
                 SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL,LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL)
         );

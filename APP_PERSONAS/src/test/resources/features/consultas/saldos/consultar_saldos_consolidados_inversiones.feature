@@ -15,10 +15,9 @@ Característica: Consulta de saldos de inversiones app Bancolombia
       | <tipoCuenta> | <numeroCuenta> |
     Entonces Verifico el resultado de la consulta del saldo
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | tipoCuenta          | numeroCuenta                |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | tipoCuenta          | numeroCuenta                | numeroProductos |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Inversiones@1
-      | 1  | 22452521        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0410              | TRANSACCION EXITOSA | bolp            | ACTIVO       | Inversión;Inversión | 0935000000538;0935000000832 |
-
+      | 1  | 22452521        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0410              | TRANSACCION EXITOSA | bolp            | ACTIVO       | Inversión;Inversión | 0935000000538;0935000000832 |                 |
 
   Esquema del escenario: Consulta de productos inversiones desde vista carrusel
     Dado que el Actor se autentica en la app
@@ -26,8 +25,8 @@ Característica: Consulta de saldos de inversiones app Bancolombia
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere CONSULTAR_PRODUCTO
     Cuando consulto el saldo desde la vista carrusel de mis Inversiones
-    Entonces Verifico el resultado de la consulta del saldo
+    Entonces Verifico el resultado de la consulta del saldo desde vista carrusel <numeroProductos>
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | tipoCuenta          | numeroCuenta                |
-   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Inversiones@1
-      | 1  | 22452521        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0410              | TRANSACCION EXITOSA | bolp            | ACTIVO       | Inversión;Inversión | 0935000000538;0935000000832 |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | numeroProductos |
+   ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Inversiones@2
+      | 2  | 22452521        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0410              | TRANSACCION EXITOSA | bolp            | ACTIVO       |            |              | 2               |

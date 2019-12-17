@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL;
 
 public class DeInversiones implements Task {
     private String opcionCategoria;
@@ -22,9 +21,8 @@ public class DeInversiones implements Task {
                 Click.on(BTN_VISTA_CARRUSEL),
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
-
         actor.attemptsTo(
-                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL, LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL, LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL)
+                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL, LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL, LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL)
         );
     }
 }

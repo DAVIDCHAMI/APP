@@ -8,10 +8,10 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 
-public class DeCuentasDeposito implements Task {
+public class DeCrediagil implements Task {
     private String opcionCategoria;
 
-    public DeCuentasDeposito(String opcionCategoria) {
+    public DeCrediagil(String opcionCategoria) {
         this.opcionCategoria = opcionCategoria;
     }
 
@@ -22,7 +22,7 @@ public class DeCuentasDeposito implements Task {
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
         actor.attemptsTo(
-                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_VISTA_CARRUSEL, LBL_TIPO_CUENTA_VISTA_CARRUSEL, LBL_NUMERO_CUENTA_VISTA_CARRUSEL)
+                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL,LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL)
         );
     }
 }

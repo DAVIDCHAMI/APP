@@ -17,14 +17,12 @@ public class DeEprepago implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(BTN_VISTA_CARRUSEL));
         actor.attemptsTo(
                 Click.on(BTN_VISTA_CARRUSEL),
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
-
         actor.attemptsTo(
-         //       SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL,LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL)
+                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL,LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL)
         );
     }
 }

@@ -17,9 +17,8 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                                                                                                              | numeroCuenta                        | numeroProductos |
          ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@1
-      |1|1037655531|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Personal American Express;Personal American Express;Personal Visa;Personal Visa;Personal Mastercard;Personal Mastercard|*7806;*7767;*4895;*5950;*6318;*6682||
+      | 1  | 1037655531      | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Personal American Express;Personal American Express;Personal Visa;Personal Visa;Personal Mastercard;Personal Mastercard | *7806;*7767;*4895;*5950;*6318;*6682 |                 |
 
-  @tcreditocarrusel
   Esquema del escenario: Consulta de productos tarjetas de credito desde vista carrusel
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
@@ -30,4 +29,4 @@ Característica: Consulta de saldos tarjetas de credito app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | numeroProductos |
          ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@TarjetasCredito@2
-      |2|1037655531|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|||6|
+      | 2  | 1037655531      | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |            |              | 6               |

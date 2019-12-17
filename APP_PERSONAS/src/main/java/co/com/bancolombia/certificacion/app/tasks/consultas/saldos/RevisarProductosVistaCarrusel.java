@@ -26,4 +26,8 @@ public class RevisarProductosVistaCarrusel {
     public static Performable DeEprepago(String opcionCategoria) {
         return instrumented(DeEprepago.class,opcionCategoria);
     }
+
+    public static Performable DeCrediagil(String opcionCategoria) {
+        return instrumented(DeCrediagil.class,opcionCategoria);
+    }
 }

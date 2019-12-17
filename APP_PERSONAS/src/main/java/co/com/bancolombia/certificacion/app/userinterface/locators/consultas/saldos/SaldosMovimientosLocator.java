@@ -1,10 +1,8 @@
 package co.com.bancolombia.certificacion.app.userinterface.locators.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator;
-import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_LOCATOR;
-import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.Locator.locator;
 
 public class SaldosMovimientosLocator {
@@ -73,13 +71,15 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class=' font-family-OpenSans-regular font-size-s']//following::div[2]//span").withIos("xpath$test");
     public static final Locator LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class=' font-family-OpenSans-regular font-size-s']").withIos("xpath$test");
     public static final Locator LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CreditsDataContainer3')])[{0}]//span[@class='font-family-nunito font-family-nunito-bold text-black']").withIos("xpath$test");
-    public static final Locator LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$test");
-    public static final Locator LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$test");
-    public static final Locator LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$test").withIos("xpath$test");
-
+    public static final Locator LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'InversionsDataContainer4')]//span[@class=' font-family-OpenSans-regular'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'InversionsDataContainer4')])[{0}]//span[contains(@class,'font-family-OpenSans-regular text-grey')]").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_INVERSIONES_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'InversionsDataContainer4')])[{0}]//span[@class='font-family-nunito font-family-nunito-bold text-black']").withIos("xpath$test");
     public static final Locator LBL_NUMERO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[contains(text(),'*')])[{0}]").withIos("xpath$test");
     public static final Locator LBL_TIPO_CUENTA_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
     public static final Locator LBL_SALDO_DISPONIBLE_EPREPAGO_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[@id='b57-CarouselItems']//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
