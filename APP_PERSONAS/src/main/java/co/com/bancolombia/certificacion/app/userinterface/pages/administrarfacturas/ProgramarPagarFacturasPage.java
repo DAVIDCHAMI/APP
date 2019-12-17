@@ -49,6 +49,8 @@ public class ProgramarPagarFacturasPage {
     public static final Target LBL_VALOR_HISTORICO_PAGO = Target.the("Label de verifica el valor del historico de pago").locatedBy(dynamicElement(LBL_VALOR_HISTORICO_PAGO_LOCATOR));
     public static final Target LBL_CONTENEDOR_HISTORICO_PAGO = Target.the("Contenedor detalle historico de pago").locatedBy(dynamicElement(LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR));
     public static final Target OPT_PROGRAMADAS = Target.the("Opcion programadas").located(theElementBy(OPT_PROGRAMADAS_LOCATOR));
+    public static final Target TXT_BUSCAR_PROGRAMADAS = Target.the("Campo de texto buscar factura programada").located(theElementBy(TXT_BUSCAR_PROGRAMADAS_LOCATOR));
+    public static final Target BTN_CARGAR_FACTURAS = Target.the("Boton cargar facturas").located(theElementBy(BTN_CARGAR_FACTURAS_LOCATOR));
     public static final Target CHK_SELECCIONAR_TODAS_FACTURAS = Target.the("Pagar todas las facturas").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
     public static final Target CHk_SELECCIONAR_FACTURA = Target.the("Selecciona facturas a pagar").locatedBy(dynamicElement(CHK_SELECCIONAR_FACTURA_LOCATOR));
     public static final Target LBL_PAGO_EXITOSO_FACTURA = Target.the("Pago de una factura sin mas facturas inscrita exito").located(theElementBy(LBL_PAGO_EXITOSO_FACTURA_LOCATOR));
