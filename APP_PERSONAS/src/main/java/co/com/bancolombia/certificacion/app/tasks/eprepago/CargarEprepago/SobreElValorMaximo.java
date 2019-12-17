@@ -38,7 +38,7 @@ public class SobreElValorMaximo implements Task {
                 Check.whether(Verificar.elementoVisible(actor, LBL_PRODUCTO_ORIGEN_EPREPAGO))
                         .andIfSo(
                                 RealizarScroll.hastaPosicionDeTarget(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero())),
-                                Esperar.unTiempo(5000),
+                                Esperar.unTiempo(3000),
                                 Click.on(BTN_PRODUCTO_ORIGEN.of(producto.getTipo(), producto.getNumero()))
                         )
         );

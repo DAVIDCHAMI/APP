@@ -9,7 +9,6 @@ import co.com.bancolombia.certificacion.app.questions.consultas.VerificarProduct
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.RevisarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarCuentasDeposito;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarMovimientos;
-import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarMovimientosEprepagoPorRangosDeFecha;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarProductos;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.GuardarDatos;
 import cucumber.api.java.es.Cuando;
@@ -123,8 +122,6 @@ public class ConsultarProductosAsociadosStepDefinition {
 
     @Entonces("^El deberia de ver los movimientos segun el filtro de fecha$")
     public void elDeberiaDeVerLosMovimientosSegunElFiltroDeBusquedaPorFecha() {
-        /*        theActorInTheSpotlight().should(seeThat()
-                .orComplainWith()
-        );*/
+
     }
 }

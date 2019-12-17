@@ -17,8 +17,8 @@ public class AvanceNoExitoso implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return MENSAJE_CUPO_INSUFICIENTE_AVANCE.resolveFor(actor).withTimeoutOf(20, TimeUnit.SECONDS).isVisible()
-                && MENSAJE_CUPO_INSUFICIENTE_AVANCE.resolveAllFor(actor).toString().trim().contains(tarjetaCredito.getMensajeAvanceNoExitoso());
+        return LBL_CUPO_INSUFICIENTE_AVANCE.resolveFor(actor).withTimeoutOf(20, TimeUnit.SECONDS).isVisible()
+                && LBL_CUPO_INSUFICIENTE_AVANCE.resolveAllFor(actor).toString().trim().contains(tarjetaCredito.getMensajeAvanceNoExitoso());
     }
 
     public static AvanceNoExitoso validarAvanceNoExitoso(TarjetaCreditoBuilder datosExcel ) {

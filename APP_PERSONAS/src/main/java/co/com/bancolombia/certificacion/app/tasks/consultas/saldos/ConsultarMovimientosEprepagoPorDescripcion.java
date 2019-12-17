@@ -3,25 +3,18 @@ package co.com.bancolombia.certificacion.app.tasks.consultas.saldos;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoria;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
-import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
+import co.com.bancolombia.certificacion.app.interactions.eprepago.GuardarMovimientos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
 import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.EPREPAGO;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.obtenerIteradorEprepago;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosEprepagoPorDescripcion implements Task {
-
     private String descripcionMovimientos;
     private String tipoCuenta;
     private String numeroCuenta;
@@ -45,20 +38,8 @@ public class ConsultarMovimientosEprepagoPorDescripcion implements Task {
                 Click.on(BTN_LIMPIAR_CAMPOS),
                 Enter.theValue(descripcionMovimientos).into(TXT_DESCRIPCION),
                 Click.on(FOCO_MOVIMIENTOS),
-                Click.on(BTN_BUSCAR_MOVIMIENTO)
+                Click.on(BTN_BUSCAR_MOVIMIENTO),
+                GuardarMovimientos.deEprepago()
         );
-        List<Movimiento> listaMovimiento = new ArrayList<>();
-
-        int cantidadMovimientos= CONTENEDOR_MOVIMIENTOS_EPREPAGO.resolveAllFor(actor).size();
-
-        for (int iterador = 1;iterador<=cantidadMovimientos;iterador++)
-        {
-            listaMovimiento.add(movimiento().
-                    conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
-                    .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
-                    .conValorMovimiento(LBL_SALDO_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText()).build()
-            );
-        }
-        actor.remember(MODELO_LISTA_MOVIMIENTOS, listaMovimiento);
     }
 }

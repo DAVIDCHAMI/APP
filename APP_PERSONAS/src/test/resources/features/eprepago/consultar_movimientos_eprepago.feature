@@ -30,7 +30,6 @@ Característica: Consulta de movimientos de E prepago de un cliente en app Banco
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Eprepago@2
       |2|93221453|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|AHO||
 
-  @rangofechas
   Esquema del escenario: Consultar Movimientos de una E-prepago por fecha
     Dado que el Actor se autentica en la app
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |

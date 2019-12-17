@@ -13,7 +13,7 @@ public class RecargarTarjetaVirtualEprepagoLocator {
     public static final Locator LBL_RECARGA_EXITOSA_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Recarga exitosa!']").withIos("xpath$//*[contains(@name,'¡Recarga exitosa!')]");
     public static final Locator LBL_PRODUCTO_ORIGEN_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Producto origen']").withIos("xpath$//XCUIElementTypeStaticText[@name='Producto origen']");
     public static final Locator LBL_VALOR_RECARGA_NO_PERMITIDO_LOCATOR = locator().withAndroid("xpath$//span[@id='AlertAnimation2']/descendant::span").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Ingresa un valor entre')]");
-    public static final Locator LBL_SALDO_INSUFICIENTE_EN_CUENTA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Saldo insuficiente en el producto a debitar.')]").withIos("xpath$test");
+    public static final Locator LBL_SALDO_INSUFICIENTE_EN_CUENTA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Saldo insuficiente en el producto a debitar.')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'insuficiente')]");
     public static final Locator LBL_VALOR_RECARGADO_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor recargado']/../../child::span[contains(text(),'{0}')]").withIos("xpath$//*[contains(@name,'{0}')]");
     public static final Locator BTN_RECARGAR_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[text()='Recargar']").withIos("xpath$//XCUIElementTypeStaticText[@name='Recargar']/..");
     public static final Locator LBL_COMPROBATE_EPREPAGO_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Comprobante')]");
