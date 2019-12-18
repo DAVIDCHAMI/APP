@@ -51,7 +51,6 @@ public class PreparacionEscenarioStepDefinition {
                 IniciarSesion.con(informacion()
                         .deTransaccion(datos)
                 ),
-                SeleccionarOpcion.delMenu("GESTIONAR_CLAVE_DINAMICA"),
                 GestionarClaveDinamica.conDatosInscripcionDesdeCorreo(usuario()
                         .conNombrePersonalizado(datos)
                         .conCorreo(datos)

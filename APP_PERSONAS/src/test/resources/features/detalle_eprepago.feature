@@ -15,4 +15,4 @@ Característica: Consulta de detalle de E-prepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta | nombrePersonalizado | correo | tipoCorreo | numeroCelular |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@EprepagoPOC@1
-      |1|22452521|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|invictusdiez|automatizaciontodo1@gmail.com|Laboral|3145678956|
+      |1|22452521|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|MasterCard|*9344|invictusdiez|automatizaciontodo1@gmail.com|Laboral|3145678956|
