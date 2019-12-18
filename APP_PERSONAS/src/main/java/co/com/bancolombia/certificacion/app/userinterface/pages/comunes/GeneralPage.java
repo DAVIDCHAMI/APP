@@ -40,7 +40,6 @@ public class GeneralPage {
     public static final Target BTN_ELIMINAR_CORREO = Target.the("Eliminar Correo").located(theElementBy(BTN_ELIMINAR_CORREO_LOCATOR));
     public static final Target BTN_CONFIRMAR = Target.the("Boton Confirmar").located(theElementBy(BTN_CONFIRMAR_LOCATOR));
     public static final Target LBL_CONFIRMACION_ENVIO_CORREO = Target.the("Mensaje Confirmacion envio correo").located(theElementBy(LBL_CONFIRMACION_ENVIO_CORREO_LOCATOR));
-    public static final Target TXT_CODIGO_SEGURIDAD = Target.the("Campo código seguridad").located(theElementBy(TXT_CODIGO_SEGURIDAD_LOCATOR));
     public static final Target BTN_ENVIAR = Target.the("Boton Enviar Clave Dinamica").located(theElementBy(BTN_ENVIAR_LOCATOR));
     public static final Target IMG_CORREO_VACIO = Target.the("Imagen correo vacio").located(theElementBy(IMG_CORREO_VACIO_LOCATOR));
     public static final Target BTN_INSCRIBIR_CLAVE_DINAMICA_FLOTANTE = Target.the("Boton inscribir clave dinamica flotante").located(theElementBy(BTN_INSCRIBIR_CLAVE_DINAMICA_FLOTANTE_LOCATOR));
