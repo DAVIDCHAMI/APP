@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.tasks.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Saltar;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.interactions.recaudos.SeleccionarOpcionFactura;
@@ -10,7 +9,6 @@ import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -23,22 +21,17 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class EditarProgramacion implements Task {
     private Factura programarFacturas;
     private String opcion;
-    private String filtroBusqueda;
 
-    public EditarProgramacion(Factura programarFacturas, String opcion, String filtroBusqueda) {
+    public EditarProgramacion(Factura programarFacturas, String opcion) {
         this.programarFacturas = programarFacturas;
         this.opcion = opcion;
-        this.filtroBusqueda = filtroBusqueda;
-    }
+        }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Saltar.onBoarding(),
                 Click.on(OPT_PROGRAMADAS),
-                Enter.theValue(filtroBusqueda).into(TXT_BUSCAR_PROGRAMADAS),
-                Click.on(BTN_CARGAR_FACTURAS),
-                Esperar.unTiempo(5000),
                 SeleccionarOpcionFactura.conInformacion(OPT_MODIFICAR_PROGRAMACION, programarFacturas),
                 Validar.carga(),
                 Click.on(FOCO),
