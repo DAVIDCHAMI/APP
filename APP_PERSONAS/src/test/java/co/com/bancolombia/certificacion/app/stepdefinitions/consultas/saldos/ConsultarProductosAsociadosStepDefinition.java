@@ -66,6 +66,13 @@ public class ConsultarProductosAsociadosStepDefinition {
         );
     }
 
+    @Cuando("^quiero filtrar mis movimientos de eprepago por rango de fechas (.*) en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void quieroFiltrarMisMovimientosDeEprepagoPorRangoDeFechasEnLaApp(String rangoFechas, String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.porRangoDeFechas(rangoFechas, tipoCuenta, numeroCuenta)
+        );
+    }
+
     @Y("el ingresa a sus productos$")
     public void ingresaSusProductos() {
         theActorInTheSpotlight().attemptsTo(
@@ -111,5 +118,10 @@ public class ConsultarProductosAsociadosStepDefinition {
         theActorInTheSpotlight().should(seeThat(VerificarMovimientos.productos())
                         .orComplainWith(ProductoSinMovimientosException.class, SIN_MOVIMIENTOS)
                 );
+    }
+
+    @Entonces("^El deberia de ver los movimientos segun el filtro de fecha$")
+    public void elDeberiaDeVerLosMovimientosSegunElFiltroDeBusquedaPorFecha() {
+
     }
 }

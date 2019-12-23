@@ -41,6 +41,5 @@ public class Verificar {
             LOGGER.info("elemento no presente");
         }
         return result;
-
     }
 }

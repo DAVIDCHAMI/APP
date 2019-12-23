@@ -33,6 +33,7 @@ public class SeleccionarOpcion implements Task {
                 Check.whether(!"".equals(tipoTransaccion.getSubMenu())).andIfSo(
                         WaitUntil.the(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()), isPresent()),
                         RealizarScroll.hastaPosicionDeTarget(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
+                        WaitUntil.the(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()), isPresent()),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 )
         );
