@@ -24,7 +24,8 @@ public class GuardarMovimientos implements Interaction {
             int cantidadMovimientos = CONTENEDOR_MOVIMIENTOS_EPREPAGO.resolveAllFor(actor).size();
 
             for (int iterador = 1; iterador <= cantidadMovimientos; iterador++) {
-                listaMovimiento.add(movimiento().conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
+                listaMovimiento.add(movimiento()
+                        .conFecha(LBL_FECHA_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
                         .conDescripcion(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText())
                         .conValorMovimiento(LBL_SALDO_MOVIMIENTO_EPREPAGO.of(String.valueOf(obtenerIteradorEprepago(iterador))).resolveFor(actor).getText()).build()
                 );
