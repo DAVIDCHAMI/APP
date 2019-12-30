@@ -13,10 +13,10 @@ import net.serenitybdd.screenplay.conditions.Check;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.pagos.PagosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OTRO_VALOR;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.VISA;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_DETALLE_PRODUCTO;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_TARJETA_CREDITO;
-import static co.com.bancolombia.certificacion.app.utilidades.string.UtileriaString.darFormato;
 
 public class Propia implements Task {
     private TarjetaCredito tarjetaCredito;
@@ -53,7 +53,7 @@ public class Propia implements Task {
                 RealizarScroll.hastaPosicionDeTarget(LNK_PRODUCTO_ORIGEN),
                 Click.on(LNK_PRODUCTO_ORIGEN)
         );
-        tarjetaCredito.setValorPago(darFormato(tarjetaCredito.getValorPago()));
+        tarjetaCredito.setValorPago(tarjetaCredito.getValorPago());
         actor.remember(MODELO_DETALLE_PRODUCTO, productoDebitar);
         actor.remember(MODELO_TARJETA_CREDITO, tarjetaCredito);
     }
