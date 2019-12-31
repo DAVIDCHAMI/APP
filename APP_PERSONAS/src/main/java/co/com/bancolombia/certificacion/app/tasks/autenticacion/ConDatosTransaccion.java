@@ -23,6 +23,7 @@ public class ConDatosTransaccion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
+
         actor.attemptsTo(
                 Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
@@ -32,6 +33,7 @@ public class ConDatosTransaccion implements Task {
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 Escribir.enCampoTexto(usuario.getUsuario().getClave()),
+                Click.on(LBL_FOCO_CLAVE),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 CancelarActivacion.deHuella()

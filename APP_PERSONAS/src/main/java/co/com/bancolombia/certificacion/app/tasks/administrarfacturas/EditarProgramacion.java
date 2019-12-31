@@ -25,7 +25,7 @@ public class EditarProgramacion implements Task {
     public EditarProgramacion(Factura programarFacturas, String opcion) {
         this.programarFacturas = programarFacturas;
         this.opcion = opcion;
-    }
+        }
 
     @Override
     public <T extends Actor> void performAs(T actor) {

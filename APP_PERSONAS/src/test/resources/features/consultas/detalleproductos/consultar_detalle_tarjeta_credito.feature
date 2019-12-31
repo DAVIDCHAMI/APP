@@ -14,6 +14,6 @@ Característica: Consulta de detalle de tarjetas de credito
     Y consulto el detalle de tarjeta de credito <tipoCuenta> numero <numeroCuenta>
     Entonces deberia de ver el detalle de mi tarjeta de credito
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                | numeroCuenta |
-   ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@TarjetasCredito@1
-      |1|1037655531|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Personal American Express|*7806|
+      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                | numeroCuenta |
+   ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@TarjetasCredito@2
+      |2|999999|1|testing10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Personal American Express|*6878|

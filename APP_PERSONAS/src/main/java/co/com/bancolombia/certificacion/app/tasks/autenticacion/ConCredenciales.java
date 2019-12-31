@@ -30,6 +30,7 @@ public class ConCredenciales implements Task {
                 Click.on(BTN_CONTINUAR),
                 Click.on(TXT_CLAVE_DIGITOS),
                 Escribir.enCampoTexto(usuario.getClave()),
+                Click.on(LBL_FOCO_CLAVE),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
                 Click.on(BTN_CONTINUAR),
                 CancelarActivacion.deHuella()

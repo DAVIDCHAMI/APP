@@ -25,9 +25,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class ConsultarProductosAsociadosStepDefinition {
 
     @Cuando("^consulto en (.*) los movimientos con tipo (.*) y numero cuenta (.*)$")
-    public void revisarMisMovimientosEnApp(String categoria,String tipoCuenta, String numeroCuenta) {
+    public void revisarMisMovimientosEnApp(String categoria, String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
-                ConsultarProductos.sinMovimientosConInformacion(categoria,tipoCuenta, numeroCuenta)
+                ConsultarProductos.sinMovimientosConInformacion(categoria, tipoCuenta, numeroCuenta)
         );
     }
 
@@ -56,6 +56,20 @@ public class ConsultarProductosAsociadosStepDefinition {
     public void revisarMisMovimientosEprepago(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarMovimientos.deEprepago(tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^quiero filtrar mis movimientos de eprepago por descripcion (.*) en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void quieroFiltrarMisMovimientosDeEprepagoPorDescripcionEnLaApp(String descripcionMovimiento, String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.porDescripcionDeEprepago(descripcionMovimiento, tipoCuenta, numeroCuenta)
+        );
+    }
+
+    @Cuando("^quiero filtrar mis movimientos de eprepago por rango de fechas (.*) en la app con tipo de cuenta (.*) y numero cuenta (.*)$")
+    public void quieroFiltrarMisMovimientosDeEprepagoPorRangoDeFechasEnLaApp(String rangoFechas, String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarMovimientos.porRangoDeFechas(rangoFechas, tipoCuenta, numeroCuenta)
         );
     }
 
@@ -97,5 +111,17 @@ public class ConsultarProductosAsociadosStepDefinition {
                 VerificarProducto.sinMovimientos(mensaje)
                 ).orComplainWith(ProductoConMovimientosException.class, CON_MOVIMIENTOS)
         );
+    }
+
+    @Entonces("^El deberia de ver los movimientos segun el filtro de busqueda$")
+    public void elDeberiaDeVerLosMovimientosSegunElFiltroDeBusqueda() {
+        theActorInTheSpotlight().should(seeThat(VerificarMovimientos.productos())
+                        .orComplainWith(ProductoSinMovimientosException.class, SIN_MOVIMIENTOS)
+                );
+    }
+
+    @Entonces("^El deberia de ver los movimientos segun el filtro de fecha$")
+    public void elDeberiaDeVerLosMovimientosSegunElFiltroDeBusquedaPorFecha() {
+
     }
 }

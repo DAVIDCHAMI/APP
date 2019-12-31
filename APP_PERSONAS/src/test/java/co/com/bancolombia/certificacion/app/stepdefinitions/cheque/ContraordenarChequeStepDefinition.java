@@ -4,6 +4,8 @@ import co.com.bancolombia.certificacion.app.exceptions.cheque.NoRegistraContraor
 import co.com.bancolombia.certificacion.app.exceptions.cheque.NoRegistraContraordenChequeException;
 import co.com.bancolombia.certificacion.app.questions.cheque.VerificarContraorden;
 import co.com.bancolombia.certificacion.app.questions.cheque.VerificarContraordenConRango;
+import co.com.bancolombia.certificacion.app.questions.cheque.VerificarNoContraordenDeCheque;
+import co.com.bancolombia.certificacion.app.questions.cheque.VerificarNoContraordenDeChequeSinCuenta;
 import co.com.bancolombia.certificacion.app.tasks.cheque.ContraordenarCheque;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
@@ -42,5 +44,17 @@ public class ContraordenarChequeStepDefinition {
     public void deberiaVerContraordernaChequeConRango(){
         theActorInTheSpotlight().should(seeThat(VerificarContraordenConRango.deChequeConRango())
                 .orComplainWith(NoRegistraContraordenChequeConRangoException.class, NO_INSCRIBE_CONTRAORDEN_CON_RANGO));
+    }
+
+    @Entonces("El deberia ver un mensaje de rango incorrecto")
+    public void deberiaVerUnMensajeDeRandoIncorrecto(){
+        theActorInTheSpotlight().should(seeThat(VerificarNoContraordenDeCheque.conRangosIncorrectos())
+                .orComplainWith(NoRegistraContraordenChequeConRangoException.class, NO_INSCRIBE_CONTRAORDEN_CON_RANGO));
+    }
+
+    @Entonces("El deberia ver un mensaje: No tienes cuenta corriente para realizar la contraorden")
+    public void deberiaVerUnMensajeNoTienesCuentaCorrienteParaRealizarLaContraorden(){
+        theActorInTheSpotlight().should(seeThat(VerificarNoContraordenDeChequeSinCuenta.corriente())
+                .orComplainWith(NoRegistraContraordenChequeException.class, NO_INSCRIBE_CONTRAORDEN));
     }
 }

@@ -16,6 +16,7 @@ public class CancelarActivacion implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(3000),
                 Check.whether(elementoVisible(actor, LNK_CANCELAR)
                 ).andIfSo(
                         Click.on(LNK_CANCELAR),

@@ -43,6 +43,7 @@ public class Constantes {
     public static final String PRIMERA_PARTE_CLAVE_DINAMICA= "Apreciado Cliente, De acuerdo con la solicitud realizada por usted, le enviamos su Clave Dinámica para que continúe con la transacción. Bancolombia te informa la Clave Dinámica   ";
     public static final String SEGUNDA_PARTE_CLAVE_DINAMICA= ". Inquietudes al 0345109000/018000912345 Recuerde que la Clave Dinámica tiene una vigencia de 5 minutos y solo será válida por una transacción. Bancolombia S.A. ";
     public static final String CLAVE_DINAMICA_DESDE_CORREO= "CLAVE CORREO";
+    public static final String ENVIA_DINERO = "envia dinero";
 
     private Constantes() {
         throw new IllegalStateException(CLASE_CONSTANTE);

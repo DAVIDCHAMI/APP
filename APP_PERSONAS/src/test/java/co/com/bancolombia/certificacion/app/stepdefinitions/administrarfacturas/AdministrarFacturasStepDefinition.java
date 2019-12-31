@@ -1,9 +1,9 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.administrarfacturas;
 
-import co.com.bancolombia.certificacion.app.exceptions.recaudos.EliminacionFacturasException;
-import co.com.bancolombia.certificacion.app.exceptions.recaudos.ModificacionProgramacionException;
 import co.com.bancolombia.certificacion.app.exceptions.inscripcion.VerificarInscripcionFactura;
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.EliminacionFacturasException;
 import co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException;
+import co.com.bancolombia.certificacion.app.exceptions.recaudos.ModificacionProgramacionException;
 import co.com.bancolombia.certificacion.app.exceptions.recaudos.NoPresentaMensajeProgramacionExitosaException;
 import co.com.bancolombia.certificacion.app.questions.administrarfacturas.*;
 import co.com.bancolombia.certificacion.app.tasks.administrarfacturas.AdministrarFactura;
@@ -14,10 +14,10 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 import java.util.Map;
 
-import static co.com.bancolombia.certificacion.app.exceptions.recaudos.EliminacionFacturasException.MENSAJE_ELIMINACION;
-import static co.com.bancolombia.certificacion.app.exceptions.recaudos.ModificacionProgramacionException.MENSAJE_MODIFICACION;
 import static co.com.bancolombia.certificacion.app.exceptions.inscripcion.VerificarInscripcionFactura.INSCRIPCION_FALLIDA;
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.EliminacionFacturasException.MENSAJE_ELIMINACION;
 import static co.com.bancolombia.certificacion.app.exceptions.recaudos.HistoricoPagoException.NO_TIENE_HISTORICO_DE_PAGOS;
+import static co.com.bancolombia.certificacion.app.exceptions.recaudos.ModificacionProgramacionException.MENSAJE_MODIFICACION;
 import static co.com.bancolombia.certificacion.app.exceptions.recaudos.NoPresentaMensajeProgramacionExitosaException.NO_PRESENTA_MENSAJE_PROGRAMACION_EXITOSA;
 import static co.com.bancolombia.certificacion.app.models.builders.FacturaBuilder.factura;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -82,7 +82,7 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
+    @Cuando("el actor modifica sus facturas programadas por la opcion (.*) y filtrando por (.*)$")
     public void elActorModificaSusFacturasProgramadas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)

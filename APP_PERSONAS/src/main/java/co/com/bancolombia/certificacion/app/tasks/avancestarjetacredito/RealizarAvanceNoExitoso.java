@@ -6,51 +6,41 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.avancestarjetacredito.AvancesPage.*;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.ENVIA_DINERO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class RealizarAvanceNoExitoso implements Task {
     private String tipoAvance;
     private TarjetaCredito tarjetaCredito;
 
-    public RealizarAvanceNoExitoso(TarjetaCredito tarjetaCredito, String tipoAvance){
+    public RealizarAvanceNoExitoso(TarjetaCredito tarjetaCredito, String tipoAvance) {
         this.tipoAvance = tipoAvance;
-        this.tarjetaCredito =tarjetaCredito;
+        this.tarjetaCredito = tarjetaCredito;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        int cantidadTarjetas;
-        if("envia dinero".equals(tipoAvance)){
-            actor.attemptsTo(Click.on(BTN_TARJETA_CREDITO));
-            cantidadTarjetas= LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).size();
-            for (int i = 0; i < cantidadTarjetas ; i++) {
-                if(!"".equals(LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText()) && LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim())) {
-                        LST_CONTENEDOR_TARJETAS.resolveAllFor(actor).get(i).click();
-                        break;
-                }
-            }
-        } else {
-            actor.attemptsTo(Click.on(BTN_REALIZAR_AVANCES));
-            cantidadTarjetas= LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).size();
-            for (int i = 0; i < cantidadTarjetas ; i++) {
-                if(!"".equals(LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText()) && LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).getText().toUpperCase().trim().contains(tarjetaCredito.getNumeroTarjeta().toUpperCase().trim())) {
-                        LISTADO_TARJETAS_CREDITO.resolveAllFor(actor).get(i).click();
-                        break;
-                }
-            }
-        }
         actor.attemptsTo(
-                Scroll.to(TXT_CODIGO_SEGURIDAD),
+                Check.whether(ENVIA_DINERO.equals(tipoAvance)).andIfSo(
+                        Click.on(BTN_TARJETA_CREDITO)
+                ).otherwise(
+                        Click.on(BTN_REALIZAR_AVANCES)
+                ),
+                WaitUntil.the(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta()), isPresent()),
+                Click.on(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta())),
                 Enter.theValue(tarjetaCredito.getCodigoSeguridad()).into(TXT_CODIGO_SEGURIDAD),
-                Click.on(BTN_SIGUIENTE), Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
+                Click.on(BTN_SIGUIENTE),
+                Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
                 Click.on(BOTON_SIGUIENTE_AVANCE)
         );
     }
 
-    public static RealizarAvanceNoExitoso deTarjetasCredito(TarjetaCreditoBuilder datosExcel, String tipoAvance){
-        return instrumented(RealizarAvanceNoExitoso.class,datosExcel.build(), tipoAvance);
+    public static RealizarAvanceNoExitoso deTarjetasCredito(TarjetaCreditoBuilder datosExcel, String tipoAvance) {
+        return instrumented(RealizarAvanceNoExitoso.class, datosExcel.build(), tipoAvance);
     }
 }
