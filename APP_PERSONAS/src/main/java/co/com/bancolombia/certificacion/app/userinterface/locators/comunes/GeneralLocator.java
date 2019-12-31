@@ -36,13 +36,12 @@ public class GeneralLocator {
     public static final Locator ITEM_CORREO_RECIBIDO_LOCATOR= locator().withAndroid("xpath$(//android.widget.TextView[@resource-id='com.google.android.gm:id/subject'])[1]").withIos("xpath$q");
     public static final Locator TXT_CUERPO_MENSAJE_LOCATOR= locator().withAndroid("xpath$(//android.view.View[contains(@resource-id, 'conversation-promotion')]/following-sibling::android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View//android.view.View/android.view.View)[2]").withIos("xpath$q");
     public static final Locator BTN_ELIMINAR_CORREO_LOCATOR= locator().withAndroid("xpath$//android.widget.TextView[@content-desc='Eliminar']").withIos("xpath$q");
-    public static final Locator BTN_CONFIRMAR_LOCATOR= locator().withAndroid("id$Button_Confirm_SecurityCodeDK").withIos("xpath$q");
-    public static final Locator LBL_CONFIRMACION_ENVIO_CORREO_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'El código de seguridad fue enviado.')]").withIos("xpath$q");
-    public static final Locator TXT_CODIGO_SEGURIDAD_LOCATOR= locator().withAndroid("xpath$(//div[contains(@id,'Column1')])[1]").withIos("xpath$q");
-    public static final Locator BTN_ENVIAR_LOCATOR= locator().withAndroid("id$Button_Send_ValidateSecurityCodeDK").withIos("xpath$q");
+    public static final Locator BTN_CONFIRMAR_LOCATOR= locator().withAndroid("id$Button_Confirm_SecurityCodeDK").withIos("xpath$//XCUIElementTypeButton[@name='CONFIRMAR']");
+    public static final Locator LBL_CONFIRMACION_ENVIO_CORREO_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'El código de seguridad fue enviado.')]").withIos("xpath$//XCUIElementTypeStaticText[@name='El código de seguridad fue enviado.']");
+    public static final Locator BTN_ENVIAR_LOCATOR= locator().withAndroid("id$Button_Send_ValidateSecurityCodeDK").withIos("xpath$//XCUIElementTypeButton[@name='ENVIAR']");
     public static final Locator IMG_CORREO_VACIO_LOCATOR= locator().withAndroid("id$com.google.android.gm:id/empty_icon").withIos("xpath$q");
-    public static final Locator BTN_INSCRIBIR_CLAVE_DINAMICA_FLOTANTE_LOCATOR= locator().withAndroid("xpath$//button[@id='registerDynamicKey']").withIos("xpath$q");
-    public static final Locator BTN_CLAVE_DINAMICA_INSCRITA_FLOTANTE_LOCATOR= locator().withAndroid("xpath$//button[@id='dynamicKey']").withIos("xpath$q");
+    public static final Locator BTN_INSCRIBIR_CLAVE_DINAMICA_FLOTANTE_LOCATOR= locator().withAndroid("xpath$//button[@id='registerDynamicKey']").withIos("xpath$//XCUIElementTypeButton[@name='Inscríbete a clave dinámica']");
+    public static final Locator BTN_CLAVE_DINAMICA_INSCRITA_FLOTANTE_LOCATOR= locator().withAndroid("xpath$//button[@id='dynamicKey']").withIos("xpath$//XCUIElementTypeButton[contains (@name, 'Clave dinámica')]");
 
     private GeneralLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
