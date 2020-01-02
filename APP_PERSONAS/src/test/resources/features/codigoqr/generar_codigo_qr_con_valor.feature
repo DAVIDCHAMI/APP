@@ -18,7 +18,7 @@ Característica: Generacion de codigo QR con valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@2
-      |2|333333302|1|autotest30|1234|4321|Acierto|0|369|NO ERROR|bolp|ACTIVO|conValor|Ahorros|406-733020-15|150000|qr automatizado|
+      | 2  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 0           | 369               | NO ERROR          | bolp            | ACTIVO       | conValor            | Ahorros    | 406-733020-15 | 150000 | qr automatizado |
 
   Esquema del escenario: Generacion de codigo QR sin inicio de sesion con valor
     Dado que el Actor carga los datos para la prueba
@@ -31,7 +31,7 @@ Característica: Generacion de codigo QR con valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto  | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@3
-      |3|333333302|1|autotest30|1234|4321|Acierto|0|369|NO ERROR|bolp|ACTIVO|conValor|Ahorros|406-733020-15|134000|qr automatizado|
+      | 3  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 0           | 369               | NO ERROR          | bolp            | ACTIVO       | conValor            | Ahorros    | 406-733020-15 | 134000 | qr automatizado |
 
   Esquema del escenario: Generacion de codigo QR con unica cuenta deposito
     Dado que el Actor se autentica en la app
@@ -45,4 +45,4 @@ Característica: Generacion de codigo QR con valor
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | tipoCuenta | numeroCuenta  | monto | descripcion     |
    ##@externaldata@./src/test/resources/datadriven/codigoqr/GenerarCodigoQr.xlsx@Datos@5
-      |5|87576483|1|autotest13|1234|4321|Acierto|0|369|NO ERROR|bolp|ACTIVO|sinValor|Ahorros|406-764830-26||qr automatizado|
+      | 5  | 87576483        | 1             | autotest13 | 1234  | 4321         | Acierto     | 0           | 369               | NO ERROR          | bolp            | ACTIVO       | sinValor            | Ahorros    | 406-764830-26 |       | qr automatizado |

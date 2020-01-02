@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -34,17 +35,19 @@ public class InscribirProductos implements Task {
                 Type.theValue(inscripcion.getNombreBanco()).into(TXT_BUSCAR_NOMBRE_BANCO),
                 RealizarScroll.hastaPosicionDeTarget(ITEM_NOMBRE_BANCO),
                 Click.on(ITEM_NOMBRE_BANCO),
-                Click.on(BTN_CERRAR_SELECCION_BANCO),
+               // WaitUntil.the(BTN_CERRAR_SELECCION_BANCO, isVisible()),
+               // Click.on(BTN_CERRAR_SELECCION_BANCO),
                 Click.on(FOCO),
                 Click.on(CHK_TIPO_CUENTA.of(inscripcion.getProducto().getTipo())),
                 WaitUntil.the(BTN_SIGUIENTE, isEnabled()),
-                Click.on(BTN_SIGUIENTE),
+                JavaScriptClick.on(BTN_SIGUIENTE),
+               // Click.on(BTN_SIGUIENTE),
                 Click.on(TXT_TIPO_DOCUMENTO),
                 Click.on(ITEM_TIPO_DOCUMENTO.of(inscripcion.getUsuario().getTipoDocumento().trim())),
                 Enter.theValue(inscripcion.getUsuario().getNumeroDocumento()).into(TXT_NUMERO_DOCUMENTO),
                 Click.on(FOCO),
                 WaitUntil.the(BTN_SIGUIENTE, isEnabled()),
-                Click.on(BTN_SIGUIENTE),
+                JavaScriptClick.on(BTN_SIGUIENTE),
                 Click.on(BTN_INSCRIBIR),
                 Validar.carga()
         );
