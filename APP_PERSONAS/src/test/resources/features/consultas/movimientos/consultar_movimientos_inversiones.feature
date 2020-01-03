@@ -15,9 +15,9 @@ Característica: Consulta de productos de inversiones de un cliente en app Banco
     Y quiero revisar mis movimientos de inversiones con tipo de cuenta <tipoCuenta> y numero cuenta <numeroCuenta>
     Entonces El deberia de ver los movimientos asociados a su cuenta
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Inversiones@1
-      | 1  | 1037655531      | 1             | testing10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | FIDURENTA  | 7001000033569 |
+      |1|22452521|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|fiducuenta|0935000000538|
 
   Esquema del escenario: Consultar inversiones sin movimientos
     Dado que el Actor se autentica en la app
@@ -29,4 +29,4 @@ Característica: Consulta de productos de inversiones de un cliente en app Banco
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@Inversiones@2
-      |    |                 |               |         |       |              |             |             |                   |                   |                 |              |            |              |
+      |||||||||||||||

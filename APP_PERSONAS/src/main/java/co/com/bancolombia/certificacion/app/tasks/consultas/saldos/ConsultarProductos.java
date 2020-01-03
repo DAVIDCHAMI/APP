@@ -11,7 +11,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CUENTAS;
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.OPCION_INVERSIONES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

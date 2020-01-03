@@ -4,7 +4,6 @@ import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.Selecc
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarProducto;
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
-import co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -16,7 +15,6 @@ import java.util.List;
 import static co.com.bancolombia.certificacion.app.models.builders.MovimientoBuilder.movimiento;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.ModeloConstantes.MODELO_LISTA_MOVIMIENTOS;
-import static co.com.bancolombia.certificacion.app.utilidades.enumeradores.OpcionCategoriaSaldosMovimientosEnum.TARJETAS_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ConsultarMovimientosTarjetasInversiones implements Task {
