@@ -15,4 +15,4 @@ Característica: Generar clave dinamica
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombreUsuario   |
    ##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xlsx@Generar@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Autotesttreinta |
+      |1|333333302|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Autotesttreinta|

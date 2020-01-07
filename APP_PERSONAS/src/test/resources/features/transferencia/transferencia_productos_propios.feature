@@ -15,7 +15,7 @@ Característica: Realizar una transferencia a productos propios
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@2
-      | 2  | 1010111         | Cédula de ciudadanía | invictus10 | 6789  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 406-725210-12  | Ahorros            | 6000  | Productos propios e inscritos Bancolombia | 406-725210-14   | Ahorros             | Mis productos        | Mis productos         |
+      |2|1010111|Cédula de ciudadanía|invictus10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-725210-12|Ahorros|6000|Productos propios e inscritos Bancolombia|406-725210-14|Ahorros|Mis productos|Mis productos|
 
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia cuenta inversión
     Dado que el Actor se autentica en la app
@@ -29,7 +29,7 @@ Característica: Realizar una transferencia a productos propios
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@7
-      | 7  | 1010111         | Cédula de ciudadanía | pruebauser01 | 6789  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 0437002003817  | FIDUCUENTA         | 2000  | Productos propios e inscritos Bancolombia | 0009000301809   | Inversión           | Inversiones          | Inscritos             |
+      |7|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|0437002003817|FIDUCUENTA|2000|Productos propios e inscritos Bancolombia|0009000301809|Inversión|Inversiones|Inscritos|
 
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia a cuenta depósto
     Dado que el Actor se autentica en la app
@@ -43,7 +43,7 @@ Característica: Realizar una transferencia a productos propios
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@6
-      | 6  | 1010111         | Cédula de ciudadanía | pruebauser01 | 6789  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 0437002003817  | FIDUCUENTA         | 3000  | Productos propios e inscritos Bancolombia | 406-757180-07   | Ahorros             | Inversiones          | Inscritos             |
+      |6|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|0437002003817|FIDUCUENTA|3000|Productos propios e inscritos Bancolombia|406-757180-07|Ahorros|Inversiones|Inscritos|
 
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia a cuenta depósto
     Dado que el Actor se autentica en la app
@@ -57,4 +57,4 @@ Característica: Realizar una transferencia a productos propios
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@11
-      | 11 | 1010111         | Cédula de ciudadanía | pruebauser01 | 6789  | 4321         | Alterno     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | 0437002003817  | FIDUCUENTA         | 2000  | Productos propios e inscritos Bancolombia | 0009000301809   | Inversión           | Inversiones          | Inscritos             |
+      |11|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|0437002003817|FIDUCUENTA|2000|Productos propios e inscritos Bancolombia|0009000301809|Inversión|Inversiones|Inscritos|
