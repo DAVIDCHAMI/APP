@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/consultas/detalleproductos/consultar_detalle_eprepago.feature"},
+        features = {"src/test/resources/features/consultar_detalle_eprepago.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
@@ -25,6 +25,6 @@ public class ConsultarDetalleEprepago {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultas/detalleproductos/consultar_detalle_eprepago.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/consultar_detalle_eprepago.feature");
     }
 }

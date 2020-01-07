@@ -11,6 +11,10 @@ public class GestionarClaveDinamica {
         return instrumented(InscribirClaveDinamica.class, usuarioBuilder.build());
     }
 
+    public static Performable conDatosInscripcionDesdeCorreo(UsuarioBuilder usuarioBuilder) {
+        return instrumented(InscribirClaveDinamicaCorreo.class, usuarioBuilder.build());
+    }
+
     public static Performable conDatosEliminacion(UsuarioBuilder usuarioBuilder) {
         return instrumented(EliminarClaveDinamica.class, usuarioBuilder.build());
     }
