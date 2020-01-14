@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.Normalizer;
 
-import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.COMA;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.*;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_UTILIDAD;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.getPlatformCapability;
 
@@ -66,4 +66,13 @@ public class UtileriaString {
         else
             return iterador + iterador -1;
     }
+
+    public static String retornarClaveDinamica(String mensaje){
+        String[] primeraParte = mensaje.split(PRIMERA_PARTE_CLAVE_DINAMICA);
+        String parteUno = primeraParte[1];
+        String[] segundaParte = parteUno.split(SEGUNDA_PARTE_CLAVE_DINAMICA);
+        String parteDos = segundaParte[0];
+        return parteDos;
+    }
+
 }

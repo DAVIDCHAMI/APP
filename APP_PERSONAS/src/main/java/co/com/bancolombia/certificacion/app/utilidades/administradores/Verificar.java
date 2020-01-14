@@ -18,7 +18,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isEnabled();
         } catch (Exception e) {
-            LOGGER.info("elemento no habilitado");
+            LOGGER.error(e.getMessage(), e);
         }
         return result;
     }
@@ -28,7 +28,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isVisible();
         } catch (Exception e) {
-            LOGGER.info("elemento no visible");
+           LOGGER.error(e.getMessage(), e);
         }
         return result;
     }
@@ -38,7 +38,7 @@ public class Verificar {
         try {
             result = target.resolveFor(actor).isPresent();
         } catch (Exception e) {
-            LOGGER.info("elemento no presente");
+            LOGGER.error(e.getMessage(), e);
         }
         return result;
     }

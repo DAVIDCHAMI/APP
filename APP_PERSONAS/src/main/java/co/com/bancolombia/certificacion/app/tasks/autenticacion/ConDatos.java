@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.autenticacion;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.CancelarActivacion;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Escribir;
 
 import net.serenitybdd.screenplay.Actor;
@@ -10,7 +11,6 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.*;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.BTN_CONTINUAR;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.BTN_INSCRIBIR_DINAMICA_CLAVE;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar.elementoVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
@@ -39,7 +39,8 @@ public class ConDatos implements Task {
                 Escribir.enCampoTexto(clave),
                 Click.on(LBL_FOCO_CLAVE),
                 WaitUntil.the(BTN_CONTINUAR, isEnabled()),
-                Click.on(BTN_CONTINUAR)
+                Click.on(BTN_CONTINUAR),
+                CancelarActivacion.deHuella()
         );
     }
 }
