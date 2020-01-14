@@ -14,7 +14,7 @@ Característica: Autenticacion app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|EPREPAGO|
+      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|INSCRIBIR_PRODUCTOS|
 
   @RutaCritica
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
