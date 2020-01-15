@@ -17,7 +17,7 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@TarjetasCredito@1
-      | 1  | 1037655531      | 1             | zutarjeta7 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Personal American Express | *0702        |
+      |1|42003843|1|zutarjeta7|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Personal American Express|*1209|
 
   Esquema del escenario: Consultar tarjetas de credito sin movimientos
     Dado que el Actor se autentica en la app
@@ -29,4 +29,4 @@ Característica: Consulta de productos Tarjeta de credito de un cliente en app B
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta                | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/consultas/movimientos/ConsultaMovimientos.xlsx@TarjetasCredito@2
-      | 2  | 1037655531      | 1             | zutarjeta7 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Personal American Express | *9105        |
+      |2|42003843|1|zutarjeta7|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Personal American Express|*9105|

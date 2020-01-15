@@ -15,4 +15,4 @@ Característica:Consulta facturas inscritas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ConsultarFacturas.xlsx@Datos@1
-      | 1  | 22493944        | 1             | recaudosnatik66 | 1234  | 4321         | Alterno     | 607         | 0369              | NO ERROR          | bolp            | ACTIVO       |
+      |1|22493944|1|recaudosnatik66|1234|4321|Alterno|607|0369|NO ERROR|bolp|ACTIVO|

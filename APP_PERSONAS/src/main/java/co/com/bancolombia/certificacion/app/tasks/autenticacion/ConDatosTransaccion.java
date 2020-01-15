@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.models.transaccion.ConfiguracionTran
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -23,9 +24,9 @@ public class ConDatosTransaccion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
-
         actor.attemptsTo(
-                Click.on(BTN_INGRESAR),
+                WaitUntil.the(BTN_INGRESAR, isEnabled()),
+                JavaScriptClick.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),

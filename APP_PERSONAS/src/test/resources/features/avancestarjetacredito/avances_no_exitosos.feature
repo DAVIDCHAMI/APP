@@ -17,4 +17,4 @@ Característica: Realizar Avances de Tarjeta de credito
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroTarjeta | codigoSeguridad | montoAvance | mensajeAvanceNoExitoso|
       ##@externaldata@./src/test/resources/datadriven/avacestarjetacredito/Avances.xlsx@DatosAvanceNoExitoso@1
-   |1   |48349402   |1   |testing10   |1234   |4321   |Acierto   |000   |0369   |NO ERROR   |bolp   |ACTIVO   |American Express Blu   |1234   |150000000   |Cupo insuficiente|
+      |1|48349402|1|testing10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|American Express Blu|1234|150000000|Cupo insuficiente|

@@ -29,13 +29,13 @@ public class SaldosMovimientosPage {
     public static final Target MOVIMIENTOS_EPREPAGO_DES = Target.the("Contenedor con detalles de movimiento de e prepago").locatedBy(dynamicElement(MOVIMIENTOS_EPREPAGO_DES_LOCATOR));
     public static final Target LBL_FECHA_CUENTA_MOVIMIENTO = Target.the("Label que muestra la fecha del movimiento").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_CUENTAS_LOCATOR));
     public static final Target LBL_DESCRIPCION_CUENTA_MOVIMIENTO = Target.the("Label que muestra la descripcion del movimiento").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_CUENTAS_LOCATOR));
-    public static final Target LBL_SALDO_CUENTA_MOVIMIENTO = Target.the("Label que muestra saldo del movimiento").locatedBy(dynamicElement(LBL_SALDO_CUENTASLOCATOR));
+    public static final Target LBL_SALDO_CUENTA_MOVIMIENTO = Target.the("Label que muestra saldos del movimiento").locatedBy(dynamicElement(LBL_SALDO_CUENTASLOCATOR));
     public static final Target LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra la fecha del movimiento de tarjeta de credito").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
     public static final Target LBL_FECHA_MOVIMIENTO_EPREPAGO = Target.the("Label que muestra la fecha del movimiento de e prepago").locatedBy(dynamicElement(LBL_FECHA_MOVIMIENTO_EPREPAGO_LOCATOR));
     public static final Target LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra la descripcion del movimiento de tarjeta de credito").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
     public static final Target LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO = Target.the("Label que muestra la descripcion del movimiento de e prepago").locatedBy(dynamicElement(LBL_DESCRIPCION_MOVIMIENTO_EPREPAGO_LOCATOR));
-    public static final Target LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra saldo del movimiento de tarjeta de credito").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
-    public static final Target LBL_SALDO_MOVIMIENTO_EPREPAGO = Target.the("Label que muestra saldo del movimiento de e prepago").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_EPREPAGO_LOCATOR));
+    public static final Target LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO = Target.the("Label que muestra saldos del movimiento de tarjeta de credito").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_TARJETA_CREDITO_LOCATOR));
+    public static final Target LBL_SALDO_MOVIMIENTO_EPREPAGO = Target.the("Label que muestra saldos del movimiento de e prepago").locatedBy(dynamicElement(LBL_SALDO_MOVIMIENTO_EPREPAGO_LOCATOR));
     public static final Target LBL_SALDO_CREDIAGIL_MOVIMIENTOS = Target.the("Saldo disponible cuenta crediagil").locatedBy(dynamicElement(LBL_SALDO_CREDIAGIL_MOVIMIENTOS_LOCATOR));
     public static final Target BTN_FILTRO_BUSQUEDA_MOVIMIENTO = Target.the("Boton para buscar un movimiento por descripcion o fecha").located(theElementBy(BTN_FILTRO_BUSQUEDA_MOVIMIENTO_LOCATOR));
     public static final Target BTN_LIMPIAR_CAMPOS = Target.the("Boton para limpiar campos de busqueda").located(theElementBy(BTN_LIMPIAR_CAMPOS_LOCATOR));

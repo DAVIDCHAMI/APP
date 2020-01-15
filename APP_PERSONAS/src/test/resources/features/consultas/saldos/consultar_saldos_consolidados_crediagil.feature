@@ -16,7 +16,7 @@ Característica: Consulta de saldos crediagil app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | numeroProductos |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Crediagil@1
-      | 1  | 1037655531      | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |                 |
+      |1|1037655531|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO||
 
   Esquema del escenario: Consulta de productos crediagil desde vista carrusel
     Dado que el Actor se autentica en la app
@@ -28,4 +28,4 @@ Característica: Consulta de saldos crediagil app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado   | primeraPregunta | validarClave | numeroProductos |
    ##@externaldata@./src/test/resources/datadriven/consultas/saldos/ConsultaSaldosConsolidados.xlsx@Crediagil@2
-      | 2  | 22452521        | 1             | invictus10 | 1234  | 4321         | Acierto     | 000         | 0410              | TRANSACCION EXITOSA | bolp            | ACTIVO       | 1               |
+      |2|22452521|1|invictus10|1234|4321|Acierto|000|0410|TRANSACCION EXITOSA|bolp|ACTIVO|1|

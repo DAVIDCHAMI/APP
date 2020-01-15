@@ -14,6 +14,6 @@ Característica: Bloqueo de primera clave
     Y quiere bloquear la clave
     Entonces el deberia ver el mensaje de bloqueo exitoso
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta |
+      | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta |
    ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@2
-      |2|22483228|1|autotest27|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|||
+      |2|22483228|2|pruebasregistro49|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|||

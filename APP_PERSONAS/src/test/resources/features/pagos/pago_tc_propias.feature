@@ -13,7 +13,7 @@ Característica: Pago de tarjetas de credito propias
       | <tipoTarjeta> | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia de ver el mensaje de confirmacion y la informacion de su pago
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | tipoTarjeta            | numeroTarjeta | tipoPago   | valorPago | moneda | tipoCuenta | numeroCuenta  |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | tipoTarjeta         | numeroTarjeta | tipoPago   | valorPago | moneda | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoPropia.xlsx@Datos@3
       |3|22493944|1|zutarjeta7|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|pruebasqa99|jalzate@todo1.net|Personal Mastercard|*2581|Otro valor|500|Pesos|Ahorros|406-738430-25|
 
@@ -55,6 +55,6 @@ Característica: Pago de tarjetas de credito propias
       | <tipoTarjeta> | <numeroTarjeta> | <tipoPago> | <valorPago> | <moneda> | <tipoCuenta> | <numeroCuenta> |
     Entonces deberia de ver el mensaje de confirmacion y la informacion de su pago
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | tipoTarjeta            | numeroTarjeta | tipoPago   | valorPago | moneda | tipoCuenta | numeroCuenta  |
+      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nuevoUser   | correoUsuario     | tipoTarjeta               | numeroTarjeta | tipoPago               | valorPago | moneda  | tipoCuenta | numeroCuenta  |
    ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoPropia.xlsx@Datos@1
       |1|22493944|1|autotest10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|pruebasqa99|jalzate@todo1.net|Personal American Express|*8311|Pago mínimo en dólares|21|Dolares|Corriente|406-125170-00|

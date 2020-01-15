@@ -54,7 +54,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target CHK_SELECCIONAR_TODAS_FACTURAS = Target.the("Pagar todas las facturas").located(theElementBy(CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR));
     public static final Target CHk_SELECCIONAR_FACTURA = Target.the("Selecciona facturas a pagar").locatedBy(dynamicElement(CHK_SELECCIONAR_FACTURA_LOCATOR));
     public static final Target LBL_PAGO_EXITOSO_FACTURA = Target.the("Pago de una factura sin mas facturas inscrita exito").located(theElementBy(LBL_PAGO_EXITOSO_FACTURA_LOCATOR));
-    public static final Target LBL_NUEVO_SALDO_DISPONIBLE = Target.the("Label nuevo saldo disponible").located(theElementBy(LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR));
+    public static final Target LBL_NUEVO_SALDO_DISPONIBLE = Target.the("Label nuevo saldos disponible").located(theElementBy(LBL_NUEVO_SALDO_DISPONIBLE_LOCATOR));
     public static final Target LBL_VALOR_PAGADO = Target.the("Campo de texto valor pagado").locatedBy(dynamicElement(LBL_VALOR_PAGAR_LOCATOR));
     public static final Target LBL_PRODUCTO_PAGO = Target.the("Campo de producto debitado").locatedBy(dynamicElement(LBL_PRODUCTO_PAGO_LOCATOR));
     public static final Target TXT_VALOR = Target.the("Campo ingresar valor a pagar").located(theElementBy(TXT_VALOR_LOCATOR));

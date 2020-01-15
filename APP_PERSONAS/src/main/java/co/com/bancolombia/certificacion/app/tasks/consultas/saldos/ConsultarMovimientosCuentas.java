@@ -27,15 +27,11 @@ public class ConsultarMovimientosCuentas implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        int iterador;
+        int iterador=1;
         actor.attemptsTo(
                 SeleccionarProducto.desdeSaldosMovimientos(tipoCuenta, numeroCuenta, CUENTA_ESPECIFICA_PRODUCTO)
         );
-        if ("Android".equalsIgnoreCase(getPlatformCapability())){
-          iterador= 0;
-        }else {
-            iterador=1;
-        }
+
         List<Movimiento> listaMovimiento = new ArrayList<>();
         actor.attemptsTo(
                 WaitUntil.the(CONTENEDOR_MOVIMIENTOS_CUENTA.of(String.valueOf(iterador)), isVisible())
