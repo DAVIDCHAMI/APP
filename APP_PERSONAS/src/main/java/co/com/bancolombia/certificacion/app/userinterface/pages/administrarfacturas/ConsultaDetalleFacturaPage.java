@@ -3,7 +3,6 @@ package co.com.bancolombia.certificacion.app.userinterface.pages.administrarfact
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ConsultarDetalleFacturaLocator.*;
-import static co.com.bancolombia.certificacion.app.userinterface.locators.administrarfacturas.ProgramarPagarFacturasLocator.LBL_CONTENEDOR_HISTORICO_PAGO_LOCATOR;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_INTERFAZ_USUARIO;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.dynamicElement;
 import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder.theElementBy;
@@ -20,6 +19,7 @@ public class ConsultaDetalleFacturaPage {
     public static final Target LBL_DETALLE_CANAL_INSCRIPCION_FACTURA = Target.the("Label de verificación canal de inscripcion").located(theElementBy(LBL_DETALLE_CANAL_INSCRIPCION_LOCATOR));
     public static final Target LBL_DETALLE_TIPO_CUENTA = Target.the("Label de verificación tipo de cuenta factura").located(theElementBy(LBL_DETALLE_TIPO_CUENTA_LOCATOR));
     public static final Target LBL_DETALLE_NUMERO_CUENTA = Target.the("Label de verificación tipo de numero cuenta factura").located(theElementBy(LBL_DETALLE_NUMERO_CUENTA_LOCATOR));
+    public static final Target LBL_DETALLE_REFERENCIA = Target.the("Label detalle referencia uno").located(theElementBy(LBL_DETALLE_REFERENCIA_LOCATOR));
     public static final Target OPT_VER_DETALLE_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_VER_DETALLE_FAClTURA_PROGRAMADA_LOCATOR));
     public static final Target OPT_PAGAR_FACTURA_PROGRAMADA = Target.the("Opcion para seleccionar factura programada").locatedBy(dynamicElement(OPT_PAGAR_PROGRAMADA_LOCATOR));
     public static final Target LBL_DETALLE_FECHA_INICIO = Target.the("Label verificacion fecha inicio").located(theElementBy(LBL_DETALLE_FECHA_INICIO_LOCATOR));
@@ -29,11 +29,11 @@ public class ConsultaDetalleFacturaPage {
     public static final Target LBL_FECHA = Target.the("Label verificacion fecha factura inscritas").locatedBy(dynamicElement(LBL_FECHA_LOCATOR));
     public static final Target LBL_VALOR_FACTURA = Target.the("Label verificacion valor factura inscrita").locatedBy(dynamicElement(LBL_VALOR_FACTURA_LOCATOR));
     public static final Target LBL_DESCRIPCION_PROGRAMADA_FACTURA = Target.the("Label verificacion descripcion factura programada").locatedBy(dynamicElement(LBL_DESCRIPCION_FACTURA_PROGRAMADA_LOCATOR));
-    public static final Target LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA= Target.the("Label verificacion empresa factura programada").locatedBy(dynamicElement(LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA_LOCATOR));
+    public static final Target LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA = Target.the("Label verificacion empresa factura programada").locatedBy(dynamicElement(LBL_EMPRESA_CONVENIO_FACTURA_PROGRAMADA_LOCATOR));
     public static final Target LBL_FECHA_FACTURA_PROGRAMADA = Target.the("Label verificacion fecha factura programada").locatedBy(dynamicElement(LBL_FECHA_FACTURA_PROGRAMADA_LOCATOR));
     public static final Target LBL_VALOR_FACTURA_PROGRAMADA = Target.the("Label verificacion valor factura programada").locatedBy(dynamicElement(LBL_VALOR_FACTURA_PROGRAMADA_LOCATOR));
 
-    public ConsultaDetalleFacturaPage(){
-            throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
+    public ConsultaDetalleFacturaPage() {
+        throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
     }
 }
