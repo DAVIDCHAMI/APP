@@ -15,6 +15,6 @@ Característica: Bloqueo de tarjetas
     Entonces el deberia ver el mensaje de bloqueo exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta |
-   ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@5
-      |5|22483228|1|autotest10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Mastercard|*6562|
+     ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@5
+      |5|22483228|5|autotest10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Maestro|*2517|
 

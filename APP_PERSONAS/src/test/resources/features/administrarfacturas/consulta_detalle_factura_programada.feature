@@ -17,4 +17,4 @@ Característica:Consulta detalle de facturas programada
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ConsultaDetalleFactura.xlsx@Datos@2
-      |2|48646663|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|55.500,05|65401|05 Abr 2020|
+      |2|48646663|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|0,00|63337|No disponible|
