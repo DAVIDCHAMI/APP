@@ -21,12 +21,12 @@ public class DetalleProductosLocator {
     public static final Locator LBL_DEUDA_FECHA_PESOS_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='Deuda a la fecha en pesos']/../following-sibling::div")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='Deuda a la fecha en pesos']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
-public static final Locator LBL_DEUDA_FECHA_DOLAR_LOCATOR = locator()
+    public static final Locator LBL_DEUDA_FECHA_DOLAR_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='Deuda a la fecha en dólares']/../following-sibling::div")
-        .withIos("xpath$//XCUIElementTypeStaticText[@name='Deuda a la fecha en dólares']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
-public static final Locator LBL_DISPONIBLE_AVACE_PESOS_LOCATOR = locator()
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Deuda a la fecha en dólares']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_DISPONIBLE_AVACE_PESOS_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='Disponible para avances en pesos']/../following-sibling::div")
-        .withIos("xpath$//XCUIElementTypeStaticText[@name='Disponible para avances en pesos']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+            .withIos("xpath$//XCUIElementTypeStaticText[@name='Disponible para avances en pesos']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
     public static final Locator LBL_CAPITAL_VIGENTE_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='Capital Vigente']/../following-sibling::div")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='Capital Vigente']/../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
@@ -84,6 +84,18 @@ public static final Locator LBL_DISPONIBLE_AVACE_PESOS_LOCATOR = locator()
     public static final Locator LBL_NUMERO_TARJETA_LOCATOR = locator()
             .withAndroid("xpath$//div[./span[contains(text(),'Tarjeta')]]/following-sibling::div[1]/span")
             .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[contains(@name,'Tarjeta')]]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_NUMERO_INVERSION_LOCATOR = locator()
+            .withAndroid("xpath$//span[contains(@class,'account-detail-prodnumber')]")
+            .withIos("xpath$test");
+    public static final Locator LBL_TIPO_INVERSION_LOCATOR = locator()
+            .withAndroid("xpath$//span[contains(@class,'account-detail-type')]")
+            .withIos("xpath$test");
+    public static final Locator LBL_SALDO_DISPONIBLE_INVERSION_LOCATOR = locator()
+            .withAndroid("xpath$//span[contains(@class,'font-family-nunito font-family-nunito-bold text-black')]")
+            .withIos("xpath$test");
+    public static final Locator LBL_SALDO_TOTAL_INVERSION_LOCATOR = locator()
+            .withAndroid("xpath$//span[contains(@class,'account-detail-balance')]")
+            .withIos("xpath$test");
 
     private DetalleProductosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

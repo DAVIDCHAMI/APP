@@ -10,6 +10,8 @@ public class SaldosMovimientosLocator {
             .withAndroid("xpath$//span[text()='{0}']/../..//following-sibling::div//span[contains(text(),'{1}')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'{0}')]/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
     public static final Locator OPT_CUENTA_TAJETA_CREDITO_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='{0}']/../..//following-sibling::div//span[text()='{1}']").withIos("xpath$(//XCUIElementTypeStaticText[@name='{0}'])[1]/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");
+    public static final Locator OPT_CUENTA_INVERSION_LOCATOR = locator()
+            .withAndroid("xpath$//span[text()='{0}']/../..//following-sibling::div//span[text()='{1}']").withIos("xpath$test");
     public static final Locator OPT_CUENTA_EPREPAGO_LOCATOR = locator()
             .withAndroid("xpath$//span[text()='{0}']/../../following-sibling::div//span[text()='{1}']")
             .withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']/../following-sibling::XCUIElementTypeOther//XCUIElementTypeStaticText[@name='{1}']");

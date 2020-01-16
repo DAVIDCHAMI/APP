@@ -36,6 +36,13 @@ public class ConsultaDetalleProductosStepDefinition {
         );
     }
 
+    @Cuando("^consulto el detalle de inversion con (.*) y con numero (.*)$")
+    public void consultoDetalleDeInversion(String tipoCuenta, String numeroCuenta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deInversion(tipoCuenta, numeroCuenta)
+        );
+    }
+
     @Cuando("^consulto en el detalle de (.*)$")
     public void consultoDetalleCrediagil(String opcionCategoria) {
         theActorInTheSpotlight().attemptsTo(
@@ -66,6 +73,15 @@ public class ConsultaDetalleProductosStepDefinition {
     public void verificoElResultadoDeLaConsultaDeTarjetaCredito() {
         theActorInTheSpotlight().should(seeThat(
                 VerificarDetalleProductoTarjetas.esExitoso()
+                ).orComplainWith(
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
+    }
+
+    @Entonces("^deberia de ver el detalle de mi inversion$")
+    public void verificoElResultadoDeLaConsultaDeInversion() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleInversiones.esExitoso()
                 ).orComplainWith(
                 DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );

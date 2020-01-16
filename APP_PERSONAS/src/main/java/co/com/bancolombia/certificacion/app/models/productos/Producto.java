@@ -7,7 +7,6 @@ import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
 import java.util.List;
 
 public class Producto {
-
     private String numero;
     private String tipo;
     private String codigoBanco;
@@ -16,6 +15,7 @@ public class Producto {
     private Saldo saldo;
     private TarjetaCredito tarjetaCredito;
     private Credito credito;
+    private Inversion inversion;
     private List<Movimiento> movimientos;
 
     public Producto(){
@@ -43,6 +43,7 @@ public class Producto {
         this.saldo = productoBuilder.getSaldo();
         this.tarjetaCredito=productoBuilder.getTarjetaCredito();
         this.credito=productoBuilder.getCredito();
+        this.inversion=productoBuilder.getInversion();
         this.movimientos = productoBuilder.getMovimientos();
     }
 
@@ -104,6 +105,10 @@ public class Producto {
 
     public Credito getCredito() {
         return credito;
+    }
+
+    public Inversion getInversion() {
+        return inversion;
     }
 
     public void setSaldo(Saldo saldo) {
