@@ -13,7 +13,7 @@ Característica: Desembolso de crediagil
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | valorDesembolso |
    ##@externaldata@./src/test/resources/datadriven/crediagil/DesembolsoCrediagil.xlsx@Datos@1
-      |1|43024987|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Corriente|406-182800-02|12000|
+      | 1  | 43024987        | 1             | pruebauser01 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Corriente  | 406-182800-02 | 12000           |
 
   Esquema del escenario: Desembolso de crediagil con valores inferiores y superiores a los limites
     Dado que el Actor se autentica en la app
@@ -25,4 +25,4 @@ Característica: Desembolso de crediagil
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario      | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoCuenta | numeroCuenta  | valorDesembolso |
    ##@externaldata@./src/test/resources/datadriven/crediagil/DesembolsoCrediagil.xlsx@FueraRango@1
-      |1|43024987|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Corriente|406-182800-02|9000|
+      | 1  | 43024987        | 1             | pruebauser01 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       | Corriente  | 406-182800-02 | 9000            |
