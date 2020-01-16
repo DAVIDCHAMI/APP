@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.movimiento.Movimiento;
 import co.com.bancolombia.certificacion.app.models.productos.Credito;
+import co.com.bancolombia.certificacion.app.models.productos.Inversion;
 import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.models.productos.TarjetaCredito;
 import co.com.bancolombia.certificacion.app.models.saldo.Saldo;
@@ -18,11 +19,12 @@ public class ProductoBuilder implements Builder<Producto> {
     private String nombreBanco;
     private String nombreProducto;
     private Saldo saldo = new Saldo();
-    private TarjetaCredito tarjetaCredito= new TarjetaCredito();
+    private TarjetaCredito tarjetaCredito = new TarjetaCredito();
+    private Inversion inversion = new Inversion();
     private Credito credito = new Credito();
     private List<Movimiento> movimientos = new ArrayList<>();
 
-    private ProductoBuilder(){
+    private ProductoBuilder() {
         this.numero = "";
         this.tipo = "";
         this.codigoBanco = "";
@@ -30,47 +32,52 @@ public class ProductoBuilder implements Builder<Producto> {
         this.nombreProducto = "";
     }
 
-    public static ProductoBuilder elProducto(){
+    public static ProductoBuilder elProducto() {
         return new ProductoBuilder();
     }
 
-    public ProductoBuilder conTipoCuenta(List<String> datosProducto){
+    public ProductoBuilder conTipoCuenta(List<String> datosProducto) {
         this.tipo = datosProducto.get(0);
         return this;
     }
 
-    public ProductoBuilder conProductoDebitar(List<Map<String, String>> datos){
+    public ProductoBuilder conProductoDebitar(List<Map<String, String>> datos) {
         this.tipo = datos.get(0).get("tipoCuenta");
         this.numero = datos.get(0).get("numeroCuenta");
         return this;
     }
 
-    public ProductoBuilder conTipoCuenta(String datosProducto){
+    public ProductoBuilder conTipoCuenta(String datosProducto) {
         this.tipo = datosProducto;
         return this;
     }
 
-    public ProductoBuilder conNumero(List<String> datosProducto){
+    public ProductoBuilder conNumero(List<String> datosProducto) {
         this.numero = datosProducto.get(1);
         return this;
     }
 
-    public ProductoBuilder conNumero(String datosProducto){
+    public ProductoBuilder conNumero(String datosProducto) {
         this.numero = datosProducto;
         return this;
     }
 
-    public ProductoBuilder conSaldo(Saldo saldo){
+    public ProductoBuilder conSaldo(Saldo saldo) {
         this.saldo = saldo;
         return this;
     }
 
-    public ProductoBuilder conTarjetaCredito(TarjetaCredito tarjetaCredito){
+    public ProductoBuilder conTarjetaCredito(TarjetaCredito tarjetaCredito) {
         this.tarjetaCredito = tarjetaCredito;
         return this;
     }
 
-    public ProductoBuilder conCredito(Credito credito){
+    public ProductoBuilder conInversion(Inversion inversion) {
+        this.inversion = inversion;
+        return this;
+    }
+
+    public ProductoBuilder conCredito(Credito credito) {
         this.credito = credito;
         return this;
     }
@@ -105,6 +112,10 @@ public class ProductoBuilder implements Builder<Producto> {
 
     public Credito getCredito() {
         return credito;
+    }
+
+    public Inversion getInversion() {
+        return inversion;
     }
 
     public List<Movimiento> getMovimientos() {

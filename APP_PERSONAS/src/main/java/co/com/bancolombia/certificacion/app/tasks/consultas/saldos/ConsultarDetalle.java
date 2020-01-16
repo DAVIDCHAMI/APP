@@ -14,7 +14,7 @@ public class ConsultarDetalle {
         return instrumented(ConsultarDetalleEprepago.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }
 
-    public static Performable deProductoTarjetas( String tipoCuenta, String numeroCuenta) {
+    public static Performable deProductoTarjetas(String tipoCuenta, String numeroCuenta) {
         return instrumented(ConsultarDetalleTarjetaCredito.class, tipoCuenta, numeroCuenta);
     }
 
@@ -24,5 +24,9 @@ public class ConsultarDetalle {
 
     public static Performable deCrediagil(String opcionCategoria) {
         return instrumented(ConsultaDetalleCrediagil.class, opcionCategoria);
+    }
+
+    public static Performable deInversion(String tipoCuenta, String numeroCuenta) {
+        return instrumented(ConsultarDetalleInversion.class, tipoCuenta, numeroCuenta);
     }
 }
