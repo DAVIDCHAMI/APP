@@ -14,14 +14,12 @@ public class VerificarConsultaDetalleFacturaInscritas implements Question<Boolea
     public Boolean answeredBy(Actor actor) {
         Factura facturas = actor.recall(MODELO_CONSULTA_DETALLE_FACTURA);
         return Visibility.of(LBL_DETALLE_INSCRITAS).viewedBy(actor).asBoolean()
+                && facturas.getEmpresaServicio() != null
                 && facturas.getValorFactura() != null
-                && facturas.getEstadoFactura() != null
                 && facturas.getFechaFactura() != null
-                && facturas.getNegocio() != null
-                && facturas.getNitFactura() != null
-                && facturas.getCanalInscripcionFactura() != null
-                && facturas.getNumeroFactura() != null
-                && facturas.getEmpresaServicio() != null;
+                && facturas.getEstadoFactura() != null
+                && facturas.getReferencia() != null
+                && facturas.getCanalInscripcionFactura() != null;
     }
 
     public static VerificarConsultaDetalleFacturaInscritas inscritas() {
