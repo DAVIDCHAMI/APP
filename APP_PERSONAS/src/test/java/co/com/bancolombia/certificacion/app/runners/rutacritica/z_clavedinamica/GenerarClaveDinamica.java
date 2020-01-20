@@ -1,4 +1,4 @@
-package co.com.bancolombia.certificacion.app.runners.rutacritica.clavedinamica;
+package co.com.bancolombia.certificacion.app.runners.rutacritica.z_clavedinamica;
 
 import co.com.bancolombia.certificacion.app.utilidades.customrunner.RunnerPersonalizado;
 import co.com.bancolombia.certificacion.app.utilidades.datosexcel.BeforeSuite;
@@ -14,7 +14,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/clavedinamica/generar_clave_dinamica.feature"},
+        features = {"src/test/resources/features/z_clavedinamica/generar_clave_dinamica.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         tags = "@RutaCritica",
         snippets = SnippetType.CAMELCASE
@@ -27,6 +27,6 @@ public class GenerarClaveDinamica {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/clavedinamica/generar_clave_dinamica.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/z_clavedinamica/generar_clave_dinamica.feature");
     }
 }
