@@ -16,4 +16,4 @@ Característica: Eliminar clave dinamica
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado |
       ##@externaldata@./src/test/resources/datadriven/clavedinamica/GestionarClaveDinamica.xlsx@Eliminar@1
-      |1|333333302|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Recaudosnatik|
+      |1|333333302|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|recaudosnatik|
