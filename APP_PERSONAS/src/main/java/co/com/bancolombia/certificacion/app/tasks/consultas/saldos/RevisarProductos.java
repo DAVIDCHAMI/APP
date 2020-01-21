@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Scroll;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,7 @@ public class RevisarProductos implements Task {
         String[] numeroCuenta = producto.getNumero().split(";");
         for (int iterador = 0; iterador <= cadena.length; iterador++) {
             if (elementoPresente(actor, CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]))) {
+                Scroll.to(CUENTA_ESPECIFICA_PRODUCTO.of(tipoCuenta[iterador], numeroCuenta[iterador]));
                 listaProductos.add(elProducto()
                         .conNumero(numeroCuenta[iterador])
                         .conTipoCuenta(tipoCuenta[iterador])

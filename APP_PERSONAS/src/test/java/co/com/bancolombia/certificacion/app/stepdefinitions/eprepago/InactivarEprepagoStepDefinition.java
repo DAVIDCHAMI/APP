@@ -16,8 +16,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class InactivarEprepagoStepDefinition {
 
-    @Cuando("^inactiva la tarjeta$")
-    public void quieroInactivarUnaTarjetaEprepago(){
+    @Cuando("^realiza la inactivacion de la tarjeta eprepago$")
+    public void realizaLaInactivacionDeLaTarjetaEprepago(){
         theActorInTheSpotlight().attemptsTo(Inactivar.ePrepago());
     }
 

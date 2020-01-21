@@ -25,7 +25,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator CHK_ACEPTO_TERMINOS_PROGRAMAR_LOCATOR = locator().withAndroid("xpath$//input[@id='Checkbox1']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Seleccionar todas las facturas']]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeSwitch");
     public static final Locator OPT_MODIFICAR_PROGRAMACION_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Modificar programación')])[1]").withIos("xpath$//*[@name='Modificar programación']");
     public static final Locator OPT_PAGAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Pagar')]").withIos("xpath$//*[@name='Pagar']");
-    public static final Locator OPT_ELIMINAR_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[text()='Eliminar factura'])[1]").withIos("xpath$//*[@name='Eliminar factura']");
+    public static final Locator OPT_ELIMINAR_FACTURA_LOCATOR = locator().withAndroid("xpath$(//span[text()='Eliminar factura'])[3]").withIos("xpath$//*[@name='Eliminar factura']");
     public static final Locator OPT_VER_DETALLE_LOCATOR = locator().withAndroid("xpath$//span[text()='Ver detalle']/..").withIos("xpath$//*[@name='Ver detalle']");
     public static final Locator OPT_HISTORICO_LOCATOR = locator().withAndroid("xpath$(//span[text()='Ver histórico de pagos'])[2]").withIos("xpath$//*[@name='Ver histórico de pagos']");
     public static final Locator FOCO_LOCATOR = locator().withAndroid("xpath$//span[text()='Verifica la programación']/..").withIos("xpath$//XCUIElementTypeStaticText[@name='Verifica la programación']");
@@ -33,7 +33,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LNK_CAMBIAR_PERIODICIDAD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Periodicidad')]/../../following-sibling::div//span").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Periodicidad']]/following-sibling::XCUIElementTypeOther[3]/XCUIElementTypeStaticText[@name='Cambiar']");
     public static final Locator TXT_VALOR_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Value']").withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='Pagar']]/following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther[2]//XCUIElementTypeStaticText");
     public static final Locator BTN_MODIFICAR_LOCATOR = locator().withAndroid("xpath$//span[text()='Modificar']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Modificar')]");
-    public static final Locator BTN_CONFIRMAR_ELIMINACION_LOCATOR = locator().withAndroid("xpath$(//span[contains(text(),'Eliminar factura')])[3]").withIos("xpath$//XCUIElementTypeButton[@name='ELIMINAR']");
+    public static final Locator BTN_CONFIRMAR_ELIMINACION_LOCATOR = locator().withAndroid("xpath$//button[contains(text(),'ELIMINAR')]").withIos("xpath$//XCUIElementTypeButton[@name='ELIMINAR']");
     public static final Locator LBL_MENSAJE_MODIFICACION_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Modificación exitosa!']").withIos("xpath$//*[@name='¡Modificación exitosa!']");
     public static final Locator LBL_ELIMINACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Eliminación exitosa!']").withIos("xpath$//*[@name='¡Eliminación exitosa!']");
     public static final Locator LBL_COMPROBANTE_ELIMINACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//*[contains(@name,'Comprobante')]");

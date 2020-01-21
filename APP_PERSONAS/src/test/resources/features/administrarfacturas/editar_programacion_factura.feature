@@ -11,7 +11,7 @@
        | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
        | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
      Y el actor quiere PROGRAMAR_PAGAR_FACTURAS
-     Cuando el actor modifica sus facturas programadas por la opcion <opcionModificacion> y filtrando por <filtroBusqueda>
+     Cuando el actor modifica sus facturas programadas por la opcion <opcionModificacion>
        | valorFactura   | empresaServicio   | fechaFactura   | numeroCuenta   | tipoCuenta   | periodicidad   | numeroIntento   | fechaInicio   | fechaFin   | mesProgramacion   |
        | <valorFactura> | <empresaServicio> | <fechaFactura> | <numeroCuenta> | <tipoCuenta> | <periodicidad> | <numeroIntento> | <fechaInicio> | <fechaFin> | <mesProgramacion> |
      Entonces deberia ver el mensaje de modificacion exitosa

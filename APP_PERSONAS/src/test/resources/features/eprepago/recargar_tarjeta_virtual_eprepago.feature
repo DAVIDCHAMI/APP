@@ -17,7 +17,7 @@
           Ejemplos:
             | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorRecarga | tipoCuenta | numeroCuenta  |
         ##@externaldata@./src/test/resources/datadriven/eprepago/recargar_tarjeta_virtual_eprepago.xlsx@Datos@1
-      |1|93221450|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|160000|Ahorros|406-733020-16|
+      |1|93221450|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|160000|Corriente|406-182800-02|
 
         Esquema del escenario: Carga a tarjeta virtual ePrepago inactiva
           Dado que el Actor se autentica en la app

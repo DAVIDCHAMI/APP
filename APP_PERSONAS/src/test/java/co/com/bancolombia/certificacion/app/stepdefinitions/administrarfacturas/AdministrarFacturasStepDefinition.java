@@ -82,7 +82,7 @@ public class AdministrarFacturasStepDefinition {
         );
     }
 
-    @Cuando("el actor modifica sus facturas programadas por la opcion (.*) y filtrando por (.*)$")
+    @Cuando("el actor modifica sus facturas programadas por la opcion (.*)$")
     public void elActorModificaSusFacturasProgramadas(String opcion, List<Map<String, String>> datos) {
         theActorInTheSpotlight().attemptsTo(AdministrarFactura.conOpcionEditar(
                 factura().conValor(datos)

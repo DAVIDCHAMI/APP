@@ -16,6 +16,6 @@ Característica: Inscribir clave dinamica
       | <segundaClave> | <nombrePersonalizado> | <correo> | <tipoCorreo> | <numeroCelular> |
     Entonces Yo deberia ver mis datos registrados en clave dinamica
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo               | tipoCorreo | numeroCelular |
+      | ID | numeroDocumento | tipoDocumento | usuario       | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | nombrePersonalizado | correo                        | tipoCorreo | numeroCelular |
    ##@externaldata@./src/test/resources/datadriven/clavedinamica/InscribirClaveDinamica.xlsx@Datos@1
-      |1|333333302|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|testtreinta|jfernandez@todo1.net|Laboral|3145678956|
+      |1|333333302|1|inscripcion10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|testtreinta|automatizaciontodo1@gmail.com|Laboral|3145678956|

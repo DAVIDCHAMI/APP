@@ -15,6 +15,6 @@ Característica:Consulta detalle de facturas inscritas
       | <empresaServicio> | <fechaFactura> | <valorFactura> |
     Entonces deberia ver el detalle de su factura inscrita
     Ejemplos:
-      | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura |
+      | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura  |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ConsultaDetalleFactura.xlsx@Datos@1
       |1|48646663|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|0,00|63337|No disponible|

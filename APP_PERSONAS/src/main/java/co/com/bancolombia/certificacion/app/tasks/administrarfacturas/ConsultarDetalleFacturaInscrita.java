@@ -28,9 +28,8 @@ public class ConsultarDetalleFacturaInscrita implements Task {
                         .conValor(LBL_DETALLE_VALOR_PAGAR.of(factura.getValorFactura()).resolveFor(actor).getText())
                         .conFechaFactura(LBL_DETALLE_FECHA_VENCIMIENTO_FACTURA.of(factura.getFechaFactura()).resolveFor(actor).getText())
                         .conEstadoHistorico(LBL_DETALLE_ESTADO.resolveFor(actor).getText())
-                        .conNumeroFactura(LBL_DETALLE_NUMERO_FACTURA.resolveFor(actor).getText())
-                        .conCanalInscripcionFactura(LBL_DETALLE_CANAL_INSCRIPCION_FACTURA.resolveFor(actor).getText())
                         .conReferencia(LBL_DETALLE_REFERENCIA.resolveFor(actor).getText())
+                        .conCanalInscripcionFactura(LBL_DETALLE_CANAL_INSCRIPCION_FACTURA.resolveFor(actor).getText())
                         .build()
         );
     }

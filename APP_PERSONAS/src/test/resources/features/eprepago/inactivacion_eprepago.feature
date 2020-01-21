@@ -11,7 +11,7 @@ Característica: Inactivacion eprepago en la app OSP Bancolombia
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando el actor quiere INACTIVAR_EPREPAGO
-    Y inactiva la tarjeta
+    Y realiza la inactivacion de la tarjeta eprepago
     Entonces deberia de ver un mensaje de inactivacion exitosa para su eprepago
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
