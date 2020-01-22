@@ -21,6 +21,10 @@ public class IniciarSesion {
         return instrumented(ConDatos.class, usuario, clave);
     }
 
+    public static Performable conDatos(UsuarioBuilder usuarioBuilder) {
+        return instrumented(ConDatosErroneos.class, usuarioBuilder.build());
+    }
+
     private IniciarSesion() {
         throw new IllegalStateException(CLASE_TASK);
     }

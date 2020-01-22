@@ -4,6 +4,8 @@ import co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIse
 import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal.VerificarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.Navegar;
+import co.com.bancolombia.certificacion.app.tasks.autenticacion.Usuario;
 import co.com.bancolombia.certificacion.app.tasks.cargadatos.CargarDatos;
 import co.com.bancolombia.certificacion.app.tasks.clavedinamica.GestionarClaveDinamica;
 import co.com.bancolombia.certificacion.app.tasks.menu.SeleccionarOpcion;
@@ -77,6 +79,32 @@ public class PreparacionEscenarioStepDefinition {
                 IniciarSesion.con(credenciales()
                         .conNombreUsuario(usuario)
                         .conClave(clave))
+        );
+    }
+
+    @Cuando("^ingreso por (.*) con el usuario (.*) con clave errada (.*)$")
+    public void ingresoConElUsuarioYClave(String tipoTransaccion, String usuario, String clave) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion),
+                IniciarSesion.conDatos(credenciales()
+                        .conNombreUsuario(usuario)
+                        .conClave(clave))
+        );
+    }
+
+    @Cuando("^ingreso por (.*) con el usuario (.*) con la clave (.*)$")
+    public void ingresoPorLaOpcionConElUsuarioyConClseString(String tipoTransaccion, String usuario, String clave) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion),
+                Usuario.conFraseDeSeguridad(usuario, clave)
+        );
+    }
+
+    @Cuando("^ingreso por (.*) con el usuario (.*)$")
+    public void ingresoPorLaOpcionConElUsuario(String tipoTransaccion, String usuario) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarOpcion.delMenu(tipoTransaccion),
+                Navegar.enLaOpcionAunNoEresCliente(usuario)
         );
     }
 
