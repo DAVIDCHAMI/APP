@@ -84,6 +84,10 @@ public class SaldosMovimientosLocator {
     public static final Locator LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
     public static final Locator LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-OpenSans-regular font-size-s break-Big-Words'])[{0}]").withIos("xpath$test");
     public static final Locator LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$(//div[contains(@id,'CrediagilDataContainer6')]//span[@class='font-family-nunito font-family-nunito-bold text-black'])[{0}]").withIos("xpath$test");
+    public static final Locator LBL_NUMERO_ECARD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'*')]").withIos("xpath$test");
+    public static final Locator LBL_TIPO_ECARD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'e-Card')]").withIos("xpath$test");
+    public static final Locator LBL_DEUDA_PESOS_ECARD_LOCATOR = locator().withAndroid("xpath$//div[@class='tc-usd']//span[not(contains( text(),'USD')) and contains(@class,'amount')]").withIos("xpath$test");
+    public static final Locator LBL_DEUDA_DOLARES_LOCATOR = locator().withAndroid("xpath$//div[@class='tc-usd']//span[contains( text(),'USD')]").withIos("xpath$test");
 
     private SaldosMovimientosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

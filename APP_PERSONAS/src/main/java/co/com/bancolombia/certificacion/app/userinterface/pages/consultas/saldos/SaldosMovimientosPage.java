@@ -65,6 +65,10 @@ public class SaldosMovimientosPage {
     public static final Target LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL = Target.the("Numero de cuenta de crediagil vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL = Target.the("Tipo de cuenta de crediagil vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL = Target.the("Saldo disponible de crediagil vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_CREDIAGIL_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_NUMERO_ECARD = Target.the("").located(theElementBy(LBL_NUMERO_ECARD_LOCATOR));
+    public static final Target LBL_TIPO_ECARD = Target.the("").located(theElementBy(LBL_TIPO_ECARD_LOCATOR));
+    public static final Target LBL_DEUDA_PESOS_ECARD = Target.the("").located(theElementBy(LBL_DEUDA_PESOS_ECARD_LOCATOR));
+    public static final Target LBL_DEUDA_DOLARES = Target.the("").located(theElementBy(LBL_DEUDA_DOLARES_LOCATOR));
 
     private SaldosMovimientosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

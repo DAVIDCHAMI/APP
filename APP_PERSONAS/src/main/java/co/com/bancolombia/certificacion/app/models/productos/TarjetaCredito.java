@@ -1,11 +1,11 @@
 package co.com.bancolombia.certificacion.app.models.productos;
 
 import co.com.bancolombia.certificacion.app.models.builders.TarjetaCreditoBuilder;
+
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.formatoTarjetaCredito;
 import static co.com.bancolombia.certificacion.app.utilidades.administradores.AdministradorUtilidades.tipoTarjetaCreditoEnNumero;
 
-public class TarjetaCredito extends Producto
-{
+public class TarjetaCredito extends Producto {
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
     private String fechaLimitePago;
@@ -21,14 +21,14 @@ public class TarjetaCredito extends Producto
     private String valorPago;
     private String moneda;
     private String numeroTarjeta;
+    private String tipoTarjeta;
     private String codigoSeguridad;
     private String montoAvance;
     private String numeroTarjetaDestino;
     private String mensajeConfirmacion;
     private String mensajeAvanceNoExitoso;
 
-    public TarjetaCredito(TarjetaCreditoBuilder builder)
-    {
+    public TarjetaCredito(TarjetaCreditoBuilder builder) {
         super(builder.getNumeroCuenta(), builder.getTipoCuenta());
         this.formatoTarjetaCredito = builder.getFormatoTarjetaCredito();
         this.tipoTarjetaCreditoEnNumero = builder.getTipoTarjetaCreditoEnNumero();
@@ -45,14 +45,16 @@ public class TarjetaCredito extends Producto
         this.valorPago = builder.getValorPago();
         this.moneda = builder.getMoneda();
         this.numeroTarjeta = builder.getNumeroTarjeta();
+        this.tipoTarjeta = builder.getTipoTarjeta();
         this.codigoSeguridad = builder.getCodigoSeguridad();
-        this.montoAvance= builder.getMontoAvance();
+        this.montoAvance = builder.getMontoAvance();
         this.numeroTarjetaDestino = builder.getNumeroTarjetaDestino();
         this.mensajeConfirmacion = builder.getMensajeConfirmacion();
-        this.mensajeAvanceNoExitoso= builder.getMensajeAvanceNoExitoso();
+        this.mensajeAvanceNoExitoso = builder.getMensajeAvanceNoExitoso();
     }
 
-    public TarjetaCredito(){}
+    public TarjetaCredito() {
+    }
 
     public TarjetaCredito(String numero, String tipoProducto) {
         super(numero, tipoProducto);
@@ -170,15 +172,31 @@ public class TarjetaCredito extends Producto
         return moneda;
     }
 
-    public String getNumeroTarjeta() {return numeroTarjeta;}
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
+    }
 
-    public String getCodigoSeguridad() {return codigoSeguridad;}
+    public String getTipoTarjeta() {
+        return tipoTarjeta;
+    }
 
-    public String getMontoAvance() {return montoAvance;}
+    public String getCodigoSeguridad() {
+        return codigoSeguridad;
+    }
 
-    public String getNumeroTarjetaDestino() {return numeroTarjetaDestino;}
+    public String getMontoAvance() {
+        return montoAvance;
+    }
 
-    public String getMensajeConfirmacion() {return mensajeConfirmacion;}
+    public String getNumeroTarjetaDestino() {
+        return numeroTarjetaDestino;
+    }
 
-    public String getMensajeAvanceNoExitoso() { return mensajeAvanceNoExitoso;}
+    public String getMensajeConfirmacion() {
+        return mensajeConfirmacion;
+    }
+
+    public String getMensajeAvanceNoExitoso() {
+        return mensajeAvanceNoExitoso;
+    }
 }

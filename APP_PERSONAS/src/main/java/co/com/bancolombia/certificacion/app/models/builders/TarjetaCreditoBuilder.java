@@ -24,6 +24,7 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     private String valorPago;
     private String moneda;
     private String numeroTarjeta;
+    private String tipoTarjeta;
     private String codigoSeguridad;
     private String montoAvance;
     private String numeroTarjetaDestino;
@@ -47,75 +48,94 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         this.tipoPago = "";
         this.valorPago = "";
         this.moneda = "";
-        this.numeroTarjeta="";
-        this.codigoSeguridad ="";
-        this.montoAvance="";
-        this.numeroTarjetaDestino="";
-        this.mensajeConfirmacion="";
-        this.mensajeAvanceNoExitoso="";
+        this.numeroTarjeta = "";
+        this.tipoTarjeta = "";
+        this.codigoSeguridad = "";
+        this.montoAvance = "";
+        this.numeroTarjetaDestino = "";
+        this.mensajeConfirmacion = "";
+        this.mensajeAvanceNoExitoso = "";
     }
 
-    public static TarjetaCreditoBuilder tarjetaCredito(){
+    public static TarjetaCreditoBuilder tarjetaCredito() {
         return new TarjetaCreditoBuilder();
     }
 
-    public TarjetaCreditoBuilder conMensajeConfirmacion(List<Map<String, String>> datos){
-        this.mensajeConfirmacion= datos.get(0).get("mensajeConfirmacion");
+    public TarjetaCreditoBuilder conMensajeConfirmacion(List<Map<String, String>> datos) {
+        this.mensajeConfirmacion = datos.get(0).get("mensajeConfirmacion");
         return this;
     }
 
-    public TarjetaCreditoBuilder conMensajeDeRechazo(List<Map<String, String>> datos){
-        this.mensajeAvanceNoExitoso= datos.get(0).get("mensajeAvanceNoExitoso");
+    public TarjetaCreditoBuilder conMensajeDeRechazo(List<Map<String, String>> datos) {
+        this.mensajeAvanceNoExitoso = datos.get(0).get("mensajeAvanceNoExitoso");
         return this;
     }
 
     public TarjetaCreditoBuilder conDatosDeTarjeta(List<Map<String, String>> datos) {
-        this.numeroTarjeta= datos.get(0).get("numeroTarjeta");
+        this.numeroTarjeta = datos.get(0).get("numeroTarjeta");
         this.codigoSeguridad = datos.get(0).get("codigoSeguridad");
         this.montoAvance = datos.get(0).get("montoAvance");
-        this.numeroTarjetaDestino= datos.get(0).get("numeroTarjetaDestino");
+        this.numeroTarjetaDestino = datos.get(0).get("numeroTarjetaDestino");
         return this;
     }
 
-    public TarjetaCreditoBuilder conTipoPago(List<Map<String, String>> datos){
+    public TarjetaCreditoBuilder conTipoPago(List<Map<String, String>> datos) {
         this.tipoPago = datos.get(0).get("tipoPago");
         return this;
     }
 
-    public TarjetaCreditoBuilder conValor(List<Map<String, String>> datos){
+    public TarjetaCreditoBuilder conValor(List<Map<String, String>> datos) {
         this.valorPago = datos.get(0).get("valorPago");
         return this;
     }
 
-    public TarjetaCreditoBuilder conTarjeta(List<Map<String, String>> datos){
+    public TarjetaCreditoBuilder conTarjeta(List<Map<String, String>> datos) {
         this.tipoCuenta = datos.get(0).get("tipoTarjeta");
         this.numeroCuenta = datos.get(0).get("numeroTarjeta");
         return this;
     }
 
-    public TarjetaCreditoBuilder conMoneda(List<Map<String, String>> datos){
+    public TarjetaCreditoBuilder conTarjeta(String tipoTarjeta, String numeroTarjeta) {
+        this.tipoTarjeta = tipoTarjeta;
+        this.numeroTarjeta = numeroTarjeta;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conMoneda(List<Map<String, String>> datos) {
         this.moneda = datos.get(0).get("moneda");
         return this;
     }
 
-    public TarjetaCreditoBuilder conDeudaFechaPesos(String datos){
+    public TarjetaCreditoBuilder conDeudaFechaPesos(String datos) {
         this.deudaALaFechaEnPesos = datos;
         return this;
     }
 
-    public TarjetaCreditoBuilder conDeudaFechaDolares(String datos){
+    public TarjetaCreditoBuilder conDeudaFechaDolares(String datos) {
         this.deudaTotalEnDolares = datos;
         return this;
     }
-    public TarjetaCreditoBuilder conAvanceDisponiblePeso(String datos){
+
+    public TarjetaCreditoBuilder conAvanceDisponiblePeso(String datos) {
         this.avancesDisponiblesEnPesos = datos;
         return this;
     }
 
-    public TarjetaCreditoBuilder conFechaProximoPago(String datos){
+    public TarjetaCreditoBuilder conNumeroTarjeta(String datos) {
+        this.numeroTarjeta = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conTipoTarjeta(String datos) {
+        this.tipoTarjeta = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conFechaProximoPago(String datos) {
         this.fechaLimitePago = datos;
         return this;
     }
+
     public String getTipoCuenta() {
         return tipoCuenta;
     }
@@ -180,17 +200,33 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return moneda;
     }
 
-    public String getNumeroTarjeta() {return numeroTarjeta;}
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
+    }
 
-    public String getCodigoSeguridad() {return codigoSeguridad;}
+    public String getTipoTarjeta() {
+        return tipoTarjeta;
+    }
 
-    public String getMontoAvance() {return montoAvance;}
+    public String getCodigoSeguridad() {
+        return codigoSeguridad;
+    }
 
-    public String getNumeroTarjetaDestino() {return numeroTarjetaDestino;}
+    public String getMontoAvance() {
+        return montoAvance;
+    }
 
-    public String getMensajeConfirmacion() {return mensajeConfirmacion;}
+    public String getNumeroTarjetaDestino() {
+        return numeroTarjetaDestino;
+    }
 
-    public String getMensajeAvanceNoExitoso() {return  mensajeAvanceNoExitoso;}
+    public String getMensajeConfirmacion() {
+        return mensajeConfirmacion;
+    }
+
+    public String getMensajeAvanceNoExitoso() {
+        return mensajeAvanceNoExitoso;
+    }
 
     @Override
     public TarjetaCredito build() {

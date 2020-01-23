@@ -1,15 +1,18 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.saldos;
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException;
-import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
+import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarConsulta;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductos;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.VerificarProductosElegidos;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarSaldo;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductos;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarSaldos;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
 import java.util.List;
+import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ProductosDeUsuarioNoSonCorrectosException.MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS;
 import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
@@ -24,6 +27,13 @@ public class ConsultaSaldosStepDefinition {
                 RevisarProductos.enSaldosMovimientos(elProducto()
                         .conTipoCuenta(cuenta)
                         .conNumero(cuenta), opcionCategoria)
+        );
+    }
+
+    @Cuando("^consulto el saldo de mi Ecard desde (.*)$")
+    public void consultoElSaldoDeMiEcard(String opcionCategoria) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarSaldo.deEcard(opcionCategoria)
         );
     }
 
@@ -85,6 +95,12 @@ public class ConsultaSaldosStepDefinition {
     @Entonces("^Verifico el resultado de la consulta del saldo desde vista carrusel (.*)$")
     public void verificoElResultadoDeLaConsultaDelSaldoDesdeVistaCarrusel(String numeroProductos) {
         theActorInTheSpotlight().should(seeThat(VerificarProductos.desdeVistaCarrusel(numeroProductos))
+                .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
+    }
+
+    @Entonces("^Verifico el resultado de la consulta del saldo con los datos de la tarjeta$")
+    public void verificoElResultadoDeLaConsultaDelSaldoConLosDatosDeLaTarjeta(List<Map<String, String>> lista) {
+        theActorInTheSpotlight().should(seeThat(VerificarConsulta.deEcard(lista))
                 .orComplainWith(ProductosDeUsuarioNoSonCorrectosException.class, MENSAJE_PRODUCTOS_MOSTRADOS_NO_SON_CORRECTOS));
     }
 }

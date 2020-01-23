@@ -23,6 +23,9 @@ public class InicioSesionPage {
     public static final Target BTN_SI_CERRAR_SESION = Target.the("Boton SI cerrar sesion").located(theElementBy(BTN_SI_CERRAR_SESION_LOCATOR));
     public static final Target BTN_VOLVER = Target.the("Boton Volver").located(theElementBy(BTN_VOLVER_LOCATOR));
     public static final Target BTN_FOCO_CERRAR_SESION = Target.the("foco cerrar sesion").located(theElementBy(BTN_FOCO_CERRAR_SESION_LOCATOR));
+    public static final Target LBL_FRASE_DE_SEGURIDAD = Target.the("Label frase de seguridad").located(theElementBy(LBL_FRASE_DE_SEGURIDAD_LOCATOR));
+    public static final Target LBL_OPCION_NO_ERES_CLIENTE = Target.the("Label opcion ¿Aún no eres cliente?").located(theElementBy(LBL_OPCION_NO_ERES_CLIENTE_LOCATOR));
+    public static final Target BTN_QUIERO_SER_CLIENTE = Target.the("Boton quiero quiero ser cliente").located(theElementBy(BTN_QUIERO_SER_CLIENTE_LOCATOR));
 
     private InicioSesionPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);
