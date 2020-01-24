@@ -18,6 +18,10 @@ public class ConsultarDetalle {
         return instrumented(ConsultarDetalleTarjetaCredito.class, tipoCuenta, numeroCuenta);
     }
 
+    public static Performable deEcard(String tipoTarjeta, String numeroTarjeta) {
+        return instrumented(ConsultarDetalleTarjetaEcard.class, tipoTarjeta, numeroTarjeta);
+    }
+
     public static Performable deCreditosConsumo(String opcionCategoria, String tipoCuenta, String numeroCuenta) {
         return instrumented(ConsultarDetalleCreditoConsumo.class, opcionCategoria, tipoCuenta, numeroCuenta);
     }

@@ -93,9 +93,19 @@ public class DetalleProductosLocator {
     public static final Locator LBL_SALDO_DISPONIBLE_INVERSION_LOCATOR = locator()
             .withAndroid("xpath$//span[contains(@class,'font-family-nunito font-family-nunito-bold text-black')]")
             .withIos("xpath$test");
-    public static final Locator LBL_SALDO_TOTAL_INVERSION_LOCATOR = locator()
-            .withAndroid("xpath$//span[contains(@class,'account-detail-balance')]")
-            .withIos("xpath$test");
+    public static final Locator LBL_SALDO_TOTAL_INVERSION_LOCATOR = locator().withAndroid("xpath$//span[contains(@class,'account-detail-balance')]").withIos("xpath$test");
+
+    public static final Locator LBL_FECHA_VENCIMIENTO_ECARD_LOCATOR = locator().withAndroid("xpath$(//span[contains(@class,'font-family-nunito text-black')])[1]").withIos("xpath$test");
+    public static final Locator LBL_CVC_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[1]").withIos("xpath$test");
+    public static final Locator LBL_PROXIMO_PAGO_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[3]").withIos("xpath$test");
+    public static final Locator LBL_DEUDA_FECHA_PESOS_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[5]").withIos("xpath$test");
+    public static final Locator LBL_DEUDA_FECHA_DOLARES_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[7]").withIos("xpath$test");
+    public static final Locator LBL_DISPO_AVANCE_PESOS_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[9]").withIos("xpath$test");
+    public static final Locator LBL_TRM_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[11]").withIos("xpath$test");
+    public static final Locator LBL_PAGO_MINIMO_DOLARES_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[16]").withIos("xpath$test");
+    public static final Locator LBL_PAGO_MINIMO_PESOS_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[14]").withIos("xpath$test");
+    public static final Locator LBL_PAGO_TOTAL_PESOS_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[18]").withIos("xpath$test");
+    public static final Locator LBL_PAGO_TOTAL_DOLARES_ECARD_LOCATOR = locator().withAndroid("xpath$//label[@class='OSFillParent']//following::span[20]").withIos("xpath$test");
 
     private DetalleProductosLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

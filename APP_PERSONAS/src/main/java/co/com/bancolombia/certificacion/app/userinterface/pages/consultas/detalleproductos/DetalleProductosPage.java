@@ -37,6 +37,18 @@ public class DetalleProductosPage {
     public static final Target LBL_TIPO_INVERSION = Target.the("Número de tarjeta").located(theElementBy(LBL_TIPO_INVERSION_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_INVERSION = Target.the("Número de tarjeta").located(theElementBy(LBL_SALDO_DISPONIBLE_INVERSION_LOCATOR));
     public static final Target LBL_SALDO_TOTAL_INVERSION = Target.the("Número de tarjeta").located(theElementBy(LBL_SALDO_TOTAL_INVERSION_LOCATOR));
+    public static final Target LBL_FECHA_VENCIMIENTO_ECARD= Target.the("Fecha vencimiento ecard").located(theElementBy(LBL_FECHA_VENCIMIENTO_ECARD_LOCATOR));
+    public static final Target LBL_CVC_ECARD = Target.the("Codigo cvc ecard").located(theElementBy(LBL_CVC_ECARD_LOCATOR));
+    public static final Target LBL_PROXIMO_PAGO_ECARD = Target.the("Proximo pago ecard").located(theElementBy(LBL_PROXIMO_PAGO_ECARD_LOCATOR));
+    public static final Target LBL_DEUDA_FECHA_PESOS_ECARD = Target.the("Deuda a la fecha en pesos").located(theElementBy(LBL_DEUDA_FECHA_PESOS_LOCATOR));
+    public static final Target LBL_DEUDA_FECHA_DOLARES_ECARD = Target.the("Deuda a la fecha en dolares").located(theElementBy(LBL_DEUDA_FECHA_DOLARES_ECARD_LOCATOR));
+    public static final Target LBL_DISPO_AVANCE_PESOS_ECARD = Target.the("Disponible para avance pesos").located(theElementBy(LBL_DISPO_AVANCE_PESOS_ECARD_LOCATOR));
+    public static final Target LBL_TRM_ECARD = Target.the("TRM ecard").located(theElementBy(LBL_TRM_ECARD_LOCATOR));
+    public static final Target LBL_PAGO_MINIMO_DOLARES_ECARD = Target.the("Pago minimo en dolares").located(theElementBy(LBL_PAGO_MINIMO_DOLARES_ECARD_LOCATOR));
+    public static final Target LBL_PAGO_MINIMO_PESOS_ECARD = Target.the("Pago minimo pesos").located(theElementBy(LBL_PAGO_MINIMO_PESOS_ECARD_LOCATOR));
+    public static final Target LBL_PAGO_TOTAL_PESOS_ECARD = Target.the("Pago total pesos").located(theElementBy(LBL_PAGO_TOTAL_PESOS_ECARD_LOCATOR));
+    public static final Target LBL_PAGO_TOTAL_DOLARES_ECARD = Target.the("Pago total dolares").located(theElementBy(LBL_PAGO_TOTAL_DOLARES_ECARD_LOCATOR));
+
 
     private DetalleProductosPage() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

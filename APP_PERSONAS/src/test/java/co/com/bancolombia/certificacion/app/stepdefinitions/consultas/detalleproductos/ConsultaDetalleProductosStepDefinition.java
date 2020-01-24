@@ -36,6 +36,13 @@ public class ConsultaDetalleProductosStepDefinition {
         );
     }
 
+    @Cuando("^consulto el detalle de tarjeta ecard con (.*) y numero (.*)$")
+    public void consultoeldetalledetarjetaecardcon(String tipoTarjeta, String numeroTarjeta) {
+        theActorInTheSpotlight().attemptsTo(
+                ConsultarDetalle.deEcard(tipoTarjeta, numeroTarjeta)
+        );
+    }
+
     @Cuando("^consulto el detalle de inversion con (.*) y con numero (.*)$")
     public void consultoDetalleDeInversion(String tipoCuenta, String numeroCuenta) {
         theActorInTheSpotlight().attemptsTo(
