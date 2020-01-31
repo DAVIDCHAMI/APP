@@ -12,23 +12,23 @@ public class RevisarProductosVistaCarrusel {
     }
 
     public static Performable DeTarjetasCredito(String opcionCategoria) {
-        return instrumented(DeTarjetasCredito.class,opcionCategoria);
+        return instrumented(DeTarjetasCredito.class, opcionCategoria);
     }
 
     public static Performable DeCreditos(String opcionCategoria) {
-        return instrumented(DeCreditos.class,opcionCategoria);
+        return instrumented(DeCreditos.class, opcionCategoria);
     }
 
     public static Performable DeInversiones(String opcionCategoria) {
-        return instrumented(DeInversiones.class,opcionCategoria);
+        return instrumented(DeInversiones.class, opcionCategoria);
     }
 
     public static Performable DeEprepago(String opcionCategoria) {
-        return instrumented(DeEprepago.class,opcionCategoria);
+        return instrumented(DeEprepago.class, opcionCategoria);
     }
 
     public static Performable DeCrediagil(String opcionCategoria) {
-        return instrumented(DeCrediagil.class,opcionCategoria);
+        return instrumented(DeCrediagil.class, opcionCategoria);
     }
 
     public static Performable DeEcard() {

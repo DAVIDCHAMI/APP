@@ -7,13 +7,10 @@ import co.com.bancolombia.certificacion.app.utilidades.seleccionarproducto.Selec
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.consultas.saldos.SaldosMovimientosPage.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class DeTarjetasCredito implements Task {
     private static final Logger LOGGER = LogManager.getLogger(RevisarProductosVistaCarrusel.class);
@@ -26,7 +23,7 @@ public class DeTarjetasCredito implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unTiempo(5000),
+                Esperar.unTiempo(3000),
                 Click.on(BTN_VISTA_CARRUSEL),
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );

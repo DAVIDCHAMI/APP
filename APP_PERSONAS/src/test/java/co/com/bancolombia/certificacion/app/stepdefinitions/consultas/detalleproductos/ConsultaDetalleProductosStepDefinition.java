@@ -119,7 +119,6 @@ public class ConsultaDetalleProductosStepDefinition {
         );
     }
 
-
     @Y("^deberia de ver el detalle de mi credito de consumo$")
     public void deberiaDeVerElDetalleDeMiCreditoDeConsumo() {
         theActorInTheSpotlight().should(seeThat(
