@@ -9,8 +9,11 @@ public class TarjetaCredito extends Producto {
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
     private String fechaLimitePago;
+    private String fechaProximoPago;
+    private String fechaVencimiento;
     private String pagoMinimoEnPesos;
     private String pagoTotalEnPesos;
+    private String trm;
     private String deudaALaFechaEnPesos;
     private String avancesDisponiblesEnPesos;
     private String totalDisponibleEnPesos;
@@ -32,9 +35,11 @@ public class TarjetaCredito extends Producto {
         super(builder.getNumeroCuenta(), builder.getTipoCuenta());
         this.formatoTarjetaCredito = builder.getFormatoTarjetaCredito();
         this.tipoTarjetaCreditoEnNumero = builder.getTipoTarjetaCreditoEnNumero();
-        this.fechaLimitePago = builder.getFechaLimitePago();
+        this.fechaProximoPago = builder.getFechaProximoPago();
+        this.fechaVencimiento = builder.getFechaVencimiento();
         this.pagoMinimoEnPesos = builder.getPagoMinimoEnPesos();
         this.pagoTotalEnPesos = builder.getPagoTotalEnPesos();
+        this.trm = builder.getTrm();
         this.deudaALaFechaEnPesos = builder.getDeudaALaFechaEnPesos();
         this.avancesDisponiblesEnPesos = builder.getAvancesDisponiblesEnPesos();
         this.totalDisponibleEnPesos = builder.getTotalDisponibleEnPesos();
@@ -88,6 +93,14 @@ public class TarjetaCredito extends Producto {
         this.fechaLimitePago = fechaLimitePago;
     }
 
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public String getFechaProximoPago() {
+        return fechaProximoPago;
+    }
+
     public String getMinimumPaymentPesos() {
         return pagoMinimoEnPesos;
     }
@@ -122,6 +135,10 @@ public class TarjetaCredito extends Producto {
 
     public void setAvancesDisponiblesEnPesos(String avancesDisponiblesEnPesos) {
         this.avancesDisponiblesEnPesos = avancesDisponiblesEnPesos;
+    }
+
+    public String getTrm() {
+        return trm;
     }
 
     public String getTotalDisponibleEnPesos() {

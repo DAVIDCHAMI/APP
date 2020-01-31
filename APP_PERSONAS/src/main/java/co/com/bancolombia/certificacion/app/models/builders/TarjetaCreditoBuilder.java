@@ -11,7 +11,10 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
     private String numeroCuenta;
     private String formatoTarjetaCredito;
     private String tipoTarjetaCreditoEnNumero;
+    private String trm;
     private String fechaLimitePago;
+    private String fechaProximoPago;
+    private String fechaVencimiento;
     private String pagoMinimoEnPesos;
     private String pagoTotalEnPesos;
     private String deudaALaFechaEnPesos;
@@ -36,7 +39,10 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         this.numeroCuenta = "";
         this.formatoTarjetaCredito = "";
         this.tipoTarjetaCreditoEnNumero = "";
+        this.trm = "";
         this.fechaLimitePago = "";
+        this.fechaProximoPago = "";
+        this.fechaVencimiento = "";
         this.pagoMinimoEnPesos = "";
         this.pagoTotalEnPesos = "";
         this.deudaALaFechaEnPesos = "";
@@ -116,6 +122,11 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return this;
     }
 
+    public TarjetaCreditoBuilder conTrm(String datos) {
+        this.trm = datos;
+        return this;
+    }
+
     public TarjetaCreditoBuilder conAvanceDisponiblePeso(String datos) {
         this.avancesDisponiblesEnPesos = datos;
         return this;
@@ -126,13 +137,43 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
         return this;
     }
 
+    public TarjetaCreditoBuilder conFechaVencimiento(String datos) {
+        this.fechaVencimiento = datos;
+        return this;
+    }
+
     public TarjetaCreditoBuilder conTipoTarjeta(String datos) {
         this.tipoTarjeta = datos;
         return this;
     }
 
     public TarjetaCreditoBuilder conFechaProximoPago(String datos) {
-        this.fechaLimitePago = datos;
+        this.fechaProximoPago = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conCodigoDeSeguridad(String datos) {
+        this.codigoSeguridad = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conPagoMinimoEnPesos(String datos) {
+        this.pagoMinimoEnPesos = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conPagoMinimoEnDolares(String datos) {
+        this.pagoMinimoEnDolares = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conPagoTotalEnPesos(String datos) {
+        this.pagoTotalEnPesos = datos;
+        return this;
+    }
+
+    public TarjetaCreditoBuilder conPagoTotalEnDolares(String datos) {
+        this.totalPagoEnDolares = datos;
         return this;
     }
 
@@ -154,6 +195,14 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
 
     public String getFechaLimitePago() {
         return fechaLimitePago;
+    }
+
+    public String getFechaProximoPago() {
+        return fechaProximoPago;
+    }
+
+    public String getTrm() {
+        return trm;
     }
 
     public String getPagoMinimoEnPesos() {
@@ -186,6 +235,10 @@ public class TarjetaCreditoBuilder implements Builder<TarjetaCredito> {
 
     public String getDeudaTotalEnDolares() {
         return deudaTotalEnDolares;
+    }
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
     }
 
     public String getTipoPago() {

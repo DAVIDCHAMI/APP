@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.tasks.consultas.saldos.vistacarrusel;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.Esperar;
 import co.com.bancolombia.certificacion.app.interactions.consultas.saldos.SeleccionarCategoriaVistaCarrusel;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import co.com.bancolombia.certificacion.app.utilidades.seleccionarproducto.SeleccionarProducto;
@@ -22,11 +23,12 @@ public class DeTarjetasCredito implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.unTiempo(3000),
                 Click.on(BTN_VISTA_CARRUSEL),
                 SeleccionarCategoriaVistaCarrusel.deSaldosMovimientos(opcionCategoria)
         );
         actor.attemptsTo(
-                SeleccionarProducto.deVistaCarrusel(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL,LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL,LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL)
+                SeleccionarProducto.deVistaCarrusel(LBL_DEUDA_PESOS_TC_VISTA_CARRUSEL, LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL, LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL)
         );
     }
 }
