@@ -52,9 +52,10 @@ public class SaldosMovimientosPage {
     public static final Target CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL = Target.the("Categoria tarjetas credito vista carrusel").locatedBy(dynamicElement(CATEGORIA_TARJETAS_CREDITO_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Numero de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL = Target.the("Tipo de cuenta tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_TC_VISTA_CARRUSEL_LOCATOR));
-    public static final Target LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL = Target.the("Saldo disponible tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_TC_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_DEUDA_PESOS_TC_VISTA_CARRUSEL = Target.the("Deuda pesos tarjeta de credito vista carrusel").locatedBy(dynamicElement(LBL_DEUDA_PESOS_TC_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL = Target.the("Numero de cuenta del credito vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL = Target.the("Tipo de cuenta del credito vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_CREDITOS_VISTA_CARRUSEL_LOCATOR));
+    public static final Target LBL_VER_DETALLE_ECARD_TDC_CARRUSEL = Target.the("Ver detalle ecard").locatedBy(dynamicElement(LBL_VER_DETALLE_ECARD_CARRUSEL_LOCATOR));
     public static final Target LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL = Target.the("Saldo disponible del credito vista carrusel").locatedBy(dynamicElement(LBL_SALDO_DISPONIBLE_CREDITOS_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL = Target.the("Numero de cuenta de inversiones vista carrusel").locatedBy(dynamicElement(LBL_NUMERO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR));
     public static final Target LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL = Target.the("Tipo de cuenta de inversiones vista carrusel").locatedBy(dynamicElement(LBL_TIPO_CUENTA_INVERSIONES_VISTA_CARRUSEL_LOCATOR));

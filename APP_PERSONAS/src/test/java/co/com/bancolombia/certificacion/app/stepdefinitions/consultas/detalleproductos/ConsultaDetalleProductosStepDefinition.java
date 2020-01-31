@@ -2,8 +2,10 @@ package co.com.bancolombia.certificacion.app.stepdefinitions.consultas.detallepr
 
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.ConsultaCrediagilNoEsCorrectaException;
 import co.com.bancolombia.certificacion.app.exceptions.consultas.saldos.DetalleProductoNoEsCorrectoException;
+import co.com.bancolombia.certificacion.app.questions.consultas.VerificarDetalle;
 import co.com.bancolombia.certificacion.app.questions.consultas.saldos.*;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.ConsultarDetalle;
+import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
@@ -40,6 +42,13 @@ public class ConsultaDetalleProductosStepDefinition {
     public void consultoeldetalledetarjetaecardcon(String tipoTarjeta, String numeroTarjeta) {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarDetalle.deEcard(tipoTarjeta, numeroTarjeta)
+        );
+    }
+
+    @Cuando("^consulto desde la vista carrusel el detalle de tarjeta ecard$")
+    public void consultoDesdeLaVistaCarruselElDetalleDeTarjetaEcard() {
+        theActorInTheSpotlight().attemptsTo(
+                RevisarProductosVistaCarrusel.DeEcard()
         );
     }
 
@@ -80,6 +89,15 @@ public class ConsultaDetalleProductosStepDefinition {
     public void verificoElResultadoDeLaConsultaDeTarjetaCredito() {
         theActorInTheSpotlight().should(seeThat(
                 VerificarDetalleProductoTarjetas.esExitoso()
+                ).orComplainWith(
+                DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
+        );
+    }
+
+    @Entonces("^deberia de ver el detalle de mi ecard$")
+    public void deberiaDeVerElDetalleDeMiEcard() {
+        theActorInTheSpotlight().should(seeThat(
+                VerificarDetalle.deEcard()
                 ).orComplainWith(
                 DetalleProductoNoEsCorrectoException.class, MENSAJE_DETALLE_PRODUCTO_NO_CORRECTO)
         );

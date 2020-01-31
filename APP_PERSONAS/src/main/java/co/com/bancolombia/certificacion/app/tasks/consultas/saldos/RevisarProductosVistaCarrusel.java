@@ -30,4 +30,8 @@ public class RevisarProductosVistaCarrusel {
     public static Performable DeCrediagil(String opcionCategoria) {
         return instrumented(DeCrediagil.class,opcionCategoria);
     }
+
+    public static Performable DeEcard() {
+        return instrumented(DeEcard.class);
+    }
 }

@@ -5,6 +5,7 @@ import co.com.bancolombia.certificacion.app.models.productos.Producto;
 import co.com.bancolombia.certificacion.app.tasks.consultas.saldos.RevisarProductosVistaCarrusel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.targets.Target;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,7 +41,8 @@ public class SeleccionarProducto implements Interaction {
         if (elementoPresente(actor, saldoDisponible.of(String.valueOf(iterador)))) {
             while (elementoPresente(actor, saldoDisponible.of(String.valueOf(iterador)))) {
                 actor.attemptsTo(
-                        RealizarScroll.hastaPosicionDeTarget(saldoDisponible.of(String.valueOf(iterador)))
+                        Scroll.to(saldoDisponible.of(String.valueOf(iterador)))
+                      //  RealizarScroll.hastaPosicionDeTarget(saldoDisponible.of(String.valueOf(iterador)))
                 );
                 contadorProductos = contadorProductos + 1;
                 listaProductos.add(elProducto()
@@ -60,7 +62,7 @@ public class SeleccionarProducto implements Interaction {
         actor.remember(NUMERO_PRODUCTOS, contadorProductos);
     }
 
-    public static SeleccionarProducto deVistaCarrusel(Target saldoDisponible, Target tipoTarjeta, Target numeroCuenta) {
+    public static SeleccionarProducto   deVistaCarrusel(Target saldoDisponible, Target tipoTarjeta, Target numeroCuenta) {
         return new SeleccionarProducto(saldoDisponible, tipoTarjeta, numeroCuenta);
     }
 }
