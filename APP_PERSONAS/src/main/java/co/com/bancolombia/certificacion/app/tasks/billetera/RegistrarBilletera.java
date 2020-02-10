@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.BTN_PERMISO;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SALTAR;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.RegistroBilletera.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

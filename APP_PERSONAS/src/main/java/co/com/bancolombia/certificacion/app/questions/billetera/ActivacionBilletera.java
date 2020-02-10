@@ -3,7 +3,7 @@ package co.com.bancolombia.certificacion.app.questions.billetera;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.LBL_ACTIVACION_EXITOSA;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.RegistroBilletera.LBL_ACTIVACION_EXITOSA;
 
 public class ActivacionBilletera implements Question<Boolean> {
 

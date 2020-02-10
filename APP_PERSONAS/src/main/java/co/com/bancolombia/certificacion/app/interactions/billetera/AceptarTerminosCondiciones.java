@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.BilleteraPage.*;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.billetera.RegistroBilletera.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class AceptarTerminosCondiciones implements Interaction {
