@@ -7,7 +7,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class VerificarPagoBilleteraLocator {
     public static final Locator LBL_TIPO_TARJETA_VERIFICAR_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
-    public static final Locator LBL_NOMBRE_ESTABLECIMIENTO_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
+    public static final Locator LBL_NOMBRE_ESTABLECIMIENTO_VERIFICAR_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
     public static final Locator LBL_NUMERO_TARJETA_VERIFICAR_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
     public static final Locator BTN_CAMBIAR_TARJETA_VERIFICAR_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
     public static final Locator BTN_CAMBIAR_VALOR_VERIFICAR_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
