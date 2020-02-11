@@ -20,6 +20,7 @@ public class RealizarPago implements Task {
         actor.attemptsTo(
                 Click.on(IMG_TARJETA_LISTA_ELEGIR)
         );
-        abrirCodigoQr("nombreQR");
+        abrirCodigoQr("qr_estatico_uno");
+
     }
 }

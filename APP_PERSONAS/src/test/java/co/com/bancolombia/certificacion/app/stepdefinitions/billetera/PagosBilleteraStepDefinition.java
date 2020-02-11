@@ -10,7 +10,6 @@ import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 import static co.com.bancolombia.certificacion.app.exceptions.billetera.NoSeActivoBilleteraException.MENSAJE_BILLETERA_NO_ACTIVADA;
-import static co.com.bancolombia.certificacion.app.utilidades.administradores.ArchivosUtilidades.abrirPDF;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 

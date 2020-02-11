@@ -23,6 +23,7 @@ import static co.com.bancolombia.certificacion.app.exceptions.transversales.Arch
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
+import static co.com.bancolombia.certificacion.app.utilidades.administradores.ArchivosUtilidades.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -35,7 +36,10 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) se autentica en la app$")
-    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos) {
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos) throws InterruptedException {
+        abrirCodigoQr("qr_estatico_uno");
+        Thread.sleep(7000);
+        cerrarArchivo();
         theActorCalled(actor).wasAbleTo(
                 IniciarSesion.con(informacion()
                         .deTransaccion(datos)
