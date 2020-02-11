@@ -36,10 +36,7 @@ public class PreparacionEscenarioStepDefinition {
     }
 
     @Dado("^que el (.*) se autentica en la app$")
-    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos) throws InterruptedException {
-        abrirCodigoQr("qr_estatico_uno");
-        Thread.sleep(7000);
-        cerrarArchivo();
+    public void queSuboLosDatosParaLaPruebaLogin(String actor, List<Map<String, String>> datos){
         theActorCalled(actor).wasAbleTo(
                 IniciarSesion.con(informacion()
                         .deTransaccion(datos)

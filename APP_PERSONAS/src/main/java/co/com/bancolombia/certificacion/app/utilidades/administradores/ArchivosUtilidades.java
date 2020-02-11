@@ -12,15 +12,5 @@ public class ArchivosUtilidades {
         } catch (IOException ex) {
         }
     }
-
-    public static void cerrarArchivo(){
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream("/Users/mruiz/Documents/ProyectosTODO1/bancolombia-app-personas-osp-tests-bdd-screen-play/APP_PERSONAS/src/test/resources/codigosqr/qr_estatico_uno.jpeg");
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
