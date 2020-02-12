@@ -1,5 +1,6 @@
 package co.com.bancolombia.certificacion.app.interactions.comunes;
 
+import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
@@ -25,7 +26,9 @@ public class Escribir implements Interaction {
                 Check.whether(("iOS").equalsIgnoreCase(platform)).andIfSo(
                         Click.on(TAB)
                 ),
-                Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
+                Check.whether(Verificar.elementoHabilitado(actor, TXT_CLAVE_DIGITOS)).andIfSo(
+                        Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
+                )
         );
     }
 

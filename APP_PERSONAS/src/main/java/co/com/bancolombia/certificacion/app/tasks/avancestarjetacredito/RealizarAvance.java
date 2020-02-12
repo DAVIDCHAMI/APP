@@ -34,6 +34,7 @@ public class RealizarAvance implements Task {
                 WaitUntil.the(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta()), isPresent()),
                 Click.on(BTN_PRODUCTO_ORIGEN_TARJETA_CREDITO.of(tarjetaCredito.getNumeroTarjeta())),
                 Enter.theValue(tarjetaCredito.getCodigoSeguridad()).into(TXT_CODIGO_SEGURIDAD),
+                Click.on(IMG_TARJETA_GENERAL_SELECCIONADA),
                 Click.on(BTN_SIGUIENTE),
                 Enter.theValue(tarjetaCredito.getMontoAvance()).into(TXT_MONTO_AVANCE),
                 Click.on(BOTON_SIGUIENTE_AVANCE)

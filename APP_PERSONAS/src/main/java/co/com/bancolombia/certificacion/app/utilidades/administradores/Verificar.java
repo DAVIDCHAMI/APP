@@ -1,6 +1,5 @@
 package co.com.bancolombia.certificacion.app.utilidades.administradores;
 
-import co.com.bancolombia.certificacion.app.models.billetera.DatosPagoBilletera;
 import co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
@@ -47,7 +46,6 @@ public class Verificar {
     public static boolean datosPagoBilletera(List<String> datosPagoBilletera, List<String> datosPagoQr){
         boolean revision = false;
         for(int i = 0; datosPagoQr.size()<8; i++){
-            //datosPagoBilletera.g
         }
         return revision;
     }
