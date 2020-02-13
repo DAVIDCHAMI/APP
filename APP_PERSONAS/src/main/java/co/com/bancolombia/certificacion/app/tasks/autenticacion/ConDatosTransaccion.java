@@ -26,7 +26,7 @@ public class ConDatosTransaccion implements Task {
         actor.remember(MODELO_DATOS_TRANSACCION, usuario);
         actor.attemptsTo(
                 WaitUntil.the(BTN_INGRESAR, isEnabled()),
-                JavaScriptClick.on(BTN_INGRESAR),
+                Click.on(BTN_INGRESAR),
                 WaitUntil.the(TXT_USUARIO, isEnabled()),
                 Click.on(TXT_USUARIO),
                 Type.theValue(usuario.getUsuario().getNombreUsuario()).into(TXT_USUARIO),

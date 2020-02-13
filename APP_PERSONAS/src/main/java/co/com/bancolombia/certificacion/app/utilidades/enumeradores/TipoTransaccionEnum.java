@@ -22,7 +22,7 @@ public enum TipoTransaccionEnum {
     CONSULTAR_PUNTOS_COLOMBIA(MIS_PRODUCTOS, "Consultar Puntos Colombia",""),
     DESEMBOLSAR_CREDIAGIL(MIS_PRODUCTOS, "Realizar avances y desembolsos","Desembolsar crediágil"),
     INVERSIONES(SOLICITAR_PRODUCTOS, "Inversiones",""),
-    OPCION_BILLETERA(BILLETERA, "",""),
+    BILLETERA_MOVIL(BILLETERA, "",""),
     ACTIVAR_EPREPAGO(SOLICITAR_PRODUCTOS, "e-Prepago",""),
     BLOQUEOS(PERFIL, "Bloqueos",""),
     GENERAR_CLAVE_DINAMICA(PERFIL, "Seguridad","Gestionar la clave dinámica"),
