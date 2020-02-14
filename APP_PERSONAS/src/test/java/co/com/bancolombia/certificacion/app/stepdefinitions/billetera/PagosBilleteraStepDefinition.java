@@ -15,6 +15,7 @@ import java.util.Map;
 
 import static co.com.bancolombia.certificacion.app.exceptions.billetera.NoSeActivoBilleteraException.MENSAJE_BILLETERA_NO_ACTIVADA;
 import static co.com.bancolombia.certificacion.app.models.builders.DatosPagoBilleteraBuilder.informacion;
+import static co.com.bancolombia.certificacion.app.models.builders.ProductoBuilder.elProducto;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -30,9 +31,9 @@ public class PagosBilleteraStepDefinition {
     }
 
     @Y("^realiza una compra con QR estatico$")
-    public void realizaActivacionBilletera(List<Map<String, String>> datosPagoBilletera) {
+    public void realizaActivacionBilletera(List<Map<String, String>> informacionBilletera) {
         theActorInTheSpotlight().attemptsTo(
-                RealizarPago.conCodigoQrEstatico(informacion().dePagoBilletera(datosPagoBilletera))
+                RealizarPago.conCodigoQrEstatico(informacion().dePagoBilletera(informacionBilletera))
         );
     }
 
@@ -40,8 +41,7 @@ public class PagosBilleteraStepDefinition {
     public void deberiaVerActivacionBilleteraExitoso() {
         theActorInTheSpotlight().should(seeThat(
                 ActivacionBilletera.esExitosa()).orComplainWith(
-                NoSeActivoBilleteraException.class, MENSAJE_BILLETERA_NO_ACTIVADA
-                )
+                NoSeActivoBilleteraException.class, MENSAJE_BILLETERA_NO_ACTIVADA)
         );
     }
 }

@@ -14,18 +14,18 @@ import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoCla
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/billetera/registro_billetera.feature"},
+        features = {"src/test/resources/features/billetera/pagos_billetera_movil.feature"},
         glue = {"co.com.bancolombia.certificacion.app.stepdefinitions"},
         tags = "@RutaCritica",
         snippets = SnippetType.CAMELCASE
 )
-public class RegistroBilletera {
-    private RegistroBilletera() {
+public class PagosBilleteraMovil {
+    private PagosBilleteraMovil() {
         throw new IllegalStateException(CLASE_RUNNER);
     }
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        DataToFeature.overrideFeatureFiles("./src/test/resources/features/billetera/registro_billetera.feature");
+        DataToFeature.overrideFeatureFiles("./src/test/resources/features/billetera/pagos_billetera_movil.feature");
     }
 }

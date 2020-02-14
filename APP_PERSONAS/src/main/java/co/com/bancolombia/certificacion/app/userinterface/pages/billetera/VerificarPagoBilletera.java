@@ -18,6 +18,7 @@ public class VerificarPagoBilletera {
     public static final Target LBL_PROPINA_VERIFICAR = Target.the("Propina del pago").located(theElementBy(LBL_PROPINA_VERIFICAR_LOCATOR));
     public static final Target LBL_TOTAL_PAGADO_VERIFICAR = Target.the("Total pago realizado").located(theElementBy(LBL_TOTAL_PAGAR_VERIFICAR_LOCATOR));
     public static final Target LBL_VERIFICAR_PAGO = Target.the("Total pago realizado").located(theElementBy(LBL_VERIFICAR_PAGO_LOCATOR));
+    public static final Target BTN_BILLETERA_PAGAR = Target.the("Total pago realizado").located(theElementBy(BTN_BILLETERA_PAGAR_LOCATOR));
 
     private VerificarPagoBilletera() {
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

@@ -16,8 +16,8 @@ Característica: Realizar pagos con QR atraves de Billetera Movil
     Entonces El deberia ver el mensaje de que su pago fue exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | establecimiento | tipoTarjeta | numeroTarjeta | subtotal | iva | inc | propina | totalPagar |
-   ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |                 |             |               |          |     |     |         |            |
+   ##@externaldata@./src/test/resources/datadriven/billetera/billetera.xlsx@Datos@1
+      |1|18085114|1|billetera9|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|a|a|a|a|a|a|a|a|
 
   Esquema del escenario: Pago QR estatico con usuario no registrado usando debito maestro
     Dado que el Actor se autentica en la app
@@ -30,8 +30,8 @@ Característica: Realizar pagos con QR atraves de Billetera Movil
     Entonces El deberia ver el mensaje de que su pago fue exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | establecimiento | tipoTarjeta | numeroTarjeta | subtotal | iva | inc | propina | totalPagar |
-   ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |                |             |               |          |     |     |         |            |
+   ##@externaldata@./src/test/resources/datadriven/billetera/billetera.xlsx@Datos@1
+      |1|18085114|1|billetera9|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|a|a|a|a|a|a|a|a|
 
   Esquema del escenario: Pago QR estatico con usuario registrado usando masterdebit
     Dado que el Actor se autentica en la app
@@ -44,8 +44,8 @@ Característica: Realizar pagos con QR atraves de Billetera Movil
     Entonces El deberia ver el mensaje de que su pago fue exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | establecimiento | tipoTarjeta | numeroTarjeta | subtotal | iva | inc | propina | totalPagar |
-   ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |                |             |               |          |     |     |         |            |
+   ##@externaldata@./src/test/resources/datadriven/billetera/billetera.xlsx@Datos@1
+      |1|18085114|1|billetera9|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|a|a|a|a|a|a|a|a|
 
   Esquema del escenario: Pago QR estatico con usuario registrado usando masterdebit
     Dado que el Actor se autentica en la app
@@ -58,5 +58,5 @@ Característica: Realizar pagos con QR atraves de Billetera Movil
     Entonces El deberia ver el mensaje de que su pago fue exitoso
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | establecimiento | tipoTarjeta | numeroTarjeta | subtotal | iva | inc | propina | totalPagar |
-   ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
-      | 1  | 333333302       | 1             | autotest30 | 1234  | 4321         | Acierto     | 000         | 0369              | NO ERROR          | bolp            | ACTIVO       |                |             |               |          |     |     |         |            |
+   ##@externaldata@./src/test/resources/datadriven/billetera/billetera.xlsx@Datos@1
+      |1|18085114|1|billetera9|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|a|a|a|a|a|a|a|a|

@@ -42,11 +42,4 @@ public class Verificar {
             LOGGER.info("elemento no presente");        }
         return result;
     }
-
-    public static boolean datosPagoBilletera(List<String> datosPagoBilletera, List<String> datosPagoQr){
-        boolean revision = false;
-        for(int i = 0; datosPagoQr.size()<8; i++){
-        }
-        return revision;
-    }
 }
