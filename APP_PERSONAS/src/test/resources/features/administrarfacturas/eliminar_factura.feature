@@ -18,7 +18,7 @@ Característica: Eliminar facturas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura  | opcion    |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/EliminarFactura.xlsx@Datos@1
-      |1|48646663|1|recaudosNatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|0,00|65484|No disponible|Inscritas|
+      |1|48646663|1|recaudosNatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|0,00|65437|No disponible|Inscritas|
 
   Esquema del escenario: Eliminar facturas programadas
     Dado que el Actor se autentica en la app

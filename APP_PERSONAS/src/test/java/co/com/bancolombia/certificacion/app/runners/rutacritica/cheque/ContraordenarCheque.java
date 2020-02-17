@@ -7,8 +7,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
-
 import java.io.IOException;
+
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.TipoClaseConstante.CLASE_RUNNER;
 
 @RunWith(RunnerPersonalizado.class)
 @CucumberOptions(
@@ -18,8 +19,8 @@ import java.io.IOException;
         snippets = SnippetType.CAMELCASE
 )
 public class ContraordenarCheque {
+    private ContraordenarCheque(){throw new IllegalStateException(CLASE_RUNNER);}
 
-    private ContraordenarCheque(){}
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
         DataToFeature.overrideFeatureFiles("./src/test/resources/features/cheque/contraordenar_cheques.feature");

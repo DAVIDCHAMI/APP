@@ -16,4 +16,4 @@ Característica: Registro en billetera App
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/billetera/RegistroBilletera.xlsx@Datos@1
-      |1|333333302|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
+      |1|333333302|1|TIBILLETERA1|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|

@@ -16,7 +16,7 @@ public class TransferenciaLocator {
     public static final Locator BTN_CUENTAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Cuentas']").withIos("xpath$//XCUIElementTypeStaticText[@name='Cuentas']");
     public static final Locator LBL_VALOR_LOCATOR = locator().withAndroid("xpath$//span[text()='Valor enviado']/../following-sibling::div/span[contains(text(),'{0}')]").withIos("xpath$//XCUIElementTypeStaticText[@name='Valor enviado']/../following-sibling:: XCUIElementTypeOther[1]/XCUIElementTypeStaticText[contains(@name,'{0}')]");
     public static final Locator BTN_TIPO_PRODUCTO_DESTINO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}']");
-    public static final Locator BTN_PRODUCTO_INSCRITO_LOCATOR = locator().withAndroid("xpath$(//span[text()='{0}'])[2]").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}' and @visible='true']");
+    public static final Locator BTN_PRODUCTO_INSCRITO_LOCATOR = locator().withAndroid("xpath$//span[text()='{0}']").withIos("xpath$//XCUIElementTypeStaticText[@name='{0}' and @visible='true']");
 
     private TransferenciaLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

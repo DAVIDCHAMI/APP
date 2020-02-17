@@ -18,4 +18,4 @@
      Ejemplos:
        | ID | numeroDocumento | tipoDocumento | usuario         | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | valorFactura | empresaServicio | fechaFactura  | descripcionFactura |
    ##@externaldata@./src/test/resources/datadriven/administrarfacturas/ModificarDescipcionFacturaInscrita.xlsx@Datos@1
-      |1|48646663|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|10.000,00|65440|No disponible|modificar factura|
+      |1|48646663|1|recaudosnatik66|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|10.000,00|65468|No disponible|modificar factura|

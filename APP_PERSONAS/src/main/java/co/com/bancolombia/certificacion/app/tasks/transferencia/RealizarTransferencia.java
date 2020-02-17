@@ -66,6 +66,7 @@ public class RealizarTransferencia implements Task {
                                         Click.on(LNK_SIGUIENTE)
                                         )
                         ),
+                Validar.carga(),
                 WaitUntil.the(BTN_ENVIAR_DINERO, isClickable()),
                 Click.on(BTN_ENVIAR_DINERO),
                 Validar.carga()
