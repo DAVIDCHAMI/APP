@@ -18,7 +18,7 @@ Característica: Pago de tarjetas de credito no propias
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |  numeroTarjeta | tipoPago | valorPago | moneda        | tipoCuenta | numeroCuenta |
    ##@externaldata@./src/test/resources/datadriven/pagos/TarjetaCreditoNoPropia.xlsx@Datos@1
-      |1|22493944|1|invictus10|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|4513070436920974|Otro valor|1000|Pesos|Corriente|406-125210-00|
+      |1|22493944|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|4513070436920974|Otro valor|1000|Pesos|Corriente|406-182800-02|
 
   Esquema del escenario: Pago de tarjetas de credito no propias desde una cuenta sin saldo
     Dado que el Actor se autentica en la app

@@ -6,6 +6,8 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.List;
+
 public class Verificar {
     private static final Logger LOGGER = LogManager.getLogger("Verificar");
 
@@ -39,5 +41,12 @@ public class Verificar {
         } catch (Exception e) {
             LOGGER.info("elemento no presente");        }
         return result;
+    }
+
+    public static boolean datosPagoBilletera(List<String> datosPagoBilletera, List<String> datosPagoQr){
+        boolean revision = false;
+        for(int i = 0; datosPagoQr.size()<8; i++){
+        }
+        return revision;
     }
 }

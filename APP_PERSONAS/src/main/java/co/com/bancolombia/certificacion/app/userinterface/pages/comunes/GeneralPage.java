@@ -27,7 +27,6 @@ public class GeneralPage {
     public static final Target LBL_BLOQUEO_EXITOSO = Target.the("Label bloqueos exitoso").locatedBy(dynamicElement(LBL_BLOQUEO_EXITOSO_LOCATOR));
     public static final Target LNK_CERRAR = Target.the("Label Cerrar").located(theElementBy(LNK_CERRAR_LOCATOR));
     public static final Target LBL_TARJETAS = Target.the("Label Tarjetas Bloqueo").located(theElementBy(LBL_TARJETAS_LOCATOR));
-    public static final Target BTN_PERMISO = Target.the("Boton de alerta para administrar los permisos de llamada y camara").located(theElementBy(BTN_PERMISO_LOCATOR));
     public static final Target LNK_ACTUALIZAR = Target.the("Link actualizar").located(theElementBy(LNK_ACTUALIZAR_LOCATOR));
     public static final Target LBL_MENSAJE_CARGA = Target.the("Mensaje de carga").located(theElementBy(LBL_MENSAJE_CARGA_LOCATOR));
     public static final Target IMG_CARGA = Target.the("Imagen de carga").located(theElementBy(IMG_CARGA_LOCATOR));

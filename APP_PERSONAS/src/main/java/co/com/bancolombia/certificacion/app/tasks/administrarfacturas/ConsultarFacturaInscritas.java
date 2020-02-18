@@ -18,6 +18,7 @@ public class ConsultarFacturaInscritas implements Task {
     public <T extends Actor> void performAs(T actor) {
         int iterador = 0;
         List<Factura> listaFactura = new ArrayList<>();
+        String value = LBL_DESCRIPCION_FACTURA.of(String.valueOf(iterador)).resolveFor(actor).getText();
         while (Verificar.elementoVisible(actor, LBL_DESCRIPCION_FACTURA.of(String.valueOf(iterador)))) {
             listaFactura.add(factura()
                     .conDescripcionFactura(LBL_DESCRIPCION_FACTURA.of(String.valueOf(iterador)).resolveFor(actor).getText())

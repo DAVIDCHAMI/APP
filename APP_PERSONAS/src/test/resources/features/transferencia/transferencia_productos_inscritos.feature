@@ -15,7 +15,7 @@ Característica: Realizar una transferencia a productos inscritos
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@3
-      |3|1010111|Cédula de ciudadanía|invictus10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-725210-27|Ahorros|1000|Productos propios e inscritos Bancolombia|406-169940-01|Corriente|Mis productos|Inscritos|
+      |3|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-182800-03|Corriente|1000|Productos propios e inscritos Bancolombia|406-757180-07|Ahorros|Mis productos|Inscritos|
 
   Esquema del escenario: Transferencia a productos inscritos desde cuenta deposito sin saldo
     Dado que el Actor se autentica en la app

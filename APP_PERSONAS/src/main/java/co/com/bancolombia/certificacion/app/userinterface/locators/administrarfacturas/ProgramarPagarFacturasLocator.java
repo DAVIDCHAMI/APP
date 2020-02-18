@@ -60,7 +60,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator TXT_MENSAJE_PAGO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//*[text()='¡Pago exitoso!']").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Pago exitoso!’]");
     public static final Locator LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../div/span[contains(text(),'{3}')]")
             .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='{0}']]/preceding-sibling::XCUIElementTypeOther[2][./XCUIElementTypeStaticText[@name='{1}']]/preceding-sibling::XCUIElementTypeOther[1][./XCUIElementTypeStaticText[contains(@name,'{2}')]]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeStaticText[contains(@name,'{3}')]");
-
+    public static final Locator BTN_HISTORICO_PAGOS_PROGRAMADOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Pagos programados']").withIos("xpath$//*[@name='Pagos programados']");
     private ProgramarPagarFacturasLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }

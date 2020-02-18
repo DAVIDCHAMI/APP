@@ -30,7 +30,7 @@ public class ConInicioSesion extends GenerarQR {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Saltar.onBoarding(),
+                //Saltar.onBoarding(),
                 WaitUntil.the(LNK_SIGUIENTE, isEnabled()),
                 Click.on(LNK_SIGUIENTE)
         );
