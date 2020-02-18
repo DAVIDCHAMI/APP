@@ -2,6 +2,7 @@ package co.com.bancolombia.certificacion.app.models.builders;
 
 import co.com.bancolombia.certificacion.app.models.billetera.DatosPagoBilletera;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Builder;
+import cucumber.api.java.bs.Dato;
 
 import java.util.List;
 import java.util.Map;
@@ -40,6 +41,22 @@ public class DatosPagoBilleteraBuilder implements Builder {
         this.inc = datos.get(0).get("inc");
         this.propina = datos.get(0).get("propina");
         this.totalPagar = datos.get(0).get("totalPagar");
+        return this;
+    }
+
+    public DatosPagoBilleteraBuilder conValor(List<Map<String, String>> datos){
+        this.subtotal = datos.get(0).get("subtotal");
+        return this;
+    }
+
+    public DatosPagoBilleteraBuilder conPropina(List<Map<String, String>> datos){
+        this.propina = datos.get(0).get("propina");
+        return this;
+    }
+
+    public DatosPagoBilleteraBuilder conDatosTarjeta(List<Map<String, String>> datos){
+        this.tipoTarjeta = datos.get(0).get("tipoTarjeta");
+        this.numeroTarjeta = datos.get(0).get("numeroTarjeta");
         return this;
     }
 

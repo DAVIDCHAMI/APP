@@ -7,6 +7,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class ListarTarjetasBilleteraLocator {
     public static final Locator LBL_TARJETAS_LISTADAS_LOCATOR = locator().withAndroid("xpath$//div[@class='content']").withIos("xpath$d");
+    public static final Locator LBL_ELIGE_UNA_TARJETA_LOCATOR = locator().withAndroid("xpath$SD").withIos("xpath$d");
     public static final Locator BTN_ACTIVAR_TARJETA_LOCATOR = locator().withAndroid("id$Button_Next_ActivateBiometricsStep1").withIos("xpath$d");
     public static final Locator BTN_VISTA_CARRUSEL_LOCATOR = locator().withAndroid("xpath$f").withIos("xpath$d");
     public static final Locator BTN_VISTA_LISTA_LOCATOR = locator().withAndroid("xpath$f").withIos("xpath$d");
