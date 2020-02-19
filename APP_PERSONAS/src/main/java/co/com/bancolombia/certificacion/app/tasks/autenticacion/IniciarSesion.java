@@ -17,6 +17,10 @@ public class IniciarSesion {
         return instrumented(ConDatosTransaccion.class, configuracionTransaccionBuilder.build());
     }
 
+    public static Performable enBilletera(ConfiguracionTransaccionBuilder configuracionTransaccionBuilder) {
+        return instrumented(IniciarSesionBilletera.class, configuracionTransaccionBuilder.build());
+    }
+
     public static Performable con(String usuario, String clave) {
         return instrumented(ConDatos.class, usuario, clave);
     }

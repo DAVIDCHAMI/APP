@@ -15,7 +15,7 @@ Característica: Realizar una transferencia a productos propios
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@MismoBanco@2
-      |2|1010111|Cédula de ciudadanía|invictus10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-725210-12|Ahorros|6000|Productos propios e inscritos Bancolombia|406-725210-14|Ahorros|Mis productos|Mis productos|
+      |2|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-182800-02|Corriente|1000|Productos propios e inscritos Bancolombia|406-182800-03|Corriente|Mis productos|Mis productos|
 
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas Bancolombia cuenta inversión
     Dado que el Actor se autentica en la app

@@ -6,6 +6,7 @@ import co.com.bancolombia.certificacion.app.models.administrarfacturas.Factura;
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -33,7 +34,8 @@ public class HistoricoPago implements Task {
                 Saltar.onBoarding(),
                 Check.whether(!opcion.equalsIgnoreCase(SELECCIONAR_TODAS)).andIfSo(
                         SeleccionarOpcionFactura.conInformacion(OPT_VER_HISTORICO_FACTURA, factura)
-                )
+                ),
+                Click.on(BTN_HISTORICO_PAGOS_PROGRAMADOS)
         );
         int iterador = 1;
         List<Factura> listaHistoricoPago = new ArrayList<>();

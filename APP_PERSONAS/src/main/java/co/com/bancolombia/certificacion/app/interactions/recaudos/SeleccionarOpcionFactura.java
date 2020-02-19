@@ -26,7 +26,7 @@ public class SeleccionarOpcionFactura implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Saltar.onBoarding(),
+                //Saltar.onBoarding(),
                 WaitUntil.the(OPT_FACTURA.of(
                         factura.getValorFactura(),
                         factura.getFechaFactura(),

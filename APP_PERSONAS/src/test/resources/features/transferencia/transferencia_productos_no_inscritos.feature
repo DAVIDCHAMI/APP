@@ -15,7 +15,7 @@ Característica: Realizar una transferencia a productos no inscritas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                  | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@NoInscritos@1
-      |1|1010111|Cédula de ciudadanía|invictus10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-725210-12|Ahorros|12000|Productos no inscritos Bancolombia|40670694007|Corriente|||
+      |1|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-782800-07|Ahorros|1000|Productos no inscritos Bancolombia|406-706940-07|Corriente|||
 
   Esquema del escenario: Transferencia a cuentas no inscritas desde una cuenta sin saldo
     Dado que el Actor se autentica en la app

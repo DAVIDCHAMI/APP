@@ -16,5 +16,5 @@ Característica: Bloqueo de tarjetas
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta | numeroTarjeta |
      ##@externaldata@./src/test/resources/datadriven/bloqueos/Bloqueo.xlsx@Datos@5
-      |5|949492|5|bloqueotarjetas01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|Maestro|*9492|
+      |5|949492|5|autotest11|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|American Express|*4656|
 
