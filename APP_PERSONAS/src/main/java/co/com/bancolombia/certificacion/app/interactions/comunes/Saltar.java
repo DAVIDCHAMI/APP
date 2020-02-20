@@ -17,30 +17,11 @@ public class Saltar implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-<<<<<<< HEAD
         actor.attemptsTo(
                 Check.whether(elementoVisible(actor, LNK_SALTAR)).andIfSo(
                         Click.on(LNK_SALTAR)
                 )
         );
-=======
-        /*
-        try {
-            actor.attemptsTo(
-                    Check.whether(elementoVisible(actor, LNK_SALTAR)).andIfSo(
-                            Click.on(LNK_SALTAR),
-                            Check.whether(elementoVisible(actor, CHK_TERMINOS_CONDICIONES_BILLETERA)).andIfSo(
-                                    Click.on(CHK_TERMINOS_CONDICIONES_BILLETERA),
-                                    Click.on(LNK_COMENZAR)
-                            ).otherwise(
-                                    Click.on(LNK_COMENZAR)
-                            )
-                    )
-            );
-        }catch(SerenityManagedException e){
-            e.printStackTrace();
-        }*/
->>>>>>> develop
     }
 
     public static Saltar onBoarding() {
