@@ -8,6 +8,7 @@ import static co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder
 
 public class ListarTarjetasBilletera {
     public static final Target LBL_TARJETAS_LISTADAS = Target.the("Tarjetas listadas (listar publico)").located(theElementBy(LBL_TARJETAS_LISTADAS_LOCATOR));
+    public static final Target LBL_ELIGE_UNA_TARJETA = Target.the("Label de Elegir tarjetas en Listar privado").located(theElementBy(LBL_ELIGE_UNA_TARJETA_LOCATOR));
     public static final Target BTN_ACTIVAR_BILLETERA = Target.the("Boton activar Billetera").located(theElementBy(BTN_ACTIVAR_TARJETA_LOCATOR));
     public static final Target BTN_VISTA_CARRUSEL = Target.the("Boton activar vista Carrusel").located(theElementBy(BTN_VISTA_CARRUSEL_LOCATOR));
     public static final Target BTN_VISTA_LISTA = Target.the("Boton activar vista Lista").located(theElementBy(BTN_VISTA_LISTA_LOCATOR));

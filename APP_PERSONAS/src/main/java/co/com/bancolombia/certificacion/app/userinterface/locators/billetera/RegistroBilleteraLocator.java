@@ -10,7 +10,7 @@ public class RegistroBilleteraLocator {
     public static final Locator CHK_TERMINOS_CONDICIONES_BILLETERA_LOCATOR = locator().withAndroid("xpath$//input[@id='Chk_TerminosCondiciones']").withIos("xpath$d");
     public static final Locator BTN_COMENZAR_REGISTRO_BILLETERA_LOCATOR = locator().withAndroid("xpath$//button//span[text()='COMENZAR']").withIos("xpath$d");
     public static final Locator LBL_ACTIVACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'¡Activación exitosa!')]").withIos("xpath$d");
-    public static final Locator BTN_PAGAR_CON_BILLETERA_LOCATOR = locator().withAndroid("xpath$").withIos("xpath$d");
+    public static final Locator BTN_PAGAR_CON_BILLETERA_LOCATOR = locator().withAndroid("xpath$a").withIos("xpath$d");
 
     private RegistroBilleteraLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);

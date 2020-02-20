@@ -47,6 +47,12 @@ public class ProductoBuilder implements Builder<Producto> {
         return this;
     }
 
+    public ProductoBuilder conTarjetaDeBilletera(List<Map<String, String>> datos) {
+        this.tipo = datos.get(0).get("tipoCuenta");
+        this.numero = datos.get(0).get("numeroCuenta");
+        return this;
+    }
+
     public ProductoBuilder conTipoCuenta(String datosProducto) {
         this.tipo = datosProducto;
         return this;
