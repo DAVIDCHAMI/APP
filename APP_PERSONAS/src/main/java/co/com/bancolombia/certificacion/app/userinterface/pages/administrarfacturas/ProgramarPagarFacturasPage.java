@@ -65,6 +65,7 @@ public class ProgramarPagarFacturasPage {
     public static final Target TXT_MENSAJE_PROGRAMACION_EXITOSA = Target.the("Mensaje de programación exitosa").located(theElementBy(TXT_MENSAJE_PROGRAMACION_EXITOSA_LOCATOR));
     public static final Target TXT_MENSAJE_PAGO_EXITOSO = Target.the("Mensaje de pago exitoso").located(theElementBy(TXT_MENSAJE_PAGO_EXITOSO_LOCATOR));
     public static final Target TXT_PAGO_REDEBAN_EXITOSO = Target.the("Mensaje de pago redeban exitoso").located(theElementBy(TXT_PAGO_REDEBAN_EXITOSO_LOCATOR));
+    public static final Target BTN_HISTORICO_PAGOS_PROGRAMADOS = Target.the("Mensaje de pago redeban exitoso").located(theElementBy(BTN_HISTORICO_PAGOS_PROGRAMADOS_LOCATOR));
 
     private ProgramarPagarFacturasPage(){
         throw new IllegalStateException(CLASE_INTERFAZ_USUARIO);

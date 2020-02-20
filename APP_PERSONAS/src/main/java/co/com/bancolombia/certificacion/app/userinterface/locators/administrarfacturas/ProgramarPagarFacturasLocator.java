@@ -38,7 +38,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator LBL_ELIMINACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[text()='¡Eliminación exitosa!']").withIos("xpath$//*[@name='¡Eliminación exitosa!']");
     public static final Locator LBL_COMPROBANTE_ELIMINACION_EXITOSA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'Comprobante')]").withIos("xpath$//*[contains(@name,'Comprobante')]");
     public static final Locator TXT_PAGO_REDEBAN_EXITOSO_LOCATOR = locator().withAndroid("xpath$//*[text(), ¡Pago exitoso!]").withIos("xpath$//*[text(), ¡Pago exitoso!]");
-    public static final Locator OPT_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'programadas')]//preceding::div[@class='fas fa-list-ul list-icon OSInline']").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Programadas')]");
+    public static final Locator OPT_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'programadas')]//ancestor::div[@class='OSInline']").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'Programadas')]");
     public static final Locator TXT_BUSCAR_PROGRAMADAS_LOCATOR = locator().withAndroid("xpath$//input[@id='Input_Description']").withIos("xpath$test");
     public static final Locator BTN_CARGAR_FACTURAS_LOCATOR = locator().withAndroid("xpath$//span[text()='Cargar facturas']").withIos("xpath$test");
     public static final Locator CHK_SELECCIONAR_FACTURA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../../preceding-sibling::div//span[contains(text(),'{1}')]/../../../preceding-sibling::div//span[contains(text(),'{2}')]/../../../../../..//input")
@@ -60,7 +60,7 @@ public class ProgramarPagarFacturasLocator {
     public static final Locator TXT_MENSAJE_PAGO_EXITOSO_LOCATOR = locator().withAndroid("xpath$//*[text()='¡Pago exitoso!']").withIos("xpath$//XCUIElementTypeStaticText[@name=‘¡Pago exitoso!’]");
     public static final Locator LBL_VERIFICACION_MODIFICACION_INSCRITA_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'{0}')]/../preceding-sibling::div/span[contains(text(),'{1}')]/../../preceding-sibling::div/span[contains(text(),'{2}')]/../../div/span[contains(text(),'{3}')]")
             .withIos("xpath$//XCUIElementTypeOther[./XCUIElementTypeStaticText[@name='{0}']]/preceding-sibling::XCUIElementTypeOther[2][./XCUIElementTypeStaticText[@name='{1}']]/preceding-sibling::XCUIElementTypeOther[1][./XCUIElementTypeStaticText[contains(@name,'{2}')]]/preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeStaticText[contains(@name,'{3}')]");
-
+    public static final Locator BTN_HISTORICO_PAGOS_PROGRAMADOS_LOCATOR = locator().withAndroid("xpath$//span[text()='Pagos programados']").withIos("xpath$//*[@name='Pagos programados']");
     private ProgramarPagarFacturasLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
     }

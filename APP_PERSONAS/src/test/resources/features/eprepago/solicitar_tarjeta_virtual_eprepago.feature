@@ -16,7 +16,7 @@ Característica: Solicitar tarjeta virtual eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/eprepago/eprepago.xlsx@Datos@1
-      |1|30001024|1|userauto50|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
+      |1|30001024|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
 
   Esquema del escenario: Solicitud de un cliente que ya tiene tarjeta eprepago
     Dado que el Actor se autentica en la app

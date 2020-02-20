@@ -15,7 +15,7 @@ Característica: Realizar una transferencia a otros bancos
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@OtrosBancos@3
-      |3|1010111|Cédula de ciudadanía|testing10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-139740-01|Corriente|1000|Productos propios e inscritos Bancolombia|7001000033569||Mis productos|Inscritos|
+      |3|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-182800-02|Corriente|1000| Productos inscritos de otros bancos|392783646747|NEQUI|Mis productos|Inscritos|
 
 
   Esquema del escenario: Transferencia desde un fondo de inversion a inscritas de otros bancos
@@ -44,4 +44,4 @@ Característica: Realizar una transferencia a otros bancos
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento        | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | productoOrigen | tipoProductoOrigen | monto | tipoTransferencia                         | productoDestino | tipoProductoDestino | opcionProductoOrigen | opcionProductoDestino |
    ##@externaldata@./src/test/resources/datadriven/transferencia/Transferencia.xlsx@OtrosBancos@3
-      |3|1010111|Cédula de ciudadanía|testing10|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-139740-01|Corriente|1000|Productos propios e inscritos Bancolombia|7001000033569||Mis productos|Inscritos|
+      |3|1010111|Cédula de ciudadanía|pruebauser01|1234|4321|Alterno|000|0369|NO ERROR|bolp|ACTIVO|406-182800-02|Corriente|1000| Productos inscritos de otros bancos|392783646747|NEQUI|Mis productos|Inscritos|

@@ -16,7 +16,7 @@ Característica: Inactivacion eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/eprepago/inactivacion_eprepago.xlsx@Datos@1
-      |1|700101|1|pruebasregistro49|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
+      |1|700101|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
 
   Esquema del escenario: Inactivacion de tarjeta eprepago con maximo numero de intentos
     Dado que el Actor se autentica en la app
@@ -28,7 +28,7 @@ Característica: Inactivacion eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/eprepago/inactivacion_eprepago.xlsx@Datos@1
-      |1|700101|1|pruebasregistro49|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
+      |1|700101|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
 
   Esquema del escenario: Cancelar inactivacion de tarjeta eprepago desde la app de Bancolombia OSP por mis productos
     Dado que el Actor se autentica en la app
@@ -40,4 +40,4 @@ Característica: Inactivacion eprepago en la app OSP Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave |
    ##@externaldata@./src/test/resources/datadriven/eprepago/inactivacion_eprepago.xlsx@Datos@1
-      |1|700101|1|pruebasregistro49|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|
+      |1|700101|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|

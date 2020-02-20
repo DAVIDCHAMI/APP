@@ -28,6 +28,7 @@ public class SeleccionarOpcion implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()), isPresent()),
+                Esperar.unTiempo(5000),
                 Click.on(OPT_MENU_PRINCIPAL.of(tipoTransaccion.getMenu()))
         );
         actor.attemptsTo(
@@ -35,6 +36,7 @@ public class SeleccionarOpcion implements Task {
                         WaitUntil.the(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()), isPresent()),
                         RealizarScroll.hastaPosicionDeTarget(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu())),
                         WaitUntil.the(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()), isPresent()),
+                        Esperar.unTiempo(5000),
                         Click.on(OPT_SUB_MENU.of(tipoTransaccion.getSubMenu()))
                 )
         );
@@ -42,6 +44,7 @@ public class SeleccionarOpcion implements Task {
                 Check.whether(!"".equals(tipoTransaccion.getTercerNivel())).andIfSo(
                         RealizarScroll.hastaPosicionDeTarget(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         WaitUntil.the(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel()), isPresent()),
+                        Esperar.unTiempo(5000),
                         Click.on(OPT_TERCER_NIVEL.of(tipoTransaccion.getTercerNivel())),
                         Esperar.unTiempo(3000)
                 )
