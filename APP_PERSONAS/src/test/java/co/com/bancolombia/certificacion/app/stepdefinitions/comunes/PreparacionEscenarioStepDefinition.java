@@ -101,7 +101,7 @@ public class PreparacionEscenarioStepDefinition {
         );
     }
 
-    @Cuando("^ingreso por (.*) con el usuario (.*)$")
+    @Cuando("^ingreso por (.*) con usuario (.*)$")
     public void ingresoPorLaOpcionConElUsuario(String tipoTransaccion, String usuario) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarOpcion.delMenu(tipoTransaccion),

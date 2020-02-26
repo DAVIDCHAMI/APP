@@ -15,7 +15,7 @@ Característica: Consulta de detalle de tarjetas E card
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario        | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta       | numeroTarjeta |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@Ecard@1
-      |1|999999|1|usuarioecard54|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|e-Card Mastercard|*7371|
+      |1|999999|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|e-Card Mastercard|*7371|
 
   Esquema del escenario: Consulta de detalle de tarjeta ecard desde vista carrusel
     Dado que el Actor se autentica en la app
@@ -27,7 +27,7 @@ Característica: Consulta de detalle de tarjetas E card
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario        | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | tipoTarjeta       | numeroTarjeta |
    ##@externaldata@./src/test/resources/datadriven/consultas/detalleproductos/ConsultaDetalleProductos.xlsx@Ecard@1
-      |1|999999|1|usuarioecard54|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|e-Card Mastercard|*7371|
+      |1|999999|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|e-Card Mastercard|*7371|
 
 
 

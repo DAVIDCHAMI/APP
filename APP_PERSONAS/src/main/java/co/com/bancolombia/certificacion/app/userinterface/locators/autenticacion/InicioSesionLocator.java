@@ -21,10 +21,10 @@ public class InicioSesionLocator {
     public static final Locator BTN_SI_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Button_CancelYesModal_ActivateBiometrics").withIos("xpath$//XCUIElementTypeButton[@name='SI']");
     public static final Locator BTN_FOCO_CERRAR_SESION_LOCATOR = locator().withAndroid("id$Button_CancelYesModal_ActivateBiometrics").withIos("xpath$//XCUIElementTypeStaticText[@name='¿Quieres cerrar sesión?']");
     public static final Locator BTN_VOLVER_LOCATOR = locator().withAndroid("xpath$//span[text()='Volver']").withIos("xpath$//XCUIElementTypeLink[contains(@name,'Volver')]");
-    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'CLAVE BLOQUEADA')]").withIos("xpath$//XCUIElementTypeStaticText[@name='CLAVE BLOQUEADA']");
-    public static final Locator LBL_FRASE_DE_SEGURIDAD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'frase de seguridad')]//following::div[1]").withIos("xpath$test");
-    public static final Locator LBL_OPCION_NO_ERES_CLIENTE_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'eres cliente')]").withIos("xpath$test");
-    public static final Locator BTN_QUIERO_SER_CLIENTE_LOCATOR= locator().withAndroid("xpath$//button[contains(@id,'Button_Continue_UserAuth')]").withIos("xpath$test");
+    public static final Locator LBL_CLAVE_BLOQUEADA_LOCATOR = locator().withAndroid("xpath$//*[contains(text(),'La clave que usas en el cajero está bloqueada')]").withIos("xpath$//XCUIElementTypeStaticText[@name='La clave que usas en el cajero está bloqueada']");
+    public static final Locator LBL_FRASE_DE_SEGURIDAD_LOCATOR = locator().withAndroid("xpath$//span[contains(text(),'frase de seguridad')]//following::div[1]").withIos("xpath$//XCUIElementTypeOther/XCUIElementTypeStaticText[contains(@name,'frase de seguridad')]/following::XCUIElementTypeOther[1]/XCUIElementTypeStaticText");
+    public static final Locator LBL_OPCION_NO_ERES_CLIENTE_LOCATOR= locator().withAndroid("xpath$//span[contains(text(),'eres cliente')]").withIos("xpath$//XCUIElementTypeStaticText[contains(@name,'eres cliente')]");
+    public static final Locator BTN_QUIERO_SER_CLIENTE_LOCATOR= locator().withAndroid("xpath$//button[contains(@id,'Button_Continue_UserAuth')]").withIos("xpath$//XCUIElementTypeButton[@name='QUIERO SER CLIENTE']");
 
     private InicioSesionLocator() {
         throw new IllegalStateException(CLASE_LOCATOR);
