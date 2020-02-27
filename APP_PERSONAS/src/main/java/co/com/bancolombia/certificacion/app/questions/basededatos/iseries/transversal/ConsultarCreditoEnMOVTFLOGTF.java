@@ -8,17 +8,18 @@ import org.apache.logging.log4j.Logger;
 
 public class ConsultarCreditoEnMOVTFLOGTF implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(ConsultarCreditoEnMOVTFLOGTF.class.getName());
+  private static final Logger LOGGER =
+      LogManager.getLogger(ConsultarCreditoEnMOVTFLOGTF.class.getName());
 
-    @Override
-    public Boolean answeredBy(Actor actor) {
-        boolean resultado = false;
-        String registro = Transversales.verificarElCreditoEnMOVTFLOGTF(actor);
-        if (registro != ""){
-            resultado = true;
-        }else {
-            LOGGER.info("Sin registros en la consulta");
-        }
-        return resultado;
+  @Override
+  public Boolean answeredBy(Actor actor) {
+    boolean resultado = false;
+    String registro = Transversales.verificarElCreditoEnMOVTFLOGTF(actor);
+    if (registro != "") {
+      resultado = true;
+    } else {
+      LOGGER.info("Sin registros en la consulta");
     }
+    return resultado;
+  }
 }

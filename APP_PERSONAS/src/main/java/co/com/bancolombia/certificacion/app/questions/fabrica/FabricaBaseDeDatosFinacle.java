@@ -5,11 +5,9 @@ import net.serenitybdd.screenplay.Question;
 
 public class FabricaBaseDeDatosFinacle {
 
-    private FabricaBaseDeDatosFinacle() {
-    }
+  private FabricaBaseDeDatosFinacle() {}
 
-    public static Question<Boolean> verificarLaAperturaDeInversionVirtualEnFinacle() {
-        return new VerificoLaAperturaEnFinacle();
-    }
-
+  public static Question<Boolean> verificarLaAperturaDeInversionVirtualEnFinacle() {
+    return new VerificoLaAperturaEnFinacle();
+  }
 }

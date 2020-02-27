@@ -8,17 +8,18 @@ import org.apache.logging.log4j.Logger;
 
 public class ConsultarCreditoEnSCIFFMRCMV implements Question<Boolean> {
 
-    private static final Logger LOGGER = LogManager.getLogger(ConsultarCreditoEnSCIFFMRCMV.class.getName());
+  private static final Logger LOGGER =
+      LogManager.getLogger(ConsultarCreditoEnSCIFFMRCMV.class.getName());
 
-    @Override
-    public Boolean answeredBy(Actor actor) {
-        boolean resultado = false;
-        String registro = Depositos.verificarElMovimientoCreditoDeLaCuenta(actor);
-        if (registro != ""){
-            resultado = true;
-        }else {
-            LOGGER.info("Sin registros en la consulta");
-        }
-        return resultado;
+  @Override
+  public Boolean answeredBy(Actor actor) {
+    boolean resultado = false;
+    String registro = Depositos.verificarElMovimientoCreditoDeLaCuenta(actor);
+    if (registro != "") {
+      resultado = true;
+    } else {
+      LOGGER.info("Sin registros en la consulta");
     }
+    return resultado;
+  }
 }

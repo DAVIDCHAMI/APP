@@ -1,5 +1,8 @@
 package co.com.bancolombia.certificacion.app.interactions.consultas.saldos;
 
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
@@ -7,30 +10,27 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-
 public class SeleccionarProducto implements Interaction {
-    private String tipoCuenta;
-    private String numeroCuenta;
-    private Target target;
+  private String tipoCuenta;
+  private String numeroCuenta;
+  private Target target;
 
-    public SeleccionarProducto(String tipoCuenta, String numeroCuenta, Target target) {
-        this.tipoCuenta = tipoCuenta;
-        this.numeroCuenta = numeroCuenta;
-        this.target = target;
-    }
+  public SeleccionarProducto(String tipoCuenta, String numeroCuenta, Target target) {
+    this.tipoCuenta = tipoCuenta;
+    this.numeroCuenta = numeroCuenta;
+    this.target = target;
+  }
 
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
-                Scroll.to(target.of(tipoCuenta, numeroCuenta)),
-                JavaScriptClick.on(target.of(tipoCuenta, numeroCuenta))
-        );
-    }
+  @Override
+  public <T extends Actor> void performAs(T actor) {
+    actor.attemptsTo(
+        WaitUntil.the(target.of(tipoCuenta, numeroCuenta), isPresent()),
+        Scroll.to(target.of(tipoCuenta, numeroCuenta)),
+        JavaScriptClick.on(target.of(tipoCuenta, numeroCuenta)));
+  }
 
-    public static SeleccionarProducto desdeSaldosMovimientos(String tipoCuenta, String numeroCuenta, Target target) {
-        return instrumented(SeleccionarProducto.class, tipoCuenta, numeroCuenta, target);
-    }
+  public static SeleccionarProducto desdeSaldosMovimientos(
+      String tipoCuenta, String numeroCuenta, Target target) {
+    return instrumented(SeleccionarProducto.class, tipoCuenta, numeroCuenta, target);
+  }
 }
