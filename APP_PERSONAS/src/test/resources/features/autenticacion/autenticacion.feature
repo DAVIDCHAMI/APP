@@ -6,7 +6,7 @@ Característica: Autenticacion app Bancolombia
   Para autenticarme en la aplicacion
 
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP desde diferentes opciones
-    Dado que el Actor se autentica en la app
+    Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
     Cuando quiero <opcionAutenticacion> del usuario <usuario> con clave <clave>
@@ -14,7 +14,7 @@ Característica: Autenticacion app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|INSCRIBIR_PRODUCTOS|
+      |1|43024987|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|INSCRIBIR_PRODUCTOS|
 
   @RutaCritica
   Esquema del escenario: Login exitoso a la aplicacion de Bancolombia OSP
@@ -37,7 +37,7 @@ Característica: Autenticacion app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario   | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@5
-      |5|45612862|1|testing10|1267|4321|Alterno|052|0369|CLAVE NO VALIDA|bolp|ACTIVO|CONSULTAR_PRODUCTO|
+      |5|45612862|1|pruebauser01|1267|4321|Alterno|052|0369|clave inválida|bolp|ACTIVO|CONSULTAR_PRODUCTO|
 
   Esquema del escenario: Login con usuario bloqueado a la aplicacion de Bancolombia OSP
     Dado que el Actor carga los datos para la prueba
@@ -48,7 +48,7 @@ Característica: Autenticacion app Bancolombia
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario    | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@6
-      |6|22493944|1|userrobot9|1234|4321|Alterno|607|0370|Clave bloqueada|bolp|ACTIVO|CONSULTAR_PRODUCTO|
+      |6|22493944|1|bloqueotarjetas01|1234|4321|Alterno|607|0370|La clave que usas en el cajero está bloqueada|bolp|ACTIVO|CONSULTAR_PRODUCTO|
 
   Esquema del escenario: Bloqueo de clave despues de 3 intentos
     Dado que el Actor carga los datos para la prueba
@@ -98,9 +98,9 @@ Característica: Autenticacion app Bancolombia
     Dado que el Actor carga los datos para la prueba
       | ID   | numeroDocumento   | tipoDocumento   | usuario   | clave   | segundaClave   | orientacion   | codigoError   | codigoTransaccion   | resultadoEsperado   | primeraPregunta   | validarClave   |
       | <ID> | <numeroDocumento> | <tipoDocumento> | <usuario> | <clave> | <segundaClave> | <orientacion> | <codigoError> | <codigoTransaccion> | <resultadoEsperado> | <primeraPregunta> | <validarClave> |
-    Cuando ingreso por <opcionAutenticacion> con el usuario <usuario>
+    Cuando ingreso por <opcionAutenticacion> con usuario <usuario>
     Entonces Se deben de ver las opciones para un cliente nuevo
     Ejemplos:
       | ID | numeroDocumento | tipoDocumento | usuario           | clave | segundaClave | orientacion | codigoError | codigoTransaccion | resultadoEsperado | primeraPregunta | validarClave | opcionAutenticacion |
    ##@externaldata@./src/test/resources/datadriven/autenticacion/Autenticacion.xlsx@Datos@1
-      |1|43024987|1|autotest30|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|INSCRIBIR_PRODUCTOS|
+      |1|43024987|1|pruebauser01|1234|4321|Acierto|000|0369|NO ERROR|bolp|ACTIVO|INSCRIBIR_PRODUCTOS|

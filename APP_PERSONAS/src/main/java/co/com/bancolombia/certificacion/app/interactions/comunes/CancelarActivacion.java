@@ -20,8 +20,11 @@ public class CancelarActivacion implements Interaction {
                 Check.whether(elementoVisible(actor, LNK_CANCELAR)
                 ).andIfSo(
                         Click.on(LNK_CANCELAR),
-                        WaitUntil.the(BTN_SI, isEnabled()),
-                        Click.on(BTN_SI)
+                        Check.whether(elementoVisible(actor, BTN_SI)
+                        ).andIfSo(
+                                WaitUntil.the(BTN_SI, isEnabled()),
+                                Click.on(BTN_SI)
+                        )
                 )
         );
     }
