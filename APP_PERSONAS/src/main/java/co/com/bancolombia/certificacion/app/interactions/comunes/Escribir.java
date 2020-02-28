@@ -1,5 +1,9 @@
 package co.com.bancolombia.certificacion.app.interactions.comunes;
 
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TAB;
+import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 import co.com.bancolombia.certificacion.app.utilidades.administradores.Verificar;
 import co.com.bancolombia.certificacion.app.utilidades.mobileobjectfinder.ElementFinder;
 import net.serenitybdd.screenplay.Actor;
@@ -8,31 +12,23 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.type.Type;
 import net.serenitybdd.screenplay.conditions.Check;
 
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TAB;
-import static co.com.bancolombia.certificacion.app.userinterface.pages.autenticacion.InicioSesionPage.TXT_CLAVE_DIGITOS;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
 public class Escribir implements Interaction {
-    private String cadena;
+  private String cadena;
 
-    public Escribir(String cadena) {
-        this.cadena = cadena;
-    }
+  public Escribir(String cadena) {
+    this.cadena = cadena;
+  }
 
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        String platform = ElementFinder.getPlatformCapability();
-        actor.attemptsTo(
-                Check.whether(("iOS").equalsIgnoreCase(platform)).andIfSo(
-                        Click.on(TAB)
-                ),
-                Check.whether(Verificar.elementoHabilitado(actor, TXT_CLAVE_DIGITOS)).andIfSo(
-                        Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)
-                )
-        );
-    }
+  @Override
+  public <T extends Actor> void performAs(T actor) {
+    String platform = ElementFinder.getPlatformCapability();
+    actor.attemptsTo(
+        Check.whether(("iOS").equalsIgnoreCase(platform)).andIfSo(Click.on(TAB)),
+        Check.whether(Verificar.elementoHabilitado(actor, TXT_CLAVE_DIGITOS))
+            .andIfSo(Type.theValue(cadena).into(TXT_CLAVE_DIGITOS)));
+  }
 
-    public static Escribir enCampoTexto(String cadena) {
-        return instrumented(Escribir.class, cadena);
-    }
+  public static Escribir enCampoTexto(String cadena) {
+    return instrumented(Escribir.class, cadena);
+  }
 }

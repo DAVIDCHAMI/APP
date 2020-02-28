@@ -16,9 +16,14 @@ buildscript {
         maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
         maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
         maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.70")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.84")
+        classpath "gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.8"
     }
 }
 
@@ -27,6 +32,7 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'idea'
     apply plugin: 'net.serenity-bdd.aggregator'
+    apply plugin: 'com.github.sherter.google-java-format'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 }
@@ -70,4 +76,5 @@ test {
     systemProperty 'properties', System.getProperty('properties')
 }
 
+compileJava.dependsOn 'googleJavaFormat'
 gradle.startParameter.continueOnFailure = true

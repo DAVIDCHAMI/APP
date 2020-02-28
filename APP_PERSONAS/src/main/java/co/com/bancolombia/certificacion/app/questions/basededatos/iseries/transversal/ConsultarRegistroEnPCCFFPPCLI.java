@@ -6,10 +6,8 @@ import net.serenitybdd.screenplay.Question;
 
 public class ConsultarRegistroEnPCCFFPPCLI implements Question<Boolean> {
 
-    @Override
-    public Boolean answeredBy(Actor actor) {
-        return new Transversales().verifyTopesPersonalizadosPCCFFPPCLI(actor);
-    }
-
-
+  @Override
+  public Boolean answeredBy(Actor actor) {
+    return new Transversales().verifyTopesPersonalizadosPCCFFPPCLI(actor);
+  }
 }
