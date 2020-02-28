@@ -4,11 +4,13 @@ import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.G
 import static co.com.bancolombia.certificacion.app.userinterface.pages.comunes.GeneralPage.LNK_SIGUIENTE;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.datosseguridad.ActualizarDatosSeguridadPage.*;
 import static co.com.bancolombia.certificacion.app.userinterface.pages.registro.InscripcionClaveDinamicaPage.CHK_TIPO_CORREO;
+import static co.com.bancolombia.certificacion.app.utilidades.constantes.Constantes.CORREO_SEGURIDAD_ANDROID;
 import static co.com.bancolombia.certificacion.app.utilidades.constantes.VariablesSesionConstantes.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.bancolombia.certificacion.app.interactions.comunes.BorrarTexto;
 import co.com.bancolombia.certificacion.app.interactions.comunes.Validar;
 import co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder;
 import co.com.bancolombia.certificacion.app.models.usuario.Usuario;
@@ -30,6 +32,7 @@ public class ActualizarDatosSeguridad implements Task {
     actor.attemptsTo(
         Validar.carga(),
         WaitUntil.the(TXT_CORREO_ACTUALIZAR, isVisible()),
+        BorrarTexto.delObjeto(CORREO_SEGURIDAD_ANDROID),
         Enter.theValue(usuario.getCorreo()).into(TXT_CORREO_ACTUALIZAR),
         Click.on(FOCO),
         Click.on(CHK_TIPO_CORREO.of(usuario.getTipoCorreo())),

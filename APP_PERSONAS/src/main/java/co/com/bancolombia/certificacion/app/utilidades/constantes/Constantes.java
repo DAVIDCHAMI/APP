@@ -49,6 +49,8 @@ public class Constantes {
   public static final String ENVIA_DINERO = "envia dinero";
   public static final String FRASE_DE_SEGURIDAD =
       "Matricula por SVP longitud larga con Ñ creadoporsv";
+  public static final String ANDROID = "Android";
+  public static final String CORREO_SEGURIDAD_ANDROID = "OSInline";
 
   private Constantes() {
     throw new IllegalStateException(CLASE_CONSTANTE);

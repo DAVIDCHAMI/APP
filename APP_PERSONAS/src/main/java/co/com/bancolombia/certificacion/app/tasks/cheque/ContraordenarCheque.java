@@ -19,7 +19,6 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ContraordenarCheque implements Task {
-
   private Cheque cheque;
 
   public ContraordenarCheque(Cheque cheque) {
@@ -28,7 +27,6 @@ public class ContraordenarCheque implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-
     actor.attemptsTo(
         SeleccionarProducto.desdeSaldosMovimientos(
             cheque.getProducto().getTipo(), cheque.getProducto().getNumero(), OPT_CUENTA_ASOCIADA),
