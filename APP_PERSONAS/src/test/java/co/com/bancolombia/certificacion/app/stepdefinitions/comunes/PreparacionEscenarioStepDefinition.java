@@ -1,16 +1,11 @@
 package co.com.bancolombia.certificacion.app.stepdefinitions.comunes;
 
-import static co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIseriesFallido.ARCHIVOS_ISERIES_FALLIDO;
 import static co.com.bancolombia.certificacion.app.models.builders.ConfiguracionTransaccionBuilder.informacion;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.credenciales;
 import static co.com.bancolombia.certificacion.app.models.builders.UsuarioBuilder.usuario;
-import static co.com.bancolombia.certificacion.app.utilidades.administradores.ArchivosUtilidades.*;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.bancolombia.certificacion.app.exceptions.transversales.ArchivosIseriesFallido;
-import co.com.bancolombia.certificacion.app.questions.basededatos.iseries.transversal.VerificarLosArchivosDeIseries;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.CerrarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.IniciarSesion;
 import co.com.bancolombia.certificacion.app.tasks.autenticacion.Navegar;
@@ -100,13 +95,5 @@ public class PreparacionEscenarioStepDefinition {
   @Y("cierra sesion en la app")
   public void cerrarSesionOsp() {
     theActorInTheSpotlight().attemptsTo(CerrarSesion.exitosamente());
-  }
-
-  @Y("^Verifico los resultados en los archivos de iseries$")
-  public void IVerifyTheResultsInTheFilesOfBackIseries(List<String> files) {
-    theActorInTheSpotlight()
-        .should(
-            seeThat(VerificarLosArchivosDeIseries.enApp(files))
-                .orComplainWith(ArchivosIseriesFallido.class, ARCHIVOS_ISERIES_FALLIDO));
   }
 }

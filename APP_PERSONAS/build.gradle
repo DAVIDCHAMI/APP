@@ -3,26 +3,18 @@ version '1.0-SNAPSHOT'
 
 repositories {
     maven {url "http://cdv4.todo1.com/nexus/content/groups/public/"}
-    /*maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
-    maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
-    maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
-    maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
 }
 
 buildscript {
     repositories {
         maven {url "http://cdv4.todo1.com/nexus/content/groups/public/"}
-        /*maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
-        maven { url "https://artifactory.apps.bancolombia.com/jcenter/" }
-        maven { url "https://artifactory.apps.bancolombia.com/common-maven/" }
-        maven { url "https://artifactory.apps.bancolombia.com/global-bancolombia/" }*/
         mavenCentral()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.84")
+        classpath "net.serenity-bdd:serenity-gradle-plugin:2.0.70"
         classpath "gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.8"
     }
 }
@@ -74,7 +66,9 @@ tasks.withType(Test) {
 
 test {
     systemProperty 'properties', System.getProperty('properties')
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
 }
 
 compileJava.dependsOn 'googleJavaFormat'
+
 gradle.startParameter.continueOnFailure = true
