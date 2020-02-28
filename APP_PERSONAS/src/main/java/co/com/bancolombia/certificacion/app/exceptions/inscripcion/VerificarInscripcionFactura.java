@@ -1,9 +1,10 @@
 package co.com.bancolombia.certificacion.app.exceptions.inscripcion;
 
-public class VerificarInscripcionFactura extends AssertionError  {
-    public static final String INSCRIPCION_FALLIDA = "No se encontraron los datos de la inscripción o esta fue fallida";
+public class VerificarInscripcionFactura extends AssertionError {
+  public static final String INSCRIPCION_FALLIDA =
+      "No se encontraron los datos de la inscripción o esta fue fallida";
 
-    public VerificarInscripcionFactura(String mensaje, Throwable causa) {
-        super(mensaje, causa);
-    }
+  public VerificarInscripcionFactura(String mensaje, Throwable causa) {
+    super(mensaje, causa);
+  }
 }
